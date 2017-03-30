@@ -6,7 +6,11 @@
  * Time: 12:22 PM
  */
 include "includes/autoload.php";
+
 $htmlTitle=$configuracion->getSiteName();
+$htmlKeywords="keyword";
+$htmlDescription="Descriptiom";
+$htmlLocality="Paraná,Entre Rios";
 
 try{
 

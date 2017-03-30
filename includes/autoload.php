@@ -29,3 +29,6 @@ $repositorioDAO = new RepositorioDAO($configuracion->getDataSource());
 
 define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());
 /**  */
+
+
+$lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/es.json"),true);

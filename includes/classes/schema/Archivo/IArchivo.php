@@ -9,7 +9,7 @@
 interface IArchivo
 {
     /** Create **/
-    public function insertArchivo(IArchivo $a);
+    public function insertArchivo(IArchivo $a,$versionName="original",$versionId=0);
     /** **/
 
     /** Read **/

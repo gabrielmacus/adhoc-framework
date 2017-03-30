@@ -8,8 +8,8 @@
  */
 
 
-require_once ($_SERVER["DOCUMENT_ROOT"]."/adhoc/includes/framework/classes/DAO/Usuario/IUser.php");
-require_once ($_SERVER["DOCUMENT_ROOT"]."/adhoc/includes/framework/classes/DAO/Usuario/User.php");
+require_once ("IUser.php");
+require_once ("User.php");
 
 class UserDAO implements IUser
 {

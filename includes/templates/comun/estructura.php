@@ -16,7 +16,7 @@
    <div id="body">
 
        <header>
-
+          <?php include "navbar/navbar-1.php"?>
        </header>
 
        <section>
@@ -27,8 +27,8 @@
 
        </aside>
 
-       <footer class="footer">
 
+       <footer>
            asdas
        </footer>
 

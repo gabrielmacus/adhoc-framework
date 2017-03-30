@@ -8,8 +8,8 @@
  */
 
 
-require_once ($_SERVER["DOCUMENT_ROOT"]."/adhoc/includes/framework/classes/DAO/Archivo/IArchivo.php");
-require_once ($_SERVER["DOCUMENT_ROOT"]."/adhoc/includes/framework/classes/DAO/Archivo/Archivo.php");
+require_once ("IArchivo.php");
+require_once ("Archivo.php");
 
 
 
@@ -22,12 +22,7 @@ class ArchivoDAO implements IArchivo
     protected $dataSource;
     protected $tableName;
     protected $files=array();
-    /**
-     * UserDAO constructor.
-     * @param $dataSource
-     * @param $tableName
-     *
-     */
+
     public function __construct(DataSource $dataSource, $tableName="archivos")
     {
         $this->dataSource = $dataSource;
@@ -54,6 +49,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
+
+
     public function insertArchivo(IArchivo $a,$versionName="original",$versionId=0)
     {
 
@@ -69,7 +66,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         if(!$ftp->isDir($dir))//Chequeo si no existe el directorio, en tal caso lo creo
         {
-            $ftp->mkdir($dir,true);   
+            $ftp->mkdir($dir,true);
         }
 
 
@@ -99,7 +96,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $a->setModification(time());
         }
-        
+
         $a->setPath($dir);
 
         $res= $this->dataSource->runUpdate($sql,
@@ -113,12 +110,12 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql = "SELECT * FROM {$this->tableName} LEFT JOIN repositorios ON repositorio_id=archivo_repositorio";
 
 
-        
+
 
         $this->dataSource->runQuery($sql,array(),function($data){
-            
-   
-            
+
+
+
             $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],
                 $data["repositorio_pass"],$data["repositorio_name"], $data["repositorio_path"],
                 $data["repositorio_port"],$data["repositorio_creation"],
@@ -153,10 +150,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
-    /**
-     * @param $data
-     * Funcion para indicarle como leer el objeto de la db
-     */
+
     private function query($data){
 
 
@@ -204,10 +198,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
-    /**
-     * @param $id
-     * @return Archivo
-     */
+
     public function selectArchivoById($id)
     {
 

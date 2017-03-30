@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<meta name='keywords' content='<?php echo $htmlKewords;?>'>
+<meta name='keywords' content='<?php echo $htmlKeywords;?>'>
 
 <meta name='description' content='<?php echo $htmlDescription;?>'>
 

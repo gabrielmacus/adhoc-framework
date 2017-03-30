@@ -9,7 +9,7 @@
  */
 
 
-require_once ($_SERVER["DOCUMENT_ROOT"]."/adhoc/includes/framework/classes/DAO/Imagen/Imagen.php");
+require_once ("Imagen.php");
 
 class ImagenDAO extends ArchivoDAO
 {
@@ -21,7 +21,7 @@ class ImagenDAO extends ArchivoDAO
     
 
 
-    public function insertArchivo(IArchivo $i)
+    public function insertArchivo(IArchivo $i,$versionName="original",$versionId=0)
     {
 
         $files=array();
