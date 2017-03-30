@@ -1,0 +1,64 @@
+{
+  "selection": [
+    {
+      "order": 0,
+      "prevSize": 28,
+      "name": "sort-desc"
+    }
+  ],
+  "metadata": {
+    "name": "Font Awesome (subset)",
+    "url": "https://github.com/FortAwesome/Font-Awesome",
+    "designer": "Dave Gandy",
+    "designerURL": "https://github.com/davegandy",
+    "license": "Custom",
+    "licenseURL": "https://github.com/FortAwesome/Font-Awesome#license",
+    "iconsHash": 1456109136,
+    "importSize": {
+      "width": 16,
+      "height": 28
+    }
+  },
+  "height": 1024,
+  "prevSize": 28,
+  "icons": [
+    {
+      "paths": [
+        "M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z"
+      ],
+      "width": 585,
+      "tags": [
+        "sort-desc",
+        "sort-down"
+      ],
+      "grid": 14
+    }
+  ],
+  "colorThemes": [],
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {},
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      }
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50
+  },
+  "IcoMoonType": "icon-set"
+}

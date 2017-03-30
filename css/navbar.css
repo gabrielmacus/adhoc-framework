@@ -1,0 +1,107 @@
+
+
+#body > header nav ul
+{
+    list-style:none;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+
+#body > header nav ul a
+{
+
+
+    display:block;
+    color:#333;
+    text-decoration:none;
+    font-size:19px;
+    /*line-height:32px;*/
+    /*padding:0 18px;*/
+}
+
+#body > header nav ul li
+{
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:25px 20px 25px 20px;
+}
+
+#body > header nav ul li.active
+{
+    background:#ddd
+}
+
+#body > header nav ul li:hover
+{
+    background-color: #e8e5e5;
+}
+
+#body > header nav ul ul
+{
+
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#f7f7f7;
+    padding:0
+}
+
+#body > header nav ul ul li
+{
+    float:none;
+    width:200px
+}
+.fa-sort-desc
+{
+    position: relative;
+    padding: 0px!important;
+    bottom: 3px;
+    margin-left: 4px;
+}
+
+#body > header nav ul li ul .fa-sort-desc
+{
+
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+
+
+
+#body > header nav ul ul a
+{
+    line-height:120%;
+    padding:10px 15px
+}
+
+#body > header nav ul ul ul
+{
+    top:0;
+    left:100%
+}
+
+#body > header nav ul li:hover > ul
+{
+    display:block
+}
+
+
+#body > header nav
+{
+    float: left;
+    width: 100%;
+    background-color: #F2552C;
+}

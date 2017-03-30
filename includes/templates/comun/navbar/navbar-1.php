@@ -1,15 +1,60 @@
-<nav>
+
+<?php
+function loadNavbar($navbar)
+{
+
+    ?>
+    <ul>
     <?php
-    foreach ($lang["navbar"] as $item)
+    foreach ($navbar as $item)
     {
-        if(isset($item["items"]))
+        $href="";
+        $class="";
+        $text="";
+        if(isset($item["href"]))
         {
-          var_dump($item["items"]);
+            $href=$item["href"];
         }
-       ?>
-            <a class="<?php if(isset($item["class"])){ echo $item["class"];} ?>"><?php echo $item["text"];?></a>
+        if(isset($item["class"]))
+        {
+            $class=$item["class"];
+        }
+        if(isset($item["text"]))
+        {
+            $text=$item["text"];
+        }
 
-     <?php
+        $hasSubmenu=isset($item["items"]);
 
-    }?>
+
+
+        ?>
+        <li class="<?php echo $class;?>"><a href="<?php echo $href;?>"><?php echo $text;?>
+                <?php if($hasSubmenu)
+                {
+                  ?><i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    <?php
+                }?>
+            </a>
+        <?php if($hasSubmenu)
+        {
+            loadNavbar($item["items"]);
+        }?>
+        </li>
+        <?php
+    }
+    ?>
+        </ul>
+        <?php
+
+
+}
+
+
+
+?>
+
+
+<nav >
+    <?php loadNavbar($lang["navbar"]);?>
 </nav>
