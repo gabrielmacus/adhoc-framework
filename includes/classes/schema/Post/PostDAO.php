@@ -65,6 +65,32 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($p));
+
+        /** Codigo de asociacion de archivos**/
+
+        $archivos = $p->getArchivos();//Inserto los archivos adjuntos
+
+        $archivosSql ="INSERT INTO archivos_objetos (archivo_objeto_id,archivo_id,objeto_id,objeto_tabla,archivo_orden)
+VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)";
+
+
+       foreach ($archivos as  $archivo) {
+
+           $this->dataSource->runUpdate($archivosSql,
+               array(
+
+                   ":archivo_objeto_id"=>$archivo["archivo_objeto_id"],
+                   ":archivo_id"=>$archivo["archivo_id"],
+                   ":objeto_id"=>$res,
+                   ":objeto_tabla"=>$this->tableName,
+                   ":archivo_orden"=>$archivo["archivo_orden"]
+
+        ));
+
+        }
+        /*** **/
+
+
         return $res;
     }
 
@@ -112,7 +138,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function selectPosts()
     {
-        $sql = "SELECT * FROM {$this->tableName}";
+        $sql = "SELECT * FROM {$this->tableName} LEFT JOIN ";
 
         $this->dataSource->runQuery($sql,array(),function($data){
 
@@ -120,7 +146,25 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         });
 
-        return $this->posts[0];
+        $in="0";
+        foreach ($this->posts as $post)
+        {
+
+            $in=",{$post["post_id"]}";
+        }
+
+        $joinArchivos ="SELECT * FROM archivos a LEFT JOIN
+ archivos_objetos ao ON a.archivo_id = ao.archivo_id AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN (:objeto_id)";
+
+        $this->dataSource->runQuery($joinArchivos,array(
+
+            ":objeto_tabla"=>$this->tableName,
+            ":objeto_id"=>$in
+
+        ));
+
+
+        return $this->posts;
     }
 
     public function selectPostById($id)

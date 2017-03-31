@@ -6,14 +6,18 @@
  * Time: 11:53 AM
  */
 
-require_once "classes/autoload-classes.php";//Cargo las clases
-
-require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
-
+//cargo la configuracion aparte para tenerla disponible en todos los scripts
+require_once "classes/schema/DataSource.php";
+require_once "classes/schema/Configuracion/Configuracion.php";
 
 $configuracion = new Configuracion( "173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
+
+
+require_once "classes/autoload-classes.php";//Cargo las clases
+
+require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
 
 /** DAOs**/
 
@@ -25,6 +29,8 @@ $seccionDAO = new SeccionDAO($configuracion->getDataSource());
 $comentarioDAO = new ComentarioDAO($configuracion->getDataSource());
 $postDAO  = new PostDAO($configuracion->getDataSource());
 /** **/
+
+
 
 /*** Cosntantes **/
 

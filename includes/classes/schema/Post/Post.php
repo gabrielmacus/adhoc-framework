@@ -22,11 +22,30 @@ class Post
     protected $extra2;
     protected $extra3;
     protected $extra4;
+    protected $archivos=array();
 
     function __construct()
     {
 
     }
+
+    /**
+     * @return array
+     */
+    public function getArchivos()
+    {
+        return $this->archivos;
+    }
+
+    /**
+     * @param array $archivos
+     */
+    public function setArchivos($archivos)
+    {
+        $this->archivos = $archivos;
+    }
+
+
 
     /**
      * @return mixed

@@ -6,8 +6,7 @@
  * Time: 12:25 PM
  */
 
-require_once "schema/DataSource.php";
-require_once "schema/Configuracion/Configuracion.php";
+
 require_once "schema/Archivo/ArchivoDAO.php";
 require_once "schema/Imagen/ImagenDAO.php";
 require_once "schema/Repositorio/RepositorioDAO.php";
