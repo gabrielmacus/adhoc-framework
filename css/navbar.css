@@ -14,7 +14,7 @@
 
 
     display:block;
-    color:#333;
+    color:white!important;
     text-decoration:none;
     font-size:19px;
     /*line-height:32px;*/
@@ -37,11 +37,25 @@
 #body > header nav ul li.active
 {
     background:#ddd
-}
 
+}
+#body > header nav ul li.active a
+{
+    color: black!important;
+
+}
+#body > header nav ul li:hover a
+{
+    color: black!important;
+}
 #body > header nav ul li:hover
 {
     background-color: #e8e5e5;
+   
+}
+#body > header nav ul li ul li a
+{
+    color: #000!important;
 }
 
 #body > header nav ul ul
@@ -76,6 +90,13 @@
     -ms-transform: rotate(270deg);
     -o-transform: rotate(270deg);
     transform: rotate(270deg);
+
+
+    position: relative;
+    padding: 0px!important;
+    bottom: 0px;
+    margin-left: 4px;
+
 }
 
 
@@ -101,7 +122,13 @@
 
 #body > header nav
 {
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
     float: left;
     width: 100%;
-    background-color: #F2552C;
+    background-color: rgba(22, 22, 22, 0.84);
+
 }

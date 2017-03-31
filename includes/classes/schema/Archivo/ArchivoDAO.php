@@ -58,6 +58,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->validate($a);
 
         $r =     $a->getRepositorio();
+        
         $ftp  =$r->getFtp();
 
         $fileName = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones

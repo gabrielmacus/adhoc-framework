@@ -14,10 +14,16 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $p = new Post();
-    $p->setTexto("AA");
-    $p->setSeccion(1);
-    $postDAO->insertPost($p);
+
+    $posts=$GLOBALS["postDAO"]->selectPosts();
+    foreach ($posts as $p)
+    {
+        $archivos=$p->getArchivos();
+        var_dump($archivos[1][59]["original"]->getRepositorio());
+    }
+
+
+
 
 }
 catch (Exception $e)

@@ -21,13 +21,14 @@ require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
 
 /** DAOs**/
 
-$userDAO = new UserDAO($configuracion->getDataSource());
-$archivoDAO = new ArchivoDAO($configuracion->getDataSource());
-$imagenDAO = new ImagenDAO($configuracion->getDataSource());
-$repositorioDAO = new RepositorioDAO($configuracion->getDataSource());
-$seccionDAO = new SeccionDAO($configuracion->getDataSource());
-$comentarioDAO = new ComentarioDAO($configuracion->getDataSource());
-$postDAO  = new PostDAO($configuracion->getDataSource());
+
+$GLOBALS["userDAO"]  = new UserDAO($configuracion->getDataSource());
+$GLOBALS["archivoDAO"] = new ArchivoDAO($configuracion->getDataSource());
+$GLOBALS["imagenDAO"] = new ImagenDAO($configuracion->getDataSource());
+$GLOBALS["repositorioDAO"] = new RepositorioDAO($configuracion->getDataSource());
+$GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
+$GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
+$GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
 /** **/
 
 

@@ -55,6 +55,6 @@ function loadNavbar($navbar)
 ?>
 
 
-<nav >
+<nav>
     <?php loadNavbar($lang["navbar"]);?>
 </nav>

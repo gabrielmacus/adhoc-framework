@@ -112,7 +112,7 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
             ":post_extra_4"=>$p->getExtra4()
         );
     }
-    private function query($data)
+    private function query($data,$byId=false)
     {
 
         $p= new Post();
@@ -130,7 +130,15 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
         $p->setExtra2($data["post_extra_1"]);
         $p->setExtra3($data["post_extra_1"]);
         $p->setExtra4($data["post_extra_1"]);
-        array_push($this->posts, $p);
+        if(!$byId)
+        {
+            array_push($this->posts, $p);
+        }
+        else
+        {
+            $this->posts[$p->getId()]=$p;
+        }
+
 
     }
 
@@ -138,30 +146,66 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
 
     public function selectPosts()
     {
-        $sql = "SELECT * FROM {$this->tableName} LEFT JOIN ";
+        $sql = "SELECT * FROM {$this->tableName} ";
 
-        $this->dataSource->runQuery($sql,array(),function($data){
+        $this->dataSource->runQuery($sql, array(), function ($data) {
 
-            $this->query($data);
+            $this->query($data, true);
 
         });
 
-        $in="0";
-        foreach ($this->posts as $post)
-        {
+        $in = "0";
+        foreach ($this->posts as $post) {
 
-            $in=",{$post["post_id"]}";
+            $in.= ",{$post->getId()}";
         }
 
-        $joinArchivos ="SELECT * FROM archivos a LEFT JOIN
- archivos_objetos ao ON a.archivo_id = ao.archivo_id AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN (:objeto_id)";
+        $joinArchivos = "SELECT * FROM archivos a LEFT JOIN
+ archivos_objetos ao ON a.archivo_id = ao.archivo_id AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN ({$in}) ";
 
-        $this->dataSource->runQuery($joinArchivos,array(
+        $archivos = $this->dataSource->runQuery($joinArchivos, array(
 
-            ":objeto_tabla"=>$this->tableName,
-            ":objeto_id"=>$in
+            ":objeto_tabla" => $this->tableName,
 
         ));
+
+
+
+        foreach ($archivos as $archivo)
+        {
+
+
+
+            if(isset($archivo["archivo_objeto_id"]))
+            {
+
+             $p= $this->posts[$archivo["archivo_objeto_id"]];
+
+                $postArchivos=$p->getArchivos();
+
+            $idOriginal = $archivo["archivo_id"];
+                if($archivo["archivo_id"]==0)
+                {
+
+                    $idOriginal=$archivo["archivo_version"];
+
+                }
+                $archivo= new Archivo($archivo["archivo_size"],
+                    $archivo["archivo_name"],$archivo["archivo_mime"],
+                    $archivo["archivo_version"],$archivo["archivo_real_name"],null,$archivo["archivo_repositorio"],$archivo["archivo_path"],
+                    $archivo["archivo_creation"],$archivo["archivo_modification"],$archivo["archivo_id"],$archivo["archivo_version_name"],$archivo["archivo_type"]);
+
+
+                $postArchivos[$archivo->getType()][$idOriginal][$archivo->getVersionName()]=$archivo;
+
+
+                $p->setArchivos($postArchivos);
+
+
+
+            }
+
+        }
 
 
         return $this->posts;

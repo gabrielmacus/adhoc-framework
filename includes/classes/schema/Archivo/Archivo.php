@@ -37,7 +37,7 @@ class Archivo
      * @param $id
      */
     
-    public function __construct($size, $name, $mime,$version=null,$realName=null, $tmpPath=null,Repositorio $repositorio,$path=null,$creation=null, $modification=null,$id=null,$versionName=null,$type=0)
+    public function __construct($size, $name, $mime,$version=null,$realName=null, $tmpPath=null,$repositorio,$path=null,$creation=null, $modification=null,$id=null,$versionName=null,$type=0)
     {
 
         $this->size = $size;
@@ -149,6 +149,11 @@ class Archivo
      */
     public function getRepositorio()
     {
+        if(is_numeric($this->repositorio)) //Si es un numero, el repositorio debe ser cargado con una consulta
+        {
+            $this->repositorio = $GLOBALS["repositorioDAO"]->selectRepositorioById($this->repositorio);
+
+        }//De otra manera, ya esta cargado
         return $this->repositorio;
     }
 

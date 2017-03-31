@@ -22,8 +22,20 @@ $r  = $repositorioDAO->selectRepositorioById(1);
 $archivos=array();
 foreach ($_FILES as $file)
 {
-    $archivoId=$archivoDAO->insertArchivo(new Archivo($file["size"],$file["name"],$file["type"],null,null,$file["tmp_name"],$r));
-    $archivos[]=array("archivo_id"=>$archivoId,"archivo_orden"=>0);
+
+    if(isImage($file["tmp_name"]))
+    {
+        $archivoId=$imagenDAO->insertArchivo(new Imagen($file["size"],$file["name"],$file["type"],null,null,$file["tmp_name"],$r));
+        $archivos[]=array("archivo_id"=>$archivoId,"archivo_orden"=>0);
+    }
+    else
+    {
+        $archivoId=$archivoDAO->insertArchivo(new Archivo($file["size"],$file["name"],$file["type"],null,null,$file["tmp_name"],$r));
+        $archivos[]=array("archivo_id"=>$archivoId,"archivo_orden"=>0);
+    }
+
+
+
 
 }
 

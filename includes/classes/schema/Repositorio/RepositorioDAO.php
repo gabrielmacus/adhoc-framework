@@ -85,7 +85,7 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
         $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],
         $data["repositorio_pass"],$data["repositorio_name"], $data["repositorio_path"],
-        $data["repositorio_port"],$data["repositorio_creation"],$data["repositorio_creation"],
+        $data["repositorio_port"],$data["repositorio_creation"],
         $data["repositorio_modification"],$data["repositorio_id"]);
         
         array_push($this->repositorios, $r);

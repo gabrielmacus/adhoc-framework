@@ -44,6 +44,8 @@ class Post
     {
         $this->archivos = $archivos;
     }
+    
+    
 
 
 
