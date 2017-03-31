@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Puers
+ * Date: 31/03/2017
+ * Time: 0:38
+ */
+require_once "IPost.php";
+require_once "Post.php";
+class PostDAO implements IPost
+{
+
+
+    protected $dataSource;
+    protected $tableName;
+    protected $posts=array();
+    private $insertSql;
+    private $updateSql;
+
+    /**
+     * UserDAO constructor.
+     * @param $dataSource
+     * @param $tableName
+     */
+    public function __construct(DataSource $dataSource, $tableName="posts")
+    {
+        $this->dataSource = $dataSource;
+        $this->tableName = $tableName;
+        $this->insertSql="INSERT INTO  {$this->tableName} 
+ (post_id,post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas,
+ post_seccion,post_creacion,post_modificacion,
+ post_extra_1,post_extra_2,post_extra_3,post_extra_4)
+ VALUES 
+ (:post_id,:post_titulo,:post_volanta,:post_bajada,:post_texto,:post_etiquetas,
+ :post_seccion,:post_creacion,:post_modificacion,
+  :post_extra_1,:post_extra_2,:post_extra_3,:post_extra_4)";
+
+        $this->updateSql="UPDATE {$this->tableName}  SET
+post_id=:post_id,post_titulo=:post_titulo,
+post_volanta=:post_volanta,post_bajada=:post_bajada,
+post_texto=:post_texto,post_etiquetas=:post_etiquetas,
+ post_seccion=:post_seccion,post_creacion=:post_creacion,post_modificacion=:post_modificacion
+  post_extra_1=:post_extra_1,post_extra_2=:post_extra_2,post_extra_3=:post_extra_3,post_extra_4=:post_extra_4 WHERE post_id=:post_id";
+
+    }
+
+
+
+    public function insertPost(Post $p)
+    {
+        $this->validate($p);
+
+        $sql = $this->insertSql;
+
+        if(!$p->getCreacion())
+        {
+            $p->setCreacion(time());
+        }
+
+        if(!$p->getModificacion())
+        {
+            $p->setModificacion(time());
+        }
+
+        $res= $this->dataSource->runUpdate($sql,
+            $this->getParamsArray($p));
+        return $res;
+    }
+
+    private function getParamsArray(Post $p)
+    {
+        return    array(
+           ":post_id"=>$p->getId()
+        ,":post_titulo"=>$p->getTitulo(),
+        ":post_volanta"=>$p->getVolanta(),
+        ":post_bajada"=>$p->getBajada(),
+        ":post_texto"=>$p->getTexto(),
+        ":post_etiquetas"=>$p->getEtiquetas(),
+ ":post_seccion"=>$p->getSeccion(),
+        ":post_creacion"=>$p->getCreacion(),
+        ":post_modificacion"=>$p->getModificacion(),
+            ":post_extra_1"=>$p->getExtra1(),
+            ":post_extra_2"=>$p->getExtra2(),
+            ":post_extra_3"=>$p->getExtra3(),
+            ":post_extra_4"=>$p->getExtra4()
+        );
+    }
+    private function query($data)
+    {
+
+        $p= new Post();
+
+        $p->setId($data["post_id"]);
+        $p->setTitulo($data["post_titulo"]);
+        $p->setVolanta($data["post_volanta"]);
+        $p->setBajada($data["post_bajada"]);
+        $p->setTexto($data["post_texto"]);
+        $p->setEtiquetas($data["post_etiquetas"]);
+        $p->setSeccion($data["post_seccion"]);
+        $p->setCreacion($data["post_creacion"]);
+        $p->setModificacion($data["post_modificacion"]);
+        $p->setExtra1($data["post_extra_1"]);
+        $p->setExtra2($data["post_extra_1"]);
+        $p->setExtra3($data["post_extra_1"]);
+        $p->setExtra4($data["post_extra_1"]);
+        array_push($this->posts, $p);
+
+    }
+
+
+
+    public function selectPosts()
+    {
+        $sql = "SELECT * FROM {$this->tableName}";
+
+        $this->dataSource->runQuery($sql,array(),function($data){
+
+            $this->query($data);
+
+        });
+
+        return $this->posts[0];
+    }
+
+    public function selectPostById($id)
+    {
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE post_id=:post_id";
+
+        $this->dataSource->runQuery($sql,array(":post_id"=>$id),function($data){
+            $this->query($data);
+        });
+
+        return $this->secciones[0];
+    }
+
+    public function updatePost(Post $p)
+    {
+        $this->validate($p);
+
+        $sql = $this->updateSql;
+        $res= $this->dataSource->runUpdate($sql,
+            $this->getParamsArray($p));
+        return $res;
+    }
+
+    public function deletePostById($id)
+    {
+
+        $sql = "DELETE FROM {$this->tableName} WHERE post_id= :post_id";
+
+        $res= $this->dataSource->runUpdate($sql,
+            array(
+                ":post_id"=>$id
+            ));
+        return $res;
+    }
+
+    public function validate(Post $p)
+    {
+        // TODO: Implement validate() method.
+    }
+
+}

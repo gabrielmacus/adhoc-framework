@@ -24,6 +24,7 @@ class Archivo
     protected $version;
     protected $versionName;
     protected $type;
+
     /**
      * Archivo constructor.
      * @param $size

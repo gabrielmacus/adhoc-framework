@@ -220,6 +220,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql=$this->updateSql;
 
+        $a->setModification(time());
 
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($a));

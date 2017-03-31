@@ -14,8 +14,10 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-
-
+    $p = new Post();
+    $p->setTexto("AA");
+    $p->setSeccion(1);
+    $postDAO->insertPost($p);
 
 }
 catch (Exception $e)

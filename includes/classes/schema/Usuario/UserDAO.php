@@ -119,7 +119,9 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
     public function updateUsuario(User $u)
     {
         $this->validate($u);
-        
+
+        $u->setModification(time());
+
         $sql = $this->updateSql;
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($u));

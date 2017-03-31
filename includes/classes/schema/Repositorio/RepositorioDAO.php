@@ -130,6 +130,7 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
         $sql=$this->updateSql;
 
+        $r->setModification(time());
 
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($r));

@@ -21,8 +21,9 @@ $userDAO = new UserDAO($configuracion->getDataSource());
 $archivoDAO = new ArchivoDAO($configuracion->getDataSource());
 $imagenDAO = new ImagenDAO($configuracion->getDataSource());
 $repositorioDAO = new RepositorioDAO($configuracion->getDataSource());
-
-
+$seccionDAO = new SeccionDAO($configuracion->getDataSource());
+$comentarioDAO = new ComentarioDAO($configuracion->getDataSource());
+$postDAO  = new PostDAO($configuracion->getDataSource());
 /** **/
 
 /*** Cosntantes **/
