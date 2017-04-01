@@ -118,6 +118,30 @@
 {
     display:block
 }
+#body > header nav .menu-btn
+{
+    float: right;
+
+}
+#body > header nav .menu-btn li
+{
+    padding: 22px;
+    color: white!important;
+
+
+}
+#body > header nav .menu-btn li:hover i
+{
+    color: black;
+    font-size: 25px;
+
+}
+
+#body > header nav .menu-btn li i
+{
+    font-size: 25px;
+    cursor: pointer;
+}
 
 
 #body > header nav

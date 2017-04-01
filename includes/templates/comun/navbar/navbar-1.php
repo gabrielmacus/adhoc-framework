@@ -44,7 +44,12 @@ function loadNavbar($navbar)
         <?php
     }
     ?>
+
         </ul>
+
+
+
+
         <?php
 
 
@@ -57,4 +62,7 @@ function loadNavbar($navbar)
 
 <nav>
     <?php loadNavbar($lang["navbar"]);?>
+    <ul class="menu-btn">
+        <li><i class="fa fa-bars" aria-hidden="true"></i></li>
+    </ul>
 </nav>

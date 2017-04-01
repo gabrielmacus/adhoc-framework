@@ -1,10 +1,17 @@
 
+body
+{
+    width: 100%!important;
 
+}
 a
 {
     cursor: pointer;
 }
-
+#body
+{
+    position: relative;
+}
 #body > footer {
     position: absolute;
     right: 0;

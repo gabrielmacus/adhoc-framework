@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
@@ -17,6 +18,7 @@
 
        <header>
           <?php include "navbar/navbar-1.php"?>
+
        </header>
 
        <section>
@@ -35,5 +37,13 @@
    </div>
 
 
+       <?php include "sidenav/sidenav-1.php"?>
+
+
+
 </body>
 </html>
+<?php
+
+session_write_close();
+?>

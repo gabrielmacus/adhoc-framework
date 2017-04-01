@@ -23,3 +23,9 @@ require_once "schema/FtpClient/FtpClient.php";
 require_once "schema/FtpClient/FtpException.php";
 require_once "schema/FtpClient/FtpWrapper.php";
 /** **/
+
+/** Facebook API**/
+
+require_once "schema/Facebook/autoload.php";
+
+/** **/

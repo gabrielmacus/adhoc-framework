@@ -15,16 +15,13 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
-    $posts=$GLOBALS["postDAO"]->selectPosts();
-    foreach ($posts as $p)
-    {
-        $archivos=$p->getArchivos();
-        var_dump($archivos[1][59]["original"]->getRepositorio());
-    }
+$fb = new \Facebook\Facebook($GLOBALS["fbConfig"]);
 
+    $helper = $fb->getRedirectLoginHelper();
+    $permissions = ['email', 'user_likes']; // optional
+    $loginUrl = $helper->getLoginUrl("http://{$configuracion->getSiteAddress()}/login-callback.php", $permissions);
 
-
-
+    $a='<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 }
 catch (Exception $e)
 {
