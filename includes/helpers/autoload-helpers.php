@@ -6,3 +6,4 @@ include "files.php";
 include "requests.php";
 include "strings.php";
 include "users.php";
+include "facebook.php";

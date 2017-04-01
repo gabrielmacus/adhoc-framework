@@ -31,6 +31,7 @@ $GLOBALS["repositorioDAO"] = new RepositorioDAO($configuracion->getDataSource())
 $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
+
 /** **/
 
 /** FB API **/
@@ -38,6 +39,7 @@ $GLOBALS["fbConfig"]=[
     'app_id' => '1874200559512926',
     'app_secret' => '28f2d83d08132603be62ab63435d4618',
     'default_graph_version' => 'v2.8',
+    'permissions'=>['publish_actions','user_managed_groups']
 ];
 /** **/
 

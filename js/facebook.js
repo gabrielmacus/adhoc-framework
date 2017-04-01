@@ -1,6 +1,6 @@
 
 
-var facebookPermissions=[ 'publish_actions','user_friends'];
+var facebookPermissions=[ 'publish_actions','user_friends','user_managed_groups'];
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -51,7 +51,13 @@ function solicitarPermisos() {
 
     })
 }
+
+
 function facebookReady(e) {
+
+    /*
+    publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
+    */
 
   /*  verAmigos(function (friends) {
         console.log(friends);
@@ -66,7 +72,67 @@ function facebookReady(e) {
 
     });*/
 
+
+
 }
+
+function publicarImagenEnGrupo(img,msg,grupo,callback)
+{
+    FB.api(
+        "/"+grupo+"/photos",
+        "POST",
+        {
+            "url":img,
+            "message":msg
+        },
+        function (response) {
+
+            console.log(response);
+            if(callback)
+            {
+                callback();
+
+            }
+
+        }
+    );
+}
+function publicarEnGrupo(msg,link,grupo,callback)
+{
+    FB.api(
+        "/"+grupo+"/feed",
+        "POST",
+        {
+            "message":msg,
+            "link":link
+        },
+        function (response) {
+            console.log(response);
+            if(callback)
+            {
+                callback();
+
+            }
+        }
+    );
+}
+
+function verGrupos(callback,options) {
+
+    if(!options)
+    {
+        options={};
+    }
+    FB.api('/me/groups','get',options,function (e) {
+        if(callback)
+        {
+            callback(e.data);
+        }
+    })
+}
+
+
+
 function listarPermisos(callback) {
     FB.api('/me/permissions', function(response) {
         var permissions = [];
@@ -86,9 +152,13 @@ function listarPermisos(callback) {
     });
 }
 
-function verAmigos(callback) {
+function verAmigos(callback,options) {
 
-    FB.api('/me/friends','get',{},function (e) {
+    if(!options)
+    {
+        options={};
+    }
+    FB.api('/me/friends','get',options,function (e) {
         if(callback)
         {
             callback(e.data);

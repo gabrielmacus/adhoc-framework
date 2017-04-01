@@ -7,6 +7,9 @@
  */
 include "includes/autoload.php";
 
+$fbUrl=getLoginUrlFB($GLOBALS["fbConfig"], $configuracion->getSiteAddress()."/fb-callback.php");
+
+/*
 $fb = new Facebook\Facebook([
     'app_id' => $GLOBALS["fbConfig"]["app_id"], // Replace {app-id} with your app id
     'app_secret' => $GLOBALS["fbConfig"]["app_secret"],
@@ -18,4 +21,4 @@ $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email','publish_actions']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('http://localhost/adhoc-framework/fb-callback.php', $permissions);
 
-echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';*/
