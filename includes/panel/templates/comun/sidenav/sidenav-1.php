@@ -4,9 +4,26 @@
 
     {
         ?>
-        <li class="<?php echo $item["class"]; ?>"><a href="<?php echo $item["href"]?>"><?php echo $item["text"] ?></a></li>
+        <li class="<?php echo $item["class"]; ?>">
+            <a href="<?php echo $item["href"]?>"><?php echo $item["text"] ?></a>
+            <a class="mask"><?php echo $item["text"] ?></a>
+
+            </div>
+        </li>
         <?php
-    }?>
+    }
+
+
+    if(count($lang["sidenav"])==0)
+    {
+        ?>
+        <li><a>No hay opciones disponibles</a>
+            <a class="mask"> hay opciones disponibles</a>
+        </li>
+        <?php
+    }
+
+    ?>
 
 </ul>
 <script>

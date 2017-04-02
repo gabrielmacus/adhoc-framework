@@ -9,6 +9,7 @@ include "includes/autoload.php";
 
 $fbUrl=getLoginUrlFB($GLOBALS["fbConfig"], $configuracion->getSiteAddress()."/fb-callback.php");
 
+echo "<a href='{$fbUrl}'>Login with FB</a>";
 /*
 $fb = new Facebook\Facebook([
     'app_id' => $GLOBALS["fbConfig"]["app_id"], // Replace {app-id} with your app id

@@ -1,6 +1,6 @@
 
 
-var facebookPermissions=[ 'publish_actions','user_friends','user_managed_groups'];
+
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -55,9 +55,20 @@ function solicitarPermisos() {
 
 function facebookReady(e) {
 
+
+
+  //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);
+
     /*
-    publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
-    */
+    setInterval(function () {
+
+       publicarEnGrupo("Vendo secador, muy poco uso, excelente estado $500")
+
+    },900000);
+*/
+
+    //publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
+
 
   /*  verAmigos(function (friends) {
         console.log(friends);
