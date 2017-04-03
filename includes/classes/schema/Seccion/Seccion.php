@@ -7,15 +7,32 @@
  * Time: 23:14
  */
 
-class Seccion
+class Seccion implements JsonSerializable
 {
     protected $id;
     protected $nombre;
-    protected $tipo=0;
-
+    protected  $tipo=0;
+    protected $secciones=array();
     function __construct()
     {
     }
+
+    /**
+     * @return array
+     */
+    public function getSecciones()
+    {
+        return $this->secciones;
+    }
+
+    /**
+     * @param array $secciones
+     */
+    public function setSecciones($secciones)
+    {
+        $this->secciones = $secciones;
+    }
+    
 
     /**
      * @return mixed
@@ -66,4 +83,8 @@ class Seccion
     }
 
 
+    function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 }

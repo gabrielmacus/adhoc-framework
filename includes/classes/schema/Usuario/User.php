@@ -36,7 +36,7 @@ class User
         $this->surname = $surname;
         $this->age = $age;
         $this->email = $email;
-        $this->password = hash("md5",$password);
+        $this->password = hash("sha256",$password);
         $this->nickname = $nickname;
         $this->creation = $creation;
         $this->modification = $modification;

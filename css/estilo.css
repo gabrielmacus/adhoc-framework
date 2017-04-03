@@ -36,6 +36,37 @@ body
 {
     font-family: 'Ubuntu',sans-serif!important;
 }
+
+
+/**** secciones **/
+.secciones-wrapper
+{
+
+    float: left;
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+background-color: #f7f7f7;
+    font-size: 20px;
+}
+.delete-seccion
+{
+    float: right;
+}
+.secciones:nth-child(2)
+{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+
+
+
+#pertenece-a
+{
+    font-weight: 500;
+}
+/****/
 /*
 
 #body > header nav a:hover

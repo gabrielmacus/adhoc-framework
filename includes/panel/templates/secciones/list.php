@@ -1,95 +1,116 @@
 
+
 <script>
 
-    angular.element(function () {
-        scope.secciones =[];
-        <?php
-                foreach ($secciones as $seccion)
-                {
-                    ?>
-        scope.secciones.push({id:<?php echo $seccion->getId();?>
-            ,nombre:"<?php echo $seccion->getNombre();?>",
-            tipo:<?php echo $seccion->getTipo();?>
-        });
-        <?php
-                }
-            ?>;
 
-        scope.addSeccion = function () {
-            $.ajax(
-                {
-                    "method":"post",
-                    "url":"add.php",
-                    "data":angular.copy(scope.seccion),
-                    "dataType":"json",
-                    "success":function (e) {
-                        scope.secciones.push(e);
-                        scope.seccion={};
-                        scope.$apply();
-                    }
-                    ,"error":error
-                }
-            );
 
+    function loadSecciones() {
+        $.ajax(
+            {
+                "method":"post",
+                "url":"load.php",
+                "success":function (e) {
+                  $(".secciones-wrapper").html(e);
+                }
+                ,"error":error
+            }
+        );
+    }
+
+
+    $(document).ready(
+        function () {
+            loadSecciones();
         }
-        scope.deleteSeccion = function (s) {
-            $.ajax(
-                {
-                    "method":"post",
-                    "url":"delete.php",
-                    "data":angular.copy(s),
-                    "dataType":"json",
-                    "success":function (e) {
+    );
+    $(document).on("click",".delete-seccion",function (e) {
 
-                        if(e)
-                        {
-                            var idx = scope.secciones.indexOf(s);
+        var li= $(this).closest("li");
+        var id= li.data("id");
 
-                            scope.secciones.splice(idx,1);
-                            scope.$apply();
-                        }
-
+        $.ajax(
+            {
+                "method":"post",
+                "url":"delete.php",
+                "data":{id:id},
+                "dataType":"json",
+                "success":function (e) {
+                    if(e)
+                    {
+                        loadSecciones();
                     }
-                    ,"error":error
                 }
-            );
+                ,"error":error
+            }
+        );
 
-        }
-
-        scope.$apply();
+        e.stopPropagation();
 
     });
 
+    $(document).on("click",".secciones li",function (e) {
+
+       var li= $(this).closest("li");
+        var id= li.data("id");
+        var nombre = li.data("nombre");
+
+        li.addClass("active");
+        $("[name='tipo']").val(id);
+        $("#pertenece-a").html(nombre);
+        e.stopPropagation();
+
+    });
+        $(document).on("submit","#add-seccion",function (e) {
+
+        e.preventDefault();
+        $.ajax(
+            {
+                "method":"post",
+                "url":"add.php",
+                "data":$(this).serialize(),
+                "dataType":"json",
+                "success":function (e) {
+                    loadSecciones();
+                }
+                ,"error":error
+            }
+        );
+
+    });
+
+
 </script>
+
+
+
 
 <h3>Secciones</h3>
 
-<form data-ng-submit="addSeccion()">
+<form id="add-seccion" >
 
     <div>
         <label>Nombre</label>
-        <input data-ng-model="seccion.nombre" type="text">
+        <input name="nombre" type="text">
     </div>
 
     <div>
-        <label>Pertenece a</label>
-        <select data-ng-model="seccion.tipo">
-            <option>Ninguna seccion</option>
-
-            <option data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
-        </select>
+        <label>Pertenece a <b id="pertenece-a">ninguna seccion</b></label>
     </div>
+    <input name="tipo" hidden value="0">
     <button type="submit">Agregar seccion</button>
 </form>
 
 </form>
 
-<ul class="secciones">
-    <li data-ng-repeat="s in secciones" data-id="{{s.id}}">#{{s.id}} {{s.nombre}} <span data-ng-click="deleteSeccion(s)">x</span></li>
 
-    <li data-ng-if="secciones.length==0">
-        <h3>No hay secciones disponibles</h3>
-    </li>
-</ul>
+<div class="secciones-wrapper">
+
+
+</div>
+
+
+
+
+
 
 

@@ -16,16 +16,10 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
-  
-  $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
+    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
-  
-
-
-
-
-
+    
     $site="secciones";
     $action="list";
 }

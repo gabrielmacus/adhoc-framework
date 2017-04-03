@@ -11,7 +11,7 @@ require_once ("ISeccion.php");
 require_once ("Seccion.php");
 
 
-class SeccionDAO
+class SeccionDAO implements ISeccion
 {
 
     protected $dataSource;
@@ -37,7 +37,73 @@ class SeccionDAO
 ,seccion_tipo=:seccion_tipo WHERE seccion_id=:seccion_id";
 
     }
+    private function arrangeSeccionesTree($s,&$array)
+    {
+        $tipo=$s->getTipo();
+        $id=$s->getId();
 
+
+            if($tipo==0)
+            {
+                $array[$id]=$s;
+
+
+            }
+            else
+            {
+
+                if($array[$tipo])
+                {
+                    $secciones = $array[$tipo]->getSecciones();
+
+                    $secciones[$id]=$s;
+                    $array[$tipo]->setSecciones($secciones);
+
+                }
+                else
+                {
+                    foreach ($array as $seccion)
+                    {
+                        if(count($seccion->getSecciones())>0)
+                        {
+                            $this->arrangeSeccionesTree($s,$seccion->getSecciones());
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+
+
+
+    }
+
+    public function selectSeccionesSubsecciones()
+    {
+        $sql = "SELECT * FROM {$this->tableName}";
+
+
+
+        $this->dataSource->runQuery($sql,array(),function($data){
+
+            $s=new Seccion();
+            $s->setId($data["seccion_id"]);
+            $s->setNombre($data["seccion_nombre"]);
+            $s->setTipo($data["seccion_tipo"]);
+
+
+            $this->arrangeSeccionesTree($s,$this->secciones);
+
+
+
+        });
+
+
+        return $this->secciones;
+    }
 
 
     public function insertSeccion(Seccion $s)
@@ -61,21 +127,25 @@ class SeccionDAO
     }
     private function query($data)
     {
+
+
         $s=new Seccion();
         $s->setId($data["seccion_id"]);
         $s->setNombre($data["seccion_nombre"]);
         $s->setTipo($data["seccion_tipo"]);
+
         array_push($this->secciones, $s);
 
     }
 
-
+ 
 
     public function selectSecciones()
     {
         $sql = "SELECT * FROM {$this->tableName}";
-
+        $this->secciones=array();
         $this->dataSource->runQuery($sql,array(),function($data){
+
 
 
             $this->query($data);
@@ -84,6 +154,9 @@ class SeccionDAO
 
         return $this->secciones;
     }
+
+
+
 
     public function selectSeccionById($id)
     {
@@ -110,12 +183,13 @@ class SeccionDAO
     public function deleteSeccionById($id)
     {
 
-        $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id";
+        $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id OR seccion_tipo=:seccion_id ";
 
         $res= $this->dataSource->runUpdate($sql,
             array(
                 ":seccion_id"=>$id
             ));
+    
         return $res;
     }
 
