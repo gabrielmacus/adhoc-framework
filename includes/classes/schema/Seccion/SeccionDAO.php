@@ -65,7 +65,7 @@ class SeccionDAO
         $s->setId($data["seccion_id"]);
         $s->setNombre($data["seccion_nombre"]);
         $s->setTipo($data["seccion_tipo"]);
-        array_push($this->users, $s);
+        array_push($this->secciones, $s);
 
     }
 
@@ -77,11 +77,12 @@ class SeccionDAO
 
         $this->dataSource->runQuery($sql,array(),function($data){
 
+
             $this->query($data);
 
         });
 
-        return $this->secciones[0];
+        return $this->secciones;
     }
 
     public function selectSeccionById($id)

@@ -3,12 +3,13 @@
     <?php foreach ($lang["sidenav"] as $item)
 
     {
+
         ?>
         <li class="<?php echo $item["class"]; ?>">
             <a href="<?php echo $item["href"]?>"><?php echo $item["text"] ?></a>
             <a class="mask"><?php echo $item["text"] ?></a>
 
-            </div>
+
         </li>
         <?php
     }

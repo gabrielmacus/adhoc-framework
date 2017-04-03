@@ -17,9 +17,22 @@
 
     
 </head>
-<body >
+<body data-ng-app="panel" data-ng-controller="panelCtrl">
 
+<script>
+    function error() {
 
+        alert("Error desconocido");
+    }
+    var app = angular.module('panel', ['ui.sortable']);
+    var scope;
+    app.controller('panelCtrl', function($scope) {
+
+        scope=$scope;
+
+    });
+
+</script>
 <div id="body">
     <header>
         <?php include "navbar/navbar-1.php" ?>
