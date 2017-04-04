@@ -19,9 +19,9 @@ try{
 
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
-    
+
     $site="posts";
-    $action="list";
+    $action="add";
 }
 catch (Exception $e)
 {

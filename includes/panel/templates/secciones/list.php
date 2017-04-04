@@ -23,7 +23,16 @@
             loadSecciones();
         }
     );
-    $(document).on("click",".delete-seccion",function (e) {
+    $(document).on("click",function (e) {
+
+        if ($(this).closest(".secciones").length == 0) {
+            $("[name='tipo']").val(0);
+            $("#pertenece-a").html("ninguna seccion");
+        }
+
+
+    });
+        $(document).on("click",".delete-seccion",function (e) {
 
         var li= $(this).closest("li");
         var id= li.data("id");
