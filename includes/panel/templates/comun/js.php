@@ -7,3 +7,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 <script src="<?php echo $configuracion->getJsCdn()."/js/facebook.js"; ?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
+<script src="<?php  echo $configuracion->getJsCdn()."/js/rangyinputs-jquery-src.js"?>"></script>

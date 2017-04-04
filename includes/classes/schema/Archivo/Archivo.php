@@ -24,6 +24,7 @@ class Archivo
     protected $version;
     protected $versionName;
     protected $type;
+    protected $galeria;
 
     /**
      * Archivo constructor.
@@ -56,6 +57,24 @@ class Archivo
         $this->versionName=$versionName;
         $this->type=$type;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGaleria()
+    {
+        return $this->galeria;
+    }
+
+    /**
+     * @param mixed $galeria
+     */
+    public function setGaleria($galeria)
+    {
+        $this->galeria = $galeria;
+    }
+
+    
 
     /**
      * @return int

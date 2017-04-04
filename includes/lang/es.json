@@ -1,1 +1,5 @@
-{"navbar":[{"text":"Inicio"},{"text":"Secciones"},{"text":"Men&uacute;"},{"text":"Configuraci&oacute;n"}],"sidenav":[{"href":"\/adhoc-framework\/admin\/noticias\/","text":"Noticias"}]}
+{"navbar":[{"text":"Inicio"},{"text":"Secciones"},{"text":"Menú"},{"text":"Configuración"
+,"items":[{"text":"Repositorios","href":"/adhoc-framework/admin/repositorios"},
+    {"text":"Usuarios"}]}],
+  "sidenav":[{"href":"\/adhoc-framework\/admin\/noticias\/","text":"Noticias"}],
+"dateFormat":"d/m/Y"}

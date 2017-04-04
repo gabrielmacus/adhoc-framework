@@ -32,17 +32,17 @@ class ArchivoDAO implements IArchivo
 archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, archivo_name=:archivo_name, 
  archivo_extension=:archivo_extension, archivo_creation=:archivo_creation, 
  archivo_modification=:archivo_modification,archivo_repositorio=:archivo_repositorio,archivo_path=:archivo_path
- ,archivo_version=:archivo_version,archivo_real_name=:archivo_real_name,archivo_version_name=:archivo_version_name,
+ ,archivo_version=:archivo_version,archivo_real_name=:archivo_real_name,archivo_version_name=:archivo_version_name,archivo_galeria=:archivo_galeria,
  ,archivo_alto=:archivo_alto,archivo_ancho=:archivo_ancho,archivo_type=:archivo_type
    WHERE archivo_id=:archivo_id OR archivo_version=:archivo_id ";
 
         $this->insertSql="INSERT INTO  {$this->tableName} 
  (archivo_id, archivo_size, archivo_mime,archivo_name, archivo_extension,
    archivo_creation, archivo_modification,archivo_repositorio,archivo_path,archivo_version,
-   archivo_real_name,archivo_version_name,archivo_alto,archivo_ancho,archivo_type)
+   archivo_real_name,archivo_version_name,archivo_alto,archivo_ancho,archivo_type,archivo_galeria)
  VALUES (:archivo_id, :archivo_size,:archivo_mime, :archivo_name, 
  :archivo_extension, :archivo_creation, 
- :archivo_modification,:archivo_repositorio,:archivo_path,:archivo_version,:archivo_real_name,:archivo_version_name,:archivo_ancho,:archivo_alto,:archivo_type)";
+ :archivo_modification,:archivo_repositorio,:archivo_path,:archivo_version,:archivo_real_name,:archivo_version_name,:archivo_ancho,:archivo_alto,:archivo_type,:archivo_galeria)";
 
         $this->deleteSql="DELETE FROM {$this->tableName} WHERE archivo_id= :archivo_id OR archivo_version= :archivo_id";
 
@@ -194,7 +194,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             ":archivo_version_name"=>$a->getVersionName(),
             ":archivo_ancho"=>$ancho,
             ":archivo_alto"=>$alto,
-            ":archivo_type"=>$a->getType()
+            ":archivo_type"=>$a->getType(),
+            ":archivo_galeria"=>$a->getGaleria()
         );
     }
 

@@ -41,7 +41,7 @@ $GLOBALS["fbConfig"]=[
 ];
 /** **/
 
-/*** Cosntantes **/
+/*** Constantes **/
 
 define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());
 /**  */
@@ -49,3 +49,14 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
+
+
+$repositoriosMenu=array();
+
+
+foreach ($repositorios as $r) {
+
+    $repositoriosMenu[]=array("text"=>$r->getName(),"href"=>$configuracion->getSiteAddress()."/admin/repositorios?id={$r->getId()}");
+}
+
+$lang["navbar"][3]["items"][0]["items"]=$repositoriosMenu;

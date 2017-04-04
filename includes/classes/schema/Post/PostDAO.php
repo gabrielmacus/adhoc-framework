@@ -195,10 +195,11 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
                     $archivo["archivo_version"],$archivo["archivo_real_name"],null,$archivo["archivo_repositorio"],$archivo["archivo_path"],
                     $archivo["archivo_creation"],$archivo["archivo_modification"],$archivo["archivo_id"],$archivo["archivo_version_name"],$archivo["archivo_type"]);
 
+//                $postArchivos[$archivo->getType()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
-                $postArchivos[$archivo->getType()][$idOriginal][$archivo->getVersionName()]=$archivo;
+                $postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
-
+            
                 $p->setArchivos($postArchivos);
 
 

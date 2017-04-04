@@ -55,8 +55,6 @@ function solicitarPermisos() {
 
 function facebookReady(e) {
 
-
-
   //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);
 
     /*
@@ -69,8 +67,9 @@ function facebookReady(e) {
 
     //publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
 
+    /*
 
-  /*  verAmigos(function (friends) {
+  verAmigos(function (friends) {
         console.log(friends);
         var f=[];
         $.each(friends,function (k,v) {
@@ -81,11 +80,66 @@ function facebookReady(e) {
 
         publicarEstado("Probando app",f);
 
-    });*/
+    });
+*/
+
+verAmigos(function (e) {
+    console.log(e);
+})
 
 
 
+
+    /*
+        FB.api(
+            "/me/messages",
+            "POST",
+            {
+               "recipient":{
+
+                   "id":1371269772926736
+               },
+                "message":{
+                    "text":"Holaa"
+                }
+            },
+            function (response) {
+
+                console.log(response);
+
+
+            }
+        );*/
+
+    /*
+    $.ajax(
+        {
+            url:"https://graph.facebook.com/v2.6/me/messages?access_token=EAAaok1KWbV4BAF3B7ZCAvjpgZCj718sWLQZAdmC5R5nfYZBRuFZAhwcTz0ZBZAQQwiFYll0hxobhhZCIqJcwkZBXw5MO9u1ra1snrjKj3PVaFTGiXjAVd11C1zI6vIjqujWRkOtavCHPkwSRYuOb9A7KSvOYBxGio4hbFkFOciNdZA5wZDZD",
+            method: "POST",
+            data: {
+                "recipient":{
+
+                    "id":1371269772926736
+                },
+                "message":{
+                    "text":"Holaa"
+                },
+                success:function(e)
+                {
+                    console.log(e);
+                },
+                error:function(e)
+                {
+                    console.log(e);
+                }
+            }
+
+        }
+    );*/
 }
+
+
+
 
 function publicarImagenEnGrupo(img,msg,grupo,callback)
 {
