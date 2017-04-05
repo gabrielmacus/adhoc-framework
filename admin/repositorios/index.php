@@ -21,7 +21,7 @@ try{
     if(is_numeric($_GET["id"]))
     {
 
-       $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"],true);
+       $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"],false);
     }
 
     var_dump($repositorio);
