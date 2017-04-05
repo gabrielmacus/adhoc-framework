@@ -6,6 +6,7 @@
         <?php if($repositorio)
         {
 
+        $r = new Repositorio();
             ?>
         scope.repositorio= {
             "puerto": "<?php echo $repositorio->getPort()?>",
@@ -132,6 +133,13 @@ else
 
     <div class="files">
 
+        <div data-ng-repeat="f in files">
+            {{f}}
+        </div>
+
+        <div class="no-files" data-ng-if="!files">
+            No hay archivos en el repositorio
+        </div>
     </div>
     <?php
 }?>

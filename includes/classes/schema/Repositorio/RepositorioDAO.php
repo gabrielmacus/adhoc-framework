@@ -80,30 +80,74 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
             ":repositorio_modification"=>$r->getModification()
         );
     }
-    private function query($data)
+
+    /**
+     * @param $data Datos del repositorio
+     * @param string $assoc Le indico si debe introducir el objeto en el array con su id como clave
+     *
+     */
+    private function query($data,$assoc=false)
     {
 
         $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],
         $data["repositorio_pass"],$data["repositorio_name"], $data["repositorio_path"],
         $data["repositorio_port"],$data["repositorio_creation"],
         $data["repositorio_modification"],$data["repositorio_id"]);
-        
-        array_push($this->repositorios, $r);
+
+        if(!$assoc)
+        {
+            array_push($this->repositorios, $r);
+        }
+        else
+        {
+            $this->repositorios[$r->getId()]=$r;
+        }
+
 
 
     }
     public function selectRepositorios()
     {
 
-        $sql = "SELECT * FROM {$this->tableName}";
+        $sql = "SELECT * FROM {$this->tableName} ";
 
 
       $this->dataSource->runQuery($sql,array(),function($data){
 
-            $this->query($data);
+            $this->query($data,true);
 
         });
 
+        $in = "";
+        foreach ($this->repositorios as $r)
+        {
+            $in.="{$r->getId()},";
+        }
+        $in =rtrim($in,",");
+
+
+        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
+
+        var_dump($in);
+        foreach ($archivos as $archivo)
+        {
+
+            if($archivo->getVersion()==0)
+            {
+                $idOriginal=$archivo->getId();
+            }
+            else
+            {
+                $idOriginal=$archivo->getVersion();
+            }
+
+            $this->repositorios[$archivo->getRepositorio()]
+            [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
+
+        }
+
+
+        echo json_encode($this->repositorios[1]);
 
     return $this->repositorios;
     }

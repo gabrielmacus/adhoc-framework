@@ -137,8 +137,27 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
+    public function selectArchivoByRepositorioId($in)
+    {
+        $this->files=array();
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+
+
+        $this->dataSource->runQuery($sql,array(),
+            function($data){
+                $this->query($data);
+            });
+
+        
+        
+        return $this->files;
+    }
+
     public function selectArchivoByVersions($id)
     {
+        $this->files=array();
+
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id OR archivo_version=:archivo_id";
 
 

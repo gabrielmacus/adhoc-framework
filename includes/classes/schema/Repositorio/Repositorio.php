@@ -18,7 +18,7 @@ class Repositorio
     protected $path;
     protected $creation;
     protected $modification;
-
+    protected $files =array();
     
     public function __construct($host, $user, $pass,  $name, $path,$port=21, $creation=false,$modification=false,$id=false)
     {
@@ -33,6 +33,24 @@ class Repositorio
         $this->modification = $modification;
     }
 
+    /**
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param array $files
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+    }
+
+    
+    
     /**
      * @return mixed
      */

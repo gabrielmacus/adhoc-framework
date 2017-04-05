@@ -162,17 +162,24 @@ class Archivo
     }
 
 
-
     /**
-     * @return Repositorio
+     * @param bool $getIdOnly  Si es true, me devuelve la id del repositorio,no el objeto
+     * @return Repositorio|int
      */
-    public function getRepositorio()
+    public function getRepositorio($getIdOnly=false)
     {
-        if(is_numeric($this->repositorio)) //Si es un numero, el repositorio debe ser cargado con una consulta
+        if(is_numeric($this->repositorio) && !$getIdOnly) //Si es un numero, el repositorio debe ser cargado con una consulta
         {
             $this->repositorio = $GLOBALS["repositorioDAO"]->selectRepositorioById($this->repositorio);
 
-        }//De otra manera, ya esta cargado
+        }
+        elseif($getIdOnly)
+        {
+            if(is_object($this->repositorio))
+            {
+               return $this->repositorio->getId();
+            }
+        }
         return $this->repositorio;
     }
 
