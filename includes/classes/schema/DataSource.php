@@ -39,6 +39,15 @@ class DataSource
 
             if(is_callable($process))
             {
+                /*
+               for ($i=0;$i< $q->columnCount();$i++)
+               {
+                   $process($q->fetch(PDO::FETCH_ASSOC));
+
+
+               }*/
+
+
 
                 while ($row=$q->fetch(PDO::FETCH_ASSOC))
                 { 
@@ -53,6 +62,7 @@ class DataSource
             }
 
 
+
             $ecode=$q->errorCode();
 
 
@@ -61,7 +71,7 @@ class DataSource
                 throw new Exception("DataSource:{$ecode}");
             }
             else
-            {
+            { 
                return $data;
 
 

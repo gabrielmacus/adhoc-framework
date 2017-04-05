@@ -53,7 +53,7 @@ $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->ge
 
 $repositoriosMenu=array();
 
-$repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios() ;
+$repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
 
 foreach ($repositorios as $r) {
 

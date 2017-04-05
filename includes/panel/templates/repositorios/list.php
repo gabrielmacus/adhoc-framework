@@ -1,3 +1,9 @@
+
+<?Php
+
+
+
+?>
 <script>
 
 
@@ -6,7 +12,7 @@
         <?php if($repositorio)
         {
 
-        $r = new Repositorio();
+
             ?>
         scope.repositorio= {
             "puerto": "<?php echo $repositorio->getPort()?>",

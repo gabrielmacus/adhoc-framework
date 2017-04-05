@@ -146,11 +146,13 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $this->dataSource->runQuery($sql,array(),
             function($data){
+
+              
                 $this->query($data);
             });
 
-        
-        
+
+
         return $this->files;
     }
 
@@ -176,7 +178,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $repositorioDAO = new RepositorioDAO($this->dataSource);
 
-        $repositorio=$repositorioDAO->selectRepositorioById($data["archivo_repositorio"]);
+    
+        $repositorio=$repositorioDAO->selectRepositorioById($data["archivo_repositorio"],false);
 
         $a = new Archivo($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
             $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,

@@ -13,8 +13,8 @@ interface IRepositorio
     /** **/
 
     /** Read **/
-    public function selectRepositorios();
-    public function selectRepositorioById($id);
+    public function selectRepositorios($withFiles=true);
+    public function selectRepositorioById($id,$withFiles=true);
     /** **/
 
     /** Update**/

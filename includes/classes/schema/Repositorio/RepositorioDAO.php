@@ -106,9 +106,12 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
 
     }
-    public function selectRepositorios()
+
+
+    public function selectRepositorios($withFiles=true)
     {
 
+        $this->repositorios=array();
         $sql = "SELECT * FROM {$this->tableName} ";
 
 
@@ -118,52 +121,84 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
         });
 
-        $in = "";
-        foreach ($this->repositorios as $r)
+        if($withFiles)
         {
-            $in.="{$r->getId()},";
-        }
-        $in =rtrim($in,",");
-
-
-        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
-
-        var_dump($in);
-        foreach ($archivos as $archivo)
-        {
-
-            if($archivo->getVersion()==0)
+            $in = "";
+            foreach ($this->repositorios as $r)
             {
-                $idOriginal=$archivo->getId();
+                $in.="{$r->getId()},";
             }
-            else
+            $in =rtrim($in,",");
+
+            $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
+            foreach ($archivos as $archivo)
             {
-                $idOriginal=$archivo->getVersion();
+
+                if($archivo->getVersion()==0)
+                {
+                    $idOriginal=$archivo->getId();
+                }
+                else
+                {
+                    $idOriginal=$archivo->getVersion();
+                }
+
+                $this->repositorios[$archivo->getRepositorio()]
+                [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
+
             }
-
-            $this->repositorios[$archivo->getRepositorio()]
-            [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
-
         }
 
 
-        echo json_encode($this->repositorios[1]);
+
+
+
 
     return $this->repositorios;
     }
 
-    public function selectRepositorioById($id)
+    public function selectRepositorioById($id,$withFiles=true)
     {
 
+
+        $this->repositorios = array();
         $sql = "SELECT * FROM {$this->tableName} WHERE repositorio_id=:repositorio_id";
 
-        $this->repositorios=array();
 
-       $this->dataSource->runQuery($sql,array(":repositorio_id"=>$id),function($data){
-           $this->query($data);
+        $this->dataSource->runQuery($sql, array(
+            ":repositorio_id" => $id
+        ), function ($data) {
+
+            $this->query($data, true);
 
         });
 
+        if($withFiles)
+        {
+
+        $in = "";
+        foreach ($this->repositorios as $r) {
+            $in .= "{$r->getId()},";
+        }
+        $in = rtrim($in, ",");
+
+
+        $archivos = $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
+
+        foreach ($archivos as $archivo) {
+
+            if ($archivo->getVersion() == 0) {
+                $idOriginal = $archivo->getId();
+            } else {
+                $idOriginal = $archivo->getVersion();
+            }
+
+            $this->repositorios[$archivo->getRepositorio()]
+            [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
+
+        }
+
+    }
 
         return $this->repositorios[0];
 
