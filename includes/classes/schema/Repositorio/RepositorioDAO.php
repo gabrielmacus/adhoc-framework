@@ -168,11 +168,11 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
         $this->dataSource->runQuery($sql, array(
             ":repositorio_id" => $id
         ), function ($data) {
-var_dump($data);
+
             $this->query($data, true);
 
         });
-
+        var_dump($this->repositorios);
         if($withFiles)
         {
 
