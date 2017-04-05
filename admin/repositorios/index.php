@@ -24,7 +24,7 @@ try{
        $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"]);
     }
 
-    var_dump($repositorio);
+  
     $site="repositorios";
     $action="list";
 }

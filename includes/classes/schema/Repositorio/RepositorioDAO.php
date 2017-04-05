@@ -172,7 +172,7 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
             $this->query($data, true);
 
         });
-        var_dump($this->repositorios);
+       
         if($withFiles)
         {
 
@@ -200,7 +200,11 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
     }
 
-        return $this->repositorios[0];
+        foreach ($this->repositorios[0] as $r)
+        {
+            return $r;//devuelvo solo el primero
+        }
+    
 
     }
 
