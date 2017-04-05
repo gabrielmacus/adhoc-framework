@@ -20,8 +20,9 @@
 <body data-ng-app="panel" data-ng-controller="panelCtrl">
 
 <script>
-    function error() {
+    function error(e) {
 
+        console.log(e);
         alert("Error desconocido");
     }
     var app = angular.module('panel', ['ui.sortable']);

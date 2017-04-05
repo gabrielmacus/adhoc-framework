@@ -53,10 +53,13 @@ $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->ge
 
 $repositoriosMenu=array();
 
-
+$repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios() ;
 foreach ($repositorios as $r) {
 
     $repositoriosMenu[]=array("text"=>$r->getName(),"href"=>$configuracion->getSiteAddress()."/admin/repositorios?id={$r->getId()}");
 }
+if(count($repositoriosMenu)>0)
+{
 
-$lang["navbar"][3]["items"][0]["items"]=$repositoriosMenu;
+    $lang["navbar"][3]["items"][0]["items"]=$repositoriosMenu;
+}

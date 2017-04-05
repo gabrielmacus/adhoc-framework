@@ -113,6 +113,7 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
         $sql = "SELECT * FROM {$this->tableName} WHERE repositorio_id=:repositorio_id";
 
+        $this->repositorios=array();
 
        $this->dataSource->runQuery($sql,array(":repositorio_id"=>$id),function($data){
            $this->query($data);

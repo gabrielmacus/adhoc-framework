@@ -15,9 +15,15 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    
-    $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios() ;
-    
+
+
+
+    if(is_numeric($_GET["id"]))
+    {
+
+       $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"]);
+    }
+
     $site="repositorios";
     $action="list";
 }
