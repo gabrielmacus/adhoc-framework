@@ -228,6 +228,8 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
     {
         $this->validate($p);
 
+        $p->setModificacion(time());
+
         $sql = $this->updateSql;
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($p));

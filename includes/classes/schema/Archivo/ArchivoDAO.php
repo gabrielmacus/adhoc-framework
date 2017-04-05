@@ -179,12 +179,26 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $repositorioDAO = new RepositorioDAO($this->dataSource);
 
     
-        $repositorio=$repositorioDAO->selectRepositorioById($data["archivo_repositorio"],false);
+        $repositorio=$data["archivo_repositorio"];
 
-        $a = new Archivo($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
-            $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
-            $data["archivo_path"],$data["archivo_creation"],
-            $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"]);
+        switch ($data["archivo_type"])
+        {
+            case 0:
+                $a = new Archivo($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
+                    $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
+                    $data["archivo_path"],$data["archivo_creation"],
+                    $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
+                break;
+            
+            case 1:
+                $a = new Imagen($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
+                    $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
+                    $data["archivo_path"],$data["archivo_creation"],
+                    $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_ancho"],$data["archivo_alto"]);
+                break;
+        }
+        
+   
         array_push($this->files, $a);
 
     }

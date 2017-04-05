@@ -107,7 +107,37 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
     }
 
+    private function processArchivos()
+    {
+        $in = "";
+        foreach ($this->repositorios as $r)
+        {
+            $in.="{$r->getId()},";
+        }
+        $in =rtrim($in,",");
 
+        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
+        $archivosRepositorio=array();
+        foreach ($archivos as $archivo )
+        {
+
+            if($archivo->getVersion()==0)
+            {
+                $idOriginal=$archivo->getId();
+            }
+            else
+            {
+                $idOriginal=$archivo->getVersion();
+            }
+
+          
+            $archivosRepositorio [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
+
+
+            $this->repositorios[$archivo->getRepositorio(true)]->setFiles($archivosRepositorio);
+
+        }
+    }
     public function selectRepositorios($withFiles=true)
     {
 
@@ -123,30 +153,8 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
 
         if($withFiles)
         {
-            $in = "";
-            foreach ($this->repositorios as $r)
-            {
-                $in.="{$r->getId()},";
-            }
-            $in =rtrim($in,",");
-
-            $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
-            foreach ($archivos as $archivo)
-            {
-
-                if($archivo->getVersion()==0)
-                {
-                    $idOriginal=$archivo->getId();
-                }
-                else
-                {
-                    $idOriginal=$archivo->getVersion();
-                }
-
-                $this->repositorios[$archivo->getRepositorio()]
-                [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
-
-            }
+         
+            $this->processArchivos();
         }
 
 
@@ -175,33 +183,14 @@ repositorio_modification=:repositorio_modification WHERE  repositorio_id=:reposi
        
         if($withFiles)
         {
+            $this->processArchivos();
+       }
 
-        $in = "";
-        foreach ($this->repositorios as $r) {
-            $in .= "{$r->getId()},";
-        }
-        $in = rtrim($in, ",");
+        
 
-
-        $archivos = $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
-
-        foreach ($archivos as $archivo) {
-
-            if ($archivo->getVersion() == 0) {
-                $idOriginal = $archivo->getId();
-            } else {
-                $idOriginal = $archivo->getVersion();
-            }
-
-            $this->repositorios[$archivo->getRepositorio()]
-            [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
-
-        }
-
-    }
-
-        foreach ($this->repositorios[0] as $r)
+        foreach ($this->repositorios as $r)
         {
+         
             return $r;//devuelvo solo el primero
         }
     

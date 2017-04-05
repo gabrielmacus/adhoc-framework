@@ -185,6 +185,8 @@ class SeccionDAO implements ISeccion
 
         $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id OR seccion_tipo=:seccion_id ";
 
+        
+        
         $res= $this->dataSource->runUpdate($sql,
             array(
                 ":seccion_id"=>$id

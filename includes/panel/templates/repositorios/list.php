@@ -1,9 +1,4 @@
 
-<?Php
-
-
-
-?>
 <script>
 
 
@@ -26,6 +21,9 @@
             "modification": "<?php echo $repositorio->getModification()?>"
         };
 
+        
+  
+        
         scope.$apply();
         <?php
 
@@ -139,13 +137,8 @@ else
 
     <div class="files">
 
-        <div data-ng-repeat="f in files">
-            {{f}}
-        </div>
+        <?php include DIR_PATH."/includes/panel/templates/archivos/list.php"?>
 
-        <div class="no-files" data-ng-if="!files">
-            No hay archivos en el repositorio
-        </div>
     </div>
     <?php
 }?>
