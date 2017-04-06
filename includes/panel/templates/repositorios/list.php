@@ -150,7 +150,7 @@ else
 
                 <div class="image" data-ng-if="file.type=='jpg'">
                     <img data-ng-src={{file.url}}>
-                    <h4>{{file.name}}</h4>
+                    <input data-ng-model="file.name">
                     <span>{{file.size}}</span>
                 </div>
 
