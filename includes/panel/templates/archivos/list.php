@@ -25,7 +25,7 @@ if($repositorio)
                         ?>
                         <div class="img">
                             <span><?php echo $archivo->getCreation()?></span>
-                            <h3><?php echo $archivo->getName();?></h3>
+                            <input value="<?php echo $archivo->getName();?>">
                             <img src="<?php echo     $archivo->getPath()?>">
                         </div>
                         <?php
