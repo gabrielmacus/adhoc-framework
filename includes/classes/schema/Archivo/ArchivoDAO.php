@@ -58,7 +58,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->validate($a);
 
         $r =     $a->getRepositorio();
-        
+      
         $ftp  =$r->getFtp();
 
         $fileName = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
@@ -70,9 +70,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $ftp->mkdir($dir,true);
         }
 
-
         $fileNameVersion = time()."_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
-        $fullDir = $dir."/{$fileNameVersion}"; //Directorio completo, nombre del archivo includio
+
+        $fullDir = $dir."/{$fileNameVersion}"; //Directorio completo, nombre del archivo incluido
 
 
         if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
@@ -83,7 +83,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setVersion($versionId);
 
 
-        $a->setRealName($fullDir);
+        $a->setRealName($r->getUrl().$fullDir); //Url + Ruta completa
         $a->setVersionName($versionName);
 
 

@@ -24,6 +24,8 @@ try{
        $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"]);
     }
 
+    
+    
     $site="repositorios";
     $action="list";
 }

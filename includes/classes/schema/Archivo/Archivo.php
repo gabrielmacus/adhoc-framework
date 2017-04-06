@@ -24,7 +24,7 @@ class Archivo
     protected $version;
     protected $versionName;
     protected $type;
-    protected $galeria;
+    protected $galeria=0;
 
     /**
      * Archivo constructor.
@@ -58,6 +58,7 @@ class Archivo
         $this->type=$type;
     }
 
+   
     /**
      * @return mixed
      */
@@ -170,6 +171,7 @@ class Archivo
     {
         if(is_numeric($this->repositorio) && !$getIdOnly) //Si es un numero, el repositorio debe ser cargado con una consulta
         {
+
             $this->repositorio = $GLOBALS["repositorioDAO"]->selectRepositorioById($this->repositorio);
 
         }

@@ -19,7 +19,8 @@
             "ruta": "<?php echo $repositorio->getPath()?>",
             "id": "<?php echo $repositorio->getId()?>",
             "creation": "<?php echo $repositorio->getCreation()?>",
-            "modification": "<?php echo $repositorio->getModification()?>"
+            "modification": "<?php echo $repositorio->getModification()?>",
+            "url":"<?php echo $repositorio->getUrl()?>"
         };
 
         
@@ -30,6 +31,26 @@
 
         }?>
 
+        scope.uploadFiles=function () {
+            $.ajax(
+                {
+                    "method":"post",
+                    "url":"<?Php echo $configuracion->getSiteAddress()?>/admin/files/add.php?rep=<?Php echo $_GET["id"]?>",
+                    "data":{"files":angular.copy(scope.preview)},
+                    "dataType":"json",
+                    "success":function (e) {
+                        console.log(e);
+                        if(e)
+                        {
+
+                        }
+                    }
+                    ,"error":error
+                }
+            );
+
+            
+        }
        scope.addRepositorio=function () {
            $.ajax(
                {
@@ -38,14 +59,15 @@
                    "data":angular.copy(scope.repositorio),
                    "dataType":"json",
                    "success":function (e) {
-                   if(e)
-                   {
-                       location.reload();
-                   }
+                       if(e)
+                       {
+                           location.reload();
+                       }
                    }
                    ,"error":error
                }
            );
+
        }
 
     });
@@ -76,6 +98,10 @@ else
             <input   data-ng-model="repositorio.host" type="text">
         </div>
         <div>
+            <label>URL</label>
+            <input   data-ng-model="repositorio.url" type="text">
+        </div>
+        <div>
             <label>Puerto</label>
             <input data-ng-model="repositorio.puerto" type="text">
         </div>
@@ -97,7 +123,7 @@ else
 
     </form>
 
-<form>
+<form data-ng-submit="uploadFiles()">
 <script>
     $(document).on("change",".file-zone [type='file']",function (e) {
 
@@ -157,7 +183,7 @@ else
 
             </li>
         </ul>
-        <button type="submit">Subir archivo</button>
+        <button type="submit">Subir archivos</button>
     </div>
 
 </form>

@@ -22,7 +22,7 @@ foreach ($_FILES as $file)
 $ext = explode(".",$file["name"]);
 $ext = end($ext);
     array_push($tmps,
-        array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext));
+        array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext,"mime"=>$file["type"]));
 
 }
 echo  json_encode($tmps);

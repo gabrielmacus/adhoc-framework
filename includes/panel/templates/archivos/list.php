@@ -26,7 +26,7 @@ if($repositorio)
                         <div class="img">
                             <span><?php echo $archivo->getCreation()?></span>
                             <h3><?php echo $archivo->getName();?></h3>
-                            <img src="<?php echo     $archivo->getPath()?>">
+                            <img src="<?php echo     $archivo->getRealName()?>">
                         </div>
                         <?php
                         foreach ($original as $archivo)

@@ -19,7 +19,7 @@ class Repositorio
     protected $creation;
     protected $modification;
     protected $files =array();
-    
+    protected $url;
     public function __construct($host, $user, $pass,  $name, $path,$port=21, $creation=false,$modification=false,$id=false)
     {
         $this->host = $host;
@@ -47,6 +47,22 @@ class Repositorio
     public function setFiles($files)
     {
         $this->files = $files;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
     }
 
     

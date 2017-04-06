@@ -105,6 +105,7 @@ class DataSource
             $ecode=$q->errorCode();
 
 
+
             if($ecode!=="00000" )
             {
                 throw new Exception("DataSource:{$ecode}");
