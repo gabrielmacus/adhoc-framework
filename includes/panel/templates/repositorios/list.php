@@ -4,6 +4,7 @@
 
     angular.element(function () {
 
+        scope.preview=[];
         <?php if($repositorio)
         {
 
@@ -93,7 +94,73 @@ else
         <div>
             <button type="submit">Guardar cambios</button>
         </div>
+
     </form>
+
+<form>
+<script>
+    $(document).on("change",".file-zone [type='file']",function (e) {
+
+        var files=  $(this)[0].files;
+
+        var data = new FormData();
+        $.each(files, function(key, value)
+        {
+            data.append(key, value);
+        });
+
+
+
+        $.ajax({
+            url: "<?php echo $configuracion->getSiteAddress() ?>/admin/files/upload.php",
+            type: "post",
+            dataType: "html",
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success:function(res)
+            {
+
+                res = JSON.parse(res);
+
+
+                $.each(res,function (k,v) {
+
+
+                    scope.preview.push(v);
+                    scope.$apply();
+
+                });
+
+
+            }
+        })
+    });
+</script>
+    <div class="file-zone">
+
+        <input type="file">
+    </div>
+
+    <div class="preview" data-ng-if="preview.length>0">
+        <h3>Previsualizacion de subida de archivos</h3>
+        <ul class="files-preview">
+            <li data-ng-repeat="file in preview">
+
+                <div class="image" data-ng-if="file.type=='jpg'">
+                    <img data-ng-src={{file.url}}>
+                    <h4>{{file.name}}</h4>
+                    <span>{{file.size}}</span>
+                </div>
+
+
+            </li>
+        </ul>
+        <button type="submit">Subir archivo</button>
+    </div>
+
+</form>
 
 
 

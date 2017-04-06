@@ -18,7 +18,11 @@ foreach ($_FILES as $file)
     move_uploaded_file($file["tmp_name"],$dest);
 
     $dest=$configuracion->getSiteAddress()."/tmp/files/{$file["size"]}_{$file["name"]}";
-    array_push($tmps,$dest);
+
+$ext = explode(".",$file["name"]);
+$ext = end($ext);
+    array_push($tmps,
+        array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext));
 
 }
 echo  json_encode($tmps);

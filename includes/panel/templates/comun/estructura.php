@@ -51,13 +51,14 @@
     </aside>
 
 
-    <footer>
-        asdas
-    </footer>
 
     <?php include "sidenav/sidenav-1.php"?>
 
 
+    <!--
+    <footer>
+        asdas
+    </footer>-->
 </div>
 
 
