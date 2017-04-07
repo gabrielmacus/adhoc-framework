@@ -36,7 +36,7 @@
 </script>
 <div id="body">
     <header>
-        <?php include "navbar/navbar-1.php" ?>
+        <?php include "navbars/A.php" ?>
 
     </header>
 
@@ -47,6 +47,7 @@
     </section>
 
     <aside>
+        <?php include "sidenavs/A.php" ?>
 
     </aside>
 

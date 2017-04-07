@@ -29,7 +29,7 @@ class Configuracion
     {
         $this->language = $language;
         $this->dataSource=new DataSource($dbUser,$dbPass,$dbHost,$dbName);
-        
+
         $this->tokenSecret = $tokenSecret;
         $this->version = $version;
         $this->siteFolder = $folderName;

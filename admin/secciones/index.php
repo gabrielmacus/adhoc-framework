@@ -19,7 +19,7 @@ try{
   
   $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
-var_dump($secciones);
+var_dump($configuracion);
   
 
 
