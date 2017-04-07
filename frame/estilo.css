@@ -1,0 +1,134 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+     font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+.fila
+{
+    float: left;
+    width: 100%;
+}
+@media screen and  (min-width:769px)  {
+    .l1{width:8.33333%;float: left}
+    .l2{width:16.66666%;float: left}
+    .l3{width:24.99999%;float: left}
+    .l4{width:33.33333%;float: left}
+    .l5{width:41.66666%;float: left}
+    .l6{width:49.99999%;float: left}
+    .l7{width:58.33333%;float: left}
+    .l8{width:66.66666%;float: left}
+    .l9{width:74.99999%;float: left}
+    .l10{width:83.33333%;float: left}
+    .l11{width:91.66666%;float: left}
+    .l12{width:99.99999%;float: left}
+}
+
+@media screen and (min-width:601px) and (max-width:768px) {
+    .m1{width:8.33333%;float: left}
+    .m2{width:16.66666%;float: left}
+    .m3{width:24.99999%;float: left}
+    .m4{width:33.33333%;float: left}
+    .m5{width:41.66666%;float: left}
+    .m6{width:49.99999%;float: left}
+    .m7{width:58.33333%;float: left}
+    .m8{width:66.66666%;float: left}
+    .m9{width:74.99999%;float: left}
+    .m10{width:83.33333%;float: left}
+    .m11{width:91.66666%;float: left}
+    .m12{width:99.99999%;float: left}
+}
+@media screen and (max-width:600px) {
+    .s1{width:8.33333%;float: left}
+    .s2{width:16.66666%;float: left}
+    .s3{width:24.99999%;float: left}
+    .s4{width:33.33333%;float: left}
+    .s5{width:41.66666%;float: left}
+    .s6{width:49.99999%;float: left}
+    .s7{width:58.33333%;float: left}
+    .s8{width:66.66666%;float: left}
+    .s9{width:74.99999%;float: left}
+    .s10{width:83.33333%;float: left}
+    .s11{width:91.66666%;float: left}
+    .s12{width:99.99999%;float: left}
+}
+
+h1
+{
+    font-size: calc(30px + 3vw)
+}
+
+h2
+{
+    font-size: calc(20px + 2.5vw)
+}
+h3
+{
+    font-size: calc(15px + 2vw)
+}
+h4
+{
+    font-size: calc(14px + 1.7vw)
+}
+h5
+{
+    font-size: calc(12px + 1.5vw)
+}
+h6
+{
+    font-size: calc(9px + 1.2vw)
+}
