@@ -52,8 +52,6 @@
 
 
 
-    <?php include "sidenav/sidenav-1.php"?>
-
 
     <!--
     <footer>

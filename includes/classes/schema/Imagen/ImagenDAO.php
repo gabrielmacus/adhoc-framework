@@ -24,6 +24,7 @@ class ImagenDAO extends ArchivoDAO
     public function insertArchivo(IArchivo $i,$versionName="original",$versionId=0)
     {
 
+
         $files=array();
 
         $originalSize = getimagesize($i->getTmpPath()) ;
@@ -44,7 +45,7 @@ class ImagenDAO extends ArchivoDAO
         foreach ($resoluciones as $resolucion)
         {
             $copy=$i->getTmpPath().".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
-            
+
             if(!copy($i->getTmpPath(),$copy))
             {
                 throw  new Exception("ImagenDAO:0");//Error al copiar archivo temporal;

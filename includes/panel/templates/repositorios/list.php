@@ -1,4 +1,6 @@
+<style>
 
+</style>
 <script>
 
 
@@ -164,10 +166,19 @@ else
         })
     });
 </script>
-    <div class="file-zone">
 
-        <input type="file">
-    </div>
+    <?php if($repositorio) {
+
+        ?>
+        <div class="file-zone">
+            <input type="file" multiple>
+        </div>
+        <?php
+    }
+    ?>
+
+
+
 
     <div class="preview" data-ng-if="preview.length>0">
         <h3>Previsualizacion de subida de archivos</h3>

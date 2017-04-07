@@ -77,7 +77,8 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
             ":repositorio_pass"=>$r->getPass(),
             ":repositorio_port"=>$r->getPort(),
             ":repositorio_creation"=>$r->getCreation(),
-            ":repositorio_modification"=>$r->getModification()
+            ":repositorio_modification"=>$r->getModification(),
+            ":repositorio_url"=>$r->getUrl()
         );
     }
 

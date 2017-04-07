@@ -15,13 +15,14 @@ try{
     {
         $r = new Repositorio($_POST["host"],$_POST["usuario"],$_POST["pass"],$_POST["nombre"],$_POST["ruta"],$_POST["puerto"]);
 
+        $r->setUrl($_POST["url"]);
         $res= $GLOBALS["repositorioDAO"]->insertRepositorio($r);
     }
     else
 
     {
         $r = new Repositorio($_POST["host"],$_POST["usuario"],$_POST["pass"],$_POST["nombre"],$_POST["ruta"],$_POST["puerto"],$_POST["creation"],$_POST["modification"],$_POST["id"]);
-
+        $r->setUrl($_POST["url"]);
        $res= $GLOBALS["repositorioDAO"]->updateRepositorio($r);
 
     }

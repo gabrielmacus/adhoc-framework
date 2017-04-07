@@ -50,17 +50,3 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
 
-
-$repositoriosMenu=array();
-
-$repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
-
-foreach ($repositorios as $r) {
-
-    $repositoriosMenu[]=array("text"=>$r->getName(),"href"=>$configuracion->getSiteAddress()."/admin/repositorios?id={$r->getId()}");
-}
-if(count($repositoriosMenu)>0)
-{
-
-    $lang["navbar"][3]["items"][0]["items"]=$repositoriosMenu;
-}

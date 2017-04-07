@@ -74,7 +74,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $fullDir = $dir."/{$fileNameVersion}"; //Directorio completo, nombre del archivo incluido
 
-
         if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
         {
             throw new Exception("ArchivoDAO:0");

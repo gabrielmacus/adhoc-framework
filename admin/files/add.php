@@ -25,17 +25,21 @@ try{
     foreach ($_POST["files"] as $file)
     {
 
+        $file["tmp"]=DIR_PATH.$file["tmp"];
+
+
         switch ($file["type"])
         {
             default:
 
 
                 $a = new Archivo($file["size"],$file["name"],$file["mime"]);
-                $a->setTmpPath($file["url"]);
+
+                $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($rep);
                 $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
-                break;
+
                 break;
 
 
@@ -47,7 +51,7 @@ try{
             case "jpg":
 
                 $a = new Imagen($file["size"],$file["name"],$file["mime"]);
-                $a->setTmpPath($file["url"]);
+                $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($rep);
                 $res= $GLOBALS["imagenDAO"]->insertArchivo($a);

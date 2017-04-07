@@ -17,12 +17,13 @@ foreach ($_FILES as $file)
 
     move_uploaded_file($file["tmp_name"],$dest);
 
-    $dest=$configuracion->getSiteAddress()."/tmp/files/{$file["size"]}_{$file["name"]}";
+    $tmp="/tmp/files/{$file["size"]}_{$file["name"]}";
+    $dest=$configuracion->getSiteAddress().$tmp;
 
 $ext = explode(".",$file["name"]);
 $ext = end($ext);
     array_push($tmps,
-        array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext,"mime"=>$file["type"]));
+        array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext,"mime"=>$file["type"],"tmp"=>$tmp));
 
 }
 echo  json_encode($tmps);

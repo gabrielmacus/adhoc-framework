@@ -8,7 +8,7 @@
         $.ajax(
             {
                 "method":"post",
-                "url":"load.php",
+                "url":"<?php echo $configuracion->getSiteAddress()?>/admin/secciones/load.php",
                 "success":function (e) {
                   $(".secciones-wrapper").html(e);
                 }
@@ -25,7 +25,11 @@
     );
     $(document).on("click",function (e) {
 
-        if ($(this).closest(".secciones").length == 0) {
+        if ($(e.target).closest(".secciones").length == 0 &&
+            $(e.target).closest("input").length == 0  &&
+            $(e.target).closest("button").length == 0 ) {
+
+
             $("[name='tipo']").val(0);
             $("#pertenece-a").html("ninguna seccion");
         }

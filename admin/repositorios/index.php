@@ -23,6 +23,10 @@ try{
   
        $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"]);
     }
+    else
+    {
+        $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
+    }
 
     
     
