@@ -61,18 +61,25 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
       
         $ftp  =$r->getFtp();
 
-        $fileName = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+        $mainPath = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
 
-        $dir=$r->getDatePath()."{$fileName}"; //Directorio donde estan todas las versiones
+        $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
 
-        if(!$ftp->isDir($dir))//Chequeo si no existe el directorio, en tal caso lo creo
-        {
-            $ftp->mkdir($dir,true);
-        }
+
 
         $fileNameVersion = time()."_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
 
-        $fullDir = $dir."/{$fileNameVersion}"; //Directorio completo, nombre del archivo incluido
+        $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
+
+        $mainPath="{$mainPath}/{$fileNameVersion}";
+
+        $fullDir = $r->getPath().$mainPath; //Directorio completo, nombre del archivo incluido
+
+        if(!$ftp->isDir($mainFolder))//Chequeo si no existe el directorio, en tal caso lo creo
+        {
+            $ftp->mkdir($mainFolder,true);
+        }
+
 
         if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
         {
@@ -82,7 +89,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setVersion($versionId);
 
 
-        $a->setRealName($r->getUrl().$fullDir); //Url + Ruta completa
+        $a->setRealName($r->getUrl().$mainPath); //Url + Ruta completa
         $a->setVersionName($versionName);
 
 
@@ -97,7 +104,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setModification(time());
         }
 
-        $a->setPath($dir);
+        $a->setPath($mainPath);
 
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($a));

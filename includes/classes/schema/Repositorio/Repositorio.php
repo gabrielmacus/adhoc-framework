@@ -173,7 +173,10 @@ class Repositorio
     public function getDatePath()
     {
         $this->path= rtrim($this->path,"/");
-        return   $this->path."/".date("Y/m/d",time())."/";
+     //   return   $this->path."/".date("Y/m/d",time())."/";
+
+        return "/".date("Y/m/d",time())."/";
+
     }
 
     function getFtp()

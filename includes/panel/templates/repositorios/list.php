@@ -119,6 +119,10 @@ else
             <label>Ruta</label>
             <input  data-ng-model="repositorio.ruta" type="text">
         </div>
+
+        <div>
+            <label>Tipo de archivos permitidos (en construccion)</label>
+        </div>
         <div>
             <button type="submit">Guardar cambios</button>
         </div>
