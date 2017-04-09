@@ -214,11 +214,19 @@ else
     <h3>Todos los repositorios</h3>
 
     <style>
+
+        .directory
+        {
+            padding: 20px;
+
+        }
+
         .folder
         {
             position: relative;
-            width: 140px;
+            width: 100%;
             height: 100px;
+            float: left;
         }
         .folder .front
         {
@@ -238,11 +246,43 @@ else
             /* Firefox anti-aliasing hack */
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
+            padding: 10px;
+        }
+        .folder .front .name
+        {
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .folder .paper
+        { -webkit-transition: all 300ms;
+            -moz-transition: all 300ms;
+            -ms-transition: all 300ms;
+            -o-transition: all 300ms;
+            transition: all 300ms;
+
+            position: absolute;
+            height: 90%;
+            width: 90%;
+            left: 5%;
+            top: 5%;
+            background-color: #fffdf5;
 
         }
-        .folder .front:hover
+        .folder:hover .paper
+        {  left: 10px;
+            top: 10px;
+            height: 90%;
+            transform: skew(-5deg,0deg);
+            top: -7%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .folder:hover .front
         {
-            transform: skew(-20deg,0deg); /* Standard syntax */
+            left: 7px;
+            top: 7px;
+            height: 93%;
+            transform: skew(-10deg,0deg)
         }
         .folder .back .caret
         {
@@ -266,20 +306,87 @@ else
             height: 100%;
             border-radius: 7px;
         }
+
+
+        @media screen and  (min-width:1024px)  {
+
+
+            .folder-container
+            {
+                width: 15%;
+                float: left;
+            }
+
+        }
+        @media screen and (min-width: 769px) and  (max-width:1023px)  {
+
+
+            .folder-container
+            {
+                width: 20%;
+                float: left;
+            }
+
+        }
+
+        @media screen and (min-width:601px) and (max-width:768px) {
+            .folder-container
+            {
+                width: 25%;
+                float: left;
+            }
+
+        }
+        @media screen and (max-width:600px) {
+
+            .folder-container
+            {
+                width: 50%;
+                float: left;
+            }
+        }
+
+
+
+
+
+
+
+
     </style>
 
-    <div>
+    <div class="directory fila">
 
-        <div class="folder" >
 
-            <div class="back">
-                <span class="caret"></span>
+        <?php
+
+        foreach ($repositorios as $repositorio) {
+
+
+            ?>
+        <a href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id={$repositorio->getId()}"?>" class="folder-container" style="padding: 10px">
+
+            <div class="folder" >
+
+                <div class="back">
+                    <span class="caret"></span>
+                </div>
+                <div class="paper">
+
+                </div>
+                <div class="front">
+                    <span class="name"><?php echo $repositorio->getName();?></span>
+                </div>
 
             </div>
-            <div class="front">
+        </a>
 
-            </div>
-        </div>
+
+            <?php
+        }
+
+        ?>
+
     </div>
 
 

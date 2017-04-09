@@ -15,6 +15,12 @@
     
     <?php include "js.php";?>
 
+    <style>
+        html
+        {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
     
 </head>
 <body data-ng-app="panel" data-ng-controller="panelCtrl">
