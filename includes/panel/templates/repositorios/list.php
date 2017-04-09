@@ -212,6 +212,78 @@ else
 
 
     <h3>Todos los repositorios</h3>
+
+    <style>
+        .folder
+        {
+            position: relative;
+            width: 140px;
+            height: 100px;
+        }
+        .folder .front
+        {
+            -webkit-transition: all 400ms;
+            -moz-transition: all 400ms;
+            -ms-transition: all 400ms;
+            -o-transition: all 400ms;
+            transition: all 400ms;
+
+            background-color: #ffcc66;
+            position: absolute;
+            top: 0px;
+            left:0px;
+            width:100%;
+            height: 100%;
+            border-radius: 7px;
+            /* Firefox anti-aliasing hack */
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+
+        }
+        .folder .front:hover
+        {
+            transform: skew(-20deg,0deg); /* Standard syntax */
+        }
+        .folder .back .caret
+        {
+
+            background-color: #cca352;
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            width: 40%;
+            border-radius: 5px;
+            height: 20px;
+
+        }
+        .folder .back
+        {
+            background-color: #cca352;
+            position: absolute;
+            top: 0px;
+            left:0px;
+            width:100%;
+            height: 100%;
+            border-radius: 7px;
+        }
+    </style>
+
+    <div>
+
+        <div class="folder" >
+
+            <div class="back">
+                <span class="caret"></span>
+
+            </div>
+            <div class="front">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--
     <ul class="repositorios">
         <?php
 
@@ -235,6 +307,7 @@ else
             <?php
         }?>
     </ul>
+    -->
 
     <?php
 }
