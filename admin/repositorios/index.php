@@ -17,7 +17,6 @@ try{
 
 
 
-
     if(is_numeric($_GET["id"]))
     {
   

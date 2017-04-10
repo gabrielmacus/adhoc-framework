@@ -7,8 +7,27 @@
     angular.element(function () {
 
         scope.preview=[];
+        scope.repositorios=[];
 
+        <?php
 
+        foreach ($repositorios as $r) {
+
+        ?>
+
+        scope.repositorios.push({
+            name:"<?php echo   $r->getName()?>",
+            url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id={$r->getId()}"?>"
+        });
+
+        <?php
+        }
+        ?>
+
+        scope.$apply();
+        window.addEventListener("message", function (e) {
+            console.log(e);
+        }, false);
         scope.uploadFiles=function () {
             $.ajax(
                 {
@@ -46,7 +65,6 @@
         {
             data.append(key, value);
         });
-
 
 
         $.ajax({
@@ -112,7 +130,9 @@
 
 
 
-<?php if(!$repositorio)
+<?php
+
+if(!$repositorio)
 {
     ?>
 
@@ -337,15 +357,7 @@
     </div>
     <div class="directory fila">
 
-
-
-        <?php
-
-        foreach ($repositorios as $repositorio) {
-
-
-            ?>
-        <a href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id={$repositorio->getId()}"?>" class="folder-container" style="padding: 10px">
+        <a  href="{{r.url}}" data-ng-repeat="r in repositorios" class="folder-container" style="padding: 10px">
 
             <div class="folder" >
 
@@ -356,17 +368,11 @@
 
                 </div>
                 <div class="front">
-                    <span class="name"><?php echo $repositorio->getName();?></span>
+                    <span class="name">{{r.name}}</span>
                 </div>
 
             </div>
         </a>
-
-
-            <?php
-        }
-
-        ?>
 
     </div>
 
