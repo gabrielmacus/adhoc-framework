@@ -29,9 +29,17 @@ try{
     }
 
     
-    
-    $site="repositorios";
-    $action="list";
+    if($_GET["modal"])
+    {
+        $site="repositorios";
+        $action="modal/add";
+    }
+    else
+    {
+        $site="repositorios";
+        $action="list";
+    }
+
 }
 catch (Exception $e)
 {

@@ -7,31 +7,7 @@
     angular.element(function () {
 
         scope.preview=[];
-        <?php if($repositorio)
-        {
 
-
-            ?>
-        scope.repositorio= {
-            "puerto": "<?php echo $repositorio->getPort()?>",
-            "host": "<?php echo $repositorio->getHost()?>",
-            "usuario": "<?php echo $repositorio->getUser()?>",
-            "pass": "<?php echo $repositorio->getPass()?>",
-            "nombre":"<?php echo $repositorio->getName()?>",
-            "ruta": "<?php echo $repositorio->getPath()?>",
-            "id": "<?php echo $repositorio->getId()?>",
-            "creation": "<?php echo $repositorio->getCreation()?>",
-            "modification": "<?php echo $repositorio->getModification()?>",
-            "url":"<?php echo $repositorio->getUrl()?>"
-        };
-
-        
-  
-        
-        scope.$apply();
-        <?php
-
-        }?>
 
         scope.uploadFiles=function () {
             $.ajax(
@@ -53,81 +29,11 @@
 
             
         }
-       scope.addRepositorio=function () {
-           $.ajax(
-               {
-                   "method":"post",
-                   "url":"<?Php echo $configuracion->getSiteAddress()?>/admin/repositorios/add.php?id=<?php echo $_GET["id"]?>",
-                   "data":angular.copy(scope.repositorio),
-                   "dataType":"json",
-                   "success":function (e) {
-                       if(e)
-                       {
-                           location.reload();
-                       }
-                   }
-                   ,"error":error
-               }
-           );
 
-       }
 
     });
 </script>
 
-
-<?php if($repositorio) {
-
-    ?>
-
-    <h3>Editar repositorio</h3>
-    <?php
-}
-else
-{
-    ?><h3>Nuevo repositorio</h3><?php
-}?>
-    <form data-ng-submit="addRepositorio()">
-        <input  data-ng-model="repositorio.id" hidden>
-        <input  data-ng-model="repositorio.creation" hidden>
-        <input  data-ng-model="repositorio.modification" hidden>
-        <div>
-            <label>Nombre</label>
-            <input  data-ng-model="repositorio.nombre" type="text">
-        </div>
-        <div>
-            <label>Host</label>
-            <input   data-ng-model="repositorio.host" type="text">
-        </div>
-        <div>
-            <label>URL</label>
-            <input   data-ng-model="repositorio.url" type="text">
-        </div>
-        <div>
-            <label>Puerto</label>
-            <input data-ng-model="repositorio.puerto" type="text">
-        </div>
-        <div>
-            <label>Usuario</label>
-            <input  data-ng-model="repositorio.usuario" type="text">
-        </div>
-        <div>
-            <label>Contraseña</label>
-            <input  data-ng-model="repositorio.pass" type="password">
-        </div>
-        <div>
-            <label>Ruta</label>
-            <input  data-ng-model="repositorio.ruta" type="text">
-        </div>
-
-        <div>
-            <label>Tipo de archivos permitidos (en construccion)</label>
-        </div>
-        <div>
-            <button type="submit">Guardar cambios</button>
-        </div>
-
-    </form>
 
 <form data-ng-submit="uploadFiles()">
 <script>
@@ -211,9 +117,18 @@ else
     ?>
 
 
-    <h3>Todos los repositorios</h3>
 
     <style>
+
+        .repositorios-breadcrumb
+        {
+
+        }
+        .repositorio-form
+        {
+            display: none;
+
+        }
 
         .directory
         {
@@ -348,14 +263,80 @@ else
 
 
 
+        .btn
+        {
+            cursor: pointer;
+            -webkit-transition: all 300ms;
+            -moz-transition:all 300ms;
+            -ms-transition: all 300ms;
+            -o-transition: all 300ms;
+            transition: all 300ms;
+
+            padding: 20px;
+            display: inline-block;
+            background-color:  #262626;
+            color: white;
+            font-weight: 600;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .btn .original
+        {
+            z-index: 20;
+
+
+        }
+
+        .btn .mask
+        {
+
+            z-index: 2;
+            display: inline-block;
+            background-color: white;
+            color: #262626;
+            font-weight: 600;
+            width:100%;
+            position: absolute;
+            right:0%;
+            bottom:0px;
+            -webkit-transition: all 400ms;
+            -moz-transition:all 400ms;
+            -ms-transition: all 400ms;
+            -o-transition: all 400ms;
+            transition: all 400ms;
+            height:100%;
+            perspective: 800px;
+            padding: 20px;
+        }
+
+
+        .btn:hover .mask
+        {
+
+            right: -95%;
+            color:white;
+        }
 
 
 
-
+        .toolbar{
+            padding-left: 20px;
+            padding-top: 20px;
+        }
 
     </style>
 
+    <div class="fila toolbar">
+      <a class="btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true" data-lity>
+          <span class="original">Nuevo repositorio</span>
+          <span class="mask">Nuevo repositorio</span>
+
+      </a>
+    </div>
     <div class="directory fila">
+
 
 
         <?php
