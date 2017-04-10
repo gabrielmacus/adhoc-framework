@@ -52,9 +52,11 @@
                     "data":angular.copy(scope.repositorio),
                     "dataType":"json",
                     "success":function (e) {
+                        console.log(e);
                         if(e)
                         {
-                            location.reload();
+
+                          //  location.reload();
                         }
                     }
                     ,"error":error

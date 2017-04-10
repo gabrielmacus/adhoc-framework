@@ -43,7 +43,6 @@
 <div id="body">
     <header>
         <?php include "navbars/A.php" ?>
-
     </header>
 
     <section>

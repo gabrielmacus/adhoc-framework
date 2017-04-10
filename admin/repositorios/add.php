@@ -16,7 +16,7 @@ try{
         $r = new Repositorio($_POST["host"],$_POST["usuario"],$_POST["pass"],$_POST["nombre"],$_POST["ruta"],$_POST["puerto"]);
 
         $r->setUrl($_POST["url"]);
-        $res= $GLOBALS["repositorioDAO"]->insertRepositorio($r);
+        $_POST["id"]= $GLOBALS["repositorioDAO"]->insertRepositorio($r);
     }
     else
 
@@ -25,11 +25,13 @@ try{
         $r->setUrl($_POST["url"]);
        $res= $GLOBALS["repositorioDAO"]->updateRepositorio($r);
 
+
     }
 
 
 
-    echo json_encode($res);
+
+    echo json_encode($_POST);
 
 }
 catch (Exception $e)
