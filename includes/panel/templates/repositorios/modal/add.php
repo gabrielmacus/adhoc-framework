@@ -55,7 +55,7 @@
                         console.log(e);
                         if(e)
                         {
-                            parent.postMessage(e,"local");
+                            parent.postMessage(e,location.origin);
 
                           //  location.reload();
                         }

@@ -6,6 +6,7 @@
 
     angular.element(function () {
 
+        
         scope.preview=[];
         scope.repositorios=[];
 
@@ -26,7 +27,18 @@
 
         scope.$apply();
         window.addEventListener("message", function (e) {
-            console.log(e);
+           if(e.origin==location.origin)
+           {
+               scope.repositorios.push({
+               name:e.data.nombre,
+               url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>"+e.data.id
+           });
+
+               scope.$apply();
+
+
+
+           }
         }, false);
         scope.uploadFiles=function () {
             $.ajax(
