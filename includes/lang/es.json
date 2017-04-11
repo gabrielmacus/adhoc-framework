@@ -2,4 +2,5 @@
 ,"items":[{"text":"Repositorios","href":"/adhoc-framework/admin/repositorios"},
     {"text":"Usuarios"}]}],
   "sidenav":[{"href":"\/adhoc-framework\/admin\/noticias\/","text":"Noticias"}],
-"dateFormat":"d/m/Y"}
+"dateFormat":"d/m/Y",
+"dateFormatFiles":"d-m-Y"}

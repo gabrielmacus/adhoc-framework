@@ -7,7 +7,7 @@
         var facebookPermissions=<?php echo json_encode($GLOBALS["fbConfig"]["permissions"])?>;
 
     </script>
-    <title><?php echo ($htmlTitle)?$htmlTitle:"Sin tituolo"; ?></title>
+    <title><?php echo ($htmlTitle)?$htmlTitle:"Sin titulo"; ?></title>
     
     <?php include "tags.php";?>
     
