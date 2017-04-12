@@ -51,10 +51,10 @@
 
     </section>
 
-    <aside>
+
         <?php include "sidenavs/A.php" ?>
 
-    </aside>
+
 
 
 

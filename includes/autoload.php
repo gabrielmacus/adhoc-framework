@@ -53,3 +53,4 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
 
+set_time_limit(90);//Desarrollo

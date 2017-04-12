@@ -140,6 +140,34 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         }
     }
+
+    public function selectGalerias()
+    {
+      $sql="SELECT archivo_galeria FROM archivos GROUP BY archivo_galeria";
+        $galerias=array();
+        $this->dataSource->runQuery($sql,array(),function($data){
+
+            $galerias[]=$data["archivo_galeria"];
+
+        });
+
+        return $galerias;
+    }
+
+    public function selectTipos()
+    {
+        $sql="SELECT archivo_tipo FROM archivos GROUP BY archivo_tipo";
+        $tipos=array();
+        $this->dataSource->runQuery($sql,array(),function($data){
+
+            $tipos[]=$data["archivo_tipo"];
+
+        });
+
+        return $tipos;
+    }
+
+
     public function selectRepositorios($withFiles=true)
     {
 

@@ -15,6 +15,8 @@ interface IRepositorio
     /** Read **/
     public function selectRepositorios($withFiles=true);
     public function selectRepositorioById($id,$withFiles=true);
+    public function selectGalerias();
+    public function selectTipos();
     /** **/
 
     /** Update**/

@@ -159,6 +159,19 @@
         background-color: rgba(22, 22, 22, 0.84);
 
     }
+    .logo
+    {
+        width:50px;float: left;
+    }
+    .text
+    {
+        position: relative;    bottom: -10px;
+        margin-left: 20px;
+        font-size: 30px;
+        float: left
+    ;
+    }
+
 
 </style>
 
@@ -188,16 +201,29 @@ function loadNavbar($navbar)
             }
 
             $hasSubmenu=isset($item["items"]);
-
+            $logo =$item["logo"];
 
 
             ?>
-            <li class="<?php echo $class;?>"><a href="<?php echo $href;?>"><?php echo $text;?>
+            <li class="<?php echo $class;?>"><a href="<?php echo $href;?>">
+
+                    <?php if($logo)
+                    {
+                        ?>
+                        <img class="logo" src="<?php  echo $logo?>">
+                        <?php
+                    }?>
+
+                    <h1 class="text"><?php echo $text;?></h1>
+
+
                     <?php if($hasSubmenu)
                     {
                         ?><i class="fa fa-sort-desc" aria-hidden="true"></i>
                         <?php
                     }?>
+
+
                 </a>
                 <?php if($hasSubmenu)
                 {

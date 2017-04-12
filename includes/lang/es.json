@@ -1,1 +1,18 @@
-{"navbar":[{"text":"Inicio"},{"text":"Secciones"},{"text":"Men\u00fa"},{"text":"Configuraci\u00f3n","items":[{"text":"Repositorios","href":"\/adhoc-framework\/admin\/repositorios"},{"text":"Usuarios"}]}],"sidenav":[{"href":"\/adhoc-framework\/admin\/noticias\/","text":"Noticias"}],"dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y"}
+{
+
+  "navbar":[{"text":"Content Manager","logo":"http://pngimg.com/uploads/google/google_PNG19630.png"}],
+
+
+  "sidenav":[{"text":"Inicio"},{"text":"Secciones"},{"text":"Men\u00fa"},
+    {"text":"Configuraci\u00f3n","items":
+    [{"text":"Repositorios","href":"\/adhoc-framework\/admin\/repositorios"}
+    ,{"text":"Usuarios"}]}],
+
+  "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",
+"fileTypes":
+{
+  "0":"Binarios",
+  "1":"Imagenes",
+  "2":"Video",
+  "3":"Audio"
+}}

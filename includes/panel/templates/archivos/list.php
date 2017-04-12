@@ -53,8 +53,8 @@
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
     }
-
 
     .file figure {
 
@@ -156,14 +156,16 @@ right: 0%;
         width: 100%;
         object-fit: cover;
 
-    }
-    @media screen and  (min-width:1024px)  {
+        height: 200px;
 
+    }
+
+    @media screen and  (min-width:1024px)  {
 
         .file-container
         {
 
-            width: 15%;
+            width: 25%;
             float: left;
         }
 
@@ -172,7 +174,7 @@ right: 0%;
 
         .file-container
         {
-            width: 20%;
+            width: 33.33333%;
             float: left;
         }
 
@@ -196,76 +198,84 @@ right: 0%;
     }
 
 </style>
-<?php
+
+<div class="directory fila">
 
 
 
-if($repositorio)
-{
-    foreach ($repositorio->getFiles() as $tipo=>$galeria)
+    <?php
+
+
+
+    if($repositorio)
     {
-
-
-        switch ($tipo)
+        foreach ($repositorio->getFiles() as $tipo=>$galeria)
         {
-            case 0:
 
-                break;
 
-            case 1 :
 
-                foreach ($galeria as $originales)
-                {
+            switch ($tipo)
+            {
+                case 0:
+                case 1:
 
-                    foreach ($originales as $original)
+
+                    foreach ($galeria as $key=>$originales)
                     {
-                        $archivo = $original["original"];
-                        ?>
-                        <div class="file-container">
-                            <div class="file">
-                                <time class="date"><?php echo date($lang["dateFormatFiles"],$archivo->getCreation()) ?></time>
-                                <figure>
-                                    <img   src="<?php echo     $archivo->getRealName()?>">
-                                    <div class="preview">
-                                        <a>
-                                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <div class="download">
-                                        <a>
-                                            <i class="fa fa-cloud-download" aria-hidden="true"></i>
-                                        </a>
 
 
-                                    </div>
-                                </figure>
-
-                                <span class="name"><?php echo $archivo->getName();?></span>
-
-                            </div>
-                        </div>
-                        <?php
-                        unset( $original["original"]);
-                        foreach ($original as $archivo)
+                        foreach ($originales as $original)
                         {
+                            $archivo = $original["original"];
+                            ?>
+                            <div class="file-container">
+                                <div class="file">
+                                    <time class="date"><?php echo date($lang["dateFormatFiles"],$archivo->getCreation()) ?></time>
+                                    <figure>
+                                        <img   src="<?php echo     $archivo->getRealName()?>">
+                                        <div class="preview">
+                                            <a>
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="download">
+                                            <a>
+                                                <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                                            </a>
 
 
+                                        </div>
+                                    </figure>
+
+                                    <span class="name"><?php echo $archivo->getName();?></span>
+
+                                </div>
+                            </div>
+                            <?php
+                            unset( $original["original"]);
+                            foreach ($original as $archivo)
+                            {
+
+
+                            }
                         }
+
+
                     }
 
+                    break;
+            }
 
-                }
-
-                break;
         }
-
     }
-}
-if(!$repositorio || count($repositorio->getFiles())==0)
-{
-    ?>
-    <h3>No hay archivos en el repositorio</h3>
-    <?php
-}
+    if(!$repositorio || count($repositorio->getFiles())==0)
+    {
+        ?>
+        <h3>No hay archivos en el repositorio</h3>
+        <?php
+    }
 
-?>
+    ?>
+
+
+</div>
