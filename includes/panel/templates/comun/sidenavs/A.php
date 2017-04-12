@@ -66,9 +66,11 @@ function loadSidenav($items)
 
 ?>
 <script>
-    $(document).on("click",".submenu",function () {
+    $(document).on("click","li.submenu",function () {
 
-        $(this).find("ul").animate({"height":"toggle"},400);
+        var ul=     $(this).closest(".submenu").find("ul");
+        ul.stop();
+        ul.animate({"height":"toggle"},350);
 
     });
 </script>
@@ -96,8 +98,20 @@ function loadSidenav($items)
         display: none;
     }
 
-    .sidenav .submenu  >  ul li
+    .sidenav .submenu  ul li:hover
     {
+
+  padding-left: 30px;
+
+    }
+
+    .sidenav .submenu    ul li
+    {
+        -webkit-transition: all 350ms;
+        -moz-transition: all 350ms;
+        -ms-transition: all 350ms;
+        -o-transition: all 350ms;
+        transition: all 350ms;
     font-size: 18px!important;
         padding-left: 20px;
     }
