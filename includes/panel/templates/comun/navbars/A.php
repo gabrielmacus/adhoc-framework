@@ -163,6 +163,7 @@
     {
         width:50px;float: left;
     }
+
     .text
     {
         position: relative;    bottom: -10px;

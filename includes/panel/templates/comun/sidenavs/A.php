@@ -68,7 +68,7 @@ function loadSidenav($items)
 <script>
     $(document).on("click","li.submenu",function () {
 
-        var ul=     $(this).closest(".submenu").find("ul");
+        var ul=     $(this).find("ul");
         ul.stop();
         ul.animate({"height":"toggle"},350);
 
