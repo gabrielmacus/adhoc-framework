@@ -92,10 +92,8 @@
 
                 res = JSON.parse(res);
 
-
                 $.each(res,function (k,v) {
-
-
+                    
                     scope.preview.push(v);
                     scope.$apply();
 
