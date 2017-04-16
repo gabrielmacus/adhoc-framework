@@ -2,6 +2,7 @@
 
 include "../../includes/autoload.php";
 
+include_once DIR_PATH."/extras/api/check-login.php";
 try{
     $dir=DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json";
     $menu = json_decode(file_get_contents($dir),true);

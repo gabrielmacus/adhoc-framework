@@ -3,10 +3,12 @@
   "navbar":[{"text":"Content Manager","logo":"http://pngimg.com/uploads/google/google_PNG19630.png"}],
 
 
-  "sidenav":[{"text":"Inicio"},{"text":"Secciones"},{"text":"Men\u00fa"},
+  "sidenav":[{"text":"Inicio","href":"/adhoc-framework/admin/"},
     {"text":"Configuraci\u00f3n","items":
-    [{"text":"Repositorios","href":"\/adhoc-framework\/admin\/repositorios"}
-    ,{"text":"Usuarios"}]}],
+    [
+      {"text":"Secciones","href":"/adhoc-framework/admin/secciones"},
+      {"text":"Repositorios","href":"/adhoc-framework/admin/repositorios"}
+  ]}],
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",
 "fileTypes":

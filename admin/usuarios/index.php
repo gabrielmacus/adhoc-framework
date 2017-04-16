@@ -17,15 +17,13 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
+    $site="usuarios";
+        $action="list";
 
-
-  $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
-    $site="secciones";
-    $action="list";
 }
 catch (Exception $e)
 {
-    echo "Error: {$e->getMessage()}";
+    echo json_encode("Error: {$e->getMessage()}");
 
 }
 

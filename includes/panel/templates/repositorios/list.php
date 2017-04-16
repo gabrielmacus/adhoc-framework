@@ -1,6 +1,5 @@
-<style>
 
-</style>
+
 <script>
 
 
@@ -18,7 +17,8 @@
 
         scope.repositorios.push({
             name:"<?php echo   $r->getName()?>",
-            url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id={$r->getId()}"?>"
+            url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id={$r->getId()}"?>",
+            id:"<?php echo $r->getId()?>"
         });
 
         <?php
@@ -31,7 +31,8 @@
            {
                scope.repositorios.push({
                name:e.data.nombre,
-               url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>"+e.data.id
+               url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>"+e.data.id,
+                   id:e.data.id
            });
 
                scope.$apply();
@@ -112,19 +113,40 @@
             <input type="file" multiple>
         </div>
         <?php
+
     }
     ?>
 
+<!--
+    <style>
+        .preview
+        {
+            padding: 25px;
+            float: left;
+            width:100%;
+        }
+        .preview li
+        {
+            float: left;
+            width: 25%;
+            margin-top:15px;
+        }
+        .preview img
+        {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
 
-
-
+    -->
     <div class="preview" data-ng-if="preview.length>0">
         <h3>Previsualizacion de subida de archivos</h3>
         <ul class="files-preview">
             <li data-ng-repeat="file in preview">
 
-                <div class="image" data-ng-if="file.type=='jpg'">
-                    <img data-ng-src={{file.url}}>
+                <div class="image" data-ng-if="file.type=='jpg' || file.type=='jpeg' || file.type=='png' || file.type=='gif'">
+                    <img style="width: 100%" data-ng-src={{file.url}}>
                     <input data-ng-model="file.name">
                     <span>{{file.size}}</span>
                 </div>
@@ -349,6 +371,9 @@
         padding-top: 20px;
     }
 
+
+
+
 </style>
 
 
@@ -357,6 +382,7 @@
 if(!$repositorio)
 {
     ?>
+
 
     <div class="fila toolbar">
       <a class="btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true" data-lity>
@@ -379,11 +405,89 @@ if(!$repositorio)
                 </div>
                 <div class="front">
                     <span class="name">{{r.name}}</span>
+                    <input class="repositorios" data-id="{{r.id}}"  style="position:absolute;bottom: 10px;right: 10px;transform:scale(1.5)" type="checkbox">
+                    
                 </div>
 
             </div>
         </a>
+        <a  data-lity href="#delete-repositorio-modal" class="icon-trash" style="position: fixed;bottom: 10px;right:28% ;z-index: 5;transform: scale(2)">
+            <div class="trash-lid" style="background-color: #838383"></div>
+            <div class="trash-container" style="background-color: #838383"></div>
+            <div class="trash-line-1"></div>
+            <div class="trash-line-2"></div>
+            <div class="trash-line-3"></div>
+        </a>
 
+        <script>
+            $(document).on("click",".file",function (e) {
+
+                if($(e.target).closest("figure").length==0)
+                {
+                    $(this).toggleClass("active");
+                }
+
+            });
+
+            $(document).on("click","#delete-repositorio-modal .yes",function (e) {
+
+                var ids=[];
+                $(".repositorios:checked").each(function () {
+                    ids.push($(this).data("id"));
+                });
+
+
+                $.ajax(
+                    {
+                        method:"post",
+                        data:{"repos":ids},
+                        url:"<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/delete.php",
+                        dataType:"json",
+                        success:function (e) {
+                            console.log(e);
+                            if(e)
+                            {
+
+                                $.each(ids,function (k,v) {
+
+                                  var deletedRepo=  scope.repositorios.filter(
+                                        function (element) {
+
+                                            return element.id==v
+                                        }
+                                    )[0];
+
+                                 var idx = scope.repositorios.indexOf(deletedRepo);
+
+                                 scope.repositorios.splice(idx,1);
+
+                                });
+
+                                scope.$apply();
+                            }
+                        },
+                        error:error
+                    }
+                );
+            });
+        </script>
+
+        <div  id="delete-repositorio-modal" class="lity-hide promptModal">
+
+            <p>¿Borrar los repositorios seleccionados? <b>Se borrarán los archivos que contengan</b></p>
+
+            <div class="buttons">
+                <div>
+                    <a class="no">No</a>
+                </div>
+                <div>
+                    <a  class="yes">Si</a>
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
 
 
@@ -426,3 +530,430 @@ else
     </div>
     <?php
 }?>
+
+<style>
+
+    .icon-trash {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        position: relative;
+        margin-left: 25px;
+        margin-bottom: 25px;
+    }
+
+    .icon-trash .trash-lid {
+        -webkit-transition: all 300ms;
+        -moz-transition: all  300ms;
+        -ms-transition: all  300ms;
+        -o-transition: all 300ms;
+        transition: all  300ms;
+        width: 62%;
+        height: 10%;
+        position: absolute;
+        left: 50%;
+        margin-left: -31%;
+        top: 10.5%;
+        background-color: #000;
+        border-top-left-radius: 80%;
+        border-top-right-radius: 80%;/*
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);*/
+    }
+.icon-trash:hover .trash-lid
+{      -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+    top:-7%;
+}
+    .icon-trash .trash-lid:after {
+        content: "";
+        width: 26%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -13%;
+        margin-top: -10%;
+        background-color: inherit;
+        border-top-left-radius: 30%;
+        border-top-right-radius: 30%;
+        -webkit-transform: rotate(-1deg);
+        -moz-transform: rotate(-1deg);
+        -ms-transform: rotate(-1deg);
+        transform: rotate(-1deg);
+    }
+
+    .icon-trash .trash-container {
+        width: 56%;
+        height: 65%;
+        position: absolute;
+        left: 50%;
+        margin-left: -28%;
+        bottom: 10%;
+        background-color: #000;
+        border-bottom-left-radius: 15%;
+        border-bottom-right-radius: 15%;
+    }
+
+    .icon-trash .trash-container:after {
+        content: "";
+        width: 110%;
+        height: 12%;
+        position: absolute;
+        left: 50%;
+        margin-left: -55%;
+        top: 0;
+        background-color: inherit;
+        border-bottom-left-radius: 45%;
+        border-bottom-right-radius: 45%;
+    }
+
+    .icon-trash .trash-line-1 {
+        width: 4%;
+        height: 50%;
+        position: absolute;
+        left: 38%;
+        margin-left: -2%;
+        bottom: 17%;
+        background-color: #252527;
+    }
+
+    .icon-trash .trash-line-2 {
+        width: 4%;
+        height: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -2%;
+        bottom: 17%;
+        background-color: #252527;
+    }
+
+    .icon-trash .trash-line-3 {
+        width: 4%;
+        height: 50%;
+        position: absolute;
+        left: 62%;
+        margin-left: -2%;
+        bottom: 17%;
+        background-color: #252527;
+    }
+
+
+
+
+
+    .file-container
+    {
+        position: relative;
+        padding: 10px;
+    }
+    .file.active .mask
+    {
+        opacity: 1;
+    }
+    .file.active figure
+    {
+        z-index: 4;
+    }
+    .file-container .mask
+    {
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        -ms-transition: all  300ms;
+        -o-transition: all 300ms;
+        transition: all  300ms;
+        opacity: 0;
+        position: absolute;right: 0px;top:0px;width: 100%;height: 100%;
+        z-index: 5;
+        background-color: rgba(0,0,0,.6);
+        background-image: url("https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-256.png");
+        -webkit-background-size:100%;
+        background-size:50%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .file
+    {    position:relative;
+        background: white;
+        padding:20px;
+        overflow: hidden!important;
+        cursor: pointer;
+    }
+    .file .date
+    {
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .file:hover:before
+    {
+        border-width:0  0px 0px 0;
+    }
+
+    .file:before {
+        -webkit-transition: all 400ms;
+        -moz-transition: all  400ms;
+        -ms-transition: all  400ms;
+        -o-transition: all 400ms;
+        transition: all  400ms;
+
+        content:"";
+        position:absolute;
+        top:0;
+        right:0;
+        border-width:0 27px 27px 0;
+        border-style:solid;
+
+        border-color:rgba(248, 248, 248, 1) #ededed;
+        /* css3 extras */
+        -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3),
+        -1px 1px 1px rgba(0,0,0,0.2);
+        -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3),
+        -1px 1px 1px rgba(0,0,0,0.2);
+        box-shadow:0 1px 1px rgba(0,0,0,0.3),
+        -1px 1px 1px rgba(0,0,0,0.2);
+    }
+    .file .name
+    {
+        margin-top: 5px;
+        float: left;
+        font-size: 18px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .file figure {
+
+        z-index: 7;
+        overflow: hidden;
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .file figure .preview
+    {
+        -webkit-transition: all 400ms;
+        -moz-transition: all  400ms;
+        -ms-transition: all  400ms;
+        -o-transition: all 400ms;
+        transition: all  400ms;
+
+        left: 0%;
+        top:0px;
+        width: 0%;
+        background-color: rgba(0, 0, 0, 0.45);
+        position: absolute;
+        height: 100%;
+
+    }
+    .file figure  .preview a
+    {  -webkit-transition: all 600ms;
+        -moz-transition: all  600ms;
+        -ms-transition: all  600ms;
+        -o-transition: all 600ms;
+        transition: all  600ms;
+        opacity: 0;
+        position: absolute;
+        font-size: 36px;
+        color: white;
+        top: 35%;
+        left: 35%;
+    }
+
+    .file figure  .download a
+    {  -webkit-transition: all 600ms;
+        -moz-transition: all  600ms;
+        -ms-transition: all  600ms;
+        -o-transition: all 600ms;
+        transition: all  600ms;
+        opacity: 0;
+        position: absolute;
+        font-size: 36px;
+        color: white;
+        top: 35%;
+        right: 35%;
+    }
+    .file figure .download
+    {        -webkit-transition: all 400ms;
+        -moz-transition: all  400ms;
+        -ms-transition: all  400ms;
+        -o-transition: all 400ms;
+        transition: all  400ms;
+
+        right: 0%;
+
+        top:0px;
+        width: 0%;
+        background-color: rgba(0, 0, 0, 0.45);
+        position: absolute;
+        height: 100%;
+
+    }
+    .file figure .preview:hover a
+    {
+
+        color: rgba(28, 150, 255, 1)
+
+    }
+
+    .file figure .download:hover a
+    {
+
+        color: #58e055
+
+    }
+    .file figure:hover a
+    {
+        opacity: 1;
+    }
+    .file figure:hover .preview
+    {
+        width: 50%;
+        left: 0%;
+    }
+    .file figure:hover .download
+    {  width: 50%;
+        right: 0%;
+    }
+    .file figure:hover img
+    {  -webkit-transition: all 400ms;
+        -moz-transition: all  400ms;
+        -ms-transition: all  400ms;
+        -o-transition: all 400ms;
+        transition: all  400ms;
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+    }
+
+
+    .file img {
+        width: 100%;
+        object-fit: cover;
+        -webkit-transition: all 300ms;
+        -moz-transition: all  300ms;
+        -ms-transition: all  300ms;
+        -o-transition: all 300ms;
+        transition: all  300ms;
+
+        height: 200px;
+
+    }
+
+    @media screen and  (min-width:1024px)  {
+
+        .file-container
+        {
+
+            width: 25%;
+            float: left;
+        }
+
+    }
+    @media screen and (min-width: 769px) and  (max-width:1023px)  {
+
+        .file-container
+        {
+            width: 33.33333%;
+            float: left;
+        }
+
+    }
+
+    @media screen and (min-width:601px) and (max-width:768px) {
+        .file-container
+        {
+            width: 25%;
+            float: left;
+        }
+
+    }
+    @media screen and (max-width:600px) {
+
+        .file-container
+        {
+            width: 50%;
+            float: left;
+        }
+    }
+    .promptModal
+    {
+        background-color: white;
+        padding: 15px;
+        float: left;
+        width: 100%;
+    }
+
+    .promptModal .buttons
+    {
+        margin-top: 15px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    .promptModal p
+    {
+        font-weight: 100;
+    }
+    .promptModal p b
+    {
+        font-weight: 600;
+    }
+    .promptModal .buttons > div
+    {
+        float: left;
+        padding: 10px;
+        width: 50%;
+    }
+    .promptModal .buttons .yes
+    {
+        float: left;
+        width: 100%;
+        padding: 10px;
+        background-color: #4dca3e;
+        cursor: pointer;
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        -ms-transition: all 300ms;
+        -o-transition: all 300ms;
+        transition: all 300ms;
+    }
+    .promptModal .buttons .no
+    { float: left;
+        width: 100%;
+        padding: 10px;
+        background-color: #ca4139;
+        cursor: pointer;
+
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        -ms-transition: all 300ms;
+        -o-transition: all 300ms;
+        transition: all 300ms;
+    }
+
+    .promptModal .buttons .yes:hover
+    {
+        background-color: #24ca2c;
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    .promptModal .buttons .no:hover
+    {
+        background-color: #ca3835;        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+</style>
+

@@ -34,7 +34,7 @@ function loadSidenav($items)
 
 
             ?>
-            <li class="<?php echo $class;?>"><a href="<?php echo $href;?>"><?php echo $text;?>
+            <li class="<?php echo $class;?>"><a href="<?php echo  $href;?>"><?php echo $text;?>
                     <?php if($hasSubmenu)
                     {
                         ?><i class="fa fa-sort-desc" aria-hidden="true"

@@ -16,6 +16,7 @@ interface IArchivo
     public function selectArchivos();
     public function selectArchivoById($id);
     public function selectArchivoByRepositorioId($in);
+    public function selectArchivoOriginalByRepositorioId($in);
     /** **/
 
     /** Update**/

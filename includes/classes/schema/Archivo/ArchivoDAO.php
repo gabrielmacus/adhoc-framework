@@ -33,16 +33,16 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
  archivo_extension=:archivo_extension, archivo_creation=:archivo_creation, 
  archivo_modification=:archivo_modification,archivo_repositorio=:archivo_repositorio,archivo_path=:archivo_path
  ,archivo_version=:archivo_version,archivo_real_name=:archivo_real_name,archivo_version_name=:archivo_version_name,archivo_galeria=:archivo_galeria,
- ,archivo_alto=:archivo_alto,archivo_ancho=:archivo_ancho,archivo_type=:archivo_type
+ ,archivo_alto=:archivo_alto,archivo_ancho=:archivo_ancho,archivo_type=:archivo_type,archivo_path_name=:archivo_path_name
    WHERE archivo_id=:archivo_id OR archivo_version=:archivo_id ";
 
         $this->insertSql="INSERT INTO  {$this->tableName} 
  (archivo_id, archivo_size, archivo_mime,archivo_name, archivo_extension,
    archivo_creation, archivo_modification,archivo_repositorio,archivo_path,archivo_version,
-   archivo_real_name,archivo_version_name,archivo_alto,archivo_ancho,archivo_type,archivo_galeria)
+   archivo_real_name,archivo_version_name,archivo_alto,archivo_ancho,archivo_type,archivo_galeria,archivo_path_name)
  VALUES (:archivo_id, :archivo_size,:archivo_mime, :archivo_name, 
  :archivo_extension, :archivo_creation, 
- :archivo_modification,:archivo_repositorio,:archivo_path,:archivo_version,:archivo_real_name,:archivo_version_name,:archivo_ancho,:archivo_alto,:archivo_type,:archivo_galeria)";
+ :archivo_modification,:archivo_repositorio,:archivo_path,:archivo_version,:archivo_real_name,:archivo_version_name,:archivo_ancho,:archivo_alto,:archivo_type,:archivo_galeria,:archivo_path_name)";
 
         $this->deleteSql="DELETE FROM {$this->tableName} WHERE archivo_id= :archivo_id OR archivo_version= :archivo_id";
 
@@ -67,9 +67,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
 
+
+
         $fileNameVersion = time()."_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
 
         $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
+
+
+        $a->setPathName($mainPath);
 
         $mainPath="{$mainPath}/{$fileNameVersion}";
 
@@ -143,6 +148,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
             array_push($this->files, $a);
 
+            $a->setPathName($data["archivo_path_name"]);
 
         });
 
@@ -169,7 +175,24 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         return $this->files;
     }
+    public function selectArchivoOriginalByRepositorioId($in)
+    {
+        $this->files=array();
 
+        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in}) AND archivo_version_name='original'";
+
+
+        $this->dataSource->runQuery($sql,array(),
+            function($data){
+
+
+                $this->query($data);
+            });
+
+
+
+        return $this->files;
+    }
     public function selectArchivoByVersions($id)
     {
         $this->files=array();
@@ -202,6 +225,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                     $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
                     $data["archivo_path"],$data["archivo_creation"],
                     $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
+                $a->setPathName($data["archivo_path_name"]);
                 break;
             
             case 1:
@@ -209,6 +233,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                     $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
                     $data["archivo_path"],$data["archivo_creation"],
                     $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_ancho"],$data["archivo_alto"]);
+                $a->setPathName($data["archivo_path_name"]);
                 break;
         }
         
@@ -245,7 +270,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             ":archivo_ancho"=>$ancho,
             ":archivo_alto"=>$alto,
             ":archivo_type"=>$a->getType(),
-            ":archivo_galeria"=>$a->getGaleria()
+            ":archivo_galeria"=>$a->getGaleria(),
+            ":archivo_path_name"=>$a->getPathName()
         );
     }
 
@@ -285,17 +311,28 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     {
        $archivos=$this->selectArchivoByVersions($id);
 
-       $ftp=$archivos[0]->getRepositorio()->getFtp();
+       $repositorio= $archivos[0]->getRepositorio();
+       $ftp=$repositorio->getFtp();
+
+
+
+
+        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
         foreach ($archivos as $archivo)
         {
-            if(!$ftp->remove($archivo->getRealName()))//Elimino cada archivo
+            $deleteFile= $repositorio->getPath().$archivo->getPath();
+
+
+            if(!$ftp->remove($deleteFile))//Elimino cada archivo
             {
                 throw new Exception("ArchivoDAO:1");//Codigo de error al eliminar un archivo
             }
         }
 
-        if(!$ftp->rmdir($archivos[0]->getPath()))//Elimino la carpeta
+        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
+
+        if(!$ftp->remove($deletePath))//Elimino la carpeta
         {
             throw new Exception("ArchivoDAO:2");//Codigo de error al eliminar una carpeta
         }

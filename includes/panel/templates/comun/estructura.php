@@ -7,6 +7,7 @@
         var facebookPermissions=<?php echo json_encode($GLOBALS["fbConfig"]["permissions"])?>;
 
     </script>
+
     <title><?php echo ($htmlTitle)?$htmlTitle:"Sin titulo"; ?></title>
     
     <?php include "tags.php";?>
@@ -24,6 +25,7 @@
     
 </head>
 <body data-ng-app="panel" data-ng-controller="panelCtrl">
+
 
 <script>
     function error(e) {

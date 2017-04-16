@@ -161,16 +161,17 @@
     }
     .logo
     {
-        width:50px;float: left;
+        width:30px;float: left;
     }
 
     .text
     {
-        position: relative;    bottom: -10px;
-        margin-left: 20px;
-        font-size: 30px;
-        float: left
-    ;
+        position: relative;   bottom: -6px;
+
+        font-size: 20px;
+        float: left;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
 

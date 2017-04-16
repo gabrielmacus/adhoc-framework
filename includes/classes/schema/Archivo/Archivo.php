@@ -25,6 +25,7 @@ class Archivo
     protected $versionName;
     protected $type;
     protected $galeria=0;
+    protected $pathName;
 
     /**
      * Archivo constructor.
@@ -57,6 +58,24 @@ class Archivo
         $this->versionName=$versionName;
         $this->type=$type;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPathName()
+    {
+        return $this->pathName;
+    }
+
+    /**
+     * @param mixed $pathName
+     */
+    public function setPathName($pathName)
+    {
+        $this->pathName = $pathName;
+    }
+
+
 
    
     /**

@@ -114,7 +114,19 @@
 </form>
 
 </form>
-
+<style>
+    .secciones li
+    {
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .secciones-wrapper
+    {
+        background: white;
+        padding: 20px;
+    }
+</style>
 
 <div class="secciones-wrapper">
 

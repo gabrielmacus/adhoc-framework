@@ -37,6 +37,25 @@ class SeccionDAO implements ISeccion
 ,seccion_tipo=:seccion_tipo WHERE seccion_id=:seccion_id";
 
     }
+
+    public function selectSeccionesByTipo($tipo)
+    {
+
+
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo}";
+        $this->secciones=array();
+        $this->dataSource->runQuery($sql,array(),function($data){
+
+
+
+            $this->query($data);
+
+        });
+
+        return $this->secciones;
+    }
+
     private function arrangeSeccionesTree($s,&$array)
     {
         $tipo=$s->getTipo();
@@ -82,7 +101,7 @@ class SeccionDAO implements ISeccion
     }
 
     public function selectSeccionesSubsecciones()
-    {
+    {        $this->secciones=array();
         $sql = "SELECT * FROM {$this->tableName}";
 
 
@@ -141,7 +160,7 @@ class SeccionDAO implements ISeccion
  
 
     public function selectSecciones()
-    {
+    {        $this->secciones=array();
         $sql = "SELECT * FROM {$this->tableName}";
         $this->secciones=array();
         $this->dataSource->runQuery($sql,array(),function($data){

@@ -29,3 +29,7 @@ require_once "schema/FtpClient/FtpWrapper.php";
 require_once "schema/Facebook/autoload.php";
 
 /** **/
+
+/** JWT **/
+require_once "JWT/JWT.php";
+/**  ** */

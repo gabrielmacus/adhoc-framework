@@ -16,7 +16,7 @@ class UserDAO implements IUser
 
     protected $dataSource;
     protected $tableName;
-    protected $users;
+    protected $users=array();
     private $insertSql;
     private $updateSql;
 
@@ -32,15 +32,15 @@ class UserDAO implements IUser
         $this->insertSql="INSERT INTO  {$this->tableName} 
  (usuario_id, usuario_email, usuario_password, usuario_nickname, 
  usuario_age, usuario_name, usuario_surname, usuario_creation, 
- usuario_modification)
+ usuario_modification,usuario_status)
  VALUES (:usuario_id, :usuario_email, :usuario_password, 
  :usuario_nickname, :usuario_age, :usuario_name, 
- :usuario_surname, :usuario_creation, :usuario_modification)";
+ :usuario_surname, :usuario_creation, :usuario_modification,:usuario_status)";
 
         $this->updateSql="UPDATE {$this->tableName}  SET usuario_id=:usuario_id,
 usuario_email=:usuario_email,usuario_password=:usuario_password,usuario_nickname=:usuario_nickname
 ,usuario_age=:usuario_age,usuario_name=:usuario_name,
-usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modification=:usuario_modification WHERE usuario_id=:usuario_id";
+usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modification=:usuario_modification,usuario_status=:usuario_status WHERE usuario_id=:usuario_id";
 
     }
 
@@ -77,7 +77,8 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
             ":usuario_name"=>$u->getName(),
             ":usuario_surname"=>$u->getSurname(),
             ":usuario_creation"=>$u->getCreation(),
-            ":usuario_modification"=>$u->getModification()
+            ":usuario_modification"=>$u->getModification(),
+            ":usuario_status"=>$u->getStatus()
         );
     }
     private function query($data)
@@ -85,6 +86,9 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
         $u = new User($data["usuario_name"],$data["usuario_surname"],$data["usuario_age"],$data["usuario_email"],
             $data["usuario_password"],$data["usuario_nickname"]
             ,$data["usuario_creation"],$data["usuario_modification"]);
+
+        $u->setStatus($data["usuario_status"]);
+
         array_push($this->users, $u);
 
     }
@@ -143,6 +147,45 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
     public function validate(User $u)
     {
         // TODO: Implement validate() method.
+    }
+
+    public function selectToken($user, $password)
+    {
+        $sql = "SELECT * FROM {$this->tableName} WHERE  usuario_password=:usuario_password
+    AND ( usuario_nickname = :usuario_nickname 
+    OR usuario_email = :usuario_nickname)";
+
+        $this->dataSource->runQuery($sql,
+            array(":usuario_nickname"=>$user,
+                ":usuario_password"=> hash("sha256",$password)
+            ),function($data){
+
+            $this->query($data);
+        });
+
+
+        $user =$this->users[0];
+
+        if($user)
+        {
+            $data = [
+                'iat'  => time(),         // Issued at: time when the token was generated
+                'iss'  => $GLOBALS["configuracion"]->getSiteAddress(),       // Issuer
+                'exp'  => time()+3600,           // Expire (en una hora)
+                'data' => [                  // Data related to the signer user
+                    'id'   => $user->getId(), // userid from the users table
+                    'nickname' => $user->getNickname(), // User name
+                    'email'=>$user->getEmail(),
+                    'name'=>$user->getName(),
+                    'surname'=>$user->getSurname()
+                ]
+            ];
+            return \Firebase\JWT\JWT::encode($data,$GLOBALS["configuracion"]->getTokenSecret(),'HS512');
+
+        }
+
+        return false;
+
     }
 
 

@@ -243,6 +243,18 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
     public function deleteRepositorioById($id)
     {
+
+        $archivos=  $GLOBALS["archivoDAO"]->selectArchivoOriginalByRepositorioId($id);
+
+
+
+        foreach ($archivos as $archivo)
+        {
+
+           $GLOBALS["archivoDAO"]->deleteArchivoById($archivo->getId());
+        }
+
+
         $sql = "DELETE FROM {$this->tableName} WHERE repositorio_id= :repositorio_id";
 
         $res= $this->dataSource->runUpdate($sql,
@@ -250,6 +262,8 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
                 ":repositorio_id"=>$id
             ));
         return $res;
+
+
         }
 
     public function validate(Repositorio $r)

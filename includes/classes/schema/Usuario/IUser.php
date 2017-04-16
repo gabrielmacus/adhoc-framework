@@ -15,8 +15,8 @@ interface IUser
     /** Read **/
     public function selectUsuarios();
     public function selectUsuarioById($id);
-    /** **/
-
+    public function selectToken($user,$password);
+    /** * */
     /** Update**/
     public function updateUsuario(User $u);
     /** */

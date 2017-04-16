@@ -17,7 +17,7 @@ class User
     protected $creation;
     protected $modification;
     protected $id;
-
+    protected $status=0;
     /**
      * User constructor.
      * @param $name
@@ -42,6 +42,23 @@ class User
         $this->modification = $modification;
         $this->id = $id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
 
 
     /**

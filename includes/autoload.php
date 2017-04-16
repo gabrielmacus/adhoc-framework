@@ -32,8 +32,9 @@ $GLOBALS["repositorioDAO"] = new RepositorioDAO($configuracion->getDataSource())
 $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
+$GLOBALS["configuracion"]  =$configuracion;
 
-/** **/
+    /** **/
 
 /** FB API **/
 $GLOBALS["fbConfig"]=[
@@ -52,5 +53,18 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
+
+$secciones= $GLOBALS["seccionDAO"]->selectSeccionesByTipo(0);
+foreach ($secciones as $seccion)
+{
+   $lang["sidenav"][]=array(  "text"=>$seccion->getNombre(),"items"=>array(
+       array("text"=>"Agregar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccion->getNombre()}/add.php"),
+       array("text"=>"Listar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccion->getNombre()}/list.php")
+
+   ));
+
+}
+
+
 
 set_time_limit(90);//Desarrollo
