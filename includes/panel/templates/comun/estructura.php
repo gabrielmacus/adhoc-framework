@@ -57,10 +57,6 @@
 
     </section>
 
-    <?php if(!$_GET["modal"])
-    {
-        include "sidenavs/A.php";
-    }?>
 
 
 
@@ -73,6 +69,10 @@
         asdas
     </footer>-->
 </div>
+<?php if(!$_GET["modal"])
+{
+    include "sidenavs/A.php";
+}?>
 
 
 </body>

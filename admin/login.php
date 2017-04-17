@@ -54,7 +54,7 @@ try{
             font-family: 'Ubuntu', sans-serif;
         }
     </style>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 </head>
 <body>
 <form action="<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true" method="post" enctype="application/x-www-form-urlencoded">
@@ -66,7 +66,8 @@ try{
         <label>Contraseña</label>
         <input type="password" name="password">
     </div>
-    <button type="submit">Ingresar</button>
+    <div>    <button type="submit">Ingresar</button></div>
+
 
 </form>
 </body>

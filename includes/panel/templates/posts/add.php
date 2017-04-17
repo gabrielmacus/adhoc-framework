@@ -99,7 +99,11 @@
                 data.archivos.push({archivo_grupo:file.data("gal"),archivo_id:file.data("file"),delete:file.data("delete"),archivo_objeto_id:file.data("id")});
 
             });
+            //seccion del post
 
+            alert(    $(".secciones").last().val());
+
+            return false;
             //texto en html
             data.texto= texto.root.innerHTML;
             console.log(data);
@@ -219,9 +223,69 @@
             }
         });*/
 
+$(document).on("change",".secciones",function () {
 
+
+    var target=$(this);
+    target.nextAll().remove();
+
+    var seccion= target.val();
+
+    $.ajax(
+        {
+            "method":"get",
+            "url":"<?Php echo $configuracion->getSiteAddress()?>/admin/secciones/list.php?tipo="+seccion,
+            "dataType":"json",
+            "success":function (e) {
+                console.log(e);
+                if(e)
+                {
+                    if(e.length>0)
+                    {var HTML="<select style='margin-top: 10px' class='secciones'>";
+                        HTML+="<option disabled selected>Seleccione una subsección</option>";
+                        $.each(e,function (k,v) {
+
+                            HTML+="<option value='"+v.id+"'>"+v.nombre+"</option>";
+
+                        });
+                        HTML+="</select>";
+
+                        $(HTML).insertAfter(target);
+
+                    }
+
+                    //  parent.postMessage(e,location.origin);
+
+                    //  location.reload();
+                }
+            }
+            ,"error":error
+        }
+    );
+
+});
 </script>
 <form>
+    <?php
+    if(count($subsecciones))
+    {
+        ?>
+        <div>
+            <label>Sección</label>
+            <select class="secciones">
+                <option selected disabled>Seleccione una sección</option>
+                <?php foreach ($subsecciones as $seccion){
+                    ?>
+                    <option value="<?php echo $seccion->getId()?>"><?php echo $seccion->getNombre()?></option>
+                    <?php
+                } ?>
+            </select>
+        </div>
+
+
+        <?php
+    }?>
+
     <?php
     if($post)
     {

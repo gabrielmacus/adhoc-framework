@@ -238,6 +238,11 @@
             width: 50%;
             float: left;
         }
+        .file img
+        {
+            height: 100px;
+
+        }
     }
 </style>
 <form data-ng-submit="uploadFiles()">

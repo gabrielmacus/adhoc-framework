@@ -49,6 +49,7 @@ class SeccionDAO implements ISeccion
 
 
 
+
             $this->query($data);
 
         });

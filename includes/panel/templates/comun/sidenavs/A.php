@@ -75,8 +75,19 @@ function loadSidenav($items)
     });
 
     $(document).on("click",".toggle-menu",function () {
-        $("aside.sidenav").removeClass("active");
-        console.log( $(".sidenav").css("width"));
+
+        if( $("aside.sidenav").hasClass("active"))
+        {  $("#body").animate({"left":"-"+ $(".sidenav").css("width")},10);
+            $("aside.sidenav").removeClass("active");
+        }
+        else
+        {$(".sidenav").addClass("active");
+
+            $("#body").animate({"left":"0px"},10);
+
+        }
+
+
 
     });
 
@@ -85,6 +96,7 @@ function loadSidenav($items)
 
             $(".sidenav").addClass("active");
 
+        $("#body").animate({"left":"0px"},400);
 
 
     });
@@ -98,6 +110,8 @@ function loadSidenav($items)
         -ms-transition: all  400ms;;
         -o-transition: all  400ms;;
         transition: all  400ms;;
+        height: 100%;
+        overflow: scroll;    top: 0px;
     }
 
     .sidenav ul > li
@@ -134,6 +148,10 @@ function loadSidenav($items)
 
     @media screen and  (min-width:1025px)  {
 
+        #body
+        {
+            left:0px!important;
+        }
 
         section
         {
@@ -147,8 +165,9 @@ function loadSidenav($items)
             right: 0px;
             top:0px;
         }
-    }
-    .sidenav
+    }    @media screen and (min-width: 769px) and (max-width:1024px)  {
+
+        .sidenav
     {
 
         z-index: 2000;
@@ -164,9 +183,17 @@ function loadSidenav($items)
             right: -30%;
             top:0px;
         }
+
+        .icon-trash
+        {
+            position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
+        }
     }
 
-    @media screen and (min-width:601px) and (max-width:768px) {
+    @media screen and (min-width:601px) and (max-width:768px) { .icon-trash
+    {
+        position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
+    }
         .sidenav
         {
 
@@ -185,7 +212,10 @@ function loadSidenav($items)
 
 
     }
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:600px) { .icon-trash
+    {
+        position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
+    }
         .sidenav
         {
 
