@@ -49,7 +49,30 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
+    private function processArchivos()
+    {
 
+        $archivos = array();
+        foreach ($this->files as $archivo )
+        {
+
+            if($archivo->getVersion()==0)
+            {
+                $idOriginal=$archivo->getId();
+            }
+            else
+            {
+                $idOriginal=$archivo->getVersion();
+            }
+
+
+            $archivos [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
+
+
+
+        }
+        $this->files=$archivos;
+    }
 
     public function insertArchivo(IArchivo $a,$versionName="original",$versionId=0)
     {
@@ -124,13 +147,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $res;
     }
 
-    public function selectArchivos()
+    public function selectArchivos($process=true)
     {
+        $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} LEFT JOIN repositorios ON repositorio_id=archivo_repositorio";
-
-
-
 
         $this->dataSource->runQuery($sql,array(),function($data){
 
@@ -151,13 +172,18 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setPathName($data["archivo_path_name"]);
 
         });
+        if($process)
+        {
+
+            $this->processArchivos();
+        }
 
         return $this->files;
 
 
     }
 
-    public function selectArchivoByRepositorioId($in)
+    public function selectArchivoByRepositorioId($in,$process=true)
     {
         $this->files=array();
 
@@ -171,11 +197,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $this->query($data);
             });
 
+        if($process)
+        {
 
+            $this->processArchivos();
 
+        }
         return $this->files;
     }
-    public function selectArchivoOriginalByRepositorioId($in)
+    public function selectArchivoOriginalByRepositorioId($in,$process=true)
     {
         $this->files=array();
 
@@ -189,11 +219,16 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $this->query($data);
             });
 
+        if($process)
+        {
+
+            $this->processArchivos();
+        }
 
 
         return $this->files;
     }
-    public function selectArchivoByVersions($id)
+    public function selectArchivoByVersions($id,$process=true)
     {
         $this->files=array();
 
@@ -204,7 +239,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             function($data){
             $this->query($data);
             });
+        if($process)
+        {
 
+            $this->processArchivos();
+        }
         return $this->files;
 
     }
@@ -277,7 +316,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
 
-    public function selectArchivoById($id)
+    public function selectArchivoById($id,$process=true)
     {
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
@@ -285,7 +324,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),function($data){
             $this->query($data);
         });
+        if($process)
+        {
 
+            $this->processArchivos();
+        }
         return $this->files[0];
 
 
@@ -309,7 +352,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     public function deleteArchivoById($id)
     {
-       $archivos=$this->selectArchivoByVersions($id);
+       $archivos=$this->selectArchivoByVersions($id,false);
 
        $repositorio= $archivos[0]->getRepositorio();
        $ftp=$repositorio->getFtp();

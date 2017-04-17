@@ -17,31 +17,23 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
-
-    if(is_numeric($_GET["id"]))
-    {
-  
-       $repositorio= $GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"]);
-    }
-    else
-    {
-        $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
-    }
-
-
-    switch ($_GET["act"])
-    {
-        case "add":
-            $site="repositorios";
-            $action="modal/add";
-            break;
-
-        default:   $site="repositorios";
-            $action="list";
-            break;
-    }
+if(is_numeric($_GET["r"]))
+{
+    $archivos=$GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["r"]);
 
 }
+else
+{
+    $archivos=$GLOBALS["archivoDAO"]->selectArchivos();
+
+}
+
+    $site="archivos";
+    $action="list";
+
+}
+
+
 catch (Exception $e)
 {
     echo json_encode("Error: {$e->getMessage()}");

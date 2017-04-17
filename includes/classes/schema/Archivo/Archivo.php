@@ -27,6 +27,8 @@ class Archivo
     protected $galeria=0;
     protected $pathName;
 
+    protected $nexo;
+
     /**
      * Archivo constructor.
      * @param $size
@@ -58,6 +60,23 @@ class Archivo
         $this->versionName=$versionName;
         $this->type=$type;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNexo()
+    {
+        return $this->nexo;
+    }
+
+    /**
+     * @param mixed $nexo
+     */
+    public function setNexo($nexo)
+    {
+        $this->nexo = $nexo;
+    }
+
 
     /**
      * @return mixed

@@ -42,18 +42,35 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
     ?>
-    <form action="<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true" method="post" enctype="application/x-www-form-urlencoded">
-        <div>
-            <label>Usuario o Email</label>
-            <input name="user">
-        </div>
-        <div>
-            <label>Contraseña</label>
-            <input name="password">
-        </div>
-        <button type="submit">Ingresar</button>
+<html>
+<head>
 
-    </form>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        html
+        {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+<form action="<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true" method="post" enctype="application/x-www-form-urlencoded">
+    <div>
+        <label>Usuario o Email</label>
+        <input name="user">
+    </div>
+    <div>
+        <label>Contraseña</label>
+        <input type="password" name="password">
+    </div>
+    <button type="submit">Ingresar</button>
+
+</form>
+</body>
+</html>
     <?php
 }
 catch (Exception $e)

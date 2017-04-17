@@ -40,7 +40,7 @@ class PostDAO implements IPost
 post_id=:post_id,post_titulo=:post_titulo,
 post_volanta=:post_volanta,post_bajada=:post_bajada,
 post_texto=:post_texto,post_etiquetas=:post_etiquetas,
- post_seccion=:post_seccion,post_creacion=:post_creacion,post_modificacion=:post_modificacion
+ post_seccion=:post_seccion,post_creacion=:post_creacion,post_modificacion=:post_modificacion,
   post_extra_1=:post_extra_1,post_extra_2=:post_extra_2,post_extra_3=:post_extra_3,post_extra_4=:post_extra_4 WHERE post_id=:post_id";
 
     }
@@ -66,26 +66,43 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($p));
 
+
         /** Codigo de asociacion de archivos**/
 
         $archivos = $p->getArchivos();//Inserto los archivos adjuntos
 
-        $archivosSql ="INSERT INTO archivos_objetos (archivo_objeto_id,archivo_id,objeto_id,objeto_tabla,archivo_orden)
-VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)";
+
+
 
 
        foreach ($archivos as  $archivo) {
 
+           $archivo["objeto_id"]=$res;
+
+           if(!$archivo["delete"])
+           {
+               $archivosSql ="INSERT INTO archivos_objetos SET ";
+
+               $set="";
+               foreach ($archivo as $k=>$v)
+               {
+                   $set.="{$k}='{$v}',";
+               }
+
+               $set=rtrim($set,",");
+
+               $archivosSql.=" {$set}";
+
+           }
+           else
+           {
+               $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ={$archivo["archivo_objeto_id"]}";
+
+           }
+
+
            $this->dataSource->runUpdate($archivosSql,
-               array(
-
-                   ":archivo_objeto_id"=>$archivo["archivo_objeto_id"],
-                   ":archivo_id"=>$archivo["archivo_id"],
-                   ":objeto_id"=>$res,
-                   ":objeto_tabla"=>$this->tableName,
-                   ":archivo_orden"=>$archivo["archivo_orden"]
-
-        ));
+               array());
 
         }
         /*** **/
@@ -143,26 +160,17 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
     }
 
 
-
-    public function selectPosts()
+    private  function processFiles($process=true)
     {
-        $sql = "SELECT * FROM {$this->tableName} ";
-
-        $this->dataSource->runQuery($sql, array(), function ($data) {
-
-            $this->query($data, true);
-
-        });
-
         $in = "0";
         foreach ($this->posts as $post) {
 
             $in.= ",{$post->getId()}";
         }
 
-        $joinArchivos = "SELECT * FROM archivos a LEFT JOIN
- archivos_objetos ao ON a.archivo_id = ao.archivo_id AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN ({$in}) ";
-
+        $joinArchivos = "SELECT * FROM archivos a RIGHT JOIN
+ archivos_objetos ao ON   (a.archivo_id = ao.archivo_id OR a.archivo_version=ao.archivo_id) AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN ({$in}) ";
+//Traigo los archivos con todas sus versiones
         $archivos = $this->dataSource->runQuery($joinArchivos, array(
 
             ":objeto_tabla" => $this->tableName,
@@ -170,20 +178,17 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
         ));
 
 
-
         foreach ($archivos as $archivo)
         {
-
-
-
-            if(isset($archivo["archivo_objeto_id"]))
+            if(isset($archivo["objeto_id"]))
             {
-
-             $p= $this->posts[$archivo["archivo_objeto_id"]];
-
+                $p= $this->posts[$archivo["objeto_id"]];
+                $nexo =array("archivo_objeto_id"=>$archivo["archivo_objeto_id"],
+                    "archivo_grupo"=>$archivo["archivo_grupo"]);
                 $postArchivos=$p->getArchivos();
 
-            $idOriginal = $archivo["archivo_id"];
+
+                $idOriginal = $archivo["archivo_id"];
                 if($archivo["archivo_id"]==0)
                 {
 
@@ -197,16 +202,31 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
 
 //                $postArchivos[$archivo->getType()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
-                $postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
+                $archivo->setNexo($nexo);
 
-            
+                //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
+                $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                 $p->setArchivos($postArchivos);
-
-
 
             }
 
         }
+
+    }
+
+
+    public function selectPosts()
+    {
+        $this->posts=array();
+        $sql = "SELECT * FROM {$this->tableName} ";
+
+        $this->dataSource->runQuery($sql, array(), function ($data) {
+
+            $this->query($data, true);
+
+        });
+
+        $this->processFiles();
 
 
         return $this->posts;
@@ -214,14 +234,17 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
 
     public function selectPostById($id)
     {
-
+        $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_id=:post_id";
 
         $this->dataSource->runQuery($sql,array(":post_id"=>$id),function($data){
-            $this->query($data);
+            $this->query($data,true);
         });
 
-        return $this->secciones[0];
+
+        $this->processFiles();
+
+        return array_values($this->posts)[0];
     }
 
     public function updatePost(Post $p)
@@ -233,6 +256,42 @@ VALUES (:archivo_objeto_id,:archivo_id,:objeto_id,:objeto_tabla,:archivo_orden)"
         $sql = $this->updateSql;
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($p));
+
+        /** Codigo de asociacion de archivos**/
+
+        $archivos = $p->getArchivos();//Inserto los archivos adjuntos
+
+        foreach ($archivos as  $archivo) {
+
+            $archivo["objeto_id"]=$p->getId();
+
+            if(!$archivo["delete"])
+            {
+    $archivosSql ="REPLACE INTO archivos_objetos SET ";
+
+                $set="";
+                foreach ($archivo as $k=>$v)
+                {
+                    $set.="{$k}='{$v}',";
+                }
+
+                $set=rtrim($set,",");
+
+                $archivosSql.=" {$set}";
+
+            }
+            else
+            {
+                $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ={$archivo["archivo_objeto_id"]}";
+
+            }
+
+            $this->dataSource->runUpdate($archivosSql,
+                array());
+
+        }
+        /*** **/
+
         return $res;
     }
 

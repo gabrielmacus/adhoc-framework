@@ -51,6 +51,7 @@ try{
             case "gif":
             case "jpg":
 
+
                 $a = new Imagen($file["size"],$file["name"],$file["mime"]);
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);

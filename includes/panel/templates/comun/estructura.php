@@ -43,9 +43,13 @@
 
 </script>
 <div id="body">
-    <header>
+    <?php if(!$_GET["modal"])
+    {
+        ?><header>
         <?php include "navbars/A.php" ?>
-    </header>
+        </header><?php
+    }?>
+
 
     <section>
 
@@ -53,8 +57,11 @@
 
     </section>
 
+    <?php if(!$_GET["modal"])
+    {
+        include "sidenavs/A.php";
+    }?>
 
-        <?php include "sidenavs/A.php" ?>
 
 
 

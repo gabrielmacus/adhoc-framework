@@ -17,17 +17,35 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
+    $_POST["seccion"]=43;
 
-    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
+    $post = new Post();
+    $post->setTitulo($_POST["titulo"]);
+    $post->setTexto($_POST["texto"]);
+    $post->setArchivos($_POST["archivos"]);
+    $post->setSeccion($_POST["seccion"]);
 
 
-    $site="posts";
-    $action="add";
+
+
+
+    if($_POST["id"])
+    {
+
+        $post->setId($_POST["id"]);
+        echo json_encode($GLOBALS["postDAO"]->updatePost($post));
+    }
+    else
+    { echo json_encode($GLOBALS["postDAO"]->insertPost($post));
+
+    }
+
+
+
+
 }
 catch (Exception $e)
 {
     echo "Error: {$e->getMessage()}";
 
 }
-
-include DIR_PATH."/includes/panel/templates/comun/estructura.php";

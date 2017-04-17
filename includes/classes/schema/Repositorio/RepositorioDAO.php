@@ -118,10 +118,11 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         }
         $in =rtrim($in,",");
 
-        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in);
+        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($in,false);
         $archivosRepositorio=array();
         foreach ($archivos as $archivo )
         {
+
 
             if($archivo->getVersion()==0)
             {

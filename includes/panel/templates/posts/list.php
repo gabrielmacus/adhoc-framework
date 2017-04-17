@@ -1,7 +1,10 @@
+<ul>
 <?php
-/**
- * Created by PhpStorm.
- * User: Puers
- * Date: 03/04/2017
- * Time: 18:50
- */
+
+foreach ($posts as $post)
+{
+    ?>
+    <li><?php echo $post->getTitulo , ()?></li>
+    <?php
+}?>
+</ul>

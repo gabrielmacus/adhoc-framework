@@ -34,6 +34,7 @@ $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
 $GLOBALS["configuracion"]  =$configuracion;
 
+
     /** **/
 
 /** FB API **/
@@ -54,12 +55,15 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
 
+//Cargo las secciones al menu
 $secciones= $GLOBALS["seccionDAO"]->selectSeccionesByTipo(0);
+
 foreach ($secciones as $seccion)
 {
+    $seccionNombre =strtolower($seccion->getNombre());
    $lang["sidenav"][]=array(  "text"=>$seccion->getNombre(),"items"=>array(
-       array("text"=>"Agregar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccion->getNombre()}/add.php"),
-       array("text"=>"Listar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccion->getNombre()}/list.php")
+       array("text"=>"Agregar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccionNombre}/?act=add"),
+       array("text"=>"Listar {$seccion->getNombre()}","href"=>$configuracion->getSiteAddress()."/admin/{$seccionNombre}/")
 
    ));
 

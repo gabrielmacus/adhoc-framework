@@ -100,9 +100,18 @@ class SeccionDAO implements ISeccion
 
     }
 
-    public function selectSeccionesSubsecciones()
+    public function selectSeccionesSubsecciones($tipo=false)
     {        $this->secciones=array();
+
+    if(is_numeric($tipo))
+    {
+        $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo} OR seccion_id={$tipo}";
+    }
+    else
+    {
         $sql = "SELECT * FROM {$this->tableName}";
+    }
+
 
 
 

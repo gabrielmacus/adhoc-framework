@@ -16,13 +16,44 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
+    $tipo =43;
+    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones($tipo);
 
 
-    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
-    
-    $site="posts";
-    $action="list";
+
+    switch ($_GET["act"])
+    {
+        default:
+            if(is_numeric($_GET["id"]))
+            {
+                $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
+
+            }
+            else
+            {
+                $posts= $GLOBALS["postDAO"]->selectPosts();
+            }
+
+
+            $site="posts";
+            $action="list";
+            break;
+        case "add":
+            $imageVersion="post";
+            if(is_numeric($_GET["id"]))
+            {
+                $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
+
+            }
+
+
+
+            $site="posts";
+            $action="add";
+            break;
+    }
+
 }
 catch (Exception $e)
 {

@@ -64,6 +64,13 @@ html {
     float: left;
     width: 100%;
 }
+em
+{
+    font-style: italic;
+}
+strong{
+    font-weight: 600!important;
+}
 @media screen and  (min-width:769px)  {
 
 
@@ -169,4 +176,279 @@ h6
     float: left;
     width: 100%;
 
+}
+
+form
+{
+    float: left;
+    width: 100%;
+}
+form > div
+{
+    float: left;
+    width:100%;
+    padding: 10px;
+}
+form > div input,form > div select
+{
+    border: none
+;outline: none;
+    float: left;
+    width: 100%;
+    padding: 8px;
+    font-size: 22px;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;;
+    -ms-transition: all 300ms;;
+    -o-transition: all 300ms;;
+    transition: all 300ms;;
+}
+form > div input:focus,form > div select:focus
+{
+
+    background-color: #2a2a2a;
+    color: white;
+}
+form > div label
+{
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+form > div .editor,form > div .ql-toolbar
+{
+    width: 100%;
+    float: left;
+    background-color: white;
+
+}
+
+
+form > div .editor
+{
+    height: 200px;
+}
+
+form > div .ql-editor
+{
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;;
+    -o-transition: all 300ms;;
+    transition: all 300ms;;
+}
+form > div .ql-editor:focus
+{
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.icon-trash {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.icon-trash .trash-lid {
+    -webkit-transition: all 300ms;
+    -moz-transition: all  300ms;
+    -ms-transition: all  300ms;
+    -o-transition: all 300ms;
+    transition: all  300ms;
+    width: 62%;
+    height: 10%;
+    position: absolute;
+    left: 50%;
+    margin-left: -31%;
+    top: 10.5%;
+    background-color: #000;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;/*
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);*/
+}
+.icon-trash:hover .trash-lid
+{      -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+    top:-7%;
+}
+.icon-trash .trash-lid:after {
+    content: "";
+    width: 26%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -13%;
+    margin-top: -10%;
+    background-color: inherit;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+}
+
+.icon-trash .trash-container {
+    width: 56%;
+    height: 65%;
+    position: absolute;
+    left: 50%;
+    margin-left: -28%;
+    bottom: 10%;
+    background-color: #000;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.icon-trash .trash-container:after {
+    content: "";
+    width: 110%;
+    height: 12%;
+    position: absolute;
+    left: 50%;
+    margin-left: -55%;
+    top: 0;
+    background-color: inherit;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+}
+
+.icon-trash .trash-line-1 {
+    width: 4%;
+    height: 50%;
+    position: absolute;
+    left: 38%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #252527;
+}
+
+.icon-trash .trash-line-2 {
+    width: 4%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #252527;
+}
+
+.icon-trash .trash-line-3 {
+    width: 4%;
+    height: 50%;
+    position: absolute;
+    left: 62%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #252527;
+}
+
+
+.promptModal
+{
+    background-color: white;
+    padding: 15px;
+    float: left;
+    width: 100%;
+}
+
+.promptModal .buttons
+{
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.promptModal p
+{
+    font-weight: 100;
+}
+.promptModal p b
+{
+    font-weight: 600;
+}
+.promptModal .buttons > div
+{
+    float: left;
+    padding: 10px;
+    width: 50%;
+}
+.promptModal .buttons .yes
+{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background-color: #4dca3e;
+    cursor: pointer;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+}
+.promptModal .buttons .no
+{ float: left;
+    width: 100%;
+    padding: 10px;
+    background-color: #ca4139;
+    cursor: pointer;
+
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.promptModal .buttons .yes:hover
+{
+    background-color: #24ca2c;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.promptModal .buttons .no:hover
+{
+    background-color: #ca3835;        -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+button
+ {
+
+
+    float: left;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;;
+    -ms-transition: all 300ms;;
+    -o-transition: all 300ms;;
+    transition: all 300ms;;
+ }
+button:active
+{
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2);
 }
