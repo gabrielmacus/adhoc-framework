@@ -82,7 +82,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $r =     $a->getRepositorio();
 
-        var_dump($a->getRepositorio());
+        var_dump($r->getFtp());
         exit();
         $ftp  =$r->getFtp();
 
