@@ -117,10 +117,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     //    exit();
 
 
-        
-   var_dump(     $ftp->help());
 
-        if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
+        if(!$ftp->put($fullDir,$a->getTmpPath()))
         {
             throw new Exception("ArchivoDAO:0");
         }
