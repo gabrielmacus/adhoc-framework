@@ -14,8 +14,6 @@ try{
 
     $rep=$_GET["rep"];
 
-    var_dump($rep);
-
     if(!is_numeric($rep) || !$rep)
     {
        $res= "El repositorio no es correcto";//TODO pasar $lang a objeto
