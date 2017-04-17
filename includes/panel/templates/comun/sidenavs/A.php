@@ -5,7 +5,7 @@ function loadSidenav($items)
 {
 
     ?>
-    <ul>
+    <ul style="    width: 100%;">
         <?php
         foreach ($items as $item)
         {
@@ -73,15 +73,31 @@ function loadSidenav($items)
         ul.animate({"height":"toggle"},350);
 
     });
+
+    $(document).on("click",".toggle-menu",function () {
+        $("aside.sidenav").removeClass("active");
+        console.log( $(".sidenav").css("width"));
+
+    });
+
+    $(document).on("click","section",function (e) {
+
+
+            $(".sidenav").addClass("active");
+
+
+
+    });
+
 </script>
 <style>
-    .sidenav
-    {
-        position: fixed;
-        height:100%;
-        width: 25%;
-        right: 0px;
-        top:0px;
+
+    .sidenav{
+        -webkit-transition: all 400ms;
+        -moz-transition: all  400ms;;
+        -ms-transition: all  400ms;;
+        -o-transition: all  400ms;;
+        transition: all  400ms;;
     }
 
     .sidenav ul > li
@@ -116,13 +132,80 @@ function loadSidenav($items)
         padding-left: 20px;
     }
 
-    section
-    {
-        width: 75%;
+    @media screen and  (min-width:1025px)  {
+
+
+        section
+        {
+            width: 75%;
+        }
+        .sidenav
+        {
+            position: fixed;
+            height:100%;
+            width: 25%;
+            right: 0px;
+            top:0px;
+        }
     }
+    .sidenav
+    {
+
+        z-index: 2000;
+        width: 30%;
+        right: 0%;
+    }
+
+        .sidenav.active
+        {
+            position: fixed;
+            height:100%;
+            width: 30%;
+            right: -30%;
+            top:0px;
+        }
+    }
+
+    @media screen and (min-width:601px) and (max-width:768px) {
+        .sidenav
+        {
+
+            z-index: 2000;
+            width: 40%;
+            right: 0%;
+        }
+        .sidenav.active
+        {
+            position: fixed;
+            height:100%;
+            width: 40%;
+            right: -40%;
+            top:0px;
+        }
+
+
+    }
+    @media screen and (max-width:600px) {
+        .sidenav
+        {
+
+            z-index: 2000;
+            width: 65%;
+            right: 0%;
+        }
+        .sidenav.active
+        {
+            position: fixed;
+            height:100%;
+            width: 65%;
+            right: -65%;
+            top:0px;
+        }
+    }
+
 </style>
 
-    <aside class="sidenav">    <?php echo loadSidenav($lang["sidenav"])?>
+    <aside class="sidenav active">    <?php echo loadSidenav($lang["sidenav"])?>
      </aside>
 
 

@@ -12,12 +12,16 @@
 require_once "classes/schema/DataSource.php";
 require_once "classes/schema/Configuracion/Configuracion.php";
 
+
+/*
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
+*/
 
-
-
+$configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
+    "uipasd",0.1,"http://048ed91c.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
+    "adhoc-framework", "http://048ed91c.ngrok.io/adhoc-framework","http://048ed91c.ngrok.io/adhoc-framework");
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 

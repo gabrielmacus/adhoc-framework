@@ -182,7 +182,7 @@ function loadNavbar($navbar)
 {
 
     ?>
-    <ul>
+    <ul style="width:100%;">
         <?php
         foreach ($navbar as $item)
         {
@@ -216,7 +216,7 @@ function loadNavbar($navbar)
                         <?php
                     }?>
 
-                    <h1 class="text"><?php echo $text;?></h1>
+                    <?php echo $text;?>
 
 
                     <?php if($hasSubmenu)
@@ -235,7 +235,8 @@ function loadNavbar($navbar)
             <?php
         }
         ?>
-
+        <li class="toggle-menu" style="float: right"><a><i class="fa fa-align-justify" aria-hidden="true"></i>
+            </a></li>
     </ul>
 
 
@@ -253,6 +254,7 @@ function loadNavbar($navbar)
 
 <nav class="navbar">
     <?php loadNavbar($lang["navbar"]);?>
+
     <!--
     <ul class="menu-btn">
         <li><i class="fa fa-bars" aria-hidden="true"></i></li>

@@ -1,4 +1,8 @@
 <style>
+    .repositorio-form
+    {
+        padding: 15px;
+    }
     header
     {
         display: none;

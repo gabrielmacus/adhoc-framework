@@ -1,6 +1,6 @@
 {
 
-  "navbar":[{"text":"Content Manager","logo":"http://pngimg.com/uploads/google/google_PNG19630.png"}],
+  "navbar":[{"text":"Content Manager"}],
 
 
   "sidenav":[{"text":"Inicio","href":"/adhoc-framework/admin/"},
