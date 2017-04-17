@@ -12,7 +12,9 @@ include_once DIR_PATH."/extras/api/check-login.php";
 
 try{
 
-    $rep=$_GET["rep"];
+    $rep=$_GET["r"];
+    var_dump($rep);
+    
     if(!is_numeric($rep) || !$rep)
     {
        $res= "El repositorio no es correcto";//TODO pasar $lang a objeto
@@ -56,6 +58,7 @@ try{
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($rep);
+
                 $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
                 break;
 
