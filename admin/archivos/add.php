@@ -12,9 +12,10 @@ include_once DIR_PATH."/extras/api/check-login.php";
 
 try{
 
-    $rep=$_GET["r"];
-    var_dump($rep);
+    $rep=$_GET["rep"];
+
     
+
     if(!is_numeric($rep) || !$rep)
     {
        $res= "El repositorio no es correcto";//TODO pasar $lang a objeto
@@ -25,46 +26,50 @@ try{
         $res="No se seleccionó ningún archivo para subir";
     }
     
-    foreach ($_POST["files"] as $file)
+    if(!$res)
     {
-
-        $file["tmp"]=DIR_PATH.$file["tmp"];
-
-
-        switch ($file["type"])
+        foreach ($_POST["files"] as $file)
         {
-            default:
+
+            $file["tmp"]=DIR_PATH.$file["tmp"];
 
 
-                $a = new Archivo($file["size"],$file["name"],$file["mime"]);
-
-                $a->setTmpPath($file["tmp"]);
-                $a->setExtension($file["type"]);
-                $a->setRepositorio($rep);
-                $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
-
-                break;
+            switch ($file["type"])
+            {
+                default:
 
 
-            case "svg":
-            case "jpeg":
-            case "bmp":
-            case "png":
-            case "gif":
-            case "jpg":
+                    $a = new Archivo($file["size"],$file["name"],$file["mime"]);
+
+                    $a->setTmpPath($file["tmp"]);
+                    $a->setExtension($file["type"]);
+                    $a->setRepositorio($rep);
+                    $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
+
+                    break;
 
 
-                $a = new Imagen($file["size"],$file["name"],$file["mime"]);
-                $a->setTmpPath($file["tmp"]);
-                $a->setExtension($file["type"]);
-                $a->setRepositorio($rep);
+                case "svg":
+                case "jpeg":
+                case "bmp":
+                case "png":
+                case "gif":
+                case "jpg":
 
-                $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
-                break;
+
+                    $a = new Imagen($file["size"],$file["name"],$file["mime"]);
+                    $a->setTmpPath($file["tmp"]);
+                    $a->setExtension($file["type"]);
+                    $a->setRepositorio($rep);
+
+                    $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
+                    break;
+
+            }
 
         }
-
     }
+    
 
     echo json_encode($res);
 
