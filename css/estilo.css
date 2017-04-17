@@ -240,9 +240,9 @@ form > div .ql-editor
 }
 form > div .ql-editor:focus
 {
-    background-color: #2a2a2a;
-    color: white;
-}
+    /* background-color: #2a2a2a;
+        color: white;
+    */}
 
 .icon-trash {
     cursor: pointer;
@@ -431,12 +431,12 @@ form > div .ql-editor:focus
 
 button
  {
-
-
+    background: #2a2a2a!important;
+    color: white;
     float: left;
     width: 100%;
     display: block;
-    padding: 10px;
+    padding: 15px;
     font-size: 17px;
     border: 0;
     cursor: pointer;
@@ -451,4 +451,8 @@ button:active
 {
     -webkit-filter: brightness(1.2);
     filter: brightness(1.2);
+}
+.ql-formats button
+{
+    background-color: white!important;
 }

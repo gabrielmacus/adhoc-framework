@@ -30,7 +30,7 @@
            {
                scope.repositorios.push({
                name:e.data.nombre,
-               url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>"+e.data.id,
+               url:"<?php echo $configuracion->getSiteAddress()."/admin/archivos/?r="?>"+e.data.id,
                    id:e.data.id
            });
 

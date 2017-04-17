@@ -97,9 +97,8 @@
 
 
 
-<h3>Secciones</h3>
 
-<form id="add-seccion" >
+<form id="add-seccion">
 
     <div>
         <label>Nombre</label>
@@ -109,29 +108,42 @@
     <div>
         <label>Pertenece a <b id="pertenece-a">ninguna seccion</b></label>
     </div>
+
     <input name="tipo" hidden value="0">
-    <button type="submit">Agregar seccion</button>
-</form>
+
+    <div>
+        <button type="submit">Agregar seccion</button>
+
+    </div>
+    <div  class="secciones-wrapper">
+
+
+    </div>
+
 
 </form>
 <style>
     .secciones li
     {
         padding-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+
+
+
     }
-    .secciones-wrapper
+    .secciones
     {
         background: white;
-        padding: 20px;
+        padding-top: 20px;
+        width: 100%;float: left;
+
+    }
+
+    .secciones-wrapper
+    {
+     float: left;width: 100%;
     }
 </style>
 
-<div class="secciones-wrapper">
-
-
-</div>
 
 
 
