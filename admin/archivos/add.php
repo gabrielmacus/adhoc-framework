@@ -14,7 +14,7 @@ try{
 
     $rep=$_GET["rep"];
 
-    
+    var_dump($rep);
 
     if(!is_numeric($rep) || !$rep)
     {
