@@ -81,7 +81,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->validate($a);
 
         $r =     $a->getRepositorio();
-        
+
         $ftp  =$r->getFtp();
 
         $mainPath = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
@@ -116,6 +116,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
        // echo json_encode($ftp->put("/httpdocs/data/2017/04/12/1492008967.jpg/1492008967_original.jpg","C:/xampp5/htdocs/adhoc-framework/tmp/files/606453_7up.jpg",FTP_BINARY));
     //    exit();
 
+        var_dump($fullDir);
+        $this->validate($a->getTmpPath());
+        exit();
 
         if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
         {
