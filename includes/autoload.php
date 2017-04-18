@@ -51,6 +51,12 @@ $GLOBALS["fbConfig"]=[
 ];
 /** **/
 
+/** Gmaps API */
+$GLOBALS["mapsConfig"]=array(
+    'initialPosition'=>array("lat"=> -34.397,"lng"=>150.644)
+);
+
+/** **/
 /*** Constantes **/
 
 define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());

@@ -5,6 +5,7 @@
     <script>
 
         var facebookPermissions=<?php echo json_encode($GLOBALS["fbConfig"]["permissions"])?>;
+        
 
     </script>
 

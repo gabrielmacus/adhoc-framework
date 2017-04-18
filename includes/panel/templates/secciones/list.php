@@ -104,17 +104,17 @@
         <label>Nombre</label>
         <input name="nombre" type="text">
     </div>
+    <div >
+        <button type="submit">Agregar seccion</button>
 
+    </div>
     <div>
         <label>Pertenece a <b id="pertenece-a">ninguna seccion</b></label>
     </div>
 
     <input name="tipo" hidden value="0">
 
-    <div>
-        <button type="submit">Agregar seccion</button>
 
-    </div>
     <div  class="secciones-wrapper">
 
 

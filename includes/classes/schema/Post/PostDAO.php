@@ -66,7 +66,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             if(!$archivo["delete"])
             {
-                $archivosSql ="INSERT INTO archivos_objetos SET ";
+                $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
                 $set="";
                 foreach ($archivo as $k=>$v)
@@ -96,7 +96,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $anexos =$p->getAnexos();
         if(count($anexos)>0)
         {
-            $sql="INSERT INTO post_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_orden) values ";
+            $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_orden) values ";
 
             $values ="";
 
@@ -116,6 +116,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $values = rtrim($values,",");
 
             $sql.="{$values}";
+
             $this->dataSource->runUpdate($sql);
 
 
@@ -313,7 +314,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /** ** Codigo de anexado */
 
-     //   $this->assocAnexos($p);
+        $this->assocAnexos($p);
 
         /** ** ****/
 

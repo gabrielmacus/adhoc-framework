@@ -9,4 +9,8 @@
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/rangyinputs-jquery-src.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
+
 <script src="//cdn.quilljs.com/1.2.3/quill.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxqL3eG6quOKEbnY7d00DUPX0h5yoqS5Q&callback=initMap"
+        async defer></script>
+
