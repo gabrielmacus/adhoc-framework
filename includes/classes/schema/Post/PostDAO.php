@@ -313,7 +313,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /** ** Codigo de anexado */
 
-        $this->assocAnexos($p);
+     //   $this->assocAnexos($p);
 
         /** ** ****/
 
