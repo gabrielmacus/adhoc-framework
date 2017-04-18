@@ -101,9 +101,10 @@
             });
             //seccion del post
 
-            alert(    $(".secciones").last().val());
-
-            return false;
+            if(  $(".secciones").last().val())
+            {
+                data.seccion=  $(".secciones").last().val();
+            }
             //texto en html
             data.texto= texto.root.innerHTML;
             console.log(data);
@@ -175,12 +176,12 @@
         var HTML="";
       if(id)
 
-      {     HTML+="<div  data-id='"+id+"' class='file s12 m6 l4' style='padding: 10px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
+      {     HTML+="<div  data-id='"+id+"' class='file s12 m6 l4' style='padding: 0px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
 
       }
       else
 
-      {     HTML+="<div  class='file s12 m6 l4' style='padding: 10px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
+      {     HTML+="<div  class='file s12 m6 l4' style='padding: 0px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
 
       }
 
@@ -188,15 +189,15 @@
         {
             case 1:
 
-
-         
+                HTML+="<a style='padding: 0px;width: 100%;color: white;' data-lity href='"+url+"'>";
                 HTML+="<figure>";
                 HTML+="<img style='width: 100%' src='"+url+"'>";
                 HTML+="</figure>";
-
+                HTML+="</a>";
                 break;
         }
-        HTML+="<span class='remove' style='position: absolute;top: 10px;right: 10px;'>X</span>";
+
+      HTML+="<i  style='position: absolute;top: 10px;right: 10px;font-size: 20px;color: #ca442e' class='fa fa-window-close remove' aria-hidden='true'></i>";
         HTML+="</div>";
         $(".gallery."+type+"[data-id='"+gal+"']").append(HTML);
 
@@ -283,6 +284,16 @@ $(document).on("change",".secciones",function () {
         </div>
 
 
+        <?php
+    }
+    else
+    {
+        ?>
+
+        <div>
+
+            <input hidden name="seccion" value="<?php echo $seccion->getId()?>">
+        </div>
         <?php
     }?>
 

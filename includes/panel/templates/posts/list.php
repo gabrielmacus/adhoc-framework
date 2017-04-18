@@ -7,11 +7,9 @@
             <th>Eliminar</th>
         </tr>
         <?php
-
         foreach ($posts as $post)
         {
             ?>
-
             <tr>
                 <td data-th="Titulo"><a ><?php  echo $post->getTitulo()?></a></td>
                 <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/posts/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>

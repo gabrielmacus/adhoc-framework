@@ -20,8 +20,8 @@ $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
 */
 
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
-    "uipasd",0.1,"http://048ed91c.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
-    "adhoc-framework", "http://048ed91c.ngrok.io/adhoc-framework","http://048ed91c.ngrok.io/adhoc-framework");
+    "uipasd",0.1,"http://44872de8.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
+    "adhoc-framework", "http://44872de8.ngrok.io/adhoc-framework","http://44872de8.ngrok.io/adhoc-framework");
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 

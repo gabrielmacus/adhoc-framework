@@ -17,15 +17,11 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
-    $_POST["seccion"]=43;
-
     $post = new Post();
     $post->setTitulo($_POST["titulo"]);
     $post->setTexto($_POST["texto"]);
     $post->setArchivos($_POST["archivos"]);
     $post->setSeccion($_POST["seccion"]);
-
-
 
 
 

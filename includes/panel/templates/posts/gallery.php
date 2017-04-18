@@ -10,8 +10,18 @@
         color: white;
         text-align: center;
         padding: 10px;
+
     }
 
+    .gallery
+    {
+        margin-top: 10px;
+    }
+    .gallery img
+    {
+        height: 150px;
+        object-fit: cover;
+    }
 
 </style>
 
