@@ -56,63 +56,43 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     }
 */
 
-
-    public function insertPost(Post $p)
+    private function assocFiles(Post $p)
     {
-        $this->validate($p);
-
-        $sql = $this->insertSql;
-
-        if(!$p->getCreacion())
-        {
-            $p->setCreacion(time());
-        }
-
-        if(!$p->getModificacion())
-        {
-            $p->setModificacion(time());
-        }
-
-        $res= $this->dataSource->runUpdate($sql,
-            $this->getParamsArray($p));
-
-
-        /** Codigo de asociacion de archivos**/
-
         $archivos = $p->getArchivos();//Inserto los archivos adjuntos
 
-       foreach ($archivos as  $archivo) {
+        foreach ($archivos as  $archivo) {
 
-           $archivo["objeto_id"]=$res;
+            $archivo["objeto_id"]=$p->getId();
 
-           if(!$archivo["delete"])
-           {
-               $archivosSql ="INSERT INTO archivos_objetos SET ";
+            if(!$archivo["delete"])
+            {
+                $archivosSql ="INSERT INTO archivos_objetos SET ";
 
-               $set="";
-               foreach ($archivo as $k=>$v)
-               {
-                   $set.="{$k}='{$v}',";
-               }
+                $set="";
+                foreach ($archivo as $k=>$v)
+                {
+                    $set.="{$k}='{$v}',";
+                }
 
-               $set=rtrim($set,",");
+                $set=rtrim($set,",");
 
-               $archivosSql.=" {$set}";
+                $archivosSql.=" {$set}";
 
-           }
-           else
-           {
-               $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ='{$archivo["archivo_objeto_id"]}'";
+            }
+            else
+            {
+                $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ='{$archivo["archivo_objeto_id"]}'";
 
-           }
+            }
 
 
-           $this->dataSource->runUpdate($archivosSql);
+            $this->dataSource->runUpdate($archivosSql);
 
         }
-        /*** **/
+    }
 
-        /** ** Codigo de anexado */
+    private function assocAnexos(Post $p)
+    {
         $anexos =$p->getAnexos();
         if(count($anexos)>0)
         {
@@ -131,7 +111,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     $values.=" ('{$anexo['post_nexo_id']}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo['post_nexo_orden']}'),";
 
                 }
-        }
+            }
 
             $values = rtrim($values,",");
 
@@ -140,10 +120,40 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 
         }
+    }
+
+    public function insertPost(Post $p)
+    {
+        $this->validate($p);
+
+        $sql = $this->insertSql;
+
+        if(!$p->getCreacion())
+        {
+            $p->setCreacion(time());
+        }
+
+        if(!$p->getModificacion())
+        {
+            $p->setModificacion(time());
+        }
+
+        $p->setId($this->dataSource->runUpdate($sql,
+            $this->getParamsArray($p)));
+
+
+        /** Codigo de asociacion de archivos**/
+        $this->assocFiles($p);
+
+        /*** **/
+
+        /** ** Codigo de anexado */
+
+        $this->assocAnexos($p);
 
         /** ** ****/
 
-        return $res;
+        return $p->getId();
     }
 
     private function getParamsArray(Post $p)
@@ -297,39 +307,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->getParamsArray($p));
 
         /** Codigo de asociacion de archivos**/
+        $this->assocFiles($p);
 
-        $archivos = $p->getArchivos();//Inserto los archivos adjuntos
-
-        foreach ($archivos as  $archivo) {
-
-            $archivo["objeto_id"]=$p->getId();
-
-            if(!$archivo["delete"])
-            {
-    $archivosSql ="REPLACE INTO archivos_objetos SET ";
-
-                $set="";
-                foreach ($archivo as $k=>$v)
-                {
-                    $set.="{$k}='{$v}',";
-                }
-
-                $set=rtrim($set,",");
-
-                $archivosSql.=" {$set}";
-
-            }
-            else
-            {
-                $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ={$archivo["archivo_objeto_id"]}";
-
-            }
-
-            $this->dataSource->runUpdate($archivosSql,
-                array());
-
-        }
         /*** **/
+
+        /** ** Codigo de anexado */
+
+        $this->assocAnexos($p);
+
+        /** ** ****/
 
         return $res;
     }

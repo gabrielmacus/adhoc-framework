@@ -23,6 +23,7 @@ try{
     $post->setArchivos($_POST["archivos"]);
     $post->setSeccion($_POST["seccion"]);
 
+    $post->setAnexos(array(array("post_anexo_id"=>24)));
 
 
     if($_POST["id"])
