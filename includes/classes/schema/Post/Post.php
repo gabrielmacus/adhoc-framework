@@ -23,11 +23,30 @@ class Post
     protected $extra3;
     protected $extra4;
     protected $archivos=array();
+    protected $anexos =array();
 
     function __construct()
     {
 
     }
+
+    /**
+     * @return array
+     */
+    public function getAnexos()
+    {
+        return $this->anexos;
+    }
+
+    /**
+     * @param array $anexos
+     */
+    public function setAnexos($anexos)
+    {
+        $this->anexos = $anexos;
+    }
+
+    
 
     /**
      * @return array
@@ -274,6 +293,8 @@ class Post
     {
         $this->comentarios = $comentarios;
     }
+
+
 
 
 

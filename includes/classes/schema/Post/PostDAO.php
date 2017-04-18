@@ -45,6 +45,16 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     }
 
+  /*  public function insertAnexo(Post $p,Post $p2,$orden=0)
+    {
+        $sql="INSERT INTO post_nexos SET post__id='{$p->getId()}', SET post_b_id ='{$p2->getId()}',SET post_nexo_orden = '{$orden}'";
+        
+        return $this->dataSource->runUpdate($sql);
+        
+        
+        // TODO: Implement insertAnexo() method.
+    }
+*/
 
 
     public function insertPost(Post $p)
@@ -71,10 +81,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $archivos = $p->getArchivos();//Inserto los archivos adjuntos
 
-
-
-
-
        foreach ($archivos as  $archivo) {
 
            $archivo["objeto_id"]=$res;
@@ -96,17 +102,46 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
            }
            else
            {
-               $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ={$archivo["archivo_objeto_id"]}";
+               $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ='{$archivo["archivo_objeto_id"]}'";
 
            }
 
 
-           $this->dataSource->runUpdate($archivosSql,
-               array());
+           $this->dataSource->runUpdate($archivosSql);
 
         }
         /*** **/
 
+        /** ** Codigo de anexado */
+        $anexos =$p->getAnexos();
+        if(count($anexos)>0)
+        {
+            $sql="INSERT INTO post_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_orden) values ";
+
+            $values ="";
+
+            foreach ($anexos as $anexo)
+            {
+
+                if($anexo["delete"])
+                {
+                }
+                else
+                {
+                    $values.=" ('{$anexo['post_nexo_id']}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo['post_nexo_orden']}'),";
+
+                }
+        }
+
+            $values = rtrim($values,",");
+
+            $sql.="{$values}";
+            $this->dataSource->runUpdate($sql);
+
+
+        }
+
+        /** ** ****/
 
         return $res;
     }
