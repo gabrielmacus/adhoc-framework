@@ -21,6 +21,7 @@ $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
 
 
+
 /*
 $configuracion = new Configuracion("localhost","id766512_adhoc","39717030","id766512_adhoc",
     "uipasd",0.1,"https://subaquatic-bows.000webhostapp.com","Adhoc Framework","Gamaware Web Tech",
