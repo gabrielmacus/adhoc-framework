@@ -18,11 +18,11 @@ $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
 */
+//u427914340_adhoc es 39717030
 
-
-$configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
-    "uipasd",0.1,"http://c2b7b497.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
-    "adhoc-framework", "http://c2b7b497.ngrok.io/adhoc-framework","http://c2b7b497.ngrok.io/adhoc-framework");
+$configuracion = new Configuracion("31.170.166.76","u427914340_adhoc","39717030","adhoc",
+    "uipasd",0.1,"http://mapuchepruebas.esy.es/admin","Adhoc Framework","Gamaware Web Tech",
+    "adhoc-framework", "http://mapuchepruebas.esy.es/admin","http://mapuchepruebas.esy.es/admin");
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 

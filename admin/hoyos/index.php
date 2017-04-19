@@ -16,7 +16,7 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    //u427914340_adhoc es 39717030
+    //
 
     $tipo =60;
     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
