@@ -366,10 +366,10 @@ if(!$repositorio)
 
             <div class="buttons">
                 <div>
-                    <a class="no">No</a>
+                    <a data-lity-close class="no">No</a>
                 </div>
                 <div>
-                    <a  class="yes">Si</a>
+                    <a data-lity-close class="yes">Si</a>
                 </div>
 
 

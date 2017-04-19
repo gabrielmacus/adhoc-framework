@@ -226,7 +226,7 @@
     @media screen and (min-width:601px) and (max-width:768px) {
         .file-container
         {
-            width: 25%;
+            width: 33.333333%;
             float: left;
         }
 
@@ -235,12 +235,12 @@
 
         .file-container
         {
-            width: 50%;
+            width: 100%;
             float: left;
         }
         .file img
         {
-            height: 100px;
+            height: 200px;
 
         }
     }
@@ -437,7 +437,8 @@
 
                         foreach ($originales as $original)
                         {
-                            $archivo = $original["original"];
+                            $tamanoPanel="portada";
+                            $archivo = $original[$tamanoPanel];
 
 
                             ?>
@@ -452,12 +453,12 @@
                                     <figure>
                                         <img   src="<?php echo     $archivo->getRealName()?>">
                                         <div class="preview">
-                                            <a data-lity href="<?php echo     $archivo->getRealName()?>">
+                                            <a data-lity href="<?php echo     $original["original"]->getRealName()?>">
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="download">
-                                            <a href="<?php echo     $archivo->getRealName()?>" download>
+                                            <a href="<?php echo     $original["original"]->getRealName()?>" download>
                                                 <i class="fa fa-cloud-download" aria-hidden="true"></i>
                                             </a>
 
@@ -472,7 +473,7 @@
 
                             </div>
                             <?php
-                            unset( $original["original"]);
+                            unset( $original[$tamanoPanel]);
                             foreach ($original as $archivo)
                             {
 
@@ -550,10 +551,10 @@
 
     <div class="buttons">
         <div>
-            <a class="no">No</a>
+            <a data-lity-close class="no">No</a>
         </div>
         <div>
-            <a class="yes">Si</a>
+            <a data-lity-close class="yes">Si</a>
         </div>
 
 
