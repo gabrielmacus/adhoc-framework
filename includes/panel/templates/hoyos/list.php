@@ -19,16 +19,25 @@
             strokeWeight: 2,
             map:map
         });
-        var path=[];
+
+
+
+        var infowindow = new google.maps.InfoWindow({
+
+        });
+
+
+
+
+            var path=[];
         <?php foreach ($posts as $post)
         {
             ?>
 
+
         path.push(<?php echo $post->getExtra1();?>);
 
-
         //    console.log((google.maps.geometry.spherical.computeDistanceBetween(, <?php echo $post->getExtra1();?>) / 1000).toFixed(2););
-
 
         markers.push(
             new google.maps.Marker({
@@ -36,6 +45,33 @@
                 map:map,icon:"https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_green<?php echo $post->getTitulo() ?>.png"
             })
         )
+        var holeIndex=markers.length-1;
+        markers[holeIndex].addListener("click",function () {
+
+            var HTML="";
+
+            console.log(markers.length+" "+holeIndex);
+            if(markers.length>holeIndex+1)
+            {
+                var hole1 ={lat:markers[holeIndex].getPosition().lat(),lng:markers[holeIndex].getPosition().lng()};
+                var hole2 ={lat:markers[holeIndex+1].getPosition().lat(),lng:markers[holeIndex+1].getPosition().lng()};
+
+                console.log(hole1);
+                console.log(hole2);
+
+            }
+
+
+            markers[holeIndex].getPosition()
+
+            infowindow.setContent(HTML);
+            infowindow.open(map,this);
+
+
+
+        });
+
+
         <?php
         }?>
 

@@ -184,16 +184,10 @@ function loadSidenav($items)
             top:0px;
         }
 
-        .icon-trash
-        {
-            position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
-        }
+
     }
 
-    @media screen and (min-width:601px) and (max-width:768px) { .icon-trash
-    {
-        position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
-    }
+    @media screen and (min-width:601px) and (max-width:768px) {
         .sidenav
         {
 
@@ -212,10 +206,7 @@ function loadSidenav($items)
 
 
     }
-    @media screen and (max-width:600px) { .icon-trash
-    {
-        position: fixed;bottom: 10px;right:5%!important; ;z-index: 5;transform: scale(2);
-    }
+    @media screen and (max-width:600px) { 
         .sidenav
         {
 

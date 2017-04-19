@@ -273,11 +273,19 @@ if(!$repositorio)
 
 
     <div class="fila toolbar">
-      <a class="btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?popup=true&act=add" data-lity>
+      <a style="display: block;float: left;" class="btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?popup=true&act=add" data-lity>
           <span class="original">Nuevo repositorio</span>
           <span class="mask">Nuevo repositorio</span>
 
       </a>
+
+        <a  data-lity href="#delete-repositorio-modal" class="icon-trash" >
+            <div class="trash-lid" style="background-color: #838383"></div>
+            <div class="trash-container" style="background-color: #838383"></div>
+            <div class="trash-line-1"></div>
+            <div class="trash-line-2"></div>
+            <div class="trash-line-3"></div>
+        </a>
     </div>
     <div class="directory fila">
 
@@ -299,13 +307,7 @@ if(!$repositorio)
 
             </div>
         </a>
-        <a  data-lity href="#delete-repositorio-modal" class="icon-trash" style="position: fixed;bottom: 10px;right:28% ;z-index: 5;transform: scale(2)">
-            <div class="trash-lid" style="background-color: #838383"></div>
-            <div class="trash-container" style="background-color: #838383"></div>
-            <div class="trash-line-1"></div>
-            <div class="trash-line-2"></div>
-            <div class="trash-line-3"></div>
-        </a>
+
 
         <script>
             $(document).on("click",".file",function (e) {

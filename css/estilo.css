@@ -251,6 +251,15 @@ form > div .ql-editor:focus
     position: relative;
     margin-left: 25px;
     margin-bottom: 25px;
+    display: block;
+    float: left;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    top: 5px;
+    background-color: white;
 }
 
 .icon-trash .trash-lid {
@@ -464,4 +473,14 @@ button:active
 .ql-formats button
 {
     background-color: white!important;
+}
+
+@keyframes go-out {
+    99%{
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);}
+    100%{display: none}
 }

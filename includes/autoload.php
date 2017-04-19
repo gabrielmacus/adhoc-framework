@@ -68,7 +68,7 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/lang/{$configuracion->getLanguage()}.json"),true);
-
+/*
 //Cargo las secciones al menu
 $secciones= $GLOBALS["seccionDAO"]->selectSeccionesByTipo(0);
 
@@ -83,6 +83,6 @@ foreach ($secciones as $seccion)
 
 }
 
-
+*/
 
 set_time_limit(90);//Desarrollo
