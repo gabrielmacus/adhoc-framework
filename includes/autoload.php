@@ -1,6 +1,7 @@
 <?php
 
 
+var_dump("INFO");
 
 /**
  * Created by PhpStorm.
