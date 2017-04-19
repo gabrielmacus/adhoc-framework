@@ -22,6 +22,13 @@ try{
     $post->setTexto($_POST["texto"]);
     $post->setArchivos($_POST["archivos"]);
     $post->setSeccion($_POST["seccion"]);
+    $post->setBajada($_POST["bajada"]);
+    $post->setVolanta($_POST["volanta"]);
+    $post->setExtra1($_POST["extra_1"]);
+    $post->setExtra2($_POST["extra_2"]);
+    $post->setExtra3($_POST["extra_3"]);
+    $post->setExtra4($_POST["extra_4"]);
+
 
    // $post->setAnexos(array(array("post_anexo_id"=>24)));
 

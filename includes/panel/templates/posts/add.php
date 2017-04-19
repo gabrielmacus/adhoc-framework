@@ -292,7 +292,7 @@ $(document).on("change",".secciones",function () {
 
         <div>
 
-            <input hidden name="seccion" value="<?php echo $seccion->getId()?>">
+            <input hidden name="seccion" value="<?php echo $tipo?>">
         </div>
         <?php
     }?>

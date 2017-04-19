@@ -1,7 +1,17 @@
-
+<style>
+    .picture
+    {
+        padding: 0px;position:relative;left: 25%;width: 50%;
+    }
+    .picture img
+    {
+        height: 300px!important;
+    }
+</style>
 <script>
 
-    function initMap() {
+    $(document).ready(function () {
+
         var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
@@ -39,70 +49,10 @@
         toolbar.addHandler('image', function (e) {
 
 
-            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true"?>');
+            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=rtue"?>');
 
-            // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
+           // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
         });
-
-
-
-        var map;
-        map= new google.maps.Map(document.querySelector('map'), {
-            center: <?php echo json_encode($GLOBALS["mapsConfig"]["initialPosition"])?>,
-            zoom: 8
-        });
-
-
-        var marker= new google.maps.Marker({
-
-            map: map
-        });
-        marker.addListener("click",function () {
-
-            this.setPosition(null);
-        });
-
-        map.addListener("click",function (e) {
-            var position = e.latLng;
-
-
-
-            marker.setPosition(position);
-
-        });
-
-
-        <?php if($post)
-        {
-
-
-        $archivos=$post->getArchivos();
-
-        foreach ($archivos as $galerias)
-        {
-
-        foreach ($galerias as $archivos)
-        {
-        $archivo = $archivos["original"];
-
-        ?>
-
-        appendToGallery(<?php echo $archivo->getType();?>,<?php echo $archivo->getId(); ?>,"<?php echo $archivo->getRealName()?>",
-            <?php echo  $archivo->getNexo()["archivo_grupo"]?>,<?php echo  $archivo->getNexo()["archivo_objeto_id"]?>);
-        <?php
-
-
-        }
-        }
-        ?>
-        $("[name='titulo']").val("<?php echo $post->getTitulo()?>");
-        texto.clipboard.dangerouslyPasteHTML(0, '<?php echo $post->getTexto()?>');
-
-        marker.setPosition(<?php echo $post->getExtra1();?>);
-
-        <?php
-        }?>
-
 
         window.addEventListener("message", function (e) {
             if(e.origin==location.origin)
@@ -136,6 +86,7 @@
             }
         }, false);
 
+
         $(document).on("submit","form",function () {
 
             var data= {};
@@ -165,10 +116,6 @@
             }
             //texto en html
             data.texto= texto.root.innerHTML;
-
-
-            //posicion en el mapa
-            data.extra_1="{lat:"+ marker.getPosition().lat()+",lng:"+ marker.getPosition().lng()+"}";
             console.log(data);
 
             $.ajax(
@@ -194,12 +141,41 @@
 
 
 
-
-    }
-
-
+        <?php if($post)
+        {
 
 
+            $archivos=$post->getArchivos();
+
+            foreach ($archivos as $galerias)
+            {
+
+                foreach ($galerias as $archivos)
+                {
+                    $archivo = $archivos["original"];
+
+                        ?>
+
+        appendToGallery(<?php echo $archivo->getType();?>,<?php echo $archivo->getId(); ?>,"<?php echo $archivo->getRealName()?>",
+            <?php echo  $archivo->getNexo()["archivo_grupo"]?>,<?php echo  $archivo->getNexo()["archivo_objeto_id"]?>);
+        <?php
+
+
+                }
+            }
+        ?>
+        $("[name='titulo']").val("<?php echo $post->getTitulo()?>");
+        $("[name='volanta']").val("<?php echo $post->getVolanta()?>");
+        $("[name='extra_1']").val("<?php echo $post->getExtra1()?>");
+        $("[name='bajada']").val("<?php echo $post->getBajada()?>");
+        texto.clipboard.dangerouslyPasteHTML(0, '<?php echo $post->getTexto()?>');
+
+
+        <?php
+        }?>
+
+
+    });
 
     $(document).on("click",".file .remove",function (e) {
 
@@ -214,12 +190,12 @@
         var HTML="";
       if(id)
 
-      {     HTML+="<div  data-id='"+id+"' class='file s12 m6 l4' style='padding: 0px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
+      {     HTML+="<div  data-id='"+id+"' class='file picture'  data-gal='"+gal+"' data-file='"+fileId+"'>";
 
       }
       else
 
-      {     HTML+="<div  class='file s12 m6 l4' style='padding: 0px;position:relative;' data-gal='"+gal+"' data-file='"+fileId+"'>";
+      {     HTML+="<div  class='file picture' data-gal='"+gal+"' data-file='"+fileId+"'>";
 
       }
 
@@ -341,26 +317,40 @@ $(document).on("change",".secciones",function () {
         ?>   <input hidden name="id" value="<?php echo $post->getId()?>"><?php
     }?>
 
-    <div>
-        <label>Numero</label>
+<style>
+    .gallery-container img
+    {
+        width: 100%;
+    }
+</style>
+
+    <?php
+    $i=1;
+    $text="Foto del jugador";
+    $types=[1]; //Tipos que acepta el pasador/galeria
+    include DIR_PATH."/includes/panel/templates/posts/gallery.php";
+    ?>
+    <div class="s12 m6 l6">
+        <label>Nombre</label>
         <input  type="text" name="titulo">
     </div>
-<?php
-$i=1;
-$types=[1]; //Tipos que acepta el pasador/galeria
-include DIR_PATH."/includes/panel/templates/posts/gallery.php";
-?>
-<div>
-
-        <label>Ubicación</label>
-        <map  style="height: 300px;width: 100%;background-color: white;float: left"></map>
+    <div class="s12 m6 l6">
+        <label>Apellido</label>
+        <input  type="text" name="volanta">
     </div>
-
+    <div class="s12 m6 l6">
+        <label>DNI</label>
+        <input  type="text" name="bajada">
+    </div>
+    <div class="s12 m6 l6">
+        <label>Edad</label>
+        <input  type="number" name="extra_1">
+    </div>
 
 
     <div>
 
-        <label>Descripcion</label>
+        <label>Texto</label>
         <div  class="texto editor">
 
         </div>

@@ -16,16 +16,10 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    //u427914340_adhoc es 39717030
-
-    $tipo =60;
+    $tipo =61;
     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
 
-
-
-
-
-    $site="hoyos";
+    $site="jugadores";
 
     switch ($_GET["act"])
     {
@@ -51,6 +45,7 @@ try{
                 $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
 
             }
+
 
 
 

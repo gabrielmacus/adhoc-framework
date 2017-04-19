@@ -26,7 +26,20 @@
 </style>
 
 <div class="gallery-container">
-    <label>Galeria <?php echo $i;?></label>
+    <?php
+    if(!$text)
+    {
+        ?><label>Galeria <?php echo $i;?></label>
+        <?php
+    }
+    else
+    {
+        ?>
+        <label><?php echo $text ?></label>
+        <?php
+    }
+    ?>
+
     <a data-lity href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?modal=true&gal={$i}"?>">Agregar archivo</a>
 
     <div class="gallery <?php foreach ($types as $t){ echo $t." ";} ?> fila" data-id="<?php echo $i?>">

@@ -193,6 +193,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $p->setExtra2($data["post_extra_1"]);
         $p->setExtra3($data["post_extra_1"]);
         $p->setExtra4($data["post_extra_1"]);
+
         if(!$byId)
         {
             array_push($this->posts, $p);
@@ -264,6 +265,21 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     }
 
+    public function selectPostByTipo($tipo)
+    {
+        $this->posts=array();
+        $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
+
+        $this->dataSource->runQuery($sql,array(":post_seccion"=>$tipo),function($data){
+            $this->query($data,true);
+        });
+
+
+        $this->processFiles();
+
+        return $this->posts;
+    }
+
 
     public function selectPosts()
     {
@@ -299,6 +315,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function updatePost(Post $p)
     {
+
         $this->validate($p);
 
         $p->setModificacion(time());

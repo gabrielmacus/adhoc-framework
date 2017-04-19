@@ -13,17 +13,17 @@ require_once "classes/schema/DataSource.php";
 require_once "classes/schema/Configuracion/Configuracion.php";
 
 
-
+/*
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
-
-
-/*
-$configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
-    "uipasd",0.1,"http://44872de8.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
-    "adhoc-framework", "http://44872de8.ngrok.io/adhoc-framework","http://44872de8.ngrok.io/adhoc-framework");
 */
+
+
+$configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
+    "uipasd",0.1,"http://c2b7b497.ngrok.io/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
+    "adhoc-framework", "http://c2b7b497.ngrok.io/adhoc-framework","http://c2b7b497.ngrok.io/adhoc-framework");
+
 require_once "classes/autoload-classes.php";//Cargo las clases
 
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
@@ -53,7 +53,7 @@ $GLOBALS["fbConfig"]=[
 
 /** Gmaps API */
 $GLOBALS["mapsConfig"]=array(
-    'initialPosition'=>array("lat"=> -34.397,"lng"=>150.644)
+    'initialPosition'=>array("lat"=> -31.744444444444,"lng"=> -60.5175)
 );
 
 /** **/

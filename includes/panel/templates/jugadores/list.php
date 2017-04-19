@@ -2,7 +2,9 @@
 <div class="table-container">
     <table class="rwd-table">
         <tr>
-            <th>Número</th>
+            <th>Nombre completo</th>
+            <th>Edad</th>
+            <th>DNI</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -11,8 +13,10 @@
         {
             ?>
             <tr>
-                <td data-th="Titulo"><a ><?php  echo $post->getTitulo()?></a></td>
-                <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/ho/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>
+                <td data-th="Nombre completo"><a ><?php  echo $post->getTitulo()." ".$post->getVolanta()?></a></td>
+                <td data-th="Edad"><a ><?php  echo $post->getExtra1()?></a></td>
+                <td data-th="DNI"><a ><?php  echo $post->getBajada()?></a></td>
+                <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/jugadores/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>
                 <td data-th="Eliminar"><a><i class="fa fa-times" aria-hidden="true"></i></a></td>
             </tr>
             <?php
