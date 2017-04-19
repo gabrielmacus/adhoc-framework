@@ -45,12 +45,14 @@ try{
             $action="list";
             break;
         case "add":
+            $hoyos= $GLOBALS["postDAO"]->selectPostByTipo($tipo);
             $imageVersion="post";
             if(is_numeric($_GET["id"]))
             {
                 $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
 
             }
+
 
 
 

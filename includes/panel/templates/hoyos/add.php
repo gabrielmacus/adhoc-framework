@@ -71,6 +71,35 @@
 
         });
 
+        var markers =[];
+        var trazo=new google.maps.Polyline({
+            geodesic: true,
+            strokeColor: '#262626',
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+            map:map
+        });
+        var path=[];
+        <?php foreach ($hoyos as $hoyo)
+        {
+        ?>
+
+        path.push(<?php echo $hoyo->getExtra1();?>);
+
+
+        //    console.log((google.maps.geometry.spherical.computeDistanceBetween(, <?php echo $hoyo->getExtra1();?>) / 1000).toFixed(2););
+
+
+        markers.push(
+            new google.maps.Marker({
+                position:<?php echo $hoyo->getExtra1();?>,
+                map:map,icon:"https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_green<?php echo $hoyo->getTitulo() ?>.png"
+            })
+        )
+        <?php
+        }?>
+
+        trazo.setPath(path);
 
         <?php if($post)
         {
