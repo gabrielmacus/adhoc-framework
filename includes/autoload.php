@@ -20,7 +20,7 @@ $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
 */
 //u427914340_adhoc es 39717030
 
-$configuracion = new Configuracion("31.170.166.76","u427914340_adhoc","39717030","adhoc",
+$configuracion = new Configuracion("localhost","u427914340_adhoc","39717030","u427914340_adhoc",
     "uipasd",0.1,"http://mapuchepruebas.esy.es/admin","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://mapuchepruebas.esy.es/admin","http://mapuchepruebas.esy.es/admin");
 
