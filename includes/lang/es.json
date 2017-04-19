@@ -19,7 +19,11 @@
       "add":{"text":"Agregar jugador","href":"/adhoc-framework/admin/jugadores/?act=add"},
       "list":{"text":"Listar jugadores","href":"/adhoc-framework/admin/jugadores/"}
     }}
-
+  ,
+    "equipos":{"text":"Equipos","items":{
+      "add":{"text":"Agregar equipo","href":"/adhoc-framework/admin/equipos/?act=add"},
+      "list":{"text":"Listar equipos","href":"/adhoc-framework/admin/equipos/"}
+    }}
     },
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",

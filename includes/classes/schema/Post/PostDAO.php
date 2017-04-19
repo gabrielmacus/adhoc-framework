@@ -219,7 +219,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
  archivos_objetos ao ON   (a.archivo_id = ao.archivo_id OR a.archivo_version=ao.archivo_id) AND ao.objeto_tabla=:objeto_tabla AND ao.objeto_id IN ({$in}) ";
 */
 
-  $joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id) WHERE ao.objeto_id IN ({$in})";
+  //$joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id ) WHERE ao.objeto_id IN ({$in})";
+        $joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id OR a.archivo_version=ao.archivo_id) WHERE ao.objeto_id IN ({$in})";
+
+
+
         //Traigo los archivos con todas sus versiones
         $archivos = $this->dataSource->runQuery($joinArchivos, array(
 

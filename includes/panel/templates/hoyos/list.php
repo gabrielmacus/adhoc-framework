@@ -22,9 +22,7 @@
 
 
 
-        var infowindow = new google.maps.InfoWindow({
-
-        });
+        var infowindow = new google.maps.InfoWindow({});
 
 
 
@@ -48,24 +46,43 @@
         var holeIndex=markers.length-1;
         markers[holeIndex].addListener("click",function () {
 
-            var HTML="";
+            var HTML="<div id='content'>" +
+                "<div id='bodyContent'>";
 
-            console.log(markers.length+" "+holeIndex);
+
+
+           var holeIndex=markers.indexOf(this);
             if(markers.length>holeIndex+1)
             {
-                var hole1 ={lat:markers[holeIndex].getPosition().lat(),lng:markers[holeIndex].getPosition().lng()};
-                var hole2 ={lat:markers[holeIndex+1].getPosition().lat(),lng:markers[holeIndex+1].getPosition().lng()};
+                var hole1 =markers[holeIndex].getPosition();
+                var hole2 =markers[holeIndex+1].getPosition();
 
-                console.log(hole1);
-                console.log(hole2);
+                var title="Distancia hasta el siguiente hoyo";
+                 HTML+="<p><strong>Distancia hasta el siguiente hoyo:</strong> "+(google.maps.geometry.spherical.computeDistanceBetween(hole1, hole2) ).toFixed(2)+" metros</p>";
+
+            }
+            else
+            {
+
+                var title="Último hoyo";
+                HTML+="<p><strong>Último hoyo</strong></p>";
 
             }
 
 
-            markers[holeIndex].getPosition()
+            HTML+="<div > " +
+                "<div style='display: inline-block;width: 50%;padding: 5px'><a href='<?php echo $configuracion->getSiteAddress()."/admin/hoyos/?act=add&id={$post->getId()}"?>' style='cursor:pointer;background-color: #2a2a2a;padding: 10px;display: block;width: 100%;text-align: center;color: white'><i class='fa fa-pencil-square-o' aria-hidden='true' style='font-size: 17px'></i></a></div>" +
+                "<div style='display: inline-block;width: 50%;padding: 5px'><a  style='cursor:pointer;background-color: #2a2a2a;padding: 10px;display:block;width: 100%;text-align: center;color: white'><i class='fa fa-trash' aria-hidden='true' style='font-size: 17px'></i></a></div>" +
+                "</div>";
 
+            HTML+="</div>";
+            HTML+="</div>";
+
+
+            markers[holeIndex].setTitle(title);
             infowindow.setContent(HTML);
             infowindow.open(map,this);
+
 
 
 

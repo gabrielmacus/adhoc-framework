@@ -445,7 +445,7 @@
 
                             <div class="file-container">
 
-                                <div data-id="<?php echo $archivo->getId()?>" data-type="<?php echo $archivo->getType();?>" data-url="<?php echo $archivo->getRealName(); ?>" class="file" data-id="<?php echo $archivo->getId()?>">
+                                <div data-id="<?php echo   $original["original"]->getId()?>" data-type="<?php echo $archivo->getType();?>" data-url="<?php echo $archivo->getRealName(); ?>" class="file" >
                                     <div class="mask" >
 
                                     </div>

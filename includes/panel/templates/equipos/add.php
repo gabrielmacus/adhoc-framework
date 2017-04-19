@@ -1,5 +1,3 @@
-<?php   $foto =$post->getArchivos();
-var_dump($foto);?>
 <style>
     .picture
     {
@@ -149,7 +147,7 @@ var_dump($foto);?>
 
             $archivos=$post->getArchivos();
 
-            foreach ($archivos as $tipos)
+            foreach ($archivos as $galerias)
             {
 
                 foreach ($galerias as $archivos)
@@ -324,35 +322,52 @@ $(document).on("change",".secciones",function () {
     {
         width: 100%;
     }
+    .team
+    {
+        height: 150px;
+        background-color: white;
+        float: left;
+        width: 100%;text-align: center;
+    }
+    .team h3
+    {
+        position: relative;
+        top:35%;
+    }
 </style>
 
     <?php
     $i=1;
-    $text="Foto del jugador";
+    $text="Bandera del equipo";
     $types=[1]; //Tipos que acepta el pasador/galeria
     include DIR_PATH."/includes/panel/templates/posts/gallery.php";
     ?>
-    <div class="s12 m6 l6">
+    <div class="s12 m12 l12">
         <label>Nombre</label>
         <input  type="text" name="titulo">
     </div>
-    <div class="s12 m6 l6">
-        <label>Apellido</label>
-        <input  type="text" name="volanta">
-    </div>
-    <div class="s12 m6 l6">
-        <label>DNI</label>
-        <input  type="text" name="bajada">
-    </div>
-    <div class="s12 m6 l6">
-        <label>Edad</label>
-        <input  type="number" name="extra_1">
+
+    <div class="s12 m12 l12">
+        <label>Jugadores</label>
+       <ul></ul>
     </div>
 
+    <div>
+        <label>Armar equipo</label>
+        <div class="team" >
+            <h3>No hay ningun incorporado aún</h3>
+        </div>
+        <div class="s12 m6 l6" style="padding: 10px">
+            <button>Incorporar jugador</button>
+        </div>
+        <div class="s12 m6 l6" style="padding: 10px">
+            <button>Quitar jugador</button>
+        </div>
+    </div>
 
     <div>
 
-        <label>Texto</label>
+        <label>Notas</label>
         <div  class="texto editor">
 
         </div>
