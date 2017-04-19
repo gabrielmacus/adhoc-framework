@@ -1,7 +1,5 @@
 <?php
 
-
-var_dump("AA");
 /**
  * Created by PhpStorm.
  * User: Puers

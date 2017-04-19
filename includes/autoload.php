@@ -7,22 +7,19 @@
  * Date: 29/03/2017
  * Time: 11:53 AM
  */
-
 //cargo la configuracion aparte para tenerla disponible en todos los scripts
-require_once "classes/schema/DataSource.php";
-require_once "classes/schema/Configuracion/Configuracion.php";
-
-
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
 /*
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
 */
-//u427914340_adhoc es 39717030
 
-$configuracion = new Configuracion("localhost","u427914340_adhoc","39717030","u427914340_adhoc",
-    "uipasd",0.1,"http://mapuchepruebas.esy.es/admin","Adhoc Framework","Gamaware Web Tech",
-    "adhoc-framework", "http://mapuchepruebas.esy.es/admin","http://mapuchepruebas.esy.es/admin");
+
+$configuracion = new Configuracion("localhost","id766512_adhoc","39717030","id766512_adhoc",
+    "uipasd",0.1,"https://subaquatic-bows.000webhostapp.com","Adhoc Framework","Gamaware Web Tech",
+    "", "https://subaquatic-bows.000webhostapp.com","https://subaquatic-bows.000webhostapp.com");
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 

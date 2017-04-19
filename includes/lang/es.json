@@ -3,11 +3,11 @@
   "navbar":[{"text":"Content Manager"}],
 
 
-  "sidenav":[{"text":"Inicio","href":"/adhoc-framework/admin/"},
+  "sidenav":[{"text":"Inicio","href":"/admin/"},
     {"text":"Configuraci\u00f3n","items":
     [
-      {"text":"Secciones","href":"/adhoc-framework/admin/secciones"},
-      {"text":"Repositorios","href":"/adhoc-framework/admin/repositorios"}
+      {"text":"Secciones","href":"/admin/secciones"},
+      {"text":"Repositorios","href":"/admin/repositorios"}
   ]}],
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",

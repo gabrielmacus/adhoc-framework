@@ -12,7 +12,7 @@
             ?>
             <tr>
                 <td data-th="Titulo"><a ><?php  echo $post->getTitulo()?></a></td>
-                <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/ho/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>
+                <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/hoyos/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>
                 <td data-th="Eliminar"><a><i class="fa fa-times" aria-hidden="true"></i></a></td>
             </tr>
             <?php
