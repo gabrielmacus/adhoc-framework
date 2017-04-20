@@ -261,6 +261,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
+
                 $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                 $p->setArchivos($postArchivos);
 
