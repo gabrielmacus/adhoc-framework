@@ -1,7 +1,7 @@
 <?php
 
 var_dump(sys_get_temp_dir());
-
+var_dump($_SERVER['DOCUMENT_ROOT']);
 /**
  * Created by PhpStorm.
  * User: Gabriel
@@ -15,6 +15,7 @@ var_dump(sys_get_temp_dir());
 
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
+
 
 /*
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
