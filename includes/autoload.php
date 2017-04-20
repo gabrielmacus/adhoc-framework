@@ -1,8 +1,5 @@
 <?php
 
-var_dump(sys_get_temp_dir());
-var_dump($_SERVER['DOCUMENT_ROOT']);
-mkdir("/storage/h2/863/339863/tmp");
 /**
  * Created by PhpStorm.
  * User: Gabriel
