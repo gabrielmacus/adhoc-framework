@@ -1,15 +1,4 @@
-<?php
 
-$archivos=$post->getArchivos();
-
-foreach ($archivos as $archivo) {
-
-  foreach ($archivo as $version)
-  {
-      var_dump($version);
-  }
-}
-?>
 <style>
     .picture
     {
@@ -159,12 +148,13 @@ foreach ($archivos as $archivo) {
 
             $archivos=$post->getArchivos();
 
-            foreach ($archivos as $grupo=>$archivo)
+        foreach ($archivos as $archivo)
+        {
+
+            foreach ($archivo as $version)
             {
 
-                foreach ($tipos as $tipo)
-                {
-                    $archivo = $archivos["thumbnail"];
+                    $archivo = $version["thumbnail"];
 
                         ?>
 
