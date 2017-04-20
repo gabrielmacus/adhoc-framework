@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ef13e8a9-1ac3-4825-81e7-522cc342867f" name="ftp.ezyro.com" url="http://ftp.ezyro.com">
+        <fileTransfer host="ftp.ezyro.com" port="21" username="ezyro_19990472">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
