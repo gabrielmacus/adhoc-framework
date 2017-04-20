@@ -301,8 +301,10 @@
                 success:function(res)
                 {
 
+
                     res = JSON.parse(res);
 
+                    console.log(res);
                     $.each(res,function (k,v) {
 
                         scope.preview.push(v);
