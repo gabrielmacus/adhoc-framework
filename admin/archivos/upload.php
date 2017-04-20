@@ -7,14 +7,14 @@
  */
 include "../../includes/autoload.php";
 
-var_dump($_SERVER['DOCUMENT_ROOT']);
+;
 include_once DIR_PATH."/extras/api/check-login.php";
 $tmps=array();
 
 foreach ($_FILES as $file)
 {
 
-    $dest=DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}";
+    $dest="{$_SERVER['DOCUMENT_ROOT']}/tmp/files/{$file["size"]}_{$file["name"]}";
 
     move_uploaded_file($file["tmp_name"],$dest);
 
