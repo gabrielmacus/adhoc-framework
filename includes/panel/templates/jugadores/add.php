@@ -4,7 +4,10 @@ $archivos=$post->getArchivos();
 
 foreach ($archivos as $archivo) {
 
-   var_dump($archivo);
+  foreach ($archivo as $version)
+  {
+      var_dump($version);
+  }
 }
 ?>
 <style>
