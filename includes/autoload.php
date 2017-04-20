@@ -6,7 +6,7 @@
  * Date: 29/03/2017
  * Time: 11:53 AM
  */
-
+var_dump("B");
 //cargo la configuracion aparte para tenerla disponible en todos los scripts
 require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
 require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
