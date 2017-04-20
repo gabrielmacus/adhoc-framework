@@ -31,8 +31,6 @@ echo  json_encode($tmps);
 */
 
 include "../../includes/autoload.php";
-
-include_once DIR_PATH."/extras/api/check-login.php";
 $tmps=array();
 
 foreach ($_FILES as $file)
