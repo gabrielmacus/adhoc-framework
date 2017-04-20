@@ -8,13 +8,13 @@
 include "../../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
-var_dump(DIR_PATH."/tmp/files/{$file["size"]}_{$file["name"]}");
+var_dump(DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}");
 $tmps=array();
 
 foreach ($_FILES as $file)
 {
 
-    $dest=DIR_PATH."/tmp/files/{$file["size"]}_{$file["name"]}";
+    $dest=DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}";
 
     move_uploaded_file($file["tmp_name"],$dest);
 
