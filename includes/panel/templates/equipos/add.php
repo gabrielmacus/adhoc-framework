@@ -10,6 +10,24 @@
 </style>
 <script>
 
+
+    angular.element(function () {
+        scope.jugadores=[];
+        window.addEventListener("message", function (e) {
+                if(e.origin==location.origin)
+                {
+                    $.merge(scope.jugadores, e.data);
+                    scope.$apply();
+                    console.log(scope.jugadores);
+                }
+
+            }
+        );
+
+
+    });
+
+
     $(document).ready(function () {
 
         var toolbarOptions = [
@@ -355,10 +373,14 @@ $(document).on("change",".secciones",function () {
     <div>
         <label>Armar equipo</label>
         <div class="team" >
-            <h3>No hay ningun incorporado aún</h3>
+            <h3 data-ng-if="jugadores.length==0">No hay ningun incorporado aún</h3>
+            <ul  data-ng-if="jugadores.length>0">
+                <li data-ng-repeat="jugador in jugadores">{{jugador}}</li>
+            </ul>
+
         </div>
         <div class="s12 m6 l6" style="padding: 10px">
-            <button>Incorporar jugador</button>
+            <a data-lity href="<?php echo $configuracion->getSiteAddress()."/admin/jugadores/?modal=true"?>">Incorporar jugador</a>
         </div>
         <div class="s12 m6 l6" style="padding: 10px">
             <button>Quitar jugador</button>
