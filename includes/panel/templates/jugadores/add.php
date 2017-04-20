@@ -1,13 +1,4 @@
-<?php
-if($post) {
 
-
-    $archivos = $post->getArchivos();
-
-    var_dump($archivos);
-}
-
-;?>
 <style>
     .picture
     {
@@ -157,12 +148,12 @@ if($post) {
 
             $archivos=$post->getArchivos();
 
-            foreach ($archivos as $tipos)
+            foreach ($archivos as $grupo=>$archivo)
             {
 
                 foreach ($tipos as $tipo)
                 {
-                    $archivo = $archivos["original"];
+                    $archivo = $archivos["thumbnail"];
 
                         ?>
 
