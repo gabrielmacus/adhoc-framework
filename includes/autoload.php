@@ -8,11 +8,11 @@
  */
 
 //cargo la configuracion aparte para tenerla disponible en todos los scripts
-//require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
-//require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
 
-require("classes/schema/DataSource.php");
-require("classes/schema/Configuracion/Configuracion.php");
+//require("classes/schema/DataSource.php");
+//require("classes/schema/Configuracion/Configuracion.php");
 
 
 /*
@@ -23,9 +23,9 @@ $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
 
 
 
-$configuracion = new Configuracion("localhost","id766512_adhoc","39717030","id766512_adhoc",
-    "uipasd",0.1,"https://subaquatic-bows.000webhostapp.com","Adhoc Framework","Gamaware Web Tech",
-    "", "https://subaquatic-bows.000webhostapp.com","https://subaquatic-bows.000webhostapp.com");
+$configuracion = new Configuracion("localhost","u427914340_adhoc","39717030","u427914340_adhoc",
+    "uipasd",0.1,"http://mapuchepruebas.esy.es","Adhoc Framework","Gamaware Web Tech",
+    "","http://mapuchepruebas.esy.es","http://mapuchepruebas.esy.es");
 
 
 require_once "classes/autoload-classes.php";//Cargo las clases
