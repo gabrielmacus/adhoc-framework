@@ -1,3 +1,6 @@
+<?php
+
+var_dump($post);?>
 <style>
     .picture
     {
@@ -13,17 +16,29 @@
 
     angular.element(function () {
         scope.jugadores=[];
+
         window.addEventListener("message", function (e) {
                 if(e.origin==location.origin)
                 {
                     $.merge(scope.jugadores, e.data);
+                    console.log("$apply()");
                     scope.$apply();
-                    console.log(scope.jugadores);
+
                 }
 
             }
         );
+        scope.expulsarJugador=function (e) {
+//
+         var idx = scope.jugadores.indexOf(e);
+            scope.jugadores.splice(idx,1);
+            timeout(function () { //Para evitar '$apply in progress error'
 
+                scope.$apply();
+            },1);
+
+
+        }
 
     });
 
@@ -134,7 +149,10 @@
             }
             //texto en html
             data.texto= texto.root.innerHTML;
-            console.log(data);
+            //Anexos
+            data.anexos=[];
+            $.extend( data.anexos, angular.copy(scope.jugadores ));
+
 
             $.ajax(
                 {
@@ -342,7 +360,7 @@ $(document).on("change",".secciones",function () {
     }
     .team
     {
-        height: 150px;
+
         background-color: white;
         float: left;
         width: 100%;text-align: center;
@@ -352,6 +370,19 @@ $(document).on("change",".secciones",function () {
         position: relative;
         top:35%;
     }
+    .jugador{
+        font-size: 25px;
+        float: left;
+        padding: 10px;
+        border-bottom: 1px #cccccc solid;
+        width: 100%;
+    }
+    .jugador .fa-times
+    {
+        float: right;
+        color: rgba(220, 69, 47, 1);
+    }
+
 </style>
 
     <?php
@@ -365,26 +396,27 @@ $(document).on("change",".secciones",function () {
         <input  type="text" name="titulo">
     </div>
 
-    <div class="s12 m12 l12">
-        <label>Jugadores</label>
-       <ul></ul>
-    </div>
 
     <div>
-        <label>Armar equipo</label>
+        <label>Jugadores</label>
+
         <div class="team" >
-            <h3 data-ng-if="jugadores.length==0">No hay ningun incorporado aún</h3>
-            <ul  data-ng-if="jugadores.length>0">
-                <li data-ng-repeat="jugador in jugadores">{{jugador}}</li>
+            <h3 style="padding: 15px;" data-ng-if="jugadores.length==0 || !jugadores">No hay ningun incorporado aún</h3>
+            <ul >
+                <li class="jugador" data-ng-repeat="jugador in jugadores">
+                    <span class="id">#{{jugador.post_anexo_id}}</span>
+                    <span class="name">{{jugador.name}}</span>
+                    <span class="name">{{jugador.surname}}</span>
+                    <i data-ng-click="expulsarJugador(jugador)" class="fa fa-times" aria-hidden="true"></i>
+
+                </li>
             </ul>
 
         </div>
-        <div class="s12 m6 l6" style="padding: 10px">
+        <div class="s12 m12 l12">
             <a data-lity href="<?php echo $configuracion->getSiteAddress()."/admin/jugadores/?modal=true"?>">Incorporar jugador</a>
         </div>
-        <div class="s12 m6 l6" style="padding: 10px">
-            <button>Quitar jugador</button>
-        </div>
+
     </div>
 
     <div>

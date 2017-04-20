@@ -36,10 +36,11 @@
     }
     var app = angular.module('panel', ['ui.sortable']);
     var scope;
-    app.controller('panelCtrl', function($scope) {
+   var timeout;
+    app.controller('panelCtrl', function($scope,$timeout) {
 
         scope=$scope;
-
+        timeout=$timeout;
     });
 
 </script>

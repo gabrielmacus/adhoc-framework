@@ -8,7 +8,7 @@ if($_GET["modal"])
             var id =$(this).data("id");
             var name =$(this).data("name");
             var surname =$(this).data("surname");
-            var player={id:id,name:name,surname:surname};
+            var player={post_anexo_id:id,name:name,surname:surname};
 
             $(e.target).closest(".player-card").toggleClass("active");
 

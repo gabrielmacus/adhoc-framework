@@ -313,7 +313,12 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->query($data,true);
         });
 
+        /**** Proceso los anexos */
 
+        $anexosSql="";
+
+
+        /*** **/
         $this->processFiles();
 
         return array_values($this->posts)[0];

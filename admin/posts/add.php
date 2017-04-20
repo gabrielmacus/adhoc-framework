@@ -28,9 +28,8 @@ try{
     $post->setExtra2($_POST["extra_2"]);
     $post->setExtra3($_POST["extra_3"]);
     $post->setExtra4($_POST["extra_4"]);
-
-
-   // $post->setAnexos(array(array("post_anexo_id"=>24)));
+    $post->setAnexos($_POST["anexos"]);
+    //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
 
     if($_POST["id"])
