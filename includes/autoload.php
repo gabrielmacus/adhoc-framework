@@ -28,8 +28,6 @@ $configuracion = new Configuracion("localhost","id766512_adhoc","39717030","id76
     "uipasd",0.1,"https://subaquatic-bows.000webhostapp.com","Adhoc Framework","Gamaware Web Tech",
     "", "https://subaquatic-bows.000webhostapp.com","https://subaquatic-bows.000webhostapp.com");
 
-var_dump("ASADAS");
-
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 

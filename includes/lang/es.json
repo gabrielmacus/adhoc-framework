@@ -4,25 +4,25 @@
 
 
   "sidenav":{
-    "inicio":{"text":"Inicio","href":"/adhoc-framework/admin/"},
+    "inicio":{"text":"Inicio","href":"/admin/"},
    "configuracion":{"text":"Configuraci\u00f3n","items":
     {
-      "secciones":{"text":"Secciones","href":"/adhoc-framework/admin/secciones"},
-      "repositorios":{"text":"Repositorios","href":"/adhoc-framework/admin/repositorios"}
+      "secciones":{"text":"Secciones","href":"/admin/secciones"},
+      "repositorios":{"text":"Repositorios","href":"/admin/repositorios"}
       }},
     "hoyos":{"text":"Hoyos","items":{
-      "add":{"text":"Agregar hoyo","href":"/adhoc-framework/admin/hoyos/?act=add"},
-      "list":{"text":"Listar hoyos","href":"/adhoc-framework/admin/hoyos/"}
+      "add":{"text":"Agregar hoyo","href":"/admin/hoyos/?act=add"},
+      "list":{"text":"Listar hoyos","href":"/admin/hoyos/"}
     }}
     ,
     "jugadores":{"text":"Jugadores","items":{
-      "add":{"text":"Agregar jugador","href":"/adhoc-framework/admin/jugadores/?act=add"},
-      "list":{"text":"Listar jugadores","href":"/adhoc-framework/admin/jugadores/"}
+      "add":{"text":"Agregar jugador","href":"/admin/jugadores/?act=add"},
+      "list":{"text":"Listar jugadores","href":"/admin/jugadores/"}
     }}
   ,
     "equipos":{"text":"Equipos","items":{
-      "add":{"text":"Agregar equipo","href":"/adhoc-framework/admin/equipos/?act=add"},
-      "list":{"text":"Listar equipos","href":"/adhoc-framework/admin/equipos/"}
+      "add":{"text":"Agregar equipo","href":"/admin/equipos/?act=add"},
+      "list":{"text":"Listar equipos","href":"/admin/equipos/"}
     }}
     },
 
