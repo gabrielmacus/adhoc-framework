@@ -14,7 +14,7 @@ $tmps=array();
 foreach ($_FILES as $file)
 {
 
-    $dest=DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}";
+    $dest="../../tmp/files/{$file["size"]}_{$file["name"]}";
 
     move_uploaded_file($file["tmp_name"],$dest);
 
