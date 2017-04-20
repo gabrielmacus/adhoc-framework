@@ -8,8 +8,9 @@
  */
 
 //cargo la configuracion aparte para tenerla disponible en todos los scripts
-require("/home/u427914340/includes/classes/schema/DataSource.php");
-require("/home/u427914340/includes/classes/schema/Configuracion/Configuracion.php");
+var_dump("{$_SERVER['DOCUMENT_ROOT']}");
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
+require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
 
 //require("classes/schema/DataSource.php");
 //require("classes/schema/Configuracion/Configuracion.php");
