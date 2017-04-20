@@ -1,119 +1,8 @@
 
-<div class="table-container">
-    <table class="rwd-table">
-        <tr>
-            <th>Nombre completo</th>
-            <th>Edad</th>
-            <th>DNI</th>
-            <th>Foto</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-        <?php
-        foreach ($posts as $post)
-        {
-            $foto =array_values( array_values($post->getArchivos())[0])[0]["original"];
-            ?>
-            <tr>
-                <td data-th="Nombre completo"><a ><?php  echo $post->getTitulo()." ".$post->getVolanta()?></a></td>
-                <td data-th="Edad"><a ><?php  echo $post->getExtra1()?></a></td>
-                <td data-th="DNI"><a ><?php  echo $post->getBajada()?></a></td>
-                <td data-th="Foto"><a data-lity href="<?php echo $foto->getRealName()?>"><i class="fa fa-picture-o" aria-hidden="true"></i></a></td>
-                <td data-th="Editar"><a href="<?php echo $configuracion->getSiteAddress()."/admin/jugadores/?act=add&id={$post->getId()}"?>"><i class="fa fa-pencil-square-o" arituhidden="true"></i></a></td>
-                <td data-th="Eliminar"><a><i class="fa fa-times" aria-hidden="true"></i></a></td>
-            </tr>
-            <?php
-        }
-        ?>
-
-
-    </table>
-</div>
-
 
 <style>
 
-    .table-container
-    {
-        padding: 20px;
-    }
-    .rwd-table {
-        margin: 1em 0;
-        min-width: 300px;
-    }
-    .rwd-table tr {
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-    }
-    .rwd-table th {
-        display: none;
-    }
-    .rwd-table td {
-        display: block;
-    }
-    .rwd-table td:first-child {
-        padding-top: .5em;
-    }
-    .rwd-table td:last-child {
-        padding-bottom: .5em;
-    }
-    .rwd-table td:before {
-        content: attr(data-th) ": ";
-        font-weight: bold;
-        width: 6.5em;
-        display: inline-block;
-    }
-    @media (min-width: 480px) {
-        .rwd-table td:before {
-            display: none;
-        }
-    }
-    .rwd-table th, .rwd-table td {
-        text-align: left;
-    }
-    @media (min-width: 480px) {
-        .rwd-table th, .rwd-table td {
-            display: table-cell;
-            padding: .25em .5em;
-        }
-        .rwd-table th:first-child, .rwd-table td:first-child {
-            padding-left: 0;
-        }
-        .rwd-table th:last-child, .rwd-table td:last-child {
-            padding-right: 0;
-        }
-    }
 
-
-    .rwd-table a
-    {
-        color: white;!important;
-    }
-
-
-
-    .rwd-table {
-        float: left;width: 100%;
-        background-color:#2a2a2a;
-        color: #fff;
-        border-radius: .4em;
-        overflow: hidden;
-    }
-    .rwd-table tr {
-        border-color: #4a4a4a;
-    }
-    .rwd-table th, .rwd-table td {
-        margin: .5em 1em;
-    }
-    @media (min-width: 480px) {
-        .rwd-table th, .rwd-table td {
-            padding: 1em !important;
-        }
-    }
-
-    .rwd-table th, .rwd-table td:before {
-        color: #dd5!important;
-    }
     .player-card
     {    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         padding: 10px;
@@ -175,6 +64,14 @@
         width: 70%;
         background-color: #2a2a2a;
     }
+    .player-card .full-name
+    {
+        z-index: 10000;
+        display: block;
+        position: relative;
+        color: white;
+        font-size: 23px;
+    }
 
 </style>
 
@@ -189,7 +86,7 @@
             <div class="player-card">
 
 
-                <span class="full-name"><strong class="name"><?php echo $post->getTitulo()?></strong><span class="surname"><?php
+                <span class="full-name"><strong class="name"><?php echo $post->getTitulo()?></strong>&nbsp;<span class="surname"><?php
                         echo  $post->getVolanta()?></span></span>
 
                 <div class="mask-2" style="background-image: url('<?php echo $foto->getRealName()?>')">
