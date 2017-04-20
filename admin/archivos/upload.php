@@ -34,7 +34,8 @@ include "../../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
 $tmps=array();
-
+echo json_encode($_FILES);
+exit();
 foreach ($_FILES as $file)
 {
 
