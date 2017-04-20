@@ -4,7 +4,7 @@ if($post) {
 
     $archivos = $post->getArchivos();
 
-    var_dump($archivos[1][59]["thumbnail"]);
+    var_dump($archivos);
 }
 
 ;?>
