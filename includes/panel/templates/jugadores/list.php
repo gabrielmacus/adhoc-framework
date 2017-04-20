@@ -155,7 +155,7 @@
         top: 0px;
         left: 0px;
         height: 100%;
-        width: 60%;
+        width: 70%;
         background-color:  rgba(8, 152, 53, 0.47);
         background-size: cover;
     }
