@@ -187,7 +187,10 @@
 
         <div class="s12 m6 l6" style="padding: 10px">
             <div class="player-card">
-                <h3 style="font-size: 35px"><?php echo $post->getTitulo()." ". $post->getVolanta()?></h3>
+
+
+                <span class="full-name"><strong class="name"><?php echo $post->getTitulo()?></strong><span class="surname"><?php
+                        echo  $post->getVolanta()?></span></span>
 
                 <div class="mask-2" style="background-image: url('<?php echo $foto->getRealName()?>')">
 
