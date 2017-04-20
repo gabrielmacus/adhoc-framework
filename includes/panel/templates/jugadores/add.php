@@ -2,12 +2,9 @@
 
 $archivos=$post->getArchivos();
 
-foreach ($archivos as $grupo=>$archivo) {
+foreach ($archivos as $archivo) {
 
-    foreach ($tipos as $tipo) {
-
-        var_dump($tipo);
-    }
+   var_dump($archivo);
 }
 ?>
 <style>
