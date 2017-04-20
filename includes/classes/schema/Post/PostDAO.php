@@ -220,7 +220,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 */
 
   //$joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id ) WHERE ao.objeto_id IN ({$in})";
-        $joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id OR a.archivo_version=ao.archivo_id) WHERE ao.objeto_id IN ({$in})";
+        $joinArchivos="SELECT *,a.archivo_id as 'id'  FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id OR a.archivo_version=ao.archivo_id) WHERE ao.objeto_id IN ({$in})";
 
 
 
@@ -243,8 +243,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $postArchivos=$p->getArchivos();
 
 
-                $idOriginal = $archivo["archivo_id"];
-                if($archivo["archivo_id"]==0)
+                $idOriginal = $archivo["id"];
+                if($archivo["archivo_version"]!=0)
                 {
 
                     $idOriginal=$archivo["archivo_version"];
@@ -260,6 +260,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $archivo->setNexo($nexo);
 
                 //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
+
+               var_dump($idOriginal);
                 $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                 $p->setArchivos($postArchivos);
 

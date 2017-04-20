@@ -1,5 +1,13 @@
-<?php   $foto =$post->getArchivos();
-var_dump($foto);?>
+<?php
+if($post) {
+
+
+    $archivos = $post->getArchivos();
+
+    var_dump($archivos[1][59]["thumbnail"]);
+}
+
+;?>
 <style>
     .picture
     {
@@ -152,7 +160,7 @@ var_dump($foto);?>
             foreach ($archivos as $tipos)
             {
 
-                foreach ($galerias as $archivos)
+                foreach ($tipos as $tipo)
                 {
                     $archivo = $archivos["original"];
 
