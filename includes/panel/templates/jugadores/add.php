@@ -1,4 +1,15 @@
+<?php
 
+$archivos=$post->getArchivos();
+
+foreach ($archivos as $grupo=>$archivo) {
+
+    foreach ($tipos as $tipo) {
+
+        var_dump($tipo);
+    }
+}
+?>
 <style>
     .picture
     {
