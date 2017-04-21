@@ -8,7 +8,7 @@ if($_GET["modal"])
             var id =$(this).data("id");
             var name =$(this).data("name");
             var surname =$(this).data("surname");
-            var player={post_anexo_id:id,name:name,surname:surname};
+            var player={post_anexo_id:id,post_titulo:name,post_volanta:surname};
 
             $(e.target).closest(".player-card").toggleClass("active");
 
@@ -173,7 +173,14 @@ if($_GET["modal"])
 
         <?php
     }?>
-    <div style="padding: 10px">
-        <button data-lity-clsoe class="select">Aceptar</button>
-    </div>
+    <?php
+    if($_GET["modal"])
+    {
+        ?>
+        <div style="padding: 10px">
+            <button data-lity-clsoe class="select">Aceptar</button>
+        </div>
+        <?php
+    }?>
+
 </div>

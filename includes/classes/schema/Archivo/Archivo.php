@@ -6,7 +6,7 @@
  * Date: 23/03/2017
  * Time: 06:01 PM
  */
-class Archivo
+class Archivo implements JsonSerializable
 {
 
     protected $size;
@@ -60,6 +60,29 @@ class Archivo
         $this->versionName=$versionName;
         $this->type=$type;
     }
+
+    function jsonSerialize()
+    {
+       return array(
+           "size"=>$this->getSize(),
+           "name"=>$this->getName(),
+           "extension"=>$this->getExtension(),
+           "mime"=>$this->getMime(),
+           "creation"=>$this->getCreation(),
+           "modification"=>$this->getModification(),
+           "id"=>$this->getId(),
+           "config"=>$this->getConfig(),
+           "repositorio"=>$this->getRepositorio(),
+           "path"=>$this->getPath(),
+           "realName"=>$this->getRealName(),
+           "version"=>$this->getVersion(),
+           "type"=>$this->getType(),
+           "galeria"=>$this->getGaleria(),
+           "pathName"=>$this->getPathName(),
+           "nexo"=>$this->getNexo()
+       );
+    }
+
 
     /**
      * @return mixed

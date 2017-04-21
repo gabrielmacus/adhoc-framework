@@ -96,8 +96,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $anexos =$p->getAnexos();
         if(count($anexos)>0)
         {
-            $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_orden) values ";
+            $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_grupo,post_nexo_orden) values ";
 
+            $deleteAnexosSql="DELETE FROM posts_nexos WHERE post_nexo_id IN ";
+            $deleteValues="";
             $values ="";
 
             foreach ($anexos as $anexo)
@@ -105,17 +107,27 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 if($anexo["delete"])
                 {
+                    $deleteValues.="'{$anexo["post_nexo_id"]}',";
                 }
                 else
                 {
-                    $values.=" ('{$anexo['post_nexo_id']}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo['post_nexo_orden']}'),";
+                    $values.=" ('{$anexo['post_nexo_id']}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
 
                 }
             }
 
+            $deleteValues  = rtrim($deleteValues,",");
+
+            $deleteAnexosSql.=" ({$deleteValues})";
+
             $values = rtrim($values,",");
 
             $sql.="{$values}";
+
+            if($deleteValues!="")
+            {
+                $this->dataSource->runUpdate($deleteAnexosSql);
+            }
 
             $this->dataSource->runUpdate($sql);
 
@@ -286,6 +298,54 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         return $this->posts;
     }
 
+    private function processAnexos()
+{
+    $in="";
+    foreach ($this->posts as $post) {
+
+        $in.= ",{$post->getId()}";
+    }
+
+    $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
+  OR n.post_anexo_id IN (0{$in}) 
+ ORDER BY post_nexo_orden ASC";
+
+
+    $postAnexos =array();
+    $anexos=  $this->dataSource->runQuery($anexosSql);
+
+    foreach ($anexos as $anexo)
+    {
+
+        $post =new Post();
+        $post->setTitulo($anexo["post_titulo"]);
+        $post->setVolanta($anexo["post_volanta"]);
+        $post->setBajada($anexo["post_bajada"]);
+        $post->setTexto($anexo["post_texto"]);
+        $post->setExtra1($anexo["post_extra_1"]);
+        $post->setExtra2($anexo["post_extra_2"]);
+        $post->setExtra3($anexo["post_extra_3"]);
+        $post->setExtra4($anexo["post_extra_4"]);
+        $post->setCreacion($anexo["post_creacion"]);
+        $post->setModificacion($anexo["post_modificacion"]);
+        $post->setId($anexo["id"]);
+
+        $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
+
+
+        if($this->posts[$anexo["id"]])
+        {
+            $this->posts[$anexo["id"]]->setAnexos($postAnexos);
+        }
+        if($this->posts[$anexo["post_id"]])
+        {
+            $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
+        }
+
+        //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
+    }
+
+}
 
     public function selectPosts()
     {
@@ -298,6 +358,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         });
 
+
+        /**** Proceso los anexos */
+
+        $this->processAnexos();
+        /*** **/
         $this->processFiles();
 
 
@@ -315,9 +380,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-        $anexosSql="";
-
-
+        $this->processAnexos();
         /*** **/
         $this->processFiles();
 

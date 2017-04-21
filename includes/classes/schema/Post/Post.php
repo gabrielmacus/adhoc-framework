@@ -6,7 +6,7 @@
  * Date: 30/03/2017
  * Time: 22:03
  */
-class Post
+class Post implements JsonSerializable
 {
     protected $titulo;
     protected $volanta;
@@ -29,6 +29,28 @@ class Post
     {
 
     }
+
+    function jsonSerialize()
+    {
+        return array(
+            "post_titulo"=>$this->getTitulo(),
+            "post_volanta"=>$this->getVolanta(),
+            "post_bajada"=>$this->getBajada(),
+            "post_texto"=>$this->getTexto(),
+            "post_seccion"=>$this->getSeccion(),
+            "post_creacion"=>$this->getCreacion(),
+            "post_modificacion"=>$this->getModificacion(),
+            "post_id"=>$this->getId(),
+            "post_comentarios"=>$this->getComentarios(),
+            "post_extra1"=>$this->getExtra1(),
+            "post_extra2"=>$this->getExtra2(),
+            "post_extra3"=>$this->getExtra3(),
+            "post_extra4"=>$this->getExtra4(),
+            "archivos"=>$this->getArchivos(),
+            "anexos"=>$this->getAnexos()
+        );
+    }
+
 
     /**
      * @return array

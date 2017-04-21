@@ -1,4 +1,9 @@
+<?php
 
+var_dump( $post->getAnexos());
+$jugadoresGrupo=1;
+
+?>
 <style>
     .picture
     {
@@ -170,6 +175,7 @@
         $("[name='volanta']").val("<?php echo $post->getVolanta()?>");
         $("[name='extra_1']").val("<?php echo $post->getExtra1()?>");
         $("[name='bajada']").val("<?php echo $post->getBajada()?>");
+        //$("#equipo").val();
         texto.clipboard.dangerouslyPasteHTML(0, '<?php echo $post->getTexto()?>');
 
 
@@ -347,6 +353,21 @@ $(document).on("change",".secciones",function () {
     <div class="s12 m6 l6">
         <label>Edad</label>
         <input  type="number" name="extra_1">
+    </div>
+    <div>
+        <label>Equipo</label>
+        <select id="equipo">
+            <option selected disabled>Seleccione el equipo</option>
+            <?php
+            $equipos =$GLOBALS["postDAO"]->selectPostByTipo(62);
+            foreach ($equipos as $equipo)
+            {
+                ?>
+                <option value="<?php echo $equipo->getId()?>"><?php echo $equipo->getTitulo()?></option>
+                <?php
+            }
+            ?>
+        </select>
     </div>
 
 

@@ -1,10 +1,13 @@
+<?php ?>
 <?php
 
-var_dump($post);?>
+$jugadoresGrupo=1;
+//echo json_encode($post->getAnexos()[$jugadoresGrupo]);
+?>
 <style>
     .picture
     {
-        padding: 0px;position:relative;left: 25%;width: 50%;
+        padding: 0px;position:relative;left: 40%;width: 20%;
     }
     .picture img
     {
@@ -17,21 +20,45 @@ var_dump($post);?>
     angular.element(function () {
         scope.jugadores=[];
 
+        <?php if($post)
+        {
+        ?>
+        scope.jugadores = <?php  echo json_encode($post->getAnexos()[$jugadoresGrupo]);?>;
+        console.log(scope.jugadores);
+        <?php
+        }
+        ?>
+        scope.$apply();
+
         window.addEventListener("message", function (e) {
                 if(e.origin==location.origin)
                 {
-                    $.merge(scope.jugadores, e.data);
-                    console.log("$apply()");
-                    scope.$apply();
+                    if(!e.data[0].archivo_id)
+                    {
+
+                        $.each( e.data,function (k,v) {
+
+                            v.post_nexo_grupo=<?php echo $jugadoresGrupo?>;
+                            scope.jugadores.push(v);
+
+                        });
+
+                        scope.$apply();
+                    }
+
 
                 }
 
             }
         );
-        scope.expulsarJugador=function (e) {
+        scope.expulsarJugador=function (e,event) {
 //
+            $(event.currentTarget).closest(".jugador").animate({"left":"-100%"},function () {
+                $(event.currentTarget).closest(".jugador").remove();
+            });
+
          var idx = scope.jugadores.indexOf(e);
-            scope.jugadores.splice(idx,1);
+            scope.jugadores[idx].delete=true;
             timeout(function () { //Para evitar '$apply in progress error'
 
                 scope.$apply();
@@ -153,6 +180,7 @@ var_dump($post);?>
             data.anexos=[];
             $.extend( data.anexos, angular.copy(scope.jugadores ));
 
+            console.log(data);
 
             $.ajax(
                 {
@@ -376,6 +404,7 @@ $(document).on("change",".secciones",function () {
         padding: 10px;
         border-bottom: 1px #cccccc solid;
         width: 100%;
+        position: relative;
     }
     .jugador .fa-times
     {
@@ -405,9 +434,9 @@ $(document).on("change",".secciones",function () {
             <ul >
                 <li class="jugador" data-ng-repeat="jugador in jugadores">
                     <span class="id">#{{jugador.post_anexo_id}}</span>
-                    <span class="name">{{jugador.name}}</span>
-                    <span class="name">{{jugador.surname}}</span>
-                    <i data-ng-click="expulsarJugador(jugador)" class="fa fa-times" aria-hidden="true"></i>
+                    <span class="name">{{jugador.post_titulo}}</span>
+                    <span class="name">{{jugador.post_volanta}}</span>
+                    <i data-ng-click="expulsarJugador(jugador,$event)" class="fa fa-times" aria-hidden="true"></i>
 
                 </li>
             </ul>
