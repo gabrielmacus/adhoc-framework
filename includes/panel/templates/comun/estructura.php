@@ -15,32 +15,24 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<div id="body" class="columns" >
-    <?php if(!$_GET["modal"])
-    {
-        ?><header class=" is-12">
-
-        </header><?php
-    }?>
-
-
-    <section class="column is-9-desktop is-12">
-
-
-        <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
-
-    </section>
-    <aside class="menu is-3 is-hidden-touch column">
-        <?php include "sidenav.php"?>
-    </aside>
+<body class="fila" >
 
 
 
-    <!--
-    <footer>
-        asdas
-    </footer>-->
-</div>
+<header>
+    <?php include "menu.php"?>
+</header>
+
+<section>
+    <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
+</section>
+<aside class="sidenav-container main-color">
+    <?php include "sidenav.php"?>
+</aside>
+
+<footer>
+    
+</footer>
+
 </body>
 </html>
