@@ -7,6 +7,10 @@
 {
     width: 25%;
 }
+    .navigation
+    {
+        left: 25%;    width: 75%;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -101,10 +105,20 @@ body
 
     left: 0%;background-color: rgba(25, 24, 25, 1);;
 }
-.sidenav li:not([data-level='1'])
+
+.navigation
 {
-display: none;
+    min-height: 90px;
+    float: left;
+
+    position: relative;
+
 }
+.navigation .item
+{
+    padding: 25px;
+}
+
 
 /*
 .sidenav .item:hover .icon,.sidenav .item.active .icon
