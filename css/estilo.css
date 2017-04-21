@@ -42,6 +42,10 @@ body
     background-color:#674172;
     color: white;
 }
+.sidenav .sidenav
+{
+    display: none;
+}
 .sidenav-container
 {
     float: right;
@@ -76,14 +80,33 @@ body
     overflow: hidden;
     text-align: center;
     padding: 20px 0px 20px 0px;
+    left: 0%;
+
+}
+.sidenav .item
+{
+    float: left;
+    width: 100%;
     left: -20%;
-    -webkit-transition: all 350ms  ;
-    -moz-transition: all 350ms ;;
-    -ms-transition: all 350ms  ;
-    -o-transition: all 350ms  ;
-    transition: all 350ms  ;;
+    position: relative;
+}
+.sidenav .item a
+{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.sidenav .item:hover,.sidenav .item.active
+{
+
+    left: 0%;background-color: rgba(25, 24, 25, 1);;
+}
+.sidenav li:not([data-level='1'])
+{
+display: none;
 }
 
+/*
 .sidenav .item:hover .icon,.sidenav .item.active .icon
 {    width: 20%;
     left:0%;
@@ -92,16 +115,20 @@ body
 .sidenav .item:hover .text,.sidenav .item.active .text
 {
 width: 80%;
+}*/
+.animated
+{
+    -webkit-transition: all 350ms ease-out;
+    -moz-transition:all 350ms  ease-out;
+    -ms-transition: all 350ms ease-out;;
+    -o-transition: all 350ms ease-out;;
+    transition: all 350ms  ease-out;
 }
 .sidenav .text
-{  -webkit-transition: all 350ms;
-    -moz-transition:all 350ms  ;;
-    -ms-transition: all 350ms ;;
-    -o-transition: all 350ms ;;
-    transition: all 350ms  ;;
+{
     float: left;
     left:0%;
-    width:100%;
+
     padding: 20px 0px 20px 5%;
     position: relative;
 }
