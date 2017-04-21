@@ -1,68 +1,39 @@
-
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
-    <script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-        var facebookPermissions=<?php echo json_encode($GLOBALS["fbConfig"]["permissions"])?>;
-        
-
-    </script>
-
-    <title><?php echo ($htmlTitle)?$htmlTitle:"Sin titulo"; ?></title>
-    
     <?php include "tags.php";?>
-    
+
     <?php include "css.php";?>
-    
+
     <?php include "js.php";?>
 
-    <style>
-        html
-        {
-            font-family: 'Ubuntu', sans-serif;
-        }
-    </style>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body data-ng-app="panel" data-ng-controller="panelCtrl">
-
-
-<script>
-    function error(e) {
-
-        console.log(e);
-        alert("Error desconocido");
-    }
-    var app = angular.module('panel', ['ui.sortable']);
-    var scope;
-   var timeout;
-    app.controller('panelCtrl', function($scope,$timeout) {
-
-        scope=$scope;
-        timeout=$timeout;
-    });
-
-</script>
-<div id="body">
+<body>
+<div id="body" class="columns" >
     <?php if(!$_GET["modal"])
     {
-        ?><header>
-        <?php include "navbars/A.php" ?>
+        ?><header class=" is-12">
+
         </header><?php
     }?>
 
 
-    <section>
+    <section class="column is-9-desktop is-12">
+
 
         <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 
     </section>
-
-
-
-
-
+    <aside class="menu is-3 is-hidden-touch column">
+        <?php include "sidenav.php"?>
+    </aside>
 
 
 
@@ -71,11 +42,5 @@
         asdas
     </footer>-->
 </div>
-<?php if(!$_GET["modal"])
-{
-    include "sidenavs/A.php";
-}?>
-
-
 </body>
 </html>

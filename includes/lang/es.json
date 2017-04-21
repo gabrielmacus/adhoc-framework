@@ -3,6 +3,7 @@
   "navbar":[{"text":"Content Manager"}],
 
 
+  "sidenavTitle":"FootGolf",
   "sidenav":{
     "inicio":{"text":"Inicio","href":"/adhoc-framework/admin/"},
    "configuracion":{"text":"Configuraci\u00f3n","items":
