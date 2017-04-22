@@ -5,6 +5,10 @@
     font-weight: 300;
 
 }
+.secciones .icon
+{
+    float: right;
+}
 header h2
 {
     padding: 20px;

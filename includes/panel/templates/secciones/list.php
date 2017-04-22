@@ -14,7 +14,9 @@ scope.$apply();
 <script type="text/ng-template" id="categoryTree">
     {{ seccion.nombre }}
     <ul ng-if="seccion.secciones">
-        <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">{{ seccion.nombre }}
+        <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
+            <span>{{ seccion.nombre }}</span>
+            <i class="fa fa-trash icon" aria-hidden="true"></i>
         </li>
     </ul>
 </script>
