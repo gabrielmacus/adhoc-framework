@@ -233,4 +233,6 @@ body
 .list li a .icon
 {
     float: right;
+    padding-left: 10px;
+    padding-right: 10px;
 }
