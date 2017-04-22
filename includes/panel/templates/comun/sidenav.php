@@ -6,7 +6,10 @@
 
         console.log("click");
 
-        $(e.target).closest(".item").find(".main-color").animate({"height":"toggle"});
+        var item = $(e.target).closest(".item");
+       item.find("ul").animate({"height":"toggle"},300,function () {
+           item.addClass("active");
+        });
 
 
     }
