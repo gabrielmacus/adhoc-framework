@@ -24,8 +24,7 @@ try{
   $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
     $site="secciones";
     $action="list";
-    var_dump("AD");
-    exit();
+
 }
 catch (Exception $e)
 {

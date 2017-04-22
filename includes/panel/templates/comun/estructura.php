@@ -18,8 +18,6 @@
 </head>
 <body class="fila" >
 
-
-
 <header>
     <?php include "menu.php"?>
 </header>
