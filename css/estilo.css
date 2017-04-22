@@ -1,3 +1,11 @@
+.secciones
+{
+    width: 100%;
+    float: left;
+
+}
+.secciones ul
+{padding-left: 10px}
 .fila
 {
     float: left;width: 100%;

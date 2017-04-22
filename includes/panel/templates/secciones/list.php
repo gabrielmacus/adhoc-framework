@@ -19,13 +19,10 @@ scope.$apply();
     </ul>
 </script>
 
-<ul>
-    <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
-</ul>
 <div class="body">
 
-    <ul class="list">
-        <li></li>
+    <ul class="secciones">
+        <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
     </ul>
 
 </div>
