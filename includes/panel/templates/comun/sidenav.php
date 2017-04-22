@@ -7,9 +7,9 @@
         console.log("click");
 
         var item = $(e.target).closest(".item");
-       item.find("ul").animate({"height":"toggle"},300,function () {
-           item.addClass("active");
-        });
+       item.find("ul").fadeToggle(300,function () {
+           item.toggleClass("active");
+       })
 
 
     }
