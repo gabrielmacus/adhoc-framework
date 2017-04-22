@@ -236,3 +236,8 @@ body
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.list li a .icon:hover
+{
+    border: 1px #2b2b2b solid;
+}
