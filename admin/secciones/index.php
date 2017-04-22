@@ -11,9 +11,7 @@ include "../../includes/autoload.php";
 include_once DIR_PATH."/extras/api/check-login.php";
 
 
-var_dump("AD");
 
-exit();
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
@@ -26,6 +24,8 @@ try{
   $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
     $site="secciones";
     $action="list";
+    var_dump("AD");
+    exit();
 }
 catch (Exception $e)
 {
