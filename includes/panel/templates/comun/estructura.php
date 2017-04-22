@@ -22,7 +22,7 @@
     <?php include "menu.php"?>
 </header>
 
-<section class="fila">
+<section class="main-container">
     <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 </section>
 <aside class="sidenav-container main-color">

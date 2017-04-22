@@ -2,6 +2,11 @@
 {
     float: left;width: 100%;
 }
+.main-container
+{
+    float: right;
+
+}
 @media screen and (min-width: 1025px) {
 .sidenav-container
 {
@@ -10,6 +15,9 @@
     .navigation
     {
         left: 25%;    width: 75%;
+    }
+    .main-container{
+        width: 70%;
     }
 }
 
