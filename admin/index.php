@@ -9,12 +9,13 @@
 
 include "../includes/autoload.php";
 
-var_dump(DIR_PATH);
+var_dump(file_exists(DIR_PATH."/extras/api/check-login.php"));
+
 include_once DIR_PATH."/extras/api/check-login.php";
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
-$htmlDescription="Descriptiom";
+$htmlDescription="Description";
 $htmlLocality="Paraná,Entre Rios";
 
 try{
