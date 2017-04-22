@@ -4,8 +4,9 @@
 
     function openSubmenu(e) {
 
+        console.log("click");
 
-        $(e.target).closest(".item").find(".item").fadeIn();
+        $(this).find(".item").fadeIn();
 
 
     }
