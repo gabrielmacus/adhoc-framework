@@ -9,7 +9,6 @@
 include "../../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
-
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
@@ -17,8 +16,7 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $t =$_GET["t"];
-    $site=$_GET["s"];
+    $tipo =43;
 
     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
 
@@ -39,6 +37,7 @@ try{
             }
 
 
+            $site="posts";
             $action="list";
             break;
         case "add":

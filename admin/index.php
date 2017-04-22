@@ -6,9 +6,10 @@
  * Date: 03/04/2017
  * Time: 1:07
  */
-include_once DIR_PATH."/extras/api/check-login.php";
 
 include "../includes/autoload.php";
+
+include_once DIR_PATH."/extras/api/check-login.php";
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";

@@ -175,3 +175,14 @@ body
     width: 100%;
     min-height: 100%;
 }
+
+#body
+{
+    padding: 20px;
+}
+.list
+{
+    width: 100%;
+    float: left;
+    background-color: rgba(122,122,122,0.61);
+}
