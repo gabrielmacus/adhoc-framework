@@ -20,7 +20,7 @@ try{
     $site="home";
     $action="index";
 
-
+var_dump($lang);
 
 }
 catch (Exception $e)
