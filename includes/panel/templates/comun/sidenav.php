@@ -6,7 +6,7 @@
 
         console.log("click");
 
-        $(e.target).closest(".item").find(".main-color").slideToggle();
+        $(e.target).closest(".item").find(".main-color").animate({"height":"toggle"});
 
 
     }
