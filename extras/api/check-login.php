@@ -5,7 +5,7 @@
  * Date: 16/04/2017
  * Time: 0:16
  */
-var_dump("ADASD");
+
 include_once "../../includes/autoload.php";
 
 $token = $_GET["usrtk"];

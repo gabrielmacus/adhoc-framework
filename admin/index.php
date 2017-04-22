@@ -6,7 +6,7 @@
  * Date: 03/04/2017
  * Time: 1:07
  */
-
+var_dump("ADASD");
 include "../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
