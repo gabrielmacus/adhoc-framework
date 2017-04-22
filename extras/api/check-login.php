@@ -24,10 +24,11 @@ try
 }
 catch (Exception $e)
 {
-    var_dump("ASDDA");
+
     if(!$redirect)
     {
         $redirect =$configuracion->getSiteAddress()."/admin/login.php";
     }
+    var_dump($redirect);
     header('Location: '.$redirect);
 }
