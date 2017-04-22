@@ -9,6 +9,7 @@
 
 include "../includes/autoload.php";
 
+var_dump(DIR_PATH."/extras/api/check-login.php");
 var_dump(file_exists(DIR_PATH."/extras/api/check-login.php"));
 
 include_once DIR_PATH."/extras/api/check-login.php";
