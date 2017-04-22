@@ -7,8 +7,10 @@
         console.log("click");
 
         var item = $(e.target).closest(".item");
+        item.stop();
+        item.toggleClass("active");
        item.find("ul").fadeToggle(300,function () {
-           item.toggleClass("active");
+
        })
 
 
