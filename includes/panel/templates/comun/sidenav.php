@@ -26,7 +26,7 @@
 
 <?php
 
-
+var_dump($lang["sidenav"]);
 
 function iterateSidenav($nav)
 {$colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
