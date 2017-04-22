@@ -34,7 +34,7 @@
             <span class="text">Item 1</span>
         </a>
 
-        <ul style="display: none" class="main-color">
+        <ul style="height: 0px;overflow: hidden" class="main-color">
 
             <li  class="item animated">
                 <a>
