@@ -6,7 +6,7 @@
 
         console.log("click");
 
-        $(e.target).closest(".item").find(".main-color").fadeIn();
+        $(e.target).closest(".item").find(".main-color").slideToggle();
 
 
     }
