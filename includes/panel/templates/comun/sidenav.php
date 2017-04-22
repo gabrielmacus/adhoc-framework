@@ -6,7 +6,7 @@
 
         console.log("click");
 
-        $(this).find(".item").fadeIn();
+        $(e.target).closest(".item").find(".main-color").fadeIn();
 
 
     }
