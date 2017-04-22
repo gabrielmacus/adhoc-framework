@@ -13,8 +13,6 @@
 require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/DataSource.php");
 require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/Configuracion/Configuracion.php");
 */
-error_reporting(E_ALL);
-
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
 
