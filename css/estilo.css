@@ -94,6 +94,16 @@ body
     left: -19%;
     position: relative;
 }
+
+.sidenav .item .item
+{
+    float: left;
+    width: 100%;
+    left: -20%;
+    position: relative;
+}
+
+
 .sidenav .item a
 {
     position: relative;
