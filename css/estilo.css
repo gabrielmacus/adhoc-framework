@@ -1,7 +1,16 @@
 .secciones
 {
-    width: 100%;
-    float: left;
+    font-size: 25px;
+    padding: 15px 0px 0px 15px;
+    font-weight: 300;
+
+}
+header h2
+{
+    padding: 20px;
+    background: rgba(193,193,193,0.61);
+    font-size: 20px;
+    font-weight: 300;
 }
 .secciones li
 {    padding: 15px 0px 0px 15px;}
