@@ -1,4 +1,5 @@
-
+<?php
+var_dump("A")?>
 <script>
     $(document).on("click",".item",openSubmenu);
 
@@ -26,7 +27,6 @@
 
 <?php
 
-var_dump($lang);
 
 function iterateSidenav($nav)
 {$colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
@@ -57,6 +57,6 @@ foreach ($nav as $item)
 <ul class="sidenav main-color">
     <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
 
-    <?php iterateSidenav($lang["sidenav"]) ?>
+    <?php iterateSidenav($lang["navbar"]) ?>
 
 </ul>
