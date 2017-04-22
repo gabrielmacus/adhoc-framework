@@ -126,7 +126,7 @@ body
 }
 .sidenav ul .item:hover .icon,.sidenav ul .item.active .icon
 {
-    width: 40%;
+    width: 25%;
 }
 
 .navigation
