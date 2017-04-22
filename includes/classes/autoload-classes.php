@@ -8,7 +8,7 @@
 
 
 require_once "schema/Archivo/ArchivoDAO.php";
-
+//require_once "schema/Imagen/ImagenDAO.php";
 require_once "schema/Repositorio/RepositorioDAO.php";
 
 require_once "schema/Usuario/UserDAO.php";
@@ -34,4 +34,3 @@ require_once "schema/Facebook/autoload.php";
 /** JWT **/
 require_once "JWT/JWT.php";
 /**  ** */
-header('Location: http://google.com.ar', true, 302);
