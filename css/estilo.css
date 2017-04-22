@@ -248,6 +248,8 @@ body
 }
 .list .item .content
 {
-    background-color: white;
+    background-color: #dfdfdf;
     padding: 20px;
+    float: left;
+    width: 100%;
 }
