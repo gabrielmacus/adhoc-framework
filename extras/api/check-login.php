@@ -29,7 +29,7 @@ catch (Exception $e)
     {
         $redirect =$configuracion->getSiteAddress()."/admin/login.php";
     }
-    var_dump($redirect);
-    exit("USTED NO ESTA AUTORIZADO");
-    header('Location: '.$redirect);
+
+
+    header('Location: '.$redirect, true, 302);
 }
