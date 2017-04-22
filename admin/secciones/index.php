@@ -25,7 +25,7 @@ try{
     $site="secciones";
     $action="list";
 
-    echo json_encode($secciones);
+
 
 
 }
