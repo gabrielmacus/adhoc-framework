@@ -12,6 +12,9 @@
                 <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
+            <div class="content">
+                a
+            </div>
         </li>
         <li class="item"><a class="animated">Repositorio 2</a></li>
         <li class="item"><a class="animated">Repositorio 3</a></li>
