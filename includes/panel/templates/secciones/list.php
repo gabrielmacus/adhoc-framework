@@ -14,11 +14,11 @@ scope.$apply();
 <script type="text/ng-template" id="field_renderer.html">
     {{data.label}}
     <ul>
-        <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value}}</li>
+        <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value.nombre}}</li>
     </ul>
 </script>
 <ul >
-    <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value.nombre}}</li>
+    <li ng-repeat="(key,value) in secciones" >{{value.nombre}}</li>
 </ul>
 
 
