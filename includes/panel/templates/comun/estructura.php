@@ -1,4 +1,4 @@
-<?php echo $configuracion->getLanguage()?>
+
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
