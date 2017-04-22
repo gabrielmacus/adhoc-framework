@@ -26,6 +26,8 @@
 
 <?php
 
+
+
 function iterateSidenav($nav)
 {$colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
 foreach ($nav as $item)
