@@ -2,7 +2,7 @@
 <script>
     angular.ready(function () {
         scope.secciones=<?php    echo json_encode($secciones)?>;
-
+console.log(scope.secciones);
 
     });
 </script>
@@ -16,7 +16,7 @@
     </ul>
 </script>
 <ul >
-    <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value}}</li>
+    <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value.nombre}}</li>
 </ul>
 
 
