@@ -4,6 +4,7 @@
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
 console.log(scope.secciones);
+scope.$apply();
 
     });
 </script>
