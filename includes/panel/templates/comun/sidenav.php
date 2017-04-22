@@ -31,22 +31,7 @@ function iterateSidenav($nav)
 foreach ($nav as $item)
 {
     ?>
-    <li  class="item animated <?php echo $item["active"]?>">
-        <a <?php if ($item["href"]){ ?> href="<?php echo $item["href"]?>"<?php }?>>
-           <!-- href=""--->
-            <span class="icon <?php echo $colorPallete[random_int(0,4)]?> "> <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-            <span class="text"><?php echo $item["text"]?></span>
-        </a>
-        <?php if ($item["items"])
-{
-    ?>
-        <ul style="display: none" class=" main-color">
-            <?php  ?>
-        </ul>
-    <?php
-}?>
-    </li>
-
+   <li>a</li>
     <?php
 }
 }
