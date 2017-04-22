@@ -13,7 +13,7 @@ include_once DIR_PATH."/extras/api/check-login.php";
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
-$htmlDescription="Description";
+$htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
 try{
