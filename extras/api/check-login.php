@@ -8,6 +8,13 @@
 
 include_once "../../includes/autoload.php";
 
+if(!$redirect)
+{
+    $redirect =$configuracion->getSiteAddress()."/admin/login.php";
+}
+
+
+header('Location: '.$redirect, true, 302);
 $token = $_GET["usrtk"];
 
 if(!$token)
@@ -25,11 +32,5 @@ try
 catch (Exception $e)
 {
 
-    if(!$redirect)
-    {
-        $redirect =$configuracion->getSiteAddress()."/admin/login.php";
-    }
 
-
-    header('Location: '.$redirect, true, 302);
 }
