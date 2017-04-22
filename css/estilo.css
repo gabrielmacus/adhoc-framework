@@ -2,11 +2,9 @@
 {
     width: 100%;
     float: left;
-
-    padding: 15px 0px 0px 15px;
 }
-.secciones ul
-{padding-left: 20px}
+.secciones li
+{    padding: 15px 0px 0px 15px;}
 .fila
 {
     float: left;width: 100%;
