@@ -12,10 +12,9 @@ scope.$apply();
     <h2><?php echo $lang["secciones"]?></h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-    {{ category.title }}
-    <ul ng-if="value.items">
+    {{ value.nombre }}
+    <ul ng-if="value.secciones">
         <li ng-repeat="category in value.items" ng-include="'categoryTree'">
-            {{category}}
         </li>
     </ul>
 </script>
