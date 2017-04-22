@@ -124,6 +124,10 @@ body
 
     left: 0%;background-color: rgba(25, 24, 25, 1);;
 }
+.sidenav .sidenav .item:hover .icon,.sidenav .sidenav .item.active .icon
+{
+    width: 40%;
+}
 
 .navigation
 {
