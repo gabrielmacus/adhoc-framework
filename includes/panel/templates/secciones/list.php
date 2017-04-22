@@ -13,11 +13,11 @@ scope.$apply();
     <h2><?php echo $lang["secciones"]?></h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-
+    <span>{{ seccion.nombre }}</span>
+    <i class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
-            <span>{{ seccion.nombre }}</span>
-            <i class="fa fa-trash icon" aria-hidden="true"></i>
+
         </li>
     </ul>
 </script>
