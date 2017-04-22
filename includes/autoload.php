@@ -12,6 +12,7 @@
 require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
 require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
 */
+var_dump("A");
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
 

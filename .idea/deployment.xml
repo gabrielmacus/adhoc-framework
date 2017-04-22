@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" serverName="ftp.ezyro.com">
     <serverData>
+      <paths name="c0580153">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/test" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="ftp.ezyro.com">
         <serverdata>
           <mappings>
