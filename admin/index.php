@@ -9,6 +9,7 @@
 
 include "../includes/autoload.php";
 
+var_dump(DIR_PATH);
 include_once DIR_PATH."/extras/api/check-login.php";
 
 $htmlTitle=$configuracion->getSiteName();
