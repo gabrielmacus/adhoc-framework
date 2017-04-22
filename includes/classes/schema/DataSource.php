@@ -7,7 +7,7 @@
  * Time: 01:20 PM
  */
 
-var_dump("DATA");
+
 class DataSource
 {
 

@@ -9,7 +9,7 @@
 include_once "../../includes/autoload.php";
 
 $token = $_GET["usrtk"];
-
+var_dump("ADASD");
 if(!$token)
 {
     $token =$_COOKIE["usrtk"];
