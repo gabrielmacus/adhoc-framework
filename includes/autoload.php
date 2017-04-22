@@ -33,7 +33,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 require_once "classes/autoload-classes.php";//Cargo las clases
 
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
-
+header('Location: http://google.com.ar', true, 302);
 /** DAOs**/
 
 $GLOBALS["userDAO"]  = new UserDAO($configuracion->getDataSource());
@@ -91,4 +91,3 @@ foreach ($secciones as $seccion)
 set_time_limit(90);//Desarrollo
 
 
-header('Location: http://google.com.ar', true, 302);
