@@ -217,15 +217,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
             $this->processArchivos();
        }
 
-        
-
-        foreach ($this->repositorios as $r)
-        {
-         
-            return $r;//devuelvo solo el primero
-        }
-    
-
+       return $this->repositorios;
     }
 
     public function updateRepositorio(Repositorio $r)
