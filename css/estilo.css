@@ -102,7 +102,10 @@ body
     left: -19%;
     position: relative;
 }
-
+.sidenav .item .item .icon
+{
+    width: 10%;
+}
 .sidenav .item .item
 {
     float: left;
@@ -123,10 +126,6 @@ body
 {
 
     left: 0%;background-color: rgba(25, 24, 25, 1);;
-}
-.sidenav ul .item:hover .icon,.sidenav ul .item.active .icon
-{
-    width:10%;
 }
 
 .navigation
