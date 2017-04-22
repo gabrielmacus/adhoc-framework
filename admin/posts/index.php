@@ -22,40 +22,15 @@ try{
 
     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
 
-
-
-
-    switch ($_GET["act"])
+    if(is_numeric($_GET["id"]))
     {
-        default:
-            if(is_numeric($_GET["id"]))
-            {
-                $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
+        $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
 
-            }
-            else
-            {
-                $posts= $GLOBALS["postDAO"]->selectPosts();
-            }
-
-
-            $action="list";
-            break;
-        case "add":
-            $imageVersion="post";
-            if(is_numeric($_GET["id"]))
-            {
-                $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
-
-            }
-
-
-
-            $site="posts";
-            $action="add";
-            break;
     }
-
+    else
+    {
+        $posts= $GLOBALS["postDAO"]->selectPosts();
+    }
 }
 catch (Exception $e)
 {
