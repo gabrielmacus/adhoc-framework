@@ -1,4 +1,4 @@
-<?php var_dump("data") ?>
+<?php var_dump("datasd") ?>
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
