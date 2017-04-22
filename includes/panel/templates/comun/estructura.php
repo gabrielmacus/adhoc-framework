@@ -16,8 +16,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="fila" >
+<body class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
+<script>
+    var app = angular.module('panel', []);
+    var scope;
+    var timeout;
+    app.controller('panelCtrl', function($scope,$timeout) {
 
+        scope=$scope;
+        timeout=$timeout;
+    });
+
+</script>
 <header>
     <?php include "menu.php"?>
 </header>
