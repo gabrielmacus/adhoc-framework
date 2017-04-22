@@ -36,7 +36,7 @@ foreach ($nav as $item)
     <li  class="item animated <?php echo $item["active"]?>">
         <a >
            <!-- href="<?php echo $item["href"]?>"--->
-            <span class="icon <?php echo $colorPallete[random_int(0,4)]?> "> <i class="fa fa-futbol-o" aria-hidden="true"></i></span>
+            <span class="icon <?php echo $colorPallete[random_int(0,4)]?> "> <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
             <span class="text"><?php echo $item["text"]?></span>
         </a>
         <?php if ($item["items"])

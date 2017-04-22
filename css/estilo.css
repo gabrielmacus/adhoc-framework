@@ -124,10 +124,6 @@ body
 
     left: 0%;background-color: rgba(25, 24, 25, 1);;
 }
-.sidenav ul .item:hover .icon,.sidenav ul .item.active .icon
-{
-    width: 30%;
-}
 
 .navigation
 {
