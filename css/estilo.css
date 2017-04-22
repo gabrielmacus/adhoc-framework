@@ -2,9 +2,8 @@
 {
     width: 100%;
     float: left;
-    padding-left: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+    padding: 15px 0px 0px 15px;
 }
 .secciones ul
 {padding-left: 20px}
