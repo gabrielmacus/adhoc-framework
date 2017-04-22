@@ -21,7 +21,7 @@ require("classes/schema/Configuracion/Configuracion.php");
 
 
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
-    "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
+    "uipasd",0.1,"http://mapucheonline.com/test","Adhoc Framework","Gamaware Web Tech",
     "test", "http://mapucheonline.com/test","http://mapucheonline.com/test");
 
 
