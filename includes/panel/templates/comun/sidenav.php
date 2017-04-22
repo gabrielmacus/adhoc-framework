@@ -26,7 +26,7 @@
 
 <?php
 
-
+var_dump($nav);
 
 function iterateSidenav($nav)
 {$colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
