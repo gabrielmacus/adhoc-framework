@@ -85,6 +85,10 @@ class Seccion implements JsonSerializable
 
     function jsonSerialize()
     {
-        return get_object_vars($this);
+        return array(
+            "id"=>$this->getId(),
+            "nombre"=>$this->getNombre(),
+            "tipo"=>$this->getTipo()
+        );
     }
 }
