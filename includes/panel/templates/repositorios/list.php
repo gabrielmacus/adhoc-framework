@@ -6,9 +6,9 @@
 <div class="body">
 
     <ul class="list">
-        <li class="item"><a>Repositorio 1</a></li>
-        <li class="item"><a>Repositorio 2</a></li>
-        <li class="item"><a>Repositorio 3</a></li>
+        <li class="item"><a class="animated">Repositorio 1</a></li>
+        <li class="item"><a class="animated">Repositorio 2</a></li>
+        <li class="item"><a class="animated">Repositorio 3</a></li>
     </ul>
 
 </div>
