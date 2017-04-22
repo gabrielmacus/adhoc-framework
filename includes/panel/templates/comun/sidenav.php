@@ -31,7 +31,7 @@ foreach ($nav as $item)
 {
     ?>
     <li  class="item animated <?php echo $item["active"]?>">
-        <a href="<?php echo $item["href"]?>">
+        <a >
             <span class="icon saffron"> <i class="fa fa-futbol-o" aria-hidden="true"></i></span>
             <span class="text"><?php echo $item["text"]?></span>
         </a>
