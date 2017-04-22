@@ -9,8 +9,8 @@
         <li class="item">
             <a class="animated">
                 <span class="name">Repositorio 1</span>
-                <i class="fa fa-pencil icon" aria-hidden="true"></i>
-                <i class="fa fa-trash-o icon" aria-hidden="true"></i>
+                <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
+                <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
         </li>
         <li class="item"><a class="animated">Repositorio 2</a></li>
