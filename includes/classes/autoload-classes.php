@@ -10,7 +10,6 @@
 require_once "schema/Archivo/ArchivoDAO.php";
 require_once "schema/Imagen/ImagenDAO.php";
 require_once "schema/Repositorio/RepositorioDAO.php";
-
 require_once "schema/Usuario/UserDAO.php";
 require_once "schema/Seccion/SeccionDAO.php";
 require_once "schema/Comentario/ComentarioDAO.php";
