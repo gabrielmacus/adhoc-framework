@@ -205,7 +205,7 @@ body
     min-height: 100%;
 }
 
-#body
+.body
 {
     padding: 20px;
 }
