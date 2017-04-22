@@ -22,7 +22,12 @@ require("classes/schema/Configuracion/Configuracion.php");
 
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
-    "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
+    "admin", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
+
+/*
+$configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
+    "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
+    "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");*/
 
 
 /*
