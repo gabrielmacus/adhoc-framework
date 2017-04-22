@@ -25,7 +25,7 @@ try{
     $site="secciones";
     $action="list";
 
-
+var_dump($secciones);
 
 
 }
