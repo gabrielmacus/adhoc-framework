@@ -1,4 +1,4 @@
-
+<?php var_dump($lang); ?>
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
