@@ -1,6 +1,6 @@
 <?php
 
-
+/*
 function exceptions_error_handler($severity, $message, $filename, $lineno) {
 
     if(strpos($message,"Undefined index")==-1)
@@ -15,4 +15,4 @@ function exceptions_error_handler($severity, $message, $filename, $lineno) {
 
 }
 
-set_error_handler('exceptions_error_handler');
+set_error_handler('exceptions_error_handler');*/
