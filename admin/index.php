@@ -9,7 +9,6 @@
 
 include "../includes/autoload.php";
 
-include_once DIR_PATH."/extras/api/check-login.php";
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
@@ -25,7 +24,7 @@ try{
 }
 catch (Exception $e)
 {
-    var_dump("data");
+
     echo json_encode("Error: {$e->getMessage()}");
 
 }
