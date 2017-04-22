@@ -91,7 +91,7 @@ body
 {
     float: left;
     width: 100%;
-    left: -20%;
+    left: -19%;
     position: relative;
 }
 .sidenav .item a
@@ -120,16 +120,6 @@ body
 }
 
 
-/*
-.sidenav .item:hover .icon,.sidenav .item.active .icon
-{    width: 20%;
-    left:0%;
-}
-
-.sidenav .item:hover .text,.sidenav .item.active .text
-{
-width: 80%;
-}*/
 .animated
 {
     -webkit-transition: all 350ms ease-out;
