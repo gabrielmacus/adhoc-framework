@@ -11,17 +11,18 @@ scope.$apply();
 <header>
     <h2><?php echo $lang["secciones"]?></h2>
 </header>
-<script type="text/ng-template" id="field_renderer.html">
-    {{data.label}}
-    <ul>
-        <li ng-repeat="(key,value) in secciones" ng-include="'field_renderer.html'">{{value.nombre}}</li>
+<script type="text/ng-template" id="categoryTree">
+    {{ category.title }}
+    <ul ng-if="value.items">
+        <li ng-repeat="category in value.items" ng-include="'categoryTree'">
+            {{category}}
+        </li>
     </ul>
 </script>
-<ul >
-    <li ng-repeat="(key,value) in secciones" >{{value.nombre}}</li>
+
+<ul>
+    <li data-ng-repeat="(key,value) in secciones"  ng-include="'categoryTree'"></li>
 </ul>
-
-
 <div class="body">
 
     <ul class="list">
