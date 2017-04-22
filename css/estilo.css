@@ -124,7 +124,7 @@ body
 
     left: 0%;background-color: rgba(25, 24, 25, 1);;
 }
-.sidenav .sidenav .item:hover .icon,.sidenav .sidenav .item.active .icon
+.sidenav ul .item:hover .icon,.sidenav ul .item.active .icon
 {
     width: 40%;
 }
