@@ -16,7 +16,7 @@
 
 
     <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
-    <li class="item animated active">
+    <li class="item animated">
         <a>
             <span class="icon honey-flower"> <i class="fa fa-futbol-o" aria-hidden="true"></i></span>
             <span class="text">Item 1</span>
