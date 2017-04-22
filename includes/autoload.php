@@ -14,7 +14,6 @@ require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/DataSource.ph
 require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/Configuracion/Configuracion.php");
 */
 
-header('Location: http://google.com.ar', true, 302);
 
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
@@ -90,3 +89,6 @@ foreach ($secciones as $seccion)
 */
 
 set_time_limit(90);//Desarrollo
+
+
+header('Location: http://google.com.ar', true, 302);
