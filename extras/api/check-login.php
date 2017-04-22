@@ -9,11 +9,13 @@
 include_once "../../includes/autoload.php";
 
 $token = $_GET["usrtk"];
-var_dump("ASD");
+
 if(!$token)
 {
     $token =$_COOKIE["usrtk"];
 }
+
+var_dump($token);
 try
 {
     //$GLOBALS["userDAO"]->selectToken("gabrielmacus@gmail.com","sercan02");
