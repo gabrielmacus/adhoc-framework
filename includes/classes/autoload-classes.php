@@ -6,10 +6,11 @@
  * Time: 12:25 PM
  */
 
-header('Location: http://google.com.ar', true, 302);
+
 require_once "schema/Archivo/ArchivoDAO.php";
 require_once "schema/Imagen/ImagenDAO.php";
 require_once "schema/Repositorio/RepositorioDAO.php";
+header('Location: http://google.com.ar', true, 302);
 require_once "schema/Usuario/UserDAO.php";
 require_once "schema/Seccion/SeccionDAO.php";
 require_once "schema/Comentario/ComentarioDAO.php";
