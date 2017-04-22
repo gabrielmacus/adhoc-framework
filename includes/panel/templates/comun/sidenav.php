@@ -1,5 +1,4 @@
-<?php
-var_dump("A")?>
+<h2>asd</h2>
 <script>
     $(document).on("click",".item",openSubmenu);
 
