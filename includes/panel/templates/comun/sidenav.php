@@ -4,12 +4,18 @@
 
     function openSubmenu(e) {
 
-        console.log("click");
-
         var item = $(e.target).closest(".item");
-        item.stop();
-        item.toggleClass("active");
-       item.find("ul").fadeToggle(300,function () {
+        if(item)
+        {
+            item.stop();
+
+            item.find("ul").animate({height:"toggle"},function () {
+                item.toggleClass("active");
+
+            });
+
+        }
+
 
        })
 
