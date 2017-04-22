@@ -14,7 +14,7 @@ scope.$apply();
 <script type="text/ng-template" id="categoryTree">
 
     <ul ng-if="value.secciones">
-        <li ng-repeat="category in value.secciones" ng-include="'categoryTree'">{{ value.nombre }}
+        <li ng-repeat="(key,value)  in value.secciones" ng-include="'categoryTree'">{{ value.nombre }}
         </li>
     </ul>
 </script>
