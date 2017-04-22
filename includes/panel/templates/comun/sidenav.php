@@ -9,10 +9,10 @@
         {
             item.stop();
 
-            item.find("ul").animate({height:"toggle"},function () {
+            item.find("ul").fadeToggle(function () {
                 item.toggleClass("active");
 
-            });
+            },400);
 
         }
 
@@ -34,7 +34,7 @@
             <span class="text">Item 1</span>
         </a>
 
-        <ul style="height: 0px;overflow: hidden" class="main-color">
+        <ul style="display: none" class="main-color">
 
             <li  class="item animated">
                 <a>
