@@ -88,7 +88,8 @@ class Seccion implements JsonSerializable
         return array(
             "id"=>$this->getId(),
             "nombre"=>$this->getNombre(),
-            "tipo"=>$this->getTipo()
+            "tipo"=>$this->getTipo(),
+            "secciones"=>$this->getSecciones()
         );
     }
 }
