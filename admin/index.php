@@ -20,13 +20,11 @@ try{
     $site="home";
     $action="index";
 
-
+    var_dump("data");
 
 }
 catch (Exception $e)
 {
-
-    var_dump("data");
 
     echo json_encode("Error: {$e->getMessage()}");
 
