@@ -26,6 +26,8 @@ try{
 catch (Exception $e)
 {
 
+    var_dump("data");
+
     echo json_encode("Error: {$e->getMessage()}");
 
 }
