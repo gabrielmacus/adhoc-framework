@@ -8,8 +8,8 @@
 
 
 require_once "schema/Archivo/ArchivoDAO.php";
-header('Location: http://google.com.ar', true, 302);
 require_once "schema/Imagen/ImagenDAO.php";
+header('Location: http://google.com.ar', true, 302);
 require_once "schema/Repositorio/RepositorioDAO.php";
 
 require_once "schema/Usuario/UserDAO.php";
