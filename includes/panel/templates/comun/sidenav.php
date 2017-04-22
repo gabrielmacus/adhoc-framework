@@ -9,10 +9,10 @@
         {
             item.stop();
 
-            item.find("ul").fadeToggle(function () {
+            item.find("ul").fadeToggle(400,function () {
                 item.toggleClass("active");
 
-            },400);
+            });
 
         }
 
