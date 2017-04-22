@@ -1,6 +1,7 @@
 
 <script>
-    angular.ready(function () {
+    angular.element(function () {
+
         scope.secciones=<?php    echo json_encode($secciones)?>;
 console.log(scope.secciones);
 
