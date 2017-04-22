@@ -87,6 +87,7 @@ body
     left: 0%;
 
 }
+
 .sidenav .item
 {
     float: left;
@@ -109,6 +110,7 @@ body
     position: relative;
     float: left;
     width: 100%;
+    color: white!important;
 }
 .sidenav .item:hover,.sidenav .item.active
 {
