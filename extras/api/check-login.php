@@ -15,7 +15,7 @@ if(!$token)
     $token =$_COOKIE["usrtk"];
 }
 
-var_dump($token);
+
 try
 {
     //$GLOBALS["userDAO"]->selectToken("gabrielmacus@gmail.com","sercan02");
@@ -24,6 +24,7 @@ try
 }
 catch (Exception $e)
 {
+    var_dump("ASDDA");
     if(!$redirect)
     {
         $redirect =$configuracion->getSiteAddress()."/admin/login.php";
