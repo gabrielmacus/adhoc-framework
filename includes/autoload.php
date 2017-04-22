@@ -17,7 +17,7 @@ require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/Configuracion
 
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
-header('Location: http://google.com.ar', true, 302);
+
 
 
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
@@ -30,6 +30,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
     "uipasd",0.1,"http://mapucheonline.com/test/admin","Adhoc Framework","Gamaware Web Tech",
     "","http://mapucheonline.com/test/admin","http://mapucheonline.com/test/admin");
 */
+header('Location: http://google.com.ar', true, 302);
 require_once "classes/autoload-classes.php";//Cargo las clases
 
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
