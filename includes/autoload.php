@@ -13,21 +13,22 @@ require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/DataSource.php");
 require("{$_SERVER['DOCUMENT_ROOT']}/includes/classes/schema/Configuracion/Configuracion.php");
 */
 var_dump("A");
+
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
 
 
-/*
+
 $configuracion = new Configuracion("173.236.78.206","test","sercan02","adhoc",
     "uipasd",0.1,"http://localhost/adhoc-framework","Adhoc Framework","Gamaware Web Tech",
     "adhoc-framework", "http://localhost/adhoc-framework","http://localhost/adhoc-framework");
-*/
 
 
+/*
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
     "uipasd",0.1,"http://mapucheonline.com/test/admin","Adhoc Framework","Gamaware Web Tech",
     "","http://mapucheonline.com/test/admin","http://mapucheonline.com/test/admin");
-
+*/
 require_once "classes/autoload-classes.php";//Cargo las clases
 
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
