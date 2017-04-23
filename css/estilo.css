@@ -414,3 +414,8 @@ a:visited
     color: inherit!important;
     text-decoration: inherit;
 }
+table a
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
