@@ -2,18 +2,19 @@
 <table>
     <caption><?php echo $title;?></caption>
     <thead>
-    <?php foreach ($rows as $k=>$v)
-    {
-    ?>
+
         <tr>
+            <?php foreach ($rows as $k=>$v)
+            {
+            ?>
             <th scope="col"><?php echo $k?></th>
+                <?php
+            }?>
 
             <th scope="col"><?php echo $lang["editar"];?></th>
 
             <th scope="col"><?php echo $lang["eliminar"];?></th>
         </tr>
-    <?php
-    }?>
 
     </thead>
     <tbody>
