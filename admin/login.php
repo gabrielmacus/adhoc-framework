@@ -6,7 +6,7 @@
  * Time: 12:22 PM
  */
 
-var_dump($_COOKIE["lastUrl"]);
+var_dump($_COOKIE["referer"]);
 exit();
 
 

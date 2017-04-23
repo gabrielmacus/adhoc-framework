@@ -25,7 +25,7 @@ try
 catch (Exception $e)
 {
     $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    setcookie("lastUrl",$actual_link);
+    setcookie("referer",$actual_link);
 
     if(!$redirect)
     {
