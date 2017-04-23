@@ -279,11 +279,14 @@ display: none;
 
 
 }
-
+.list .item .content .archivos:hover {
+    width:100%;
+}
 .list .item .content .archivos .mask {
 
     position: absolute;
-    width: 100%;
+    width: 0%;
+    overflow: hidden;
     height: 100%;
     top: 0px;
     left: 0px;
