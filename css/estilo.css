@@ -253,27 +253,6 @@ body
     width: 100%;
     overflow: hidden;
 display: none;
-    height: 200px;
+    height: 100px;
 
-}
-.list .item .content .peso
-{
-    height: 50%;
-    width: 50%;
-    float: left;
-    background-color: #4cae4c;
-}
-
-.list .item .content .archivos
-{
-    height: 50%;
-    width: 50%;
-    float: left;
-    background-color: #dcc42c;
-}
-.list .item .content .archivos i
-{
-    position: relative;
-    top: 20%;
-    font-size: 60px;
 }
