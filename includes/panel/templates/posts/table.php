@@ -5,7 +5,7 @@
  * $keys  =  Correspondencia entre clave del array y encabezado
  * $_posts = Posts en json
  */
-$_posts =json_encode($posts); ?>
+ ?>
 <table>
     <caption><?php echo $title;?></caption>
     <thead>
@@ -20,7 +20,7 @@ $_posts =json_encode($posts); ?>
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($_posts as $post)
+    <?php foreach ($posts as $post)
     {
         foreach ($keys as $k=>$v)
         {
