@@ -23,17 +23,20 @@
     <tbody>
     <?php foreach ($posts as $post)
     {
-        $post =key(reset($post));
-        var_dump($post);
-        foreach ($keys as $k=>$v)
+
+        foreach ($post as $p)
         {
-            echo $v;
-            ?>
-            <tr>
-                <td data-label="<?php echo $k;?>"><?php echo $post[$v];?></td>
-            </tr>
-            <?php
+            foreach ($keys as $k=>$v)
+            {
+                echo $v;
+                ?>
+                <tr>
+                    <td data-label="<?php echo $k;?>"><?php echo $p[$v];?></td>
+                </tr>
+                <?php
+            }
         }
+
 
     }?>
 
