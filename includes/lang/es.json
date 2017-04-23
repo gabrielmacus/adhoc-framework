@@ -43,6 +43,10 @@
   "eliminar":"Eliminar",
   "editar":"Editar",
   "posicion":"Posición",
-  "verposicion":"Ver posición"
+  "verposicion":"Ver posición",
+  "nombre":"Nombre",
+  "apellido":"Apellido",
+  "edad":"Edad",
+  "dni":"DNI"
 
 }
