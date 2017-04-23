@@ -26,6 +26,7 @@
         $post =array_values($post);
         foreach ($keys as $k=>$v)
         {
+            echo $v;
             ?>
             <tr>
                 <td data-label="<?php echo $k;?>"><?php echo $post[$v];?></td>
