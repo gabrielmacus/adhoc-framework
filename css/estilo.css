@@ -279,7 +279,7 @@ display: none;
 
 
 }
-.list .item .content .archivos:hover {
+.list .item .content .archivos:hover .mask {
     width:100%;
 }
 .list .item .content .archivos .mask {
