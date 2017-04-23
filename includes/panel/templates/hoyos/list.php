@@ -25,7 +25,7 @@
         $row[$lang["numero"]]["data"]=$post->getTitulo();
         $row[$lang["posicion"]]["data"]=$lang["verposicion"];
         $row[$lang["posicion"]]["modal"]=true;
-        $row[$lang["posicion"]]["href"]=$configuracion->getSiteAddress()."/admin/posts/maps.php?modal=true&pos={$post->getExtra1()}";
+        $row[$lang["posicion"]]["href"]=$configuracion->getSiteAddress()."/admin/posts/map.php?modal=true&pos={$post->getExtra1()}";
 
 
         $rows[]=$row;
