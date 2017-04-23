@@ -5,7 +5,7 @@
         var map = new google.maps.Map(
             document.querySelector("map"),
             {
-                center:<?php echo $_GET["pos"];?>,
+                center: {lat: -34.397, lng: 150.644},
                 zoom:8
             }
         );
