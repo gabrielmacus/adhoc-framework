@@ -30,8 +30,8 @@
                     <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
                     <?php
                 }?>
-                <td><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
-                <td><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
+                <td title="<?php echo $lang["editar"];?>"><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
+                <td title="<?php echo $lang["eliminar"];?>"><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
             </tr>
            <?php
     }?>
