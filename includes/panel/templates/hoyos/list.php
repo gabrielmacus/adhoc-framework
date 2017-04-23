@@ -22,8 +22,8 @@
     $title=$lang["hoyoslistado"];
     foreach ($posts as $post)
     {
-        $row[$lang["numero"]]=$post->getTitulo();
-        $row[$lang["posicion"]]=$post->getExtra1();
+        $row[$lang["numero"]]["data"]=$post->getTitulo();
+        $row[$lang["posicion"]]["data"]=$post->getExtra1();
         echo json_encode($row);
 
         $rows[]=$row;
