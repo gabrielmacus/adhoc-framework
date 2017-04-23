@@ -270,6 +270,7 @@ display: none;
     width: 50%;
     float: left;
 
+    padding: 5px;
     text-align: center;
 }
 .btn
