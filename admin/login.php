@@ -7,6 +7,7 @@
  */
 
 
+setcookie("lastUrl",$_SERVER['HTTP_REFERER'] );
 include_once "../includes/autoload.php";
 
 try
@@ -29,7 +30,17 @@ if($_GET["login"])
     if($token)
     {
         setcookie("usrtk",$token);
-        header('Location: '.$configuracion->getSiteAddress()."/admin/");
+
+
+        if($lastUrl=$_COOKIE["lastUrl"])
+        {
+            header('Location: '.$lastUrl);
+        }
+        else
+        {
+            header('Location: '.$configuracion->getSiteAddress()."/admin/");
+        }
+
 
     }
 }
