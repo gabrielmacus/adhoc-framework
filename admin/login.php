@@ -7,7 +7,7 @@
  */
 
 
-setcookie("lastUrl",$_SERVER['HTTP_REFERER'] );
+var_dump($_SERVER['HTTP_REFERER'] );
 include_once "../includes/autoload.php";
 
 try
