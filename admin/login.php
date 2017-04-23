@@ -6,6 +6,8 @@
  * Time: 12:22 PM
  */
 
+var_dump($_COOKIE["lastUrl"]);
+exit();
 
 
 include_once "../includes/autoload.php";
