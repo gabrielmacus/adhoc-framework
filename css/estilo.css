@@ -386,6 +386,8 @@ table th,
 table td {
     padding: .625em;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 table th {
     font-size: 1.1em;
@@ -413,9 +415,4 @@ a:visited
 {
     color: inherit!important;
     text-decoration: inherit;
-}
-table a
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
