@@ -1,9 +1,9 @@
 .secciones
 {
     font-size: 25px;
-    padding: 25px 0px 0px 45px;
-    font-weight: 300;
-
+ /*   padding: 25px 0px 0px 45px;
+  */  font-weight: 300;
+padding-left: 10px;
 }
 .secciones .icon
 {
