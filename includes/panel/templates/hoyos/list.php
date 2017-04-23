@@ -24,6 +24,8 @@
     {
         $row[$lang["numero"]]=$post->getTitulo();
         $row[$lang["posicion"]]=$post->getExtra1();
+        var_dump($row);
+
         $rows[]=$row;
     }
     include DIR_PATH."/includes/panel/templates/posts/table.php";
