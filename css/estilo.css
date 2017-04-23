@@ -281,6 +281,7 @@ display: none;
 }
 .list .item .content .archivos:hover .mask {
     width:100%;
+    padding:20px;
 }
 .list .item .content .archivos .mask {
 
@@ -290,7 +291,7 @@ display: none;
     height: 100%;
     top: 0px;
     left: 0px;
-    padding: 20px;
+    padding: 0px;
     background-color: #2a2a2a;
     color: white;
     z-index: 2;
