@@ -30,8 +30,7 @@
 
         $id="map1";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
-        $id="map2";
-        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
+
 
 
 
