@@ -37,6 +37,22 @@ try{
         $action="list";
     }
 
+    switch ($action)
+    {
+        case "list":
+        default:
+
+            break;
+
+        case "save":
+            //TODO
+            //loadValidation($t)
+
+
+
+
+            break;
+    }
 
 
 }
