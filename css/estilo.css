@@ -105,8 +105,8 @@ header h2
     table tbody td
     {
         font-size: .8em;
-        float: right;
-    }
+     /*   float: right;
+    */}
 }
 body
 {
