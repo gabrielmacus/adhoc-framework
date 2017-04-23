@@ -27,6 +27,11 @@
 
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
+
+        $id="map-1";
+        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
+
+
         ?>
 
     </form>
