@@ -2,6 +2,19 @@
 <header>
     <h2><?php echo $lang["hoyosave"]?></h2>
 </header>
+<script>
+
+
+    angular.element(function () {
+
+        scope.save=function () {
+
+            console.log(scope.hoyo);
+        }
+
+    });
+
+</script>
 
 
 <div class="body">
@@ -13,6 +26,7 @@
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
         $name="Guardar cambios";
+        $action="save()";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
         ?>
 

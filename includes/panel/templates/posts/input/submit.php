@@ -1,3 +1,3 @@
 <div class="form-block">
-    <input type="submit" value="<?php echo $name;?>">
+    <input data-ng-action="<?php echo $action;?>" type="submit" value="<?php echo $name;?>">
 </div>
