@@ -23,7 +23,7 @@
     <tbody>
     <?php foreach ($posts as $post)
     {
-        $post = json_decode(json_encode($post));
+        $post = json_decode(json_encode($post),true);
         foreach ($post as $p)
         {
             var_dump($p);
