@@ -84,8 +84,8 @@ header h2
         display: block;
         font-size: .8em;
         text-align: right;
-        float: right;
     }
+
 
     table td:before {
         /*
@@ -102,9 +102,10 @@ header h2
     table td:last-child {
         border-bottom: 0;
     }
-    table tbody
+    table tbody td
     {
         font-size: .8em;
+        float: right;
     }
 }
 body
