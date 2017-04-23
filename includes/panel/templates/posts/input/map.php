@@ -11,7 +11,7 @@
          map:<?php echo $id?>,
 
      });
-     map.addListener("click",function (e) {
+     <?php echo $id?>.addListener("click",function (e) {
 
          marker.setLocation(e.latLng());
 
