@@ -1,4 +1,9 @@
-
+<script>
+    $(document).on("click",".content",function () {
+        $(this).stop();
+        $(this).animate({height:"toggle"})
+    })
+</script>
 <header>
     <h2 class="title"><?php echo $lang["repositorios"]?></h2>
 </header>
@@ -13,7 +18,7 @@
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
             <div class="content">
-                a
+                aasdsa
             </div>
         </li>
         <li class="item"><a class="animated">Repositorio 2</a></li>
