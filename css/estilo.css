@@ -102,10 +102,15 @@ header h2
     table td:last-child {
         border-bottom: 0;
     }
-    table tbody td a
+    table tbody th a
     {
         font-size: .8em;
-       float: right;
+        float: right;
+    }
+    table thead th
+    {
+        font-size: .8em;
+       float: left;
     }
 }
 body
