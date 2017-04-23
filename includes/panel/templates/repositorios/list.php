@@ -37,7 +37,7 @@
                 <a class="archivos">
 
                     Ver archivos
-                    <span class="mask">AA</span>
+                    <span class="mask"><i class="fa fa-file" aria-hidden="true"></i></span>
 
                 </a>
             </div>
