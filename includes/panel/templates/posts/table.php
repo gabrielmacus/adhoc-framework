@@ -24,6 +24,7 @@
     <?php foreach ($posts as $post)
     {
         $post =array_values($post);
+        var_dump($post);
         foreach ($keys as $k=>$v)
         {
             echo $v;
