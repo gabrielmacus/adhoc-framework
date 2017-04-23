@@ -50,6 +50,7 @@
   "dni":"DNI",
   "jugadoreslistado":"Listado de jugadores",
   "jugadores":"Jugadores",
-  "hoyosave":"Editar hoyo"
+  "hoyosave":"Editar hoyo",
+  "location":{"lat": -34.397, "lng": 150.644}
 
 }
