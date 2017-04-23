@@ -22,8 +22,9 @@
     $title=$lang["hoyoslistado"];
     foreach ($posts as $post)
     {
-        $rows[$lang["numero"]]=$post->getTitulo();
-        $rows[$lang["posicion"]]=$post->getExtra1();
+        $row[$lang["numero"]]=$post->getTitulo();
+        $row[$lang["posicion"]]=$post->getExtra1();
+        $rows[]=$row;
     }
     include DIR_PATH."/includes/panel/templates/posts/table.php";
     ?>
