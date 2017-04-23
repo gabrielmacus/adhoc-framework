@@ -28,9 +28,9 @@
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
-        $id="map-1";
+        $id="map1";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
-        $id="map-2";
+        $id="map2";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
 
