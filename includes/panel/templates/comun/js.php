@@ -8,6 +8,7 @@
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
 <script src="//cdn.quilljs.com/1.2.3/quill.min.js"></script>
-<script async defer
+<script
+
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmTWqtcbhdnNXdv-Ow60PedAtYwYgbQ5Q&callback=initMap">
 </script>
