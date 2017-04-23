@@ -22,7 +22,7 @@
 
     <ul class="list">
 
-        <li class="item" data-ng-repeat="r in repositorios">
+        <li class="item" data-ng-repeat="(k,r) in repositorios">
             <a class="animated">
                 <span class="name">{{r.titulo}}</span>
                 <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
