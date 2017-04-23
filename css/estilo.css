@@ -253,6 +253,19 @@ body
     width: 100%;
     overflow: hidden;
 display: none;
-    height: 100px;
+
+
+}
+.list .item .content .peso
+{
+    width: 50%;
+    float: left;
+    border-right: 1px solid black;
+}
+
+.list .item .content .archivos {
+
+    width: 50%;
+    float: left;
 
 }
