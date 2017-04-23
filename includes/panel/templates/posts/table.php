@@ -8,6 +8,12 @@
         <tr>
             <th scope="col"><?php echo $k?></th>
         </tr>
+        <tr>
+            <th scope="col"><?php echo $lang["editar"];?></th>
+        </tr>
+        <tr>
+            <th scope="col"><?php echo $lang["eliminar"];?></th>
+        </tr>
     <?php
     }?>
 

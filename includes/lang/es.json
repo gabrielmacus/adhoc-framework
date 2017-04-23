@@ -39,6 +39,8 @@
   "repositorios":"Repositorios",
   "hoyos":"Hoyos",
   "hoyoslistado":"Listado de hoyos",
-  "numero":"Número"
+  "numero":"Número",
+  "eliminar":"Eliminar",
+  "editar":"Editar"
 
 }
