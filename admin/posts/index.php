@@ -20,7 +20,7 @@ try{
     $t =$_GET["t"];
     $site=$_GET["s"];
 
-    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
+   // $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
     if(is_numeric($_GET["id"]))
     {
@@ -29,7 +29,7 @@ try{
     }
     else
     {
-        $posts= $GLOBALS["postDAO"]->selectPosts();
+        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t);
     }
     $action="list";
 
