@@ -27,7 +27,7 @@
                 <?php foreach ($row as $k=>$v)
                 {
                     ?>
-                    <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){?> data-lity <?php} ?> href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
+                    <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
                     <?php
                 }?>
                 <td title="<?php echo $lang["editar"];?>"><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
