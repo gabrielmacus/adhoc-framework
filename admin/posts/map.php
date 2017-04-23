@@ -1,11 +1,12 @@
 <script>
-    console.log(<?php echo $_GET["pos"];?>);
+
     function initMap() {
 
        var map = new google.maps.Map(
            document.querySelector("map"),
            {
-               center:<?php echo $_GET["pos"];?>
+               center:<?php echo $_GET["pos"];?>,
+               zoom:8
            }
        );
     }
