@@ -10,4 +10,4 @@
  });
 </script>
 
-<map style="width: 100%;height: 300px;float: left" id="<?php echo $id;?>"></map>
+<map  id="<?php echo $id;?>"></map>
