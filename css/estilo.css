@@ -279,7 +279,7 @@ display: none;
     font-size: 20px!important;
     background-color: #2a2a2a;
     color: white;
-    width: auto;
+    width: auto!important;
 }
 .btn:hover
 {
