@@ -31,7 +31,13 @@ try{
     {
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t);
     }
-    $action="list";
+
+    if(!($action=$_GET["act"]))
+    {
+        $action="list";
+    }
+
+
 
 }
 catch (Exception $e)
