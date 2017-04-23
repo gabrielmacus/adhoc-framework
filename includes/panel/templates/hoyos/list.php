@@ -18,6 +18,10 @@
 
 <div class="body">
 
-    <?php include DIR_PATH."/includes/panel/templates/posts/table.php"?>
+    <?php
+    $title=$lang["hoyoslistado"];
+    var_dump($posts);
+    include DIR_PATH."/includes/panel/templates/posts/table.php";
+    ?>
 
 </div>
