@@ -37,7 +37,7 @@
                 <a class="archivos">
 
                     Ver archivos
-                    <span class="mask"><i class="fa fa-file" aria-hidden="true"></i></span>
+                    <span class="mask animated"><i class="fa fa-file" aria-hidden="true"></i></span>
 
                 </a>
             </div>
