@@ -19,14 +19,13 @@
 
 <div class="body">
 
-    <form>
+    <form data-ng-submit="save()">
         <?php
         $label="Número";
         $model="hoyo.numero";
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
         $name="Guardar cambios";
-        $action="save()";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
         ?>
 
