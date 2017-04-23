@@ -8,9 +8,9 @@
         if(item)
         {
 
-
+            item.toggleClass("active");
             item.find("ul").fadeToggle(400,function () {
-                item.toggleClass("active");
+
 
             });
 
