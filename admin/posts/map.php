@@ -31,7 +31,7 @@
             document.querySelector("map"),
             {
                 center:<?php echo $_GET["pos"];?>,
-                zoom:8
+                zoom:12
             }
         );
         var marker = new google.maps.Marker(
