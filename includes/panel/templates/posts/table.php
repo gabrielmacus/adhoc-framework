@@ -23,6 +23,8 @@
         ?>
         <tr>
             <td data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
+            <td><a class="icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+            <td><a class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </tr>
         <?php
     }?>
