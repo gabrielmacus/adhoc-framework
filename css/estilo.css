@@ -253,7 +253,6 @@ body
     float: left;
     width: 100%;
     overflow: hidden;
-    height: 0px;
-
+display: none;
 
 }
