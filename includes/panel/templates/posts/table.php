@@ -26,6 +26,7 @@
 
         foreach ($post as $p)
         {
+            var_dump($p);
             foreach ($keys as $k=>$v)
             {
                 echo $v;
