@@ -34,11 +34,11 @@
                     2000 mb
                 </div>
 
-                <div class="archivos">
+                <a class="archivos">
 
-                    <a class="btn animated">Ver archivos</a>
+                    Ver archivos
 
-                </div>
+                </a>
             </div>
         </li>
 
