@@ -7,7 +7,7 @@
  */
 
 
-var_dump($_SERVER['HTTP_REFERER'] );
+
 include_once "../includes/autoload.php";
 
 try
