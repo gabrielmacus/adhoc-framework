@@ -5,7 +5,7 @@
 
         scope.repositorios = <?php echo json_encode($repositorios)?>;
 
-        console.log(scope.repositorios);
+        scope.$apply();
 
     });
 

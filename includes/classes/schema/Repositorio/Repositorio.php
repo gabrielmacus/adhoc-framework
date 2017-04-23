@@ -7,7 +7,7 @@
  * Time: 04:33 PM
  */
 
-class Repositorio
+class Repositorio implements JsonSerializable
 {
     protected $host;
     protected $user;
@@ -32,6 +32,21 @@ class Repositorio
         $this->creation = $creation;
         $this->modification = $modification;
     }
+
+    function jsonSerialize()
+    {
+       return array(
+           "host"=>$this->getHost(),
+           "user"=>$this->getUser(),
+           "id"=>$this->getId(),
+           "name"=>$this->getName(),
+           "path"=>$this->getPath(),
+           "port"=>$this->getPort(),
+           "creation"=>$this->getCreation(),
+           "modification"=>$this->getModification()
+       );
+    }
+
 
     /**
      * @return array
