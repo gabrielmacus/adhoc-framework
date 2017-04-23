@@ -381,9 +381,9 @@ table tr {
     border: 1px solid #ddd;
     padding: .35em;
 }
-table thead
+table thead tr
 {
-    background-color: #a3a3a3;
+    background-color: #c7c7c7;
 }
 table th,
 table td {
