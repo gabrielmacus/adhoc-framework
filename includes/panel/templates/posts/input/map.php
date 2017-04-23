@@ -9,7 +9,7 @@
               center:<?php echo json_encode( $lang["location"])?>
           }
       );
-  });
+  };
 </script>
 
 <map style="width: 100%;height: 300px;float: left" id="<?php echo $id;?>"></map>
