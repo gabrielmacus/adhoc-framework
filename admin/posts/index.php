@@ -32,7 +32,7 @@ try{
         $posts= $GLOBALS["postDAO"]->selectPosts();
     }
     $action="list";
-    var_dump($posts);
+
 }
 catch (Exception $e)
 {

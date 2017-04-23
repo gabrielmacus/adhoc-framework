@@ -9,6 +9,7 @@
 
         scope.hoyos = <?php echo json_encode($posts)?>;
 
+        console.log(scope.hoyos);
         scope.$apply();
 
     });
