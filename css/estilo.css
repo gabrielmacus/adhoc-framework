@@ -393,3 +393,7 @@ table th {
     text-transform: uppercase;
     background-color: #c7c7c7;
 }
+table .icon
+{
+    font-size: 20px;
+}
