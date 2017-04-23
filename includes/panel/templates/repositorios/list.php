@@ -29,7 +29,7 @@
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
             <div class="content">
-                aasdsa
+
             </div>
         </li>
 
