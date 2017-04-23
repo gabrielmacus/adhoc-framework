@@ -1,4 +1,13 @@
 <script>
+
+
+    angular.element(function () {
+
+        scope.repositorios = <?php echo json_encode($repositorios)?>;
+
+
+    });
+
     $(document).on("click",".item",function () {
         $(this).find(".content").stop();
         $(this).find(".content").slideToggle();
@@ -11,9 +20,10 @@
 <div class="body">
 
     <ul class="list">
-        <li class="item">
+
+        <li class="item" data-ng-repeat="r in repositorios">
             <a class="animated">
-                <span class="name">Repositorio 1</span>
+                <span class="name">{{r.titulo}}</span>
                 <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
@@ -21,8 +31,7 @@
                 aasdsa
             </div>
         </li>
-        <li class="item"><a class="animated">Repositorio 2</a></li>
-        <li class="item"><a class="animated">Repositorio 3</a></li>
+
     </ul>
 
 </div>
