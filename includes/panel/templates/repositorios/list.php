@@ -35,7 +35,9 @@
                 </div>
 
                 <div class="archivos">
-                    Ver archivos
+
+                    <a class="btn animated">Ver archivos</a>
+
                 </div>
             </div>
         </li>
