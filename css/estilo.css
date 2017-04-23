@@ -384,6 +384,7 @@ table tr {
 table thead tr
 {
     background-color: #c7c7c7;
+    font-size: .8em;
 }
 table th,
 table td {
