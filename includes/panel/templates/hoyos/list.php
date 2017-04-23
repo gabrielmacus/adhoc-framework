@@ -20,7 +20,7 @@
 
     <?php
     $title=$lang["hoyoslistado"];
-    var_dump($posts);
+    $keys= array("numero"=>"titulo");
     include DIR_PATH."/includes/panel/templates/posts/table.php";
     ?>
 
