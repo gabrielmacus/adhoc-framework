@@ -6,8 +6,6 @@
  * Time: 12:22 PM
  */
 
-var_dump($_COOKIE["referer"]);
-
 
 
 include_once "../includes/autoload.php";
@@ -34,7 +32,7 @@ if($_GET["login"])
         setcookie("usrtk",$token);
 
 
-        if($lastUrl=$_COOKIE["lastUrl"])
+        if($lastUrl=$_COOKIE["referer"])
         {
             header('Location: '.$lastUrl);
         }
