@@ -4,6 +4,7 @@
  /*   padding: 25px 0px 0px 45px;
   */  font-weight: 300;
 padding-left: 10px;
+    border-left: 2px black solid;
 }
 .secciones .icon
 {
