@@ -17,7 +17,7 @@
          if($model)
          {
          ?>
-         scope.<?php echo $model?>=e.latLng;
+         scope.<?php echo $model?>={lat:e.latLng.lat(),lng:e.latLng.lng()};
          <?Php
          }?>
      });
