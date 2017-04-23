@@ -261,11 +261,12 @@ display: none;
     width: 50%;
     float: left;
     border-right: 1px solid black;
+    padding: 25px;
 }
 
 .list .item .content .archivos {
 
     width: 50%;
     float: left;
-
+    padding: 25px;
 }
