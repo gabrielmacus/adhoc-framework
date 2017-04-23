@@ -276,9 +276,11 @@ display: none;
     font-weight: 600;
     padding: 20px!important;
 
+
 }
 .list .item .content .archivos:hover
 {
+    background-color: #2a2a2a;
     color: white;
 
 }
