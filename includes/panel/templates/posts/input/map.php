@@ -6,7 +6,7 @@
       var <?php echo $id?>=new google.maps.Map(
           document.querySelector("#<?php echo $id?>"),
           {
-              center:<?php echo json_encode( $lang["location"])?>
+              center:{"lat": -34.397, "lng": 150.644}
           }
       );
   };
