@@ -13,7 +13,7 @@
      });
      <?php echo $id?>.addListener("click",function (e) {
 
-         marker.setLocation(e.latLng());
+         marker.setLocation(e.latLng);
 
      })
  });
