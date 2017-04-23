@@ -20,7 +20,10 @@
 
     <?php
     $title=$lang["hoyoslistado"];
-    $keys= array("numero"=>"titulo");
+    foreach ($posts as $post)
+    {
+        $rows[$lang["numero"]]=$post->getTitulo();
+    }
     include DIR_PATH."/includes/panel/templates/posts/table.php";
     ?>
 

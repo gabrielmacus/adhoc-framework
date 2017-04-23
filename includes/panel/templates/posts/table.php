@@ -1,44 +1,25 @@
 
-<?php
-/**
- *
- * $keys  =  Correspondencia entre clave del array y encabezado
- * $_posts = Posts en json
- */
-
- ?>
 <table>
     <caption><?php echo $title;?></caption>
     <thead>
-    <tr>
-        <?php foreach ($keys as $k=>$v)
-        {
-            ?>
+    <?php foreach ($rows as $k=>$v)
+    {
+    ?>
+        <tr>
             <th scope="col"><?php echo $k?></th>
-            <?php
-        }?>
+        </tr>
+    <?php
+    }?>
 
-    </tr>
     </thead>
     <tbody>
-    <?php foreach ($posts as $post)
+    <?php foreach ($rows as $k=>$v)
     {
-        $post = json_decode(json_encode($post),true);
-        foreach ($post as $p)
-        {
-            var_dump($p);
-            foreach ($keys as $k=>$v)
-            {
-                echo $v;
-                ?>
-                <tr>
-                    <td data-label="<?php echo $k;?>"><?php echo $p[$v];?></td>
-                </tr>
-                <?php
-            }
-        }
-
-
+        ?>
+        <tr>
+            <td data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
+        </tr>
+        <?php
     }?>
 
 
