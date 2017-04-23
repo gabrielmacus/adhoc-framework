@@ -9,6 +9,6 @@
     <?php
     $label="Número";
     $model="hoyo.numero";
-    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+    include DIR_PATH."/includes/panel/templates/posts/input/number.php";
     ?>
 </div>
