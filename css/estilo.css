@@ -397,7 +397,7 @@ table tbody
 {
     font-size: 25px;
 }
-table .icon:hover
+table .icon:hover i
 {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
