@@ -5,6 +5,7 @@
  * $keys  =  Correspondencia entre clave del array y encabezado
  * $_posts = Posts en json
  */
+var_dump($posts);
  ?>
 <table>
     <caption><?php echo $title;?></caption>
