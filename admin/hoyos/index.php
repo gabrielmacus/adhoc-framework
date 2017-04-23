@@ -17,31 +17,13 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
 
-    $post = new Post();
-    $post->setTitulo($_POST["titulo"]);
-    $post->setTexto($_POST["texto"]);
-    $post->setArchivos($_POST["archivos"]);
-    $post->setSeccion($_POST["seccion"]);
-    $post->setBajada($_POST["bajada"]);
-    $post->setVolanta($_POST["volanta"]);
-    $post->setExtra1($_POST["extra_1"]);
-    $post->setExtra2($_POST["extra_2"]);
-    $post->setExtra3($_POST["extra_3"]);
-    $post->setExtra4($_POST["extra_4"]);
-    $post->setAnexos($_POST["anexos"]);
-    //$post->setAnexos(array(array("post_anexo_id"=>24)));
-
-
-    if($_POST["id"])
+    if(is_numeric($_GET["id"]))
     {
-
-        $post->setId($_POST["id"]);
-        echo json_encode($GLOBALS["postDAO"]->updatePost($post));
+        $post=$GLOBALS["postDAO"]->selectPostById($_GET["id"]);
     }
-    else
-    { echo json_encode($GLOBALS["postDAO"]->insertPost($post));
 
-    }
+    $list="hoyos";
+    $action="add";
 
 
 
