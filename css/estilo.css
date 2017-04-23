@@ -271,8 +271,7 @@ display: none;
 
     width: 50%;
     float: left;
-
-    padding: 5px;
+    border-bottom: 0;
     text-align: center;
 }
 .btn
