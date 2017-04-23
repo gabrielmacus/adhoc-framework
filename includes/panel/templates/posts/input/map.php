@@ -7,6 +7,15 @@
              zoom:12
          }
      );
+     var marker=new google.maps.Marker({
+         map:<?php echo $id?>,
+
+     });
+     map.addListener("click",function (e) {
+
+         marker.setLocation(e.latLng());
+
+     })
  });
 </script>
 
