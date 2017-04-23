@@ -1,7 +1,7 @@
 <script>
-    $(document).on("click",".content",function () {
-        $(this).stop();
-        $(this).animate({height:"toggle"})
+    $(document).on("click",".item",function () {
+        $(this).find(".content").stop();
+        $(this).find(".content").animate({height:"toggle"})
     })
 </script>
 <header>
