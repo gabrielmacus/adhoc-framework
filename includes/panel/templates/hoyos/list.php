@@ -24,7 +24,7 @@
     {
         $row[$lang["numero"]]["data"]=$post->getTitulo();
         $row[$lang["posicion"]]["data"]=$post->getExtra1();
-        echo json_encode($row);
+
 
         $rows[]=$row;
     }
