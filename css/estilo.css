@@ -277,6 +277,11 @@ display: none;
     padding: 20px!important;
 
 }
+.list .item .content .archivos:hover
+{
+    color: white;
+
+}
 .btn
 {
     padding: 15px!important;
