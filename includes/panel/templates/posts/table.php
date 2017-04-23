@@ -21,7 +21,7 @@
     <?php foreach ($rows as $row)
     {
 
-
+var_dump($row);
             ?>
             <tr>
                 <td data-label="<?php echo $k;?>"><a href="<?php echo $row["href"]; ?>"><?php echo $row["data"]; ?></a></td>
