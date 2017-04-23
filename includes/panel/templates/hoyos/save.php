@@ -22,14 +22,16 @@
     <form data-ng-submit="save()">
         <?php
         $label="Número";
-        $model="hoyo.numero";
+        $model="hoyo.titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
+
+        $model="hoyo.extra1";
+        $id="map1";
+        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
-        $id="map1";
-        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
 
 

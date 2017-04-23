@@ -12,11 +12,16 @@
 
      });
      <?php echo $id?>.addListener("click",function (e) {
-
          marker.setPosition(e.latLng);
+         <?php
+         if($model)
+         {
+         ?>
+         scope.<?php echo $model?>=e.latLng;
+         <?Php
+         }?>
+     });
 
-
-     })
  });
 </script>
 
