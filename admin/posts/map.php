@@ -1,3 +1,7 @@
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmTWqtcbhdnNXdv-Ow60PedAtYwYgbQ5Q&callback=initMap">
+</script>
+
 <script>
 
     function initMap() {
@@ -5,7 +9,7 @@
         var map = new google.maps.Map(
             document.querySelector("map"),
             {
-                center: {lat: -34.397, lng: 150.644},
+                center:<?php echo $_GET["pos"];?>,
                 zoom:8
             }
         );
