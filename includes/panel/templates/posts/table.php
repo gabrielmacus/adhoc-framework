@@ -1,5 +1,7 @@
+
+<?php $_posts =json_encode($posts); ?>
 <table>
-    <caption>Statement Summary</caption>
+    <caption><?php echo $title;?></caption>
     <thead>
     <tr>
         <th scope="col">Account</th>

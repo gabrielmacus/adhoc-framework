@@ -42,7 +42,7 @@ foreach ($nav as $item)
         <?php if ($item["items"])
 {
     ?>
-        <ul style="display: none" class=" main-color">
+        <ul style="display: none" >
             <?php iterateSidenav($item["items"]); ?>
         </ul>
     <?php

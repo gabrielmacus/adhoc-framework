@@ -169,6 +169,11 @@ body
 
 }
 
+.sidenav ul
+{
+    float: left;
+    width: 100%;
+}
 .sidenav .item
 {
     float: left;
