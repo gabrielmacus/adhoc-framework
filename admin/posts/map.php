@@ -34,10 +34,19 @@
                 zoom:8
             }
         );
+        var marker = new google.maps.Marker(
+            {
+                position:<?php echo $_GET["pos"];?>,
+                map:map
+            }
+        );
+
+
+
     }
 </script>
 
-<map style="width: 100%;height: 300px">
+<map>
 
 </map>
 </body>
