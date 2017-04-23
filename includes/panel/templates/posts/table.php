@@ -4,7 +4,7 @@
     <thead>
 
         <tr>
-            <?php foreach ($rows as $k=>$v)
+            <?php foreach ($rows[0] as $k=>$v)
             {
             ?>
             <th scope="col"><?php echo $k?></th>
