@@ -270,4 +270,7 @@ display: none;
     width: 50%;
     float: left;
     background-color: #dcc42c;
+    position: relative;
+    top: 20%;
+    font-size: 60px;
 }

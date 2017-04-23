@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="archivos">
-                    <i class="fa fa-file" aria-hidden="true"></i>
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
                 </div>
             </div>
         </li>
