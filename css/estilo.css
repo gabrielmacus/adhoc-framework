@@ -423,3 +423,7 @@ a:visited
     color: inherit!important;
     text-decoration: inherit;
 }
+a:link
+{
+    color: inherit!important;;
+}
