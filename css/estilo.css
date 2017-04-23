@@ -84,6 +84,7 @@ header h2
         display: block;
         font-size: .8em;
         text-align: right;
+        float: right;
     }
 
     table td:before {
@@ -406,6 +407,7 @@ table tbody
 {
     font-size: 25px;
     font-weight: 300;
+
 }
 table .icon:hover i
 {
