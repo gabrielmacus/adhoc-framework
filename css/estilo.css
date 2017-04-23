@@ -248,7 +248,7 @@ body
 .list .item .content
 {
     background-color: #e9e9e9;
-    padding: 20px;
+
     float: left;
     width: 100%;
     overflow: hidden;
@@ -260,5 +260,14 @@ display: none;
 {
     height: 50%;
     width: 50%;
+    float: left;
     background-color: #4cae4c;
+}
+
+.list .item .content .archivos
+{
+    height: 50%;
+    width: 50%;
+    float: left;
+    background-color: #dcc42c;
 }
