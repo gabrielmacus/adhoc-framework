@@ -40,4 +40,12 @@ catch (Exception $e)
 
 }
 
-include DIR_PATH."/includes/panel/templates/comun/estructura.php";
+if($_GET["async"])
+{
+    echo json_encode($posts);
+}
+else
+{
+    include DIR_PATH."/includes/panel/templates/comun/estructura.php";
+}
+
