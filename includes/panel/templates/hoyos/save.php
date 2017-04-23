@@ -7,9 +7,10 @@
 
     angular.element(function () {
 
+        scope.hoyo={};
         scope.save=function () {
 
-            scope.$apply();
+
             console.log(scope.hoyo);
         }
 
