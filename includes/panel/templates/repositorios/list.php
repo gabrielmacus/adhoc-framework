@@ -37,6 +37,7 @@
                 <a class="archivos">
 
                     Ver archivos
+                    <span class="mask">AA</span>
 
                 </a>
             </div>
