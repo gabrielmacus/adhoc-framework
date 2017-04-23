@@ -7,7 +7,7 @@
  */
 
 var_dump($_COOKIE["referer"]);
-exit();
+
 
 
 include_once "../includes/autoload.php";
