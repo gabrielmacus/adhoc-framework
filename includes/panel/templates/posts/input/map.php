@@ -1,5 +1,7 @@
 <script>
-  $(document).ready(function () {
+ function initMap() {
+
+
 
       var <?php echo $id?>=new google.maps.Map(
           document.querySelector("#<?php echo $id?>"),
