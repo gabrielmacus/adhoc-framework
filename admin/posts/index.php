@@ -36,7 +36,6 @@ try{
     {
         $action="list";
     }
-var_dump($action);
     switch ($action)
     {
         case "list":
