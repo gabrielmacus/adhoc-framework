@@ -5,7 +5,7 @@
  * $keys  =  Correspondencia entre clave del array y encabezado
  * $_posts = Posts en json
  */
-var_dump($posts);
+
  ?>
 <table>
     <caption><?php echo $title;?></caption>
@@ -23,6 +23,7 @@ var_dump($posts);
     <tbody>
     <?php foreach ($posts as $post)
     {
+        $post =array_values($post);
         foreach ($keys as $k=>$v)
         {
             ?>
