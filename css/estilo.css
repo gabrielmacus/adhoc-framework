@@ -405,7 +405,10 @@ table .icon:hover i
     -o-transform: scale(1.4);
     transform: scale(1.4);
 }
-
+a
+{
+    text-decoration: none;
+}
 a:visited
 {
     color: inherit!important;
