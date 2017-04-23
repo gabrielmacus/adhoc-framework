@@ -30,6 +30,10 @@
             </a>
             <div class="content">
 
+                <div class="peso">
+
+                </div>
+
             </div>
         </li>
 

@@ -256,3 +256,9 @@ display: none;
     height: 200px;
 
 }
+.list .item .content .peso
+{
+    height: 50%;
+    width: 50%;
+    background-color: #4cae4c;
+}
