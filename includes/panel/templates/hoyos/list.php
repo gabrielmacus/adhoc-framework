@@ -18,6 +18,6 @@
 
 <div class="body">
 
-    <?php include DIR_PATH."/includes/panel/templates/table.php"?>
+    <?php include DIR_PATH."/includes/panel/templates/posts/table.php"?>
 
 </div>
