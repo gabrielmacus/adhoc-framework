@@ -7,9 +7,9 @@
         var item = $(e.target).closest(".item");
         if(item)
         {
-
+            item.stop();
             item.toggleClass("active");
-            item.find("ul").fadeToggle(400,function () {
+            item.find("ul").slideToggle(400,function () {
 
 
             });
