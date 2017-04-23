@@ -44,7 +44,7 @@
         <tr>
             <td scope="row" data-label="Account">Corporate AMEX</td>
             <td data-label="Due Date">03/01/2016</td>
-            <td data-label="<h1>Amount</h1>">$1,181</td>
+            <td data-label="Amount">$1,181</td>
             <td data-label="Period">02/01/2016 - 02/29/2016</td>
         </tr>
         <tr>
