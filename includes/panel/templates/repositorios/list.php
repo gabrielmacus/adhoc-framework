@@ -31,11 +31,11 @@
             <div class="content">
 
                 <div class="peso">
-
+                    2000 mb
                 </div>
 
                 <div class="archivos">
-
+                    <i class="fa fa-file" aria-hidden="true"></i>
                 </div>
             </div>
         </li>
