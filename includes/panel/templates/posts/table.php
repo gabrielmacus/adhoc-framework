@@ -18,15 +18,20 @@
 
     </thead>
     <tbody>
-    <?php foreach ($rows as $k=>$v)
+    <?php foreach ($rows as $row)
     {
-        ?>
-        <tr>
-            <td data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
-            <td><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
-            <td><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
-        </tr>
-        <?php
+
+        foreach ($row as $k=>$v)
+        {
+
+            ?>
+            <tr>
+                <td data-label="<?php echo $k;?>"><a href="<?php echo $v["href"]; ?>"><?php echo $v["data"]; ?></a></td>
+                <td><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
+                <td><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
+            </tr>
+            <?php
+        }
     }?>
 
 
