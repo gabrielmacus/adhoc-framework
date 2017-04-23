@@ -7,7 +7,7 @@
 <div class="body">
 
     <?php
-    $title=$lang["hoyoslistado"];
+    $title=$lang["jugadoreslistado"];
     foreach ($posts as $post)
     {
         $row[$lang["nombre"]]["data"]=$post->getTitulo();

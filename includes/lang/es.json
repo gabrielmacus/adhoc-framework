@@ -48,6 +48,7 @@
   "apellido":"Apellido",
   "edad":"Edad",
   "dni":"DNI",
-  "jugadoreslistado":"Listado de jugadores"
+  "jugadoreslistado":"Listado de jugadores",
+  "jugadores":"Jugadores"
 
 }
