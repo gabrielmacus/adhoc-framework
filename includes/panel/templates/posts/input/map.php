@@ -15,6 +15,7 @@
 
          marker.setLocation(e.latLng);
 
+
      })
  });
 </script>
