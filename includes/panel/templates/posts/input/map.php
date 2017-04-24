@@ -15,16 +15,8 @@
 
      });
 
-     try
-     {
 
          marker.setPosition(angular.copy(JSON.parse(scope.post.<?php echo $model?>)));
-
-     }
-     catch (e)
-     {
-
-     }
 
 
 
