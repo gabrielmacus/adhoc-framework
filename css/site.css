@@ -37,6 +37,10 @@ body
 {
     padding: 10px;
 }
+.player-form
+{
+    background-color: white;
+}
 .player-form-container
 {
     padding: 5% 0px 10% 0px;
