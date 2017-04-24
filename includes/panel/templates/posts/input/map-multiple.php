@@ -8,7 +8,7 @@
                 zoom:12
             }
         );
-        scope.post.<?php echo $model?>=[];
+
 
         var markers=[];
 
@@ -17,7 +17,7 @@
         <?php if($post)
         {
             ?>
-/*
+
             locations = scope.post;
 
             console.log(locations);
@@ -27,8 +27,14 @@
                 addMarker(v.lat,v.lng)
 
             });
-*/
 
+
+        <?php
+        }
+        else
+        {
+            ?>
+        scope.post.<?php echo $model?>=[];
         <?php
         }?>
 
