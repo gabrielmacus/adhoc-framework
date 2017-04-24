@@ -475,7 +475,7 @@ form
     outline: 0;
     border: 0;
     padding: 10px;
-
+    cursor: pointer;
 }
 .form-block input[type='button']:hover,input[type='submit']:hover
 {
