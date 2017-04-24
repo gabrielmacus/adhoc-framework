@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html >
 <head>
@@ -24,7 +26,7 @@
     }
 </style>
 <script>
-
+    console.log(<?php echo $_GET["pos"];?>);
     function initMap() {
 
         var map = new google.maps.Map(
