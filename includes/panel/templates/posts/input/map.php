@@ -16,7 +16,7 @@
      <?php echo $id?>.addListener("click",function (e) {
          marker.setPosition(e.latLng);
 
-         scope.<?php echo $model?>={lat:e.latLng.lat(),lng:e.latLng.lng()};
+         scope.<?php echo $model?>=JSON.stringify({lat:e.latLng.lat(),lng:e.latLng.lng()});
 
          scope.$apply();
 
