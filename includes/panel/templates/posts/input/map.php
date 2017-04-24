@@ -15,7 +15,7 @@
 
      });
 
-     console.log(scope.post.<?php echo $model?>);
+     console.log(scope.post.<?php echo $model?>.toString());
 
          //marker.setPosition(JSON.stringify(scope.post.<?php echo $model?>));
 
