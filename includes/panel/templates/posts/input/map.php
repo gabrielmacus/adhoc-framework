@@ -14,10 +14,18 @@
          map:<?php echo $id?>
 
      });
+
+     <?Php if($post)
+     {
+         ?>
+     marker.
+     <?php
+     }?>
+
      <?php echo $id?>.addListener("click",function (e) {
          marker.setPosition(e.latLng);
 
-         scope.<?php echo $model?>="{lat:"+e.latLng.lat()+",lng:"+e.latLng.lng()+"}";
+         scope.post.<?php echo $model?>="{lat:"+e.latLng.lat()+",lng:"+e.latLng.lng()+"}";
 
          scope.$apply();
 

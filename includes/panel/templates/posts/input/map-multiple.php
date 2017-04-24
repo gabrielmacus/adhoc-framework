@@ -8,7 +8,7 @@
                 zoom:12
             }
         );
-        scope.<?php echo $model?>=[];
+        scope.post.<?php echo $model?>=[];
 
         var markers=[];
 
@@ -20,7 +20,7 @@
 
             });
 
-            scope.<?php echo $model?>.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
+            scope.post.<?php echo $model?>.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
 
             marker.addListener("click",function () {
 
@@ -29,7 +29,7 @@
                 markers[idx].setPosition(null);
                 markers.splice(idx,1);
 
-                scope.<?php echo $model?>.splice(idx,1);
+                scope.post.<?php echo $model?>.splice(idx,1);
                 scope.$apply();
                 console.log(idx);
 

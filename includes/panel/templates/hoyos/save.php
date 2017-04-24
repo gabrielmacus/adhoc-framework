@@ -7,17 +7,17 @@
 
     angular.element(function () {
 
-        scope.hoyo={};
+        scope.post={};
 
         <?php if($post)
 
         {
             ?>
-        scope.hoyo = <?php echo json_encode($post);?>;
+        scope.post = <?php echo json_encode($post);?>;
         <?Php
         }?>
         scope.$apply();
-        console.log(scope.hoyo);
+        console.log(scope.post);
 
         scope.save=function () {
 
@@ -26,7 +26,7 @@
                 {
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>",
-                    data:angular.copy(scope.hoyo),
+                    data:angular.copy(scope.post),
                     dataType:"json",
                     success:function (e) {
                         console.log(e);
@@ -38,7 +38,7 @@
                 }
             )
 
-            console.log(scope.hoyo);
+            console.log(scope.post);
         }
 
     });
@@ -51,10 +51,10 @@
     <form data-ng-submit="save()">
         <?php
         $label="Número";
-        $model="hoyo.titulo";
+        $model="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
-        $model="hoyo.extra_1";
+        $model="extra_1";
         $id="map1";
         $title ="Marque la ubicación del hoyo";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
