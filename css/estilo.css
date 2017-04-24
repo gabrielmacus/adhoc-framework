@@ -445,3 +445,14 @@ a:link
 {
     color: inherit!important;;
 }
+.form-block
+
+{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+.form-block label
+{
+    font-size: 20px;
+}
