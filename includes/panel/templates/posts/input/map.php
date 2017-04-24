@@ -15,8 +15,10 @@
 
      });
 
+     console.log(   scope.post.<?php echo $model?>);
 
      marker.setPosition(       scope.post.<?php echo $model?>);
+
 
 
      scope.$apply();

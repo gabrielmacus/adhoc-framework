@@ -17,7 +17,7 @@
         <?Php
         }?>
         scope.$apply();
-        console.log(scope.post);
+
 
         scope.save=function () {
 
