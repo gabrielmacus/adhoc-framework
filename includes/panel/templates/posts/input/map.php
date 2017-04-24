@@ -15,7 +15,8 @@
 
      });
 
-     marker.setPosition(angular.copy(scope.post.<?php echo $model?>));
+
+     marker.setPosition(new google.maps.LatLng(angular.copy(scope.post.<?php echo $model?>)));
 
 
 
