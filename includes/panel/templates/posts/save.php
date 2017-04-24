@@ -4,7 +4,7 @@
     angular.element(function () {
 
 
-        scope.post={};
+        scope.post={archivos:[]};
 
 
         <?php if($post)
@@ -35,7 +35,7 @@
                         console.log(e);
                     }
                 }
-            )
+            );
 
             console.log(scope.post);
         }
