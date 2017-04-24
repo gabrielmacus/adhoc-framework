@@ -11,17 +11,31 @@
 
         <?php echo $id?>.addListener("click",function (e) {
 
-            scope.<?php echo $model?>.push(
-                new google.maps.Marker({
-                    map:<?php echo $id?>,
-                    position:{lat:e.latLng.lat(),lng:e.latLng.lng()}
+            var marker=  new google.maps.Marker({
+                map:<?php echo $id?>,
+                position:{lat:e.latLng.lat(),lng:e.latLng.lng()}
 
-                })
+            });
+            scope.<?php echo $model?>.push(
+              marker
             );
+
+            marker.addListener("click",function () {
+
+                var idx = scope.<?php echo $model?>.indexOf(this);
+
+                console.log(idx);
+
+            });
+
 
             scope.$apply();
 
         });
+
+
+
+
 
     });
 </script>
