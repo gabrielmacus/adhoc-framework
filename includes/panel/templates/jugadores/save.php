@@ -8,6 +8,13 @@ include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         <form data-ng-submit="save()">
 <?php
+
+
+$label="Archivos";
+
+include DIR_PATH."/includes/panel/templates/posts/input/files.php";
+
+
 $label="Nombre";
 $model="titulo";
 include DIR_PATH."/includes/panel/templates/posts/input/text.php";
