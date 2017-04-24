@@ -10,6 +10,21 @@
         scope.hoyo={};
         scope.save=function () {
 
+            $.ajax
+            (
+                {
+                    method:"post",
+                    url:"<?php echo $configuracion->getSiteAddress()."/posts/?t={$t}&s={$site}&act=save"?>,
+                    data:angular.copy(scope.hoyo),
+                    success:function (e) {
+                        console.log(e);
+                    },
+                    error:function (e) {
+
+                        console.log(e);
+                    }
+                }
+            )
 
             console.log(scope.hoyo);
         }
@@ -29,14 +44,9 @@
 
         $model="hoyo.extra1";
         $id="map1";
-        $title ="Marcador";
+        $title ="Marque la ubicación del hoyo";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
-
-        $model="hoyo.extra2";
-        $id="map2";
-        $title="Marcadores";
-        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
 
         $name="Guardar cambios";
