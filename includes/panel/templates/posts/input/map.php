@@ -15,9 +15,12 @@
 
      });
 
-     console.log(scope.post.<?php echo $model?>.toString());
-
-         //marker.setPosition(JSON.stringify(scope.post.<?php echo $model?>));
+     <?php if($post)
+     {
+         ?>
+     marker.setPosition(scope.post.<?php echo $model?>);
+     <?php
+     }?>
 
 
 
@@ -25,7 +28,7 @@
      <?php echo $id?>.addListener("click",function (e) {
          marker.setPosition(e.latLng);
 
-         scope.post.<?php echo $model?>="{lat:"+e.latLng.lat()+",lng:"+e.latLng.lng()+"}";
+         scope.post.<?php echo $model?>='{"lat":'+e.latLng.lat()+',"lng":'+e.latLng.lng()+'}';
 
          scope.$apply();
 
