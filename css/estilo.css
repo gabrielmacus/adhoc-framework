@@ -464,6 +464,11 @@ form
     font-size: 23px;
     padding: 3px;
 }
+.form-block input[type='button'],input[type='submit']
+{
+    border: 0;
+
+}
 .form-block label
 {
     font-size: 20px;
