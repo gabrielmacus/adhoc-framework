@@ -33,19 +33,19 @@ class Post implements JsonSerializable
     function jsonSerialize()
     {
         return array(
-            "post_titulo"=>$this->getTitulo(),
-            "post_volanta"=>$this->getVolanta(),
-            "post_bajada"=>$this->getBajada(),
-            "post_texto"=>$this->getTexto(),
-            "post_seccion"=>$this->getSeccion(),
-            "post_creacion"=>$this->getCreacion(),
-            "post_modificacion"=>$this->getModificacion(),
-            "post_id"=>$this->getId(),
-            "post_comentarios"=>$this->getComentarios(),
-            "post_extra1"=>$this->getExtra1(),
-            "post_extra2"=>$this->getExtra2(),
-            "post_extra3"=>$this->getExtra3(),
-            "post_extra4"=>$this->getExtra4(),
+            "titulo"=>$this->getTitulo(),
+            "volanta"=>$this->getVolanta(),
+            "bajada"=>$this->getBajada(),
+            "texto"=>$this->getTexto(),
+            "seccion"=>$this->getSeccion(),
+            "creacion"=>$this->getCreacion(),
+            "modificacion"=>$this->getModificacion(),
+            "id"=>$this->getId(),
+            "comentarios"=>$this->getComentarios(),
+            "extra1"=>$this->getExtra1(),
+            "extra2"=>$this->getExtra2(),
+            "extra3"=>$this->getExtra3(),
+            "extra4"=>$this->getExtra4(),
             "archivos"=>$this->getArchivos(),
             "anexos"=>$this->getAnexos()
         );
