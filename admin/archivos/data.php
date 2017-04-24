@@ -42,7 +42,7 @@ try{
 
             foreach ($_FILES as $file)
             {
-
+/*
                 $dest=DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}";
 
                 move_uploaded_file($file["tmp_name"],$dest);
@@ -55,9 +55,9 @@ try{
                 $ext = end($ext);
                 array_push($tmps,
                     array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext,"mime"=>$file["type"],"tmp"=>$tmp));
-
+*/
             }
-            echo  json_encode($tmps);
+            echo  json_encode($_FILES);
 
             break;
     }
