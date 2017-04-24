@@ -3,10 +3,30 @@
 
         <div class="player-form-container">
             <form class="player-form">
-                <div class="form-block s12 m6 l6">
+                <div class="form-block ">
                     <label>Nombre</label>
                     <input>
                 </div>
+                <div class="form-block ">
+                    <label>Apellido</label>
+                    <input>
+                </div>
+                <div class="form-block ">
+                    <label>Categoria</label>
+                    <select>
+                        <option>Senior</option>
+                        <option>General</option>
+                        <option>Principiante</option>
+
+                    </select>
+                </div>
+                <div class="form-block">
+                    <label>Email</label>
+                    <input>
+                </div>
+
+
+
             </form>
         </div>
 
