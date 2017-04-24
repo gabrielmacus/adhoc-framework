@@ -1,4 +1,4 @@
-
+<div class="form-block">
 <script>
     $(document).ready(function () {
         var <?php echo $id?>=new google.maps.Map(
@@ -45,3 +45,4 @@
 
 <label><?php echo $title?></label>
 <map  id="<?php echo $id;?>"></map>
+</div>

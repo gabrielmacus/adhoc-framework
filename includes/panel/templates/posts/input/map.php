@@ -1,4 +1,4 @@
-
+<div class="form-block">
 <label><?php echo $title?></label>
 <script>
  $(document).ready(function () {
@@ -26,3 +26,4 @@
 </script>
 
 <map  id="<?php echo $id;?>"></map>
+</div>
