@@ -18,9 +18,9 @@
         {
             ?>
 
-            locations = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+            var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
-            $.each(locations,function (k,v) {
+            $.each(data,function (k,v) {
 
 
                 addMarker(v.lat,v.lng)
