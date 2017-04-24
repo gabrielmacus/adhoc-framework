@@ -43,7 +43,8 @@ body
 }
 .player-form-container
 {
-    padding: 5% 0px 10% 0px;
+    padding: 3% 0px 10% 0px;
     width: 100%;
     float: left;
+    height: 100%;
 }
