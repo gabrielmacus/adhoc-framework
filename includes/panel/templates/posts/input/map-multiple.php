@@ -26,7 +26,9 @@
 
                 var idx =markers.indexOf(this);
 
+                markers[idx].setPosition(null);
                 markers.splice(idx,1);
+
                 scope.<?php echo $model?>.splice(idx,1);
                 scope.$apply();
                 console.log(idx);
