@@ -33,12 +33,12 @@ try{
             foreach ($_FILES as $file)
             {
 
-                $dest=DIR_PATH."tmp/files/{$file["size"]}_{$file["name"]}";
+                $dest=DIR_PATH."/{$configuracion->getHtdocsFolder()}/{$configuracion->getSiteFolder()}/tmp/files/{$file["size"]}_{$file["name"]}";
 
                 move_uploaded_file($file["tmp_name"],$dest);
 
 
-                $tmp="{$configuracion->getHtdocsFolder()}/{$configuracion->getSiteFolder()}/tmp/files/{$file["size"]}_{$file["name"]}";
+                $tmp="/tmp/files/{$file["size"]}_{$file["name"]}";
                 $dest=$configuracion->getSiteAddress().$tmp;
 
                 $ext = explode(".",$file["name"]);
