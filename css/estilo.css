@@ -476,6 +476,14 @@ form
     padding: 10px;
 
 }
+.form-block input[type='button'],input[type='submit']:hover
+{
+    border:2px solid #2e3032;
+    background-color:white;
+    color:#2e3032;
+}
+
+
 .form-block label
 {
     font-size: 20px;
