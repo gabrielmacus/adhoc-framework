@@ -18,7 +18,7 @@
         {
             ?>
 /*
-            locations = scope.post.<?php echo $model?>;
+            locations = scope.post;
 
             console.log(locations);
             $.each(locations,function (k,v) {
