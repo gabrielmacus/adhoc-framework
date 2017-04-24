@@ -64,7 +64,7 @@
         $model="extra4";
         $id="map5";
         $title ="Marque la ubicación del sapo";
-        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
+        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
 
         $name="Guardar cambios";

@@ -12,6 +12,9 @@
 
         var markers=[];
 
+        var locations=[];//only lat lng
+
+
         <?php echo $id?>.addListener("click",function (e) {
 
             var marker=  new google.maps.Marker({
@@ -20,7 +23,7 @@
 
             });
 
-            scope.post.<?php echo $model?>.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
+
 
             marker.addListener("click",function () {
 
@@ -29,12 +32,17 @@
                 markers[idx].setPosition(null);
                 markers.splice(idx,1);
 
-                scope.post.<?php echo $model?>.splice(idx,1);
+                locations.splice(idx,1);
+                scope.post.<?php echo $model?>= JSON.stringify(locations);
+
                 scope.$apply();
-                console.log(idx);
+
 
             });
             markers.push(marker);
+            locations.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
+
+            scope.post.<?php echo $model?>= JSON.stringify(locations);
 
             scope.$apply();
 
