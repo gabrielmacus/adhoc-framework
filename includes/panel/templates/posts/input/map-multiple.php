@@ -18,7 +18,7 @@
         {
             ?>
 
-            locations = JSON.parse(scope.post.<?php echo $model?>);
+            locations = scope.post.<?php echo $model?>;
 
             console.log(locations);
             $.each(locations,function (k,v) {
