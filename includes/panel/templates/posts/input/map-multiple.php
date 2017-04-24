@@ -18,16 +18,23 @@
         {
             ?>
 
-            var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+           try
+           {
+               var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
-            $.each(data,function (k,v) {
-
-
-                addMarker(v.lat,v.lng)
-
-            });
+               $.each(data,function (k,v) {
 
 
+                   addMarker(v.lat,v.lng)
+
+               });
+
+
+           }
+           catch (e)
+           {
+
+           }
         <?php
         }
         else
