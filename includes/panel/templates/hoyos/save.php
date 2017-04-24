@@ -31,6 +31,12 @@
         $id="map1";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
+
+        $model="hoyo.extra2";
+        $id="map2";
+        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
+
+
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
