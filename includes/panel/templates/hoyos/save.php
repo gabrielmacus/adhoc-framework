@@ -42,7 +42,7 @@
         $model="hoyo.titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
-        $model="hoyo.extra1";
+        $model="hoyo.extra_1";
         $id="map1";
         $title ="Marque la ubicación del hoyo";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
