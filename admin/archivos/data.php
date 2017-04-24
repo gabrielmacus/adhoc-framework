@@ -20,8 +20,6 @@ try{
 
 
     //$post->setAnexos(array(array("post_anexo_id"=>24)));
-    echo  json_encode($_FILES);
-    exit();
 
     switch ($_GET["act"])
     {
