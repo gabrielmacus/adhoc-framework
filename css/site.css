@@ -1,4 +1,4 @@
-@media screen and  (min-width:769px)  {
+@media screen and  (min-width:1025px)  {
 
     .player-form,.form-title
     {
@@ -8,6 +8,24 @@
         width: 40%;
         float: left;
         left: 30%;
+        position: relative;
+        font-weight: 300;
+        font-size: 30px;
+
+
+    }
+}
+
+@media screen and  (min-width:769px)  and(max-width: 1024px) {
+
+    .player-form,.form-title
+    {
+
+
+        padding: 20px;
+        width: 60%;
+        float: left;
+        left: 20%;
         position: relative;
         font-weight: 300;
         font-size: 30px;
