@@ -12,3 +12,4 @@
 
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmTWqtcbhdnNXdv-Ow60PedAtYwYgbQ5Q&callback=initMap">
 </script>
+<script src="<?php  echo $configuracion->getJsCdn()."/js/vegas.min.js"?>"></script>
