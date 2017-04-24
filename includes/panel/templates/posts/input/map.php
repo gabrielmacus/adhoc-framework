@@ -16,8 +16,7 @@
      });
 
 
-         marker.setPosition(angular.copy(JSON.stringify(
-             scope.post.<?php echo $model?>)));
+         marker.setPosition(JSON.parse(scope.post.<?php echo $model?>));
 
 
 
