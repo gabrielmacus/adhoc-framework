@@ -35,6 +35,8 @@ try{
 
                 $dest=DIR_PATH."/{$configuracion->getHtdocsFolder()}/{$configuracion->getSiteFolder()}/tmp/files/{$file["size"]}_{$file["name"]}";
 
+                echo json_encode($dest);
+                exit();
                 move_uploaded_file($file["tmp_name"],$dest);
 
 
