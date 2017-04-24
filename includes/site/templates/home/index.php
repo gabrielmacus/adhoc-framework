@@ -6,37 +6,39 @@
 
             <div class="fila">
                 <div class="form-title">
-                    <h2>Dat</h2>
+                    <h2>Completa con tus datos</h2>
                 </div>
             </div>
+            <div class="fila shadow">
+                <form class="player-form">
 
-            <form class="player-form">
+                    <div class="form-block ">
+                        <label>Nombre</label>
+                        <input>
+                    </div>
+                    <div class="form-block ">
+                        <label>Apellido</label>
+                        <input>
+                    </div>
+                    <div class="form-block ">
+                        <label>Categoria</label>
+                        <select>
+                            <option>Senior</option>
+                            <option>General</option>
+                            <option>Principiante</option>
 
-                <div class="form-block ">
-                    <label>Nombre</label>
-                    <input>
-                </div>
-                <div class="form-block ">
-                    <label>Apellido</label>
-                    <input>
-                </div>
-                <div class="form-block ">
-                    <label>Categoria</label>
-                    <select>
-                        <option>Senior</option>
-                        <option>General</option>
-                        <option>Principiante</option>
-
-                    </select>
-                </div>
-                <div class="form-block">
-                    <label>Email</label>
-                    <input>
-                </div>
+                        </select>
+                    </div>
+                    <div class="form-block">
+                        <label>Email</label>
+                        <input>
+                    </div>
 
 
 
-            </form>
+                </form>
+            </div>
+
         </div>
 
 
