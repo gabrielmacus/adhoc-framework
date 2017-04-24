@@ -17,7 +17,7 @@
         <?php if($post)
         {
             ?>
-
+/*
             locations = scope.post.<?php echo $model?>;
 
             console.log(locations);
@@ -27,7 +27,7 @@
                 addMarker(v.lat,v.lng)
 
             });
-
+*/
 
         <?php
         }?>
