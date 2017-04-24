@@ -13,12 +13,12 @@
       }},
     "hoyos":{"text":"Hoyos","items":{
       "add":{"text":"Agregar hoyo","href":"/test/admin/posts/?act=save&t=60"},
-      "list":{"text":"Listar hoyos","href":"/test/admin/posts/?act=list&t=60"}
+      "list":{"text":"Listar hoyos","href":"/test/admin/posts/?act=list&t=60&s=hoyos"}
     }}
     ,
     "jugadores":{"text":"Jugadores","items":{
       "add":{"text":"Agregar jugador","href":"/test/admin/posts/?act=save&t=61"},
-      "list":{"text":"Listar jugadores","href":"/test/admin/posts/?act=save&t=61"}
+      "list":{"text":"Listar jugadores","href":"/test/admin/posts/?act=list&t=61&s=jugadores"}
     }}
 
     },
