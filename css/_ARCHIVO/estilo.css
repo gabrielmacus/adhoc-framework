@@ -484,3 +484,7 @@ button:active
         transform: scale(0);}
     100%{display: none}
 }
+.body
+{
+    position: relative;
+}
