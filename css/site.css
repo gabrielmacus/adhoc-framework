@@ -1,8 +1,10 @@
 
 .player-form
 {
-    width: 100%;
+    width: 50%;
     float: left;
+    left: 25%;
+    position: relative;
 
 
 }
