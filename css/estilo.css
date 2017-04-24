@@ -1,18 +1,18 @@
 @media screen and  (min-width:769px)  {
 
 
-    .l1{width:8.33333%;float: left}
-    .l2{width:16.66666%;float: left}
-    .l3{width:24.99999%;float: left}
-    .l4{width:33.33333%;float: left}
-    .l5{width:41.66666%;float: left}
-    .l6{width:49.99999%;float: left}
-    .l7{width:58.33333%;float: left}
-    .l8{width:66.66666%;float: left}
-    .l9{width:74.99999%;float: left}
-    .l10{width:83.33333%;float: left}
-    .l11{width:91.66666%;float: left}
-    .l12{width:99.99999%;float: left}
+    .l1{width:8.33333%!important;;float: left}
+    .l2{width:16.66666%!important;;float: left}
+    .l3{width:24.99999%!important;;float: left}
+    .l4{width:33.33333%!important;;float: left}
+    .l5{width:41.66666%!important;;float: left}
+    .l6{width:49.99999%!important;;float: left}
+    .l7{width:58.33333%!important;;float: left}
+    .l8{width:66.66666%!important;;float: left}
+    .l9{width:74.99999%!important;;float: left}
+    .l10{width:83.33333%!important;;float: left}
+    .l11{width:91.66666%!important;;float: left}
+    .l12{width:99.99999%!important;;float: left}
     .hide-l
     {
         display: none!important;
@@ -20,17 +20,17 @@
 }
 
 @media screen and (min-width:601px) and (max-width:768px) {
-    .m1{width:8.33333%;float: left}
-    .m2{width:16.66666%;float: left}
-    .m3{width:24.99999%;float: left}
-    .m4{width:33.33333%;float: left}
-    .m5{width:41.66666%;float: left}
-    .m6{width:49.99999%;float: left}
-    .m7{width:58.33333%;float: left}
-    .m8{width:66.66666%;float: left}
-    .m9{width:74.99999%;float: left}
-    .m10{width:83.33333%;float: left}
-    .m11{width:91.66666%;float: left}
+    .m1{width:8.33333%!important;;float: left}
+    .m2{width:16.66666%!important;;float: left}
+    .m3{width:24.99999%!important;;float: left}
+    .m4{width:33.33333%!important;;float: left}
+    .m5{width:41.66666%!important;;float: left}
+    .m6{width:49.99999%!important;;float: left}
+    .m7{width:58.33333%!important;;float: left}
+    .m8{width:66.66666%!important;;float: left}
+    .m9{width:74.99999%!important;;float: left}
+    .m10{width:83.33333%!important;;float: left}
+    .m11{width:91.66666%!important;;float: left}
     .m12{width:99.99999%!important;float: left}
     .hide-m
     {
@@ -38,18 +38,18 @@
     }
 }
 @media screen and (max-width:600px) {
-    .s1{width:8.33333%;float: left}
-    .s2{width:16.66666%;float: left}
-    .s3{width:24.99999%;float: left}
-    .s4{width:33.33333%;float: left}
-    .s5{width:41.66666%;float: left}
+    .s1{width:8.33333%!important;;float: left}
+    .s2{width:16.66666%!important;;float: left}
+    .s3{width:24.99999%!important;;float: left}
+    .s4{width:33.33333%!important;;float: left}
+    .s5{width:41.66666%!important;;float: left}
     .s6{width:49.99999%!important;;float: left}
-    .s7{width:58.33333%;float: left}
-    .s8{width:66.66666%;float: left}
-    .s9{width:74.99999%;float: left}
-    .s10{width:83.33333%;float: left}
-    .s11{width:91.66666%;float: left}
-    .s12{width:99.99999%;float: left}
+    .s7{width:58.33333%!important;;float: left}
+    .s8{width:66.66666%!important;;float: left}
+    .s9{width:74.99999%!important;;float: left}
+    .s10{width:83.33333%!important;;float: left}
+    .s11{width:91.66666%!important;float: left}
+    .s12{width:99.99999%!important;;float: left}
     .hide-s
     {
         display: none!important;
