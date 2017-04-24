@@ -49,9 +49,6 @@
 <section class="main-container">
     <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 </section>
-<aside class="sidenav-container main-color">
-    <?php include "sidenav.php"?>
-</aside>
 
 <footer>
     
