@@ -20,7 +20,7 @@ try{
     $site="home";
     $action="index";
 
-
+var_dump("AASD");
 
 }
 catch (Exception $e)
