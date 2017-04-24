@@ -16,6 +16,7 @@
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>",
                     data:angular.copy(scope.hoyo),
+                    dataType:"json",
                     success:function (e) {
                         console.log(e);
                     },

@@ -24,7 +24,7 @@
     }
 </style>
 <script>
-
+    <?php  $_GET["pos"]= trim($_GET["pos"],"\"")?>
     function initMap() {
 
         var map = new google.maps.Map(
