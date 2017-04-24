@@ -1,4 +1,6 @@
+<?php
 
+echo json_encode($post);?>
 <header>
     <h2><?php echo $lang["hoyosave"]?></h2>
 </header>
