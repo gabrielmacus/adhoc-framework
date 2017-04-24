@@ -472,7 +472,7 @@ form
 }
 .form-block input[type='button'],input[type='submit']
 {
-    border: 0;
+    border: 0px transparent solid;
     padding: 10px;
 
 }
