@@ -6,9 +6,12 @@
  * Time: 1:07
  */
 
+echo  json_encode($_FILES);
+exit();
 include "../../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
+
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";

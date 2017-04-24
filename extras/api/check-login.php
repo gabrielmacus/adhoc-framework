@@ -33,5 +33,6 @@ catch (Exception $e)
     }
 
     header('Location: '.$redirect, true, 302);
+    exit();
 
 }
