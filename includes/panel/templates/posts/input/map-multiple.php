@@ -18,9 +18,8 @@
         {
             ?>
 
-            locations = JSON.parse(scope.post.<?php echo $model?>);
+            locations = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
-            console.log(locations);
             $.each(locations,function (k,v) {
 
 
