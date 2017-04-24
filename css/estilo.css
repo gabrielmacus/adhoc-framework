@@ -472,13 +472,13 @@ form
 }
 .form-block input[type='button'],input[type='submit']
 {
-    border: 0px transparent solid;
+    outline: 0px transparent solid;
     padding: 10px;
 
 }
 .form-block input[type='button']:hover,input[type='submit']:hover
 {
-    border:2px solid #2e3032;
+    outline:2px solid #2e3032;
     background-color:white;
     color:#2e3032;
 }
