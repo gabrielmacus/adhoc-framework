@@ -3,6 +3,7 @@
     $(document).on("change","#<?php echo $id?>",function (e) {
 
         var files =$(this)[0].files;
+        var data = new FormData();
 
         $.each(files,function (k,v) {
 
