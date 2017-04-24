@@ -467,6 +467,7 @@ form
 .form-block input[type='button'],input[type='submit']
 {
     border: 0;
+    padding: 10px;
 
 }
 .form-block label
