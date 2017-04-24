@@ -15,12 +15,10 @@
 
      });
 
-     <?Php if($post)
-     {
-         ?>
-     marker.
-     <?php
-     }?>
+
+     marker.setPosition(       scope.post.<?php echo $model?>);
+
+
 
      <?php echo $id?>.addListener("click",function (e) {
          marker.setPosition(e.latLng);
