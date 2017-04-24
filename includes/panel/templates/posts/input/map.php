@@ -15,8 +15,9 @@
 
      });
 
+     console.log(scope.post.<?php echo $model?>);
 
-         marker.setPosition(<?PHP echo json_encode($post->getExtra1())?>);
+         //marker.setPosition(JSON.stringify(scope.post.<?php echo $model?>));
 
 
 
