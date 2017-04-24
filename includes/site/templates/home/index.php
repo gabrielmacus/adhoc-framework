@@ -4,9 +4,12 @@
 
         <div class="player-form-container">
 
-            <div class="form-title">
-                <h2>Dat</h2>
+            <div class="fila">
+                <div class="form-title">
+                    <h2>Dat</h2>
+                </div>
             </div>
+
             <form class="player-form">
 
                 <div class="form-block ">
