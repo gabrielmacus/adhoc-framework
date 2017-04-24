@@ -11,7 +11,8 @@ include DIR_PATH."/includes/panel/templates/posts/save.php";
 
 
 $label="Archivos";
-
+$id="archivos";
+$gal=1;
 include DIR_PATH."/includes/panel/templates/posts/input/files.php";
 
 
