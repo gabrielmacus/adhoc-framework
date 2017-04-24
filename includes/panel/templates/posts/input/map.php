@@ -18,7 +18,7 @@
      <?php if($post)
      {
          ?>
-     marker.setPosition(scope.post.<?php echo $model?>);
+     marker.setPosition(JSON.parse(scope.post.<?php echo $model?>));
      <?php
      }?>
 
