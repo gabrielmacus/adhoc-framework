@@ -1,8 +1,12 @@
 <div class="body">
 
 
+
         <div class="player-form-container">
             <form class="player-form">
+                <div class="form-title">
+                    <h2>Dat</h2>
+                </div>
                 <div class="form-block ">
                     <label>Nombre</label>
                     <input>
