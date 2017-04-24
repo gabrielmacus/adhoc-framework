@@ -1,3 +1,53 @@
+@media screen and  (min-width:769px)  {
+
+    .player-form,.form-title
+    {
+
+
+        padding: 20px;
+        width: 40%;
+        float: left;
+        left: 30%;
+        position: relative;
+        font-weight: 300;
+        font-size: 30px;
+
+
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:768px) {
+    .player-form,.form-title
+    {
+
+
+        padding: 20px;
+        width: 80%;
+        float: left;
+        left: 10%;
+        position: relative;
+        font-weight: 300;
+        font-size: 30px;
+
+
+    }
+}
+@media screen and (max-width:600px) {
+    .player-form,.form-title
+    {
+
+
+        padding: 20px;
+        width: 96%;
+        float: left;
+        left: 2%;
+        position: relative;
+        font-weight: 300;
+        font-size: 30px;
+
+
+    }
+}
 
 body
 {
@@ -15,20 +65,7 @@ body
     top:0;
     left:0;
 }
-.player-form,.form-title
-{
 
-
-    padding: 20px;
-    width: 40%;
-    float: left;
-    left: 30%;
-    position: relative;
-    font-weight: 300;
-    font-size: 30px;
-
-
-}
 .form-title
 {
     background-color: #26A65B;
