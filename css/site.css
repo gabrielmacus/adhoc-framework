@@ -1,4 +1,10 @@
 
+body
+{
+    background-image: url("http://hondusports.com/wp-content/uploads/2016/09/Futgolf-Honduras-Indura-e1472798015817.jpg");
+    background-position: center;
+    background-size: cover;
+}
 .player-form,.form-title
 {
 
