@@ -61,6 +61,11 @@
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
 
+        $model="extra4";
+        $id="map1";
+        $title ="Marque la ubicación del sapo";
+        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
+
 
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
