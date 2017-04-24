@@ -9,6 +9,7 @@
 
 
         scope.post={};
+        
 
         <?php if($post)
 
