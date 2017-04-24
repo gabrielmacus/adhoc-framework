@@ -2,12 +2,14 @@
 .player-form,.form-title
 {
 
-    background-color: #26A65B;;
+    background-color: #26A65B;
     padding: 20px;
     width: 40%;
     float: left;
     left: 30%;
     position: relative;
+    font-weight: 600;
+    font-size: 30px;
 
 
 }
