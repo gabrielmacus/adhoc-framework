@@ -17,7 +17,7 @@ $model="volanta";
 include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 $label="Edad";
-$model="extra_1";
+$model="extra1";
 include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
 $label="DNI";
