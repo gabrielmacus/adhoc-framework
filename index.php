@@ -7,6 +7,9 @@
  * Time: 1:07
  */
 
+
+var_dump("AASD");
+
 include "includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
@@ -20,7 +23,6 @@ try{
     $site="home";
     $action="index";
 
-var_dump("AASD");
 
 }
 catch (Exception $e)
