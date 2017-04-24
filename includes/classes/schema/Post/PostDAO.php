@@ -202,9 +202,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $p->setCreacion($data["post_creacion"]);
         $p->setModificacion($data["post_modificacion"]);
         $p->setExtra1($data["post_extra_1"]);
-        $p->setExtra2($data["post_extra_1"]);
-        $p->setExtra3($data["post_extra_1"]);
-        $p->setExtra4($data["post_extra_1"]);
+        $p->setExtra2($data["post_extra_2"]);
+        $p->setExtra3($data["post_extra_3"]);
+        $p->setExtra4($data["post_extra_4"]);
 
         if(!$byId)
         {
