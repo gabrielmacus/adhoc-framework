@@ -14,15 +14,40 @@
 
         var locations=[];//only lat lng
 
+        <?php if($post)
+        {
+            ?>
+        try
+        {
+            locations = JSON.parse(scope.post.<?php echo $model?>);
+
+            $.each(locations,function (k,v) {
+
+
+                addMarker(v.lat,v.lng)
+
+            });
+        }
+        catch(e)
+        {
+
+        }
+
+        <?php
+        }?>
 
         <?php echo $id?>.addListener("click",function (e) {
 
+            addMarker( e.latLng.lat(),e.latLng.lng());
+        });
+
+        function addMarker(latitud,longitud) {
+
             var marker=  new google.maps.Marker({
                 map:<?php echo $id?>,
-                position:{lat:e.latLng.lat(),lng:e.latLng.lng()}
+                position:{"lat":latitud,"lng":longitud}
 
             });
-
 
 
             marker.addListener("click",function () {
@@ -40,14 +65,12 @@
 
             });
             markers.push(marker);
-            locations.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
+            locations.push({"lat":latitud,"lng":longitud});
 
             scope.post.<?php echo $model?>= JSON.stringify(locations);
 
             scope.$apply();
-
-        });
-
+        }
 
 
 
