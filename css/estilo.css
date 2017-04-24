@@ -457,10 +457,11 @@ form
     width: 100%;
     padding: 10px;
 }
-.form-block input
+.form-block input,select
 {
    width: 100%;
     float: left;
+    font-size: 25px;
 }
 .form-block label
 {
