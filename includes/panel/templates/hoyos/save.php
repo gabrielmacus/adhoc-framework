@@ -7,6 +7,7 @@
 
     angular.element(function () {
 
+
         scope.post={};
 
         <?php if($post)
