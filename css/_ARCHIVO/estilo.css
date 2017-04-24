@@ -486,5 +486,7 @@ button:active
 }
 .body
 {
+    float: left;
+    width: 100%;
     position: relative;
 }
