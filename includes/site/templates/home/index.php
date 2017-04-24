@@ -9,8 +9,8 @@
                     <h2>Completa con tus datos</h2>
                 </div>
             </div>
-            <div class="fila shadow">
-                <form class="player-form">
+            <div class="fila">
+                <form class="player-form shadow">
 
                     <div class="form-block ">
                         <label>Nombre</label>
