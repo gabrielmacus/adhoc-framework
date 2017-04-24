@@ -18,7 +18,7 @@ include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 $label="Edad";
 $model="extra_1";
-include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
 $label="DNI";
 $model="bajada";
