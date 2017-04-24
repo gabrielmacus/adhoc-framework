@@ -468,7 +468,7 @@ form
 .form-block input:focus,select:focus
 {
     outline:inherit;
-    border: inherit;
+
 }
 .form-block input[type='button'],input[type='submit']
 {
