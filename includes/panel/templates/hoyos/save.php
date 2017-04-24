@@ -8,6 +8,16 @@
     angular.element(function () {
 
         scope.hoyo={};
+
+        <?php if($post)
+
+        {
+            ?>
+        scope.hoyo = <?php echo json_encode($post);?>;
+        <?Php
+        }?>
+        scope.$apply();
+
         scope.save=function () {
 
             $.ajax
