@@ -33,7 +33,6 @@
 
 
 
-
      scope.$apply();
      <?php echo $id?>.addListener("click",function (e) {
          marker.setPosition(e.latLng);
