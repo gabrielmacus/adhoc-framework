@@ -1,3 +1,4 @@
+
 <script>
     $(document).ready(function () {
         var <?php echo $id?>=new google.maps.Map(
@@ -9,6 +10,8 @@
         );
         scope.<?php echo $model?>=[];
 
+        var markers=[];
+
         <?php echo $id?>.addListener("click",function (e) {
 
             var marker=  new google.maps.Marker({
@@ -16,18 +19,18 @@
                 position:{lat:e.latLng.lat(),lng:e.latLng.lng()}
 
             });
-            scope.<?php echo $model?>.push(
-              marker
-            );
+
+            scope.<?php echo $model?>.push({lat:e.latLng.lat(),lng:e.latLng.lng()});
 
             marker.addListener("click",function () {
 
-                var idx = scope.<?php echo $model?>.indexOf(this);
+                var idx =markers.indexOf(this);
+
 
                 console.log(idx);
 
             });
-
+            markers.push(marker);
 
             scope.$apply();
 
@@ -40,4 +43,5 @@
     });
 </script>
 
+<label><?php echo $title?></label>
 <map  id="<?php echo $id;?>"></map>

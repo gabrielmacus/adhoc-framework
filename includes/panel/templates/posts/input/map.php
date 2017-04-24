@@ -1,3 +1,5 @@
+
+<label><?php echo $title?></label>
 <script>
  $(document).ready(function () {
      var <?php echo $id?>=new google.maps.Map(

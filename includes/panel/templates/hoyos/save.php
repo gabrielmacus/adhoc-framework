@@ -29,11 +29,13 @@
 
         $model="hoyo.extra1";
         $id="map1";
+        $title ="Marcador";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
 
         $model="hoyo.extra2";
         $id="map2";
+        $title="Marcadores";
         include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
 
