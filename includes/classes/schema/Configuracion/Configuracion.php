@@ -12,6 +12,7 @@ class Configuracion
     protected $cssCdn;
     protected $siteName;
     protected $comanyName;
+    protected $htdocsFolder;
     /**
      * Configuracion constructor.
      * @param $language
@@ -38,6 +39,22 @@ class Configuracion
         $this->cssCdn = $cssCdn;
         $this->siteName=$siteName;
         $this->comanyName=$companyName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHtdocsFolder()
+    {
+        return $this->htdocsFolder;
+    }
+
+    /**
+     * @param mixed $htdocsFolder
+     */
+    public function setHtdocsFolder($htdocsFolder)
+    {
+        $this->htdocsFolder = $htdocsFolder;
     }
 
 

@@ -38,7 +38,7 @@ try{
                 move_uploaded_file($file["tmp_name"],$dest);
 
 
-                $tmp="/tmp/files/{$file["size"]}_{$file["name"]}";
+                $tmp="{$configuracion->getHtdocsFolder()}/{$configuracion->getSiteFolder()}/tmp/files/{$file["size"]}_{$file["name"]}";
                 $dest=$configuracion->getSiteAddress().$tmp;
 
                 $ext = explode(".",$file["name"]);
