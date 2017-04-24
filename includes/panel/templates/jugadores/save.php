@@ -22,7 +22,7 @@ include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
 $label="DNI";
 $model="bajada";
-include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
 $name="Guardar cambios";
 include DIR_PATH."/includes/panel/templates/posts/input/submit.php";?>
