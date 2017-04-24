@@ -452,6 +452,11 @@ a:link
     width: 100%;
     padding: 10px;
 }
+.form-block input
+{
+   width: 100%;
+    float: left;
+}
 .form-block label
 {
     font-size: 20px;
