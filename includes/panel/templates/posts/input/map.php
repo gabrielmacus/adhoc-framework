@@ -16,7 +16,7 @@
      });
 
 
-     var p =JSON.parse(scope.post.<?php echo $model?>);
+     var p =scope.post.<?php echo $model?>;
      console.log(p);
          marker.setPosition(p);
 
