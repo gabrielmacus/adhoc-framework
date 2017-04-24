@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="form-block">
-                        <input type="submit" value="Aceptar">
+                        <input type="submit" class="animated" value="Aceptar">
                     </div>
 
 
