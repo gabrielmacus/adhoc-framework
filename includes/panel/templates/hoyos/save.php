@@ -17,6 +17,7 @@
         <?Php
         }?>
         scope.$apply();
+        console.log(scope.hoyo);
 
         scope.save=function () {
 
