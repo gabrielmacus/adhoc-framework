@@ -15,7 +15,7 @@
 
      });
 
-     marker.setPosition(scope.post.<?php echo $model?>);
+     marker.setPosition(new google.maps.LatLng(scope.post.<?php echo $model?>));
 
 
 
