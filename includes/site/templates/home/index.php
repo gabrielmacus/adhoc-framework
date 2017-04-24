@@ -3,10 +3,12 @@
 
 
         <div class="player-form-container">
+
+            <div class="form-title">
+                <h2>Dat</h2>
+            </div>
             <form class="player-form">
-                <div class="form-title">
-                    <h2>Dat</h2>
-                </div>
+
                 <div class="form-block ">
                     <label>Nombre</label>
                     <input>
