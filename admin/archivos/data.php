@@ -33,7 +33,7 @@ try{
             foreach ($_FILES as $file)
             {
 
-                $dest=DIR_PATH."/{$configuracion->getHtdocsFolder()}/{$configuracion->getSiteFolder()}/tmp/files/{$file["size"]}_{$file["name"]}";
+                $dest=DIR_PATH."/tmp/files/{$file["size"]}_{$file["name"]}";
 
                 echo json_encode($dest);
                 exit();
