@@ -8,7 +8,7 @@
 
 
 
-        <div class="player-form-container">
+        <div class="player-form-container animated flipInX">
 
             <div class="fila">
                 <div class="form-title">
