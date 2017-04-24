@@ -20,7 +20,7 @@
          ?>
      try
      {
-         marker.setPosition(JSON.parse(scope.post.<?php echo $model?>));
+         marker.setPosition(scope.post.<?php echo $model?>);
      }
      catch (e)
      {
