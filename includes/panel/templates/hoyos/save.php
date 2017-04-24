@@ -14,7 +14,7 @@
             (
                 {
                     method:"post",
-                    url:"<?php echo $configuracion->getSiteAddress()."/posts/?t={$t}&s={$site}&act=save&async=true"?>",
+                    url:"<?php echo $configuracion->getSiteAddress()."admin/posts/?t={$t}&s={$site}&act=save&async=true"?>",
                     data:angular.copy(scope.hoyo),
                     success:function (e) {
                         console.log(e);
