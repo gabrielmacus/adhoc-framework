@@ -17,8 +17,7 @@
         <?php if($post)
         {
             ?>
-        try
-        {
+
             locations = JSON.parse(scope.post.<?php echo $model?>);
 
             console.log(locations);
@@ -28,11 +27,7 @@
                 addMarker(v.lat,v.lng)
 
             });
-        }
-        catch(e)
-        {
 
-        }
 
         <?php
         }?>
