@@ -445,6 +445,11 @@ a:link
 {
     color: inherit!important;;
 }
+form
+{
+    float: left;
+    width: 100%;
+}
 .form-block
 
 {
