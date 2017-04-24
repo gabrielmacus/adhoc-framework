@@ -46,7 +46,7 @@
     <?php include "menu.php"?>
 </header>
 
-<section class="main-container">
+<section>
     <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 </section>
 
