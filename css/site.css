@@ -63,7 +63,10 @@
         font-weight: 300;
         font-size: 30px;
 
-
+    }
+    .body
+    {
+        padding: 10px;
     }
 }
 
