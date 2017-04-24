@@ -172,19 +172,19 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     private function getParamsArray(Post $p)
     {
         return    array(
-           ":id"=>$p->getId()
-        ,":titulo"=>$p->getTitulo(),
-        ":volanta"=>$p->getVolanta(),
-        ":bajada"=>$p->getBajada(),
-        ":texto"=>$p->getTexto(),
-        ":etiquetas"=>$p->getEtiquetas(),
- ":seccion"=>$p->getSeccion(),
-        ":creacion"=>$p->getCreacion(),
-        ":modificacion"=>$p->getModificacion(),
-            ":extra_1"=>$p->getExtra1(),
-            ":extra_2"=>$p->getExtra2(),
-            ":extra_3"=>$p->getExtra3(),
-            ":extra_4"=>$p->getExtra4()
+           ":post_id"=>$p->getId()
+        ,":post_titulo"=>$p->getTitulo(),
+        ":post_volanta"=>$p->getVolanta(),
+        ":post_bajada"=>$p->getBajada(),
+        ":post_texto"=>$p->getTexto(),
+        ":post_etiquetas"=>$p->getEtiquetas(),
+ ":post_seccion"=>$p->getSeccion(),
+        ":post_creacion"=>$p->getCreacion(),
+        ":post_modificacion"=>$p->getModificacion(),
+            ":post_extra_1"=>$p->getExtra1(),
+            ":post_extra_2"=>$p->getExtra2(),
+            ":post_extra_3"=>$p->getExtra3(),
+            ":post_extra_4"=>$p->getExtra4()
         );
     }
     private function query($data,$byId=false)

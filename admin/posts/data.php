@@ -39,7 +39,7 @@ try{
             $post->setSeccion($t);
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
-            var_dump($_POST);
+
 
             if ($_POST["id"]) {
 
