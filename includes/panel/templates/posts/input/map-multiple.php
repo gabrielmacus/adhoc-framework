@@ -29,6 +29,7 @@
                 markers.splice(idx,1);
                 scope.<?php echo $model?>.splice(idx,1);
                 scope.$apply();
+                console.log(idx);
 
             });
             markers.push(marker);
