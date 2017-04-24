@@ -3,8 +3,7 @@
     <h2><?php echo $lang["hoyosave"]?></h2>
 </header>
 
-<?php
-include DIR_PATH."/includes/panel/templates/posts/save.php";?>
+<?php include DIR_PATH."/includes/panel/templates/posts/save.php";?>
 
 <div class="body">
 
