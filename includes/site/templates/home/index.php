@@ -30,25 +30,27 @@
 
 
 
-                    $label="Nombre";
+                    $label="Apellido";
 
                     $class=array("s12","m6","l6");
-                    $model="titulo";
+                    $model="volanta";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
-                    $label="Nombre";
+                    $label="DNI";
                     $class=array("s12","m6","l6");
-                    $model="titulo";
+                    $model="bajada";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
-                    $label="Nombre";
+                    $label="Edad";
                     $class=array("s12","m6","l6");
-                    $model="titulo";
+                    $model="texto";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+
+
                     ?>
 
                     <div class="form-block ">
