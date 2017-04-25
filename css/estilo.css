@@ -559,3 +559,11 @@ body,body > section,.body
 {
     height: 100%!important;
 }
+.modal-container
+{
+    position: fixed;
+    z-index:1000000;
+    background-color: rgba(6,12,5,0.58);
+    top:0px;
+    left:0px;
+}
