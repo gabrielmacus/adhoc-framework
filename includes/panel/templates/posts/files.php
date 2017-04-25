@@ -2,7 +2,7 @@
 
     <div class="file-preview" data-ng-repeat="p in previews">
 
-        <div class="file" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+        <div class="file" >
 
             <figure>
                 <img data-src="{{p.url}}">
