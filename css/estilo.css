@@ -612,6 +612,7 @@ body,body > section,.body
 }
 .file-preview
 {
+    padding: 10px;
     position: relative;
 }
 .file .size
