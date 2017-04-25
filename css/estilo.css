@@ -573,4 +573,10 @@ body,body > section,.body
 {
     padding: 20px;
     background-color: white;
+    float: left;width: 100%;
+}
+.modal .container
+{
+    float: left;
+    width: 100%;
 }
