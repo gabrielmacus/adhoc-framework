@@ -23,7 +23,7 @@
 
                     <?php
 
-                    $t=60;
+                    $t=61;
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
                     $label="Nombre";
