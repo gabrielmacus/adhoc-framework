@@ -50,24 +50,11 @@
                     $model="texto";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
+                    $label="Email";
+                    $model="extra1";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
-                    ?>
 
-                    <div class="form-block ">
-                        <label>Categoria</label>
-                        <select>
-                            <option>Senior</option>
-                            <option>General</option>
-                            <option>Principiante</option>
-
-                        </select>
-                    </div>
-                    <div class="form-block">
-                        <label>Email</label>
-                        <input>
-                    </div>
-
-                  <?php
                   $name="Aceptar";
                   $action="save()";
                   include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
