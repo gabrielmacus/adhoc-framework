@@ -1,13 +1,14 @@
+<div class="body">
 
-<table>
-    <caption><?php echo $title;?></caption>
-    <thead>
+    <table>
+        <caption><?php echo $title;?></caption>
+        <thead>
 
         <tr>
             <?php foreach ($rows[0] as $k=>$v)
             {
-            ?>
-            <th scope="col"><?php echo $k?></th>
+                ?>
+                <th scope="col"><?php echo $k?></th>
                 <?php
             }?>
 
@@ -16,10 +17,10 @@
             <th scope="col"><?php echo $lang["eliminar"];?></th>
         </tr>
 
-    </thead>
-    <tbody>
-    <?php foreach ($rows as $row)
-    {
+        </thead>
+        <tbody>
+        <?php foreach ($rows as $row)
+        {
 
 
             ?>
@@ -33,9 +34,11 @@
                 <td title="<?php echo $lang["editar"];?>"><a class="icon "><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
                 <td title="<?php echo $lang["eliminar"];?>"><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
             </tr>
-           <?php
-    }?>
+            <?php
+        }?>
 
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+
+</div>
