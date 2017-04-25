@@ -27,7 +27,7 @@ try{
     {
         $files=$GLOBALS["archivoDAO"]->selectArchivos(false) ;
     }
-
+    $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false);
     $site="archivos";
     $action="list";
 

@@ -25,6 +25,47 @@ try{
     {
         case "save":
 
+            foreach ($_POST["files"] as $file)
+            {
+
+                $file["tmp"]=DIR_PATH.$file["tmp"];
+
+
+                switch ($file["type"])
+                {
+                    default:
+
+
+                        $a = new Archivo($file["size"],$file["name"],$file["mime"]);
+
+                        $a->setTmpPath($file["tmp"]);
+                        $a->setExtension($file["type"]);
+                        $a->setRepositorio($rep);
+                        $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
+
+                        break;
+
+
+                    case "svg":
+                    case "jpeg":
+                    case "bmp":
+                    case "png":
+                    case "gif":
+                    case "jpg":
+
+
+                        $a = new Imagen($file["size"],$file["name"],$file["mime"]);
+                        $a->setTmpPath($file["tmp"]);
+                        $a->setExtension($file["type"]);
+                        $a->setRepositorio($rep);
+
+                        $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
+                        break;
+
+                }
+
+            }
+
             break;
         case "upload":
 
