@@ -31,7 +31,7 @@
 
                 console.log(res);
 
-                $.merge(scope.previews,res);
+                $.extend(scope.previews,res);
 
                 scope.$apply();
 
