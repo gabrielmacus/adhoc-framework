@@ -80,7 +80,7 @@
 
 <?php
 $title="¿Ok with that?";
-include DIR_PATH."/includes/panel/templates/comun/modal.php";
+//include DIR_PATH."/includes/panel/templates/comun/modal.php";
 ?>
 
 <script>
