@@ -11,7 +11,9 @@ $(document).on("click",".add-seccion",function (e) {
     var HTML="<ul>";
     HTML+="<li>";
     HTML+="<div class='form-block'>";
-    HTML+="<input type='text'>"
+    HTML+="<input type='text' style='width: 60%'>";
+    HTML+='<i class="fa fa-check" aria-hidden="true"></i>';
+    HTML+='<i class="fa fa-times" aria-hidden="true"></i>';
     HTML+="</div>";
     HTML+="</li>";
     HTML+="</ul>";
