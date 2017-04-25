@@ -23,6 +23,8 @@
 
                     <?php
 
+                    include DIR_PATH."/includes/panel/templates/posts/save.php";
+
                     $label="Nombre";
                     $class=array("s12","m6","l6");
                     $model="titulo";
