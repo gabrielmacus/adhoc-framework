@@ -27,6 +27,7 @@
                 console.log(res);
 
                 scope.previews = res;
+                scope.$apply();
 
   /*              $.each(res,function (k,v) {
 
