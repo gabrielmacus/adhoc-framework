@@ -4,16 +4,15 @@ include DIR_PATH."/includes/panel/templates/posts/save.php";
 
 
 ?>
+
+<header>
+    <h2><?php echo $lang["jugadorsave"]?></h2>
+</header>
+
     <div class="body">
 
         <form data-ng-submit="save()">
 <?php
-
-
-$label="Archivos";
-$id="archivos";
-$gal=1;
-include DIR_PATH."/includes/panel/templates/posts/input/files.php";
 
 
 $label="Nombre";

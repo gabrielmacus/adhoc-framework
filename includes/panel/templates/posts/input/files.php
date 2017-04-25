@@ -59,7 +59,12 @@
 <div class="form-block">
 
     <label><?php echo $label?></label>
+
     <input  id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
 
-    <?php include DIR_PATH."/includes/panel/templates/posts/files.php"; ?>
+    <?php
+
+    include DIR_PATH."/includes/panel/templates/posts/files.php";
+    ?>
+
 </div>
