@@ -9,7 +9,7 @@
             </figure>
 
             <span class="name">{{p.name}}</span>
-            <span class="size"  data-ng-bind="getMb(p.size)"></span>
+            <span class="size"  data-ng-bind="getMb(p.size,2)"></span>
         </div>
 
     </div>
