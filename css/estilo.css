@@ -580,3 +580,7 @@ body,body > section,.body
     float: left;
     width: 100%;
 }
+.file
+{
+    padding: 10px;
+}
