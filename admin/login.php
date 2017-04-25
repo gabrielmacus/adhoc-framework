@@ -69,11 +69,11 @@ try{
 </head>
 <body>
 <form action="<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true" method="post" enctype="application/x-www-form-urlencoded">
-    <div>
+    <div class="form-block">
         <label>Usuario o Email</label>
         <input name="user">
     </div>
-    <div>
+    <div  class="form-block">
         <label>Contraseña</label>
         <input type="password" name="password">
     </div>
