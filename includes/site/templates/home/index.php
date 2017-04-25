@@ -52,6 +52,7 @@
 
                     $label="Categoria";
                     $options=["Senior","General","Principiante"];
+                    $class=[];
                     include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
