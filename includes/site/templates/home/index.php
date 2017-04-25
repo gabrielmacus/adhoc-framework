@@ -62,9 +62,11 @@
 </div>
 
 <script>
+$(document).ready(function () {
     $(".overlay-2").vegas({
         slides: [
             { src: "http://hondusports.com/wp-content/uploads/2016/09/Futgolf-Honduras-Indura-e1472798015817.jpg" }
         ]
     });
+});
 </script>
