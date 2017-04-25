@@ -67,9 +67,11 @@
                         <input>
                     </div>
 
-                    <div class="form-block">
-                        <input type="submit" class="animated" value="Aceptar">
-                    </div>
+                  <?php
+                  $name="Aceptar";
+                  $action="save()";
+                  include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
+                  ?>
 
 
                 </form>
