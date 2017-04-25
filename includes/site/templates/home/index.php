@@ -50,6 +50,11 @@
                     $model="texto";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
+                    $label="Categoria";
+                    $options=["Senior","General","Principiante"];
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+
+
                     $label="Email";
                     $model="extra1";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
