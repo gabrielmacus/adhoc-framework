@@ -26,7 +26,7 @@
 
                 console.log(res);
 
-                scope.previews = res;
+                scope.previews = angular.copy(res);
                 scope.$apply();
 
   /*              $.each(res,function (k,v) {
