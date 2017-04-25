@@ -1,7 +1,7 @@
 <script>
 
     angular.element(function () {
-        scope.previews<?php echo $id?>=[];
+        scope.previews=[];
     });
     $(document).on("change","#<?php echo $id?>",function (e) {
 
@@ -34,7 +34,7 @@
                 res = JSON.parse(res);
 
                 console.log(res);
-                $.merge(scope.previews<?php echo $id?>, res);
+                $.merge(scope.previews, res);
 
                 scope.$apply();
 
@@ -69,7 +69,7 @@
 
     <div class="files">
 
-        <div class="file-preview s12 m6 l4" data-ng-repeat="p in previews<?php echo $id?>" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+        <div class="file-preview s12 m6 l4" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
             <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
             <div class="file" >
 
