@@ -528,7 +528,7 @@ form
     outline:inherit;
 
 }
- input[type='button'],input[type='submit'],button:hover
+ input[type='button'],input[type='submit'],button
 {
     outline: 0;
     border: 0;
