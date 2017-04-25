@@ -9,6 +9,11 @@
 
             data.append(k,v);
         });
+        scope.getMb=function (a,b) {
+
+            if(0==a)return"0 Bytes";var c=1e3,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f];
+
+        }
 
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",

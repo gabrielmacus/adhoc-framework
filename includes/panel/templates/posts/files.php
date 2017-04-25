@@ -8,7 +8,7 @@
                 <img data-ng-src="{{p.url}}">
             </figure>
 
-            <span class="name">{{p.name}}</span>
+            <span class="name" data-ng-bind="getMb(p.name)"></span>
             <span class="size">{{p.size}}</span>
         </div>
 
