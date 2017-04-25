@@ -25,6 +25,9 @@
                 res = JSON.parse(res);
 
                 console.log(res);
+
+                scope.previews = res;
+
   /*              $.each(res,function (k,v) {
 
                     scope.preview.push(v);
