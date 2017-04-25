@@ -28,11 +28,6 @@ try{
         $files=$GLOBALS["archivoDAO"]->selectArchivos(false) ;
     }
 
-
-
-    var_dump($files);
-
-
     $site="archivos";
     $action="list";
 
