@@ -6,6 +6,16 @@
 console.log(scope.secciones);
 scope.$apply();
 
+$(document).on("click",".add-seccion",function () {
+
+    var HTML="<li>";
+    HTML+="<div class='form-block'>";
+    HTML+="<input type='text'>"
+    HTML+="</div>";
+    HTML+="</li>";
+
+});
+
     });
 </script>
 
@@ -14,7 +24,7 @@ scope.$apply();
 </header>
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
-    <i class="fa fa-plus-square-o icon" aria-hidden="true"></i>
+    <i class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
     <i class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
