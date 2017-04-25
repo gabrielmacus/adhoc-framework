@@ -6,13 +6,16 @@
 console.log(scope.secciones);
 scope.$apply();
 
-$(document).on("click",".add-seccion",function () {
+$(document).on("click",".add-seccion",function (e) {
 
-    var HTML="<li>";
+    var HTML="<ul>";
+    HTML+="<li>";
     HTML+="<div class='form-block'>";
     HTML+="<input type='text'>"
     HTML+="</div>";
     HTML+="</li>";
+    HTML+="</ul>";
+    $(e.target).closest("li").append(HTML);
 
 });
 
