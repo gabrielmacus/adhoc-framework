@@ -1,10 +1,13 @@
 <script>
 
+    angular.element(function () {
+        scope.previews=[];
+    });
     $(document).on("change","#<?php echo $id?>",function (e) {
 
         var files =$(this)[0].files;
         var data = new FormData();
-        scope.previews=[];
+
         $.each(files,function (k,v) {
 
             data.append(k,v);
@@ -30,8 +33,7 @@
                 res = JSON.parse(res);
 
                 console.log(res);
-
-                $.extend(scope.previews,res);
+                angular.extend(scope.previews, res);
 
                 scope.$apply();
 
