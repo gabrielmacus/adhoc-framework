@@ -52,12 +52,12 @@
 
                     $label="Categoria";
                     $options=["Senior","General","Principiante"];
-                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
                     $label="Email";
                     $model="extra1";
-                    include DIR_PATH."/includes/panel/templates/posts/input/select.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
                   $name="Aceptar";
