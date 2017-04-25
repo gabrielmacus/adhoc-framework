@@ -35,7 +35,7 @@ try{
 
                 $dest=DIR_PATH."/tmp/files/{$file["size"]}_{$file["name"]}";
 
-                rename($file["tmp_name"],$dest);
+                copy($file["tmp_name"],$dest);
 
                 $tmp="/tmp/files/{$file["size"]}_{$file["name"]}";
                 $dest=$configuracion->getSiteAddress().$tmp;
