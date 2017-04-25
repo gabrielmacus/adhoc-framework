@@ -25,22 +25,31 @@
 
                     $label="Nombre";
                     $class="s12 m6 l6";
+                    $model="titulo";
                     include DIR_PATH."/includes/panel/templates/input/text.php";
 
+
+
+                    $label="Nombre";
+                    $class="s12 m6 l6";
+                    $model="titulo";
+                    include DIR_PATH."/includes/panel/templates/input/text.php";
+
+
+
+                    $label="Nombre";
+                    $class="s12 m6 l6";
+                    $model="titulo";
+                    include DIR_PATH."/includes/panel/templates/input/text.php";
+
+
+
+                    $label="Nombre";
+                    $class="s12 m6 l6";
+                    $model="titulo";
+                    include DIR_PATH."/includes/panel/templates/input/text.php";
                     ?>
 
-                    <div class="form-block s12 m6 l6">
-                        <label>Apellido</label>
-                        <input>
-                    </div>
-                    <div class="form-block s12 m6 l6">
-                        <label>DNI</label>
-                        <input>
-                    </div>
-                    <div  class="form-block s12 m6 l6">
-                        <label>Edad</label>
-                        <input>
-                    </div>
                     <div class="form-block ">
                         <label>Categoria</label>
                         <select>
