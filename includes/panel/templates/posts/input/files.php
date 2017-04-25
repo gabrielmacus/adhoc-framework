@@ -33,7 +33,7 @@
                 res = JSON.parse(res);
 
                 console.log(res);
-                angular.extend(scope.previews, res);
+                $.merge(scope.previews, res);
 
                 scope.$apply();
 
