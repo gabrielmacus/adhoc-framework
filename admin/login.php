@@ -77,7 +77,7 @@ try{
         <label>Contraseña</label>
         <input type="password" name="password">
     </div>
-    <div>    <button type="submit">Ingresar</button></div>
+    <div class="form-block"><input type="submit" value="Ingresar"></div>
 
 
 </form>
