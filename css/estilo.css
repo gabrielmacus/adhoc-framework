@@ -528,14 +528,14 @@ form
     outline:inherit;
 
 }
-.form-block input[type='button'],input[type='submit']
+ input[type='button'],input[type='submit'],button:hover
 {
     outline: 0;
     border: 0;
     padding: 10px;
     cursor: pointer;
 }
-.form-block input[type='button']:hover,input[type='submit']:hover
+input[type='button']:hover,input[type='submit']:hover,button:hover
 {
     outline:1px solid #2e3032;
     background-color:white;
