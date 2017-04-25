@@ -610,3 +610,14 @@ body,body > section,.body
     float: left;
     text-overflow: ellipsis;
 }
+.file-preview
+{
+    position: relative;
+}
+.file .size
+{
+    position: absolute;
+    top:10px;
+    right:10px;
+    background-color: #3a78e5;
+}
