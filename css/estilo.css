@@ -569,3 +569,8 @@ body,body > section,.body
     top:0px;
     left:0px;
 }
+.modal
+{
+    padding: 20px;
+    background-color: white;
+}
