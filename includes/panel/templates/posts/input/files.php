@@ -1,7 +1,7 @@
 <script>
 
     angular.element(function () {
-        scope.previews=[];
+        scope.previews<?php echo $id?>=[];
     });
     $(document).on("change","#<?php echo $id?>",function (e) {
 
@@ -34,7 +34,7 @@
                 res = JSON.parse(res);
 
                 console.log(res);
-                $.merge(scope.previews, res);
+                $.merge(scope.previews<?php echo $id?>, res);
 
                 scope.$apply();
 
@@ -66,5 +66,23 @@
 
     include DIR_PATH."/includes/panel/templates/posts/files.php";
     ?>
+
+    <div class="files">
+
+        <div class="file-preview s12 m6 l4" data-ng-repeat="p in previews<?php echo $id?>" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+            <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
+            <div class="file" >
+
+                <figure>
+                    <img data-ng-src="{{p.url}}">
+                </figure>
+
+                <input class="name" data-ng-model="p.name">
+                <span class="size"  data-ng-bind="getMb(p.size)"></span>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
