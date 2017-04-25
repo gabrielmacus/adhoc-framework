@@ -582,8 +582,8 @@ body,body > section,.body
 }
 .file
 {
-    padding: 10px;
-    background-color: #e2dcd5;
+    padding: 0px;
+    background-color: #f8f2ea;
 }
 .file figure
 {
@@ -602,6 +602,9 @@ body,body > section,.body
 }
 .file .name
 {
+    padding: 10px;
+    font-weight: 300;
+
     width: 100%;
     overflow: hidden;
     float: left;
