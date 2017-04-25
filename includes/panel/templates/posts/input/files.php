@@ -4,11 +4,11 @@
 
         var files =$(this)[0].files;
         var data = new FormData();
-
+        scope.previews=[];
         $.each(files,function (k,v) {
 
             data.append(k,v);
-        })
+        });
 
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
