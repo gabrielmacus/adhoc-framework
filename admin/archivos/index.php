@@ -21,11 +21,11 @@ try{
     if(is_numeric($_GET["id"]))
     {
 
-        $files= $GLOBALS["archivosDAO"]->selectRepositorioById($_GET["id"]);
+        $files= $GLOBALS["archivoDAO"]->selectRepositorioById($_GET["id"]);
     }
     else
     {
-        $files=$GLOBALS["archivosDAO"]->selectArchivos(false) ;
+        $files=$GLOBALS["archivoDAO"]->selectArchivos(false) ;
     }
 
 
