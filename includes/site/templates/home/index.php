@@ -24,28 +24,29 @@
                     <?php
 
                     $label="Nombre";
-                    $class="s12 m6 l6";
+                    $class=array("s12","m6","l6");
                     $model="titulo";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
-                    $class="s12 m6 l6";
+
+                    $class=array("s12","m6","l6");
                     $model="titulo";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
-                    $class="s12 m6 l6";
+                    $class=array("s12","m6","l6");
                     $model="titulo";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
-                    $class="s12 m6 l6";
+                    $class=array("s12","m6","l6");
                     $model="titulo";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
                     ?>
