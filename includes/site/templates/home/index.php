@@ -15,13 +15,20 @@
                     <h2>Completa con tus datos</h2>
                 </div>
             </div>
+
+
             <div class="fila">
                 <form class="player-form shadow">
 
-                    <div class="form-block s12 m6 l6">
-                        <label>Nombre</label>
-                        <input>
-                    </div>
+
+                    <?php
+
+                    $label="Nombre";
+                    $class="s12 m6 l6";
+                    include DIR_PATH."/includes/panel/templates/input/text.php";
+
+                    ?>
+
                     <div class="form-block s12 m6 l6">
                         <label>Apellido</label>
                         <input>
