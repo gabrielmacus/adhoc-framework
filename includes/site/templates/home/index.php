@@ -26,28 +26,28 @@
                     $label="Nombre";
                     $class="s12 m6 l6";
                     $model="titulo";
-                    include DIR_PATH."/includes/panel/templates/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
                     $class="s12 m6 l6";
                     $model="titulo";
-                    include DIR_PATH."/includes/panel/templates/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
                     $class="s12 m6 l6";
                     $model="titulo";
-                    include DIR_PATH."/includes/panel/templates/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
 
                     $label="Nombre";
                     $class="s12 m6 l6";
                     $model="titulo";
-                    include DIR_PATH."/includes/panel/templates/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
                     ?>
 
                     <div class="form-block ">
