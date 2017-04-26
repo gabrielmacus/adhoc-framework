@@ -27,6 +27,8 @@ try{
         $GLOBALS["archivoDAO"]->setActualPage($p);
 
         $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
+
+        var_dump($archivos);
         $site="archivos";
     }
     else
