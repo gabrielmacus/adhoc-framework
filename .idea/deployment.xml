@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" uploadOnCheckin="2acfcaf2-eaea-49e8-96d5-9d7fd24d6f2c">
+  <component name="PublishConfigData" serverName="ftp.ezyro.com">
     <serverData>
       <paths name="c0580153">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html/test" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/public_html/demo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ftp.ezyro.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="c0580153" />
   </component>
 </project>

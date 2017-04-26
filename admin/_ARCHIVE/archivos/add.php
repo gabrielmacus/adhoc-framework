@@ -26,7 +26,7 @@ try{
     
     if(!$res)
     {
-        foreach ($_POST["files"] as $file)
+        foreach ($_POST["previews"] as $file)
         {
 
             $file["tmp"]=DIR_PATH.$file["tmp"];
@@ -35,10 +35,8 @@ try{
             switch ($file["type"])
             {
                 default:
-
-
+                    
                     $a = new Archivo($file["size"],$file["name"],$file["mime"]);
-
                     $a->setTmpPath($file["tmp"]);
                     $a->setExtension($file["type"]);
                     $a->setRepositorio($rep);

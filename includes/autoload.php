@@ -87,6 +87,6 @@ foreach ($secciones as $seccion)
 
 */
 
-set_time_limit(90);//Desarrollo
+set_time_limit(30);
 
 

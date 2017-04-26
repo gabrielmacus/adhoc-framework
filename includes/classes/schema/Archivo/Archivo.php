@@ -46,8 +46,7 @@ class Archivo implements JsonSerializable
 
         $this->size = $size;
         $this->name = $name;
-        $ext = explode(".",$name);
-        $this->extension  = $ext[count($ext)-1];
+
         $this->mime = $mime;
         $this->tmpPath=$tmpPath;
         $this->creation = $creation;
@@ -55,6 +54,8 @@ class Archivo implements JsonSerializable
         $this->id = $id;
         $this->repositorio=$repositorio;
         $this->path=$path;
+        $ext = explode(".",$path);
+        $this->extension  = $ext[count($ext)-1];
         $this->version=$version;
         $this->realName=$realName;
         $this->versionName=$versionName;
@@ -230,11 +231,14 @@ class Archivo implements JsonSerializable
      */
     public function getRepositorio($getIdOnly=false)
     {
+
         if(is_numeric($this->repositorio) && !$getIdOnly) //Si es un numero, el repositorio debe ser cargado con una consulta
         {
 
-            $this->repositorio = $GLOBALS["repositorioDAO"]->selectRepositorioById($this->repositorio);
 
+            $this->repositorio =reset( $GLOBALS["repositorioDAO"]->selectRepositorioById($this->repositorio));
+
+      
         }
         elseif($getIdOnly)
         {

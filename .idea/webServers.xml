@@ -2,10 +2,18 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2acfcaf2-eaea-49e8-96d5-9d7fd24d6f2c" name="c0580153" url="http://demo.mapucheonline.com">
-        <fileTransfer host="c0580153.ferozo.com" port="21" username="ftp@c0580153.ferozo.com">
+      <webServer id="ef13e8a9-1ac3-4825-81e7-522cc342867f" name="ftp.ezyro.com" url="http://ftp.ezyro.com">
+        <fileTransfer host="ftp.ezyro.com" port="21" username="ezyro_19990472">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="2acfcaf2-eaea-49e8-96d5-9d7fd24d6f2c" name="c0580153" url="http://demo.mapucheonline.com">
+        <fileTransfer host="c0580153.ferozo.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

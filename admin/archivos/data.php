@@ -25,7 +25,7 @@ try{
     {
         case "save":
 
-            foreach ($_POST["files"] as $file)
+            foreach ($_POST["previews"] as $file)
             {
 
                 $file["tmp"]=DIR_PATH.$file["tmp"];
@@ -40,8 +40,10 @@ try{
 
                         $a->setTmpPath($file["tmp"]);
                         $a->setExtension($file["type"]);
-                        $a->setRepositorio($rep);
+                        $a->setRepositorio($_GET["rep"]);
                         $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
+
+                        echo  json_encode($res);
 
                         break;
 
@@ -57,7 +59,8 @@ try{
                         $a = new Imagen($file["size"],$file["name"],$file["mime"]);
                         $a->setTmpPath($file["tmp"]);
                         $a->setExtension($file["type"]);
-                        $a->setRepositorio($rep);
+                        $a->setRepositorio($_GET["rep"]);
+
 
                         $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
                         break;
@@ -65,6 +68,7 @@ try{
                 }
 
             }
+            echo  json_encode($res);
 
             break;
         case "upload":
@@ -83,6 +87,7 @@ try{
 
                 $ext = explode(".",$file["name"]);
                 $ext = end($ext);
+              
                 array_push($tmps,
                     array("url"=>$dest,"name"=>$file["name"],"size"=>$file["size"],"type"=>$ext,"mime"=>$file["type"],"tmp"=>$tmp));
 

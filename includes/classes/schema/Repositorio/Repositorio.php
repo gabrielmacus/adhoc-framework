@@ -196,9 +196,11 @@ class Repositorio implements JsonSerializable
 
     }
 
-    function getFtp()
+   public function getFtp()
     {
+     
         $ftp = new \FtpClient\FtpClient();
+
         $ftp=$ftp->connect($this->getHost(),false,$this->getPort());
         $ftp=$ftp->login($this->getUser(),$this->getPass());
 
