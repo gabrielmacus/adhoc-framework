@@ -150,10 +150,9 @@ class Paginable implements IPaginable
 
                 for($i=$this->getActualPage()-$this->getPadding();$i<=$this->getActualPage();$i++ )
                 {
-                    if($i>0)
-                    { $pager[]["number"]=$i;
+                     $pager[]["number"]=$i;
 
-                    }
+
 
                 }
 
