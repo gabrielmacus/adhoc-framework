@@ -79,7 +79,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
             ":repositorio_creation"=>$r->getCreation(),
             ":repositorio_modification"=>$r->getModification(),
             ":repositorio_url"=>$r->getUrl(),
-            ":repositorio_versiones"=>$r->getVersiones()
+            ":repositorio_versiones"=>json_encode($r->getVersiones())
         );
     }
 
@@ -96,7 +96,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         $data["repositorio_port"],$data["repositorio_creation"],
         $data["repositorio_modification"],$data["repositorio_id"]);
         $r->setUrl($data["repositorio_url"]);
-        $r->setVersiones($data["repositorio_versiones"]);
+        $r->setVersiones(json_decode($data["repositorio_versiones"],true));
         if(!$assoc)
         {
             array_push($this->repositorios, $r);
