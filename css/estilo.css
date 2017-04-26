@@ -669,3 +669,14 @@ body,body > section,.body
 {
     position: relative;
 }
+.vex-dialog-form
+{
+    position: relative;
+    background: white;
+    padding: 10px;
+
+}
+.vex-content
+{
+    background-color: transparent;
+}
