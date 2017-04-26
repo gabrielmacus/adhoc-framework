@@ -257,6 +257,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
         }
+        var_dump($sql);
 
 
         $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),
