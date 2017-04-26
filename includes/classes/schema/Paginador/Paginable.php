@@ -149,7 +149,7 @@ class Paginable implements IPaginable
 
 
                 for ($i=1;$i<=$actualPage+1;$i-=1)
-                {
+                {var_dump($actualPage+1);
 
                     echo "<div>data:{$i}</div>";
 
