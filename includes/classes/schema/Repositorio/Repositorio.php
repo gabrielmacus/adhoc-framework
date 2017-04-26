@@ -56,11 +56,11 @@ class Repositorio implements JsonSerializable
     {
        return array(
            "host"=>$this->getHost(),
-           "user"=>$this->getUser(),
+           "usuario"=>$this->getUser(),
            "id"=>$this->getId(),
-           "name"=>$this->getName(),
-           "path"=>$this->getPath(),
-           "port"=>$this->getPort(),
+           "nombre"=>$this->getName(),
+           "ruta"=>$this->getPath(),
+           "puerto"=>$this->getPort(),
            "creation"=>$this->getCreation(),
            "modification"=>$this->getModification(),
            "versiones"=>$this->getVersiones()
