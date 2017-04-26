@@ -196,7 +196,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function setResults($sql)
     {
 
-        parent::setResults($this->dataSource->runQuery($sql));
+        parent::setResults(count($this->dataSource->runQuery($sql)));
     }
 
     public function selectArchivoByRepositorioId($in,$process=true)
