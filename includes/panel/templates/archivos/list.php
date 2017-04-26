@@ -170,4 +170,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
     </div>
 
+    <?php
+    include DIR_PATH."/includes/panel/templates/archivos/input/paginador.php";
+    ?>
 </div>

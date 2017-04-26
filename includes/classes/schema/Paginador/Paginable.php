@@ -121,13 +121,14 @@ class Paginable implements IPaginable
             $pager =array();
 
             $pages = ceil($this->getResults() / $this->getLimit());
-            echo "<div><pre>";
+
+  /*          echo "<div><pre>";
 
             echo "Results ".($this->getResults());
             echo "Actual page".($this->getActualPage());
             echo "Total pages".($pages);
             echo "</pre></div>";
-
+*/
             if($pages>0)
             {
 
