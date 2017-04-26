@@ -149,7 +149,7 @@ class Paginable implements IPaginable
                 //paginas hacia atras
                 $actualPage= $this->getActualPage();//TODO verificar si el "+1" no rompe todo
 
-                for($i=$actualPage-$this->getPadding();$i<$actualPage;$i++ )
+                for($i=$actualPage-$this->getPadding();$i<=$actualPage;$i++ )
                 {
                     if($i>0)
                     { $pager[]["number"]=$i;
