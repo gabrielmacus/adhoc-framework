@@ -699,7 +699,7 @@ body,body > section,.body
 {
     text-align: center;
 }
-.pagination a:hover
+.pagination a:hover,.pagination a.active
 {
     background-color: #2a2a2a;
     color: white!important;
