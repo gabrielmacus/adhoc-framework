@@ -148,19 +148,12 @@ class Paginable implements IPaginable
                 /*** Páginas hacia atras **/
 
 
-                for ($i=1;$i<=$actualPage+1;$i-=1)
-                {var_dump($actualPage+1);
+                for ($i=$actualPage+1;$i>0;$i--)
+                {
 
-                    echo "<div>data:{$i}</div>";
-
-                    if($i>0)
-                    {
                         $pager[]["number"]=$i;
-                    }
-                    else
-                    {
-                        break;
-                    }
+
+
 
 
                 }
