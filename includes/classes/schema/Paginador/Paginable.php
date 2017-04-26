@@ -180,7 +180,7 @@ class Paginable implements IPaginable
                 foreach($pager as $k=>$v)
                 {
 
-                    if($v["number"]==$actualPage)
+                    if($v["number"]==($actualPage+1))
                     {
                         $pager[$k]["class"]="active";
                     }
