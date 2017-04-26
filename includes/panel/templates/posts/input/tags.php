@@ -10,7 +10,7 @@
 
     var <?php echo $id?>= new Taggle('<?php echo $id?>', {
                 duplicateTagClass: 'bounce',
-                placeholder:<?php echo $placeholder?>,
+                placeholder:"<?php echo $placeholder?>",
             onTagAdd: function(event, tag) {
 
                 scope.post.<?php echo $model?>= <?php echo $id?>.getTags().values;
