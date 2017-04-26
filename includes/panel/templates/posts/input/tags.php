@@ -21,6 +21,6 @@
     </script>
     -->
     <label><?php echo $label;?></label>
-    <tags-input data-placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>"></tags-input>
+    <tags-input data-min-tags="<?php echo $min?>"  data-max-tags="<?php echo $max?>" data-placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>"></tags-input>
 
 </div>
