@@ -27,7 +27,7 @@
                 (
                     {
                         method:"post",
-                        url:"<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=save&rep={$_GET["id"]}"?>",
+                        url:"<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=save&rep={$_GET["rep"]}"?>",
                         data:{previews:angular.copy(scope.previews)},
                         dataType:"json",
                         success:function (e) {
