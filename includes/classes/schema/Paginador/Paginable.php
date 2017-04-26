@@ -133,7 +133,7 @@ class Paginable implements IPaginable
 
 
 
-                if($this->getActualPage()>$pages)
+            if($this->getActualPage()>=$pages)
             {
 
                 $_GET["p"]=$pages;
