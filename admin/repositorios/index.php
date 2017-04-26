@@ -18,6 +18,23 @@ try{
 
 
 
+    if(is_numeric($_GET["id"]))
+    {
+
+       $p =is_numeric( $_GET["p"])?$_GET["p"]: 0;
+
+        $GLOBALS["archivoDAO"]->setLimit(3);
+        $GLOBALS["archivoDAO"]->setActualPage($p);
+
+        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
+
+        $site="archivos";
+    }
+    else
+    {    $site="repositorios";
+        $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
+    }
+
 
 
     $action="list";
