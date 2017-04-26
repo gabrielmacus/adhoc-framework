@@ -252,7 +252,6 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $sql = "DELETE FROM {$this->tableName} WHERE repositorio_id= :repositorio_id";
 
-        var_dump($sql);
 
         $res= $this->dataSource->runUpdate($sql,
             array(

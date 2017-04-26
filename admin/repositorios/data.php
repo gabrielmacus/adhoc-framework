@@ -62,8 +62,7 @@ try{
 catch (Exception $e)
 {
 
-    var_dump("AD");
-    
+
     echo "Error: {$e->getMessage()}";
 
 }
