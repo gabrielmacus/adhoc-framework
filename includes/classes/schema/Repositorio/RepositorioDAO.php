@@ -245,7 +245,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         foreach ($archivos as $archivo)
         {
-
+            var_dump($archivo);
            $GLOBALS["archivoDAO"]->deleteArchivoById($archivo->getId());
         }
 
