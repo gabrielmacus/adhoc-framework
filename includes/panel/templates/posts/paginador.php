@@ -1,6 +1,6 @@
 
 <?php
-$actualPage=$paginador->getActualPage();
+$actualPage=$paginador->getActualPage()+1;
 $paginador=$paginador->getPaginador();
 ?>
 <script>
