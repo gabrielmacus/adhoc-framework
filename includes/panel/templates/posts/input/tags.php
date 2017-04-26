@@ -2,11 +2,17 @@
     <div class="tags" id="<?php echo $id?>"></div>
 
     <script>
-        $(document).ready(function () {
 
-            new Taggle('<?php echo $id?>', {
-                tags: ['Try', 'entering', 'one', 'of', 'these', 'tags'],
-                duplicateTagClass: 'bounce'
+        angular.element(function () {
+
+
+    var <?php echo $id?>= new Taggle('<?php echo $id?>', {
+                duplicateTagClass: 'bounce',
+            onTagAdd: function(event, tag) {
+
+                scope.<?php echo $model?>= this.getTags();
+                scope.$apply();
+            }
             });
         });
     </script>

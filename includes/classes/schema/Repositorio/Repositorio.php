@@ -20,6 +20,7 @@ class Repositorio implements JsonSerializable
     protected $modification;
     protected $files =array();
     protected $url;
+    protected $versiones;
     public function __construct($host, $user, $pass,  $name, $path,$port=21, $creation=false,$modification=false,$id=false)
     {
         $this->host = $host;
@@ -33,6 +34,24 @@ class Repositorio implements JsonSerializable
         $this->modification = $modification;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getVersiones()
+    {
+        return $this->versiones;
+    }
+
+    /**
+     * @param mixed $versiones
+     */
+    public function setVersiones($versiones)
+    {
+        $this->versiones = $versiones;
+    }
+
+
+
     function jsonSerialize()
     {
        return array(
@@ -43,7 +62,8 @@ class Repositorio implements JsonSerializable
            "path"=>$this->getPath(),
            "port"=>$this->getPort(),
            "creation"=>$this->getCreation(),
-           "modification"=>$this->getModification()
+           "modification"=>$this->getModification(),
+           "versiones"=>$this->getVersiones()
        );
     }
 
