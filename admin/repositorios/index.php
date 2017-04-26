@@ -16,7 +16,7 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-var_dump("DATA");
+
 /*
     if(is_numeric($_GET["id"]))
     {
