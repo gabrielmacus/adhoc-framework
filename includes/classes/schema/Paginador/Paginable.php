@@ -214,17 +214,18 @@ class Paginable implements IPaginable
                 foreach($pager as $k=>$v)
                 {
 
+                    if($actualPage==0)
+                    {
+                        $pager[$k]["class"].=" first";
+                    }
+                    if($actualPage==$pages-1)
+                    {
+                        $pager[$k]["class"].=" last";
+                    }
                     if($v["number"]==($actualPage+1))
                     {
                         $pager[$k]["class"]="active";
-                        if($actualPage==0)
-                        {
-                            $pager[$k]["class"].=" first";
-                        }
-                        if($actualPage==$pages-1)
-                        {
-                            $pager[$k]["class"].=" last";
-                        }
+
                     }
                 }
 
