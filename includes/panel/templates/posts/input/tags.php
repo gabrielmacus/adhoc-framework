@@ -8,7 +8,7 @@
         angular.element(function () {
 
 
-    var <?php echo $id?>= new Taggle('<?php echo $id?>', {
+     scope.<?php echo $id?>= new Taggle('<?php echo $id?>', {
                 duplicateTagClass: 'bounce',
                 placeholder:"<?php echo $placeholder?>",
             onTagAdd: function(event, tag) {
