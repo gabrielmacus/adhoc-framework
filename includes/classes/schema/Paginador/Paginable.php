@@ -15,10 +15,28 @@ class Paginable implements IPaginable
     protected $limit;
     protected $padding;
     protected $redirect;
+    protected $pages;
     function __construct()
     {
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPages()
+    {
+        return $this->pages;
+    }
+
+    /**
+     * @param mixed $pages
+     */
+    public function setPages($pages)
+    {
+        $this->pages = $pages;
+    }
+
+    
     function getOffset()
     {
         return $this->getActualPage()*$this->getLimit();
@@ -122,6 +140,7 @@ class Paginable implements IPaginable
 
             $pages = ceil($this->getResults() / $this->getLimit());
 
+            $this->setPages($pages);
   /*          echo "<div><pre>";
 
             echo "Results ".($this->getResults());
