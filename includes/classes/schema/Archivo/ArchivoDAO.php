@@ -12,7 +12,6 @@ require_once ("IArchivo.php");
 require_once ("Archivo.php");
 
 
-
 class ArchivoDAO extends Paginable implements IArchivo
 {
 
@@ -160,6 +159,10 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql = "SELECT * FROM {$this->tableName} LEFT JOIN
  repositorios ON repositorio_id=archivo_repositorio";
 
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+        }
 
 
 

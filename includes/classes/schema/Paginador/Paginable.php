@@ -6,6 +6,7 @@
  * Date: 25/04/2017
  * Time: 21:19
  */
+require_once "IPaginable.php";
 class Paginable implements IPaginable
 {
 
