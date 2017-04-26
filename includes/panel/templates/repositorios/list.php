@@ -13,7 +13,9 @@
         {
             ?>
         scope.post = <?php echo json_encode(reset($repositorio))?>;
-        console.log( scope.tags1);<?php
+        console.log( scope.tags1);
+        $("#tags1").val();
+        <?php
 
         }?>
 
