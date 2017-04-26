@@ -147,8 +147,9 @@ class Paginable implements IPaginable
 
 
                 //paginas hacia atras
+                $actualPage= $this->getActualPage()+1;
 
-                for($i=$this->getActualPage()-$this->getPadding();$i<=$this->getActualPage();$i++ )
+                for($i=$actualPage-$this->getPadding();$i<=$actualPage;$i++ )
                 {
                     if($i>0)
                     { $pager[]["number"]=$i;
