@@ -13,6 +13,7 @@
         {
             ?>
         scope.post = <?php echo json_encode(reset($repositorio))?>;<?php
+          console.log( scope.tags1);
         }?>
 
         scope.$apply();
