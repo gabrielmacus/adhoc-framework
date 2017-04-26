@@ -115,8 +115,9 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
 
                 foreach ($grupo as $versiones) {
-                    var_dump($versiones);
+
                     $version= reset($versiones);
+                    var_dump($version);
                     $ext =$version->getExtension();
 
 
