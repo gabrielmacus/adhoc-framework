@@ -683,9 +683,12 @@ body,body > section,.body
 
 .pagination {
     display: inline-block;
+    font-size: 25px;
+    margin-top: 10px;
 }
 
 .pagination a {
+    border: rgba(213, 226, 212, 1) 1px solid;
     color: black;
     float: left;
     padding: 8px 16px;
