@@ -40,7 +40,7 @@ try{
         case "delete":
             if(!is_numeric($_GET["id"]))
             {
-                $GLOBALS["repositorioDAO"]->deleteRepositorioById($_GET["id"]);
+                echo json_encode($GLOBALS["repositorioDAO"]->deleteRepositorioById($_GET["id"]));
             }
             else
             {
