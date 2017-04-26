@@ -107,8 +107,11 @@ class Paginable implements IPaginable
             if($pages>0)
             {
 
+                echo "<div><pre>";
                 var_dump($this->getActualPage());
                 var_dump($pages);
+               echo "</pre></div>";
+
                 if($this->getActualPage()>$pages)
             {
 
