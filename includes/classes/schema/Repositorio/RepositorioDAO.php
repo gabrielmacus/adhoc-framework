@@ -243,8 +243,6 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $archivos=  $GLOBALS["archivoDAO"]->selectArchivoOriginalByRepositorioId($id);
 
-var_dump($archivos);
-
         foreach ($archivos as $archivo)
         {
 
@@ -253,6 +251,8 @@ var_dump($archivos);
 
 
         $sql = "DELETE FROM {$this->tableName} WHERE repositorio_id= :repositorio_id";
+
+        var_dump($sql);
 
         $res= $this->dataSource->runUpdate($sql,
             array(
