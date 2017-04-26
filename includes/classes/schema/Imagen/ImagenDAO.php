@@ -48,6 +48,8 @@ class ImagenDAO extends ArchivoDAO
       $version = explode("x",$version[1]);
       $arr["ancho"]=$version[0];
       $arr["alto"]=$version[1];
+      echo json_encode($arr);
+      exit();
       $resoluciones[]=$arr;
   }
 
