@@ -1,5 +1,5 @@
 <div class="form-block">
-    <div id="<?php echo $id?>"></div>
+    <div class="tags" id="<?php echo $id?>"></div>
 
     <script>
         $(document).ready(function () {

@@ -516,7 +516,11 @@ form
     width: 100%;
     padding: 10px;
 }
-.form-block input,select
+.form-block .tags
+{background-color: white;
+
+}
+.form-block input,select,.tags
 {
    width: 100%;
     float: left;
