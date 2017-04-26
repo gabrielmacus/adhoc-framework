@@ -132,7 +132,7 @@
             <div class="content">
 
                 <div class="peso">
-                    2000 mb
+                    {{r.url}}
                 </div>
 
                 <a href="<?php echo $configuracion->getSiteAddress()."/admin/archivos/?rep=";?>{{r.id}}" class="archivos">
