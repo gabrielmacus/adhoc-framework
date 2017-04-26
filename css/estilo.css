@@ -517,7 +517,7 @@ form
     padding: 10px;
 }
 .form-block .tags
-{background-color: white;
+{background-color: white;position: relative;
 
 }
 .form-block .taggle .close
