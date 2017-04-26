@@ -1,7 +1,18 @@
 
+<script>
+    $(document).ready(
+        function () {
+
+
+            $(".pagination .first").siblings(".prev").hide();
+            $(".pagination .last").siblings(".next").hide();
+        }
+    );
+</script>
+
 <div class="fila center">
     <div class="pagination">
-        <a class="animated nav" href="#">&laquo;</a>
+        <a class="animated prev" href="#">&laquo;</a>
         <?php
         unset($_GET["p"]);
         $qs=http_build_query($_GET);
@@ -11,6 +22,6 @@
             <a class="animated <?php echo $p["class"]?>" href="?<?php  echo $qs."&p=".$p["number"]?>"><?php echo $p["number"] ?></a>
             <?php
         }?>
-        <a class="animated nav" href="#">&raquo;</a>
+        <a class="animated last" href="#">&raquo;</a>
     </div>
 </div>
