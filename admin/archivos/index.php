@@ -20,10 +20,10 @@ try{
 
     $GLOBALS["archivoDAO"]->setLimit(3);
     $GLOBALS["archivoDAO"]->setPadding(2);
-    $GLOBALS["archivoDAO"]->setActualPage($p-1);
+    $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,["original"]);
-    
+
 
     $site="archivos";
     $action="list";
