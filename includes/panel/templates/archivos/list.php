@@ -1,7 +1,4 @@
-<?php
 
-
-var_dump($archivo);?>
 <header>
     <h2 class="title">Archivos en el repositorio</h2>
 </header>
