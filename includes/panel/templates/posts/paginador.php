@@ -1,3 +1,7 @@
+<?php
+if(count($paginador)>1)
+{
+?>
 <div class="fila center">
     <div class="pagination">
         <a class="animated" href="#">&laquo;</a>
@@ -10,3 +14,4 @@
         <a class="animated" href="#">&raquo;</a>
     </div>
 </div>
+<?php }?>
