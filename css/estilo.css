@@ -522,9 +522,7 @@ form
 
     text-overflow: ellipsis;
 
-}
-.form-block .tags
-{
+
     overflow: hidden;
 }
 .form-block .taggle .close
