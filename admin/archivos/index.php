@@ -24,7 +24,7 @@ try{
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel]);
-    $paginador=$GLOBALS["archivoDAO"]->getPaginador();
+    $paginador=$GLOBALS["archivoDAO"];
 
 
     $site="archivos";

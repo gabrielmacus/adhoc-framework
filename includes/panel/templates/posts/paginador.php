@@ -1,4 +1,8 @@
 
+<?php
+$actualPage=$paginador->getActualPage();
+$paginador=$paginador->getPaginador();
+?>
 <script>
     $(document).ready(
         function () {
@@ -12,7 +16,7 @@
 
 <div class="fila center">
     <div class="pagination">
-        <a class="animated prev"  href="?<?php  echo $qs."&p=".($paginador[0]["number"]-1)?>">&laquo;</a>
+        <a class="animated prev"  href="?<?php   $qs=http_build_query($_GET);  echo $qs."&p=".($paginador[0]["number"]-1)?>">&laquo;</a>
         <?php
         unset($_GET["p"]);
         $qs=http_build_query($_GET);
