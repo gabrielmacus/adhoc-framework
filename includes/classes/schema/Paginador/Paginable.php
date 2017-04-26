@@ -159,8 +159,8 @@ class Paginable implements IPaginable
                     }
 
 
-
                 }
+                $pager = array_reverse($pager);
 
 
                 /** Paginas hacia adelante **/
