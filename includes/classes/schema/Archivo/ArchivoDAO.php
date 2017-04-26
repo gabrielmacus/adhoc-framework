@@ -238,6 +238,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->dataSource->runQuery($sql,array(),
             function($data){
 
+                var_dump($data);
+
 
                 $this->query($data);
             });
@@ -250,7 +252,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         }
 
-        var_dump($this->files);
+
         return $this->files;
 
     }
