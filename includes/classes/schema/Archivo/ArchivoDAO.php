@@ -200,7 +200,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
-        var_dump($sql);
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+        }
+
 
         $this->dataSource->runQuery($sql,array(),
             function($data){
@@ -253,7 +257,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
         }
-        var_dump($sql);
 
 
         $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),
