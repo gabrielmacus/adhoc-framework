@@ -144,7 +144,7 @@ class Paginable implements IPaginable
                 exit();
 
             }
-
+                $actualPage =$this->getActualPage();
                 /*** Páginas hacia atras **/
 
                 for ($i=1;$i<=$this->getPadding()+1;$i++)
@@ -158,7 +158,7 @@ class Paginable implements IPaginable
 
                 }
                 /** Paginas hacia adelante **/
-                $actualPage =$this->getActualPage();
+
 
                 for ($i=1;$i<=$this->getPadding()+1;$i++)
                 {
