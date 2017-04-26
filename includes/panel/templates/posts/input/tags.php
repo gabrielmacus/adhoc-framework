@@ -21,6 +21,6 @@
     </script>
     -->
     <label><?php echo $label;?></label>
-    <tags-input data-ng-model="post.<?php echo $model?>"></tags-input>
+    <tags-input data-placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>"></tags-input>
 
 </div>
