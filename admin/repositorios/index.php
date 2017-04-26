@@ -21,9 +21,9 @@ try{
     if(is_numeric($_GET["id"]))
     {
         $versionPanel="original";
-       $p =is_numeric( $_GET["p"])?$_GET["p"]: 0;
+       $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
-        $GLOBALS["archivoDAO"]->setLimit(4);
+        $GLOBALS["archivoDAO"]->setLimit(3);
         $GLOBALS["archivoDAO"]->setActualPage($p);
 
         $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
