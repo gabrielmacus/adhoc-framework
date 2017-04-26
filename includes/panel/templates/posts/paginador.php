@@ -4,7 +4,7 @@
         <a class="animated" href="#">&laquo;</a>
         <?php
         unset($_GET["p"]);
-        $qs=http_build_query($_GET);var_dump($qs);
+        $qs=http_build_query($_GET);
         foreach ($paginador as $p)
         {
             ?>
