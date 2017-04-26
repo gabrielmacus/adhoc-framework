@@ -193,13 +193,20 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
     }
+    public function setResults($sql)
+    {
 
+        parent::setResults($this->dataSource->runQuery($sql));
+    }
 
     public function selectArchivoByRepositorioId($in,$process=true)
     {
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+
+        $this->setResults($sql);
+
         if($this->getLimit())
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
@@ -213,7 +220,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $this->query($data);
             });
 
-        $this->setResults(count($this->files));
+
         if($process)
         {
 
