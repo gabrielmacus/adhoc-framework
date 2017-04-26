@@ -150,11 +150,11 @@ class Paginable implements IPaginable
                 $control=0;
 
                 for ($i=$actualPage;$i>0;$i--)
-                {
+                {   var_dump($i);
                    $control++;
                     if($control<=$this->getPadding())
                     {
-                        var_dump($i);
+
                         $pager[]["number"]=$i;
                     }
                     else
