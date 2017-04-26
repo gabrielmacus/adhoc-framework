@@ -36,7 +36,11 @@
                                 data:angular.copy(scope.post),
                                 dataType:"json",
                                 success:function (e) {
-                                    console.log(e);
+
+                                    if(e)
+                                    {
+                                        location.reload();
+                                    }
                                 },
                                 error:function (e) {
 
