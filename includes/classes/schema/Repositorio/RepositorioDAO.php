@@ -91,7 +91,6 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
     private function query($data,$assoc=false)
     {
 
-        var_dump($data);
         $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],
         $data["repositorio_pass"],$data["repositorio_name"], $data["repositorio_path"],
         $data["repositorio_port"],$data["repositorio_creation"],
