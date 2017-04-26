@@ -124,11 +124,11 @@
     <ul class="list" style="margin-top: 10px;">
 
         <li class="item" data-ng-repeat="(k,r) in repositorios">
-            <a class="animated" style="position: relative">
+            <div class="animated" style="position: relative">
                 <span class="name">{{r.nombre}}</span>
                 <a  class="icon animated" href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>{{r.id}}"><i class="fa fa-pencil  " aria-hidden="true"></i></a>
                 <a class="icon animated"><i class="fa fa-trash-o icon animated" aria-hidden="true"></i></a>
-            </a>
+            </div>
             <div class="content">
 
                 <div class="peso">

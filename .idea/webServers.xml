@@ -3,9 +3,9 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="2acfcaf2-eaea-49e8-96d5-9d7fd24d6f2c" name="c0580153" url="http://demo.mapucheonline.com">
-        <fileTransfer host="c0580153.ferozo.com" port="21">
+        <fileTransfer host="c0580153.ferozo.com" port="21" username="c0580153">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>
