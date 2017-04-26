@@ -10,7 +10,7 @@
                 duplicateTagClass: 'bounce',
             onTagAdd: function(event, tag) {
 
-                scope.<?php echo $model?>= <?php echo $id?>.getTags().values;
+                scope.post.<?php echo $model?>= <?php echo $id?>.getTags().values;
                 scope.$apply();
             }
             });
