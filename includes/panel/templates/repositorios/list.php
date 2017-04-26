@@ -12,8 +12,9 @@
         }else
         {
             ?>
-        scope.post = <?php echo json_encode(reset($repositorio))?>;<?php
-          console.log( scope.tags1);
+        scope.post = <?php echo json_encode(reset($repositorio))?>;
+        console.log( scope.tags1);<?php
+
         }?>
 
         scope.$apply();
