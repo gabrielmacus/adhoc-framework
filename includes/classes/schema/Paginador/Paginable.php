@@ -149,9 +149,11 @@ class Paginable implements IPaginable
 
                 $control=0;
 
+
+
                 for ($i=$actualPage;$i>0;$i--)
                 {
-                    var_dump($i);
+
                    $control++;
                     if($control<=$this->getPadding())
                     {
@@ -177,6 +179,7 @@ class Paginable implements IPaginable
                     if($n<=$pages)
                     {
                         $pager[]["number"]=$n;
+
                     }
 
 
@@ -214,6 +217,14 @@ class Paginable implements IPaginable
                     if($v["number"]==($actualPage+1))
                     {
                         $pager[$k]["class"]="active";
+                        if($actualPage==0)
+                        {
+                            $pager[$k]["class"].=" first";
+                        }
+                        if($actualPage==$pages-1)
+                        {
+                            $pager[$k]["class"].=" last";
+                        }
                     }
                 }
 
