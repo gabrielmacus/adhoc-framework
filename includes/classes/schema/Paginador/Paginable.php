@@ -214,9 +214,9 @@ class Paginable implements IPaginable
                 foreach($pager as $k=>$v)
                 {
 
-                    if($actualPage==0)
+                    if($k==0)
                     {
-                        $pager[$k]["class"]=" first";
+                        $pager[$k]["class"].=" first";
                     }
                     if($actualPage==$pages-1)
                     {
