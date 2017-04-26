@@ -154,6 +154,7 @@ class Paginable implements IPaginable
                    $control++;
                     if($control<=$this->getPadding())
                     {
+                        var_dump($i);
                         $pager[]["number"]=$i;
                     }
                     else
