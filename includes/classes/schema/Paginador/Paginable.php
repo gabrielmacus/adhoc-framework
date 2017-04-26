@@ -216,7 +216,7 @@ class Paginable implements IPaginable
 
                     if($actualPage==0)
                     {
-                        $pager[$k]["class"].=" first";
+                        $pager[$k]["class"]=" first";
                     }
                     if($actualPage==$pages-1)
                     {
