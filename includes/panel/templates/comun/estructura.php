@@ -24,8 +24,14 @@
     app.controller('panelCtrl', function($scope,$timeout) {
         
         vex.defaultOptions.className = 'vex-theme-plain';
-        
-        vex.dialog.alert('Thanks for checking out vex!');
+
+        vex.dialog.confirm({
+            message: 'Are you absolutely sure you want to destroy the alien planet?',
+            callback: function (value) {
+                console.log(value)
+            }
+        })
+
         
         scope=$scope;
         timeout=$timeout;

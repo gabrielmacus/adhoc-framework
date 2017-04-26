@@ -678,5 +678,5 @@ body,body > section,.body
 }
 .vex-content
 {
-    background-color: transparent;
+    background-color: transparent!important;
 }
