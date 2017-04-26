@@ -20,8 +20,6 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-
-
         $files= $GLOBALS["archivoDAO"]->selectRepositorioById($_GET["id"]);
     }
     else
