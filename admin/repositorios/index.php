@@ -18,16 +18,6 @@ try{
 
 
 
-    if(is_numeric($_GET["id"]))
-    {
-
-        $site="archivos";
-    }
-    else
-    {    $site="repositorios";
-        $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
-    }
-
 
 
     $action="list";
