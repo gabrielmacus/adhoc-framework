@@ -202,7 +202,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     /**
      * @param $in Especifico los ids de los repositorios de los archivos que quiero traer
      * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
-     * @param bool $version Version/es (id) de los archivos que quiero traer
+     * @param bool $version Version/es  de los archivos que quiero traer
      * @return array
      * @throws Exception
      */
@@ -213,9 +213,18 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
 
 
-        var_dump($version);
-        if($version){
-            $sql.=" AND archivo_version_name IN ({$version})";
+        if(is_array($version)){
+
+            $v ="";
+
+            foreach ($version as $version)
+            {
+                $v.="'{$version}',";
+            }
+
+            $v =rtrim($v,",");
+
+            $sql.=" AND archivo_version_name IN ({$v})";
         }
         var_dump($sql);
         $this->setResults($sql);
