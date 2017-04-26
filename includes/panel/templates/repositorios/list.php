@@ -12,7 +12,7 @@
         }else
         {
             ?>
-        scope.post = <?php echo json_encode($repositorio)?>;<?php
+        scope.post = <?php echo json_encode(reset($repositorio))?>;<?php
         }?>
 
         scope.$apply();
