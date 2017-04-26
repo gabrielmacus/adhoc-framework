@@ -144,11 +144,9 @@ class Paginable implements IPaginable
                 exit();
 
             }
-
-
+                
                 //paginas hacia atras
 
-                var_dump($this->getPadding());
                 for($i=$this->getActualPage()-$this->getPadding();$i<=$this->getActualPage();$i++ )
                 {
                     if($i>0)
