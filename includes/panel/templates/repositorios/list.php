@@ -114,6 +114,8 @@
 
 
         ?>
+        <tags-input ng-model="tags"></tags-input>
+
     </form>
 
 
