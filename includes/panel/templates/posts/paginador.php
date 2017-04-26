@@ -1,13 +1,11 @@
-<div class="paginacion">
-    <a><span></span></a>
-    <a><span>1</span></a>
 
-    <a><span>2</span></a>
-    <a><span>3</span></a>
-    <a><span>4</span></a>
-
-    <a><span>6</span></a>
-
-
-
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
 </div>

@@ -681,17 +681,13 @@ body,body > section,.body
     background-color: transparent!important;
 }
 
-.paginacion
-{
-    display: -webkit-flex; /* Safari */
-    -webkit-justify-content: space-around; /* Safari 6.1+ */
-    display: flex;
-    justify-content: space-around;
-    width:100%;
-    background-color:white;
+.pagination {
+    display: inline-block;
 }
-.paginacion a
-{
-    padding:10px;
-    font-size:25px;
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
 }
