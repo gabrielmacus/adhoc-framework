@@ -18,9 +18,6 @@ try{
 
 
 
-
-
-/*
     if(is_numeric($_GET["id"]))
     {
 
@@ -39,7 +36,7 @@ try{
     }
 
     $action="list";
-*/
+
 
 $site="home";
 $action="index";
