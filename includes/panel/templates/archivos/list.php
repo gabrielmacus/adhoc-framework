@@ -83,6 +83,7 @@
 
 $label="Archivos";
 $id="archivos1";
+            $multiple=true;
             $progressBar=".load-mask";
 include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
