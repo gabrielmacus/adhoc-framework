@@ -2,6 +2,8 @@
 <?php
 $actualPage=$paginador->getActualPage()+1;
 $paginador=$paginador->getPaginador();
+
+var_dump($actualPage);
 ?>
 <script>
     $(document).ready(
