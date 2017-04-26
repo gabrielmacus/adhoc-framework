@@ -689,7 +689,7 @@ body,body > section,.body
 
 .pagination a {
     border: rgba(199, 206, 195, 1) 1px solid;
-    background-color: rgba(216, 223, 212, 1);
+    background-color: buttonface;
     color: black;
     float: left;
     padding: 8px 16px;
