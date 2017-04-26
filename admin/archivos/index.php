@@ -22,7 +22,7 @@ try{
     $GLOBALS["archivoDAO"]->setLimit(2);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"]);
 
     $site="archivos";
     $action="list";

@@ -117,7 +117,7 @@
                     2000 mb
                 </div>
 
-                <a href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id=";?>{{r.id}}" class="archivos">
+                <a href="<?php echo $configuracion->getSiteAddress()."/admin/archivos/?rep=";?>{{r.id}}" class="archivos">
 
                     Ver archivos
                     <span class="mask animated"><i class="fa fa-file" aria-hidden="true"></i></span>
