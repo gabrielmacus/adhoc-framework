@@ -22,8 +22,11 @@
     var scope;
     var timeout;
     app.controller('panelCtrl', function($scope,$timeout) {
+        
         vex.defaultOptions.className = 'vex-theme-default';
+        
         vex.dialog.alert('Thanks for checking out vex!');
+        
         scope=$scope;
         timeout=$timeout;
     });
