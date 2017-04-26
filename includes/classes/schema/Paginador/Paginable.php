@@ -148,9 +148,10 @@ class Paginable implements IPaginable
                 /*** Páginas hacia atras **/
 
                 $control=0;
-                var_dump("ASDDAS");
+
                 for ($i=$actualPage;$i>0;$i--)
                 {
+                    var_dump($i);
                    $control++;
                     if($control<=$this->getPadding())
                     {
