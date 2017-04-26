@@ -34,10 +34,13 @@ try{
     {    $site="repositorios";
         $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
     }
+
+    $action="list";
 */
 
-    $site="repositorios";
-    $action="list";
+$site="home";
+$action="index";
+
 
 }
 catch (Exception $e)
