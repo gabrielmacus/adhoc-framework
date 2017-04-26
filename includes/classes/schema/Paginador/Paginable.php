@@ -224,7 +224,7 @@ class Paginable implements IPaginable
                     }
                     if($v["number"]==($actualPage+1))
                     {
-                        $pager[$k]["class"]="active";
+                        $pager[$k]["class"].=" active";
 
                     }
                 }
