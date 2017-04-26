@@ -16,10 +16,12 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-
+      $p= is_numeric($_GET["p"])?$_GET["p"]:0;
 
     if(is_numeric($_GET["id"]))
     {
+        $GLOBALS["archivoDAO"]->setLimit(2);
+        $GLOBALS["archivoDAO"]->setActualPage($p);
 
         $files= $GLOBALS["archivoDAO"]->selectRepositorioById($_GET["id"]);
     }
