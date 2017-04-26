@@ -103,7 +103,7 @@ class Paginable implements IPaginable
             $pages = ceil($this->getResults() / $this->getLimit());
 
 
-            var_dump($pages);
+            var_dump($this->getResults());
             if($pages>0)
             {
 
