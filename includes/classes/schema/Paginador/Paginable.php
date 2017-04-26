@@ -37,6 +37,10 @@ class Paginable implements IPaginable
      */
     public function setActualPage($actualPage)
     {
+        if($actualPage>0)
+        {
+            $actualPage=$actualPage-1;
+        }
         $this->actualPage = $actualPage;
     }
 
