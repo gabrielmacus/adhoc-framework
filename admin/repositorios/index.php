@@ -21,7 +21,7 @@ try{
     if(is_numeric($_GET["id"]))
     {
         $versionPanel="original";
-       $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
+       $p =is_numeric( $_GET["p"])?$_GET["p"]: 2;
 
         $GLOBALS["archivoDAO"]->setLimit(3);
         $GLOBALS["archivoDAO"]->setActualPage($p);
