@@ -151,7 +151,7 @@ class Paginable implements IPaginable
                 for ($i=1;$i<=$actualPage+1;$i--)
                 {
 
-                    echo "<div>data:{$id}</div>";
+                    echo "<div>data:{$i}</div>";
 
                     if($i>0)
                     {
