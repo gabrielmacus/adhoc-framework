@@ -25,12 +25,6 @@
         
         vex.defaultOptions.className = 'vex-theme-plain';
 
-        vex.dialog.confirm({
-            message: 'Are you absolutely sure you want to destroy the alien planet?',
-            callback: function (value) {
-                console.log(value)
-            }
-        })
 
         
         scope=$scope;

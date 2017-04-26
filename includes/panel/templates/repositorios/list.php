@@ -21,6 +21,34 @@
 
         }?>
 
+        scope.delete=function (id) {
+
+            vex.dialog.confirm({
+                message: '¿Esta seguro que desea eliminar el repositorio?',
+                callback: function (value) {
+                    if(value)
+                    {
+                        $.ajax
+                        (
+                            {
+                                method:"get",
+                                url:"<?php echo $configuracion->getSiteAddress()."/admin/repositorios/data.php?act=delete&id="?>"+id,
+                                data:angular.copy(scope.post),
+                                dataType:"json",
+                                success:function (e) {
+                                    console.log(e);
+                                },
+                                error:function (e) {
+
+                                    console.log(e);
+                                }
+                            }
+                        );
+
+                    }
+                }
+            })
+        }
         scope.$apply();
         scope.save=function () {
             console.log(scope.post);
@@ -127,7 +155,7 @@
             <div class="animated" style="position: relative">
                 <span class="name">{{r.nombre}}</span>
                 <a  class="icon animated" href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>{{r.id}}"><i class="fa fa-pencil  " aria-hidden="true"></i></a>
-                <a    class="icon animated"><i class="fa fa-trash-o icon animated" aria-hidden="true"></i></a>
+                <a data-ng-click="delete(r.id)"  class="icon animated"><i class="fa fa-trash-o icon animated" aria-hidden="true"></i></a>
             </div>
             <div class="content">
 
