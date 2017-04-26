@@ -236,6 +236,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in}) AND archivo_version_name='original'";
 
+        $this->setResults($sql);
+
         if($this->getLimit())
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
@@ -263,6 +265,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id OR archivo_version=:archivo_id";
+        $this->setResults($sql);
+
         if($this->getLimit())
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
