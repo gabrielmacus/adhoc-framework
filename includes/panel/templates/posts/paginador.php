@@ -18,7 +18,13 @@ $pg=$paginador->getPaginador();
 
 <div class="fila center">
     <div class="pagination">
-        <a class="animated prev"  href="?<?php   $qs=http_build_query($_GET);  echo $qs."&p=".($actualPage-1)?>">&laquo;</a>
+        <?php if($actualPage>1)
+        {
+            ?>
+            <a class="animated prev"  href="?<?php   $qs=http_build_query($_GET);  echo $qs."&p=".($actualPage-1)?>">&laquo;</a>
+            <?php
+        }
+        ?>
         <?php
         unset($_GET["p"]);
         $qs=http_build_query($_GET);
