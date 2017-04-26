@@ -13,7 +13,7 @@ require_once ("Archivo.php");
 
 
 
-class ArchivoDAO implements IArchivo
+class ArchivoDAO extends Paginable implements IArchivo
 {
 
     private $updateSql;
@@ -47,6 +47,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->deleteSql="DELETE FROM {$this->tableName} WHERE archivo_id= :archivo_id OR archivo_version= :archivo_id";
 
     }
+
+
 
 
     private function processArchivos()
@@ -155,10 +157,19 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     {
         $this->files=array();
 
-        $sql = "SELECT * FROM {$this->tableName} LEFT JOIN repositorios ON repositorio_id=archivo_repositorio";
+
+
+        $sql = "SELECT * FROM {$this->tableName} LEFT JOIN
+ repositorios ON repositorio_id=archivo_repositorio";
+
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+        }
+
+
 
         $this->dataSource->runQuery($sql,array(),function($data){
-
 
 
             $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],

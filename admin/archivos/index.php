@@ -39,3 +39,4 @@ catch (Exception $e)
 }
 
 include DIR_PATH."/includes/panel/templates/comun/estructura.php";
+

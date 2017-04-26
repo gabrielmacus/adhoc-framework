@@ -1,0 +1,168 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Puers
+ * Date: 25/04/2017
+ * Time: 21:19
+ */
+class Paginable implements IPaginable
+{
+
+    protected $actualPage;
+    protected $results;
+    protected $limit;
+    protected $padding;
+
+    function __construct()
+    {
+    }
+
+    function getOffset()
+    {
+        return $this->getActualPage()*$this->getLimit();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActualPage()
+    {
+        return $this->actualPage;
+    }
+
+    /**
+     * @param mixed $actualPage
+     */
+    public function setActualPage($actualPage)
+    {
+        $this->actualPage = $actualPage;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getResults()
+    {
+        return $this->results;
+    }
+
+    /**
+     * @param mixed $results
+     */
+    public function setResults($results)
+    {
+        $this->results = $results;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * @param mixed $limit
+     */
+    public function setLimit($limit)
+    {
+        $this->limit = $limit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPadding()
+    {
+        return $this->padding;
+    }
+
+    /**
+     * @param mixed $padding
+     */
+    public function setPadding($padding)
+    {
+        $this->padding = $padding;
+    }
+
+
+
+    function getPaginador()
+    {
+
+
+        if($this->getLimit())
+        {
+            $pager =array();
+
+            $pages = ceil($this->getResults() / $this->getLimit());
+
+
+            if($pages>0)
+
+            {  if($this->getActualPage()>$pages)
+            {
+
+                $_GET["p"]=$pages;
+                $qs=http_build_query($_GET);
+                header("Location: files.php?{$qs}");
+
+            }
+
+
+                //paginas hacia atras
+
+                for($i=$this->getActualPage()-$this->getPadding();$i<=$this->getActualPage();$i++ )
+                {
+                    if($i>0)
+                    { $pager[]["number"]=$i;
+
+                    }
+
+                }
+
+                // paginas hacia adelante
+                for($i=1;$i<=$this->getPadding();$i++)
+                {
+                    if(($this->getActualPage()+$i)<=$pages)
+                    {
+
+                        $pager[]["number"]=$this->getActualPage()+$i;
+                    }
+                }
+
+
+                foreach($pager as $k=>$v)
+                {
+                    if($v["number"]==$this->getActualPage())
+                    {
+                        $pager[$k]["class"]="active";
+                    }
+
+                }
+
+
+                return $pager;
+
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        else
+        {
+            return false;
+        }
+
+
+
+
+    }
+}
