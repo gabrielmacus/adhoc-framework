@@ -241,11 +241,11 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
 
 
-        $archivos=  $GLOBALS["archivoDAO"]->selectArchivoOriginalByRepositorioId($id);
+        $archivos=  $GLOBALS["archivoDAO"]->selectArchivoOriginalByRepositorioId($id,false);
+
 
         foreach ($archivos as $archivo)
         {
-            var_dump($archivo);
            $GLOBALS["archivoDAO"]->deleteArchivoById($archivo->getId());
         }
 
