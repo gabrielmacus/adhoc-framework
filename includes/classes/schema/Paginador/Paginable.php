@@ -151,6 +151,8 @@ class Paginable implements IPaginable
                 for ($i=1;$i<=$actualPage+1;$i--)
                 {
 
+                    var_dump($i);
+
                     if($i>0)
                     {
                         $pager[]["number"]=$i;
