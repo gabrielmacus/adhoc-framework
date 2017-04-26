@@ -8,8 +8,9 @@ $paginador=$paginador->getPaginador();
         function () {
 
 
+            /*
             $(".pagination .first").siblings(".prev").hide();
-            $(".pagination .last").siblings(".next").hide();
+            $(".pagination .last").siblings(".next").hide();*/
         }
     );
 </script>
