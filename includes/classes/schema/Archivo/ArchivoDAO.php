@@ -67,7 +67,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             }
 
 
-            $archivos[$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
+            //$archivos [$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()] = $archivo;
 
 
         }
