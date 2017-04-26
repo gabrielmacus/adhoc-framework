@@ -363,9 +363,10 @@ body
 }
 .list li a .icon
 {
-    float: right;
+    float: right!important;
     padding-left: 10px;
     padding-right: 10px;
+    box-shadow: none!important;
 }
 
 .list li a .icon:hover
