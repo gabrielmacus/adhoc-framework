@@ -15,7 +15,7 @@ interface IArchivo
     /** Read **/
     public function selectArchivos($process=true);
     public function selectArchivoById($id,$process=true);
-    public function selectArchivoByRepositorioId($in,$process=true);
+    public function selectArchivoByRepositorioId($in,$process=true,$version);
     public function selectArchivoOriginalByRepositorioId($in,$process=true);
     /** **/
 

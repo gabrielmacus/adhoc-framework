@@ -211,6 +211,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+        
         if($version)
         {
             $sql.=" AND archivo_version IN ({$version})";

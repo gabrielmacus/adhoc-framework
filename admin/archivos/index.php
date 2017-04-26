@@ -16,7 +16,6 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $versionPanel="original";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 0;
 
     $GLOBALS["archivoDAO"]->setLimit(3);
@@ -24,6 +23,7 @@ try{
     $GLOBALS["archivoDAO"]->setActualPage($p-1);
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,0);
+    
     var_dump(    $GLOBALS["archivoDAO"]->getPaginador());
 
     $site="archivos";
