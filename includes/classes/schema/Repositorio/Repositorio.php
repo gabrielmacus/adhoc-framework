@@ -63,7 +63,8 @@ class Repositorio implements JsonSerializable
            "puerto"=>$this->getPort(),
            "creation"=>$this->getCreation(),
            "modification"=>$this->getModification(),
-           "versiones"=>$this->getVersiones()
+           "versiones"=>$this->getVersiones(),
+           "url"=>$this->getUrl()
        );
     }
 
