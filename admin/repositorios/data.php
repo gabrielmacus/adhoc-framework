@@ -11,6 +11,7 @@ include "../../includes/autoload.php";
 include_once DIR_PATH."/extras/api/check-login.php";
 
 try{
+    
     switch ($_GET["act"])
     {
         case "save":
@@ -35,6 +36,19 @@ try{
             }
 
             break;
+        
+        case "delete":
+            if(!is_numeric($_GET["id"]))
+            {
+                $GLOBALS["repositorioDAO"]->deleteRepositorioById($_GET["id"]);
+            }
+            else
+            {
+                json_encode(false);
+            }
+    
+            
+            break;
     }
 
 
@@ -45,7 +59,7 @@ try{
 catch (Exception $e)
 {
 
-    var_dump($e);
+    
     echo "Error: {$e->getMessage()}";
 
 }

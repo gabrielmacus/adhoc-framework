@@ -7,12 +7,9 @@
 <script src="<?php echo $configuracion->getJsCdn()."/js/facebook.js"; ?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
-<script src="<?php  echo $configuracion->getJsCdn()."/js/taggle.js"?>"></script>
-<script src="<?php  echo $configuracion->getJsCdn()."/js/taggle-ie8.js"?>"></script>
-<script src="<?php  echo $configuracion->getJsCdn()."/js/taggle-ie9.js"?>"></script>
-
-
 <script src="<?php  echo $configuracion->getJsCdn()."/js/ng-tags-input.min.js"?>"></script>
+<script src="<?php  echo $configuracion->getJsCdn()."/js/vex.combined.min.js"?>"></script>
+
 <script src="//cdn.quilljs.com/1.2.3/quill.min.js"></script>
 <script
 
