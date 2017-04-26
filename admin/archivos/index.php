@@ -22,8 +22,8 @@ try{
     $GLOBALS["archivoDAO"]->setLimit(3);
     $GLOBALS["archivoDAO"]->setPadding(2);
     $GLOBALS["archivoDAO"]->setActualPage($p);
-var_dump(    $GLOBALS["archivoDAO"]->getPaginador());
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"]);
+    var_dump(    $GLOBALS["archivoDAO"]->getPaginador());
 
     $site="archivos";
     $action="list";
