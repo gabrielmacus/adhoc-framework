@@ -19,7 +19,7 @@ var_dump($actualPage);
 
 <div class="fila center">
     <div class="pagination">
-        <a class="animated prev"  href="?<?php   $qs=http_build_query($_GET);  echo $qs."&p=".$actualPage-1?>">&laquo;</a>
+        <a class="animated prev"  href="?<?php   $qs=http_build_query($_GET);  echo $qs."&p=".($actualPage-1)?>">&laquo;</a>
         <?php
         unset($_GET["p"]);
         $qs=http_build_query($_GET);
