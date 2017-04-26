@@ -14,7 +14,7 @@ class Paginable implements IPaginable
     protected $results;
     protected $limit;
     protected $padding;
-
+    protected $redirect;
     function __construct()
     {
     }
@@ -90,6 +90,22 @@ class Paginable implements IPaginable
         $this->padding = $padding;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRedirect()
+    {
+        return $this->redirect;
+    }
+
+    /**
+     * @param mixed $redirect
+     */
+    public function setRedirect($redirect)
+    {
+        $this->redirect = $redirect;
+    }
+
 
 
     function getPaginador()
@@ -118,8 +134,8 @@ class Paginable implements IPaginable
 
                 $_GET["p"]=$pages;
                 $qs=http_build_query($_GET);
-                var_dump("REDIRECT");;
-                header("Location: files.php?{$qs}");
+
+                header("Location: {$this->redirect}?{$qs}");
                 exit();
 
             }

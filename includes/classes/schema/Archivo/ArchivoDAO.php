@@ -199,11 +199,22 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         parent::setResults(count($this->dataSource->runQuery($sql)));
     }
 
-    public function selectArchivoByRepositorioId($in,$process=true)
+    /**
+     * @param $in Especifico los ids de los repositorios de los archivos que quiero traer
+     * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
+     * @param bool $version Version/es (id) de los archivos que quiero traer
+     * @return array
+     * @throws Exception
+     */
+    public function selectArchivoByRepositorioId($in,$process=true,$version=false)
     {
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+        if($version)
+        {
+            $sql.=" AND archivo_version IN ({$version})";
+        }
 
         $this->setResults($sql);
 
