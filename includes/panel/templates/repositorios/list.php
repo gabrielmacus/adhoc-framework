@@ -125,7 +125,7 @@
 
         <li class="item" data-ng-repeat="(k,r) in repositorios">
             <a class="animated">
-                <span class="name">{{r.name}}</span>
+                <span class="name">{{r.nombre}}</span>
                 <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
