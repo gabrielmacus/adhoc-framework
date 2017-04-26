@@ -1,5 +1,5 @@
 <div class="form-block">
-
+<!--
     <label><?php echo $label;?></label>
     <div class="tags" id="<?php echo $id?>"></div>
 
@@ -19,4 +19,8 @@
             });
         });
     </script>
+    -->
+    <label><?php echo $label;?></label>
+    <tags-input data-ng-model="post.<?php echo $model?>"></tags-input>
+
 </div>
