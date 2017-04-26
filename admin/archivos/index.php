@@ -20,8 +20,7 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-        $GLOBALS["archivoDAO"]->setLimit(2);
-        $GLOBALS["archivoDAO"]->setActualPage($p);
+
 
         $files= $GLOBALS["archivoDAO"]->selectRepositorioById($_GET["id"]);
     }

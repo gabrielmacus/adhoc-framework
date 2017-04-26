@@ -16,7 +16,8 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-
+    $GLOBALS["archivoDAO"]->setLimit(2);
+    $GLOBALS["archivoDAO"]->setActualPage($p);
 
     if(is_numeric($_GET["id"]))
     {
