@@ -39,7 +39,7 @@ try{
         
         case "delete":
 
-            var_dump($_GET["id"]);
+            var_dump(is_numeric($_GET["id"]));
             if(!is_numeric($_GET["id"]))
             {
 
