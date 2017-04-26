@@ -239,9 +239,11 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
     public function deleteRepositorioById($id)
     {
 
+
+
         $archivos=  $GLOBALS["archivoDAO"]->selectArchivoOriginalByRepositorioId($id);
 
-
+var_dump($archivos);
 
         foreach ($archivos as $archivo)
         {
