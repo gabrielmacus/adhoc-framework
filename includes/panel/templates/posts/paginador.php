@@ -22,6 +22,6 @@
             <a class="animated <?php echo $p["class"]?>" href="?<?php  echo $qs."&p=".$p["number"]?>"><?php echo $p["number"] ?></a>
             <?php
         }?>
-        <a class="animated last" href="#">&raquo;</a>
+        <a class="animated next" href="#">&raquo;</a>
     </div>
 </div>
