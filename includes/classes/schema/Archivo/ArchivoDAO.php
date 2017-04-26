@@ -213,10 +213,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
         var_dump($sql);
 
+        var_dump($version);
         if($version){
             $sql.=" AND archivo_version_name IN ({$version})";
         }
-        
+
         $this->setResults($sql);
 
         if($this->getLimit())
