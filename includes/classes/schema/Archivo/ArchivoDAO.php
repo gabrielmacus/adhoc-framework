@@ -226,7 +226,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $sql.=" AND archivo_version_name IN ({$v})";
         }
-        var_dump($sql);
+
         $this->setResults($sql);
 
         if($this->getLimit())
@@ -250,7 +250,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         }
 
+        var_dump($this->files);
         return $this->files;
+
     }
     public function selectArchivoOriginalByRepositorioId($in,$process=true)
     {
