@@ -248,6 +248,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $this->processArchivos();
 
         }
+        var_dump($this->files);
 
 
         return $this->files;
