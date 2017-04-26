@@ -87,6 +87,7 @@
 
         $label="Resoluciones (solo imágenes)";
         $model="versiones";
+        $id="tags1";
         $class=["s12","m12","l12"];
         include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
 
