@@ -155,6 +155,10 @@ class Paginable implements IPaginable
                     {
                         $pager[]["number"]=$i;
                     }
+                    else
+                    {
+                        break;
+                    }
 
 
                 }
