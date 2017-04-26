@@ -15,6 +15,8 @@
         scope.post = <?php echo json_encode(reset($repositorio))?>;
         console.log( scope.tags1);
         $("#tags1").val();
+        $("#add-repositorio").hide();
+        $("#new-repositorio").show();
         <?php
 
         }?>
