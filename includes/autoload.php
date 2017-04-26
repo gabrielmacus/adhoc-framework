@@ -23,6 +23,8 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
     "test", "http://mapucheonline.com/test","http://mapucheonline.com/test");
 $configuracion->setHtdocsFolder("public_html");
 
+
+
 /*
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
     "uipasd",0.1,"http://mapucheonline.com/test/admin","Adhoc Framework","Gamaware Web Tech",
