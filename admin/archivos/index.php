@@ -22,7 +22,7 @@ try{
     $GLOBALS["archivoDAO"]->setPadding(2);
     $GLOBALS["archivoDAO"]->setActualPage($p-1);
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,"0");
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,"original");
     
     var_dump(    $GLOBALS["archivoDAO"]->getPaginador());
 
