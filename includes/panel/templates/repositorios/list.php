@@ -87,8 +87,8 @@
 
         $label="Resoluciones (solo imágenes)";
         $model="versiones";
-        $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        $class=["s12","m12","l12"];
+        include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
 
 
         $action="save()";
