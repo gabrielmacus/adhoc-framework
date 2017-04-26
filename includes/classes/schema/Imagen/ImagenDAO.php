@@ -40,6 +40,7 @@ class ImagenDAO extends ArchivoDAO
         //get resoluciones del repositorio
 
 
+
         /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
             array("ancho"=>200,"alto"=>200,"nombre"=>"thumbnail")
