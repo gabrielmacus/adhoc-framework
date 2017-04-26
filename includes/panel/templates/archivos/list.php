@@ -119,6 +119,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
                     $ext =$version->getExtension();
 
+                    var_dump($version);
                     ?>
 
 
