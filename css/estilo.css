@@ -701,6 +701,8 @@ body,body > section,.body
 }
 .pagination a:hover
 {
+    background-color: #2a2a2a;
+    color: white;
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
