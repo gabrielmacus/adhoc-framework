@@ -520,6 +520,12 @@ form
 {background-color: white;
 
 }
+.form-block .taggle .close
+{
+    padding: 2px;
+    outline: 0;
+    background-color: black;
+}
 .form-block input,select,.tags
 {
    width: 100%;
