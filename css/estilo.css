@@ -523,6 +523,10 @@ form
     text-overflow: ellipsis;
 
 }
+.form-block .taggle
+{
+    overflow: hidden;
+}
 .form-block .taggle .close
 {
     padding: 2px;
