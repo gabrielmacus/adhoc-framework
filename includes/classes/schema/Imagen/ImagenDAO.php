@@ -24,6 +24,8 @@ class ImagenDAO extends ArchivoDAO
     public function insertArchivo(IArchivo $i,$versionName="original",$versionId=0)
     {
 
+        echo json_encode(   $i->getRepositorio()->getVersiones());
+        exit();
 
         $files=array();
 
@@ -36,10 +38,12 @@ class ImagenDAO extends ArchivoDAO
 
         $files[]=$original;
         //get resoluciones del repositorio
-        $resoluciones=array(
+
+
+        /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
             array("ancho"=>200,"alto"=>200,"nombre"=>"thumbnail")
-        );
+        );*/
         
 
         foreach ($resoluciones as $resolucion)

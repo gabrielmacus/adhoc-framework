@@ -16,17 +16,14 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-      $p= is_numeric($_GET["p"])?$_GET["p"]:0;
+    $versionPanel="original";
+    $p =is_numeric( $_GET["p"])?$_GET["p"]: 0;
 
-    if(is_numeric($_GET["id"]))
-    {
-        $files= $GLOBALS["archivoDAO"]->selectRepositorioById($_GET["id"]);
-    }
-    else
-    {
-        $files=$GLOBALS["archivoDAO"]->selectArchivos(false) ;
-    }
-    $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false);
+    $GLOBALS["archivoDAO"]->setLimit(2);
+    $GLOBALS["archivoDAO"]->setActualPage($p);
+
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
+
     $site="archivos";
     $action="list";
 

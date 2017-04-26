@@ -87,7 +87,7 @@
 
         $label="Resoluciones (solo imágenes)";
         $id="tags1";
-        $placeholder="200x200,300x300,...";
+        $placeholder="nombre:altoxancho.Ej: original:200x200,...";
         $model="versiones";
         $class=["s12","m12","l12"];
         include DIR_PATH."/includes/panel/templates/posts/input/tags.php";

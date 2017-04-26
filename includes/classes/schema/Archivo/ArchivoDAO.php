@@ -194,6 +194,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
+
     public function selectArchivoByRepositorioId($in,$process=true)
     {
         $this->files=array();
