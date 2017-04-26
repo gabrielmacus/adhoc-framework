@@ -148,7 +148,7 @@ class Paginable implements IPaginable
                 /*** Páginas hacia atras **/
 
 
-                for ($i=1;$i<=$actualPage+1;$i--)
+                for ($i=1;$i<=$actualPage+1;$i-=1)
                 {
 
                     echo "<div>data:{$i}</div>";
