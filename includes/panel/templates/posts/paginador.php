@@ -1,4 +1,4 @@
-<div class="fila">
+<div class="fila center">
     <div class="pagination">
         <a href="#">&laquo;</a>
         <a href="#">1</a>

@@ -695,3 +695,7 @@ body,body > section,.body
     padding: 8px 16px;
     text-decoration: none;
 }
+.center
+{
+    text-align: center;
+}
