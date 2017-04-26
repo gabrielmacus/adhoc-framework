@@ -169,7 +169,13 @@ class Paginable implements IPaginable
 
                 foreach($pager as $k=>$v)
                 {
+                    /*
                     if($v["number"]==$this->getActualPage())
+                    {
+                        $pager[$k]["class"]="active";
+                    }*/
+
+                    if($k==$this->getActualPage())
                     {
                         $pager[$k]["class"]="active";
                     }
