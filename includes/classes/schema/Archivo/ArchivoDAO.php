@@ -200,7 +200,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
-
+        var_dump($sql);
 
         $this->dataSource->runQuery($sql,array(),
             function($data){
