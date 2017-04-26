@@ -3,7 +3,17 @@
 
     angular.element(function () {
 
+        <?php if($repositorios)
+        {
+            ?>
+
         scope.repositorios = <?php echo json_encode($repositorios)?>;
+        <?php
+        }else
+        {
+            ?>
+        scope.post = <?php echo json_encode($repositorio)?>;<?php
+        }?>
 
         scope.$apply();
         scope.save=function () {

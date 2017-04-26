@@ -20,13 +20,12 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-
+        $repositorio=$GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"],false) ;
     }
-    else
-    {    $site="repositorios";
+    else{
         $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
     }
-
+        $site="repositorios";
     $action="list";
 
 
