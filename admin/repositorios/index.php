@@ -38,8 +38,6 @@ try{
     $action="list";
 
 
-$site="home";
-$action="index";
 
 
 }
