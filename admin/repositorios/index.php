@@ -21,9 +21,12 @@ try{
     if(is_numeric($_GET["id"]))
     {
 
+        $p =is_numeric( $_GET["p"])?$_GET["p"]: 0;
 
+        $GLOBALS["archivoDAO"]->setLimit(2);
+        $GLOBALS["archivoDAO"]->setActualPage($p);
 
-        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorio($_GET["id"]);
+        $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["id"]);
         $site="archivos";
     }
     else
