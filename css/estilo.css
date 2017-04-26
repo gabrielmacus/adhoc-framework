@@ -518,6 +518,9 @@ form
 }
 .form-block .tags
 {background-color: white;position: relative;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
 
 }
 .form-block .taggle .close
