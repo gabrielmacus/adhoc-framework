@@ -215,6 +215,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $sql.=" AND archivo_version IN ({$version})";
         }
+        var_dump($sql);
 
         $this->setResults($sql);
 
