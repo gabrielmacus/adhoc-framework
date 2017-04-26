@@ -119,6 +119,7 @@ class Paginable implements IPaginable
                 $_GET["p"]=$pages;
                 $qs=http_build_query($_GET);
                 header("Location: files.php?{$qs}");
+                exit();
 
             }
 
