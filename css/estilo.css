@@ -361,7 +361,7 @@ body
 
     box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 6px rgba(0, 0, 0, 0.19);
 }
-.list li a .icon
+.list li a .icon,.list li a.icon
 {
     float: right!important;
     padding-left: 10px;
