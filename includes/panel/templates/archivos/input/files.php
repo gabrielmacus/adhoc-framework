@@ -105,7 +105,7 @@
 
     <label><?php echo $label?></label>
 
-    <input  id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
+    <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
 
 
 </div>
