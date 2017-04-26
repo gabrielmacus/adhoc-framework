@@ -396,6 +396,8 @@ display: none;
     padding: 20px;
     font-weight: 300;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .list .item .content .archivos {

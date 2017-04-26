@@ -126,7 +126,7 @@
         <li class="item" data-ng-repeat="(k,r) in repositorios">
             <a class="animated">
                 <span class="name">{{r.nombre}}</span>
-                <i class="fa fa-pencil icon animated" aria-hidden="true"></i>
+                <a href="<?php echo DIR_PATH."/admin/repositorios/?id="?>{{r.id}}"><i class="fa fa-pencil icon animated" aria-hidden="true"></i></a>
                 <i class="fa fa-trash-o icon animated" aria-hidden="true"></i>
             </a>
             <div class="content">
