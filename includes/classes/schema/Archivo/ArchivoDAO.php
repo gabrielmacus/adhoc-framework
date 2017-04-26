@@ -212,7 +212,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
         var_dump($version);
-        if($version)
+        if(is_numeric($version))
         {
             $sql.=" AND archivo_version IN ({$version})";
         }
