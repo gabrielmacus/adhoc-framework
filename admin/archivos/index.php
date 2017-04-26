@@ -20,7 +20,7 @@ try{
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
     $GLOBALS["archivoDAO"]->setLimit(2);
-    $GLOBALS["archivoDAO"]->setPadding(3);
+    $GLOBALS["archivoDAO"]->setPadding(2);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel]);
