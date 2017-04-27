@@ -39,24 +39,28 @@
                     $label="Nombre";
                     $class=array("s12","m6","l6");
                     $model="titulo";
+                    $max=60;
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
                     $label="Apellido";
                     $class=array("s12","m6","l6");
                     $model="volanta";
+                    $max=60;
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
                     $label="DNI";
                     $class=array("s12","m6","l6");
                     $model="bajada";
+                    $max=9;
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
                     $label="Edad";
                     $class=array("s12","m6","l6");
                     $model="texto";
+                    $max=100;
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
                     $label="Categoria";
