@@ -60,7 +60,12 @@
 
     <label><?php echo $label?></label>
 
-    <input  id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
+    <input hidden  id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
+
+    <div class="file" style="height: 150px">
+
+    </div>
+
 
     <?php
 
