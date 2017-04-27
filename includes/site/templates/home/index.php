@@ -24,6 +24,7 @@
                     <?php
 
                     $t=61;
+                    $successMessage="Se inscribió correctamente. Chequee su email para confirmar la inscripción";
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
 

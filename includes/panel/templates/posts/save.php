@@ -33,7 +33,13 @@
                     data:angular.copy(scope.post),
                     dataType:"json",
                     success:function (e) {
-                        console.log(e);
+
+                        vex.dialog.alert({message:<?php
+                            echo $successMessage;?>,callback:function () {
+                            location.reload();
+                        }})
+
+
                     },
                     error:function (e) {
 
