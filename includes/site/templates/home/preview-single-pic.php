@@ -7,7 +7,7 @@
             <figure>
                 <img data-ng-src="{{p.url}}">
             </figure>
-            <i class="delete fa fa-times" aria-hidden="true"></i>
+            <i class="delete fa fa-times" data-ng-click="deletePreview(p)" aria-hidden="true"></i>
         </div>
 
     </div>

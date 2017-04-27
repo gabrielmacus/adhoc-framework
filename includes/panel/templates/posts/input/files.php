@@ -19,6 +19,11 @@
 
         }
 
+        scope.deletePreview=function (e) {
+            var idx=scope.previews.indexOf(e);
+            scope.previews.splice(idx,1);
+            scope.$apply();
+        };
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
             type: "post",
