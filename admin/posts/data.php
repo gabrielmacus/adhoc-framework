@@ -71,8 +71,8 @@ try{
             }
             echo json_encode($previews);
             exit();
-            $a =new ArchivoDAO();
-            $a->selectArchivoById(,false);
+           // $a =new ArchivoDAO();
+            //$a->selectArchivoById(,false);
 
             $post = new Post();
             $post->setTitulo($_POST["titulo"]);
