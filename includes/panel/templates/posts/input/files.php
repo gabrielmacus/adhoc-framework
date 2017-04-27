@@ -62,7 +62,7 @@
 
     <input hidden  id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
 
-    <div class="file" style="height: 180px;">
+    <div class="file" style="height: 180px;text-align: center">
         <span style="font-size: 25px;font-weight: 600;    top: 38%;
     font-size: 25px;
     position: relative;
