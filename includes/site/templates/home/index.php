@@ -27,8 +27,6 @@
                     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
 
-                    var_dump($subsecciones);
-
                     $successMessage="Se inscribió correctamente. Chequee su email para confirmar la inscripción";
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
@@ -70,9 +68,10 @@
                     include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
+
                     foreach ($subsecciones as $seccion)
                     {
-                        $options=array(
+                        $options[]=array(
                           $seccion->getId()=>$seccion->getNombre()
                         );
                     }
