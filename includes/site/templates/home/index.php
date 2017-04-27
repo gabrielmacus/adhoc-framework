@@ -59,18 +59,19 @@
 
                     $label="Edad";
                     $class=array("s12","m6","l6");
-                    $model="texto";
+                    $model="extra1";
                     $max=100;
                     include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
                     $options=["Senior","General","Principiante"];
+                    $model="extra2";
                     $class=[];
                     include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
                     $label="Email";
-                    $model="extra1";
+                    $model="extra3";
                     $max=60;
                     include DIR_PATH."/includes/panel/templates/posts/input/email.php";
 
