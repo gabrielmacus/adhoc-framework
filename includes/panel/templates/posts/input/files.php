@@ -19,7 +19,7 @@
 
         if(scope.previews.length >= <?php echo $max?>)
         {
-            vex.dialog.alert('Thanks for checking out vex!');
+            vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
             return false;
         }
         <?php
