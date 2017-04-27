@@ -71,7 +71,7 @@
 
                     foreach ($subsecciones as $seccion)
                     {
-                        var_dump($seccion);
+                        var_dump($seccion->getNombre());
                         $options[$seccion->getId]=$seccion->getNombre();
                     }
 
