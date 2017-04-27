@@ -20,7 +20,7 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
     $t =$_GET["t"];
-
+    $r=31;
     switch ($_GET["act"])
     {
         case "save":
@@ -42,7 +42,7 @@ try{
 
                         $a->setTmpPath($file["tmp"]);
                         $a->setExtension($file["type"]);
-                        $a->setRepositorio($_GET["rep"]);
+                        $a->setRepositorio($r);
                         $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
                         $previews[]=$res[0];
                         break;
@@ -59,7 +59,7 @@ try{
                         $a = new Imagen($file["size"],$file["name"],$file["mime"]);
                         $a->setTmpPath($file["tmp"]);
                         $a->setExtension($file["type"]);
-                        $a->setRepositorio($_GET["rep"]);
+                        $a->setRepositorio($r);
 
 
                         $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
