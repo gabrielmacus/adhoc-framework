@@ -133,12 +133,13 @@ z-index: 0;
     object-fit: contain!important;
     background-color: #dde3e5;
 }
-.file-preview
+.file
 {
     position: relative;
 }
 .file-preview .delete
 {
+    color: #e5463d;
     position: absolute;
     top:10px;
     right:10px;
