@@ -700,8 +700,8 @@ body,body > section,.body
 .pagination {
     display: inline-block;
     font-size: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .pagination a {
