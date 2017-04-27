@@ -18,7 +18,9 @@
     ,
     "jugadores":{"text":"Jugadores","items":{
       "add":{"text":"Agregar jugador","href":"/test/admin/posts/?act=save&t=61&s=jugadores"},
-      "list":{"text":"Listar jugadores","href":"/test/admin/posts/?act=list&t=61&s=jugadores"}
+      "principiantes":{"text":"Listar principiantes","href":"/test/admin/posts/?act=list&t=62&s=jugadores"},
+      "generales":{"text":"Listar generales","href":"/test/admin/posts/?act=list&t=63&s=jugadores"},
+      "seniors":{"text":"Listar seniors","href":"/test/admin/posts/?act=list&t=64&s=jugadores"}
     }}
 
     },
