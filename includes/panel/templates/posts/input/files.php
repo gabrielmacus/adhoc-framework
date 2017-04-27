@@ -72,7 +72,7 @@
     }
     else
     {
-
+        include $view;
     }
     ?>
 
