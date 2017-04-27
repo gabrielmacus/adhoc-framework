@@ -71,9 +71,7 @@
 
                     foreach ($subsecciones as $seccion)
                     {
-                        $options[]=array(
-                          $seccion->getId()=>$seccion->getNombre()
-                        );
+                        $options[$seccion->getId]=$seccion->getNombre();
                     }
 
                     $model="extra2";
