@@ -70,8 +70,6 @@ try{
 
             }
 
-            echo json_encode($_POST["archivos"]);
-            exit();
 
 
            // $a =new ArchivoDAO();
