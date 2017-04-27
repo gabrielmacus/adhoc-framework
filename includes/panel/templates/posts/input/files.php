@@ -11,19 +11,7 @@
     $(document).on("change","#<?php echo $id?>",function (e) {
 
 
-        <?php
 
-        if(is_numeric($max))
-        {
-        ?>
-
-        if(scope.previews.length >= <?php echo $max?>)
-        {
-            vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
-            return false;
-        }
-        <?php
-        }?>
 
 
         var files =$(this)[0].files;
