@@ -81,11 +81,6 @@
 
 </div>
 
-<?php
-$title="¿Ok with that?";
-//include DIR_PATH."/includes/panel/templates/comun/modal.php";
-?>
-
 <script>
 $(document).ready(function () {
     $(".overlay-2").vegas({
