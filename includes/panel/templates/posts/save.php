@@ -44,7 +44,7 @@
                     dataType:"json",
                     success:function (e) {
 
-                        <?php if($message)
+                        <?php if($successMessage)
                         {
                             ?>
                         vex.dialog.alert({message:"<?php

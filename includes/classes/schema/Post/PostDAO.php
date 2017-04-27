@@ -55,6 +55,21 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         // TODO: Implement insertAnexo() method.
     }
 */
+    public function selectPostByTipoAndPertenece($tipo)
+    {
+        $this->posts=array();
+        $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion ";
+
+        $this->dataSource->runQuery($sql,array(":post_seccion"=>$tipo),function($data){
+            $this->query($data,true);
+        });
+
+
+        $this->processFiles();
+
+        return $this->posts;
+    }
+
 
     private function assocFiles(Post $p)
     {

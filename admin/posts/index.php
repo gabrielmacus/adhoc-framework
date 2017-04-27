@@ -30,6 +30,7 @@ try{
     }
     else
     {
+
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t);
     }
 

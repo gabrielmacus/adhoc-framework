@@ -19,6 +19,7 @@ interface IPost
     public function selectPosts();
     public function selectPostById($id);
     public function selectPostByTipo($tipo);
+    public function selectPostByTipoAndPertenece($tipo);
     /** **/
 
     /** Update**/
