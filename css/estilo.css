@@ -640,6 +640,7 @@ body,body > section,.body
 .file .name
 {
     padding: 10px;
+    font-size: 30px;
     font-weight: 300;
     background-color: #e7ede0;
     width: 100%;
