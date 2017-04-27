@@ -10,6 +10,7 @@
     });
     $(document).on("change","#<?php echo $id?>",function (e) {
 
+        alert("ADAS");
 
         <?php
 
