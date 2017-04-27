@@ -25,11 +25,21 @@
                 scope.post.previews=scope.previews;
             }
             console.log(scope.post);
+            if(!scope.post.seccion)
+            {
+                var url="<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>";
+            }
+            else
+            {
+                var url="<?php echo $configuracion->getSiteAddress()?>/admin/posts/data.php?t="+scope.post.seccion+"&act=save";
+
+            }
+
             $.ajax
             (
                 {
                     method:"post",
-                    url:"<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>",
+                    url:url,
                     data:angular.copy(scope.post),
                     dataType:"json",
                     success:function (e) {

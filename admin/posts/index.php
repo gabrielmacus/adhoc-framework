@@ -20,7 +20,8 @@ try{
     $t =$_GET["t"];
     $site=$_GET["s"];
 
-   // $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
+
+   $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
     if(is_numeric($_GET["id"]))
     {
@@ -37,7 +38,7 @@ try{
         $action="list";
     }
 
-
+var_dump($subsecciones);
 
 }
 catch (Exception $e)
