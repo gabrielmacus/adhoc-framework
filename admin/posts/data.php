@@ -29,8 +29,7 @@ try{
             $previews=array();
             foreach ($_POST["previews"] as $file)//Para subida de archivos directa
             {
-                echo json_encode($file);
-                exit();
+
                 $file["tmp"]=DIR_PATH.$file["tmp"];
 
 
