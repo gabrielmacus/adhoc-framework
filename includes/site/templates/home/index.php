@@ -76,7 +76,7 @@
                         $options[$seccion->getId()]=$seccion->getNombre();
                     }
 
-                    $model="extra2";
+                    $model="seccion";
                     $class=[];
                     include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
