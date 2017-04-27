@@ -64,11 +64,11 @@
 
     <div class="file" style="height: 180px;text-align: center">
         <span style="font-size: 25px;font-weight: 600;    top: 38%;
-    font-size: 25px;
+    font-size: 20px;
     position: relative;
     text-align: center;"><?php echo $uploadMessage;?></span>
 
-        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+        <i style="position: relative;top: 20px;right: 20px;" class="fa fa-cloud-upload" aria-hidden="true"></i>
 
     </div>
 
