@@ -701,6 +701,7 @@ body,body > section,.body
     display: inline-block;
     font-size: 25px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .pagination a {
