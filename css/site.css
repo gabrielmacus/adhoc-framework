@@ -128,3 +128,8 @@ z-index: 0;
 {
     padding: 10px;
 }
+.file-preview img
+{
+    object-fit: contain;
+    background-color: #c8cdc1;
+}
