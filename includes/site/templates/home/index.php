@@ -69,6 +69,7 @@
 
                     $label="Categoria";
 
+                    $options=array();
                     foreach ($subsecciones as $seccion)
                     {
 
