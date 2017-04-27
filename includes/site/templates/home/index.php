@@ -24,6 +24,10 @@
                     <?php
 
                     $t=61;
+                    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
+
+
+
                     $successMessage="Se inscribió correctamente. Chequee su email para confirmar la inscripción";
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
@@ -65,7 +69,13 @@
                     include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
-                    $options=["Senior","General","Principiante"];
+                    foreach ($subsecciones as $seccion)
+                    {
+                        $options=array(
+                          $seccion->getId()=>$seccion->getNombre()
+                        );
+                    }
+
                     $model="extra2";
                     $class=[];
                     include DIR_PATH."/includes/panel/templates/posts/input/select.php";

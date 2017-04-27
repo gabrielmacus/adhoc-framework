@@ -38,7 +38,7 @@ try{
         $action="list";
     }
 
-var_dump($subsecciones);
+
 
 }
 catch (Exception $e)
