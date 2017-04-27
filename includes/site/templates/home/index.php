@@ -73,7 +73,7 @@
                     foreach ($subsecciones as $seccion)
                     {
 
-                        $options[$seccion->getId]=$seccion->getNombre();
+                        $options[$seccion->getId()]=$seccion->getNombre();
                     }
 var_dump($options);
                     $model="extra2";
