@@ -32,6 +32,7 @@
                     $view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";;
                     $label="Foto";
                     $uploadMessage="Arrastrá tu foto de perfil o presioná acá";
+                    $max=1;
                     $id="foto";
                     include DIR_PATH."/includes/panel/templates/posts/input/files.php";
 
