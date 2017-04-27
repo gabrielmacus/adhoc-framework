@@ -24,11 +24,59 @@ try{
     switch ($_GET["act"])
     {
         case "save":
+
+
+            $previews=array();
+            foreach ($_POST["previews"] as $file)//Para subida de archivos directa
+            {
+
+                $file["tmp"]=DIR_PATH.$file["tmp"];
+
+
+                switch ($file["type"])
+                {
+                    default:
+
+
+                        $a = new Archivo($file["size"],$file["name"],$file["mime"]);
+
+                        $a->setTmpPath($file["tmp"]);
+                        $a->setExtension($file["type"]);
+                        $a->setRepositorio($_GET["rep"]);
+                        $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
+                        $previews[]=$res[0];
+                        break;
+
+
+                    case "svg":
+                    case "jpeg":
+                    case "bmp":
+                    case "png":
+                    case "gif":
+                    case "jpg":
+
+
+                        $a = new Imagen($file["size"],$file["name"],$file["mime"]);
+                        $a->setTmpPath($file["tmp"]);
+                        $a->setExtension($file["type"]);
+                        $a->setRepositorio($_GET["rep"]);
+
+
+                        $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
+                    $previews[]=$res[0];
+                        break;
+
+                }
+
+            }
+            echo json_encode($previews);
+            exit();
+            $a =new ArchivoDAO();
+            $a->selectArchivoById(,false);
+
             $post = new Post();
             $post->setTitulo($_POST["titulo"]);
             $post->setTexto($_POST["texto"]);
-
-
             $post->setArchivos($_POST["archivos"]);
             $post->setSeccion($_POST["seccion"]);
             $post->setBajada($_POST["bajada"]);

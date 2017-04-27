@@ -7,19 +7,24 @@
         scope.post={archivos:[]};
 
 
+
         <?php if($post)
 
         {
         ?>
         scope.post = <?php echo json_encode($post);?>;
-        console.log(scope.post);
+
         <?Php
         }?>
         scope.$apply();
 
 
         scope.save=function () {
-
+            if(scope.previews)//Para subida de archivos directa
+            {
+                scope.post.previews=scope.previews;
+            }
+            console.log(scope.post);
             $.ajax
             (
                 {
