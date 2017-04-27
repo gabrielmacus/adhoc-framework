@@ -10,7 +10,7 @@
     });
     $(document).on("change","#<?php echo $id?>",function (e) {
 
-        alert("ADAS");
+        alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
 
         <?php
 
