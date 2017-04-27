@@ -64,8 +64,8 @@
 
     <?php
 
-    $multiple=true;
-    include DIR_PATH."/includes/panel/templates/posts/files.php";
+    //$multiple=true;
+   // include DIR_PATH."/includes/panel/templates/posts/files.php";
     ?>
 
     <div class="files">

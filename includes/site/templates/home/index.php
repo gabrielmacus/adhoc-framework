@@ -28,6 +28,8 @@
 
 
 
+                    $label="Foto";
+                    $id="foto";
                     include DIR_PATH."/includes/panel/templates/posts/input/files.php";
 
                     $label="Nombre";
