@@ -26,26 +26,26 @@
                     $t=61;
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
+
+
+                    include DIR_PATH."/includes/panel/templates/posts/input/files.php";
+
                     $label="Nombre";
                     $class=array("s12","m6","l6");
                     $model="titulo";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
-
                     $label="Apellido";
-
                     $class=array("s12","m6","l6");
                     $model="volanta";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
-
 
 
                     $label="DNI";
                     $class=array("s12","m6","l6");
                     $model="bajada";
                     include DIR_PATH."/includes/panel/templates/posts/input/text.php";
-
 
 
                     $label="Edad";

@@ -27,6 +27,8 @@ try{
             $post = new Post();
             $post->setTitulo($_POST["titulo"]);
             $post->setTexto($_POST["texto"]);
+
+
             $post->setArchivos($_POST["archivos"]);
             $post->setSeccion($_POST["seccion"]);
             $post->setBajada($_POST["bajada"]);
