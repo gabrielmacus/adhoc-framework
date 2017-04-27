@@ -69,7 +69,15 @@ try{
                 }
 
             }
-            echo json_encode($previews);
+
+            $files =array();
+
+            foreach ($previews as $p)
+            {
+              $files[]=  $GLOBALS["archivoDAO"]->selectArchivoById($p,false);
+            }
+
+            echo json_encode($files);
             exit();
            // $a =new ArchivoDAO();
             //$a->selectArchivoById(,false);
