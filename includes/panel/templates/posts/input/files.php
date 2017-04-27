@@ -66,7 +66,10 @@
         <span style="font-size: 25px;font-weight: 600;    top: 38%;
     font-size: 25px;
     position: relative;
-    text-align: center;">Arrastre el archivo para subirlo</span>
+    text-align: center;"><?php echo $uploadMessage;?></span>
+
+        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+
     </div>
 
 
