@@ -61,7 +61,7 @@
                     $class=array("s12","m6","l6");
                     $model="texto";
                     $max=100;
-                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+                    include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
                     $options=["Senior","General","Principiante"];
