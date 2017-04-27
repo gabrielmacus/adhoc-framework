@@ -60,7 +60,7 @@
                     $label="Edad";
                     $class=array("s12","m6","l6");
                     $model="texto";
-                    $max=100;
+                    $max=3;
                     include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
