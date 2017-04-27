@@ -63,24 +63,15 @@ try{
 
 
                         $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
-                    $previews[]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");
+                    $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");
                         break;
 
                 }
 
             }
-            echo json_encode($previews);
-            exit();
 
-            $files =array();
 
-            foreach ($previews as $p)
-            {
-              $files[]=  $GLOBALS["archivoDAO"]->selectArchivoById($p,false);
-            }
 
-            echo json_encode($files);
-            exit();
            // $a =new ArchivoDAO();
             //$a->selectArchivoById(,false);
 
