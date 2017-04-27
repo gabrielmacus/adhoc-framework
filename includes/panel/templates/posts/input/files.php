@@ -2,8 +2,26 @@
 
     angular.element(function () {
         scope.previews=[];
+        scope.deletePreview=function (e) {
+            var idx=scope.previews.indexOf(e);
+            scope.previews.splice(idx,1);
+            scope.$apply();
+        };
     });
     $(document).on("change","#<?php echo $id?>",function (e) {
+
+
+        <?php if(is_numeric($max))
+        {
+        ?>
+        if(scope.previews>=<?php echo $max?>)
+        {
+            vex.dialog.alert('Thanks for checking out vex!');
+            return false;
+        }
+        <?php
+        }?>
+
 
         var files =$(this)[0].files;
         var data = new FormData();
@@ -19,11 +37,7 @@
 
         }
 
-        scope.deletePreview=function (e) {
-            var idx=scope.previews.indexOf(e);
-            scope.previews.splice(idx,1);
-            scope.$apply();
-        };
+
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
             type: "post",
