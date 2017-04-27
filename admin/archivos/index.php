@@ -27,6 +27,7 @@ try{
     $paginador=$GLOBALS["archivoDAO"];
 
 
+    
     $site="archivos";
     $action="list";
 
