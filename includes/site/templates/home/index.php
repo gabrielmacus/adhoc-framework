@@ -60,7 +60,7 @@
                     $label="Edad";
                     $class=array("s12","m6","l6");
                     $model="texto";
-                    $max=3;
+                    $max=100;
                     include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
                     $label="Categoria";
@@ -71,7 +71,8 @@
 
                     $label="Email";
                     $model="extra1";
-                    include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+                    $max=60;
+                    include DIR_PATH."/includes/panel/templates/posts/input/email.php";
 
 
                   $name="Aceptar";
