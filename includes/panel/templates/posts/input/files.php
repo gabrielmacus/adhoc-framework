@@ -11,10 +11,13 @@
     $(document).on("change","#<?php echo $id?>",function (e) {
 
 
-        <?php if(is_numeric($max))
+        <?php
+
+        if(is_numeric($max))
         {
         ?>
-        if(scope.previews>=<?php echo $max?>)
+
+        if(scope.previews.length >= <?php echo $max?>)
         {
             vex.dialog.alert('Thanks for checking out vex!');
             return false;
