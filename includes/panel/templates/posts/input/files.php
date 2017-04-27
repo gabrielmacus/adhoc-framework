@@ -68,7 +68,7 @@
     position: relative;
     text-align: center;"><?php echo $uploadMessage;?></span>
 
-        <i style="position: relative;top: 20px;right: 20px;" class="fa fa-cloud-upload" aria-hidden="true"></i>
+        <i style="position: absolute;top: 20px;right: 20px;background-color: #0d71bb" class="fa fa-cloud-upload" aria-hidden="true"></i>
 
     </div>
 
