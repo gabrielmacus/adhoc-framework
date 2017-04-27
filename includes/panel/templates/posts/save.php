@@ -34,10 +34,16 @@
                     dataType:"json",
                     success:function (e) {
 
+                        <?php if($message)
+                        {
+                            ?>
                         vex.dialog.alert({message:"<?php
                             echo $successMessage;?>",callback:function () {
                             location.reload();
                         }})
+                        <?php
+                        }?>
+
 
 
                     },
