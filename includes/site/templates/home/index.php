@@ -29,7 +29,7 @@
 
 
                     $formats=["jpg","jpeg","png"];
-                    $view=DIR_PATH."/includes/panel/templates/posts/preview-single-pic.php";;
+                    $view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";;
                     $label="Foto";
                     $id="foto";
                     include DIR_PATH."/includes/panel/templates/posts/input/files.php";

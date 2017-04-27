@@ -8,8 +8,8 @@
                 <img data-ng-src="{{p.url}}">
             </figure>
 
-            <input class="name" data-ng-model="p.name">
-            <span class="size"  data-ng-bind="getMb(p.size)"></span>
+
+
         </div>
 
     </div>
