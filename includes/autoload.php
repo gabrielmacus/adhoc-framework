@@ -24,7 +24,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
     "test", "http://footgolf.mapucheonline.com","http://footgolf.mapucheonline.com");
 $configuracion->setHtdocsFolder("public_html");
 
-var_dump("dA");
+var_dump("adA");
 
 
 /*
