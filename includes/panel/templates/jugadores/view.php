@@ -13,9 +13,17 @@
 <div class="body">
     <h3 style="font-size: 30px"><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
     <ul class="list">
-        <li class="item animated"><a>DNI: <?php echo $post->getBajada()?></a></li>
-        <li class="item animated "><a>Edad: <?php echo $post->getExtra1()?></a></li>
-        <li class="item animated"><a>Email: <?php echo $post->getExtra3()?></a></li>
-        <li class="item animated "><a><?php echo $seccion->getNombre()?></a></li>
+        <li class="item animated"><a><strong>DNI:</strong> <span style="font-weight: 300"><?php echo $post->getBajada()?></span></a></li>
+        <li class="item animated "><a><strong>Edad:</strong>
+                <span style="font-weight: 300"><?php echo $post->getExtra1()?></span></a>
+            </li>
+        <li class="item animated">
+            <a><strong>Email:</strong>
+                <span style="font-weight: 300">><?php echo $post->getExtra3()?></span></a>
+        </li>
+        <li class="item animated "><a>
+                <strong>Categoría:</strong>
+               <span style="font-weight: 300"><?php echo $seccion->getNombre()?></span>
+            </a></li>
     </ul>
 </div>
