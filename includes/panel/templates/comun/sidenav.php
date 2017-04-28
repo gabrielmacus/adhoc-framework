@@ -2,16 +2,18 @@
 <script>
 
     $(document).ready(function () {
-        $(document).on("click",".item",openSubmenu);
+
+
+
         $(document).on("click touchstart","navigation > .close-menu",function () {
 
             $(".sidenav-container").removeClass("open");
-            $(".close-menu").hide();
+            $(".close-menu").fadeOut();
         });
 
         $(document).on("click touchstart",".hamburger",function () {
 
-            $(".close-menu").css("visibility","visible");
+            $(".close-menu").fadeIn();
             $(".sidenav-container").addClass("open");
 
 
@@ -19,22 +21,6 @@
             //$(".main-container").toggleClass("push");
         });
 
-        function openSubmenu(e) {
-
-            var item = $(e.target).closest(".item");
-            if(item)
-            {
-                item.stop();
-                item.toggleClass("active");
-                item.find("ul").slideToggle(400,function () {
-
-
-                });
-
-            }
-
-
-        }
 
     });
 
@@ -72,7 +58,7 @@ foreach ($nav as $item)
 }
 ?>
 
-<i  style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244;visibility: hidden" class="close-menu fa fa-times" aria-hidden="true"></i>
+<i  style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244;display: none" class="close-menu fa fa-times" aria-hidden="true"></i>
 
 
 <ul class="sidenav  main-color">
