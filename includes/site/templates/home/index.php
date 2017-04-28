@@ -29,9 +29,6 @@
 
                     $successMessage="Se inscribió correctamente!";
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
-
-
-
                     $formats=["jpg","jpeg","png"];
                     $view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";
                     $label="Foto";
