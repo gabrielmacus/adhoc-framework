@@ -39,7 +39,7 @@
 
             });
 
-                $http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
+                http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
                 }).success(function (data, status, headers, config) {
