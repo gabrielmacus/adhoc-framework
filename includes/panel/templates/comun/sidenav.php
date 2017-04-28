@@ -1,4 +1,46 @@
 
+
+<?php
+
+function iterateSidenav($nav)
+{
+
+    $colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
+foreach ($nav as $item)
+{
+    ?>
+    <li  class="item animated <?php echo $item["class"]?>">
+        <a <?php if ($item["href"]){ ?> href="<?php echo $item["href"]?>"<?php }?>>
+           <!-- href=""--->
+            <span class="icon <?php echo $colorPallete[rand(0,4)]?> "> <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+            <span class="text"><?php echo $item["text"]?></span>
+        </a>
+        <?php if ($item["items"])
+{
+    ?>
+        <ul style="display: none" >
+            <?php iterateSidenav($item["items"]); ?>
+        </ul>
+    <?php
+}?>
+    </li>
+
+    <?php
+}
+}
+?>
+
+<i  style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244;display: none" class="close-menu fa fa-times" aria-hidden="true"></i>
+
+
+<ul class="sidenav  main-color">
+    <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
+
+    <?php iterateSidenav($lang["sidenav"]) ?>
+
+</ul>
+
+
 <script>
 
     $(document).ready(function () {
@@ -46,43 +88,3 @@
 
 
 </script>
-
-<?php
-
-function iterateSidenav($nav)
-{
-
-    $colorPallete=["saffron","shamrock","honey-flower","alizarin","belize-hole"];
-foreach ($nav as $item)
-{
-    ?>
-    <li  class="item animated <?php echo $item["class"]?>">
-        <a <?php if ($item["href"]){ ?> href="<?php echo $item["href"]?>"<?php }?>>
-           <!-- href=""--->
-            <span class="icon <?php echo $colorPallete[rand(0,4)]?> "> <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-            <span class="text"><?php echo $item["text"]?></span>
-        </a>
-        <?php if ($item["items"])
-{
-    ?>
-        <ul style="display: none" >
-            <?php iterateSidenav($item["items"]); ?>
-        </ul>
-    <?php
-}?>
-    </li>
-
-    <?php
-}
-}
-?>
-
-<i  style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244;display: none" class="close-menu fa fa-times" aria-hidden="true"></i>
-
-
-<ul class="sidenav  main-color">
-    <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
-
-    <?php iterateSidenav($lang["sidenav"]) ?>
-
-</ul>
