@@ -28,8 +28,6 @@
         http=$http;
         vex.defaultOptions.className = 'vex-theme-plain';
 
-
-        
         scope=$scope;
         timeout=$timeout;
     });

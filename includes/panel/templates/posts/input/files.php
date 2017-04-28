@@ -43,7 +43,7 @@
 
             });
 
-                http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
+                /*http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
                 }).then(function (res, status, headers, config) {
@@ -53,7 +53,7 @@
 
                 }, function  (data, status, headers, config) {
                 vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
-            });
+            });*/
             /*              $.each(res,function (k,v) {
 
              scope.preview.push(v);
@@ -61,7 +61,7 @@
 
              });
              */
-/*
+
             $.ajax({
                 url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
                 type: "post",
@@ -87,10 +87,10 @@
                 },
                 error:function () {
 
-                    alert("err");
+             vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
                 }
             })
-*/
+
 
 
 
