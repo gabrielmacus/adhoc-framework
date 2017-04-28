@@ -823,3 +823,12 @@ body,body > section,.body
     padding: 10px;
     font-size: 50px;
 }
+.welcome
+{
+    font-weight: 300;
+    font-size: 40px;
+    position: relative;
+    left: 40px;
+    top: 40px;
+    background-color: #dad3d1;
+}

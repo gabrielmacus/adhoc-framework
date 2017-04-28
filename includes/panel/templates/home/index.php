@@ -1,1 +1,1 @@
-<h2><?Php echo $user["name"]." ".$user["surname"]?></h2>
+<h2 class="welcome">Bienvenido, <?Php echo $user["name"]." ".$user["surname"]?></h2>
