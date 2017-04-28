@@ -9,7 +9,7 @@
             $(".close-menu").fadeOut();
         });
 
-        $(document).on("click",".hamburger",function () {
+        $(document).on("click touchstart",".hamburger",function () {
 
             $(".close-menu").fadeIn();
             $(".sidenav-container").addClass("open");
