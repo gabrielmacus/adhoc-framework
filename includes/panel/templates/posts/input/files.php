@@ -61,6 +61,7 @@
 
              });
              */
+            $(".loader .info").html("Subiendo archivo/s...");
 
             $.ajax({
                 url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",

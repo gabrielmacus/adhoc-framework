@@ -1,4 +1,12 @@
-
+<script>
+    $( document ).ajaxStop(function() {
+        $(".loader").removeClass("active");
+    });
+    $( document ).ajaxStart(function() {
+        $(".loader").addClass("active");
+        $(".loader .info").html("");
+    });
+</script>
 <style>.sk-circle {
         margin: 15% auto;
         width: 160px;
@@ -172,5 +180,5 @@
     color: white;
     font-size: 40px;
     /* background: white; */
-">Enc</span></div>
+" class="info">Enc</span></div>
 </div>
