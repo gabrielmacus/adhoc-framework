@@ -2,6 +2,10 @@
 <script>
     $(document).on("click",".item",openSubmenu);
 
+    $(document).on("click",".hamburger",function () {
+        $(".sidenav-container").toggleClass("open");
+    });
+
     function openSubmenu(e) {
 
         var item = $(e.target).closest(".item");
