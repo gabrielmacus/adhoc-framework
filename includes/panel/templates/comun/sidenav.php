@@ -11,7 +11,7 @@
 
         $(document).on("click touchstart",".hamburger",function () {
 
-            $(".close-menu").show();
+            $(".close-menu").css("visibility","visible");
             $(".sidenav-container").addClass("open");
 
 
