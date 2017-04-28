@@ -18,7 +18,7 @@ require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
 
 
-var_dump("A");
+var_dump("dA");
 
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
     "uipasd",0.1,"http://footgolf.mapucheonline.com","Adhoc Framework","Gamaware Web Tech",
