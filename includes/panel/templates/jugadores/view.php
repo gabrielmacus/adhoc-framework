@@ -5,5 +5,5 @@
 
 
 <div class="body">
-    <h3><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
+    <h3 style="font-size: 30px"><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
 </div>
