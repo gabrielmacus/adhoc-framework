@@ -16,85 +16,83 @@
 
     });
 
-    $(document).ready(function () {
-        $(document).on("change","#<?php echo $id?>",function (e) {
+     $(document).on("change","#<?php echo $id?>",function (e) {
 
 
-            <?php
+        <?php
 
-            if(is_numeric($max))
-            {
-            ?>
+        if(is_numeric($max))
+        {
+        ?>
 
-            if(scope.previews.length >= <?php echo $max?>)
-            {
-                vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
-                return false;
+        if(scope.previews.length >= <?php echo $max?>)
+        {
+            vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
+            return false;
+        }
+        <?php
+        }?>
+
+
+        var files =$(this)[0].files;
+        var data = new FormData();
+
+        $.each(files,function (k,v) {
+
+            var ext = v.name.split(".");
+            ext = ext[ext.length-1];
+
+            if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
+            {  data.append(k,v);
+
             }
-            <?php
-            }?>
+            else
+            {
+                vex.dialog.alert("Los tipos de archivo permitidos son <?Php echo implode(",",$formats)?>");
+            }
 
-
-            var files =$(this)[0].files;
-            var data = new FormData();
-
-            $.each(files,function (k,v) {
-
-                var ext = v.name.split(".");
-                ext = ext[ext.length-1];
-
-                if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
-                {  data.append(k,v);
-
-                }
-                else
-                {
-                    vex.dialog.alert("Los tipos de archivo permitidos son <?Php echo implode(",",$formats)?>");
-                }
-
-            });
+        });
 
 //            alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
-            $.ajax({
-                url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
-                type: "post",
-                dataType: "html",
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success:function(res)
-                {
+        $.ajax({
+            url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
+            type: "post",
+            dataType: "html",
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success:function(res)
+            {
 
-                    res = JSON.parse(res);
+                res = JSON.parse(res);
 
-                    console.log(res);
-                    $.merge(scope.previews, res);
+                console.log(res);
+                $.merge(scope.previews, res);
 
-                    setTimeout(function () {
-                        scope.$apply();
-                    })
+                setTimeout(function () {
+                    scope.$apply();
+                })
 
-                    /*              $.each(res,function (k,v) {
+                /*              $.each(res,function (k,v) {
 
-                     scope.preview.push(v);
-                     scope.$apply();
+                 scope.preview.push(v);
+                 scope.$apply();
 
-                     });
-                     */
+                 });
+                 */
 
-                },
-                error:function () {
+            },
+            error:function () {
 
-                    alert("err");
-                }
-            })
-
-
-
-
+                alert("err");
+            }
         })
-    });
+
+
+
+
+    })
 
     
 </script>
