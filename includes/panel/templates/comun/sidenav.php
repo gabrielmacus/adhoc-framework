@@ -3,9 +3,14 @@
     $(document).on("click",".item",openSubmenu);
 
     $(document).on("click",".hamburger",function () {
+
+        $(".sidenav-container").animate({"left":"0%"},450);
+        $(".navigation").animate({"left":"70%"},450);
+        $(".main-container").animate({"left":"70%"},450);
+        /*
         $(".sidenav-container").toggleClass("open");
         $(".navigation").toggleClass("push");
-        $(".main-container").toggleClass("push");
+        $(".main-container").toggleClass("push");*/
     });
 
     function openSubmenu(e) {
