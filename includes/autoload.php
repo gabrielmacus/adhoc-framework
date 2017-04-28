@@ -93,5 +93,3 @@ foreach ($secciones as $seccion)
 
 set_time_limit(30);
 
-
-var_dump("dadaadA");

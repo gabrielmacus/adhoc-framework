@@ -9,6 +9,7 @@
 
 include "includes/autoload.php";
 
+var_dump("FAFA");
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
