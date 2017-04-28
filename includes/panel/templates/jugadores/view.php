@@ -1,5 +1,5 @@
 <?php $a=$post->getArchivos();
-
+var_dump($subsecciones);
 ;?>
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
