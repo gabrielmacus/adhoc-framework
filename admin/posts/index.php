@@ -38,6 +38,10 @@ try{
     {
         $action="list";
     }
+    else if($_GET["act"]=="view")
+    {
+        $GLOBALS["seccionDAO"]->selectSeccionById($_GET["id"]);
+    }
 
 
 
