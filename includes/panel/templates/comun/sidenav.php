@@ -2,10 +2,29 @@
 <script>
 
     $(document).ready(function () {
+        $(document).on("click",".item",openSubmenu);
+
+
+        function openSubmenu(e) {
+
+            var item = $(e.target).closest(".item");
+            if(item)
+            {
+                item.stop();
+                item.toggleClass("active");
+                item.find("ul").slideToggle(400,function () {
+
+
+                });
+
+            }
+
+
+        }
 
 
 
-        $(document).on("click touchstart","navigation > .close-menu",function () {
+        $(document).on("click touchstart",".navigation > .close-menu",function () {
 
             $(".sidenav-container").removeClass("open");
             $(".close-menu").fadeOut();
