@@ -50,7 +50,7 @@
 
                     setTimeout(function () {
                         scope.$apply();
-                    }
+                    });
                 }, function  (data, status, headers, config) {
                 vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
             };
