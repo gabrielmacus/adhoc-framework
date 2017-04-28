@@ -430,6 +430,11 @@ body
     float: left;
     background-color:  #dfdfdf
 }
+.list .item *
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .list > li > a,.list > li > div
 {
     padding: 25px;

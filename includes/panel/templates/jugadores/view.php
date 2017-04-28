@@ -6,7 +6,7 @@
 </header>
 <div class="fila center" style="margin-top: 20px">
     <figure>
-        <img style="width: 100%;height: 200px;object-fit: contain" src="<?php echo reset($a[0])["original"]->getRealName()?>">
+        <img style="width: 100%;height: 250px;object-fit: contain" src="<?php echo reset($a[0])["original"]->getRealName()?>">
     </figure>
 </div>
 
@@ -19,7 +19,7 @@
             </li>
         <li class="item animated">
             <a><strong>Email:</strong>
-                <span style="font-weight: 300"><?php echo $post->getExtra3()?>"><?php echo $post->getExtra3()?></span></a>
+                <span style="font-weight: 300"><?php echo $post->getExtra3()?></span></a>
         </li>
         <li class="item animated "><a>
                 <strong>Categoría:</strong>
