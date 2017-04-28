@@ -23,8 +23,9 @@
     var app = angular.module('panel', ['ngTagsInput']);
     var scope;
     var timeout;
-    app.controller('panelCtrl', function($scope,$timeout) {
-        
+    var http;
+    app.controller('panelCtrl', function($scope,$timeout,$http) {
+        http=$http;
         vex.defaultOptions.className = 'vex-theme-plain';
 
 
