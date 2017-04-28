@@ -58,7 +58,9 @@
                 console.log(res);
                 $.merge(scope.previews, res);
 
-                scope.$apply();
+              setTimeout(function () {
+                  scope.$apply();
+              })
 
   /*              $.each(res,function (k,v) {
 
