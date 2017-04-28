@@ -4,7 +4,7 @@
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
 </header>
-<div class="fila center">
+<div class="fila center" style="margin-top: 20px">
     <figure>
         <img style="width: 100%;height: 200px;object-fit: contain" src="<?php echo reset($a[0])["original"]->getRealName()?>">
     </figure>
