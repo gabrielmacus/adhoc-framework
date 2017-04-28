@@ -1,4 +1,4 @@
-<?php $a=$post->getArchivos()[0];
+<?php $a=$post->getArchivos();
 
 var_dump($a);
 ;?>
