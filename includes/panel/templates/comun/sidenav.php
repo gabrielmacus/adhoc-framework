@@ -6,12 +6,12 @@
         $(document).on("click touchstart","navigation > .close-menu",function () {
 
             $(".sidenav-container").removeClass("open");
-            $(".close-menu").fadeOut();
+            $(".close-menu").hide();
         });
 
         $(document).on("click touchstart",".hamburger",function () {
 
-            $(".close-menu").fadeIn();
+            $(".close-menu").show();
             $(".sidenav-container").addClass("open");
 
 
