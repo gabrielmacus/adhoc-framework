@@ -43,7 +43,8 @@
 
             });
 
-                /*http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
+
+            http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
                 }).then(function (res, status, headers, config) {
@@ -60,9 +61,10 @@
              scope.$apply();
 
              });
-             */
+
             $(".loader .info").html("Subiendo archivo/s...");
 
+            /*
             $.ajax({
                 url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
                 type: "post",
@@ -100,7 +102,7 @@
                 }
             })
 
-
+*/
 
 
         });
