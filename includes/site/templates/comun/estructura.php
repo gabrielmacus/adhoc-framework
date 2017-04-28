@@ -32,8 +32,9 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
             return {
                 // On request success
                 request: function (config) {
+                    $(".loader").addClass("active");
+                    $(".loader .info").html("");
 
-                    $(".loader").removeClass("active");
                     // console.log(config); // Contains the data about the request before it is sent.
 
                     // Return the config or wrap it in a promise if blank.
@@ -43,7 +44,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                 // On request failure
                 requestError: function (rejection) {
                     // console.log(rejection); // Contains the data about the error on the request.
-
+                    $(".loader").removeClass("active");
                     // Return the promise rejection.
                     return $q.reject(rejection);
                 },
@@ -51,8 +52,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                 // On response success
                 response: function (response) {
                     // console.log(response); // Contains the data from the response.
-                    $(".loader").addClass("active");
-                    $(".loader .info").html("");
+
                     // Return the response or promise.
 
                     return response || $q.when(response);
@@ -61,8 +61,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                 // On response failture
                 responseError: function (rejection) {
                     // console.log(rejection); // Contains the data about the error.
-                    $(".loader").addClass("active");
-                    $(".loader .info").html("");
+                    $(".loader").removeClass("active");
                     // Return the promise rejection.
                     return $q.reject(rejection);
                 }
