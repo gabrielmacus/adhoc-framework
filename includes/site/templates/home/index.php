@@ -33,7 +33,7 @@
 
 
                     $formats=["jpg","jpeg","png"];
-                    $view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";;
+                    //$view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";;
                     $label="Foto";
                     $uploadMessage="Arrastrá tu foto de perfil o presioná acá";
                     $max=1;
