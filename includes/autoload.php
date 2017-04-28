@@ -19,8 +19,8 @@ require("classes/schema/Configuracion/Configuracion.php");
 
 
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
-    "uipasd",0.1,"http://mapucheonline.com/test","Adhoc Framework","Gamaware Web Tech",
-    "test", "http://mapucheonline.com/test","http://mapucheonline.com/test");
+    "uipasd",0.1,"http://footgolf.mapucheonline.com","Adhoc Framework","Gamaware Web Tech",
+    "test", "http://footgolf.mapucheonline.com","http://footgolf.mapucheonline.com");
 $configuracion->setHtdocsFolder("public_html");
 
 
