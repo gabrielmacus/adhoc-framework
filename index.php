@@ -7,7 +7,7 @@
  * Time: 1:07
  */
 
-include "{$_SERVER['DOCUMENT_ROOT']}/includes/autoload.php";
+include "includes/autoload.php";
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";

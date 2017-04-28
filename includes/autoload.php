@@ -1,5 +1,5 @@
 <?php
-//Importante para que cree un buffer antes de enviar
+ob_start();//Importante para que cree un buffer antes de enviar
 /**
  * Created by PhpStorm.
  * User: Gabriel
