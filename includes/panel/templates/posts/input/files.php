@@ -13,6 +13,10 @@
 
         }
 
+
+    });
+
+    $(document).ready(function () {
         $(document).on("change","#<?php echo $id?>",function (e) {
 
 
@@ -36,10 +40,10 @@
 
             $.each(files,function (k,v) {
 
-             var ext = v.name.split(".");
-             ext = ext[ext.length-1];
+                var ext = v.name.split(".");
+                ext = ext[ext.length-1];
 
-               if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
+                if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
                 {  data.append(k,v);
 
                 }
@@ -91,7 +95,6 @@
 
         })
     });
-
 
     
 </script>
