@@ -25,17 +25,6 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 
 
     var app = angular.module('panel', []);
-    var scope;
-    var timeout;
-    var http;
-    app.controller('panelCtrl', function($scope,$timeout,$http) {
-        http=$http;
-        vex.defaultOptions.className = 'vex-theme-plain';
-
-        scope=$scope;
-        timeout=$timeout;
-    });
-
     app.config(function ($provide, $httpProvider) {
 
         // Intercept http calls.
@@ -83,6 +72,18 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('LoggingHttpInterceptor');
     });
+    var scope;
+    var timeout;
+    var http;
+    app.controller('panelCtrl', function($scope,$timeout,$http) {
+        http=$http;
+        vex.defaultOptions.className = 'vex-theme-plain';
+
+        scope=$scope;
+        timeout=$timeout;
+    });
+
+
     
 
     app.directive('stringToNumber', function() {
