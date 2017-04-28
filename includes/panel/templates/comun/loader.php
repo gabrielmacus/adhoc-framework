@@ -180,5 +180,5 @@
     color: white;
     font-size: 40px;
     /* background: white; */
-" class="info">Enc</span></div>
+" class="info"></span></div>
 </div>
