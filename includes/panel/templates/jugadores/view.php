@@ -4,7 +4,7 @@
 </header>
 <div class="fila">
     <figure>
-        <img src="<?php echo $post->getArchivos()[0]["original"]->getRealName()?>">
+        <img src="<?php var_dump( $post->getArchivos())?>">
     </figure>
 </div>
 
