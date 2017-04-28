@@ -128,8 +128,8 @@ $(document).ready(function () {
         content: '';
         display: block;
         margin: 0 auto;
-        width: 15%;
-        height: 15%;
+        width: 35%;
+        height: 35%;
         background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
         border-radius: 100%;
         -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
