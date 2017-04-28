@@ -13,8 +13,8 @@
 <div class="body">
     <h3 style="font-size: 30px"><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
     <ul class="list">
-        <li class="item animated s12 m6 l6"><a>DNI: <?php echo $post->getBajada()?></a></li>
-        <li class="item animated s12 m6 l6"><a>Edad: <?php echo $post->getExtra1()?></a></li>
-        <li class="item animated s12 m6 l6"><a>Email: <?php echo $post->getExtra3()?></a></li>
+        <li class="item animated s12 m6 l4"><a>DNI: <?php echo $post->getBajada()?></a></li>
+        <li class="item animated s12 m6 l4"><a>Edad: <?php echo $post->getExtra1()?></a></li>
+        <li class="item animated s12 m12 l4"><a>Email: <?php echo $post->getExtra3()?></a></li>
     </ul>
 </div>
