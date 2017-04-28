@@ -803,6 +803,7 @@ body,body > section,.body
 
 .hamburger
 {
+    top: 25%;
     height: 100%;
     float: left;
     padding: 10px;
