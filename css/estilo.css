@@ -826,12 +826,12 @@ body,body > section,.body
 .welcome
 {
     float: left;
-    left: 10px;
+    left: 40px;
     font-weight: 300;
     font-size: 40px;
     position: relative;
     padding: 10px;
-    width: 75%;
+
     top: 40px;
     background-color: #dad3d1;
 }
