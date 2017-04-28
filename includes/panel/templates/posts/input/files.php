@@ -39,7 +39,7 @@
 
             });
 
-            alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
+
             $.ajax({
                 url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
                 type: "post",
