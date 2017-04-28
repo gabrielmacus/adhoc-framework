@@ -24,7 +24,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 
 
 
-    var app = angular.module('panel', []);
+    var app = angular.module('panel', ['ngAnimate']);
     app.config(function ($provide, $httpProvider) {
 
         // Intercept http calls.

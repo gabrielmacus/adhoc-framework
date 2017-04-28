@@ -9,6 +9,7 @@
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/ng-tags-input.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/vex.combined.min.js"?>"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.js"></script>
 
 <script src="//cdn.quilljs.com/1.2.3/quill.min.js"></script>
 <script

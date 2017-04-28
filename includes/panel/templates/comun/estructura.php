@@ -20,7 +20,7 @@
 
 
 
-    var app = angular.module('panel', ['ngTagsInput']);
+    var app = angular.module('panel', ['ngTagsInput','ngAnimate']);
     var scope;
     var timeout;
     var http;
