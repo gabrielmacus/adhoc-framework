@@ -52,7 +52,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                 // On response success
                 response: function (response) {
                     // console.log(response); // Contains the data from the response.
-
+                    $(".loader").removeClass("active");
                     // Return the response or promise.
 
                     return response || $q.when(response);
