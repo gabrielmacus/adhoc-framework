@@ -21,6 +21,10 @@
 
 
             var files =$(this)[0].files;
+            if(files.length==0)
+            {
+                return false;
+            }
             var data = new FormData();
 
             $.each(files,function (k,v) {
@@ -46,10 +50,6 @@
 
 
                     $.merge(scope.previews, res.data);
-
-                    
-
-                        scope.$apply();
 
                 }, function  (data, status, headers, config) {
                 vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
