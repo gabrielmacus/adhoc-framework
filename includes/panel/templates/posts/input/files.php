@@ -43,6 +43,8 @@
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
                 }).then(function (data, status, headers, config) {
+
+                    console.log(data);
                     var res = JSON.parse(data);
 
                     console.log(res);
