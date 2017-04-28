@@ -1,5 +1,5 @@
 <?php $a=$post->getArchivos();
-var_dump($seccion);
+
 ;?>
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
@@ -15,6 +15,7 @@ var_dump($seccion);
     <ul class="list">
         <li class="item animated s12 m6 l6"><a>DNI: <?php echo $post->getBajada()?></a></li>
         <li class="item animated s12 m6 l6"><a>Edad: <?php echo $post->getExtra1()?></a></li>
-        <li class="item animated s12 m12 l12"><a>Email: <?php echo $post->getExtra3()?></a></li>
+        <li class="item animated s12 m6 l6"><a>Email: <?php echo $post->getExtra3()?></a></li>
+        <li class="item s12 m6 l6"><?php echo $seccion->getNombre()?></li>
     </ul>
 </div>
