@@ -1,10 +1,11 @@
-
+<?php $a=$post->getArchivos();
+var_dump($a->getName());?>
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
 </header>
 <div class="fila">
     <figure>
-        <img src="<?php var_dump( $post->getArchivos())?>">
+        <img src="">
     </figure>
 </div>
 
