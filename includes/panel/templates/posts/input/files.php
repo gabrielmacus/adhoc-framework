@@ -73,6 +73,10 @@
                 success:function(res)
                 {
 
+                    try
+                    {
+
+
                     res = JSON.parse(res);
 
                     console.log(res);
@@ -81,7 +85,11 @@
                     setTimeout(function () {
                         scope.$apply();
                     })
-
+                    }
+                    catch (e)
+                    {
+                        vex.dialog.alert("Fallo la conexión con la API");
+                    }
 
 
                 },
