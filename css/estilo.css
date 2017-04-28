@@ -806,5 +806,6 @@ body,body > section,.body
     top: 25%;
     height: 100%;
     float: left;
+    position: relative;
     padding: 10px;
 }
