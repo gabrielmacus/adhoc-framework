@@ -9,10 +9,8 @@
 
     $(document).on("click",".hamburger",function () {
 
-        $(".close-menu").fadeIn(function () {
-            $(".sidenav-container").addClass("open");
-        });
-
+        $(".close-menu").show();
+        $(".sidenav-container").addClass("open");
 
 
         //  $(".navigation").toggleClass("push");
