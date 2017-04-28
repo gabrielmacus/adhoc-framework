@@ -24,7 +24,7 @@
 
 
 
-        $(document).on("click touchstart",".navigation > .close-menu",function () {
+        $(document).on("click touchstart",".close-menu",function () {
 
             $(".sidenav-container").removeClass("open");
             $(".close-menu").fadeOut();
