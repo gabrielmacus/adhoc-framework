@@ -35,7 +35,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
-var_dump("adA");
+var_dump("dadA");
 /** DAOs**/
 
 $GLOBALS["userDAO"]  = new UserDAO($configuracion->getDataSource());
