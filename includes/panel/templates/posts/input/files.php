@@ -43,7 +43,7 @@
 
             });
 
-            $(".loader .info").html("Subiendo archivo/s...");
+            $(".info").html("Subiendo archivo/s...");
             http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
