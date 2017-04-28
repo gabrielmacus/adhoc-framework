@@ -113,8 +113,8 @@ $(document).ready(function () {
 
 <style>.sk-circle {
         margin: 100px auto;
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
         position: relative;
     }
     .sk-circle .sk-child {
