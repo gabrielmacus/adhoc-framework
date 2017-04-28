@@ -830,6 +830,7 @@ body,body > section,.body
     font-size: 40px;
     position: relative;
 
+    width: 60%;
     top: 40px;
     background-color: #dad3d1;
 }
