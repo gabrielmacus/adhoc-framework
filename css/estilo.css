@@ -835,3 +835,8 @@ body,body > section,.body
     top: 10px;
     background-color: #dad3d1;
 }
+
+.open
+{
+    width: 80%;
+}
