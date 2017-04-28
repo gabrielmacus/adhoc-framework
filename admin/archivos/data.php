@@ -97,7 +97,7 @@ try{
             break;
     }
 
-exit();
+
 
 }
 catch (Exception $e)
