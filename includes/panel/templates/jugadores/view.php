@@ -19,7 +19,7 @@
             </li>
         <li class="item animated">
             <a><strong>Email:</strong>
-                <span style="font-weight: 300"><a style="display: inline" href="mailto:<?php echo $post->getExtra3()?>"><?php echo $post->getExtra3()?></a></span></a>
+                <span style="font-weight: 300"><?php echo $post->getExtra3()?>"><?php echo $post->getExtra3()?></span></a>
         </li>
         <li class="item animated "><a>
                 <strong>Categoría:</strong>
