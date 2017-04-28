@@ -140,8 +140,10 @@ header h2
     }
     .sidenav-container
     {
-        width: 0%;
-        overflow: hidden;
+        left: -70%;
+        width: 70%;
+        /*/width: 0%;
+        */overflow: hidden;
     }
     .navigation
     {
@@ -210,8 +212,10 @@ header h2
 @media screen and (max-width: 600px) {
 
     .sidenav-container
-    {
-        width: 0%;
+    { left: -70%;
+        width: 70%;
+        /*
+        width: 0%;*/
         overflow: hidden;
     }
     .navigation
@@ -838,5 +842,6 @@ body,body > section,.body
 
 .open
 {
-    width: 80%;
+    left: 0%;
+
 }
