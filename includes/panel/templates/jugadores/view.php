@@ -1,9 +1,12 @@
-<?php
-var_dump($post->getArchivos())?>
+
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
 </header>
-
+<div class="fila">
+    <figure>
+        <img src="<?php echo $post->getArchivos()[0]["original"]->getRealName()?>">
+    </figure>
+</div>
 
 <div class="body">
     <h3 style="font-size: 30px"><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
