@@ -16,6 +16,6 @@
         <li class="item animated"><a>DNI: <?php echo $post->getBajada()?></a></li>
         <li class="item animated "><a>Edad: <?php echo $post->getExtra1()?></a></li>
         <li class="item animated"><a>Email: <?php echo $post->getExtra3()?></a></li>
-        <li class="item "><a><?php echo $seccion->getNombre()?></a></li>
+        <li class="item animated "><a><?php echo $seccion->getNombre()?></a></li>
     </ul>
 </div>
