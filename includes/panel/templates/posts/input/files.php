@@ -36,6 +36,7 @@
 
             $.each(files,function (k,v) {
 
+                console.log(v);
                 data.append(k,v);
             });
 
