@@ -46,7 +46,9 @@
 
     {
         ?>
-        <h3>No hay contenido disponible</h3>
+        <h3 style="    padding: 20px;
+    text-align: center;
+    font-size: 30px;">No hay contenido disponible</h3>
         <?php
     }?>
 </div>
