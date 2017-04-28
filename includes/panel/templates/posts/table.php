@@ -37,6 +37,13 @@
             <?php
         }?>
 
+        <?php  if(count($rows)==0)
+
+        {
+            ?>
+            <tr>No hay con</tr>
+            <?php
+        }?>
 
         </tbody>
     </table>
