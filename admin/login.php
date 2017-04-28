@@ -66,6 +66,26 @@ try{
     *:after {
         box-sizing: inherit;
     }
+
+    @media screen and  (min-width:769px)  {
+
+
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-top: 10%;
+    }
+
+    @media screen and (min-width:601px) and (max-width:768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 10%;
+    }
+    @media screen and (max-width:600px) {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5;
+    }
+
 </style>
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
