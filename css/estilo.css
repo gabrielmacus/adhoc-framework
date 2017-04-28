@@ -430,7 +430,7 @@ body
     float: left;
     background-color:  #dfdfdf
 }
-.list li > a,.list li > div
+.list > li > a,.list > li > div
 {
     padding: 25px;
     display: block;
