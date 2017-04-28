@@ -54,7 +54,7 @@
 
                 }, function  (data, status, headers, config) {
                 vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
-            });*/
+            });
             /*              $.each(res,function (k,v) {
 
              scope.preview.push(v);
