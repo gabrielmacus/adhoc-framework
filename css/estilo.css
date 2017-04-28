@@ -127,6 +127,15 @@ header h2
         {
             left: 0%;    width: 100%!important;
         }
+
+
+    .sidenav-container
+    { left: -70%;
+        width: 70%;
+        /*
+        width: 0%;*/
+        overflow: hidden;
+    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
