@@ -174,13 +174,12 @@
         <div class="sk-circle10 sk-child"></div>
         <div class="sk-circle11 sk-child"></div>
         <div class="sk-circle12 sk-child"></div>
+    </div>
 
-        <div class="fila center">
+    <div class="fila center">
    <span style="
     color: white;
     font-size: 40px;
-    /* background: white; */
-" class="info"></span></div>
+" class="info"></span>
     </div>
-
 </div>
