@@ -5,7 +5,8 @@
     $(document).on("click",".hamburger",function () {
 
         $(".sidenav-container").toggleClass("open");
-        $(".navigation").toggleClass("push");
+
+        //  $(".navigation").toggleClass("push");
         //$(".main-container").toggleClass("push");
     });
 
@@ -60,6 +61,9 @@ foreach ($nav as $item)
 }
 }
 ?>
+
+<i style="position: fixed;top: 10px;right: 10px" class="fa fa-times" aria-hidden="true"></i>
+
 
 <ul class="sidenav  main-color">
     <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
