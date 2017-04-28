@@ -40,9 +40,7 @@
             data.append(k,v);
         });
 
-
-
-
+        alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
             type: "post",
@@ -53,6 +51,7 @@
             processData: false,
             success:function(res)
             {
+
                 res = JSON.parse(res);
 
                 console.log(res);
