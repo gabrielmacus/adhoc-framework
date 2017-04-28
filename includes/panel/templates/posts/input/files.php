@@ -47,7 +47,8 @@
 
                     $.merge(scope.previews, res.data);
 
-             
+                    
+
                         scope.$apply();
 
                 }, function  (data, status, headers, config) {
