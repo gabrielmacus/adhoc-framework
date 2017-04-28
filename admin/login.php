@@ -69,21 +69,32 @@ try{
 
     @media screen and  (min-width:769px)  {
 
+form
+{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+}
 
-        padding-left: 20%;
-        padding-right: 20%;
-        padding-top: 10%;
     }
 
     @media screen and (min-width:601px) and (max-width:768px) {
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-top: 10%;
+        form
+        {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 10%;
+        }
+
     }
     @media screen and (max-width:600px) {
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 5;
+        form
+        {
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 5;
+        }
+
     }
 
 </style>
