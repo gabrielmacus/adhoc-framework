@@ -37,15 +37,15 @@
             <?php
         }?>
 
-        <?php  if(count($rows)==0)
-
-        {
-            ?>
-            <tr>No hay con</tr>
-            <?php
-        }?>
 
         </tbody>
     </table>
 
+    <?php  if(count($rows)==0)
+
+    {
+        ?>
+        <h3>No hay contenido disponible</h3>
+        <?php
+    }?>
 </div>
