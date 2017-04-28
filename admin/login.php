@@ -111,6 +111,8 @@ form
 </head>
 <body>
 <form action="<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true" method="post" enctype="application/x-www-form-urlencoded">
+
+    <h1>Adhoc Panel <?php echo $configuracion->getVersion()?></h1>
     <div class="form-block">
         <label>Usuario o Email</label>
         <input name="user">
