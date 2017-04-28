@@ -7,7 +7,7 @@
  * Time: 1:07
  */
 
-
+var_dump(DIR_PATH);
 include "includes/autoload.php";
 
 $htmlTitle=$configuracion->getSiteName();
