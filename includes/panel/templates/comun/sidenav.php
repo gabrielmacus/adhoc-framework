@@ -11,7 +11,7 @@
 
         $(".sidenav-container").addClass("open");
 
-        $(".close-menu").fadeIn();
+        $(".close-menu").fadeToggle();
         //  $(".navigation").toggleClass("push");
         //$(".main-container").toggleClass("push");
     });
