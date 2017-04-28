@@ -42,17 +42,14 @@
                 http.post("<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload", data, {
                     headers: { 'Content-Type': undefined },
                     transformRequest: angular.identity
-                }).then(function (data, status, headers, config) {
+                }).then(function (res, status, headers, config) {
 
-                    console.log(data);
-                    var res = JSON.parse(data);
 
-                    console.log(res);
-                    $.merge(scope.previews, res);
+                    $.merge(scope.previews, res.data);
 
-                    setTimeout(function () {
+             
                         scope.$apply();
-                    });
+
                 }, function  (data, status, headers, config) {
                 vex.dialog.alert("Error al procesar la solicitud, inténtelo mas tarde o contacte un administrador");
             });
