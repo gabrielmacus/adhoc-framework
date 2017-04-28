@@ -40,6 +40,7 @@ try{
     }
 
 
+    var_dump($posts);
 
 }
 catch (Exception $e)
