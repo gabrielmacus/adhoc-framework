@@ -13,6 +13,7 @@ ob_start();//Importante para que cree un buffer antes de enviar
 require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/DataSource.php");
 require("{$_SERVER['DOCUMENT_ROOT']}/admin/includes/classes/schema/Configuracion/Configuracion.php");
 */
+var_dump("A");
 require("classes/schema/DataSource.php");
 require("classes/schema/Configuracion/Configuracion.php");
 
