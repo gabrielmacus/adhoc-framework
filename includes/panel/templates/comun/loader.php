@@ -6,6 +6,7 @@
         $(".loader").addClass("active");
         $(".loader .info").html("");
     });
+    
 </script>
 <style>.sk-circle {
         margin: 15% auto;
