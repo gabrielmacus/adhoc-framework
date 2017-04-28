@@ -90,9 +90,9 @@
 
 
     <div class="file" style="height: 180px;text-align: center">
+<!--width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;z-index: 1000-->
 
-
-        <input style="width: 100%;height: 100%;position: absolute;opacity: 0;left: 0;z-index: 1000"   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
+        <input style=""   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
         <span style="font-weight: 600;    top: 38%;
     font-size: 20px;
     position: relative;
