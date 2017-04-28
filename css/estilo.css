@@ -90,8 +90,8 @@ header h2
 .main-container
 {
     position: relative;
-    float: left;
-    left:0%;
+    float: right;
+    right:0%;
 
 }
 @media screen and (min-width: 1025px) {
