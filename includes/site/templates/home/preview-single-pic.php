@@ -1,6 +1,6 @@
 <div class="files">
 
-    <div  data-ng-class="animation" class="file-preview fila" style="padding: 0;margin-top: 10px!important;" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+    <div  data-ng-class="animation slide-top" class="file-preview fila" style="padding: 0;margin-top: 10px!important;" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
         <div class="file" >
 
