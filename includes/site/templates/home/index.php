@@ -27,7 +27,7 @@
                     $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
 
-                    $successMessage="Se inscribió correctamente. Chequee su email para confirmar la inscripción";
+                    $successMessage="Se inscribió correctamente!";
                     include DIR_PATH."/includes/panel/templates/posts/save.php";
 
 
