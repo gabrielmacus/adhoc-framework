@@ -58,7 +58,7 @@ foreach ($nav as $item)
 }
 ?>
 
-<ul class="sidenav animated main-color">
+<ul class="sidenav  main-color">
     <li class="title"><a><?php echo $configuracion->getSiteName()." ".$configuracion->getVersion() ?></a></li>
 
     <?php iterateSidenav($lang["sidenav"]) ?>
