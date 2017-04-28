@@ -4,6 +4,7 @@
 
     $(document).on("click",".hamburger",function () {
         $(".sidenav-container").toggleClass("open");
+        $(".navigation").toggleClass("push");
     });
 
     function openSubmenu(e) {
