@@ -1,0 +1,1 @@
+<h2><?Php var_dump($user); ?></h2>
