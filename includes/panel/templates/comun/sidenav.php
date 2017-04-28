@@ -1,11 +1,17 @@
 
 <script>
-    $(document).on("click",".item",openSubmenu);
+       $(document).on("click",".item",openSubmenu);
+       $(document).on("click",".close-menu",function () {
+
+           $(".sidenav-container").removeClass("open");
+           $(".close-menu").fadeOut();
+       });
 
     $(document).on("click",".hamburger",function () {
 
-        $(".sidenav-container").toggleClass("open");
+        $(".sidenav-container").addClass("open");
 
+        $(".close-menu").fadeIn();
         //  $(".navigation").toggleClass("push");
         //$(".main-container").toggleClass("push");
     });
@@ -62,7 +68,7 @@ foreach ($nav as $item)
 }
 ?>
 
-<i style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244" class="fa fa-times" aria-hidden="true"></i>
+<i  style="position: fixed;top: 10px;right: 10px;font-size: 45px;color: #da4244;display: none" class="close-menu fa fa-times" aria-hidden="true"></i>
 
 
 <ul class="sidenav  main-color">
