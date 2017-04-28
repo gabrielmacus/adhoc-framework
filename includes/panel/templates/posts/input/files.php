@@ -12,74 +12,76 @@
             if(0==a)return"0 Bytes";var c=1e3,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f];
 
         }
+
+        $(document).on("change","#<?php echo $id?>",function (e) {
+
+
+            <?php
+
+            if(is_numeric($max))
+            {
+            ?>
+
+            if(scope.previews.length >= <?php echo $max?>)
+            {
+                vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
+                return false;
+            }
+            <?php
+            }?>
+
+
+            var files =$(this)[0].files;
+            var data = new FormData();
+
+            $.each(files,function (k,v) {
+
+                data.append(k,v);
+            });
+
+            alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
+            $.ajax({
+                url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
+                type: "post",
+                dataType: "html",
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success:function(res)
+                {
+
+                    res = JSON.parse(res);
+
+                    console.log(res);
+                    $.merge(scope.previews, res);
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    })
+
+                    /*              $.each(res,function (k,v) {
+
+                     scope.preview.push(v);
+                     scope.$apply();
+
+                     });
+                     */
+
+                },
+                error:function () {
+
+                    alert("err");
+                }
+            })
+
+
+
+
+        })
     });
 
-    $(document).on("change","#<?php echo $id?>",function (e) {
 
-
-        <?php
-
-        if(is_numeric($max))
-        {
-        ?>
-
-        if(scope.previews.length >= <?php echo $max?>)
-        {
-            vex.dialog.alert("Solo se permite <?php echo $max?> archivo/s");
-            return false;
-        }
-        <?php
-        }?>
-
-
-        var files =$(this)[0].files;
-        var data = new FormData();
-
-        $.each(files,function (k,v) {
-
-            data.append(k,v);
-        });
-
-        alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
-        $.ajax({
-            url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
-            type: "post",
-            dataType: "html",
-            data: data,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success:function(res)
-            {
-
-                res = JSON.parse(res);
-
-                console.log(res);
-                $.merge(scope.previews, res);
-
-              setTimeout(function () {
-                  scope.$apply();
-              })
-
-  /*              $.each(res,function (k,v) {
-
-                    scope.preview.push(v);
-                    scope.$apply();
-
-                });
-*/
-
-            },
-            error:function () {
-
-                alert("err");
-            }
-        })
-
-
-
-
-    })
     
 </script>
 
