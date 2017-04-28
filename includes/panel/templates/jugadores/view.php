@@ -1,13 +1,12 @@
 <?php $a=$post->getArchivos();
 
-var_dump(reset($a[0])["original"]->getName());
 ;?>
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
 </header>
 <div class="fila">
     <figure>
-        <img src="">
+        <img src="<?php echo reset($a[0])["original"]->getRealName()?>">
     </figure>
 </div>
 
