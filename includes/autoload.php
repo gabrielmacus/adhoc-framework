@@ -67,7 +67,7 @@ $GLOBALS["mapsConfig"]=array(
 /** **/
 /*** Constantes **/
 
-define("DIR_PATH",$_SERVER['DOCUMENT_ROOT'];
+define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']);
 /**  */
 
 
