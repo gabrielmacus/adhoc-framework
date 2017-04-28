@@ -9,7 +9,7 @@
 
 include "includes/autoload.php";
 
-var_dump("FAFA");
+
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
@@ -27,5 +27,5 @@ catch (Exception $e)
     echo json_encode("Error: {$e->getMessage()}");
 
 }
-
+var_dump(DIR_PATH."/includes/site/templates/comun/estructura.php");
 include DIR_PATH."/includes/site/templates/comun/estructura.php";
