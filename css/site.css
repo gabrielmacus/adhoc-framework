@@ -135,11 +135,12 @@ z-index: 0;
 .file-preview img
 {
     object-fit: contain!important;
-    background-color: #d2dce1;
+    background-color: #dde3e5;
 }
 .file
 {
     position: relative;
+    background-color: rebeccapurple;
 }
 .file-preview .delete
 {
