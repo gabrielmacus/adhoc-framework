@@ -1,5 +1,7 @@
-<?php $a=$post->getArchivos();
-var_dump($a);?>
+<?php $a=$post->getArchivos()[0];
+
+var_dump($a->getName());
+;?>
 <header>
     <h2>Jugador #<?php echo $post->getId()?></h2>
 </header>
