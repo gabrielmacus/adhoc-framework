@@ -53,7 +53,7 @@
     <?php include "menu.php"?>
 </header>
 
-<section class="main-container">
+<section class="main-container animated">
     <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 </section>
 <aside class="animated sidenav-container main-color">
