@@ -24,7 +24,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
     "test", "http://footgolf.mapucheonline.com","http://footgolf.mapucheonline.com");
 $configuracion->setHtdocsFolder("public_html");
 
-var_dump("adA");
+
 
 
 /*
@@ -35,7 +35,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
-
+var_dump("adA");
 /** DAOs**/
 
 $GLOBALS["userDAO"]  = new UserDAO($configuracion->getDataSource());
