@@ -112,7 +112,7 @@ $(document).ready(function () {
 
 
 <style>.sk-circle {
-        margin: 20% auto;
+        margin: 15% auto;
         width: 160px;
         height: 160px;
         position: relative;
