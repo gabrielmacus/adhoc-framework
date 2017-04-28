@@ -62,7 +62,7 @@ foreach ($nav as $item)
 }
 ?>
 
-<i style="position: fixed;top: 10px;right: 10px;font-size: 30px" class="fa fa-times" aria-hidden="true"></i>
+<i style="position: fixed;top: 10px;right: 10px;font-size: 30px;color: #da4244" class="fa fa-times" aria-hidden="true"></i>
 
 
 <ul class="sidenav  main-color">
