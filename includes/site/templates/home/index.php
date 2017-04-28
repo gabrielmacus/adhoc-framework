@@ -113,8 +113,8 @@ $(document).ready(function () {
 
 <style>.sk-circle {
         margin: 100px auto;
-        width: 40px;
-        height: 40px;
+        width: 200px;
+        height: 200px;
         position: relative;
     }
     .sk-circle .sk-child {
@@ -128,8 +128,8 @@ $(document).ready(function () {
         content: '';
         display: block;
         margin: 0 auto;
-        width: 35%;
-        height: 35%;
+        width: 15%;
+        height: 5%;
         background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
         border-radius: 100%;
         -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
