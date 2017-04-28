@@ -1,1 +1,1 @@
-<h2><?Php var_dump($user); ?></h2>
+<h2><?Php echo $user["name"]." ".$user["surname"]?></h2>
