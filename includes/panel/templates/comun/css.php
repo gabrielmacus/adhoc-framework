@@ -7,3 +7,4 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/vex.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/vex-theme-plain.css">
+<link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/ng-animate.css">
