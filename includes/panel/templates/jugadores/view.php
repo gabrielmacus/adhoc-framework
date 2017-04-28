@@ -7,6 +7,6 @@
 <div class="body">
     <h3 style="font-size: 30px"><?php echo $post->getTitulo()?> <?php echo $post->getVolanta()?></h3>
     <ul class="list">
-        <li>as</li>
+        <li class="item">as</li>
     </ul>
 </div>
