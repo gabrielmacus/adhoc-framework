@@ -6,7 +6,7 @@
 
         $(".sidenav-container").toggleClass("open");
         $(".navigation").toggleClass("push");
-        $(".main-container").toggleClass("push");
+        //$(".main-container").toggleClass("push");
     });
 
     function openSubmenu(e) {
