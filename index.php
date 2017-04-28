@@ -27,6 +27,5 @@ catch (Exception $e)
     echo json_encode("Error: {$e->getMessage()}");
 
 }
-var_dump(DIR_PATH);
 
 include DIR_PATH."/includes/site/templates/comun/estructura.php";
