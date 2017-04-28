@@ -15,6 +15,7 @@
             <th scope="col"><?php echo $lang["editar"];?></th>
 
             <th scope="col"><?php echo $lang["eliminar"];?></th>
+            <th style="col">Ver más</th>
         </tr>
 
         </thead>
@@ -33,6 +34,7 @@
                 }?>
                 <td title="<?php echo $lang["editar"];?>"><a class="icon " href="?t=<?php echo $_GET["t"]?>&s=<?php echo $_GET["s"]?>&act=save&id=<?php echo $row["#"]["data"];?>"><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
                 <td title="<?php echo $lang["eliminar"];?>"><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
+                <td title="Más info"><a><i class="fa fa-info" aria-hidden="true"></a></i></td>
             </tr>
             <?php
         }?>
