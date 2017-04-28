@@ -1,4 +1,4 @@
-<?php var_dump("ADA"); ?>
+
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
