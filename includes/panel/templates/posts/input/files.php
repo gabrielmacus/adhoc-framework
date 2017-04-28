@@ -36,8 +36,18 @@
 
             $.each(files,function (k,v) {
 
-                console.log(v);
-                data.append(k,v);
+             var ext = v.name.split(".");
+             ext = ext[ext.length-1];
+
+               if(<?php echo json_decode($formats)?>.indexOf(ext)>-1)
+                {  data.append(k,v);
+                    vex.dialog.alert("Los tipos de archivo permitidos son <?Php echo implode(",",$formats)?>");
+                }
+                else
+                {
+
+                }
+
             });
 
 //            alert( "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload");
