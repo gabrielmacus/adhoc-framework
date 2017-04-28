@@ -55,7 +55,18 @@ try{
     ?>
 <html>
 <head>
+<style>
+    html {
+        height: 100%;
+        box-sizing: border-box;
+    }
 
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+</style>
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
