@@ -40,7 +40,7 @@ try{
     }
     else if($_GET["act"]=="view")
     {
-        $GLOBALS["seccionDAO"]->selectSeccionById($_GET["id"]);
+        $GLOBALS["seccionDAO"]->selectSeccionById($t);
     }
 
 
