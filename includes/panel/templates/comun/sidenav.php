@@ -3,7 +3,7 @@
 
     $(document).ready(function () {
         $(document).on("click",".item",openSubmenu);
-        $(document).on("click","navigation > .close-menu",function () {
+        $(document).on("click touchstart","navigation > .close-menu",function () {
 
             $(".sidenav-container").removeClass("open");
             $(".close-menu").fadeOut();
@@ -11,7 +11,7 @@
 
         $(document).on("click",".hamburger",function () {
 
-            $(".close-menu").show();
+            $(".close-menu").fadeIn();
             $(".sidenav-container").addClass("open");
 
 
