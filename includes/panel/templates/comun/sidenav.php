@@ -1,39 +1,42 @@
 
 <script>
-       $(document).on("click",".item",openSubmenu);
-       $(document).on("click",".close-menu",function () {
 
-           $(".sidenav-container").removeClass("open");
-           $(".close-menu").fadeOut();
-       });
+    $(document).ready(function () {
+        $(document).on("click",".item",openSubmenu);
+        $(document).on("click","navigation > .close-menu",function () {
 
-    $(document).on("click",".hamburger",function () {
+            $(".sidenav-container").removeClass("open");
+            $(".close-menu").fadeOut();
+        });
 
-        $(".close-menu").show();
-        $(".sidenav-container").addClass("open");
+        $(document).on("click",".hamburger",function () {
 
-
-        //  $(".navigation").toggleClass("push");
-        //$(".main-container").toggleClass("push");
-    });
-
-    function openSubmenu(e) {
-
-        var item = $(e.target).closest(".item");
-        if(item)
-        {
-            item.stop();
-            item.toggleClass("active");
-            item.find("ul").slideToggle(400,function () {
+            $(".close-menu").show();
+            $(".sidenav-container").addClass("open");
 
 
-            });
+            //  $(".navigation").toggleClass("push");
+            //$(".main-container").toggleClass("push");
+        });
+
+        function openSubmenu(e) {
+
+            var item = $(e.target).closest(".item");
+            if(item)
+            {
+                item.stop();
+                item.toggleClass("active");
+                item.find("ul").slideToggle(400,function () {
+
+
+                });
+
+            }
+
 
         }
 
-
-       }
-
+    });
 
 
 
