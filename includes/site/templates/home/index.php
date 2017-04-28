@@ -130,7 +130,7 @@ $(document).ready(function () {
         margin: 0 auto;
         width: 15%;
         height: 15%;
-        background-color: #333;
+        background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
         border-radius: 100%;
         -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
         animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
