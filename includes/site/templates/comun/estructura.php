@@ -21,6 +21,14 @@
 <?php
 include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <script>
+
+
+    $( document ).ajaxStop(function() {
+        $(".loader").removeClass("active");
+    });
+    $( document ).ajaxStart(function() {
+        $(".loader").addClass("active");
+    });
     var app = angular.module('panel', []);
     var scope;
     var timeout;

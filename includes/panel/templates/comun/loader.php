@@ -130,6 +130,24 @@
         height: 100%;
         z-index: 20000;
         background-color: rgba(16,16,18,0.39);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;;
+        -ms-transition: all 300ms;;
+        -o-transition: all 300ms;;
+        transition: all 300ms;;
+    }
+    .loader.active
+    {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
     }
 </style>
 

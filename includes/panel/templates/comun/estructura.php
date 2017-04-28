@@ -18,6 +18,9 @@
 </head>
 <body class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 <script>
+
+
+
     var app = angular.module('panel', ['ngTagsInput']);
     var scope;
     var timeout;
