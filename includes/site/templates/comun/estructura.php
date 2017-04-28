@@ -18,7 +18,6 @@
 </head>
 <body class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 
-
 <?php
 include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <script>

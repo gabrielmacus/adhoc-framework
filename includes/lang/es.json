@@ -21,7 +21,8 @@
       "principiantes":{"text":"Listar principiantes","href":"/admin/posts/?act=list&t=62&s=jugadores"},
       "generales":{"text":"Listar generales","href":"/admin/posts/?act=list&t=63&s=jugadores"},
       "seniors":{"text":"Listar seniors","href":"/admin/posts/?act=list&t=64&s=jugadores"}
-    }}
+    }},
+    "salir":{"text":"Salir","href":"/admin/logout.php"}
 
     },
 
