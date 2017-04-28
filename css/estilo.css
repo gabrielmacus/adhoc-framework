@@ -825,7 +825,8 @@ body,body > section,.body
 }
 .welcome
 {
-    float: right;
+    float: left;
+    left: 10px;
     font-weight: 300;
     font-size: 40px;
     position: relative;
