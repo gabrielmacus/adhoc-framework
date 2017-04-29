@@ -429,10 +429,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function deletePostById($id)
     {
-        $sql="DELETE FROM archivos_objetos WHERE objeto_table=:objeto_table AND objeto_id=:objeto_id";
+        $sql="DELETE FROM archivos_objetos WHERE objeto_tabla=:objeto_tabla AND objeto_id=:objeto_id";
 
         $res= $this->dataSource->runUpdate($sql,array(
-            ":objeto_table"=>$this->tableName,
+            ":objeto_tabla"=>$this->tableName,
             ":objeto_id"=>$id
         ));
 
