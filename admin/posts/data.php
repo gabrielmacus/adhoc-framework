@@ -102,7 +102,7 @@ try{
             break;
 
         case "delete":
-
+            echo json_encode($GLOBALS["postDAO"]->deletePostById($_GET["id"]));
 
             break;
 
