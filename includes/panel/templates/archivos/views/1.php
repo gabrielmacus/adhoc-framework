@@ -32,7 +32,9 @@ foreach ($archivos as $k=>$archivo)
                             </figure>
 
                             <span class="name"><?php echo $version->getName()?></span>
-                            <span class="size" ><?php echo  bytesToSize($version->getSize())?></span>
+
+                        <!--    <span class="size" ><?php echo  bytesToSize($version->getSize())?></span>
+                        -->
                         </div>
 
                     </div>
