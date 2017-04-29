@@ -22,8 +22,3 @@
        }
    );
 </script>
-<div class="form-block">
-    <select id="test">
-        <option>Data</option>
-    </select>
-</div>
