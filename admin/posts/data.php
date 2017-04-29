@@ -101,6 +101,10 @@ try{
 
             break;
 
+        case "delete":
+
+
+            break;
 
     }
 

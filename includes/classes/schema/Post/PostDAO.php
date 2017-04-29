@@ -429,6 +429,21 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function deletePostById($id)
     {
+        $sql="DELETE FROM archivos_objetos WHERE objeto_table=:objeto_table AND objeto_id=:objeto_id";
+
+        $res= $this->dataSource->runUpdate($sql,array(
+            ":objeto_table"=>$this->tableName,
+            ":objeto_id"=>$id
+        ));
+
+        $sql="DELETE FROM posts_nexos WHERE post_anexo_id=:post_anexo_id OR objeto_id=:objeto_id";
+
+        $res= $this->dataSource->runUpdate($sql,
+            array(
+                ":post_anexo_id"=>$id,
+                ":objeto_id"=>$id
+            ));
+
 
         $sql = "DELETE FROM {$this->tableName} WHERE post_id= :post_id";
 
