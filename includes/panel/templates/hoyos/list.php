@@ -9,6 +9,7 @@
     $title=$lang["hoyoslistado"];
     foreach ($posts as $post)
     {
+        $row["#"]["data"]=$post->getId();
         $row[$lang["numero"]]["data"]=$post->getTitulo();
         $row[$lang["posicion"]]["data"]=$lang["verposicion"];
         $row[$lang["posicion"]]["modal"]=true;
