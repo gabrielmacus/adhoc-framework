@@ -15,7 +15,8 @@
        function () {
 
            var select=new Select({
-               el:  document.querySelector('#test')
+               el:  document.querySelector('#test'),
+               className: 'select-theme-default'
            });
 
        }
