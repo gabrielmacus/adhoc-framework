@@ -10,15 +10,3 @@
         }?>
     </select>
 </div>
-<script>
-   $(document).ready(
-       function () {
-
-           var select=new Select({
-               el:  document.querySelector('#test'),
-               className: 'select-theme-default'
-           });
-
-       }
-   );
-</script>
