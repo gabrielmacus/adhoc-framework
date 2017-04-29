@@ -22,6 +22,6 @@
        }
    );
 </script>
-<select id="test">
-    <option>Data</option>
-</select>
+<div id="test">
+    <a>Data</a>
+</div>
