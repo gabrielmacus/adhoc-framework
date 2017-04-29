@@ -26,8 +26,8 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div data-ng-click="deletePreview(p)" class="file">
 
-                            <figure>
-                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                            <figure style=" text-align: center;padding-top: 11%;">
+                                <i style="font-size: 150px" class="fa fa-file-o" aria-hidden="true"></i>
 
                             </figure>
 
