@@ -12,10 +12,11 @@
 <script>
    $(document).ready(
        function () {
-           var selectInstance = new Select({
-               el: document.querySelector('#test'),
-               className: 'select-theme-default'
-           })
+
+           var select=new Select({
+               el:  document.querySelector('#test')
+           });
+
        }
    );
 </script>
