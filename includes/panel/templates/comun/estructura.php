@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
+<?php include DIR_PATH."/includes/panel/templates/comun/submenu.php"?>
 <script>
 
 
