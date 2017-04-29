@@ -436,12 +436,12 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             ":objeto_id"=>$id
         ));
 
-        $sql="DELETE FROM posts_nexos WHERE post_anexo_id=:post_anexo_id OR objeto_id=:objeto_id";
+        $sql="DELETE FROM posts_nexos WHERE post_anexo_id=:post_anexo_id OR post_id=:post_id";
 
         $res= $this->dataSource->runUpdate($sql,
             array(
                 ":post_anexo_id"=>$id,
-                ":objeto_id"=>$id
+                ":post_id"=>$id
             ));
 
 
