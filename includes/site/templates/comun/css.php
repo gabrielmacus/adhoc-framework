@@ -9,3 +9,4 @@
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/vex.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/vex-theme-plain.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/ng-animate.css">
+<link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/select-theme-default.css">

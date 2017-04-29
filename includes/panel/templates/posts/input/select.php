@@ -9,3 +9,16 @@
         }?>
     </select>
 </div>
+<script>
+   $(document).ready(
+       function () {
+           var selectInstance = new Select({
+               el: document.querySelector('#test'),
+               className: 'select-theme-default'
+           })
+       }
+   );
+</script>
+<select id="#test">
+    <option>Data</option>
+</select>
