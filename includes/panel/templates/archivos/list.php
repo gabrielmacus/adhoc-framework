@@ -106,9 +106,9 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
         <?php
 
-        foreach ($archivos as $archivo)
+        foreach ($archivos as $k=>$archivo)
         {
-var_dump($archivo);
+var_dump($k);
             foreach ($archivo as $grupo)
             {
 
