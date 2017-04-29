@@ -95,6 +95,13 @@ try{
             echo  json_encode($tmps);
 
             break;
+
+        case "delete":
+
+
+           //$GLOBALS["archivoDAO"]->deleteArchivoById()
+
+            break;
     }
 
 
