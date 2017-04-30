@@ -64,7 +64,7 @@ else
         <style>
             .body
             {
-                padding: 0;
+                padding: 10px;
             }
         </style>
         <?Php
