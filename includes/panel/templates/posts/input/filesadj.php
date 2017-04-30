@@ -16,11 +16,16 @@
                 }
                 $.each(e.data,function (k,v) {
 
-                    //v.archivo_grupo=<?php echo $grupo;?>;
-                    scope.post.archivos.push(v);
+                    if(v.archivo_grupo==<?php echo $grupo?>)
+                    {
+                        scope.post.archivos.push(v);
+                    }
+
                 });
-                console.log("AQUI");
-             scope.$apply();
+              setTimeout(function () {
+                  scope.$apply();
+              });
+
             }
         },false);
     });
