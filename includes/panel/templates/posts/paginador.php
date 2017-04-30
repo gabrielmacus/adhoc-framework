@@ -1,8 +1,8 @@
 
 <?php
 
-$actualPage=$paginador->getActualPage()+1;
-$pg=$paginador->getPaginador();
+
+$pg=$paginador;
 
 ?>
 <script>
