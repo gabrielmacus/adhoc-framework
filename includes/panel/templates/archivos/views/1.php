@@ -1,32 +1,4 @@
 
-<script>
-    //For example we are defining menu in object. You can also define it on Ul list. See on documentation.
-    var menu = [{
-        name: 'create',
-        img: 'images/create.png',
-        title: 'create button',
-        fun: function () {
-            alert('i am add button')
-        }
-    }, {
-        name: 'update',
-        img: 'images/update.png',
-        title: 'update button',
-        fun: function () {
-            alert('i am update button')
-        }
-    }, {
-        name: 'delete',
-        img: 'images/delete.png',
-        title: 'delete button',
-        fun: function () {
-            alert('i am delete button')
-        }
-    }];
-
-    //Calling context menu
-    $('.file-preview').contextMenu(menu);
-</script>
 <?php
 var_dump($paginador->getPaginador());
 foreach ($archivos as $k=>$archivo)
