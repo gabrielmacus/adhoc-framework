@@ -78,20 +78,26 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         foreach ($archivos as  $archivo) {
 
             $archivo["objeto_id"]=$p->getId();
+            $archivo["objeto_tabla"]=$this->tableName;
 
             if(!$archivo["delete"])
             {
                 $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
+                $set="archivo_id={$archivo["archivo_id"]},
+                objeto_id={$archivo["objeto_id"]},
+                objeto_tabla='{$archivo["objeto_tabla"]}',
+                archivo_grupo='{$archivo["archivo_grupo"]}',
+                archivo_orden={$archivo["archivo_orden"]}";
 
-                $set="";
+  /*              $set="";
                 foreach ($archivo as $k=>$v)
                 {
                     $set.="{$k}='{$v}',";
                 }
 
                 $set=rtrim($set,",");
-
+*/
                 $archivosSql.=" {$set}";
 
             }
