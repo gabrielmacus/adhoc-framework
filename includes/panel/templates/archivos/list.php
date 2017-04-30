@@ -26,6 +26,7 @@
                 $(".file-preview [type='checkbox']:selected").each(function () {
                      var id=$(this).data("id");
                      var name=$(this).data("name");
+                     console.log({"name":name,"archivo_id":id});
                      selected.push({"name":name,"archivo_id":id});
                 });
 
