@@ -87,7 +87,7 @@ $id="archivos1";
             $progressBar=".load-mask";
 include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
-            var_dump($paginador->getPaginador());
+
 
 ?>
 <script>
@@ -125,6 +125,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
 
     <?php
+    var_dump($paginador->getPaginador());
     include DIR_PATH."/includes/panel/templates/posts/paginador.php";
     ?>
 </div>
