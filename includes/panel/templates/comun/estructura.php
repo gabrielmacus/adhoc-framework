@@ -48,20 +48,37 @@
     });
 
 </script>
-<header>
-    <?php include "menu.php"?>
-</header>
+<?php if(!$_GET["modal"])
+
+{
+    ?>
+    <header>
+        <?php include "menu.php"?>
+    </header>
+
+    <?Php
+}
+?>
 
 <section class="main-container animated">
     <?php include DIR_PATH."/includes/panel/templates/{$site}/{$action}.php"?>
 </section>
-<aside class="animated sidenav-container main-color">
-    <?php include "sidenav.php"?>
-</aside>
 
-<footer>
-    
-</footer>
+<?php if(!$_GET["modal"])
+
+{
+    ?>
+    <aside class="animated sidenav-container main-color">
+        <?php include "sidenav.php"?>
+    </aside>
+
+    <footer>
+
+    </footer>
+    <?php
+}
+?>
+
 
 </body>
 </html>
