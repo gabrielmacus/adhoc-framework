@@ -9,7 +9,7 @@
 
     // Listen to message from child window
     eventer(messageEvent,function(e) {
-        console.log('parent received message!:  ',e.data);
+        console.log(e.data);
     },false);
 </script>
 <div class="fila">
