@@ -7,7 +7,7 @@
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);
-            if(e.origin == <?php echo $configuracion->getSiteAddress()?>)
+            if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
             {
 
                 if(!scope.post.archivos)
