@@ -30,7 +30,7 @@
                      selected.push({"name":name,"archivo_id":id});
                 });
 
-                parent.postMessage(selected,location.href);
+                parent.postMessage(selected,<?php echo $configuracion->getSiteAddress()?>);
             }
 
             scope.save=function () {
