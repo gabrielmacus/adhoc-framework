@@ -107,7 +107,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             }
 
-            var_dump($archivosSql);
+
             $this->dataSource->runUpdate($archivosSql);
 
         }
