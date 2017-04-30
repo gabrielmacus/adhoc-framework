@@ -27,7 +27,7 @@
 <div class="fila">
     <label><?php echo $label;?></label>
 
-    <div class="s12 m4 l4" data-ng-repeat="a in archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+    <div class="s12 m4 l4" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
         <span class="name">{{a.name}}</span>
     </div>
 
