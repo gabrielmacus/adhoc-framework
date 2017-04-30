@@ -58,6 +58,17 @@
 
     <?Php
 }
+else
+    {
+        ?>
+        <style>
+            .body
+            {
+                padding: 0;
+            }
+        </style>
+        <?Php
+    }
 ?>
 
 <section class="main-container animated">
@@ -68,12 +79,7 @@
 
 {
     ?>
-    <style>
-        .body
-        {
-            padding: 0;
-        }
-    </style>
+
     <aside class="animated sidenav-container main-color">
         <?php include "sidenav.php"?>
     </aside>
