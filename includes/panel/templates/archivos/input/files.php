@@ -76,7 +76,6 @@
             {
 
 
-                alert(res);
                 res = JSON.parse(res);
 
                 console.log(res);
