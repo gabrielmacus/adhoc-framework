@@ -90,7 +90,7 @@ $id="archivos1";
 
             $label="Foto";
             $uploadMessage="Arrastre el archivo o toque acá";
-            $max=1;
+            $max=3;
             $id="foto";
             include DIR_PATH."/includes/panel/templates/posts/input/files.php";
 
