@@ -89,6 +89,15 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
 
 ?>
+<script>
+
+    angular.element(function () {
+        scope.previews=[];
+        console.log(<?php echo json_encode($archivos)?>);
+
+
+    });
+</script>
 
         <div class="form-block">
             <button  type="submit" class="animated fila relative" >
