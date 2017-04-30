@@ -87,10 +87,8 @@ $id="archivos1";
             $progressBar=".load-mask";
 //include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
-            $formats=["jpg","jpeg","png"];
-            $view=DIR_PATH."/includes/site/templates/home/preview-single-pic.php";
             $label="Foto";
-            $uploadMessage="Arrastrá tu foto de perfil o presioná acá";
+            $uploadMessage="Arrastre el archivo o toque acá";
             $max=1;
             $id="foto";
             include DIR_PATH."/includes/panel/templates/posts/input/files.php";
