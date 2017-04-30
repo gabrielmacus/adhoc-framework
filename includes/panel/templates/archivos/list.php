@@ -122,11 +122,11 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
             <button style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
         </div>
 
+        <?php
+
+        include DIR_PATH."/includes/panel/templates/posts/paginador.php";
+        ?>
 
     </div>
 
-    <?php
-
-    include DIR_PATH."/includes/panel/templates/posts/paginador.php";
-    ?>
 </div>
