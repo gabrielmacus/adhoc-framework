@@ -26,8 +26,7 @@
                 $(".file-preview [type='checkbox']:checked").each(function () {
                      var id=$(this).data("id");
                      var name=$(this).data("name");
-                     console.log({"name":name,"archivo_id":id});
-                     selected.push({"name":name,"archivo_id":id});
+                     selected.push({"name":name,"archivo_id":id,"archivo_grupo":"<?Php echo $_GET["grupo"]?>"});
                 });
 
                 parent.postMessage(selected,"<?php echo $configuracion->getSiteAddress()?>");
