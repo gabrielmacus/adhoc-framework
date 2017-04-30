@@ -44,7 +44,7 @@
                 <?php if($_GET["modal"])
                 {
                     ?>
-                    <td title=""><input type="checkbox" data-id="<?php echo $row["#"]["data"]?>"></td>
+                    <td title=""><input style="-webkit-transform: scale(1.5);-moz-transform: scale(1.5);-ms-transform: scale(1.5);-o-transform: scale(1.5);transform: scale(1.5);" type="checkbox" data-id="<?php echo $row["#"]["data"]?>"></td>
                     <?Php
                 }?>
             </tr>
