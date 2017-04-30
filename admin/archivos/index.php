@@ -27,6 +27,7 @@ try{
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
+    $pages =$GLOBALS["archivoDAO"]->getPages();
 
     $site="archivos";
     $action="list";
