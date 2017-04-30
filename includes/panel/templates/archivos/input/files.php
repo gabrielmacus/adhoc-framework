@@ -21,6 +21,9 @@
 
         }
 
+        scope.uploading=true;
+        scope.$apply();
+
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
             type: "post",
@@ -76,6 +79,7 @@
             {
 
 
+
                 res = JSON.parse(res);
 
                 console.log(res);
@@ -91,6 +95,10 @@
                 });
 */
 
+            },
+            complete:function () {
+                scope.uploading=false;
+                scope.$apply();
             }
         })
 

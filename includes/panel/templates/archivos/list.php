@@ -99,7 +99,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
     });
 </script>
 
-        <div data-ng-if="previews.length>0" class="form-block">
+        <div data-ng-if="previews.length>0 || uploading" class="form-block">
             <button  type="submit" class="animated fila relative" >
                 <i style="font-size: 30px" class="fa fa-upload" aria-hidden="true"></i>
                 <span class="load-mask animated"></span>
