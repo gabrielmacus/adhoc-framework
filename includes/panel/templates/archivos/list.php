@@ -112,18 +112,18 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
     </form>
 
-    <div class="files">
+    <div class="files" >
 
         <?php
 
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
-    </div>
+        <div class="fila center" >
+            <button style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
+        </div>
 
-    <div class="fila center" >
-        <button style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
-    </div>
 
+    </div>
 
     <?php
 
