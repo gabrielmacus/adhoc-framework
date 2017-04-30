@@ -87,6 +87,7 @@ $id="archivos1";
             $progressBar=".load-mask";
 //include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
+            $formats=[];
             $label="Foto";
             $uploadMessage="Arrastre el archivo o toque acá";
             $max=1;

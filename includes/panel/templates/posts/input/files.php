@@ -32,14 +32,25 @@
                 var ext = v.name.split(".");
                 ext = ext[ext.length-1];
 
-                if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
+                <?php if($formats)
+
+                {
+                    ?>if(<?php echo json_encode($formats)?>.indexOf(ext)>-1)
                 {  data.append(k,v);
 
                 }
                 else
                 {
                     vex.dialog.alert("Los tipos de archivo permitidos son <?Php echo implode(",",$formats)?>");
+                }<?php
                 }
+                else
+                {
+                    ?>
+                data.append(k,v);
+                <?php
+                }?>
+
 
             });
 
