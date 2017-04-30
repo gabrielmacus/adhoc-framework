@@ -17,6 +17,7 @@
                     v.archivo_grupo=<?php echo $grupo;?>;
                     scope.post.archivos.push(v);
                 });
+                console.log("AQUI");
              scope.$apply();
             }
         },false);
