@@ -87,7 +87,7 @@
 
     });
 </script>
-<header class="fila">
+<header>
     <h2 class="title"><?php echo $lang["repositorios"]?></h2>
 </header>
 
