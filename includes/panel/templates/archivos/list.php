@@ -20,6 +20,17 @@
                 scope.previews.splice(idx,1);
 
             }
+            scope.seleccionar=function () {
+
+                var selected=[];
+                $(".file-preview [type='checkbox']:selected").each(function () {
+                     var id=$(this).data("id");
+                     var name=$(this).data("name");
+                     selected.push("name":name,"archivo_id":id);
+                });
+
+                parent.postMessage(selected,location.href);
+            }
 
             scope.save=function () {
                 console.log(scope.previews);
@@ -118,8 +129,8 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
-        <div class="fila center" >
-            <button style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
+        <div  class="fila center" >
+            <button id="seleccionar" style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
         </div>
 
         <?php
