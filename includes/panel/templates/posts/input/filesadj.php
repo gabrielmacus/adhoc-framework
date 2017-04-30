@@ -6,6 +6,7 @@
 
         // Listen to message from child window
         eventer(messageEvent,function(e) {
+            console.log(e);
             if(e.origin == location.href)
             {
 
