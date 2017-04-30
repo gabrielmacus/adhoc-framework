@@ -28,6 +28,8 @@ try{
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
 
+    var_dump($pg);
+
     $site="archivos";
     $action="list";
 
