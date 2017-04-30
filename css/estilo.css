@@ -743,6 +743,7 @@ body,body > section,.body
 .files{
     float: left;
     width: 100%;
+    background: white;
 }
 .file .name
 {
