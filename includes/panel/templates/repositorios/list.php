@@ -87,7 +87,7 @@
 
     });
 </script>
-<header>
+<header class="col s12 m12 l12">
     <h2 class="title"><?php echo $lang["repositorios"]?></h2>
 </header>
 
