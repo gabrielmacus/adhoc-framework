@@ -1,4 +1,6 @@
-
+<?php
+var_dump($pg);
+?>
 <script>
     $(document).ready(
         function () {
