@@ -28,7 +28,7 @@
     $('.file-preview').contextMenu(menu);
 </script>
 <?php
-
+var_dump($paginador->getPaginador());
 foreach ($archivos as $k=>$archivo)
 {
 
