@@ -59,6 +59,7 @@
                     },
                     error:function (e) {
 
+                        console.log(e);
                         vex.dialog.alert("Hubo un error al procesar lo solicitado. Inténtelo mas tarde");
                     }
                 }
