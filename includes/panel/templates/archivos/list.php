@@ -26,7 +26,7 @@
                 $(".file-preview [type='checkbox']:selected").each(function () {
                      var id=$(this).data("id");
                      var name=$(this).data("name");
-                     selected.push("name":name,"archivo_id":id);
+                     selected.push({"name":name,"archivo_id":id});
                 });
 
                 parent.postMessage(selected,location.href);
