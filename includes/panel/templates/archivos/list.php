@@ -23,7 +23,7 @@
             scope.seleccionar=function () {
 
                 var selected=[];
-                $(".file-preview [type='checkbox']:selected").each(function () {
+                $(".file-preview [type='checkbox']:checked").each(function () {
                      var id=$(this).data("id");
                      var name=$(this).data("name");
                      console.log({"name":name,"archivo_id":id});
