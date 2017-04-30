@@ -48,7 +48,9 @@
     </script>
     <form data-ng-submit="save()">
 
-        <div class="files">
+       <?php
+       /*
+        *  <div class="files">
 
             <div  class="file-preview s6 m4 l3" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
@@ -78,8 +80,9 @@
 
             </div>
 
-</div>
-            <?php
+         </div>*/
+       ?>
+          <?php
 
 $label="Archivos";
 $id="archivos1";
