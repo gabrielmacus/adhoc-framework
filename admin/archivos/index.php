@@ -26,7 +26,6 @@ try{
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel]);
     $paginador=$GLOBALS["archivoDAO"];
 
-    var_dump($paginador->getPaginador());
 
     $site="archivos";
     $action="list";

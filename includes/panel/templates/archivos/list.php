@@ -81,6 +81,7 @@
 </div>
             <?php
 
+            var_dump($paginador->getPaginador());
 $label="Archivos";
 $id="archivos1";
      
