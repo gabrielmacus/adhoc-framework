@@ -83,6 +83,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
+                var_dump($archivosSql);
                 $set="";
                 foreach ($archivo as $k=>$v)
                 {
