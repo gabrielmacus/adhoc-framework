@@ -48,9 +48,7 @@
     </script>
     <form data-ng-submit="save()">
 
-       <?php
-       /*
-        *  <div class="files">
+        <div class="files">
 
             <div  class="file-preview s6 m4 l3" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
@@ -80,22 +78,14 @@
 
             </div>
 
-         </div>*/
-       ?>
-          <?php
+</div>
+            <?php
 
 $label="Archivos";
 $id="archivos1";
      
             $progressBar=".load-mask";
-//include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
-
-
-            $label="Foto";
-            $uploadMessage="Arrastre el archivo o toque acá";
-            $max=3;
-            $id="foto";
-            include DIR_PATH."/includes/panel/templates/posts/input/files.php";
+include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
 
 ?>
