@@ -118,7 +118,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
         ?>
     </div>
 
-    <div class="fila">
+    <div class="fila " style="float: right;">
         <button>Seleccionar</button>
     </div>
 
