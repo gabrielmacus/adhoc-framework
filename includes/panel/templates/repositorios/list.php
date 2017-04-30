@@ -167,7 +167,7 @@
                     {{r.url}}
                 </div>
 
-                <a href="<?php echo $configuracion->getSiteAddress()."/admin/archivos/?rep=";?>{{r.id}}&<?php echo http_build_query($_SERVER['QUERY_STRING'])?>" class="archivos">
+                <a href="<?php echo $configuracion->getSiteAddress()."/admin/archivos/?rep=";?>{{r.id}}&<?php echo http_build_query($_GET)?>" class="archivos">
 
                     Ver archivos
                     <span class="mask animated"><i class="fa fa-file" aria-hidden="true"></i></span>
