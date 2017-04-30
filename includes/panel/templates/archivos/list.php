@@ -115,7 +115,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
     <div class="files">
 
         <?php
-
+        var_dump($paginador->getPaginador());
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
     </div>

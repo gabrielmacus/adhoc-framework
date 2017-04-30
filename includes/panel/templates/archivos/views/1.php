@@ -1,6 +1,6 @@
 
 <?php
-var_dump($paginador->getPaginador());
+
 foreach ($archivos as $k=>$archivo)
 {
 
