@@ -24,12 +24,10 @@ try{
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel]);
-    $paginador=$GLOBALS["archivoDAO"]->getPaginador();
-    var_dump($paginador);
+    $paginador=$GLOBALS["archivoDAO"];
 
 
 
-    
     $site="archivos";
     $action="list";
 
