@@ -15,7 +15,8 @@
                     scope.post.archivos=[];
                 }
                 $.each(e.data,function (k,v) {
-                    v.archivo_grupo=<?php echo $grupo;?>;
+
+                    //v.archivo_grupo=<?php echo $grupo;?>;
                     scope.post.archivos.push(v);
                 });
                 console.log("AQUI");
@@ -33,5 +34,5 @@
         <span class="name">{{a.name}}</span>
     </div>
 
-    <a data-lity class="adjuntas" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true">Adjuntar archivo</a>
+    <a data-lity class="adjuntas" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
 </div>
