@@ -116,10 +116,12 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
         <?php
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
-
-
-
     </div>
+
+    <div class="fila">
+        <button>Seleccionar</button>
+    </div>
+
 
     <?php
     include DIR_PATH."/includes/panel/templates/posts/paginador.php";
