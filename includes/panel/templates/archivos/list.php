@@ -130,7 +130,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
         <div  class="fila center" >
-            <button id="seleccionar" style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
+            <button data-ng-click="seleccionar()" style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
         </div>
 
         <?php
