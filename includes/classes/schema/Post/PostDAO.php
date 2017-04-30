@@ -88,7 +88,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 objeto_id={$archivo["objeto_id"]},
                 objeto_tabla='{$archivo["objeto_tabla"]}',
                 archivo_grupo='{$archivo["archivo_grupo"]}',
-                archivo_orden={$archivo["archivo_orden"]}";
+                archivo_orden='{$archivo["archivo_orden"]}'";
 
   /*              $set="";
                 foreach ($archivo as $k=>$v)
