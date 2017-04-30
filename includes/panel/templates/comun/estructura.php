@@ -66,6 +66,10 @@ else
             {
                 padding: 10px;
             }
+            .main-container
+            {
+                width: 100%;
+            }
         </style>
         <?Php
     }
