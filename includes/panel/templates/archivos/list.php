@@ -139,10 +139,16 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
             <?php
         }?>
 
+        <div style="position: absolute;top: 10px;right: 10px">
+            x
+        </div>
+
         <?php
 
         include DIR_PATH."/includes/panel/templates/posts/paginador.php";
         ?>
+
+
 
     </div>
 
