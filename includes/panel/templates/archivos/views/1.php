@@ -53,7 +53,7 @@ foreach ($archivos as $k=>$archivo)
 
                             <div class="mask">
                                 <div style="width: 100%;height: 50%">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <i class="fa fa-search icon" aria-hidden="true"></i>
                                 </div>
                                 <div style="width: 100%;height: 50%">
                                     b
