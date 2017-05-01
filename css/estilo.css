@@ -727,6 +727,14 @@ body,body > section,.body
     background-color: #f8f2ea;
     float: left;
     width: 100%;
+    position: relative;
+}
+.file .mask
+{
+
+    height: 100%;width: 100%;background-color:rgba(55,55,55,0.71);
+
+position: absolute
 }
 .file figure
 {
