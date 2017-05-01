@@ -25,7 +25,7 @@ try{
     {
         case "save":
 
-
+/*
             $previews=array();
             foreach ($_POST["previews"] as $file)//Para subida de archivos directa
             {
@@ -69,9 +69,10 @@ try{
                 }
 
             }
+*/
 
 
-
+      uploadTmp() ;
            // $a =new ArchivoDAO();
             //$a->selectArchivoById(,false);
 

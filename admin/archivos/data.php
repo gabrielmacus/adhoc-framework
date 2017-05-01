@@ -25,50 +25,8 @@ try{
     {
         case "save":
 
-            foreach ($_POST["previews"] as $file)
-            {
 
-                $file["tmp"]=DIR_PATH.$file["tmp"];
-
-
-                switch ($file["type"])
-                {
-                    default:
-
-
-                        $a = new Archivo($file["size"],$file["name"],$file["mime"]);
-
-                        $a->setTmpPath($file["tmp"]);
-                        $a->setExtension($file["type"]);
-                        $a->setRepositorio($_GET["rep"]);
-                        $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
-
-                        echo  json_encode($res);
-
-                        break;
-
-
-                    case "svg":
-                    case "jpeg":
-                    case "bmp":
-                    case "png":
-                    case "gif":
-                    case "jpg":
-
-
-                        $a = new Imagen($file["size"],$file["name"],$file["mime"]);
-                        $a->setTmpPath($file["tmp"]);
-                        $a->setExtension($file["type"]);
-                        $a->setRepositorio($_GET["rep"]);
-
-
-                        $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
-                        break;
-
-                }
-
-            }
-            echo  json_encode($res);
+            echo  json_encode(uploadTmp());
 
             break;
         case "upload":

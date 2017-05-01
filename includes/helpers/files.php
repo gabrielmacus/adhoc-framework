@@ -5,7 +5,54 @@
  * Date: 04/01/2017
  * Time: 04:49 PM
  */
+function uploadTmp()
+{
+    foreach ($_POST["previews"] as $file)
+    {
 
+        $file["tmp"]=DIR_PATH.$file["tmp"];
+
+
+        switch ($file["type"])
+        {
+            default:
+
+
+                $a = new Archivo($file["size"],$file["name"],$file["mime"]);
+
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($_GET["rep"]);
+                $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
+                $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+
+                echo  json_encode($res);
+
+                break;
+
+
+            case "svg":
+            case "jpeg":
+            case "bmp":
+            case "png":
+            case "gif":
+            case "jpg":
+
+
+                $a = new Imagen($file["size"],$file["name"],$file["mime"]);
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($_GET["rep"]);
+                $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
+            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+
+            break;
+
+        }
+
+    }
+    return $res;
+}
 function isImage($path)
 {
     return getimagesize($path)?true:false;//Chequeo si es una imagen
