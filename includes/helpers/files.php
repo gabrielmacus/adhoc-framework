@@ -30,8 +30,6 @@ function uploadTmp($r)
                 $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
                 $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
 
-                echo  json_encode($res);
-
                 break;
 
 
@@ -48,6 +46,32 @@ function uploadTmp($r)
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
                 $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
+            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+
+            break;
+
+            case "pdf"://Documentos
+            case "docx":
+            case "odt":
+            case "xls":
+            case "docm":
+            case "dot":
+            case "dotx":
+            case "html":
+            case "htm":
+            case "rtf":
+            case "xps":
+            case "xlsx":
+            case "xltm":
+            case "pptx":
+            case "ppt":
+            case "pptm":
+
+            $a = new Documento($file["size"],$file["name"],$file["mime"]);
+            $a->setTmpPath($file["tmp"]);
+            $a->setExtension($file["type"]);
+            $a->setRepositorio($r);
+            $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
             $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
 
             break;
