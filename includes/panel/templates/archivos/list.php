@@ -4,6 +4,9 @@
 </header>
 <div class="body">
 
+    <div style="position: absolute;top: 10px;right: 10px">
+        x
+    </div>
 
     <script>
 
@@ -139,9 +142,6 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
             <?php
         }?>
 
-        <div style="position: absolute;top: 10px;right: 10px">
-            x
-        </div>
 
         <?php
 
