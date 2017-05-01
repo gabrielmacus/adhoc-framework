@@ -129,9 +129,15 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
         include DIR_PATH."/includes/panel/templates/archivos/views/1.php";
         ?>
-        <div  class="fila center" >
-            <button data-ng-click="seleccionar()" style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
-        </div>
+
+        <?php if($_GET["modal"])
+        {
+            ?>
+            <div  class="fila center" >
+                <button data-ng-click="seleccionar()" style="font-size: 25px;margin-top: 10px;margin-bottom: 10px">Seleccionar</button>
+            </div>
+            <?php
+        }?>
 
         <?php
 
