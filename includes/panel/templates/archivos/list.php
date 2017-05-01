@@ -123,7 +123,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
     </form>
 
-    <div class="files" >
+    <div class="files"  style="position: relative">
 
         <?php
 
