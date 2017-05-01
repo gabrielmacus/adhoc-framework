@@ -23,26 +23,43 @@
                 scope.previews.splice(idx,1);
 
             }
-            scope.seleccionar=function () {
-
+            function getSelected() {
                 var selected=[];
                 $(".file-preview [type='checkbox']:checked").each(function () {
-                     var id=$(this).data("id");
-                     var name=$(this).data("name");
-                     selected.push({"name":name,"archivo_id":id,"archivo_grupo":"<?Php echo $_GET["grupo"]?>"});
+                    var id=$(this).data("id");
+                    var name=$(this).data("name");
+                    selected.push({"name":name,"archivo_id":id,"archivo_grupo":"<?Php echo $_GET["grupo"]?>"});
                 });
+                return selected
+            }
+            scope.seleccionar=function () {
 
-                parent.postMessage(selected,"<?php echo $configuracion->getSiteAddress()?>");
+                parent.postMessage(getSelected(),"<?php echo $configuracion->getSiteAddress()?>");
             }
 
             scope.deleteSelectedFiles=function () {
                 vex.dialog.confirm({
-                    message: 'Are you absolutely sure you want to destroy the alien planet?',
+                    message: '¿Eliminar archivos seleccionados?',
                     callback: function (value) {
                         if (value) {
-                            console.log('Successfully destroyed the planet.')
-                        } else {
-                            console.log('Chicken.')
+
+                            $.ajax
+                            (
+                                {
+                                    method:"post",
+                                    url:"<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=delete"?>",
+                                    data:{files:getSelected()},
+                                    dataType:"json",
+                                    success:function (e) {
+                                        console.log(e);
+                                    },
+                                    error:function (e) {
+
+                                        console.log(e);
+                                    }
+                                }
+                            );
+
                         }
                     }
                 })

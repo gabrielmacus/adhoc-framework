@@ -99,8 +99,13 @@ try{
         case "delete":
 
 
-           //$GLOBALS["archivoDAO"]->deleteArchivoById()
 
+          foreach ($_POST["files"] as $file)
+          {
+              $GLOBALS["archivoDAO"]->deleteArchivoById($file["archivo_id"]);
+          }
+
+              echo json_encode(true);
             break;
     }
 
