@@ -51,6 +51,9 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div data-ng-click="deletePreview(p)" class="file">
 
+                            <div style="height: 100%;width: 100%;background-color: #00B5AD">
+
+                            </div>
                             <figure>
                                 <?php
                                 $version= $versiones[$versionPanel];
