@@ -53,7 +53,7 @@ foreach ($archivos as $k=>$archivo)
 
                             <div class="mask animated">
                                 <div class="half" >
-                                    <a  class="icon">
+                                    <a data-lity  href="<?php echo $version->getRealName()?>" class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
                                     </a>
                                 </div>
