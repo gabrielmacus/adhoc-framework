@@ -52,11 +52,15 @@ foreach ($archivos as $k=>$archivo)
                         <div data-ng-click="deletePreview(p)" class="file">
 
                             <div class="mask">
-                                <div style="width: 100%;height: 50%">
-                                    <i class="fa fa-search icon" aria-hidden="true"></i>
+                                <div class="half" >
+                                    <a class="icon">
+                                        <i class="fa fa-search " aria-hidden="true"></i>
+                                    </a>
                                 </div>
-                                <div style="width: 100%;height: 50%">
-                                    b
+                                <div class="half"  >
+                                    <a class="icon">
+                                        <i class="fa fa-search " aria-hidden="true"></i>
+                                    </a>
                                 </div>
                             </div>
                             <figure>
