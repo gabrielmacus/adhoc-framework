@@ -297,10 +297,7 @@ header h2
     }
 
 }
-.sidenav
-{
-    z-index: 5;
-}
+
 body
 {
     font-family: 'Roboto', sans-serif!important;
@@ -339,6 +336,7 @@ body
     position: fixed;
     height: 100%;
     overflow-y: scroll;
+    z-index: 1000;
 
 }
 .sidenav-container::-webkit-scrollbar {
