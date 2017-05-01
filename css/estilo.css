@@ -755,7 +755,7 @@ width: 100%;height: 50%;text-align: center;
 {
     top:0%;
 }
-.file [type='checkbox']
+.file-preview [type='checkbox']
 {
     z-index: 2;
 }
