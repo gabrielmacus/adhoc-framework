@@ -4,9 +4,9 @@
 </header>
 <div class="body">
 
-    <div style="position: fixed;bottom: 0px;right: 0px;font-size: 50px;padding:10px;background-color: #2e3032;color: white;z-index: 10">
+    <a data-ng-click="deleteSelectedFiles()" style="position: fixed;bottom: 0px;right: 0px;font-size: 50px;padding:10px;background-color: #2e3032;color: white;z-index: 10">
         <i class="fa fa-trash" aria-hidden="true"></i>
-    </div>
+    </a>
 
     <script>
 
@@ -35,6 +35,18 @@
                 parent.postMessage(selected,"<?php echo $configuracion->getSiteAddress()?>");
             }
 
+            scope.deleteSelectedFiles=function () {
+                vex.dialog.confirm({
+                    message: 'Are you absolutely sure you want to destroy the alien planet?',
+                    callback: function (value) {
+                        if (value) {
+                            console.log('Successfully destroyed the planet.')
+                        } else {
+                            console.log('Chicken.')
+                        }
+                    }
+                })
+            }
             scope.save=function () {
                 console.log(scope.previews);
                 $.ajax

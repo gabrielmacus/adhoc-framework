@@ -26,6 +26,10 @@
     var timeout;
     var http;
     app.controller('panelCtrl', function($scope,$timeout,$http) {
+
+        vex.dialog.buttons.YES.text = 'foo';
+        vex.dialog.buttons.NO.text = 'bar';
+
         http=$http;
         vex.defaultOptions.className = 'vex-theme-plain';
 
