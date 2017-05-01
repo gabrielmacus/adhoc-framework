@@ -6,7 +6,6 @@
 
     <div style="position: fixed;bottom: 0px;right: 25px;font-size: 40px">
         <i class="fa fa-trash" aria-hidden="true"></i>
-
     </div>
 
     <script>
