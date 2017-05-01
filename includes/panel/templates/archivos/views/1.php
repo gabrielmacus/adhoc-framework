@@ -51,7 +51,7 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div data-ng-click="deletePreview(p)" class="file">
 
-                            <div class="mask">
+                            <div class="mask animated">
                                 <div class="half" >
                                     <a class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
