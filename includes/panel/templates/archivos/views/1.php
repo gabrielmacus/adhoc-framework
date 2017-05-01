@@ -53,12 +53,12 @@ foreach ($archivos as $k=>$archivo)
 
                             <div class="mask animated">
                                 <div class="half" >
-                                    <a class="icon">
+                                    <a  class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="half"  >
-                                    <a class="icon">
+                                    <a  download href="<?php echo $version->getRealName()?>" class="icon">
                                         <i class="fa fa-download" aria-hidden="true"></i>
                                     </a>
                                 </div>
