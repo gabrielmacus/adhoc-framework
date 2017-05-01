@@ -5,7 +5,7 @@
 <div class="body">
 
     <div style="position: absolute;top: 10px;right: 10px">
-        x
+        <i class="fa fa-trash" aria-hidden="true"></i>
     </div>
 
     <script>
