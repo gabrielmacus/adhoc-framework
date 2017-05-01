@@ -158,6 +158,7 @@
         <li class="item" data-ng-repeat="(k,r) in repositorios">
             <div class="animated" style="position: relative">
                 <span class="name">{{r.nombre}}</span>
+                <a class="icon animated" href="<?php echo $configuracion->getSiteAddress()."/admin/archivos/?rep=";?>{{r.id}}&<?php echo http_build_query($_GET)?>" ><i class="fa fa-cloud" aria-hidden="true"></i></a>
                 <a  class="icon animated" href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>{{r.id}}"><i class="fa fa-pencil  " aria-hidden="true"></i></a>
                 <a data-ng-click="delete(r.id)"  class="icon animated"><i class="fa fa-trash-o icon animated" aria-hidden="true"></i></a>
             </div>
