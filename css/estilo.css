@@ -729,7 +729,7 @@ body,body > section,.body
 }
 .file .half
 {
-width: 100%;height: 50%
+width: 100%;height: 50%;text-align: center;
 }
 
 .file
