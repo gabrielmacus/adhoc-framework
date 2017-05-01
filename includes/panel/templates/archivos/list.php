@@ -4,8 +4,9 @@
 </header>
 <div class="body">
 
-    <div style="position: absolute;top: 10px;right: 20px;font-size: 40px">
+    <div style="position: fixed;bottom: 0px;right: 25px;font-size: 40px">
         <i class="fa fa-trash" aria-hidden="true"></i>
+
     </div>
 
     <script>
