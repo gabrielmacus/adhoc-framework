@@ -726,7 +726,16 @@ body,body > section,.body
     font-size: 80px;
     position: relative;
     top: 15%;
-    color: white;
+
+}
+.file .icon .fa-search
+{
+    color: #4590ce;
+}
+.file .icon .fa-download
+{
+    color: #5ac748;
+
 }
 .file .half
 {
