@@ -161,7 +161,7 @@
                 <a  class="icon animated" href="<?php echo $configuracion->getSiteAddress()."/admin/repositorios/?id="?>{{r.id}}"><i class="fa fa-pencil  " aria-hidden="true"></i></a>
                 <a data-ng-click="delete(r.id)"  class="icon animated"><i class="fa fa-trash-o icon animated" aria-hidden="true"></i></a>
             </div>
-            <div class="content">
+         <!--   <div class="content">
 
                 <div class="peso">
                     {{r.url}}
@@ -173,7 +173,7 @@
                     <span class="mask animated"><i class="fa fa-file" aria-hidden="true"></i></span>
 
                 </a>
-            </div>
+            </div>-->
         </li>
 
     </ul>
