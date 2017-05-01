@@ -297,6 +297,10 @@ header h2
     }
 
 }
+.sidenav
+{
+    z-index: 5;
+}
 body
 {
     font-family: 'Roboto', sans-serif!important;
