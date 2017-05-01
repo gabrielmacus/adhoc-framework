@@ -52,7 +52,12 @@ foreach ($archivos as $k=>$archivo)
                         <div data-ng-click="deletePreview(p)" class="file">
 
                             <div class="mask">
-
+                                <div style="width: 100%;height: 50%">
+                                    a
+                                </div>
+                                <div style="width: 100%;height: 50%">
+                                    b
+                                </div>
                             </div>
                             <figure>
                                 <?php
