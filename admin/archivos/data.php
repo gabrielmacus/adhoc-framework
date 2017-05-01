@@ -26,7 +26,7 @@ try{
         case "save":
 
 
-            echo  json_encode(uploadTmp());
+            echo  json_encode(uploadTmp($_GET["rep"]));
 
             break;
         case "upload":

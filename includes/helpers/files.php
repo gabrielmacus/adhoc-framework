@@ -5,7 +5,11 @@
  * Date: 04/01/2017
  * Time: 04:49 PM
  */
-function uploadTmp()
+/**
+ * @param $r | repositorio
+ * @return mixed
+ */
+function uploadTmp($r)
 {
     foreach ($_POST["previews"] as $file)
     {
@@ -22,7 +26,7 @@ function uploadTmp()
 
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
-                $a->setRepositorio($_GET["rep"]);
+                $a->setRepositorio($r);
                 $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
                 $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
 
@@ -42,7 +46,7 @@ function uploadTmp()
                 $a = new Imagen($file["size"],$file["name"],$file["mime"]);
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
-                $a->setRepositorio($_GET["rep"]);
+                $a->setRepositorio($r);
                 $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
             $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
 

@@ -72,7 +72,7 @@ try{
 */
 
 
-      uploadTmp() ;
+      uploadTmp($r) ;
            // $a =new ArchivoDAO();
             //$a->selectArchivoById(,false);
 
