@@ -4,7 +4,7 @@
 </header>
 <div class="body">
 
-    <div style="position: fixed;bottom: 0px;right: 25px;font-size: 50px;padding:10px;background-color: #2e3032;color: white;z-index: 10">
+    <div style="position: fixed;bottom: 0px;right: 0px;font-size: 50px;padding:10px;background-color: #2e3032;color: white;z-index: 10">
         <i class="fa fa-trash" aria-hidden="true"></i>
     </div>
 
