@@ -27,8 +27,8 @@
     var http;
     app.controller('panelCtrl', function($scope,$timeout,$http) {
 
-        vex.dialog.buttons.YES.text = 'foo';
-        vex.dialog.buttons.NO.text = 'bar';
+        vex.dialog.buttons.YES.text = 'Ok';
+        vex.dialog.buttons.NO.text = 'Cancelar';
 
         http=$http;
         vex.defaultOptions.className = 'vex-theme-plain';
