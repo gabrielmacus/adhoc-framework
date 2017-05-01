@@ -723,9 +723,10 @@ body,body > section,.body
 }
 .file .icon
 {
-    font-size: 50px;
+    font-size: 80px;
     position: relative;
-    top: 20%;
+    top: 15%;
+    color: white;
 }
 .file .half
 {

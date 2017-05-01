@@ -59,7 +59,7 @@ foreach ($archivos as $k=>$archivo)
                                 </div>
                                 <div class="half"  >
                                     <a class="icon">
-                                        <i class="fa fa-search " aria-hidden="true"></i>
+                                        <i class="fa fa-download" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
