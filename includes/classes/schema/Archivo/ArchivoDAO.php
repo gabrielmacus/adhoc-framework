@@ -227,7 +227,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $sql.=" AND archivo_version_name IN ({$v})";
         }
 
-        $sql.=" ORDER BY archivo_creation ASC";
+        $sql.=" ORDER BY archivo_creation DESC";
 
         $this->setResults($sql);
 
