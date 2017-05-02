@@ -37,8 +37,9 @@ class ImagenDAO extends ArchivoDAO
         //get resoluciones del repositorio
 
     $r=    $i->getRepositorio();
-
-  foreach ($r->getVersiones() as $version)
+$versiones =$r->getVersiones();
+        var_dump($versiones);
+  foreach ($versiones as $version)
   {
       $version = $version["text"];
 
@@ -60,8 +61,8 @@ class ImagenDAO extends ArchivoDAO
         );*/
         
 
-        var_dump($resoluciones);
-        
+
+
         foreach ($resoluciones as $resolucion)
         {
             $copy=$i->getTmpPath().".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
