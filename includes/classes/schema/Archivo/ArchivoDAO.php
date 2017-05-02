@@ -440,6 +440,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $deleteFile= $repositorio->getPath().$archivo->getPath();
 
+            var_dump($deleteFile);
 
             if(!$ftp->remove($deleteFile))//Elimino cada archivo
             {
