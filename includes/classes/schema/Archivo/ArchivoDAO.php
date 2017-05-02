@@ -335,6 +335,10 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                     $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_ancho"],$data["archivo_alto"]);
                 $a->setPathName($data["archivo_path_name"]);
                 break;
+
+            case 4:
+
+                break;
         }
         
    

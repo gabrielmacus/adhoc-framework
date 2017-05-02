@@ -66,7 +66,7 @@ function uploadTmp($r)
             case "pptx":
             case "ppt":
             case "pptm":
-
+                var_dump("AADS");
             $a = new Documento($file["size"],$file["name"],$file["mime"]);
             $a->setTmpPath($file["tmp"]);
             $a->setExtension($file["type"]);
