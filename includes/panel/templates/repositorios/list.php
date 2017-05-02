@@ -54,6 +54,7 @@
             })
         }
         scope.$apply();
+        
         scope.save=function () {
             console.log(scope.post);
             $.ajax

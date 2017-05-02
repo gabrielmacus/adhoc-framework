@@ -76,27 +76,20 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     public function insertArchivo(IArchivo $a,$versionName="original",$versionId=0)
     {
-
-
         $this->validate($a);
 
-        $r =     $a->getRepositorio();
+        $r =$a->getRepositorio();
 
         $ftp  =$r->getFtp();
 
         $mainPath = time().".{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
 
         $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
-
-
-
-
-
+        
         $fileNameVersion = time()."_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
 
         $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
-
-
+        
         $a->setPathName($mainPath);
 
         $mainPath="{$mainPath}/{$fileNameVersion}";

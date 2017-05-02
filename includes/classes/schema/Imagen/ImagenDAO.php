@@ -40,6 +40,8 @@ class ImagenDAO extends ArchivoDAO
 
   foreach ($r->getVersiones() as $version)
   {
+      $version = $version["text"];
+
       $arr=array();
 
       $version = trim($version);
