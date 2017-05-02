@@ -60,7 +60,7 @@ try{
 
           foreach ($_POST["files"] as $file)
           {
-              var_dump($file);
+              var_dump($file["archivo_id"]);
            //   $GLOBALS["archivoDAO"]->deleteArchivoById($file["archivo_id"]);
           }
 
