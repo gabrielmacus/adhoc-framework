@@ -388,7 +388,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
 
         $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),function($data){
-            var_dump($data);
+
             $this->query($data);
         });
         if($process)
@@ -433,7 +433,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $deleteFile= $repositorio->getPath().$archivo->getPath();
 
-            var_dump($deleteFile);
 
             if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
