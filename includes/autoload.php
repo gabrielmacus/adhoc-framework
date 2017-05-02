@@ -49,6 +49,7 @@ require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
 $GLOBALS["userDAO"]  = new UserDAO($configuracion->getDataSource());
 $GLOBALS["archivoDAO"] = new ArchivoDAO($configuracion->getDataSource());
 $GLOBALS["imagenDAO"] = new ImagenDAO($configuracion->getDataSource());
+$GLOBALS["documentoDAO"] = new DocumentoDAO($configuracion->getDataSource());
 $GLOBALS["repositorioDAO"] = new RepositorioDAO($configuracion->getDataSource());
 $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
