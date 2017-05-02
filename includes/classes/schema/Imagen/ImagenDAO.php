@@ -61,8 +61,7 @@ $versiones =$r->getVersiones();
             array("ancho"=>200,"alto"=>200,"nombre"=>"thumbnail")
         );*/
 
-
-
+        $tmp=$i->getTmpPath();
 
 
         foreach ($resoluciones as $resolucion)
@@ -85,7 +84,7 @@ $versiones =$r->getVersiones();
 
    
 
-            $i->setTmpPath($copy); //Seteo la ruta temporal de la imagen a guardar
+           // $i->setTmpPath($copy); //Seteo la ruta temporal de la imagen a guardar
 
             $finalSize = getimagesize($copy) ;
             
