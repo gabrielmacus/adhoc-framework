@@ -14,6 +14,7 @@ require_once "schema/Usuario/UserDAO.php";
 require_once "schema/Seccion/SeccionDAO.php";
 require_once "schema/Comentario/ComentarioDAO.php";
 require_once "schema/Post/PostDAO.php";
+require_once "schema/Documento/DocumentoDAO.php";
 
 /** ImageResize **/
 require_once "ImageResize.php";
