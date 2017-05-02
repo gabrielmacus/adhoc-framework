@@ -60,6 +60,8 @@ class ImagenDAO extends ArchivoDAO
         );*/
         
 
+        var_dump($resoluciones);
+        
         foreach ($resoluciones as $resolucion)
         {
             $copy=$i->getTmpPath().".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
