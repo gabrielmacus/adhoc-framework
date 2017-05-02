@@ -84,7 +84,7 @@ $versiones =$r->getVersiones();
 
    
 
-           // $i->setTmpPath($copy); //Seteo la ruta temporal de la imagen a guardar
+           $i->setTmpPath($copy); //Seteo la ruta temporal de la imagen a guardar
 
             $finalSize = getimagesize($copy) ;
             
