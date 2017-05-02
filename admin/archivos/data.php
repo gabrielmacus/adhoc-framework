@@ -60,7 +60,8 @@ try{
 
           foreach ($_POST["files"] as $file)
           {
-              $GLOBALS["archivoDAO"]->deleteArchivoById($file["archivo_id"]);
+              var_dump($file);
+           //   $GLOBALS["archivoDAO"]->deleteArchivoById($file["archivo_id"]);
           }
 
               echo json_encode(true);

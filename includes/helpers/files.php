@@ -73,6 +73,8 @@ function uploadTmp($r)
             case "srs":
             case "pl":
             case "java":
+            case "sql":
+
             $a = new Documento($file["size"],$file["name"],$file["mime"]);
             $a->setTmpPath($file["tmp"]);
             $a->setExtension($file["type"]);
