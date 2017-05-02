@@ -66,6 +66,13 @@ function uploadTmp($r)
             case "pptx":
             case "ppt":
             case "pptm":
+            case "txt":
+            case "js":
+            case "css":
+            case "php":
+            case "srs":
+            case "pl":
+            case "java":
             $a = new Documento($file["size"],$file["name"],$file["mime"]);
             $a->setTmpPath($file["tmp"]);
             $a->setExtension($file["type"]);
