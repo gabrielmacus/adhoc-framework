@@ -55,18 +55,19 @@ $versiones =$r->getVersiones();
       $resoluciones[]=$arr;
   }
 
-        var_dump($resoluciones);
 
         /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
             array("ancho"=>200,"alto"=>200,"nombre"=>"thumbnail")
         );*/
-        
+
+
 
 
 
         foreach ($resoluciones as $resolucion)
         {
+            echo json_encode($resolucion);
             $copy=$i->getTmpPath().".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
 
             if(!copy($i->getTmpPath(),$copy))
@@ -85,8 +86,8 @@ $versiones =$r->getVersiones();
 
             $finalSize = getimagesize($copy) ;
             
-            $i->setAlto($finalSize[1]);
-            $i->setAncho($finalSize[0]);
+            $i->setAlto($finalSize[0]);
+            $i->setAncho($finalSize[1]);
 
             $files[]=parent::insertArchivo($i,$resolucion["nombre"],$original); 
         }
