@@ -74,6 +74,9 @@ $versiones =$r->getVersiones();
             {
                 throw  new Exception("ImagenDAO:0");//Error al copiar archivo temporal;
             }
+
+            var_dump($copy);
+
             $image =new \Eventviva\ImageResize($copy);
 
             $image->resizeToBestFit($resolucion["ancho"],$resolucion["alto"]); //Redimension
@@ -89,7 +92,7 @@ $versiones =$r->getVersiones();
             $i->setAlto($finalSize[0]);
             $i->setAncho($finalSize[1]);
 
-            $files[]=parent::insertArchivo($i,$resolucion["nombre"],$original); 
+            $files[]=parent::insertArchivo($i,$resolucion["nombre"],$original);
         }
 
         return $files;
