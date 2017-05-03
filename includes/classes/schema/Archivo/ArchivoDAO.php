@@ -427,7 +427,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         /** Chequeo si el archivo tiene objetos asociados**/
         $sqlArchivosObjetos="SELECT * FROM archivos_objetos archivo_id=:archivo_id";
 
-        $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$id)));
+        $objetosAsociados=$this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$id));
 
         var_dump($objetosAsociados);
         exit();
