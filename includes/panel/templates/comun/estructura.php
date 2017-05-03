@@ -56,7 +56,7 @@
 
 {
     ?>
-    <header class="hide-m">
+    <header class="hide-l">
         <?php include "menu.php"?>
     </header>
 
