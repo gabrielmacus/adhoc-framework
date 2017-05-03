@@ -72,7 +72,8 @@
                 console.log(scope.previews);
 
                 http.post("<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=save&rep={$_GET["rep"]}"?>",
-                    $.param(  {previews:angular.copy(scope.previews)})).then(function (e) {
+                    JSON.stringify(  {previews:angular.copy(scope.previews)})
+                ).then(function (e) {
                     console.log(e);
                     location.reload();
                 }, function (e) {
