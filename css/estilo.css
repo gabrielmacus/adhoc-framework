@@ -700,6 +700,10 @@ input:valid
     color: inherit;
     background-color: inherit;
 }
+input[type='file']
+{
+    border: 0;
+}
 input
 {
     outline: 0;
