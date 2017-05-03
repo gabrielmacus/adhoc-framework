@@ -109,12 +109,49 @@
     
 </script>
 
+<style>
+    .file-upload {
+        position: relative;
+        display: inline-block;
+    }
+
+    .file-upload__label {
+        display: block;
+        padding: 1em 2em;
+        color: #fff;
+        background: #222;
+        border-radius: .4em;
+        transition: background .3s;
+    }
+    .file-upload__label:hover {
+        cursor: pointer;
+        background: #000;
+    }
+
+    .file-upload__input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 1;
+        width: 0;
+        height: 100%;
+        opacity: 0;
+    }
+
+</style>
+
 <div class="form-block">
 
     <label><?php echo $label?></label>
-
+<!--
     <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
-
+    -->
+    <div class="file-upload">
+        <label for="<?php echo $id;?>" class="file-upload__label">Css only file upload button</label>
+        <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
+    </div>
 
 </div>
 
