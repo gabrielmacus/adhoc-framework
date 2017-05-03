@@ -470,12 +470,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $deleteFile= $repositorio->getPath().$archivo->getPath();
 
+            var_dump($deleteFile);
 
-            if(!$ftp->delete($deleteFile))//Elimino cada archivo
+            /*if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
                 throw new Exception("ArchivoDAO:1");//Codigo de error al eliminar un archivo
-            }
+            }*/
         }
+
+        exit();
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
