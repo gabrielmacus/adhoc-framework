@@ -32,10 +32,18 @@
 
 
 </script>
-<div class="fila">
+<style>
+    .adjuntos
+    {
+        padding: 15px;
+    }
+
+</style>
+<div class="fila adjuntos">
     <label><?php echo $label;?></label>
 
-    <div class="s12 m4 l4" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+    <div class="s12 m4 l4 adjunto" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+        
         <span class="name">{{a.name}}</span>
     </div>
 
