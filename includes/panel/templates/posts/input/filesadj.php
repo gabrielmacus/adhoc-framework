@@ -35,7 +35,7 @@
 <style>
     .adjuntos
     {
-        padding: 10px;
+        padding: 20px;
     }
     .adjunto-wrapper
     {
@@ -44,11 +44,11 @@
 
     .adjuntos .adjunto
     {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
     }
 </style>
 <div class="fila adjuntos">
-    <label><?php echo $label;?></label>
+    <label class="s12 m4 l4"><?php echo $label;?></label>
 
     <div class="s12 m4 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
 
