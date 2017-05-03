@@ -33,12 +33,16 @@
 
 </script>
 <style>
+    .adjuntos
+    {
+        padding: 10px;
+    }
     .adjunto-wrapper
     {
         padding: 15px;
     }
 
-    .adjuntos .adjuntos
+    .adjuntos .adjunto
     {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
