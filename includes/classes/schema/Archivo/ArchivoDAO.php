@@ -429,6 +429,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$id)));
 
+        var_dump($objetosAsociados);
+        exit();
         if($objetosAsociados>0)
         {
             throw new Exception("ArchivoDAO:3");//Codigo de error al intentar eliminar un archivo con objetos asociados
