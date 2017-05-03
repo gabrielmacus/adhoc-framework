@@ -42,9 +42,12 @@
 <div class="fila adjuntos">
     <label><?php echo $label;?></label>
 
-    <div class="s12 m4 l4 adjunto" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
-        
-        <span class="name">{{a.name}}</span>
+    <div class="s12 m4 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+
+        <div class="adjunto">
+            <span class="name">{{a.name}}</span>
+        </div>
+
     </div>
 
     <a data-lity class="adjuntas" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
