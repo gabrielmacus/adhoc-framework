@@ -417,18 +417,40 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
-    public function deleteArchivoById($id)
+    /**
+     * @param $in |Id del archivo, o array de archivos
+     * @return string
+     * @throws Exception
+     */
+    public function deleteArchivoById($in)
     {
 
+        $archivos=array();
+        if (is_array($in))
+        {
+            foreach ($in as $file)
+            {
 
 
-       $archivos=$this->selectArchivoByVersions($id,false);
+                $archivos=array_merge($archivos,$this->selectArchivoByVersions($file["archivo_id"]),false);
+            }
+
+
+        }
+        else
+        {
+            $archivos=$this->selectArchivoByVersions($in,false);
+        }
+
+        var_dump($archivos);
+        exit();
+
 
         /** Chequeo si el archivo tiene objetos asociados**/
         $sqlArchivosObjetos="SELECT * FROM archivos_objetos WHERE archivo_id=:archivo_id";
 
         $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$id)));
-        
+
         if($objetosAsociados>0)
         {
             throw new Exception("ArchivoDAO:3");//Codigo de error al intentar eliminar un archivo con objetos asociados
