@@ -418,17 +418,18 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
     /**
-     * @param $in |Id del archivo, o array de archivos
+     * @param $ids |Id del archivo, o array de archivos
      * @return string
      * @throws Exception
      */
-    public function deleteArchivoById($in)
+    public function deleteArchivoById($ids)
     {
 
+        $in="";
         $archivos=array();
-        if (is_array($in))
+        if (is_array($ids))
         {
-            foreach ($in as $file)
+            foreach ($ids as $file)
             {
 
                 /** Chequeo si los archivos tienen objetos asociados**/
@@ -436,6 +437,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $sqlArchivosObjetos="SELECT * FROM archivos_objetos WHERE archivo_id=:archivo_id";
 
                 $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$file["archivo_id"])));
+
 
                 if($objetosAsociados>0)
                 {
@@ -453,7 +455,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
         else
         {
-            $archivos=$this->selectArchivoByVersions($in,false);
+            $archivos=$this->selectArchivoByVersions($ids,false);
         }
 
 
@@ -470,15 +472,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $deleteFile= $repositorio->getPath().$archivo->getPath();
 
-            var_dump($deleteFile);
+            $in.="{$archivo->getId()},";
 
-            /*if(!$ftp->delete($deleteFile))//Elimino cada archivo
+           if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
                 throw new Exception("ArchivoDAO:1");//Codigo de error al eliminar un archivo
-            }*/
+            }
         }
 
-        exit();
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
@@ -489,12 +490,13 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $ftp->close();
 
-        $sql = $this->deleteSql;
+       // $sql = $this->deleteSql;
+        $in =rtrim($in,",");
 
-        $res= $this->dataSource->runUpdate($sql,
-            array(
-                ":archivo_id"=>$id
-            ));
+        $sql ="DELETE FROM {$this->tableName} WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})";
+
+
+        $res= $this->dataSource->runUpdate($sql);
         return $res;
     }
 
