@@ -65,9 +65,23 @@
                     }
                 })
             }
+
+
+
             scope.save=function () {
                 console.log(scope.previews);
-                $.ajax
+
+                http.post("<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=save&rep={$_GET["rep"]}"?>",
+                    $.param(  {previews:angular.copy(scope.previews)})
+                    ,).then(function (e) {
+                    console.log(e);
+                    location.reload();
+                }, function (e) {
+
+                    console.log(e);
+                });
+
+         /*       $.ajax
                 (
                     {
                         method:"post",
@@ -84,7 +98,7 @@
                         }
                     }
                 );
-
+*/
                 console.log(scope.post);
             }
 
@@ -95,7 +109,7 @@
 
         <div class="files">
 
-            <div  class="file-preview s6 m4 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  class="file "  >
 

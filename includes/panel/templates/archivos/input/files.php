@@ -23,6 +23,7 @@
 
         scope.uploading=true;
         scope.$apply();
+        
 
         $.ajax({
             url: "<?php echo $configuracion->getSiteAddress() ?>/admin/archivos/data.php?act=upload",
