@@ -17,9 +17,10 @@
         <?php if($post)
         {
             ?>
-
+        console.log(scope.post.<?php echo $model?>);
            try
            {
+
                var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
                $.each(data,function (k,v) {
