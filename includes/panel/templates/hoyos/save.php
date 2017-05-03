@@ -13,7 +13,7 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
-        $model="extra1";
+        $model="extra4";
         $id="map1";
         $title ="Marque la ubicación del hoyo";
         include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
