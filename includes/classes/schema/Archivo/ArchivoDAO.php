@@ -82,7 +82,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $ftp  =$r->getFtp();
 
-        $randName=$a->getName().rand(0,9999);
+        $randName="A";
+        //$randName=$a->getName().rand(0,9999);
         $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
 
         $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
