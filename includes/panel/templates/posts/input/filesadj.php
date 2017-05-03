@@ -52,8 +52,10 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m6 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
 
+        <span style="position: absolute;top: 10px;right: 10px;"><i class="fa fa-times" aria-hidden="true"></i>
+</span>
         <figure style="height: 150px;width: 100%">
             <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
         </figure>
@@ -62,8 +64,8 @@
         </div>
 
     </div>
-    <div class="fila center">
-        <a  data-lity  style="display: inline;margin-top: 10px;margin-bottom: 10px" class=" btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
+    <div class="fila">
+        <a  data-lity  style="display: block" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
     </div>
 
 
