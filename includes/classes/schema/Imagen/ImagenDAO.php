@@ -21,7 +21,7 @@ class ImagenDAO extends ArchivoDAO
     
 
 
-    public function insertArchivo(IArchivo $i,$versionName="original",$versionId=0)
+    public function insertArchivo(Archivo $i,$versionName="original",$versionId=0)
     {
 
 
