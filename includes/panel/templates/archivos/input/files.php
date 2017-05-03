@@ -149,7 +149,7 @@
     <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
     -->
     <div class="file-upload">
-        <label for="<?php echo $id;?>" class="file-upload__label">Subir archivo/s</label>
+        <label for="<?php echo $id;?>" class="file-upload__label">Subir archivos</label>
         <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
     </div>
 
