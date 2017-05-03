@@ -52,17 +52,17 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m4 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+    <div class="s12 m6 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
 
         <figure style="height: 150px;width: 100%">
             <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
         </figure>
         <div class="adjunto">
-            <span class="name">{{a.name}}</span>
+            <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{a.name}}</span>
         </div>
 
     </div>
-    <div class="fila">
+    <div class="fila center">
         <a  data-lity  style="display: block" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
     </div>
 
