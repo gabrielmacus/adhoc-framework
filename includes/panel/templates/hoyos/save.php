@@ -16,7 +16,7 @@
         $model="extra1";
         $id="map1";
         $title ="Marque la ubicación del hoyo";
-        include DIR_PATH."/includes/panel/templates/posts/input/map.php";
+        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
 
         /*
