@@ -158,7 +158,7 @@ foreach ($archivos as $k=>$archivo)
 if(count($archivos)==0)
 {
     ?>
-    <div class="fila center" style="font-size: 30px;margin-top: 30px">
+    <div class="fila center" style="font-size: 40px;font-weight: 300;margin-top: 30px">
         <h3>No hay archivos en el repositorio</h3>
     </div>
 
