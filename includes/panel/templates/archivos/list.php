@@ -71,17 +71,7 @@
             scope.save=function () {
                 console.log(scope.previews);
 
-                http.post("<?php echo $configuracion->getSiteAddress()."/admin/archivos/data.php?act=save&rep={$_GET["rep"]}"?>",
-                    JSON.stringify(  {previews:angular.copy(scope.previews)})
-                ).then(function (e) {
-                    console.log(e);
-                    location.reload();
-                }, function (e) {
-
-                    console.log(e);
-                });
-
-         /*       $.ajax
+                  $.ajax
                 (
                     {
                         method:"post",
@@ -94,11 +84,12 @@
                         },
                         error:function (e) {
 
+                            alert(console.log(JSON.stringify(e)));
                             console.log(e);
                         }
                     }
                 );
-*/
+
                 console.log(scope.post);
             }
 
