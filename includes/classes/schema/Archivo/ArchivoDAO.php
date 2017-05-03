@@ -74,7 +74,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=$archivos;
     }
 
-    public function insertArchivo(IArchivo $a,$versionName="original",$versionId=0)
+    public function insertArchivo(Archivo $a,$versionName="original",$versionId=0)
     {
         $this->validate($a);
 
