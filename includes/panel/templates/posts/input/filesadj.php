@@ -4,6 +4,11 @@
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
+        scope.removeAdjunto=function (a) {
+
+            a.delete=true;
+
+        }
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);
@@ -52,10 +57,12 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
+    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
-        <span style="position: absolute;top: 10px;right: 10px;"><i class="fa fa-times" aria-hidden="true"></i>
-</span>
+        <span data-ng-click="removeAdjunto(a)" style="position: absolute;top: 20px;right:20px;background-color: rgba(220, 69, 47, 1)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+
         <figure style="height: 150px;width: 100%">
             <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
         </figure>
