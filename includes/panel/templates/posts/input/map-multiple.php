@@ -17,7 +17,7 @@
         <?php if($post)
         {
             ?>
-        console.log(scope.post.<?php echo $model?>);
+        
            try
            {
 
