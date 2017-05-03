@@ -431,6 +431,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             foreach ($in as $file)
             {
 
+                var_dump($file);
 
                 $archivos=array_merge($archivos,$this->selectArchivoByVersions($file["archivo_id"]),false);
             }
