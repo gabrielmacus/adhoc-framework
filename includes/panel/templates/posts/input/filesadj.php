@@ -48,7 +48,7 @@
     }
 </style>
 <div class="fila adjuntos">
-    <label class="fila" style="margin-top: 10px"><?php echo $label;?></label>
+    <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
     <div class="s12 m4 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
 
