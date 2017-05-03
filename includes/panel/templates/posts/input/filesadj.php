@@ -58,5 +58,5 @@
 
     </div>
 
-    <a  data-lity class="adjuntas fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
+    <a  data-lity class="adjuntas fila btn" style="background-color: #2e3032" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
 </div>
