@@ -703,6 +703,7 @@ input:valid
 input
 {
     outline: 0;
+    border: solid 1px #2a2a2a;
 }
 
 .shadow
