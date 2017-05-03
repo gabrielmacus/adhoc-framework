@@ -425,7 +425,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
        $archivos=$this->selectArchivoByVersions($id,false);
 
         /** Chequeo si el archivo tiene objetos asociados**/
-        $sqlArchivosObjetos="SELECT * FROM archivos_objetos archivo_id=:archivo_id";
+        $sqlArchivosObjetos="SELECT * FROM archivos_objetos WHERE archivo_id=:archivo_id";
 
         $objetosAsociados=$this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$id));
 
