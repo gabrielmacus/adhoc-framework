@@ -54,8 +54,8 @@
 
     <div class="s12 m4 l4 adjunto-wrapper" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>">
 
-        <figure>
-            <img data-src="{{a.url}}">
+        <figure style="height: 150px;width: 100%">
+            <img data-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
         </figure>
         <div class="adjunto">
             <span class="name">{{a.name}}</span>
