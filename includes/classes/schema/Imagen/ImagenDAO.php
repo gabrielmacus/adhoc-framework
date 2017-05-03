@@ -61,20 +61,19 @@ $versiones =$r->getVersiones();
             array("ancho"=>200,"alto"=>200,"nombre"=>"thumbnail")
         );*/
 
-        $tmp=$i->getTmpPath();
+        $tmpOriginal=$i->getTmpPath();
 
 
         foreach ($resoluciones as $resolucion)
         {
-            echo json_encode($resolucion);
-            $copy=$i->getTmpPath().".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
 
-            if(!copy($i->getTmpPath(),$copy))
+            $copy=$tmpOriginal.".{$resolucion["nombre"]}";//Ruta del archivo a redimensionar
+
+            if(!copy($tmpOriginal,$copy))
             {
                 throw  new Exception("ImagenDAO:0");//Error al copiar archivo temporal;
             }
 
-            var_dump($copy);
 
             $image =new \Eventviva\ImageResize($copy);
 
