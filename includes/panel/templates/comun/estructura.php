@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
+<body data-ng-cloak class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 
 <script>
 

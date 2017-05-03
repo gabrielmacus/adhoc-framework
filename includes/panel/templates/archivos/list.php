@@ -83,8 +83,7 @@
                         location.reload();
                         },
                         error:function (e) {
-
-                            alert(console.log(JSON.stringify(e)));
+                            
                             console.log(e);
                         }
                     }
