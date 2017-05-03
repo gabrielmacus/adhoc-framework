@@ -52,6 +52,7 @@
                                     dataType:"json",
                                     success:function (e) {
                                         console.log(e);
+                                        location.reload();
                                     },
                                     error:function (e) {
 
@@ -75,7 +76,7 @@
                         dataType:"json",
                         success:function (e) {
                             console.log(e);
-                            window.location.href = window.location.href + "&p=1";
+                        location.reload();
                         },
                         error:function (e) {
 
