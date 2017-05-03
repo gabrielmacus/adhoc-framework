@@ -63,7 +63,7 @@
 
     </div>
     <div class="fila center">
-        <a  data-lity  style="display: inline" class=" btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
+        <a  data-lity  style="display: inline;margin-top: 10px;margin-bottom: 10px" class=" btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
     </div>
 
 
