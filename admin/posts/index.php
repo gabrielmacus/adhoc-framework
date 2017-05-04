@@ -34,7 +34,7 @@ try{
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
-            $processFiles=false;
+          //  $processFiles=false;
             
             break;
     }
