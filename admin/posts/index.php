@@ -24,8 +24,8 @@ try{
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
     $processFiles = true;
-    
-    switch ($_GET["act"])
+    $action=$_GET["act"];
+    switch ($action)
     {
         default:
             $action="list";
@@ -34,7 +34,6 @@ try{
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
-            $action="save";
             $processFiles=false;
             
             break;
