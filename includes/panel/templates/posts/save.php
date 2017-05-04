@@ -1,10 +1,11 @@
 <script>
 
-console.log( <?php echo json_encode($post);?>);
+
     angular.element(function () {
 
-  
+
         scope.post={archivos:[]};
+
 
 
         <?php if($post)
@@ -13,20 +14,19 @@ console.log( <?php echo json_encode($post);?>);
         ?>
         scope.post = <?php echo json_encode($post);?>;
 
-        /*$.each(scope.post.archivos,function (tipo,grupos) {
+        $.each(scope.post.archivos,function (tipo,versiones) {
 
-            $.each(grupos,function (grupo,versiones) {
+
 
                 $.each(versiones,function (version,archivo) {
-
-
+                    console.log(archivo);
 
                 });
 
-            })
 
-        })*/
 
+        })
+        console.log(scope.post);
         <?Php
         }?>
         scope.$apply();
