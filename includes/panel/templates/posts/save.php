@@ -14,6 +14,7 @@
         ?>
         scope.post = <?php echo json_encode($post);?>;
 
+        console.log(scope.post);
         <?Php
         }?>
         scope.$apply();
