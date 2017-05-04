@@ -23,7 +23,8 @@
            
 
         });
-        console.log(scope.post);
+
+        scope.archivos =archivos;
         <?Php
         }?>
         scope.$apply();
