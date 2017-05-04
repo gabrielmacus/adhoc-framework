@@ -299,6 +299,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
+                $archivo->setGrupo($nexo["archivo_grupo"]);//El grupo o galeria al que pertenece el archivo dentro del post
                 if($process)
                 {
                     $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;

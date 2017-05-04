@@ -24,9 +24,13 @@ class Archivo implements JsonSerializable
     protected $version;
     protected $versionName;
     protected $type;
+    /**
+     * @var int
+     * @deprecated
+     */
     protected $galeria=0;
     protected $pathName;
-
+    protected $grupo;
     protected $nexo;
 
     /**
@@ -78,12 +82,30 @@ class Archivo implements JsonSerializable
            "realName"=>$this->getRealName(),
            "version"=>$this->getVersion(),
            "type"=>$this->getType(),
-           "galeria"=>$this->getGaleria(),
            "pathName"=>$this->getPathName(),
-           "nexo"=>$this->getNexo()
+           "nexo"=>$this->getNexo(),
+           "grupo"=>$this->getGrupo()
+           
        );
     }
 
+    /**
+     * @return mixed
+     */
+    public function getGrupo()
+    {
+        return $this->grupo;
+    }
+
+    /**
+     * @param mixed $grupo
+     */
+    public function setGrupo($grupo)
+    {
+        $this->grupo = $grupo;
+    }
+
+    
 
     /**
      * @return mixed
