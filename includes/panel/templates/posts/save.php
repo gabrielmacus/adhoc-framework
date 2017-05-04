@@ -3,11 +3,11 @@
 
     angular.element(function () {
 
+        console.log("A");
 
         scope.post={archivos:[]};
 
 
-        console.log("A");
         <?php if($post)
 
         {
