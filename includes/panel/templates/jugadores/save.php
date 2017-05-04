@@ -20,6 +20,7 @@ $formats=[];//TODO proximamente
 include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
 
+
 $label="Nombre";
 $model="titulo";
 include DIR_PATH."/includes/panel/templates/posts/input/text.php";
