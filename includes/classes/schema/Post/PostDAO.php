@@ -107,7 +107,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             }
             else
             {
-                $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ='{$archivo["archivo_objeto_id"]}'";
+                $archivosSql="DELETE FROM archivos_objetos WHERE archivo_id ='{$archivo["archivo_id"]}' AND  objeto_id ='{$archivo["objeto_id"]}' ";
 
             }
 
