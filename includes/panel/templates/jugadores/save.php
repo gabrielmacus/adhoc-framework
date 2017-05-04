@@ -15,7 +15,7 @@ include DIR_PATH."/includes/panel/templates/posts/save.php";
 <?php
 
 $label="Foto de perfil";
-$grupo=1;
+$grupo=0;
 $formats=[];//TODO proximamente
 include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
