@@ -24,7 +24,7 @@
 
         });
 
-        scope.archivos =archivos;
+        scope.post.archivos =archivos;
         <?Php
         }?>
         scope.$apply();
