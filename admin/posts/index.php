@@ -51,7 +51,7 @@ try{
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles);
     }
 
-    var_dump($post);
+   echo json_encode($post);
    
 
 }

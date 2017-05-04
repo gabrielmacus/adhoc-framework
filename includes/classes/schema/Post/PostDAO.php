@@ -411,7 +411,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-   //     $this->processAnexos();
+        $this->processAnexos();
         /*** **/
         $this->processFiles($process);
 
