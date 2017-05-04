@@ -14,13 +14,19 @@
         ?>
         scope.post = <?php echo json_encode($post);?>;
 
-        $.each(scope.post.archivos,function (tipo,grupos) {
+        /*$.each(scope.post.archivos,function (tipo,grupos) {
 
             $.each(grupos,function (grupo,versiones) {
-                console.log(versiones);
+
+                $.each(versiones,function (version,archivo) {
+
+
+
+                });
+
             })
 
-        })
+        })*/
         console.log(scope.post);
         <?Php
         }?>

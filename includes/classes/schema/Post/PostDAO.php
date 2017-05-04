@@ -305,7 +305,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     }
 
-    public function selectPostByTipo($tipo)
+    public function selectPostByTipo($tipo,$process=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
@@ -314,8 +314,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->query($data,true);
         });
 
+        /**** Proceso los anexos */
 
-        $this->processFiles();
+        $this->processAnexos();
+        /*** **/
+        $this->processFiles($process);
 
         return $this->posts;
     }
@@ -369,7 +372,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 }
 
-    public function selectPosts()
+    public function selectPosts($process=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} ";
@@ -385,27 +388,30 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $this->processAnexos();
         /*** **/
-        $this->processFiles();
+        $this->processFiles($process);
 
 
         return $this->posts;
     }
 
-    public function selectPostById($id)
+    public function selectPostById($id,$process=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_id=:post_id";
-
-        $this->dataSource->runQuery($sql,array(":post_id"=>$id),function($data){
-            $this->query($data,true);
-        });
+        
+        
+            $this->dataSource->runQuery($sql,array(":post_id"=>$id),function($data){
+                $this->query($data,true);
+            });
+  
 
         /**** Proceso los anexos */
 
         $this->processAnexos();
         /*** **/
-        $this->processFiles();
+        $this->processFiles($process);
 
+        
         return array_values($this->posts)[0];
     }
 

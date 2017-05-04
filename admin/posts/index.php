@@ -23,28 +23,35 @@ try{
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
+    $processFiles = true;
+    
+    switch ($_GET["act"])
+    {
+        default:
+            $action="list";
+            break;
+        case "view":
+            $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
+            break;
+        case "save":
+            $processFiles=false;
+            
+            break;
+    }
+
+    
     if(is_numeric($_GET["id"]))
     {
-        $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"]);
+        $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles);
 
     }
     else
     {
 
-        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t);
+        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles);
     }
 
-    if(!($action=$_GET["act"]))
-    {
-        $action="list";
-    }
-    else if($_GET["act"]=="view")
-    {
-      $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
-    }
-
-
-
+   
 
 }
 catch (Exception $e)
