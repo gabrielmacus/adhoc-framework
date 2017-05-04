@@ -7,7 +7,7 @@
         scope.post={archivos:[]};
 
 
-
+        console.log("A");
         <?php if($post)
 
         {
@@ -27,7 +27,7 @@
             })
 
         })*/
-        console.log(scope.post);
+
         <?Php
         }?>
         scope.$apply();
