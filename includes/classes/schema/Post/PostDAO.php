@@ -55,7 +55,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         // TODO: Implement insertAnexo() method.
     }
 */
-    public function selectPostByTipoAndPertenece($tipo)
+    public function selectPostByTipoAndPertenece($tipo,$process=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion ";
@@ -64,8 +64,12 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->query($data,true);
         });
 
+        /**** Proceso los anexos */
 
-        $this->processFiles();
+        $this->processAnexos();
+        /*** **/
+
+        $this->processFiles($process);
 
         return $this->posts;
     }
