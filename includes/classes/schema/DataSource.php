@@ -67,6 +67,7 @@ class DataSource
 
             $ecode=$q->errorCode();
 
+            var_dump($q->errorInfo());
 
             if($ecode!=="00000")
             {
