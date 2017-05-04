@@ -14,18 +14,15 @@
         ?>
         scope.post = <?php echo json_encode($post);?>;
 
+        var archivos =[];
         $.each(scope.post.archivos,function (tipo,versiones) {
 
 
 
-                $.each(versiones,function (version,archivo) {
-                    console.log(archivo);
+            archivos.push(versiones[<?php echo $fileVersion?>]);
+           
 
-                });
-
-
-
-        })
+        });
         console.log(scope.post);
         <?Php
         }?>
