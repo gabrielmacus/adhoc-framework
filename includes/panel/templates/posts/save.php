@@ -19,7 +19,7 @@
 
 
 
-            archivos.push(versiones["<?php echo $fileVersion?>"]);
+            archivos.push({id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name});
            
 
         });
