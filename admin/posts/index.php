@@ -39,7 +39,7 @@ try{
             break;
     }
 
-    var_dump($processFiles);
+
     if(is_numeric($_GET["id"]))
     {
         $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles);

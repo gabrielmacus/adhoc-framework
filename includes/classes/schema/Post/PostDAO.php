@@ -413,6 +413,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $this->processAnexos();
         /*** **/
+
+        var_dump($process);
         $this->processFiles($process);
 
         
