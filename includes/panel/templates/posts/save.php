@@ -1,6 +1,6 @@
 <script>
 
-
+console.log( <?php echo json_encode($post);?>);
     angular.element(function () {
 
   
