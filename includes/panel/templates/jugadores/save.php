@@ -14,6 +14,11 @@ include DIR_PATH."/includes/panel/templates/posts/save.php";
         <form data-ng-submit="save()">
 <?php
 
+$label="Foto de perfil";
+$grupo=1;
+$formats=[];//TODO proximamente
+include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
+
 
 $label="Nombre";
 $model="titulo";
