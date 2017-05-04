@@ -34,7 +34,7 @@ try{
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
-          //  $processFiles=false;
+            $processFiles=false;
             
             break;
     }
@@ -51,6 +51,7 @@ try{
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles);
     }
 
+    var_dump($post);
    
 
 }
