@@ -3,8 +3,7 @@
 
     angular.element(function () {
 
-        console.log("A");
-
+  
         scope.post={archivos:[]};
 
 
