@@ -19,7 +19,7 @@
 
 
 
-            archivos.push(versiones[<?php echo $fileVersion?>]);
+            archivos.push(versiones["<?php echo $fileVersion?>"]);
            
 
         });
