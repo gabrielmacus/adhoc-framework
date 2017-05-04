@@ -299,8 +299,18 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
+                if($process)
+                {
+                    $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
 
-                $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
+                }
+                else
+                {
+
+                    $postArchivos[$idOriginal][$archivo->getVersionName()]=$archivo;
+                }
+
+
                 $p->setArchivos($postArchivos);
 
             }
@@ -414,7 +424,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $this->processAnexos();
         /*** **/
 
-        var_dump($process);
         $this->processFiles($process);
 
         
