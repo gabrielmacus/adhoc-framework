@@ -39,7 +39,7 @@ try{
             break;
     }
 
-    
+    var_dump($processFiles);
     if(is_numeric($_GET["id"]))
     {
         $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles);
@@ -51,7 +51,7 @@ try{
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles);
     }
 
-   echo json_encode($post);
+
    
 
 }
