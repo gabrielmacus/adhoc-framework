@@ -8,8 +8,9 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-        scope.togglePost=function (p) {
+        scope.togglePost=function (id,text,grupo) {
 
+            p = {post_anexo_id:id,post_nexo_grupo:grupo,text:text};
             console.log(p);
 
             if(!scope.selectedPosts)
