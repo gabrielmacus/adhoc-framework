@@ -1,3 +1,10 @@
+<?php
+
+if(!$shownText)
+{
+    $shownText="titulo";
+}
+?>
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
