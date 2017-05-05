@@ -148,6 +148,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             $deleteAnexosSql.=" ({$deleteValues})";
 
+            var_dump($deleteAnexosSql);
+
             $values = rtrim($values,",");
 
             $sql.="{$values}";
