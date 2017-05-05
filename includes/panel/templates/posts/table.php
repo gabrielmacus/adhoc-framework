@@ -15,13 +15,13 @@ if(!$shownText)
 
 
 
-            if(!p[id])
+            if(!selectedPosts[id])
             {
-                p[id] =p;
+                selectedPosts[id] =p;
             }
             else
             {
-                delete p[id];
+                delete selectedPosts[id];
             }
 
             console.log(selectedPosts);
