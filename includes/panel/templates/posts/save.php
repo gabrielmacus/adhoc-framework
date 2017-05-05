@@ -1,3 +1,10 @@
+<?php
+
+if(!$shownText)
+{
+    $shownText="titulo";
+}
+?>
 <script>
 
 
