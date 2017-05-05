@@ -8,24 +8,23 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-        var selectedPosts=[];
+        var selectedPosts={};
         scope.togglePost=function (id,text,grupo) {
 
           var  p = {post_anexo_id:id,post_nexo_grupo:grupo,text:text};
-            console.log(p);
 
 
-            var idx = selectedPosts.indexOf(p);
 
-            console.log(idx);
-            if(idx==-1)
-            { selectedPosts.push(p);
+            if(!p[id])
+            {
+                p[id] =p;
             }
             else
             {
-                selectedPosts.splice(idx,1);
+                delete p[id];
             }
 
+            console.log(selectedPosts);
 
         }
 
