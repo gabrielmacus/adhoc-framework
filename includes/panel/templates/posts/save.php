@@ -40,11 +40,11 @@ if(!$shownText)
 
             console.log(v);
 
-            archivos.push({post_anexo_id:v.id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
+            anexos.push({post_anexo_id:v.id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
 
 
         });
-        scope.post.archivos =archivos;
+        scope.post.anexos =anexos;
 
         /** **/
 
