@@ -8,25 +8,21 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
+        var selectedPosts=[];
         scope.togglePost=function (id,text,grupo) {
 
-            p = {post_anexo_id:id,post_nexo_grupo:grupo,text:text};
+          var  p = {post_anexo_id:id,post_nexo_grupo:grupo,text:text};
             console.log(p);
 
-            if(!scope.selectedPosts)
-            {
-                scope.selectPosts=[];
-            }
 
-            var idx = scope.selectPosts.indexOf(p);
+            var idx = selectPosts.indexOf(p);
 
             if(idx==-1)
-            {
-                scope.selectedPosts.push(p);
+            { selectedPosts.push(p);
             }
             else
             {
-                scope.selectedPosts.splice(idx,1);
+                selectedPosts.splice(idx,1);
             }
 
 
