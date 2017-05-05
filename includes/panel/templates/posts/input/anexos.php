@@ -15,15 +15,15 @@
             if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
             {
 
-                if(!scope.post.archivos)
+                if(!scope.post.anexos)
                 {
-                    scope.post.archivos=[];
+                    scope.post.anexos=[];
                 }
                 $.each(e.data,function (k,v) {
 
-                    if(v.archivo_grupo==<?php echo $grupo?>)
+                    if(v.post_nexo_grupo==<?php echo $grupo?>)
                     {
-                        scope.post.archivos.push(v);
+                        scope.post.anexos.push(v);
                     }
 
                 });
@@ -73,7 +73,7 @@
 
     </div>
     <div class="fila">
-        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&grupo=<?php echo $grupo?>&t=<?php echo $tipo?>&s=<?php echo $s?>">Agregar anexo</a>
+        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&grupo=<?php echo $grupo?>&t=<?php echo $tipo?>&s=<?php echo $s?>">Adjuntar anexos</a>
     </div>
 
 
