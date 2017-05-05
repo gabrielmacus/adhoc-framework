@@ -119,8 +119,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     private function assocAnexos(Post $p)
     {
-        var_dump($anexos);
+
         $anexos =$p->getAnexos();
+        var_dump($anexos);
         if(count($anexos)>0)
         {
             $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_grupo,post_nexo_orden) values ";
