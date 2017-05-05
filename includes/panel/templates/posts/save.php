@@ -39,6 +39,7 @@ if(!$shownText)
         $.each(scope.post.anexos,function (k,v) {
 
 
+            console.log("post_<?php echo $shownText?>");
 
             archivos.push({post_anexo_id:v.id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
 
