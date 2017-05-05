@@ -119,6 +119,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     private function assocAnexos(Post $p)
     {
+        var_dump($anexos);
         $anexos =$p->getAnexos();
         if(count($anexos)>0)
         {
