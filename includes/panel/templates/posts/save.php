@@ -34,6 +34,7 @@ if(!$shownText)
         scope.post.archivos =archivos;
         /**  **/
 
+
         /** cargo anexos**/
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
