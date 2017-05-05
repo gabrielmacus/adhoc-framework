@@ -8,7 +8,7 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-        var selectedPost=[];
+        var selectedPosts=[];
         $(document).on("click","#send-posts",function (e) {
 
 
@@ -16,21 +16,15 @@ if(!$shownText)
             $("tr [type='checkbox']:checked").each(function () {
                 var target=$(this).closest("tr");
                 var id = target.data("id");
-                var texto = target.data("texto");
+                var texto = target.data("text");
                 var grupo = target.data("grupo");
-                selectedPost.push({post_anexo_id:id,text:texto, post_nexo_grupo:grupo});
+                selectedPosts.push({post_anexo_id:id,text:texto, post_nexo_grupo:grupo});
             });
 
-            console.log(selectedPost);
 
-        });
-
-        scope.sendSelectedPosts=function()
-        {
             parent.postMessage(selectedPosts,"<?php echo $configuracion->getSiteAddress()?>");
 
-        }
-
+        });
 
 
     });
@@ -71,7 +65,7 @@ if(!$shownText)
 
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
-                var_dump($post);
+
 
                 ?>
                 <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $post[$shownText]?>" data-grupo="<?php echo $_GET["grupo"]?>">
