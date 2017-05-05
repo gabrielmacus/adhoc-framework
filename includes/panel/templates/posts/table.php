@@ -15,7 +15,7 @@ if(!$shownText)
             console.log(p);
 
 
-            var idx = selectPosts.indexOf(p);
+            var idx = selectedPosts.indexOf(p);
 
             if(idx==-1)
             { selectedPosts.push(p);
