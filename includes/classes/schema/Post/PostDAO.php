@@ -55,7 +55,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         // TODO: Implement insertAnexo() method.
     }
 */
-    public function selectPostByTipoAndPertenece($tipo,$process=true)
+    public function selectPostByTipoAndPertenece($tipo,$process=true,$processAnexos=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion ";
@@ -66,7 +66,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-        $this->processAnexos();
+        $this->processAnexos($processAnexos);
         /*** **/
 
         $this->processFiles($process);
@@ -320,7 +320,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     }
 
-    public function selectPostByTipo($tipo,$process=true)
+    public function selectPostByTipo($tipo,$process=true,$processAnexos=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
@@ -331,14 +331,14 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-        $this->processAnexos();
+        $this->processAnexos($processAnexos);
         /*** **/
         $this->processFiles($process);
 
         return $this->posts;
     }
 
-    private function processAnexos()
+    private function processAnexos($process=true)
 {
     $in="";
     foreach ($this->posts as $post) {
@@ -370,7 +370,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setModificacion($anexo["post_modificacion"]);
         $post->setId($anexo["id"]);
 
-        $postAnexos[]=$anexo;
+        if($process)
+        {
+            $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
+        }
+        else
+        {
+            $postAnexos[]=$anexo;
+        }
+
 
 
         if($this->posts[$anexo["id"]])
@@ -387,7 +395,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 }
 
-    public function selectPosts($process=true)
+    public function selectPosts($process=true,$processAnexos=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} ";
@@ -401,7 +409,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-        $this->processAnexos();
+        $this->processAnexos($processAnexos);
         /*** **/
         $this->processFiles($process);
 
@@ -409,7 +417,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         return $this->posts;
     }
 
-    public function selectPostById($id,$process=true)
+    public function selectPostById($id,$process=true,$processAnexos=true)
     {
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} WHERE post_id=:post_id";
@@ -422,7 +430,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         /**** Proceso los anexos */
 
-        $this->processAnexos();
+        $this->processAnexos($processAnexos);
         /*** **/
 
         $this->processFiles($process);

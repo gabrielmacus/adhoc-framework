@@ -24,6 +24,7 @@ try{
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
     $processFiles = true;
+    $processAnexos=true;
     $action=$_GET["act"];
     switch ($action)
     {
@@ -35,6 +36,7 @@ try{
             break;
         case "save":
             $processFiles=false;
+            $processAnexos=false;
             
             break;
     }
@@ -42,13 +44,13 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-        $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles);
+        $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles,$processAnexos);
 
     }
     else
     {
 
-        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles);
+        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
 
 

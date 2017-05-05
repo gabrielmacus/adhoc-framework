@@ -16,10 +16,10 @@ interface IPost
     /** **/
 
     /** Read **/
-    public function selectPosts($process=true);
-    public function selectPostById($id,$process=true);
-    public function selectPostByTipo($tipo,$process=true);
-    public function selectPostByTipoAndPertenece($tipo,$process=true);
+    public function selectPosts($process=true,$processAnexos=true);
+    public function selectPostById($id,$process=true,$processAnexos=true);
+    public function selectPostByTipo($tipo,$process=true,$processAnexos=true);
+    public function selectPostByTipoAndPertenece($tipo,$process=true,$processAnexos=true);
     /** **/
 
     /** Update**/
