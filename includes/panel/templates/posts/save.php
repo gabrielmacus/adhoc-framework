@@ -28,7 +28,16 @@
         /**  **/
 
         /** cargo anexos**/
+        var anexos =[];
+        $.each(scope.post.anexos,function (k,v) {
 
+
+
+            archivos.push({post_anexo_id:v.id,text:v.<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
+
+
+        });
+        scope.post.archivos =archivos;
 
         /** **/
 
