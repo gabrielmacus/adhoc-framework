@@ -40,7 +40,7 @@ if(!$shownText)
 
 
 
-            archivos.push({post_anexo_id:v.id,text:v.post.<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
+            archivos.push({post_anexo_id:v.id,text:v.<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
 
 
         });
