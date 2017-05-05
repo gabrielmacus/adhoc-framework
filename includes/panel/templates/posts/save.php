@@ -14,6 +14,7 @@
         ?>
         scope.post = <?php echo json_encode($post);?>;
 
+        /***  cargo adjuntos **/
         var archivos =[];
         $.each(scope.post.archivos,function (tipo,versiones) {
 
@@ -23,8 +24,14 @@
            
 
         });
-
         scope.post.archivos =archivos;
+        /**  **/
+
+        /** cargo anexos**/
+
+
+        /** **/
+
         <?Php
         }?>
         scope.$apply();

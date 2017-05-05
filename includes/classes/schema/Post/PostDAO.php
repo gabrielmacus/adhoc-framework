@@ -370,7 +370,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setModificacion($anexo["post_modificacion"]);
         $post->setId($anexo["id"]);
 
-        $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
+        $postAnexos[]=$anexo;
 
 
         if($this->posts[$anexo["id"]])
