@@ -1,3 +1,32 @@
+<?php
+echo $posts[ $row["#"]["data"]];
+?>
+<script>
+    angular.element(function () {
+
+        scope.togglePost=function (p) {
+            if(!scope.selectedPosts)
+            {
+                scope.selectPosts=[];
+            }
+
+            var idx = scope.selectPosts.indexOf(p);
+
+            if(idx==-1)
+            {
+                scope.selectedPosts.push(p);
+            }
+            else
+            {
+                scope.selectedPosts.splice(idx,1);
+            }
+
+        }
+
+
+
+    });
+</script>
 <div class="body">
     <?php  if(count($rows)>0)
 
@@ -34,7 +63,7 @@
 
 
                 ?>
-                <tr>
+                <tr  data-ng-click='selectPost({id:<?php echo $row["#"]["data"]; ?>,})'>
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
