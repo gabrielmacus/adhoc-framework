@@ -72,7 +72,7 @@ if(!$shownText)
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
                 ?>
-                <tr  data-ng-click='togglePost({"post_anexo_id":<?php echo $row["#"]["data"]; ?>,"text":"<?php echo $post[$shownText]?>","post_nexo_grupo":"<?php echo $grupo?>}")'>
+                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>","<?php echo $grupo?>")'>
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
