@@ -372,11 +372,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         if($process)
         {
-            $postAnexos[$anexo["post_nexo_grupo"]][]=$post;
+            $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
         }
         else
         {
-            $postAnexos[]=$post;
+            $postAnexos[]=$anexo;
         }
 
 
