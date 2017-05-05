@@ -101,7 +101,7 @@ if(!$shownText)
         <?php  if($_GET["modal"])
         {
             ?>
-            <div class="fila center">
+            <div class="fila center" style="margin-top: 20px">
                 <button class="btn">Seleccionar</button>
             </div>
             <?php
