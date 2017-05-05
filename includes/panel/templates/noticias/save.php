@@ -3,7 +3,6 @@
     <h2>Prueba</h2>
 </header>
 
-<?php include DIR_PATH."/includes/panel/templates/posts/save.php";?>
 
 <div class="body">
 
@@ -32,7 +31,7 @@
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
-
+        include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         /*
 
