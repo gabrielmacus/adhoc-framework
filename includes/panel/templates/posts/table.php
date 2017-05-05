@@ -1,6 +1,7 @@
 <?php
-var_dump($posts);
+
 echo $posts[ $row["#"]["data"]];
+
 ?>
 <script>
     angular.element(function () {
