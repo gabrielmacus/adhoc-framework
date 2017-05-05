@@ -71,6 +71,8 @@ if(!$shownText)
 
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
+                var_dump($post);
+
                 ?>
                 <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $post[$shownText]?>" data-grupo="<?php echo $_GET["grupo"]?>">
                     <?php foreach ($row as $k=>$v)
