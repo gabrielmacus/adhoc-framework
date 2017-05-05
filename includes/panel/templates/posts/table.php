@@ -9,9 +9,10 @@ if(!$shownText)
     angular.element(function () {
 
         var selectedPosts={};
-        scope.togglePost=function (id,text) {
+        scope.togglePost=function (id,text,grupo) {
 
-          var  p = {post_anexo_id:id,text:text};
+          var  p = {post_anexo_id:id,text:text, post_nexo_grupo:grupo};
+
 
 
 
@@ -73,7 +74,7 @@ if(!$shownText)
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
                 ?>
-                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>")'>
+                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>","<?php echo $_GET["grupo"]?>")'>
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
