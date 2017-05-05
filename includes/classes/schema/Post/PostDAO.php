@@ -121,7 +121,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
 
         $anexos =$p->getAnexos();
-        var_dump($anexos);
+
         if(count($anexos)>0)
         {
             $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_grupo,post_nexo_orden) values ";
@@ -135,7 +135,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 if($anexo["delete"])
                 {
-                    $deleteValues.="'{$anexo["post_nexo_id"]}',";
+                    if($anexo["post_nexo_id"])
+                    {
+                        $deleteValues.="'{$anexo["post_nexo_id"]}',";
+                    }
                 }
                 else
                 {
