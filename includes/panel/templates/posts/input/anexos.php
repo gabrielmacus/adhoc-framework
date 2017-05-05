@@ -22,8 +22,8 @@
 
                 $.each(e.data,function (k,v) {
 
-                    console.log(v);
-                    if(v.post_nexo_grupo==<?php echo $grupo?>)
+
+                    if(v.post_nexo_grupo=="<?php echo $grupo?>")
                     {
                         scope.post.anexos.push(v);
                     }
@@ -59,7 +59,7 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.anexos" data-ng-if="a.grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
         <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;top: 20px;right:20px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
