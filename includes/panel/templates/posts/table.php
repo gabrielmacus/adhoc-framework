@@ -101,7 +101,7 @@ if(!$shownText)
         {
             ?>
             <div class="fila center" style="margin-top: 20px">
-                <button data-ng-click="sendSelected()" class="btn">Seleccionar</button>
+                <button id="send-posts" class="btn">Seleccionar</button>
             </div>
             <?php
         }?>
