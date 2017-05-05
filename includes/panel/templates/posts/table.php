@@ -8,25 +8,23 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-        var selectedPosts={};
-        scope.togglePost=function (id,text,grupo) {
-
-          var  p = {post_anexo_id:id,text:text, post_nexo_grupo:grupo};
+        var selectedPost=[];
+        $(document).on("click","#send-posts",function (e) {
 
 
 
+            $("tr [type='checkbox']:checked",function () {
+                var target=$(this).closest("tr");
+                var id = target.data("id");
+                var texto = target.data("texto");
+                var grupo = target.data("grupo");
+                selectedPost.push({post_anexo_id:id,text:texto, post_nexo_grupo:grupo});
+            })
 
-            if(!selectedPosts[id])
-            {
-                selectedPosts[id] =p;
-            }
-            else
-            {
-                delete selectedPosts[id];
-            }
+            console.log(selectedPost);
 
+        });
 
-        }
         scope.sendSelectedPosts=function()
         {
             parent.postMessage(selectedPosts,"<?php echo $configuracion->getSiteAddress()?>");
@@ -74,7 +72,7 @@ if(!$shownText)
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
                 ?>
-                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>","<?php echo $_GET["grupo"]?>")'>
+                <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $post[$shownText]?>" data-grupo="<?php echo $_GET["grupo"]?>">
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
@@ -103,7 +101,7 @@ if(!$shownText)
         {
             ?>
             <div class="fila center" style="margin-top: 20px">
-                <button class="btn">Seleccionar</button>
+                <button data-ng-click="sendSelected()" class="btn">Seleccionar</button>
             </div>
             <?php
         }?>
