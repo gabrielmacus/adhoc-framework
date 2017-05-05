@@ -19,8 +19,10 @@
                 {
                     scope.post.anexos=[];
                 }
+
                 $.each(e.data,function (k,v) {
 
+                    console.log(v);
                     if(v.post_nexo_grupo==<?php echo $grupo?>)
                     {
                         scope.post.anexos.push(v);
