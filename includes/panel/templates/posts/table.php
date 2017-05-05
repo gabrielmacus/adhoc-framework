@@ -13,13 +13,13 @@ if(!$shownText)
 
 
 
-            $("tr [type='checkbox']:checked",function () {
+            $("tr [type='checkbox']:checked").each(function () {
                 var target=$(this).closest("tr");
                 var id = target.data("id");
                 var texto = target.data("texto");
                 var grupo = target.data("grupo");
                 selectedPost.push({post_anexo_id:id,text:texto, post_nexo_grupo:grupo});
-            })
+            });
 
             console.log(selectedPost);
 
