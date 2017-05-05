@@ -376,7 +376,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         }
         else
         {
-            $postAnexos[]=$anexo;
+            $postAnexos[]=$post;
         }
 
 
