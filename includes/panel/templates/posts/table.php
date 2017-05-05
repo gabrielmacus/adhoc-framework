@@ -1,5 +1,9 @@
 <?php
-var_dump($posts);
+
+if(!$shownText)
+{
+    $shownText="titulo";
+}
 ?>
 <script>
     angular.element(function () {
@@ -61,9 +65,10 @@ var_dump($posts);
             <?php foreach ($rows as $row)
             {
 
+                $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
                 ?>
-                <tr  data-ng-click='selectPost({id:<?php echo $row["#"]["data"]; ?>,})'>
+                <tr  data-ng-click='selectPost({post_anexo_id:<?php echo $row["#"]["data"]; ?>,text:<?php echo $post[$shownText]?>,post_nexo_grupo:<?php echo $grupo?>})'>
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
