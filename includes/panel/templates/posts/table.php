@@ -9,9 +9,9 @@ if(!$shownText)
     angular.element(function () {
 
         var selectedPosts={};
-        scope.togglePost=function (id,text,grupo) {
+        scope.togglePost=function (id,text) {
 
-          var  p = {post_anexo_id:id,post_nexo_grupo:grupo,text:text};
+          var  p = {post_anexo_id:id,text:text};
 
 
 
@@ -24,7 +24,11 @@ if(!$shownText)
                 delete selectedPosts[id];
             }
 
-            console.log(selectedPosts);
+
+        }
+        scope.sendSelectedPosts=function()
+        {
+            parent.postMessage(selectedPosts,"<?php echo $configuracion->getSiteAddress()?>");
 
         }
 
@@ -69,7 +73,7 @@ if(!$shownText)
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
 
                 ?>
-                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>","<?php echo $grupo?>")'>
+                <tr  data-ng-click='togglePost(<?php echo $row["#"]["data"]; ?>,"<?php echo $post[$shownText]?>")'>
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
@@ -94,6 +98,14 @@ if(!$shownText)
             </tbody>
         </table>
 
+        <?php  if($_GET["modal"])
+        {
+            ?>
+            <div class="fila center">
+                <button class="btn">Seleccionar</button>
+            </div>
+            <?php
+        }?>
         <?Php
     }
     ?>

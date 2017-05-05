@@ -25,6 +25,7 @@
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
+
         /*
 
         $model="extra4";
