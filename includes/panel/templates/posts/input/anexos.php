@@ -29,6 +29,7 @@
                     }
 
                 });
+                console.log(    scope.post.anexos);
                 setTimeout(function () {
                     scope.$apply();
                 });
