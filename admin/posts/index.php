@@ -54,7 +54,8 @@ try{
     }
 
 
-   
+
+    var_dump($post);
 
 }
 catch (Exception $e)
