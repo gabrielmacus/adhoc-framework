@@ -34,7 +34,7 @@
 
         $label="Hoyos adjuntos";
         $grupo=26;
-        $s="jugadores";
+        $s="hoyos";
         $tipo=60;
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
