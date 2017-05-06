@@ -353,7 +353,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $in.= ",{$post->getId()}";
     }
 
-    $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
+    $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n
+ LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
   OR n.post_anexo_id IN (0{$in}) 
  ORDER BY post_nexo_orden ASC";
 
@@ -386,7 +387,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $postAnexos[]=$anexo;
         }
 
-
+        echo json_encode($anexo);
 
         if($this->posts[$anexo["id"]])
         {
