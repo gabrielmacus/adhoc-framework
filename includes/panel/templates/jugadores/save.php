@@ -37,10 +37,10 @@ $label="DNI";
 $model="bajada";
 include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
-$label="Jugadores adjuntos";
+$label="Noticias adjuntas";
 $grupo=25;
-$s="jugadores";
-$tipo=62;
+$s="noticias";
+$tipo=65;
 $formats=[];//TODO proximamente
 include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
