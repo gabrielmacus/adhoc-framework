@@ -31,6 +31,16 @@
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
+
+        $label="Hoyos adjuntos";
+        $grupo=26;
+        $s="jugadores";
+        $tipo=60;
+        $formats=[];//TODO proximamente
+        include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
+
+
+
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         /*
