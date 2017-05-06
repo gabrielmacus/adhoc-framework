@@ -108,6 +108,7 @@ try{
             break;
 
     }
+    var_dump($post);
 
 
 }
