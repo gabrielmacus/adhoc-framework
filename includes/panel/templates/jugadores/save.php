@@ -41,7 +41,6 @@ $label="Noticias adjuntas";
 $grupo=25;
 $s="noticias";
 $tipo=65;
-$formats=[];//TODO proximamente
 include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
 
