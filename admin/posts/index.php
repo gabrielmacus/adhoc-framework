@@ -54,8 +54,6 @@ try{
     }
 
 
-
-echo json_encode($post);
 }
 catch (Exception $e)
 {
