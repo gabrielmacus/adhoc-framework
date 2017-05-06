@@ -37,6 +37,15 @@ $label="DNI";
 $model="bajada";
 include DIR_PATH."/includes/panel/templates/posts/input/number.php";
 
+$label="Jugadores adjuntos";
+$grupo=25;
+$s="jugadores";
+$tipo=62;
+$formats=[];//TODO proximamente
+include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
+
+
+
 $name="Guardar cambios";
 include DIR_PATH."/includes/panel/templates/posts/input/submit.php";?>
 
