@@ -55,8 +55,7 @@ try{
 
 
 
-    var_dump($post);
-
+echo json_encode($post);
 }
 catch (Exception $e)
 {
