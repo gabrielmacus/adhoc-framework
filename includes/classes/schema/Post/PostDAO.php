@@ -143,9 +143,16 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 else
                 {
                     /** Asocio objetos de manera bidireccional */
-                    $values.=" ('{$anexo['post_nexo_id']}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                    if(!$id=$anexo["post_nexo_id"])
+                    {
+                        $values.=" ('','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                        $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                    }
+                    else
+                    {
+                        $values.=" ('$id','{$anexo['post_anexo_id']}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
 
-                    $values.=" ('{$anexo['post_nexo_id']}','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                    }
 
                 }
             }
