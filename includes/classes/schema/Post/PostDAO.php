@@ -143,14 +143,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 else
                 {
                     /** Asocio objetos de manera bidireccional */
-                    if(!$id=$anexo["post_nexo_id"])
+                    $id=$anexo["post_nexo_id"];
+                    if(!$id)
                     {
                         $values.=" ('','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
                         $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
                     }
                     else
                     {
-                        $values.=" ('$id','{$anexo['post_anexo_id']}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                        $values.=" ('{$id}','{$anexo['post_anexo_id']}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
 
                     }
 
