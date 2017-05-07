@@ -369,7 +369,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
   OR n.post_anexo_id IN (0{$in}) 
  ORDER BY post_nexo_orden ASC";
 */
-    $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n
+    $anexosSql="SELECT *,n.post_id ,p.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
  ORDER BY post_nexo_orden ASC";
     $postAnexos =array();
@@ -389,7 +389,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setExtra4($anexo["post_extra_4"]);
         $post->setCreacion($anexo["post_creacion"]);
         $post->setModificacion($anexo["post_modificacion"]);
-        $post->setId($anexo["id"]);
+        $post->setId($anexo["post_id"]);
 
         if($process)
         {
