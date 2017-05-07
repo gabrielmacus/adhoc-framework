@@ -383,6 +383,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setModificacion($anexo["post_modificacion"]);
         $post->setId($anexo["id"]);
 
+        var_dump($anexo);
         if($process)
         {
             $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
@@ -392,7 +393,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $postAnexos[]=$anexo;
         }
 
-        echo json_encode($anexo);
 
         if($this->posts[$anexo["id"]])
         {
