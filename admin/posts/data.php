@@ -91,8 +91,6 @@ try{
             $post->setSeccion($t);
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
-      echo json_encode($_POST["anexos"]);
-      exit();
             if ($_POST["id"]) {
 
                 $post->setId($_POST["id"]);
