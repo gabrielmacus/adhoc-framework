@@ -73,6 +73,7 @@ if(!$shownText)
                 {
                     foreach ($shownText as $t)
                     {
+                        var_dump($t);
                         $text.= $post[$t]." ";
                     }
                   
