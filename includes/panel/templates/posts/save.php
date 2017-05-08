@@ -58,7 +58,7 @@ if(!$shownText)
             {
                 scope.post.previews=scope.previews;
             }
-            console.log(scope.post);
+            console.log(scope.post.anexos);
             if(!scope.post.seccion)
             {
                 var url="<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>";
@@ -69,6 +69,9 @@ if(!$shownText)
 
             }
 
+
+
+            return false;
             $.ajax
             (
                 {
