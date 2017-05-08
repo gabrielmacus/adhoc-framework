@@ -65,7 +65,7 @@
 
     <a class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
-        <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;color: rgba(220, 69, 47, 1)">
+        <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;top: 0px;right:0px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
 
