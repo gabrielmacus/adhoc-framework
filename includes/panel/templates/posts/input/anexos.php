@@ -57,7 +57,7 @@
     .adjuntos .adjunto
     {
 
-        padding: 20px;
+        padding: 10px;
     }
 </style>
 <div class="fila adjuntos">
