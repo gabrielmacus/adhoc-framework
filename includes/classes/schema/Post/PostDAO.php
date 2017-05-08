@@ -165,8 +165,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 }
             }
 
-            echo json_encode($sql);
-            exit();
+
 
             $deleteValues  = rtrim($deleteValues,",");
 
@@ -177,7 +176,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $values = rtrim($values,",");
 
             $sql.="{$values}";
-
+            echo json_encode($sql);
+            exit();
             if($deleteValues!="")
             {
                 $this->dataSource->runUpdate($deleteAnexosSql);
