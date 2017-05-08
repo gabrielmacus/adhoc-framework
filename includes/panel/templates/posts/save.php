@@ -38,8 +38,9 @@ if(!$shownText)
         /** cargo anexos**/
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
-            
-            anexos.push({post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
+
+            alert(v.id);
+            anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
 
 
         });
