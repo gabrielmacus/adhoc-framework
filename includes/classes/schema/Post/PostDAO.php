@@ -186,6 +186,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $this->dataSource->runUpdate($deleteAnexosSql);
             }
 
+            var_dump($sql);
             $this->dataSource->runUpdate($sql);
 
 
