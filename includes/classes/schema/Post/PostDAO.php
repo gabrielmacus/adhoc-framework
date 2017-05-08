@@ -126,9 +126,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
 
             /**** Codigo provisorio, elimino los anexos y los vuelo a anexar TODO mejorar implementacion***/
-            $sqlDelete="DELETE FROM posts_nexos WHERE post_id={$p->getId()} OR post_anexo_id ={$p->getId()}";
+            /*$sqlDelete="DELETE FROM posts_nexos WHERE post_id={$p->getId()} OR post_anexo_id ={$p->getId()}";
             $this->dataSource->runUpdate($sqlDelete);
-            /*** **/
+           */ /*** **/
 
 
             $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_grupo,post_nexo_orden) values ";
