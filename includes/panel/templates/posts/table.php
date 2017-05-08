@@ -64,7 +64,7 @@ if(!$shownText)
             {
 
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
-                
+                $text="";
                 if(!is_array($shownText))
                 {
                     $text= $post[$shownText];
