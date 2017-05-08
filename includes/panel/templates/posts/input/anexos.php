@@ -60,6 +60,7 @@
 
         padding: 20px;
         background-color: rgba(236, 237, 228, 1);
+        z-index: 0;
     }
 </style>
 <div class="fila adjuntos">
