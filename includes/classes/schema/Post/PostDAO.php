@@ -406,7 +406,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setExtra4($anexo["post_extra_4"]);
         $post->setCreacion($anexo["post_creacion"]);
         $post->setModificacion($anexo["post_modificacion"]);
-        $post->setId($anexo["post_id"]);
+        $post->setId($anexo["id"]);
 
         if($process)
         {
