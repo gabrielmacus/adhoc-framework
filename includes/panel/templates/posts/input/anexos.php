@@ -23,7 +23,7 @@
 
                 $.each(e.data,function (k,v) {
 
-       
+
                     if(v.post_nexo_grupo=="<?php echo $grupo?>")
                     {
 
@@ -67,7 +67,7 @@
 
     <a data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}" class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
-        <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
+        <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 5;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
 
