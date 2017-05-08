@@ -165,6 +165,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 }
             }
 
+            echo json_encode($sql);
+            exit();
+
             $deleteValues  = rtrim($deleteValues,",");
 
             $deleteAnexosSql.=" ({$deleteValues})";

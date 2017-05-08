@@ -70,8 +70,6 @@ if(!$shownText)
             }
 
 
-
-            return false;
             $.ajax
             (
                 {
