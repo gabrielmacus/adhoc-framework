@@ -39,8 +39,23 @@ if(!$shownText)
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
 
+            var text="";
+            <?Php if(!is_array($shownText))
+            {
+                ?>       text+=v.post_<?php echo $shownText?>;
 
-            anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:v.post_<?php echo $shownText?>, post_nexo_grupo:v.post_nexo_grupo});
+            <?Php
+            }
+            else
+            {
+                foreach ($shownText as $t)
+                {
+                ?>
+              text+=v.post_<?php echo $t?>+" ";
+            <?php
+                }
+            }?>
+            anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
 
 
         });

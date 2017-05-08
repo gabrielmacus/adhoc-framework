@@ -28,6 +28,7 @@
         $grupo=25;
         $s="jugadores";
         $tipo=62;
+        $shownText=["titulo","volanta"];
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
 
