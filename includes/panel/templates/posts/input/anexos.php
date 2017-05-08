@@ -43,7 +43,7 @@
 <style>
     .adjuntos
     {
-        padding: 10px;
+        padding: 0px;
     }
 
 
