@@ -65,7 +65,7 @@ if(!$shownText)
 
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
                 $text="";
-                var_dump($shownText);
+        
                 if(!is_array($shownText))
                 {
                     $text= $post[$shownText];
@@ -74,7 +74,7 @@ if(!$shownText)
                 {
                     foreach ($shownText as $t)
                     {
-                        var_dump($t);
+
                         $text.= $post[$t]." ";
                     }
                   

@@ -26,6 +26,7 @@
 
                     if(v.post_nexo_grupo=="<?php echo $grupo?>")
                     {
+                        console.log(v);
                         scope.post.anexos.push(v);
                     }
 
