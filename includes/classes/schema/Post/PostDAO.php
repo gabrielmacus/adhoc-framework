@@ -133,7 +133,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             $sql="REPLACE INTO posts_nexos (post_nexo_id,post_id,post_anexo_id,post_nexo_grupo,post_nexo_orden) values ";
 
-            $deleteAnexosSql="DELETE FROM posts_nexos WHERE post_nexo_id IN ";
+        //    $deleteAnexosSql="DELETE FROM posts_nexos WHERE post_nexo_id IN ";
+
+            $deleteAnexosSql="DELETE FROM posts_nexos WHERE ";
             $deleteValues="";
             $values ="";
 
@@ -144,7 +146,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 {
                     if($anexo["post_nexo_id"])
                     {
-                        $deleteValues.="'{$anexo["post_nexo_id"]}',";
+                    //    $deleteValues.="'{$anexo["post_nexo_id"]}',";
+                        $deleteValues.="{$anexo["post_anexo_id"]},";
                     }
                 }
                 else
@@ -169,8 +172,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             $deleteValues  = rtrim($deleteValues,",");
 
-            $deleteAnexosSql.=" ({$deleteValues})";
+          //  $deleteAnexosSql.=" ({$deleteValues})";
 
+            //$deleteValues.=" post_id IN ({$deleteValues}) OR post_anexo_id IN ({$deleteValues})"
 
 
             $values = rtrim($values,",");
