@@ -70,6 +70,11 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
+    <h3 data-ng-if="post.anexos.length==0" style="padding: 70px;background-color: rgba(216, 223, 212, 1)">
+        No hay anexos disponibles
+    </h3>
+
+
     <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
         <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
