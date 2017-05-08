@@ -62,7 +62,9 @@
         background-color: rgba(236, 237, 228, 1);
         z-index: 0;
         width: 100%;
-        
+        float: left;
+        display: block;
+
     }
 </style>
 <div class="fila adjuntos">
