@@ -64,11 +64,24 @@ if(!$shownText)
             {
 
                 $post=json_decode(json_encode($posts[$row["#"]["data"]]),true);
-
-
+                
+                if(!is_array($shownText))
+                {
+                    $text= $post[$shownText];
+                }
+                else
+                {
+                    foreach ($shownText as $t)
+                    {
+                        $text.= $post[$t]." ";
+                    }
+                  
+                }
+         
+                
 
                 ?>
-                <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $post[$shownText]?>" data-grupo="<?php echo $_GET["grupo"]?>">
+                <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $text?>" data-grupo="<?php echo $_GET["grupo"]?>">
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
@@ -90,9 +103,9 @@ if(!$shownText)
 
 
 
-            </tbody>
         </table>
 
+        </tbody>
         <?php  if($_GET["modal"])
         {
             ?>
