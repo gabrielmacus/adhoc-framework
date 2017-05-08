@@ -79,6 +79,7 @@ if(!$shownText)
                     dataType:"json",
                     success:function (e) {
 
+                        console.log(e);
                         <?php if($successMessage)
                         {
                             ?>
