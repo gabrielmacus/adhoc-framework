@@ -376,9 +376,19 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
   OR n.post_anexo_id IN (0{$in}) 
  ORDER BY post_nexo_orden ASC";
 */
-    $anexosSql="SELECT p.*,n.* ,p.post_id as 'id' FROM `posts_nexos` n
+
+
+    /*$anexosSql="SELECT p.*,n.* ,p.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
  ORDER BY post_nexo_orden ASC";
+    */
+
+    $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
+ LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
+ ORDER BY post_nexo_orden ASC";
+
+
+
     $postAnexos =array();
     $anexos=  $this->dataSource->runQuery($anexosSql);
 
