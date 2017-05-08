@@ -126,8 +126,14 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
 
             /**** Codigo provisorio, elimino los anexos y los vuelo a anexar TODO mejorar implementacion***/
+            /*
             $sqlDelete="DELETE FROM posts_nexos WHERE post_id={$p->getId()} OR post_anexo_id ={$p->getId()}";
             $this->dataSource->runUpdate($sqlDelete);
+            */
+
+            $sqlDelete="DELETE FROM posts_nexos WHERE post_id={$p->getId()} ";
+            $this->dataSource->runUpdate($sqlDelete);
+
             /*** **/
 
 
@@ -148,6 +154,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     {
                     //    $deleteValues.="'{$anexo["post_nexo_id"]}',";
                         $deleteValues.="{$anexo["post_anexo_id"]},";
+
                     }
                 }
                 else
@@ -186,7 +193,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $this->dataSource->runUpdate($deleteAnexosSql);
             }
 
-         
+
             if($values!="")
             {     $this->dataSource->runUpdate($sql);
 
