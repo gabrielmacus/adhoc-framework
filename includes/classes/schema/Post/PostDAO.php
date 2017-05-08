@@ -131,9 +131,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->dataSource->runUpdate($sqlDelete);
             */
 
-            $sqlDelete="DELETE FROM posts_nexos WHERE post_id={$p->getId()} ";
-            $this->dataSource->runUpdate($sqlDelete);
-
             /*** **/
 
 
@@ -141,8 +138,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         //    $deleteAnexosSql="DELETE FROM posts_nexos WHERE post_nexo_id IN ";
 
-            $deleteAnexosSql="DELETE FROM posts_nexos WHERE ";
-            $deleteValues="";
+
             $values ="";
 
             foreach ($anexos as $anexo)
@@ -152,8 +148,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 {
                     if($anexo["post_nexo_id"])
                     {
-                    //    $deleteValues.="'{$anexo["post_nexo_id"]}',";
-                        $deleteValues.="{$anexo["post_anexo_id"]},";
+
+                        $sqlDelete="DELETE FROM posts_nexos 
+               WHERE (post_id={$p->getId()}  AND post_anexo_id={$anexo["post_anexo_id"]})
+                 OR (post_anexo_id={$p->getId()}  AND post_id={$anexo["post_anexo_id"]})";
+                        $this->dataSource->runUpdate($sqlDelete);
+
+
 
                     }
                 }
@@ -176,22 +177,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             }
 
 
-
-            $deleteValues  = rtrim($deleteValues,",");
-
-            $deleteAnexosSql.=" ({$deleteValues})";
-
-            //$deleteValues.=" post_id IN ({$deleteValues}) OR post_anexo_id IN ({$deleteValues})"
-
-
             $values = rtrim($values,",");
 
             $sql.="{$values}";
 
-            if($deleteValues!="")
-            {
-                $this->dataSource->runUpdate($deleteAnexosSql);
-            }
 
 
             if($values!="")
