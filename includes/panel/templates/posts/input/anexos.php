@@ -43,9 +43,13 @@
 <style>
     .adjuntos
     {
-        padding: 20px;
+        padding: 10px;
     }
 
+    .adjunto
+    {
+        padding: 20px;
+    }
     .adjunto-wrapper
     {
         padding: 15px;
