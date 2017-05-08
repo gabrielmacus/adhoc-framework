@@ -43,13 +43,13 @@
 <style>
     .adjuntos
     {
-        padding: 0px;
+        padding: 10px;
     }
 
 
     .adjunto-wrapper
     {
-        padding: 15px;
+        padding: 0px;
     }
 
     .adjuntos .adjunto
