@@ -172,7 +172,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             $deleteValues  = rtrim($deleteValues,",");
 
-          //  $deleteAnexosSql.=" ({$deleteValues})";
+            $deleteAnexosSql.=" ({$deleteValues})";
 
             //$deleteValues.=" post_id IN ({$deleteValues}) OR post_anexo_id IN ({$deleteValues})"
 
