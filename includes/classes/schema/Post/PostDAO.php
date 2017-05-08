@@ -139,8 +139,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             foreach ($anexos as $anexo)
             {
-echo json_encode($anexo);
-exit();
+
                 if($anexo["delete"])
                 {
                     if($anexo["post_nexo_id"])
