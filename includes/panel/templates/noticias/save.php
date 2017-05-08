@@ -28,7 +28,7 @@
         $grupo=25;
         $s="jugadores";
         $tipo=62;
-        $formats=[];//TODO proximamente
+        $shownText="bajada";
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
 
@@ -36,7 +36,6 @@
         $grupo=26;
         $s="hoyos";
         $tipo=60;
-        $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
 
