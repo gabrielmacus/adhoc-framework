@@ -50,7 +50,7 @@
     .adjunto-wrapper
     {
         padding: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .adjuntos .adjunto
