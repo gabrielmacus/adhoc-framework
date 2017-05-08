@@ -126,7 +126,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
 
             /**** Codigo provisorio, elimino los anexos y los vuelo a anexar TODO mejorar implementacion***/
-            $sqlDelete="DELETE FROM post_anexos WHERE post_id={$p->getId()} OR post_anexo_id ={$p->getId()}";
+            $sqlDelete="DELETE FROM posts_anexos WHERE post_id={$p->getId()} OR post_anexo_id ={$p->getId()}";
             $this->dataSource->runUpdate($sqlDelete);
             /*** **/
 
