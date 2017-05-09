@@ -58,9 +58,9 @@
     }
 
 </style>
-<div class="form-block">
+<div class="fila">
     <label><?Php echo $label?></label>
-    <div class="text" id="#<?php echo $id?>" >
+    <div class="text" id="<?php echo $id?>" >
 
     </div>
 </div>
