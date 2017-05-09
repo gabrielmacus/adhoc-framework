@@ -37,6 +37,11 @@
         $s="hoyos";
         $tipo=60;
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
+        
+        $label="Texto";
+        $id="data";
+        include DIR_PATH."/includes/panel/templates/posts/input/richtext.php";
+
 
 
 
