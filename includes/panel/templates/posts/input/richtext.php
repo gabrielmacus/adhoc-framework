@@ -45,8 +45,10 @@
         toolbar<?php echo $id?>.addHandler('image', function (e) {
 
 
+
             var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true"?>');
 
+            <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, '&nbsp;<b>World</b>');
             // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
         });
 
