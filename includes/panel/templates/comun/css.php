@@ -1,3 +1,7 @@
+
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.2.4/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.2.4/quill.bubble.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/estilo.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/lity.min.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/reset.css">
