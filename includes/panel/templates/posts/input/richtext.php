@@ -30,13 +30,20 @@
             placeholder: 'Ingrese el texto...',
             theme: 'snow'
         };
-        var texto = new Quill("#<?php echo $id?>",options);
+        var <?php echo $id?> = new Quill("#<?php echo $id?>",options);
+
+        <?php echo $id?>.on('text-change', function(delta, oldDelta, source) {
+
+            console.log(delta);
+
+           // scope.post.<?php echo $model?>= ;
+        });
 
 
 
 // Handlers can also be added post initialization
-        var toolbar = texto.getModule('toolbar');
-        toolbar.addHandler('image', function (e) {
+        var toolbar<?php echo $id?> = <?php echo $id?>.getModule('toolbar');
+        toolbar<?php echo $id?>.addHandler('image', function (e) {
 
 
             var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=rtue"?>');

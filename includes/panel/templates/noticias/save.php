@@ -40,6 +40,7 @@
         
         $label="Texto";
         $id="data";
+        $model="texto";
         include DIR_PATH."/includes/panel/templates/posts/input/richtext.php";
 
 
