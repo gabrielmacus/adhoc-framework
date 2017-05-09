@@ -54,6 +54,10 @@
     {
         width: 100%;
         float: left;
+
+    }
+    .ql-container
+    {
         height: 150px;
     }
 
