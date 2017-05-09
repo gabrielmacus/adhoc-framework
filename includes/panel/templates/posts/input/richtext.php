@@ -34,7 +34,7 @@
 
         <?php echo $id?>.on('text-change', function(delta, oldDelta, source) {
 
-            console.log(source);
+            console.log(<?php echo $id ?>.root.innerHTML);
 
            // scope.post.<?php echo $model?>= ;
         });
