@@ -34,9 +34,8 @@
 
         <?php echo $id?>.on('text-change', function(delta, oldDelta, source) {
 
-            console.log(<?php echo $id ?>.root.innerHTML);
+            scope.post.<?php echo $model?>= <?php echo $id ?>.root.innerHTML;
 
-           // scope.post.<?php echo $model?>= ;
         });
 
 
@@ -46,7 +45,7 @@
         toolbar<?php echo $id?>.addHandler('image', function (e) {
 
 
-            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=rtue"?>');
+            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true"?>');
 
             // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
         });
