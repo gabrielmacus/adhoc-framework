@@ -70,6 +70,12 @@
     .s11{width:91.66666%!important;float: left}
     .s12{width:99.99999%!important;;float: left}
 
+    .s12.padding
+    {
+
+        padding-top: 10px;
+    }
+
 }
 
 .secciones
