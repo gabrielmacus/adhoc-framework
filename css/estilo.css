@@ -22,13 +22,13 @@
         padding-right: 10px;
     }
 
-    .l6.padding:nth-child(1n+1) /*  El elemento 1 filas de 2*/
+    .m6.padding:nth-child(1n+1) /*  El elemento 1 filas de 2*/
     {
 
         padding-right: 10px;
     }
 
-    .l6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
+    .m6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
     {
 
         padding-left: 10px;
