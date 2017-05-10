@@ -10,6 +10,7 @@
         <?php
         $label="Titulo";
         $model="titulo";
+        
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
