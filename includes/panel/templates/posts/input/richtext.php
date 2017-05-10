@@ -84,7 +84,7 @@
 
 </style>
 <div class="fila block" >
-   <?Php echo $label?>
+  <label> <?Php echo $label?></label>
     <div class="text" id="<?php echo $id?>" >
 
     </div>
