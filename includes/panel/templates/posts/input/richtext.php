@@ -64,7 +64,7 @@
         $p = json_decode(json_encode($post),true); //Convierto a array assoc
 
         ?>
-        <?php echo $id?>.clipboard.dangerouslyPasteHTML(0, "<?php echo $p[$model];?>");
+        <?php echo $id?>.clipboard.dangerouslyPasteHTML(0, '<?php echo $p[$model];?>');
         <?php
         }?>
 
