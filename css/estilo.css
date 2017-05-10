@@ -844,14 +844,20 @@ position: absolute
     width: 100%;
     background: white;
 }
-.file .name,.adjunto .name
+.adjunto .name
+{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+}
+.file .name
 {
     padding: 10px;
     font-size: 20px;
     font-weight: 300;
     background-color: #e8e8e8;
-    width: 100%;
-    overflow: hidden;
+
     float: left;
     text-overflow: ellipsis;
     white-space: nowrap;
