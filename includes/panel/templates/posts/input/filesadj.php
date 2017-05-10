@@ -57,18 +57,21 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m6 l4 padding adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div class="s12 m6 l4 padding " data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
-        <span data-ng-click="removeAdjunto(a)" style="font-size:30px;cursor: pointer;position: absolute;top:5px;right:5px;color: rgba(220, 69, 47, 1)">
+        <div class="adjunto-wrapper" style="position: relative">
+              <span data-ng-click="removeAdjunto(a)" style="font-size:30px;cursor: pointer;position: absolute;top:5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
 
-        <figure style="height: 150px;width: 100%">
-            <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
-        </figure>
-        <div class="adjunto">
-            <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{a.name}}</span>
+            <figure style="height: 150px;width: 100%">
+                <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
+            </figure>
+            <div class="adjunto">
+                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{a.name}}</span>
+            </div>
         </div>
+
 
     </div>
     <div class="fila">
