@@ -57,7 +57,7 @@
 <div class="fila adjuntos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div class="s12 m6 l4 adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div class="s12 m6 l4 padding adjunto-wrapper" style="position: relative" data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
         <span data-ng-click="removeAdjunto(a)" style="font-size:30px;cursor: pointer;position: absolute;top:5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
