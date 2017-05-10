@@ -3,6 +3,10 @@
 
     angular.element(function () {
 
+        if(!scope.post)
+        {
+            scope.post={};
+        }
 
         var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
