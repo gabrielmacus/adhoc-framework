@@ -691,8 +691,10 @@ input[type='button']:hover,input[type='submit']:hover,button:hover
     background-color:white;
     color:#2e3032;
 }
-
-
+.ql-tooltip
+{
+    z-index:10000!important;
+}
 .form-block label
 {
     font-size: 20px;
