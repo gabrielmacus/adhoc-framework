@@ -41,14 +41,14 @@
     .m12{width:99.99999%!important;float: left}
 
 
-    .m6.padding:nth-child(1n+1) /*  El elemento 1 filas de 2*/
+    .m6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
     {
 
         padding-top: 10px;
         padding-right: 10px;
     }
 
-    .m6.padding:not(:nth-child(1n+1)) /*  El elemento 1 filas de 2*/
+    .m6.padding:nth-child(2n+2) /*  El elemento 1 filas de 2*/
     {
         padding-top: 10px;
         padding-left: 10px;
