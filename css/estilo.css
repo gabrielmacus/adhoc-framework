@@ -48,7 +48,7 @@
         padding-right: 10px;
     }
 
-    .m6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
+    .m6.padding:not(:nth-child(1n+1)) /*  El elemento 1 filas de 2*/
     {
         padding-top: 10px;
         padding-left: 10px;
