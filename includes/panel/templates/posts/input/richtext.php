@@ -1,7 +1,19 @@
+<?php
+
+var_dump($post);
+
+?>
 <script>
 
     $(document).ready(function () {
 
+        <?php if($post)
+        {
+
+            ?>
+
+        <?php
+        }?>
         var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
