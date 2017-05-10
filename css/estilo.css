@@ -844,9 +844,8 @@ position: absolute
     width: 100%;
     background: white;
 }
-.adjunto .name
-{
-    text-overflow: ellipsis;
+.adjunto
+{  text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
     overflow: hidden;
