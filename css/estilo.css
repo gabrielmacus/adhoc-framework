@@ -844,7 +844,7 @@ position: absolute
     width: 100%;
     background: white;
 }
-.file .name,adjunto .name
+.file .name,.adjunto .name
 {
     padding: 10px;
     font-size: 20px;
