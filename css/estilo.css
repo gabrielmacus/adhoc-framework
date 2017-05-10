@@ -16,10 +16,10 @@
 
     /****/
 
-    .l4.padding:nth-child(2n+1)
+    .l4.padding:nth-child(2n+1) /*  El elemento del medio en filas de 3*/
     {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
 
