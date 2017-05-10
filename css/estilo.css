@@ -22,17 +22,7 @@
         padding-right: 10px;
     }
 
-    .m6.padding:nth-child(1n+1) /*  El elemento 1 filas de 2*/
-    {
 
-        padding-right: 10px;
-    }
-
-    .m6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
-    {
-
-        padding-left: 10px;
-    }
 /***/
 }
 
@@ -49,6 +39,20 @@
     .m10{width:83.33333%!important;;float: left}
     .m11{width:91.66666%!important;;float: left}
     .m12{width:99.99999%!important;float: left}
+
+
+    .m6.padding:nth-child(1n+1) /*  El elemento 1 filas de 2*/
+    {
+
+        padding-right: 10px;
+    }
+
+    .m6.padding:nth-child(2n+1) /*  El elemento 1 filas de 2*/
+    {
+
+        padding-left: 10px;
+    }
+
 
 }
 @media screen and (max-width:600px) {
