@@ -83,9 +83,9 @@
     }
 
 </style>
-<div class="fila block" >
-  <label> <?Php echo $label?></label>
-    <div class="text" id="<?php echo $id?>" >
+<div class="fila form-block" >
+    <label> <?Php echo $label?></label>
+    <div class="text"  style="float: left;width:100%;" id="<?php echo $id?>" >
 
     </div>
 </div>
