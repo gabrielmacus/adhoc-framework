@@ -1,19 +1,9 @@
-<?php
 
-var_dump($post);
-
-?>
 <script>
 
     $(document).ready(function () {
 
-        <?php if($post)
-        {
 
-            ?>
-
-        <?php
-        }?>
         var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
@@ -65,7 +55,14 @@ var_dump($post);
         });
 
 
+        <?php if($post)
+        {
+        $p = json_decode(json_encode($post),true); //Convierto a array assoc
 
+        ?>
+        <?php echo $id?>.clipboard.dangerouslyPasteHTML(0, <?php echo $p[$model];?>);
+        <?php
+        }?>
 
     });
 </script>
