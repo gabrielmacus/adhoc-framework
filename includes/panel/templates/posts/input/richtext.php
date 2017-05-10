@@ -83,7 +83,7 @@
     }
 
 </style>
-<div class="fila">
+<div class="fila form-block">
     <label><?Php echo $label?></label>
     <div class="text" id="<?php echo $id?>" >
 
