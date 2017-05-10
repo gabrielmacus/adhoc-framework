@@ -1,7 +1,7 @@
 
 <script>
 
-    $(document).ready(function () {
+    angular.element(function () {
 
 
         var toolbarOptions = [
