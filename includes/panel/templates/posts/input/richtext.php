@@ -35,7 +35,7 @@
                                     if(e.data.length==1)
                                     {
 
-                                        HTML+="<h1>A</h1>";
+                                        HTML+="<img src='"+v.url+"'>";
 
                                     }
 
