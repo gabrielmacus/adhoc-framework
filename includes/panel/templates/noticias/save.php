@@ -13,7 +13,6 @@
         
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
-        include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         $label="Galeria de imágenes";
         $grupo=1;
@@ -49,6 +48,7 @@
 
 
 
+        include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         /*
 
