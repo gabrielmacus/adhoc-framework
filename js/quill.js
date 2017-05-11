@@ -6402,6 +6402,8 @@
                 }, {
                     key: 'convert',
                     value: function convert(html) {
+
+                        alert(html);
                         if (typeof html === 'string') {
                             this.container.innerHTML = html.replace(/\>\r?\n +\</g, '><'); // Remove spaces between tags
                         }
@@ -17404,9 +17406,9 @@
                         if (typeof index === 'string') {
                             return this.quill.setContents(this.convert(index), html);
                         } else {
-                            alert(html);
+
                             var paste = this.convert(html);
-                            alert(paste);
+
                             return this.quill.updateContents(new _quillDelta2.default().retain(index).concat(paste), source);
                         }
                     }
