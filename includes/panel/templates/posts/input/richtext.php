@@ -35,7 +35,7 @@
                                     if(e.data.length==1)
                                     {
 
-                                        HTML+="<figure data-id='"+v.id+"' class='embeed image'>";
+                                        HTML+="<figure data-id='"+v.archivo_id+"' class='embeed image'>";
                                         HTML+="<img src='"+v.url+"'>";
                                         HTML+="</figure>";
                                     }
@@ -50,7 +50,7 @@
 
                 console.log(HTML);
 
-                <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, HTML);
+                <?php echo $id?>.clipboard.dangerouslyPasteHTML(<?php echo $id?>.getSelection().index, HTML);
 
 
 
