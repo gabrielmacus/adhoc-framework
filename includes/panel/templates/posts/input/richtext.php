@@ -48,6 +48,7 @@
 
                     });
 
+                console.log(HTML);
 
                 <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, HTML);
 
