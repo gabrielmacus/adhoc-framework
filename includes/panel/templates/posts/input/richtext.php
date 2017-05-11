@@ -34,7 +34,8 @@
                                 case "image":
                                     if(e.data.length==1)
                                     {
-                                        HTML+="<figure>";
+
+                                        HTML+="<figure data-id='"+v.id+"' class='embeed image'>";
                                         HTML+="<img src='"+v.url+"'>";
                                         HTML+="</figure>";
                                     }
