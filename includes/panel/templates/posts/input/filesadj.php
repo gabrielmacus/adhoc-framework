@@ -9,6 +9,33 @@
             a.delete=true;
 
         }
+        <?php if($post)
+        {
+            ?>
+        /***  cargo adjuntos **/
+        var archivos =[];
+        if(!scope.post)
+        {
+            scope.post;
+        }
+        if(!scope.post.archivos)
+        {
+            scope.post.archivos=[];
+        }
+        $.each(scope.post.archivos,function (tipo,versiones) {
+
+
+
+            archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+
+
+        });
+        scope.post.archivos =archivos;
+        /**  **/
+        <?php
+        }?>
+
+
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);
