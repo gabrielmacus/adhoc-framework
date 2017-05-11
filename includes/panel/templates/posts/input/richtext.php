@@ -26,10 +26,10 @@
                 var HTML="";
                     $.each(e.data,function (k,v) {
 
-                        if(e.embeed)
+                        if(v.embeed)
                         {
 
-                            switch (e.embeed)
+                            switch (v.embeed)
                             {
                                 case "image":
                                     HTML+="<img src='"+e.url+"'>";
