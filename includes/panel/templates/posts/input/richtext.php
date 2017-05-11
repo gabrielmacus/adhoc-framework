@@ -49,7 +49,7 @@
 
                 console.log(HTML);
 
-                <?php echo $id?>.clipboard.pasteHTML(<?php echo $id?>.getSelection().index, HTML);
+                <?php echo $id?>.pasteHTML(<?php echo $id?>.getSelection().index, HTML);
 
 
 
