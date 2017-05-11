@@ -16,7 +16,7 @@
         var archivos =[];
         if(!scope.post)
         {
-            scope.post;
+            scope.post={};
         }
         if(!scope.post.archivos)
         {
