@@ -13,6 +13,10 @@
         <?php if($post)
         {
             ?>
+        if(!scope.post)
+        {
+            scope.post= {};
+        }
         /** cargo anexos**/
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
