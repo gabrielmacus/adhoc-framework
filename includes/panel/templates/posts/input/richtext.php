@@ -35,9 +35,8 @@
                                     if(e.data.length==1)
                                     {
 
-                                        HTML+="<p data-id='"+v.archivo_id+"' class='embeed image'>";
-                                        HTML+="<img src='"+v.url+"'>\n";
-                                        HTML+="</p>";
+                                        HTML+="<img data-id='"+v.archivo_id+"' class='embeed' src='"+v.url+"'>\n";
+
                                     }
 
 
