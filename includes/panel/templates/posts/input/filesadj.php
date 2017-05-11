@@ -31,6 +31,7 @@
 
         });
         scope.post.archivos =archivos;
+        scope.$apply();
         /**  **/
         <?php
         }?>
