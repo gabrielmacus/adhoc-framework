@@ -35,9 +35,9 @@
                                     if(e.data.length==1)
                                     {
 
-                                        HTML+="<figure data-id='"+v.archivo_id+"' class='embeed image'>";
-                                        HTML+="<img src='"+v.url+"'>";
-                                        HTML+="</figure>";
+                                        HTML+="<figure data-id='"+v.archivo_id+"' class='embeed image'>\n";
+                                        HTML+="<img src='"+v.url+"'>\n";
+                                        HTML+="</figure>\n";
                                     }
 
 
@@ -92,7 +92,7 @@
 
         <?php echo $id?>.on('text-change', function(delta, oldDelta, source) {
 
-            console.log("TEXT CHANGE");
+
             scope.post.<?php echo $model?>= <?php echo $id ?>.root.innerHTML;
 
         });
