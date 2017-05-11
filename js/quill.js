@@ -6403,7 +6403,7 @@
                     key: 'convert',
                     value: function convert(html) {
 
-                        alert(html);
+
                         if (typeof html === 'string') {
                             this.container.innerHTML = html.replace(/\>\r?\n +\</g, '><'); // Remove spaces between tags
                         }
@@ -6431,6 +6431,7 @@
                             return this.quill.setContents(this.convert(index), html);
                         } else {
                             var paste = this.convert(html);
+                            console.log(paste);
                             return this.quill.updateContents(new _quillDelta2.default().retain(index).concat(paste), source);
                         }
                     }
