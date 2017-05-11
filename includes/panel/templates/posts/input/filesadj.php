@@ -14,6 +14,7 @@
             console.log(e);
             if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
             {
+                
 
                 if(!scope.post.archivos)
                 {
@@ -21,7 +22,7 @@
                 }
                 $.each(e.data,function (k,v) {
 
-                    if(v.archivo_grupo==<?php echo $grupo?>)
+                    if(v.archivo_grupo==<?php echo $grupo?> && !e.embeed)
                     {
                         scope.post.archivos.push(v);
                     }

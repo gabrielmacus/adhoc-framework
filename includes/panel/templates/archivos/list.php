@@ -29,7 +29,18 @@
                     var id=$(this).data("id");
                     var name=$(this).data("name");
                     var url =$(this).data("url");
-                    selected.push({"name":name,"archivo_id":id,"archivo_grupo":"<?Php echo $_GET["grupo"]?>",url:url});
+                  
+                    var data={"name":name,"archivo_id":id,"archivo_grupo":"<?Php echo $_GET["grupo"]?>",url:url};
+                    <?Php  if($_GET["embeed"])
+                    {
+                        ?>
+                    data.embeed="<?php echo $_GET["embeed"];?>";
+                    
+                    
+                    <?php
+                    }?>
+                    selected.push(data);
+                    
                 });
                 return selected
             }

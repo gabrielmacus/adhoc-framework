@@ -8,6 +8,48 @@
             scope.post={};
         }
 
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+        scope.removeAdjunto=function (a) {
+
+            a.delete=true;
+
+        }
+        // Listen to message from child window
+        eventer(messageEvent,function(e) {
+            console.log(e);
+            if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
+            {
+
+                var HTML="";
+                    $.each(e.data,function (k,v) {
+
+                        if(e.embeed)
+                        {
+
+                            switch (e.embeed)
+                            {
+                                case "image":
+                                    HTML+="<img src='"+e.url+"'>";
+                                    break;
+                            }
+
+                        }
+
+                    });
+
+                console.log(HTML);
+
+
+
+
+
+            }
+        },false);
+
+
         var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
@@ -52,7 +94,7 @@
 
 
 
-            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true"?>');
+            var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true&embeed=image"?>');
 
             <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, '&nbsp;<b>World</b>');
             // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
