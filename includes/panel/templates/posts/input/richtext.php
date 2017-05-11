@@ -32,7 +32,13 @@
                             switch (v.embeed)
                             {
                                 case "image":
-                                    HTML+="<img src='"+e.url+"'>";
+                                    if(e.data.length==1)
+                                    {
+                                        HTML+="<img src='"+v.url+"'>";
+
+                                    }
+                                 
+
                                     break;
                             }
 
