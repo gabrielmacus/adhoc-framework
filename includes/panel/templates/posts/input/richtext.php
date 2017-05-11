@@ -34,10 +34,11 @@
                                 case "image":
                                     if(e.data.length==1)
                                     {
+                                        HTML+="<figure>";
                                         HTML+="<img src='"+v.url+"'>";
-
+                                        HTML+="</figure>";
                                     }
-                                 
+
 
                                     break;
                             }
@@ -46,7 +47,8 @@
 
                     });
 
-                console.log(HTML);
+
+                <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, HTML);
 
 
 
@@ -102,7 +104,7 @@
 
             var lightbox = lity('<?php echo $configuracion->getSiteAddress()."/admin/repositorios?modal=true&embeed=image"?>');
 
-            <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, '&nbsp;<b>World</b>');
+       //     <?php echo $id?>.clipboard.dangerouslyPasteHTML(     <?php echo $id?>.getSelection().index, '&nbsp;<b>World</b>');
             // texto.insertEmbed(texto.getSelection().index, 'image', 'http://quilljs.com/images/cloud.png');
         });
 
