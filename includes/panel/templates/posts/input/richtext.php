@@ -35,7 +35,7 @@
                                     if(e.data.length==1)
                                     {
 
-                                        HTML+="<img src='"+v.url+"'>";
+                                        HTML+="<img  class='data' src='"+v.url+"'>";
 
                                     }
 
