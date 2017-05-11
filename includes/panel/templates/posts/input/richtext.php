@@ -91,7 +91,7 @@
         <?php echo $id?>.on('text-change', function(delta, oldDelta, source) {
 
 
-           /// scope.post.<?php echo $model?>= <?php echo $id ?>.root.innerHTML;
+            scope.post.<?php echo $model?>= <?php echo $id ?>.root.innerHTML;
 
         });
 
