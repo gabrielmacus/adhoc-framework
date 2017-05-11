@@ -6426,11 +6426,12 @@
                     key: 'dangerouslyPasteHTML',
                     value: function dangerouslyPasteHTML(index, html) {
                         var source = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _quill2.default.sources.API;
-
+                        console.log(index);
                         if (typeof index === 'string') {
                             return this.quill.setContents(this.convert(index), html);
                         } else {
                             var paste = this.convert(html);
+                            console.log("PASTE");
                             console.log(paste);
                             return this.quill.updateContents(new _quillDelta2.default().retain(index).concat(paste), source);
                         }
