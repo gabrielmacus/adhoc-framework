@@ -27,7 +27,7 @@
         }
         $.each(scope.post.archivos,function (tipo,versiones) {
 
-            archivos.push({archivo_id:versiones.id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+            archivos.push({archivo_id:versiones.id,url:versiones.realName,name:versiones.name,archivo_grupo:versiones.grupo});
 
         });
 
