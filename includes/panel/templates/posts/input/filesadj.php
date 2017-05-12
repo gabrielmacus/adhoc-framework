@@ -28,7 +28,7 @@
 
         });
 
-        console.log(archivos);
+        console.log("a");
         scope.post.archivos =archivos;
         scope.$apply();
         /**  **/
