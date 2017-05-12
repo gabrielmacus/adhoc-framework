@@ -16,7 +16,7 @@
 
 
         /***  cargo adjuntos **/
-        var archivos =[];
+   
         if(!scope.post)
         {
             scope.post={};
