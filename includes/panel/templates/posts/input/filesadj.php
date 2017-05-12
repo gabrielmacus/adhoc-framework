@@ -1,4 +1,4 @@
-<?php echo json_encode($post); ?>
+
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -23,7 +23,7 @@
         }
         if(!scope.post.archivos)
         {
-            scope.post.archivos=[];
+            scope.post.archivos=<?php echo json_encode($post->getArchivos())?>;
         }
         $.each(scope.post.archivos,function (tipo,versiones) {
 
