@@ -31,10 +31,10 @@
          //   archivos.push({archivo_id:versiones.id,url:versiones.realName,name:versiones.name,archivo_grupo:versiones.grupo});
 archivos.push(versiones);
         });
-
+   */
         console.log(archivos);
         scope.post.archivos =archivos;
-*/        scope.$apply();
+      scope.$apply();
         /**  **/
         <?php
         }?>
