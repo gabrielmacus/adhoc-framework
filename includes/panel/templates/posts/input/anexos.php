@@ -1,5 +1,5 @@
 <?php
-
+echo json_encode($post->getAnexos());
 if(!$shownText)
 {
     $shownText="titulo";
@@ -27,6 +27,7 @@ if(!$shownText)
         {
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;;
         }
+
         /** cargo anexos**/
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
