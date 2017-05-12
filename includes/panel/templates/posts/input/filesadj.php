@@ -27,6 +27,7 @@
         }
         $.each(scope.post.archivos,function (tipo,archivo) {
 
+            console.log(archivo);
             archivos.push({archivo_id:archivo.id,url:archivo.realName,name:archivo.name,archivo_grupo:archivo.grupo});
 
         });
