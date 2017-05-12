@@ -1,3 +1,4 @@
+<?php var_dump($post); ?>
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -13,7 +14,7 @@
         {
             ?>
 
-        console.log(<?php echo json_decode($post);?>);
+
         /***  cargo adjuntos **/
         var archivos =[];
         if(!scope.post)
