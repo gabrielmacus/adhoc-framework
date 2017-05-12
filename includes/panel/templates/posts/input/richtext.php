@@ -36,6 +36,7 @@
                                     {
 
                                         HTML+="<img  class='data' src='"+v.url+"'>";
+                                        <?php echo $id?>.clipboard.dangerouslyPasteHTML(<?php echo $id?>.getSelection().index, HTML);
 
                                     }
 
@@ -45,14 +46,6 @@
 
                         }
                         });
-
-
-
-                console.log(HTML);
-                <?php echo $id?>.clipboard.dangerouslyPasteHTML(<?php echo $id?>.getSelection().index, HTML);
-
-
-
 
 
             }
