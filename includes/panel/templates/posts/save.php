@@ -18,6 +18,32 @@
         {
         ?>
         scope.post = <?php echo json_encode($post);?>;
+
+
+        /***  cargo adjuntos **/
+
+        if(!scope.post)
+        {
+            scope.post={};
+        }
+
+        var archivos=[];
+        if(!scope.post.archivos) {
+            scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
+        }
+
+        $.each( scope.post.archivos ,function (tipo,versiones) {
+
+
+            archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+
+        });
+
+        scope.post.archivos = archivos;
+        scope.$apply();
+
+        /**  **/
+
         
         <?Php
         }?>
