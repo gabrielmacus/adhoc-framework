@@ -19,7 +19,7 @@ try{
 
     $t =$_GET["t"];
     $site=$_GET["s"];
-    $fileVersion="portada";
+    $fileVersion="original";
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 

@@ -26,7 +26,7 @@ if(!$shownText)
         if(!scope.post.anexos)
         {
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
-            console.log(scope.post.anexos);
+  
         }
         /** cargo anexos**/
         var anexos =[];
