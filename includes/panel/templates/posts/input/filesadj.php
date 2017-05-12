@@ -25,10 +25,9 @@
         {
             scope.post.archivos=<?php echo json_encode($post->getArchivos())?>;
         }
-        $.each(scope.post.archivos,function (tipo,archivo) {
+        $.each(scope.post.archivos,function (tipo,versiones) {
 
-            console.log(archivo);
-            archivos.push({archivo_id:archivo.id,url:archivo.realName,name:archivo.name,archivo_grupo:archivo.grupo});
+            archivos.push({archivo_id:versiones.id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
         });
 
