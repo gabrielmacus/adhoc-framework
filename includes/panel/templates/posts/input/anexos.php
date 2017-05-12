@@ -23,6 +23,10 @@ if(!$shownText)
         {
             scope.post= {};
         }
+        if(!scope.post.anexos)
+        {
+            scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;;
+        }
         /** cargo anexos**/
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
