@@ -13,7 +13,7 @@
         {
             ?>
 
-        console.log(<?php echo json_decode($post->getArchivos());?>);
+        console.log(<?php echo json_decode($post);?>);
         /***  cargo adjuntos **/
         var archivos =[];
         if(!scope.post)
