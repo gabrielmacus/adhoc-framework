@@ -57,7 +57,7 @@ if(!$shownText)
 
         });
         scope.post.anexos =anexos;
-
+        scope.$apply();
         /** **/
 
         <?Php
