@@ -10,15 +10,7 @@
             a.delete=true;
 
         }
-        <?php if($post)
-        {
-            ?>
-
-
-        <?php
-        }?>
-
-
+  
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);

@@ -22,12 +22,12 @@
             console.log(e);
             if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
             {
-                if(v.embeed)
-                {
+
 
                 var HTML="";
                     $.each(e.data,function (k,v) {
-
+                        if(v.embeed)
+                        {
 
                             switch (v.embeed)
                             {
@@ -43,9 +43,10 @@
                                     break;
                             }
 
+                        }
                         });
 
-                    }
+
 
                 console.log(HTML);
                 <?php echo $id?>.clipboard.dangerouslyPasteHTML(<?php echo $id?>.getSelection().index, HTML);
