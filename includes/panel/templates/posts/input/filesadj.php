@@ -1,4 +1,4 @@
-<?php var_dump($post); ?>
+<?php echo json_encode($post); ?>
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
