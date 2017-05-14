@@ -51,13 +51,14 @@ if(!$shownText)
                 }
                 }?>
 
-                console.log(text);
+
                 anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
 
             }
 
 
         });
+        console.log(anexos);
         scope.post.anexos =anexos;
         scope.$apply();
         /** **/
