@@ -29,7 +29,67 @@ if(!$shownText)
   
         }
 
+        <?php
+        /** cargo anexos**/
+        /*
+        var anexos =[];
+        $.each(scope.post.anexos,function (k,v) {
 
+        var text="";
+        if(v.post_nexo_grupo== <?php echo $grupo;?>)
+    {
+        <?Php if(!is_array($shownText))
+        {
+        ?>       text+=v.post_<?php echo $shownText?>;
+
+        <?Php
+        }
+        else
+        {
+        foreach ($shownText as $t)
+        {
+        ?>
+        text+=v.post_<?php echo $t?>+" ";
+        <?php
+        }
+        }?>
+
+
+        anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
+
+    }
+
+
+    });
+
+    scope.post.anexos =anexos;
+    scope.$apply();*/
+    /** **/
+
+        ?>
+
+        scope.showAnexoText=function (a) {
+
+            var shownText="";
+            <?php
+            if(!is_array($shownText))
+            {
+                ?>
+            shownText+=a.post_<?php echo $shownText?>;
+            <?php
+            }
+            else
+            {
+                foreach ($shownText as $t)
+                    {             ?>
+
+              shownText+=a.post_<?php echo $t?>;
+
+            <?php}
+            }
+            ?>
+
+        }
         <?Php
         }?>
         // Listen to message from child window
@@ -107,7 +167,7 @@ if(!$shownText)
                 <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
             </figure>-->
             <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
-                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{a.text}}</span>
+                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" data-ng-bind="showAnexoText(a)"></span>
             </a>
         </div>
 
