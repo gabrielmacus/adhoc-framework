@@ -993,6 +993,8 @@ position: absolute
     float: left;
     width: 100%;
 }
-.form-block .collection li{
+.form-block .collection .item{
     padding: 10px;
+    background-color: #bcc2b6;
+    font-weight: 600;
 }
