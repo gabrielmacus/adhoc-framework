@@ -23,10 +23,11 @@ if(!$shownText)
         {
             scope.post= <?php echo json_encode($post)?>;
         }
-
+        if(!scope.post.anexos)
+        {
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
   
-
+        }
 
 
         var anexos =[];
