@@ -17,16 +17,14 @@
 
         {
         ?>
-         scope.post = <?php echo json_encode($post);?>;
+        if(!scope.post)
+        {
 
+            scope.post = <?php echo json_encode($post);?>;
+        }
 
 
         /***  cargo adjuntos **/
-
-        if(!scope.post)
-        {
-            scope.post={};
-        }
 
         var archivos=[];
         if(!scope.post.archivos) {
