@@ -56,7 +56,7 @@
 */
 
         $name="Guardar cambios";
-        include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
+     //   include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
 
 
