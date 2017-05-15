@@ -39,7 +39,7 @@
         $tipo=60;
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
-
+/*
         $label="Texto";
         $id="data";
         $model="texto";
@@ -47,18 +47,10 @@
 
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
-        /*
-
-        $model="extra4";
-        $id="map5";
-        $title ="Marque la ubicación del sapo";
-        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
-*/
-
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
-
+*/
 
 
 
