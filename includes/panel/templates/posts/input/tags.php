@@ -21,11 +21,11 @@
                 placeholder:"<?php echo $placeholder?>",
                 onTagAdd:function () {
 
-                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags().values);
                 },
                 onTagRemove:function () {
 
-                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags().values);
                 }
             });
 
