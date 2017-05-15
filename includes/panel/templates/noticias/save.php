@@ -24,6 +24,12 @@
         );
         include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
+        $label="Telefonos";
+        $model="volanta";
+        $id="telefonos1";
+        include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
+
+
 
 
         $label="Galeria de imágenes";
