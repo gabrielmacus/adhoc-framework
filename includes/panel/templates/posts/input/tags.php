@@ -6,7 +6,7 @@
         var tags=[];
 
 
-        if(scope.post.<?php echo $model?>)
+        if(scope.post && scope.post.<?php echo $model?>)
         {
             tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
