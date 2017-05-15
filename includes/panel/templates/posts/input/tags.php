@@ -9,13 +9,13 @@
             var tags=[];
 
 
-            <?php if($post)
+            console.log(JSON.parse(<?php echo json_encode($post)?>[<?php echo $model?>]));
+            if(scope.post && scope.post.<?php echo $model?>)
             {
-                ?>
-            tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
-            <?php
-            }?>
+                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
+
+            }
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
