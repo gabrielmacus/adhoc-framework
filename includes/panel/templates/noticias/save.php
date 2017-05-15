@@ -30,12 +30,12 @@
 
         include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
 
-
+/*
         $model="extra2";
         $label="Direcciones";
         $emptyMsg="No hay direcciones cargadas";
         include DIR_PATH."/includes/panel/templates/posts/input/collection.php";
-
+*/
 
         $label="Galeria de imágenes";
         $grupo=1;
