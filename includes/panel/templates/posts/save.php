@@ -17,10 +17,7 @@
 
         {
         ?>
-        scope.post = <?php
-              $p=json_encode($post);
-              unset($p["anexos"]);
-        echo $p;?>;
+        scope.post = <?php echo json_encode($post);?>;
 
 
         /***  cargo adjuntos **/

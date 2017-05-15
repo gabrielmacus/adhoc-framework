@@ -10,7 +10,8 @@
         <?php
         $label="Titulo";
         $model="titulo";
-        
+        include DIR_PATH."/includes/panel/templates/posts/save.php";
+
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
@@ -45,10 +46,6 @@
         $model="texto";
         include DIR_PATH."/includes/panel/templates/posts/input/richtext.php";
 
-
-
-
-        include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         /*
 
