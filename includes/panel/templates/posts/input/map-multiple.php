@@ -18,6 +18,9 @@
         {
             ?>
 
+           try
+           {
+
                var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
                $.each(data,function (k,v) {
@@ -28,7 +31,11 @@
                });
 
 
-
+           }
+           catch (e)
+           {
+console.log(e);
+           }
         <?php
         }
         else
