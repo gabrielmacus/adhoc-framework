@@ -735,7 +735,7 @@ input[type='button']:hover,input[type='submit']:hover,button:hover
     background-color:white;
     color:#2e3032;
 }
-.ql.toolbar
+.ql-toolbar
 {
     float: left!important;
     width: 100%!important;
