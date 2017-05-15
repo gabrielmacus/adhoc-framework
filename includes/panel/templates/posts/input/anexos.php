@@ -19,6 +19,10 @@ if(!$shownText)
         <?php if($post)
         {
             ?>
+        if(!scope.post)
+        {
+            scope.post= <?php echo json_encode($post)?>;
+        }
 
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
   
