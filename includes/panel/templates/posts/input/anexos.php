@@ -60,7 +60,11 @@ if(!$shownText)
 
         });
 
-        scope.post.anexos =anexos;
+        if(anexos.length==0)
+        {
+            scope.post.anexos =anexos;
+        }
+
         scope.$apply();
 
 

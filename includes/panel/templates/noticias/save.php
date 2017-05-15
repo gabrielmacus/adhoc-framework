@@ -33,6 +33,14 @@
         $shownText=["titulo","volanta"];
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
+
+        $label="Hoyos adjuntos";
+        $grupo=26;
+        $s="hoyos";
+        $tipo=60;
+        $shownText="titulo";
+        include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
+
         $label="Texto";
         $id="data";
         $model="texto";
