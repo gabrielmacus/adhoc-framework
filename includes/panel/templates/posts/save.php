@@ -17,11 +17,10 @@
 
         {
         ?>
-        if(!scope.post)
-        {
 
+        console.log(scope.post);
             scope.post = <?php echo json_encode($post);?>;
-        }
+
 
 
         /***  cargo adjuntos **/
