@@ -13,10 +13,6 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
-        $model ="bajada";
-        $label="Nivel";
-
-        include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
         $label="Galeria de imágenes";
