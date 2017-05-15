@@ -17,11 +17,12 @@
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
-                duplicateTagClass: 'bounce'
+                duplicateTagClass: 'bounce',
+                placeholder:"<?php echo $placeholder?>"
             });
 
         });
     </script>
     <label><?php echo $label;?></label>
-    <div style= "border: 1px #bdc2b8 solid;" class="tags" id="<?php echo $id?>"></div>
+    <div style= "border: 1px #9ba096 solid;" class="tags" id="<?php echo $id?>"></div>
 </div>
