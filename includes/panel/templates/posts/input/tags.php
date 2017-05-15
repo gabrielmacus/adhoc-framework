@@ -19,8 +19,12 @@
             }
             tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
+            setTimeout(function () {
+                scope.$apply();
+            })
             <?php
             }?>
+
 
 
 
