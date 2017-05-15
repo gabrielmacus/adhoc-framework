@@ -18,7 +18,7 @@
 
                 tags:tags,
                 duplicateTagClass: 'bounce',
-                placeholder:"<?php echo $placeholder?>"
+                placeholder:"<?php echo $placeholder?>",
                 onTagAdd:function () {
 
                     scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
