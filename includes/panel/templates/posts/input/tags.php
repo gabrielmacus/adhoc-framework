@@ -19,15 +19,15 @@
                 tags:tags,
                 duplicateTagClass: 'bounce',
                 placeholder:"<?php echo $placeholder?>"
+                onTagAdd:function () {
+
+                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+                },
+                onTagRemove:function () {
+
+                    scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+                }
             });
-            <?php echo $model?>.onTagAdd=function () {
-
-                scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
-            }
-            <?php echo $model?>.onTagRemove=function () {
-
-                scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
-            }
 
         });
     </script>
