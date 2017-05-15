@@ -13,7 +13,7 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
-      $model ="extra_2";
+      $model ="extra2";
       $label="Nivel";
       $options=array(
               1=>"Data 1",
