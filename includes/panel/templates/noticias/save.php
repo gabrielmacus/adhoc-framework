@@ -79,6 +79,7 @@
 
 
         $successMessage="Noticia guardada correctamente";
+        
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         $name="Guardar cambios";
