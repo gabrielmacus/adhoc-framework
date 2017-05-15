@@ -52,11 +52,14 @@
         $title ="Marque la ubicación del hoyo";
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
-  /*      $model="extra2";
-        $id="map2";
-        $title ="Marque la ubicación de los hoyos";
-        include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
-*/
+        if($_GET["debugo"])
+        {
+            $model="extra2";
+            $id="map2";
+            $title ="Marque la ubicación de los hoyos";
+            include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
+        }
+
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         $name="Guardar cambios";
