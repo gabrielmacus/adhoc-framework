@@ -74,7 +74,7 @@
                     dataType:"json",
                     success:function (e) {
 
-                        toastr.success('Have fun storming the castle!', 'Miracle Max Says');
+                        toastr.success('', 'Miracle Max Says',{ "positionClass": "toast-bottom-right"});
                         console.log(e);
                         <?php if($successMessage)
                         {
