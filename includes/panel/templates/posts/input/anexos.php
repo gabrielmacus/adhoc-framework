@@ -30,6 +30,9 @@ if(!$shownText)
         }
 
 
+        <?php
+        /*
+         *
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
 
@@ -66,6 +69,8 @@ if(!$shownText)
 
 
         scope.$apply();
+         * */
+        ?>
 
 
         <?Php
