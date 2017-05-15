@@ -20,6 +20,14 @@
                 duplicateTagClass: 'bounce',
                 placeholder:"<?php echo $placeholder?>"
             });
+            <?php echo $model?>.onTagAdd=function () {
+
+                scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+            }
+            <?php echo $model?>.onTagRemove=function () {
+
+                scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags());
+            }
 
         });
     </script>
