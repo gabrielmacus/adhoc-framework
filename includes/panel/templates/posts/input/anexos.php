@@ -11,9 +11,31 @@ if(!$shownText)
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-        scope.getText=function (a,text) {
+        scope.getText<?php echo $grupo;?>=function (a) {
 
-            console.log(text);
+            if(!a.text)
+            {
+                a.text="";
+                var shownText=<?php echo json_encode($shownText)?>;
+
+                if( typeof shownText === 'string' ) {
+
+                    a.text= a.post_<?php echo $shownText?>;
+
+                }
+                else
+                {
+                    <?php foreach ($shownText as $t)
+                    {
+                        ?>
+                    a.text+=a.post_<?php echo $t?>+" ";
+                    <?php
+                    }?>
+                }
+            }
+
+            return a.text;
+
 
         }
         scope.removeAnexo=function (a) {
@@ -155,7 +177,7 @@ if(!$shownText)
                 <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
             </figure>-->
             <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
-                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" data-ng-bind="getText(a,'<?php echo json_encode($shownText)?>)'"></span>
+                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" data-ng-bind="getText<?php echo $grupo?>(a)"></span>
             </a>
         </div>
 
