@@ -22,7 +22,7 @@
 
       );
         $formats=[];//TODO proximamente
-        include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
+        include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
         $label="Galeria de imágenes";
