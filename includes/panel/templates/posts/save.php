@@ -17,11 +17,8 @@
 
         {
         ?>
-        if(!scope.post)
-        {
+         scope.post = <?php echo json_encode($post);?>;
 
-            scope.post = <?php echo json_encode($post);?>;
-        }
 
 
         /***  cargo adjuntos **/
