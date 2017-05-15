@@ -58,7 +58,7 @@ if(!$shownText)
 
 
         });
-        console.log(        scope.post.anexos );
+
         scope.post.anexos =anexos;
         scope.$apply();
         /** **/

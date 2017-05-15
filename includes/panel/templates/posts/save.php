@@ -17,7 +17,10 @@
 
         {
         ?>
-        scope.post = <?php echo json_encode($post);?>;
+        scope.post = <?php
+              $p=json_encode($post);
+              unset($p["anexos"]);
+        echo $p;?>;
 
 
         /***  cargo adjuntos **/
@@ -55,7 +58,6 @@
             {
                 scope.post.previews=scope.previews;
             }
-            console.log(scope.post.anexos);
             if(!scope.post.seccion)
             {
                 var url="<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?t={$t}&act=save"?>";
