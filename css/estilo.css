@@ -693,6 +693,8 @@ form
     float: left;
     width: 100%;
     padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .form-block .tags
 {background-color: white;position: relative;
