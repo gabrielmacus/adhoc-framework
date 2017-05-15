@@ -31,7 +31,7 @@
         include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
 
 
-        $model="";
+        $model="extra2";
         $label="Direcciones";
         include DIR_PATH."/includes/panel/templates/posts/input/collection.php";
 

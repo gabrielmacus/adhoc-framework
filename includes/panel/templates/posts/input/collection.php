@@ -12,7 +12,7 @@
 
         if(scope.post.<?php echo $model?>)
         {
-            scope.post.<?php echo $model?>  = JSON.parse(angular.copy(   scope.post.<?php echo $model?>));
+            scope.post.<?php echo $model?>  = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
         }
 
