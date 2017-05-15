@@ -53,7 +53,7 @@
         include DIR_PATH."/includes/panel/templates/posts/input/map.php";
 
         $model="extra2";
-        $id="map1";
+        $id="map2";
         $title ="Marque la ubicación de los hoyos";
         include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
