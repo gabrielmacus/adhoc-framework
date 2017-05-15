@@ -84,6 +84,7 @@ if(!$shownText)
                     {
                         ?>
 
+            console.log("<?php echo $t?>");
              // shownText+=a.post_<?php echo $t?>;
 
             <?php
