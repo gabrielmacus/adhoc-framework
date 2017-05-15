@@ -1,7 +1,7 @@
 <script>
     angular.element(function () {
 
-        scope.<?php echo $model?>=<?php echo $options;?>;
+        scope.<?php echo $model?>=<?php echo json_encode($options);?>;
     });
 </script>
 <div title="<?php echo $label?>"  class="form-block <?php echo implode(" ",$class);?>">
