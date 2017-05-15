@@ -1,4 +1,21 @@
 
+<div class="form-block">
+
+
+    <script>
+
+        angular.element(function () {
+            new Taggle('<?php echo $id?>', {
+                tags: ['Try', 'entering', 'one', 'of', 'these', 'tags'],
+                duplicateTagClass: 'bounce'
+            });
+
+        });
+    </script>
+    <label><?php echo $label;?></label>
+    <div class="tags" id="<?php echo $id?>"></div>
+</div>
+<!--
 <script>
 
     angular.element(function () {
@@ -11,7 +28,7 @@
     });
     </script>
 
-<div class="form-block">
+<div class="form-block">-->
 <!--
     <label><?php echo $label;?></label>
     <div class="tags" id="<?php echo $id?>"></div>
@@ -33,7 +50,7 @@
         });
     </script>
     -->
-    <label><?php echo $label;?></label>
+  <!--  <label><?php echo $label;?></label>
     <tags-input  data-on-tag-added="tagsModified<?php echo $model?>()" data-on-tag-removed="tagsModified<?php echo $model?>()" data-min-tags="<?php echo $min?>"  data-max-tags="<?php echo $max?>" data-placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>"></tags-input>
 
-</div>
+</div>-->
