@@ -28,4 +28,5 @@
    <ul class="collection">
       <li class="item" data-ng-repeat="i in post.<?php echo $model?>">A</li>
    </ul>
+    <h3 data-ng-hide="post.<?php echo $model?>.length>0"><?php echo $emptyMsg;?></h3>
 </div>
