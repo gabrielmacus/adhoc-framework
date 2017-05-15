@@ -1,7 +1,4 @@
-<script>
 
-    console.log(<?php echo json_encode($shownText)?>);
-</script>
 <?php
 
 
@@ -10,10 +7,6 @@ if(!$shownText)
     $shownText="titulo";
 }
 ?>
-<script>
-
-    console.log(<?php echo json_encode($shownText)?>);
-</script>
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -80,6 +73,7 @@ if(!$shownText)
         scope.showAnexoText=function (a) {
 
             var shownText="";
+            console.log("anexo text");
             console.log(<?php echo json_encode($shownText)?>);
             <?php
 
