@@ -11,8 +11,19 @@
 
         $label="Titulo";
         $model="titulo";
-
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+
+      $model ="extra_2";
+      $label="Nivel";
+      $options=array(
+              1=>"Data 1",
+          2 =>"Data 2",
+          3 =>"Data 3"
+
+      );
+        $formats=[];//TODO proximamente
+        include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
+
 
         $label="Galeria de imágenes";
         $grupo=1;
