@@ -44,6 +44,7 @@
         /**  **/
 
         /**  Cargo anexos **/
+        /*
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
 
@@ -63,7 +64,7 @@
         scope.post.anexos =anexos;
 
 
-        scope.$apply();
+        scope.$apply();*/
         /** **/
         <?Php
         }?>
