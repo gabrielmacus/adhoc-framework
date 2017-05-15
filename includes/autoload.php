@@ -83,7 +83,7 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 
 
-$lang=json_decode(file_get_contents(DIR_PATH."/includes/comun/lang/{$configuracion->getLanguage()}.json"),true);
+$lang=json_decode(file_get_contents(DIR_PATH."/includes/panel/comun/lang/{$configuracion->getLanguage()}.json"),true);
 
 /*
 //Cargo las secciones al menu
