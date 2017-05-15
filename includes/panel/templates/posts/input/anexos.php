@@ -60,9 +60,8 @@ if(!$shownText)
 
         });
 
-
-        $.extend(   scope.post.anexos,anexos);
-           // scope.post.anexos =anexos;
+        console.log(anexos);
+            scope.post.anexos =anexos;
 
 
         scope.$apply();
