@@ -6,7 +6,7 @@
 
         angular.element(function () {
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
-                tags: ['Try', 'entering', 'one', 'of', 'these', 'tags'],
+              <?PHP if($post){?>  tags: JSON.parse(angular.copy(scope.post.<?php echo $model?>)),<?php}?>
                 duplicateTagClass: 'bounce'
             });
 
