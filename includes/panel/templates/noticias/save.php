@@ -46,11 +46,6 @@
         $model="texto";
         include DIR_PATH."/includes/panel/templates/posts/input/richtext.php";
 
-        include DIR_PATH."/includes/panel/templates/posts/save.php";
-
-        $name="Guardar cambios";
-        include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
-
         ?>
 
     </form>
