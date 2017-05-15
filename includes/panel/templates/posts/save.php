@@ -74,14 +74,19 @@
                     dataType:"json",
                     success:function (e) {
 
+                        toastr.success('Have fun storming the castle!', 'Miracle Max Says');
                         console.log(e);
                         <?php if($successMessage)
                         {
                             ?>
+                        /*
                         vex.dialog.alert({message:"<?php
                             echo $successMessage;?>",callback:function () {
                             location.reload();
-                        }})
+                        }})*/
+
+                        // Display a success toast, with a title
+
                         <?php
                         }?>
 
