@@ -3,16 +3,17 @@
 
 
     <script>
-        var tags=[];
 
-
-        if(scope.post && scope.post.<?php echo $model?>)
-        {
-            tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
-
-        }
 
         angular.element(function () {
+            var tags=[];
+
+
+            if(scope.post && scope.post.<?php echo $model?>)
+            {
+                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            }
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
