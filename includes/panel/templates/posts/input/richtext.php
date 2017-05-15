@@ -34,14 +34,12 @@
                                 case "image":
                                     if(e.data.length==1)
                                     {
-                                        /*
                                         HTML+="<embeed>";
 
                                         HTML+="<img  class='data' src='"+v.url+"'>";
+                                        HTML+="</embeed>";
                                         <?php echo $id?>.clipboard.dangerouslyPasteHTML(<?php echo $id?>.getSelection().index, HTML);
 
-                                        HTML+="</embeed>";*/
-                                        HTML+="{a}";
                                     }
 
 
