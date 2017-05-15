@@ -74,8 +74,7 @@
                     dataType:"json",
                     success:function (e) {
 
-                        toastr.success('', 'Miracle Max Says',{ "positionClass": "toast-bottom-right"});
-                        console.log(e);
+                
                         <?php if($successMessage)
                         {
                             ?>
@@ -85,8 +84,8 @@
                             location.reload();
                         }})*/
 
-                        // Display a success toast, with a title
-
+                    
+                        toastr.success('', '<?php echo $successMessage;?>');
                         <?php
                         }?>
 
