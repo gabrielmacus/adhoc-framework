@@ -80,12 +80,7 @@ if(!$shownText)
             }
             else
             {
-                foreach ($shownText as $t)
-                    {             ?>
 
-              shownText+=a.post_<?php echo $t?>;
-
-            <?php}
             }
             ?>
 
