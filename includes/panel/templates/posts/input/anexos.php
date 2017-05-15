@@ -60,8 +60,9 @@ if(!$shownText)
 
         });
 
-        console.log(anexos);
-            scope.post.anexos =anexos;
+
+        $.merge(scope.post.anexos,anexos);
+           // scope.post.anexos =anexos;
 
 
         scope.$apply();
