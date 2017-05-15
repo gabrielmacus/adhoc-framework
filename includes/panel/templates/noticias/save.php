@@ -14,16 +14,6 @@
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
-        $label="Galeria de imágenes";
-        $grupo=1;
-        $formats=[];//TODO proximamente
-        include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
-
-
-        $label="Galeria de imágenes 2";
-        $grupo=45;
-        $formats=[];//TODO proximamente
-        include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
         $label="Jugadores adjuntos";
         $grupo=25;
@@ -40,6 +30,10 @@
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
+        $label="Texto";
+        $id="data";
+        $model="texto";
+        include DIR_PATH."/includes/panel/templates/posts/input/richtext.php";
 
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
