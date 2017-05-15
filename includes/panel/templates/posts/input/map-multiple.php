@@ -18,7 +18,7 @@
         {
             ?>
 
-               var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+               var data = angular.copy(scope.post.<?php echo $model?>);
 
                $.each(data,function (k,v) {
 
