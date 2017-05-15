@@ -23,5 +23,5 @@
         });
     </script>
     <label><?php echo $label;?></label>
-    <div class="tags" id="<?php echo $id?>"></div>
+    <div style= "border: 1px #bdc2b8 solid;" class="tags" id="<?php echo $id?>"></div>
 </div>
