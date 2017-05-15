@@ -61,7 +61,8 @@ if(!$shownText)
         });
 
 
-            scope.post.anexos =anexos;
+        $.extend(   scope.post.anexos,anexos);
+           // scope.post.anexos =anexos;
 
 
         scope.$apply();
