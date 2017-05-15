@@ -21,7 +21,7 @@ if(!$shownText)
             ?>
         if(!scope.post)
         {
-            scope.post= {};
+            scope.post= <?php echo json_encode($post)?>;
         }
         if(!scope.post.anexos)
         {
