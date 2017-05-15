@@ -89,6 +89,7 @@ if(!$shownText)
             }
             ?>
 
+            return shownText;
         }
         <?Php
         }?>
