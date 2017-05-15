@@ -1,6 +1,4 @@
-
 <?php
-
 
 if(!$shownText)
 {
@@ -70,35 +68,7 @@ if(!$shownText)
 
         ?>
 
-        scope.showAnexoText=function (a) {
 
-            var shownText="";
-            console.log("anexo text");
-            console.log(<?php echo json_encode($shownText)?>);
-            <?php
-
-            if(!is_array($shownText))
-            {
-                ?>
-            shownText+=a.post_<?php echo $shownText?>;
-            <?php
-            }
-            else
-            {
-                foreach ($shownText as $t)
-                    {
-                        ?>
-
-
-              shownText+=a.post_<?php echo $t?>;
-
-            <?php
-                    }
-            }
-            ?>
-
-            return shownText;
-        }
         <?Php
         }?>
         // Listen to message from child window
@@ -176,7 +146,7 @@ if(!$shownText)
                 <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
             </figure>-->
             <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
-                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" data-ng-bind="showAnexoText(a)"></span>
+                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" >{{a.text}}</span>
             </a>
         </div>
 
