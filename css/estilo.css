@@ -997,9 +997,15 @@ position: absolute
 {
     float: left;
     width: 100%;
+    background-color: #dce2d6;
 }
 .form-block .collection .item{
     padding: 10px;
-    background-color: #dce2d6;
+
     font-weight: 600;
+}
+.form-block .collection .empty
+{
+    padding: 20px;
+    font-size: 20px;
 }
