@@ -8,7 +8,7 @@
 
     <form data-ng-submit="save()">
         <?php
-        /*
+
         $label="Titulo";
         $model="titulo";
 
@@ -24,7 +24,7 @@
         $grupo=45;
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
-*/
+
         $label="Jugadores adjuntos";
         $grupo=25;
         $s="jugadores";
@@ -39,7 +39,7 @@
         $tipo=60;
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
-/*
+
         $label="Texto";
         $id="data";
         $model="texto";
@@ -50,7 +50,7 @@
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
 
-*/
+
 
 
 
