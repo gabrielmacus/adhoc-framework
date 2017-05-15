@@ -6,10 +6,24 @@
 
 
         angular.element(function () {
+
+
             var tags=[];
 
+            <?php if($post)
+            {
+                ?>
+            if(!scope.post)
+            {
+                scope.post  = <?php echo json_encode($post)?>;
+            }
+            tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
-                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+            <?php
+            }?>
+
+
+
 
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
