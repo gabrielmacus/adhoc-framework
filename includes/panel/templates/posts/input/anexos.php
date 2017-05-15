@@ -28,40 +28,7 @@ if(!$shownText)
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
   
         }
-        /** cargo anexos**/
-        var anexos =[];
-        $.each(scope.post.anexos,function (k,v) {
 
-            var text="";
-            if(v.post_nexo_grupo== <?php echo $grupo;?>)
-            {
-                <?Php if(!is_array($shownText))
-                {
-                ?>       text+=v.post_<?php echo $shownText?>;
-
-                <?Php
-                }
-                else
-                {
-                foreach ($shownText as $t)
-                {
-                ?>
-                text+=v.post_<?php echo $t?>+" ";
-                <?php
-                }
-                }?>
-
-
-                anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
-
-            }
-
-
-        });
-
-        scope.post.anexos =anexos;
-        scope.$apply();
-        /** **/
 
         <?Php
         }?>
