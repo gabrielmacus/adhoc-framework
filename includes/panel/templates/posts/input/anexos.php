@@ -71,7 +71,9 @@ if(!$shownText)
         scope.showAnexoText=function (a) {
 
             var shownText="";
+            console.log(<?php echo json_encode($shownText)?>);
             <?php
+
             if(!is_array($shownText))
             {
                 ?>
