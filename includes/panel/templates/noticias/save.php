@@ -34,6 +34,10 @@
         $label="Direcciones";
         include DIR_PATH."/includes/panel/templates/posts/collection.php";
 
+        $label="Galeria de imágenes 0";
+        $grupo=5;
+        $formats=[];//TODO proximamente
+        include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
         $label="Galeria de imágenes";
         $grupo=1;
