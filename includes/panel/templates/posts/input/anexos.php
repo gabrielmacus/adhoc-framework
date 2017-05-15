@@ -1,5 +1,14 @@
+<script>
+
+    console.log(<?php echo json_encode($shownText)?>);
+</script>
 <?php
 
+
+if(!$shownText)
+{
+    $shownText="titulo";
+}
 ?>
 <script>
     angular.element(function () {
