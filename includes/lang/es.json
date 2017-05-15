@@ -11,17 +11,6 @@
       "secciones":{"text":"Secciones","href":"/admin/secciones"},
       "repositorios":{"text":"Repositorios","href":"/admin/repositorios"}
       }},
-    "hoyos":{"text":"Hoyos","items":{
-      "add":{"text":"Agregar hoyo","href":"/admin/posts/?act=save&t=60&s=hoyos"},
-      "list":{"text":"Listar hoyos","href":"/admin/posts/?act=list&t=60&s=hoyos"}
-    }}
-    ,
-    "jugadores":{"text":"Jugadores","items":{
-      "add":{"text":"Agregar jugador","href":"/admin/posts/?act=save&t=61&s=jugadores"},
-      "principiantes":{"text":"Listar principiantes","href":"/admin/posts/?act=list&t=62&s=jugadores"},
-      "generales":{"text":"Listar generales","href":"/admin/posts/?act=list&t=63&s=jugadores"},
-      "seniors":{"text":"Listar seniors","href":"/admin/posts/?act=list&t=64&s=jugadores"}
-    }},
     "salir":{"text":"Salir","href":"/admin/logout.php"}
 
     },
@@ -34,6 +23,7 @@
   "2":"Video",
   "3":"Audio"
 },
+
 "secciones":"Secciones",
   "repositorios":"Repositorios",
   "hoyos":"Hoyos",
