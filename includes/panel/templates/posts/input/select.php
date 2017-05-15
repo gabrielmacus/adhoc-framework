@@ -1,6 +1,6 @@
 <div title="<?php echo $label?>"  class="form-block <?php echo implode(" ",$class);?>">
     <label><?php echo $label?></label>
-    <select data-ng-model="post.<?php echo $model;?>">
+    <select >
         <option selected disabled>Seleccione una opcion</option>
         <?php  foreach ($options as $k=>$v)
         {
