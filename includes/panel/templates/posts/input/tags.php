@@ -5,7 +5,6 @@
 
        scope.tagsModified<?php echo $model?>=function () {
 
-           alert("M");
         }
     });
     </script>
