@@ -26,13 +26,11 @@
         include DIR_PATH."/includes/panel/templates/posts/input/filesadj.php";
 
 
-
-
-        $label="Hoyos adjuntos";
-        $grupo=26;
-        $s="hoyos";
-        $tipo=60;
-        $shownText="titulo";
+        $label="Jugadores adjuntos";
+        $grupo=25;
+        $s="jugadores";
+        $tipo=62;
+        $shownText=["titulo","volanta"];
         include DIR_PATH."/includes/panel/templates/posts/input/anexos.php";
 
         $label="Texto";
