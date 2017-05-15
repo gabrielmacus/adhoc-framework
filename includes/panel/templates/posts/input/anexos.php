@@ -11,6 +11,10 @@ if(!$shownText)
 }
 ?>
 <script>
+
+    console.log(<?php echo json_encode($shownText)?>);
+</script>
+<script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
