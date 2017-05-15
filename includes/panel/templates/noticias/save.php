@@ -31,6 +31,8 @@
         include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
 
 
+        $label="Direcciones";
+        include DIR_PATH."/includes/panel/templates/posts/collection.php";
 
 
         $label="Galeria de imágenes";
@@ -79,7 +81,6 @@
 
 
         $successMessage="Noticia guardada correctamente";
-        
         include DIR_PATH."/includes/panel/templates/posts/save.php";
 
         $name="Guardar cambios";
