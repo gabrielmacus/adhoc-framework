@@ -18,8 +18,6 @@
         {
             ?>
 
-           try
-           {
 
                var data = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
@@ -30,12 +28,6 @@
 
                });
 
-
-           }
-           catch (e)
-           {
-console.log(e);
-           }
         <?php
         }
         else
