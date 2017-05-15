@@ -987,3 +987,12 @@ position: absolute
     left: 80%;
 
 }
+
+.form-block .collection
+{
+    float: left;
+    width: 100%;
+}
+.form-block .collection li{
+    padding: 10px;
+}
