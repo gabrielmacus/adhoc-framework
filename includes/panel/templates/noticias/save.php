@@ -14,7 +14,6 @@
         include DIR_PATH."/includes/panel/templates/posts/input/text.php";
 
 
-
         $label="Galeria de imágenes";
         $grupo=1;
         $formats=[];//TODO proximamente
@@ -58,6 +57,16 @@
             $id="map2";
             $title ="Marque la ubicación de los hoyos";
             include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
+
+        $model ="extra2";
+        $label="Nivel";
+        $options=array(
+            1=>"Data 1",
+            2 =>"Data 2",
+            3 =>"Data 3"
+
+        );
+        include DIR_PATH."/includes/panel/templates/posts/input/select.php";
 
 
         include DIR_PATH."/includes/panel/templates/posts/save.php";
