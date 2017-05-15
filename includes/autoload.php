@@ -78,7 +78,6 @@ $GLOBALS["mapsConfig"]=array(
 
 define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());
 
-
 /**  */
 
 
