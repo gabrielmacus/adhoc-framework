@@ -29,6 +29,7 @@ if(!$shownText)
   
         }
 
+
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
 
