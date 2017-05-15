@@ -183,7 +183,7 @@ if(!$shownText)
 
 
     </div>
-    <div class="fila">
+    <div class="fila margin">
         <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&grupo=<?php echo $grupo?>&t=<?php echo $tipo?>&s=<?php echo $s?>">Adjuntar anexos</a>
     </div>
 
