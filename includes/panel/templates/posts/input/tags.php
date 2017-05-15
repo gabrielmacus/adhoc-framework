@@ -5,12 +5,18 @@
     <script>
         var tags=[];
 
-        <?php if($post){?>
+        <?php
+        if($post)
+        {
+            ?>
         tags= JSON.parse(angular.copy(scope.post.<?php echo $model?>));
-        <?php}?>
+        <?php
+        }
+        ?>
 
         angular.element(function () {
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
+
                 tags:tags,
                 duplicateTagClass: 'bounce'
             });
