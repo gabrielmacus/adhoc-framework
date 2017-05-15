@@ -737,8 +737,8 @@ input[type='button']:hover,input[type='submit']:hover,button:hover
 }
 .ql.toolbar
 {
-    float: left;
-    width: 100%;
+    float: left!important;
+    width: 100%!important;
 }
 .ql-tooltip
 {
