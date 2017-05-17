@@ -94,7 +94,7 @@
 
 <div class="body">
 
-    <button id="add-repositorio">Nuevo</button>
+    <?php include ""?>
     <form id="new-repositorio" class="fila" style="display: none;background-color:#efefef">
         <?php
         $label="Nombre";
@@ -155,6 +155,7 @@
 
 
     <ul class="list" style="margin-top: 10px;">
+        
 
         <li class="item" data-ng-repeat="(k,r) in repositorios">
             <div class="animated" style="position: relative">
