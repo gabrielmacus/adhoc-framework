@@ -1,7 +1,7 @@
 <script>
     angular.element(function () {
 
-
+        scope.idioma={};
         function saveIdioma() {
 
             var url="<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/regional/data.php?act=save";
