@@ -6,9 +6,13 @@
 
         scope.selectPredeterminado=function(i)
         {
+            $.each(scope.idioma,function (k,v) {
+
+                v.predeterminado=0;
+            });
+
             i.predeterminado=1;
             scope.idioma = i;
-
             saveIdioma();
         }
 
