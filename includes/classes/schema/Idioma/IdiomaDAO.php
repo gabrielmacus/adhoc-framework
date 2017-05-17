@@ -168,7 +168,13 @@ idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idi
     {
         $this->validate($i);
 
+        if($i->isPredeterminado()==1)
+        {
+            $this->dataSource->runUpdate("UPDATE {$this->tableName} SET idioma_predeterminado=0");
+        }
+        
         $sql = $this->updateSql;
+        
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($i));
         return $res;

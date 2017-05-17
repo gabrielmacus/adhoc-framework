@@ -2,6 +2,16 @@
     angular.element(function () {
 
         scope.idioma={};
+
+
+        $scope.selectPredeterminado=function(i)
+        {
+            i.predeterminado=1;
+            scope.idioma = i;
+
+            saveIdioma();
+        }
+
         function saveIdioma() {
 
             var url="<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/regional/idioma/data.php?act=save";
@@ -71,7 +81,7 @@
     <h3 class="title">Idiomas del sitio </h3>
     <h4 class="subtitle">Haga click para elegir el predeterminado</h4>
     <ul class="table">
-        <li data-ng-repeat="i in idiomas" ><a class="td s12 m4 l3 animated">
+        <li data-ng-click="selectPredeterminado(i)" data-ng-repeat="i in idiomas" ><a class="td s12 m4 l3 animated">
                 <span class="default"><i class="fa fa-star" data-ng-if="i.predeterminado==1" aria-hidden="true"></i></span>
                 <span class="name">
                     {{i.name}}
