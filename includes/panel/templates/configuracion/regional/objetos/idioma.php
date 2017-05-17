@@ -36,7 +36,7 @@
             vex.dialog.open({
                 message: 'Nombre y abreviatura del idioma',
                 input: [
-                    '<inpu name="idioma" type="text" placeholder="Nombre..." required />',
+                    '<input name="idioma" type="text" placeholder="Nombre..." required />',
                     '<input  name="short" type="text" placeholder="Abreviatura..." required />'
                 ].join(''),
                 buttons: [
