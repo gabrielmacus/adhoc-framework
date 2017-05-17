@@ -17,8 +17,17 @@
                 scope.post  = <?php echo json_encode($post)?>;
             }
 
-            tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
+            if (typeof tags === 'string')
+            {
+                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            }
+            else
+            {
+                tags = angular.copy(scope.post.<?php echo $model?>);
+                
+            }
 
 
             setTimeout(function () {
@@ -26,7 +35,7 @@
             })
             <?php
             }?>
-            console.log(tags);
+
 
           var <?php echo $model?>=  new Taggle('#<?php echo $id?>', {
 
