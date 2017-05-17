@@ -20,7 +20,7 @@
                     success:function (e) {
 
                         scope.idioma.id=e;
-                        scope.idiomas.push(angular.copy(idioma));
+                        scope.idiomas.push(angular.copy(scope.idioma));
                         toastr.success('', 'Idioma agregado con éxito');
 
                     },
