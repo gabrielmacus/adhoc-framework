@@ -14,9 +14,8 @@
             ?>
      //   scope.post = <?php echo json_encode(reset($repositorio))?>;
       scope.post =<?php echo json_encode($post)?>;
-        scope.post.versiones =JSON.stringify(scope.post.versiones) ;
 
-        
+
         $("#tags1").val();
         $("#add-repositorio").hide();
         $("#new-repositorio").show();
