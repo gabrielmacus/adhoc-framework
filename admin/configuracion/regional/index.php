@@ -19,10 +19,10 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-
-
-    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
-
+    
+   
+    
+    $idiomas = $GLOBALS["idiomaDAO"]->selectIdiomas();
 
 
    $site="configuracion/regional";

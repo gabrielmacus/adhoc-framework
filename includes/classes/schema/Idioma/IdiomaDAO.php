@@ -7,8 +7,8 @@
  * Time: 23:15
  */
 
-require_once ("ISeccion.php");
-require_once ("Seccion.php");
+require_once ("IIdioma.php.php");
+require_once ("Idioma.php");
 
 
 class IdiomaDAO implements IIdioma

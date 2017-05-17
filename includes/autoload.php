@@ -32,7 +32,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 
 $configuracion->setHtdocsFolder("public_html");
 
-
+$GLOBALS["configuracion"]  =$configuracion;
 
 
 /*
@@ -54,7 +54,8 @@ $GLOBALS["repositorioDAO"] = new RepositorioDAO($configuracion->getDataSource())
 $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
-$GLOBALS["configuracion"]  =$configuracion;
+$GLOBALS["idiomaDAO"] = new IdiomaDAO($configuracion->getDataSource());
+
 
 
     /** **/
@@ -83,6 +84,7 @@ define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder())
 
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json"),true);
+
 
 /*
 //Cargo las secciones al menu
