@@ -25,7 +25,7 @@ try{
             $post = new Idioma();
             $post->setShort($_POST["short"]);
             $post->setNombre($_POST["name"]);
-            $post->setPredeterminado($_POST["predeterminado"]);
+       //     $post->setPredeterminado($_POST["predeterminado"]);
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
             if ($_POST["id"]) {
