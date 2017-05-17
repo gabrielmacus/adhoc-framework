@@ -8,21 +8,18 @@
         $(document).on("click",".idioma .new .btn",function () {
 
             vex.dialog.open({
-                message: 'Nombre y abreviatura',
+                message: 'Nombre y abreviatura del idioma',
                 input: [
-                    '<input name="username" type="text" placeholder="Username" required />',
-                    '<input name="password" type="password" placeholder="Password" required />'
+                    '<input data-ng-model="idioma.name" type="text" placeholder="Nombre..." required />',
+                    '<input  data-ng-model="idioma.short" type="text" placeholder="Abreviatura..." required />'
                 ].join(''),
                 buttons: [
-                    $.extend({}, vex.dialog.buttons.YES, { text: 'Login' }),
-                    $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
                 ],
                 callback: function (data) {
-                    if (!data) {
-                        console.log('Cancelled')
-                    } else {
-                        console.log('Username', data.username, 'Password', data.password)
-                    }
+
+                    //submit
                 }
             })
             /*var content=  $(".new .content");
