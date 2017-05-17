@@ -1054,6 +1054,7 @@ position: absolute
 {
   color:  rgba(227, 230, 68, 1);
     padding-right: 10px;
+    float: right;
     font-size: 15px;
 }
 .idioma .new .btn
