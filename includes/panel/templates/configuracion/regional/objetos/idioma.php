@@ -6,17 +6,13 @@
 
         scope.selectPredeterminado=function(i)
         {
-            $.each(scope.idioma,function (k,v) {
+            $.each(scope.idiomas,function (k,v) {
 
                 v.predeterminado=0;
             });
             i.predeterminado=1;
             scope.idioma = i;
-        setTimeout(
-            function () {
-             scope.$apply();
-            }
-        )
+      
             saveIdioma();
         }
 
