@@ -1024,4 +1024,5 @@ position: absolute
 {
     width: 20%;
     float:left;
+    border: 2px rgba(59, 61, 57, 1) solid;
 }
