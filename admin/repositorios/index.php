@@ -20,7 +20,7 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-        $repositorio=$GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"],false) ;
+        $post=$GLOBALS["repositorioDAO"]->selectRepositorioById($_GET["id"],false) ;
     }
     else{
         $repositorios=$GLOBALS["repositorioDAO"]->selectRepositorios(false) ;
