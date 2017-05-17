@@ -91,7 +91,8 @@ class Idioma implements JsonSerializable
         return array(
             "id"=>$this->getId(),
             "name"=>$this->getNombre(),
-            "short"=>$this->getShort()
+            "short"=>$this->getShort(),
+            "predeterminado"=>$this->isPredeterminado()
         );
     }
 }
