@@ -56,7 +56,6 @@ idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idi
 
     private function getParamsArray(Idioma $i)
     {
-        echo json_encode($i);
         return    array(
             ":idioma_id"=>$i->getId(),
             ":idioma_name"=>$i->getNombre(),

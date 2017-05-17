@@ -69,9 +69,14 @@
     <h4 class="subtitle">Haga click para elegir el predeterminado</h4>
     <ul class="table">
         <li data-ng-repeat="i in idiomas" ><a class="td s12 m3 l3 animated">
-                <span class="default"><i class="fa fa-star" data-ng-if="i.predeterminado" aria-hidden="true"></i></span>
+                <span class="default"><i class="fa fa-star" data-ng-if="i.predeterminado==1" aria-hidden="true"></i></span>
                 <span class="name">
-                    {{i.name}}</span> - <span class="short">{{i.short}}</span>
+                    {{i.name}}
+                </span>
+                -
+                <span class="short">
+                    {{i.short}}
+                </span>
             </a>
         </li>
     </ul>

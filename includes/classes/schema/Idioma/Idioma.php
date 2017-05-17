@@ -31,6 +31,10 @@ class Idioma implements JsonSerializable
      */
     public function setPredeterminado($predeterminado)
     {
+        if(!$predeterminado)
+        {
+            $predeterminado=0;
+        }
         $this->predeterminado = $predeterminado;
     }
 
