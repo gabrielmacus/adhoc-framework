@@ -1,7 +1,7 @@
 <script>
     angular.element(function () {
 
-        scope.idiomas  = <?Php echo ($idiomas)? json_encode($idiomas):"[]"?>;
+        scope.idiomas  = <?Php echo $idiomas ?>;
 
         scope.$apply();
 
