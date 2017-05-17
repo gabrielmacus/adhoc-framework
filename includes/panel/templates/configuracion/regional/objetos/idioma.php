@@ -45,9 +45,10 @@
                 ],
                 callback: function (data) {
 
+                    console.log(data);
                     scope.idioma.name=data.idioma;
                     scope.idioma.short=data.short;
-                    
+
                     saveIdioma();
 
                     //submit
