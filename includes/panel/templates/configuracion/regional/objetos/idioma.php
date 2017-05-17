@@ -3,7 +3,9 @@
 
         scope.idiomas  = <?Php echo json_encode($idiomas)?>;
 
-        
+        scope.$apply();
+
+
     });
 </script>
 <div class="idioma fila">
