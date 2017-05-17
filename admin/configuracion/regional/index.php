@@ -21,7 +21,9 @@ try{
 
    $idioma = new Idioma();
     $idioma->setId(2);
-    $idioma->setPredeterminado(true);
+    $idioma->setPredeterminado(1);
+    $idioma->setNombre("Español");
+    $idioma->setShort("ES");
     $GLOBALS["idiomaDAO"]->updateIdioma($idioma);
     
     $idiomas = $GLOBALS["idiomaDAO"]->selectIdiomas();

@@ -12,7 +12,7 @@ class Idioma implements JsonSerializable
     protected $id;
     protected $nombre;
     protected $short;
-    protected $predeterminado=false;
+    protected $predeterminado=0;
 
     function __construct()
     {
