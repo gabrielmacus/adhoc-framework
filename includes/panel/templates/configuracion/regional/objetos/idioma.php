@@ -6,10 +6,29 @@
         scope.$apply();
 
         $(document).on("click",".idioma .new .btn",function () {
-        var content=  $(".new .content");
+
+            vex.dialog.open({
+                message: 'Nombre y abreviatura',
+                input: [
+                    '<input name="username" type="text" placeholder="Username" required />',
+                    '<input name="password" type="password" placeholder="Password" required />'
+                ].join(''),
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Login' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+                ],
+                callback: function (data) {
+                    if (!data) {
+                        console.log('Cancelled')
+                    } else {
+                        console.log('Username', data.username, 'Password', data.password)
+                    }
+                }
+            })
+            /*var content=  $(".new .content");
         content.stop();
          content.slideToggle();
-        });
+        */});
 
     });
 </script>
