@@ -4,7 +4,7 @@
         scope.idioma={};
         function saveIdioma() {
 
-            var url="<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/regional/data.php?act=save";
+            var url="<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/regional/idioma/data.php?act=save";
             if(scope.idioma.id)
             {
                 url+="&id="+scope.idioma.id;
@@ -47,9 +47,8 @@
 
                     if(data)
                     {
-                        console.log(data);
-                        scope.idioma.name=data.idioma;
-                        scope.idioma.short=data.short;
+                
+                        scope.idioma=data;
 
                         saveIdioma();
 
