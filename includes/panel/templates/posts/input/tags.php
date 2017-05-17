@@ -7,7 +7,7 @@
 
             var tags=[];
 
-            console.log(<?php echo json_encode($post)?>);
+
             <?php if($post)
             {
                 ?>

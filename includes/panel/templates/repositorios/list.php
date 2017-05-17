@@ -13,7 +13,7 @@
         {
             ?>
      //   scope.post = <?php echo json_encode(reset($repositorio))?>;
-      scope.post =<?php echo json_encode(reset($post))?>;
+      scope.post =<?php echo json_encode($post)?>;
         $("#tags1").val();
         $("#add-repositorio").hide();
         $("#new-repositorio").show();
