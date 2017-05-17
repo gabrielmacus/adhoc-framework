@@ -17,35 +17,8 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $t =$_GET["t"];
-    $r=31;
-    switch ($_GET["act"])
-    {
-        case "save":
-            
-            $post = new Idioma();
-            $post->setShort($_POST["sort"]);
-            $post->setNombre($_POST["name"]);
-            $post->setPredeterminado($_POST["predeterminado"]);
-            //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
-            if ($_POST["id"]) {
-
-                $post->setId($_POST["id"]);
-                echo json_encode($GLOBALS["idiomaDAO"]->updateIdioma($post));
-            } else {
-                echo json_encode($GLOBALS["idiomaDAO"]->insertPost($post));
-
-            }
-
-            break;
-
-        case "delete":
-            echo json_encode($GLOBALS["idiomaDAO"]->deleteIdiomaById($_GET["id"]));
-
-            break;
-
-    }
+  
 
 
 }
