@@ -24,18 +24,18 @@
         </li>
     </ul>
    <form class="new" data-ng-submit="saveLanguage()">
-       <div class="col l4">
-           <button type="submit" style="width: 100%;" class="btn">Nuevo</button>
-       </div>
 
-       <div class="content col l8">
+           <button  style="width: 100%;" class="btn">Nuevo</button>
+
+
+
            <div class="name form-block s12 m6 l6 padding">
                <input placeholder="Nombre..."  type="text" data-ng-model="idioma.name">
            </div>
            <div class="short  form-block  m6 l6 padding">
                <input placeholder="Abreviatura..." type="text" data-ng-model="idioma.short">
            </div>
-       </div>
+
 
       
    </form>
