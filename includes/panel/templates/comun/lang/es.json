@@ -8,7 +8,7 @@
     "inicio":{"text":"Inicio","href":"/admin/"},
    "configuracion":{"text":"Configuraci\u00f3n","items":
     {
-      "secciones":{"text":"Regional","href":"/admin/regional"}
+      "secciones":{"text":"Regional","href":"/admin/configuracion/regional"}
       }},
     "repositorios":{"text":"Repositorios","href":"/admin/repositorios"},
 
