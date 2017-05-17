@@ -1046,8 +1046,5 @@ position: absolute
 .idioma .default i
 {
   color: rgba(194, 197, 53, 1);
-}
-.idioma .default
-{
-    font-size: 25px;
+    padding-right: 10px;
 }
