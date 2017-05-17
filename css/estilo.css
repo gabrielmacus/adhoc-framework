@@ -1027,3 +1027,7 @@ position: absolute
     border: 1px rgba(59, 61, 57, 1) solid;
     padding: 20px;
 }
+.idioma .table .name
+{
+    font-weight: 600;
+}
