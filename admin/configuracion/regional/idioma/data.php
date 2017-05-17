@@ -7,8 +7,7 @@
 
  */
 
-
-include "../../includes/autoload.php";
+include "../../../../includes/autoload.php";
 
 //include_once DIR_PATH."/extras/api/check-login.php"; TODO agregar usuarios con sus permisos
 
