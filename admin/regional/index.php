@@ -22,9 +22,10 @@ try{
 
 
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
-    
 
-    $site="regional";
+
+    $site="configuracion";
+    $site.="regional";
     $action="list";
 
 
