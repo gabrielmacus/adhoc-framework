@@ -15,6 +15,9 @@ interface IIdioma
     /** Read **/
     public function selectIdiomas();
     public function selectIdiomaById($id);
+    public function selectIdiomaByShort($short);
+    public function selectIdiomaByName($name);
+    public function selectIdiomaPredeterminado();
     /** **/
 
     /** Update**/

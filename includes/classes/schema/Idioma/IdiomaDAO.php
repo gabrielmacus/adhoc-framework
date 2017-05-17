@@ -17,8 +17,10 @@ class IdiomaDAO implements IIdioma
     protected $dataSource;
     protected $tableName;
     protected $idiomas=array();
+    protected $predeterminado=false;
     private $insertSql;
     private $updateSql;
+    
 
     /**
      * IdiomaDAO constructor.
@@ -32,13 +34,30 @@ class IdiomaDAO implements IIdioma
     {
         $this->dataSource = $dataSource;
         $this->tableName = $tableName;
-        $this->insertSql="INSERT INTO idiomas (idioma_id,idioma_short,idioma_name) 
-          VALUES  (:idioma_id,:idioma_short,:idioma_name) ";
+        $this->insertSql="INSERT INTO idiomas (idioma_id,idioma_short,idioma_name,idioma_predeterminado) 
+          VALUES  (:idioma_id,:idioma_short,:idioma_name,:idioma_predeterminado) ";
 
-        $this->updateSql="UPDATE FROM idiomas WHERE idioma_id=:idioma_id";
+        $this->updateSql="UPDATE FROM idiomas SET idioma_id=:idioma_id,idioma_short=:idioma_short,
+idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idioma_id=:idioma_id";
     }
 
+    /**
+     * @return boolean
+     */
+    public function isPredeterminado()
+    {
+        return $this->predeterminado;
+    }
 
+    /**
+     * @param boolean $predeterminado
+     */
+    public function setPredeterminado($predeterminado)
+    {
+        $this->predeterminado = $predeterminado;
+    }
+
+     
     public function insertIdioma(Idioma $i)
     {
 
@@ -56,7 +75,8 @@ class IdiomaDAO implements IIdioma
         return    array(
             ":idioma_id"=>$i->getId(),
             ":idioma_name"=>$i->getNombre(),
-            ":idioma_short"=>$i->getShort()
+            ":idioma_short"=>$i->getShort(),
+            ":idioma_predeterminado"=>$i->isPredeterminado()
         );
     }
 
@@ -82,6 +102,7 @@ class IdiomaDAO implements IIdioma
         $i->setId($data["idioma_id"]);
         $i->setNombre($data["idioma_name"]);
         $i->setShort($data["idioma_short"]);
+        $i->setPredeterminado($data["idioma_predeterminado"]);
 
         array_push($this->idiomas, $i);
 
@@ -132,6 +153,22 @@ class IdiomaDAO implements IIdioma
         $this->dataSource->runQuery($sql,array(
             ":idioma_short"=>$short
         ),function($data){
+
+
+            $this->query($data);
+
+        });
+
+        return $this->idiomas;
+    }
+
+
+    public function selectIdiomaPredeterminado()
+    {
+        $this->idiomas=array();
+        $sql = "SELECT * FROM {$this->tableName}  WHERE idioma_predeterminado=1";
+        $this->idiomas=array();
+        $this->dataSource->runQuery($sql,function($data){
 
 
             $this->query($data);
