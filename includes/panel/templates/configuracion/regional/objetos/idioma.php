@@ -38,9 +38,7 @@
                             scope.idiomas.push(angular.copy(scope.idioma));
                             scope.$apply();
                         }
-
-
-
+                        
                         toastr.success('', 'Idioma guardado con éxito');
 
                     },

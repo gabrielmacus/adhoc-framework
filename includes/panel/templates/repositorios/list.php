@@ -67,12 +67,11 @@
                     data:angular.copy(scope.post),
                     dataType:"json",
                     success:function (e) {
-                        console.log(e);
-                    },
-                    error:function (e) {
 
-                        console.log(e);
-                    }
+                        toastr.success('', 'Repositorio guardado con éxito');
+
+                    },
+                    error:error
                 }
             );
 
