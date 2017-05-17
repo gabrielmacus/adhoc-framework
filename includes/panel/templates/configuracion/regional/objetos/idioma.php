@@ -28,15 +28,16 @@
            <button  style="width: 100%;" class="btn">Nuevo</button>
 
 
-
+       <div class="content">
            <div class="name form-block s12 m6 l6 padding">
                <input placeholder="Nombre..."  type="text" data-ng-model="idioma.name">
            </div>
            <div class="short  form-block  m6 l6 padding">
                <input placeholder="Abreviatura..." type="text" data-ng-model="idioma.short">
            </div>
+       </div>
 
-
+           
       
    </form>
 
