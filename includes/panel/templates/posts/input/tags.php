@@ -26,7 +26,7 @@
             else
             {
                 tags = angular.copy(scope.post.<?php echo $model?>);
-                
+
             }
 
 
@@ -37,7 +37,7 @@
             }?>
 
 
-          var <?php echo $model?>=  new Taggle('#<?php echo $id?>', {
+          var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
                 duplicateTagClass: 'bounce',
