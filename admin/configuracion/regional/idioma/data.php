@@ -23,7 +23,7 @@ try{
         case "save":
 
             $post = new Idioma();
-            $post->setShort($_POST["sort"]);
+            $post->setShort($_POST["short"]);
             $post->setNombre($_POST["name"]);
             $post->setPredeterminado($_POST["predeterminado"]);
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
