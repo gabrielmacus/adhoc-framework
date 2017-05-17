@@ -1049,3 +1049,7 @@ position: absolute
   color:  rgba(227, 230, 68, 1);
     padding-right: 10px;
 }
+.idioma .new .btn
+{
+    padding: 12px 30px;
+}
