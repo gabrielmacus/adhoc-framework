@@ -25,7 +25,7 @@ try{
 
 
     $site="configuracion";
-    $site.="regional";
+    $site.="/regional";
     $action="list";
 
 
