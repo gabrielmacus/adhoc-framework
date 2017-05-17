@@ -14,6 +14,7 @@
             ?>
      //   scope.post = <?php echo json_encode(reset($repositorio))?>;
       scope.post =<?php echo json_encode($post)?>;
+        scope.post.versiones =JSON.stringify(scope.post.versiones) ;
         $("#tags1").val();
         $("#add-repositorio").hide();
         $("#new-repositorio").show();
@@ -133,6 +134,7 @@
         $model="puerto";
         $class=["s12","m6","l6"];
         include DIR_PATH."/includes/panel/templates/posts/input/number.php";
+
 
         $label="Resoluciones (solo imágenes)";
         $id="tags1";
