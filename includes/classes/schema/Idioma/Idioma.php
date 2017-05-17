@@ -12,7 +12,7 @@ class Idioma implements JsonSerializable
     protected $id;
     protected $nombre;
     protected $short;
-    protected $predeterminado=0;
+    protected $predeterminado=false;
 
     function __construct()
     {
@@ -34,7 +34,7 @@ class Idioma implements JsonSerializable
         $this->predeterminado = $predeterminado;
     }
 
-
+    
 
     /**
      * @return mixed

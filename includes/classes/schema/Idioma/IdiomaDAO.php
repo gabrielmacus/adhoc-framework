@@ -40,7 +40,7 @@ class IdiomaDAO implements IIdioma
 idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idioma_id=:idioma_id";
     }
 
-    
+
      
     public function insertIdioma(Idioma $i)
     {
@@ -166,7 +166,12 @@ idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idi
 
     public function updateIdioma(Idioma $i)
     {
-        // TODO: Implement updateIdioma() method.
+        $this->validate($i);
+
+        $sql = $this->updateSql;
+        $res= $this->dataSource->runUpdate($sql,
+            $this->getParamsArray($i));
+        return $res;
     }
 
     public function deleteIdiomaById($id)
