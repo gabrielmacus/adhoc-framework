@@ -28,7 +28,7 @@
                 tags = angular.copy(scope.post.<?php echo $model?>);
 
             }
-
+console.log("ASDASD");
             setTimeout(function () {
                 scope.$apply();
             })
