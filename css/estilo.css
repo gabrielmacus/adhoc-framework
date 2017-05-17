@@ -1058,3 +1058,9 @@ position: absolute
 {
     padding: 12px 30px;    float: left;
 }
+.idioma .new .content
+{
+  float: left;
+    width: 100%;
+    display: none;
+}

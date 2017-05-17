@@ -5,6 +5,11 @@
 
         scope.$apply();
 
+        $(document).on("click",".idioma .new .btn",function (}) {
+        var content=  $(".new .content");
+        content.stop();
+         content.slideToggle();
+        });
 
     });
 </script>
