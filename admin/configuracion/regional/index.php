@@ -24,7 +24,11 @@ try{
     
     $idiomas = $GLOBALS["idiomaDAO"]->selectIdiomas();
 
+    $i =new Idioma();
+    $i->setShort("ES");
+    $i->setNombre("Español");
 
+    $idiomas->insertIdioma($i);
    $site="configuracion/regional";
     $action="list";
 
