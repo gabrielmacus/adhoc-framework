@@ -36,6 +36,7 @@
             <?php
             }?>
 
+            console.log(tags);
 
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
