@@ -71,7 +71,7 @@ class Idioma implements JsonSerializable
     {
         return array(
             "id"=>$this->getId(),
-            "nombre"=>$this->getNombre(),
+            "name"=>$this->getNombre(),
             "short"=>$this->getShort()
         );
     }
