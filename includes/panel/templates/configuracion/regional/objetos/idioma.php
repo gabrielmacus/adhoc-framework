@@ -36,8 +36,8 @@
             vex.dialog.open({
                 message: 'Nombre y abreviatura del idioma',
                 input: [
-                    '<input data-ng-model="idioma.name" type="text" placeholder="Nombre..." required />',
-                    '<input  data-ng-model="idioma.short" type="text" placeholder="Abreviatura..." required />'
+                    '<inpu name="idioma" type="text" placeholder="Nombre..." required />',
+                    '<input  name="short" type="text" placeholder="Abreviatura..." required />'
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
@@ -45,7 +45,9 @@
                 ],
                 callback: function (data) {
 
-                    scope.$apply();
+                    scope.idioma.name=data.idioma;
+                    scope.idioma.short=data.short;
+                    
                     saveIdioma();
 
                     //submit
