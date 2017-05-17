@@ -45,13 +45,17 @@
                 ],
                 callback: function (data) {
 
-                    console.log(data);
-                    scope.idioma.name=data.idioma;
-                    scope.idioma.short=data.short;
+                    if(data)
+                    {
+                        console.log(data);
+                        scope.idioma.name=data.idioma;
+                        scope.idioma.short=data.short;
 
-                    saveIdioma();
+                        saveIdioma();
 
-                    //submit
+                        //submit
+                    }
+
                 }
             })
             /*var content=  $(".new .content");
