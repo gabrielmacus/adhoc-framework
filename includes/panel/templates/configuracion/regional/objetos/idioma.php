@@ -12,7 +12,11 @@
             });
             i.predeterminado=1;
             scope.idioma = i;
-            scope.$apply();
+        setTimeout(
+            function () {
+             scope.$apply();
+            }
+        )
             saveIdioma();
         }
 
