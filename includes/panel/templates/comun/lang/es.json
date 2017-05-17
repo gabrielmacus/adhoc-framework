@@ -8,12 +8,13 @@
     "inicio":{"text":"Inicio","href":"/admin/"},
    "configuracion":{"text":"Configuraci\u00f3n","items":
     {
-      "secciones":{"text":"Regional","href":"/admin/secciones"},
-      "repositorios":{"text":"Repositorios","href":"/admin/repositorios"}
+      "secciones":{"text":"Regional","href":"/admin/regional"}
       }},
     "salir":{"text":"Salir","href":"/admin/logout.php"}
 
     },
+  "repositorios":{"text":"Repositorios","href":"/admin/repositorios"}
+  ,
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",
 "fileTypes":
