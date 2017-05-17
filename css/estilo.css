@@ -1043,7 +1043,12 @@ position: absolute
     font-size: 25px;
     font-weight: 300;
 }
-.idioma .default
+.idioma .default i
 {
     background-color: rgba(194, 197, 53, 1);
+}
+.idioma .default
+{
+    padding: 10px;
+    font-size: 20px;
 }
