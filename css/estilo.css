@@ -1045,10 +1045,9 @@ position: absolute
 }
 .idioma .default i
 {
-    background-color: rgba(194, 197, 53, 1);
+  color: rgba(194, 197, 53, 1);
 }
 .idioma .default
 {
-    padding: 10px;
-    font-size: 20px;
+    font-size: 25px;
 }
