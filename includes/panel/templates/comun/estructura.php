@@ -20,6 +20,7 @@
 <script>
     function error(e) {
 
+        console.log(e);
         toastr.error('', 'Hubo un error al procesar lo solicitado. Inténtelo mas tarde');
 
     }
