@@ -8,7 +8,6 @@
  */
 
 include "../../../../includes/autoload.php";
-
 //include_once DIR_PATH."/extras/api/check-login.php"; TODO agregar usuarios con sus permisos
 
 $htmlTitle=$configuracion->getSiteName();
@@ -23,12 +22,7 @@ try{
     switch ($_GET["act"])
     {
         case "save":
-
             
-            uploadTmp($r) ;
-            // $a =new ArchivoDAO();
-            //$a->selectArchivoById(,false);
-
             $post = new Idioma();
             $post->setShort($_POST["sort"]);
             $post->setNombre($_POST["name"]);
