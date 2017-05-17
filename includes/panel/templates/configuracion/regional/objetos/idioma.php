@@ -19,7 +19,7 @@
                     dataType:"json",
                     success:function (e) {
 
-                        idioma.id=e;
+                        scope.idioma.id=e;
                         scope.idiomas.push(angular.copy(idioma));
                         toastr.success('', 'Idioma agregado con éxito');
 
