@@ -82,6 +82,8 @@
             include DIR_PATH."/includes/panel/templates/posts/input/map-multiple.php";
 
 
+        $successMessage="Noticia guardada correctamente";
+        include DIR_PATH."/includes/panel/templates/gui/save.php";
 
         $name="Guardar cambios";
         include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
