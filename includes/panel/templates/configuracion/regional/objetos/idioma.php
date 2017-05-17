@@ -9,7 +9,7 @@
     });
 </script>
 <div class="idioma fila">
-    <h3 class="title">Idiomas del sitio <span class="new">Nuevo</span></h3>
+    <h3 class="title">Idiomas del sitio </h3>
     <ul class="table">
         <li data-ng-repeat="i in idiomas" ><a class="td s12 m3 l3 animated">
                 <span class="default"><i class="fa fa-star" aria-hidden="true"></i></span>
@@ -18,5 +18,6 @@
             </a>
         </li>
     </ul>
+    <span class="new btn">Nuevo</span>
 
 </div>
