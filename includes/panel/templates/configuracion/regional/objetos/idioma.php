@@ -28,10 +28,15 @@
                     data:angular.copy(scope.idioma),
                     dataType:"json",
                     success:function (e) {
+                        if(!scope.idioma.id)
+                        {
+                            scope.idioma.id=e;
+                            scope.idiomas.push(angular.copy(scope.idioma));
+                            scope.$apply();
+                        }
 
-                        scope.idioma.id=e;
-                        scope.idiomas.push(angular.copy(scope.idioma));
-                        scope.$apply();
+
+
                         toastr.success('', 'Idioma guardado con éxito');
 
                     },
