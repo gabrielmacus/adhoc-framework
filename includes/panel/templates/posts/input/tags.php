@@ -3,8 +3,6 @@
 
 
     <script>
-
-
         angular.element(function () {
 
 
@@ -17,17 +15,16 @@
             {
                 scope.post  = <?php echo json_encode($post)?>;
             }
+
             tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            console.log("TAGS");
 
             setTimeout(function () {
                 scope.$apply();
             })
             <?php
             }?>
-
-
-
-
 
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
