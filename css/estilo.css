@@ -1014,3 +1014,14 @@ position: absolute
     padding: 20px;
     font-size: 20px;
 }
+
+.idioma .table
+{
+    float: left;
+    width: 100%;
+}
+.idioma .table .td
+{
+    width: 20%;
+    float:left;
+}
