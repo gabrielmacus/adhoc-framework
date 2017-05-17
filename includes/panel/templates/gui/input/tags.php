@@ -28,18 +28,14 @@
                 tags = angular.copy(scope.post.<?php echo $model?>);
 
             }
-console.log("ASDASD");
+
             setTimeout(function () {
                 scope.$apply();
             })
             <?php
             }?>
 
-
-
-
-
-
+            console.log(tags);
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
