@@ -18,7 +18,7 @@
 <body data-ng-cloak class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 
 <script>
-    function (e) {
+    function error(e) {
 
         toastr.error('', 'Hubo un error al procesar lo solicitado. Inténtelo mas tarde');
 
