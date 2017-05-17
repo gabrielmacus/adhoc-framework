@@ -1036,3 +1036,9 @@ position: absolute
     background-color:rgba(59, 61, 57, 1) ;
     color: white;
 }
+.idioma .title
+{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 25px;
+}
