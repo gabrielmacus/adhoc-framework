@@ -26,10 +26,10 @@
    <form class="new" data-ng-submit="saveLanguage()">
        <button type="submit" class="btn">Nuevo</button>
        <div class="content">
-           <div class="name">
+           <div class="name form-block">
                <input placeholder="Nombre..."  type="text" data-ng-model="idioma.name">
            </div>
-           <div class="short">
+           <div class="short  form-block">
                <input placeholder="Abreviatura..." type="text" data-ng-model="idioma.short">
            </div>
        </div>
