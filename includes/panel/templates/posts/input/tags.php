@@ -5,7 +5,7 @@
     <script>
         angular.element(function () {
 
-
+            console.log("TAGS");
             var tags=[];
 
             <?php if($post)
@@ -18,7 +18,7 @@
 
             tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
 
-            console.log("TAGS");
+
 
             setTimeout(function () {
                 scope.$apply();
