@@ -1031,3 +1031,8 @@ position: absolute
 {
     font-weight: 600;
 }
+.idioma .table .td:hover
+{
+    background-color:rgba(59, 61, 57, 1) ;
+    color: white;
+}
