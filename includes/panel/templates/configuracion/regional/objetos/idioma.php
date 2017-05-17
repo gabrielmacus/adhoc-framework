@@ -4,7 +4,7 @@
         scope.idioma={};
 
 
-        $scope.selectPredeterminado=function(i)
+        scope.selectPredeterminado=function(i)
         {
             i.predeterminado=1;
             scope.idioma = i;
