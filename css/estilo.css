@@ -1051,5 +1051,9 @@ position: absolute
 }
 .idioma .new .btn
 {
+    padding: 12px 30px!important;
+}
+.idioma .new .input
+{
     padding: 12px 30px;
 }
