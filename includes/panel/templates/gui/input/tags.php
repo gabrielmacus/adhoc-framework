@@ -17,13 +17,24 @@
             {
                 scope.post  = <?php echo json_encode($post)?>;
             }
-            tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            if(typeof  scope.post.<?php echo $model?> ==='string')
+            {
+                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            }
+            else
+            {
+                tags = angular.copy(scope.post.<?php echo $model?>);
+
+            }
 
             setTimeout(function () {
                 scope.$apply();
             })
             <?php
             }?>
+
 
 
 
