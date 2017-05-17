@@ -24,8 +24,8 @@ try{
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
 
 
-    $site="configuracion";
-    $site.="/regional";
+
+   $site="configuracion/regional";
     $action="list";
 
 
