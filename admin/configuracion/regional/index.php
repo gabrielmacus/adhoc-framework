@@ -19,16 +19,16 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    
-   
-    
-    $idiomas = $GLOBALS["idiomaDAO"]->selectIdiomas();
-
     $i =new Idioma();
     $i->setShort("ES");
     $i->setNombre("Español");
 
-    $idiomas->insertIdioma($i);
+    $GLOBALS["idiomaDAO"]->insertIdioma($i);
+   
+    
+    $idiomas = $GLOBALS["idiomaDAO"]->selectIdiomas();
+
+
    $site="configuracion/regional";
     $action="list";
 
