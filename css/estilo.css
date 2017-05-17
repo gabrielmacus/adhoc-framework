@@ -1052,8 +1052,9 @@ position: absolute
 .idioma .new .btn
 {
     padding: 12px 30px!important;
+    float: left;
 }
 .idioma .new .short,.idioma .new .name
 {
-    padding: 12px 30px;
+    padding: 12px 30px;    float: left;
 }

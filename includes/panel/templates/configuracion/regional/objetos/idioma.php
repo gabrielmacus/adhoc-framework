@@ -24,7 +24,7 @@
            <input placeholder="Nombre..."  type="text" data-ng-model="idioma.name">
        </div>
        <div class="short">
-           <input placeholder="Abreviatura..." class="short" type="text" data-ng-model="idioma.short">
+           <input placeholder="Abreviatura..." type="text" data-ng-model="idioma.short">
        </div>
       
    </form>
