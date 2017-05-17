@@ -36,7 +36,7 @@ class IdiomaDAO implements IIdioma
         $this->insertSql="INSERT INTO idiomas (idioma_id,idioma_short,idioma_name,idioma_predeterminado) 
           VALUES  (:idioma_id,:idioma_short,:idioma_name,:idioma_predeterminado) ";
 
-        $this->updateSql="UPDATE FROM idiomas SET idioma_id=:idioma_id,idioma_short=:idioma_short,
+        $this->updateSql="UPDATE  idiomas SET idioma_id=:idioma_id,idioma_short=:idioma_short,
 idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idioma_id=:idioma_id";
     }
 
