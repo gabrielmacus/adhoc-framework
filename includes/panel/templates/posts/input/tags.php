@@ -5,9 +5,9 @@
     <script>
         angular.element(function () {
 
-            console.log("TAGS");
             var tags=[];
 
+            console.log(<?php echo json_decode($post)?>);
             <?php if($post)
             {
                 ?>
