@@ -93,11 +93,7 @@
 
 
                     },
-                    error:function (e) {
-
-                        toastr.error('', 'Hubo un error al procesar lo solicitado. Inténtelo mas tarde');
-
-                    }
+                    error:error
                 }
             );
 

@@ -18,7 +18,11 @@
 <body data-ng-cloak class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 
 <script>
+    function (e) {
 
+        toastr.error('', 'Hubo un error al procesar lo solicitado. Inténtelo mas tarde');
+
+    }
 
 
     var app = angular.module('panel', ['ngAnimate']);

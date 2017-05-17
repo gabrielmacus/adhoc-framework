@@ -1,6 +1,32 @@
 <script>
     angular.element(function () {
 
+        scope.idioma={};
+        function saveIdioma() {
+
+            var url="<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/regional/data.php?act=save";
+            if(scope.idioma.id)
+            {
+                url+="&id="+scope.idioma.id;
+            }
+
+            $.ajax
+            (
+                {
+                    method:"post",
+                    url:url,
+                    data:angular.copy(scope.idioma),
+                    dataType:"json",
+                    success:function (e) {
+
+                        toastr.success('', 'Idioma agregado con éxito');
+
+                    },
+                    error:error
+                }
+            );
+        }
+
         scope.idiomas  = <?Php echo json_encode($idiomas) ?>;
 
         scope.$apply();
@@ -18,6 +44,8 @@
                     $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
                 ],
                 callback: function (data) {
+
+                    saveIdioma();
 
                     //submit
                 }
