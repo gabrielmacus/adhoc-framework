@@ -7,7 +7,7 @@
  * Time: 23:15
  */
 
-require_once ("IIdioma.php.php");
+require_once ("IIdioma.php");
 require_once ("Idioma.php");
 
 
