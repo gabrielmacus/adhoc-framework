@@ -12,10 +12,29 @@ class Idioma implements JsonSerializable
     protected $id;
     protected $nombre;
     protected $short;
+    protected $predeterminado=false;
 
     function __construct()
     {
     }
+
+    /**
+     * @return boolean
+     */
+    public function isPredeterminado()
+    {
+        return $this->predeterminado;
+    }
+
+    /**
+     * @param boolean $predeterminado
+     */
+    public function setPredeterminado($predeterminado)
+    {
+        $this->predeterminado = $predeterminado;
+    }
+
+    
 
     /**
      * @return mixed

@@ -17,7 +17,6 @@ class IdiomaDAO implements IIdioma
     protected $dataSource;
     protected $tableName;
     protected $idiomas=array();
-    protected $predeterminado=false;
     private $insertSql;
     private $updateSql;
     
@@ -41,22 +40,7 @@ class IdiomaDAO implements IIdioma
 idioma_name=:idioma_name,idioma_predeterminado=:idioma_predeterminado  WHERE idioma_id=:idioma_id";
     }
 
-    /**
-     * @return boolean
-     */
-    public function isPredeterminado()
-    {
-        return $this->predeterminado;
-    }
-
-    /**
-     * @param boolean $predeterminado
-     */
-    public function setPredeterminado($predeterminado)
-    {
-        $this->predeterminado = $predeterminado;
-    }
-
+    
      
     public function insertIdioma(Idioma $i)
     {
