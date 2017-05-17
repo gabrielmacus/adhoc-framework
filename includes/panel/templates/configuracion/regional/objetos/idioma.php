@@ -35,9 +35,12 @@
            <div class="short  form-block  m6 l6 padding">
                <input placeholder="Abreviatura..." type="text" data-ng-model="idioma.short">
            </div>
+
+           <button  style="width: 100%;" class="btn s12 m3 l2">Nuevo</button>
+
        </div>
 
-           
+
       
    </form>
 
