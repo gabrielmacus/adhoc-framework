@@ -102,39 +102,39 @@
         $label="Nombre";
         $model="nombre";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Directorio";
         $model="ruta";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Host";
         $model="host";
         $class=["s12","m12","l12"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Usuario";
         $model="usuario";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Contraseña";
         $model="pass";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/password.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/password.php";
 
 
         $label="Url";
         $model="url";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
 
         $label="Puerto";
         $model="puerto";
         $class=["s12","m6","l6"];
-        include DIR_PATH."/includes/panel/templates/posts/input/number.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/number.php";
 
 
         $label="Resoluciones (solo imágenes)";
@@ -148,7 +148,7 @@
 
         $action="save()";
         $name="Guardar cambios";
-        include DIR_PATH."/includes/panel/templates/posts/input/submit.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/submit.php";
 
 
 
