@@ -32,7 +32,7 @@
                         scope.idioma.id=e;
                         scope.idiomas.push(angular.copy(scope.idioma));
                         scope.$apply();
-                        toastr.success('', 'Idioma agregado con éxito');
+                        toastr.success('', 'Idioma guardado con éxito');
 
                     },
                     error:error
