@@ -16,6 +16,8 @@ require_once "schema/Comentario/ComentarioDAO.php";
 require_once "schema/Post/PostDAO.php";
 require_once "schema/Documento/DocumentoDAO.php";
 require_once "schema/Idioma/IdiomaDAO.php";
+
+
 /** ImageResize **/
 require_once "ImageResize.php";
 /*** **/
