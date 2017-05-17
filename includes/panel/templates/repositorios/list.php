@@ -143,7 +143,7 @@
         $model="versiones";
         $class=["s12","m12","l12"];
         $max="7";
-        include DIR_PATH."/includes/panel/templates/posts/input/tags.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/tags.php";
 
 
         $action="save()";
