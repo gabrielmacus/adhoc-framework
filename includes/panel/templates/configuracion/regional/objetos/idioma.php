@@ -45,6 +45,7 @@
                 ],
                 callback: function (data) {
 
+                    scope.$apply();
                     saveIdioma();
 
                     //submit
