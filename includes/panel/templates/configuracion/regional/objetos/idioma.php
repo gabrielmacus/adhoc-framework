@@ -18,6 +18,9 @@
             </a>
         </li>
     </ul>
-    <span class="new btn">Nuevo</span>
+   <form class="new" data-ng-submit="saveLanguage()">
+       <button type="submit" class="btn">Nuevo</button>
+       <input type="text" data-ng-model="idioma.nombre">
+   </form>
 
 </div>
