@@ -10,10 +10,11 @@
     {
       "secciones":{"text":"Regional","href":"/admin/regional"}
       }},
+    "repositorios":{"text":"Repositorios","href":"/admin/repositorios"},
+
     "salir":{"text":"Salir","href":"/admin/logout.php"}
 
-    },
-  "repositorios":{"text":"Repositorios","href":"/admin/repositorios"}
+    }
   ,
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",
