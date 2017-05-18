@@ -5,7 +5,63 @@
         scope.secciones=<?php    echo json_encode($secciones)?>;
         scope.seccion={};
 scope.$apply();
+scope.deleteSeccion=function (s) {
 
+    vex.dialog.open({
+        message: '¿Eliminar la seccion #'+s.id+''+s.nombre+'?',
+        input: [
+            '<input name="name" type="text" required />',
+        ].join(''),
+        buttons: [
+            $.extend({}, vex.dialog.buttons.YES, { text: 'Si' }),
+            $.extend({}, vex.dialog.buttons.NO, { text: 'No' })
+        ],
+        callback: function (data) {
+            if (!data) {
+
+            } else {
+
+                scope.seccion.nombre=data.name;
+                var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=delete";
+                if(scope.seccion.id)
+                {
+                    url+="&id="+scope.seccion.id;
+                }
+                $.ajax
+                (
+                    {
+                        method:"post",
+                        url:url,
+                        data:angular.copy(scope.seccion),
+                        dataType:"json",
+                        success:function (e) {
+
+                            $.ajax
+                            (
+                                {
+                                    method: "get",
+                                    url: "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
+                                    dataType: "json",
+                                    success: function (e) {
+                                        scope.secciones = e;
+                                        scope.$apply();
+                                        toastr.success('', 'Seccion guardada con éxito');
+                                    }
+                                }
+                            );
+
+
+                        },
+                        error:error
+                    }
+                );
+
+            }
+        }
+    })
+
+
+}
 scope.addSubseccion=function (tipo) {
 
     scope.seccion.tipo=tipo;
