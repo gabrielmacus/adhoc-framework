@@ -128,6 +128,7 @@ function loadSecciones() {
                 }
             });
 
+            scope.cantPosts=postsInside;
 
 
             if(postsInside)
