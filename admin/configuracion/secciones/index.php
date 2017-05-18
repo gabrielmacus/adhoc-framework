@@ -6,7 +6,8 @@
  * Time: 1:07
  */
 
-include "../../includes/autoload.php";
+
+include "../../../includes/autoload.php";
 
 include_once DIR_PATH."/extras/api/check-login.php";
 
@@ -22,7 +23,7 @@ try{
 
 
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
-    $site="secciones";
+    $site="configuracion/secciones";
     $action="list";
 
 
