@@ -122,8 +122,8 @@ scope.addSubseccion=function (tipo) {
 </script>
 
 <div class="body">
-    <button class="btn">Nueva sección</button>
-    <br>
+    <button class="btn" style="margin-bottom: 10px">Nueva sección</button>
+
     <ul class="secciones">
         <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
     </ul>
