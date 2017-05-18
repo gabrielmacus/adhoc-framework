@@ -123,11 +123,17 @@ class SeccionDAO implements ISeccion
         {
             if(is_numeric($tipo))
             {
-                $sql = "SELECT count(*), s.* FROM posts p LEFT JOIN secciones s ON seccion_id = post_seccion AND (seccion_tipo={$tipo} OR seccion_id={$tipo}) GROUP BY post_seccion";
+                $sql = "SELECT s . * , COUNT( p.post_seccion ) AS posts
+FROM secciones s
+LEFT JOIN posts p ON p.post_seccion = s.seccion_id WHERE s.seccion_tipo={$tipo} OR s.seccion_id={$tipo}
+GROUP BY s.seccion_id";
             }
             else
             {
-                $sql = "SELECT count(*), s.* FROM posts p RIGHT JOIN secciones s ON seccion_id = post_seccion GROUP BY post_seccion";
+                $sql = "SELECT s . * , COUNT( p.post_seccion ) AS posts
+FROM secciones s
+LEFT JOIN posts p ON p.post_seccion = s.seccion_id
+GROUP BY s.seccion_id";
             }
 
         }
