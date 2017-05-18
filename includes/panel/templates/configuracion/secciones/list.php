@@ -46,14 +46,13 @@ scope.addSubseccion=function (tipo) {
                                         url: "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
                                         dataType: "json",
                                         success: function (e) {
-
-                                            console.log(e);
                                             scope.secciones = e;
+                                            scope.$apply();
+                                            toastr.success('', 'Seccion guardada con éxito');
                                         }
                                     }
                                 );
 
-                            toastr.success('', 'Seccion guardada con éxito');
 
                         },
                         error:error
