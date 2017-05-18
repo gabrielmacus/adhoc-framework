@@ -128,7 +128,7 @@ function loadSecciones() {
                 }
             });
 
-            scope.cantPosts=postsInside;
+         s=postsInside;
 
 
             /*
