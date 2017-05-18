@@ -22,7 +22,7 @@ try{
 
 
 
-    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(false,true) ;
+    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(false,false) ;
 var_dump($secciones);
     $site="configuracion/secciones";
     $action="list";
