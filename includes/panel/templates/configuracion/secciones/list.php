@@ -118,7 +118,7 @@ scope.addSubseccion=function (tipo) {
 
         </li>
     </ul>
-    <h3 data-ng-show="secciones.length==0">D</h3>
+    <h3 data-ng-show="secciones.length>0">D</h3>
 </script>
 
 <div class="body">
