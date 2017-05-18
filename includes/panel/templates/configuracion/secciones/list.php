@@ -118,7 +118,7 @@ scope.addSubseccion=function (tipo) {
 
         </li>
     </ul>
-    <h3 data-ng-show="secciones.length>0">D</h3>
+
 </script>
 
 <div class="body">
@@ -126,5 +126,5 @@ scope.addSubseccion=function (tipo) {
     <ul class="secciones">
         <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
     </ul>
-
+    <h3 data-ng-show="secciones.length>0">D</h3>
 </div>
