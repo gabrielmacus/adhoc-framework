@@ -5,6 +5,9 @@
         scope.secciones=<?php    echo json_encode($secciones)?>;
         scope.seccion={};
 scope.$apply();
+        scope.checkSeccionesEmpty=function () {
+            alert("a");
+        }
 scope.deleteSeccion=function (s) {
 
     vex.dialog.open({
@@ -118,7 +121,7 @@ scope.addSubseccion=function (tipo) {
 
         </li>
     </ul>
-    <h3 data-ng-if="secciones.length==0">D</h3>
+    <h3 data-ng-if="checkSeccionesEmpty()">D</h3>
 </script>
 
 <div class="body">
