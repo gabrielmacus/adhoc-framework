@@ -16,8 +16,8 @@ scope.addSubseccion=function (tipo) {
             '<input name="name" type="text" required />',
         ].join(''),
         buttons: [
-            $.extend({}, vex.dialog.buttons.YES, { text: 'Cancelar' }),
-            $.extend({}, vex.dialog.buttons.NO, { text: 'Aceptar' })
+            $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
+            $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
         ],
         callback: function (data) {
             if (!data) {
