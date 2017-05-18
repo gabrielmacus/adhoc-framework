@@ -131,6 +131,9 @@ function loadSecciones() {
                 s.cantPosts=postsInside;
                 console.log("Posts inside:" +postsInside);
             }
+            else {
+                console.log("No posts inside");
+            }
 
 
 
