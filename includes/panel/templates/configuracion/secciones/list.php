@@ -118,18 +118,22 @@ function loadSecciones() {
         scope.checkPostsInside=function (s) {
 
 
-            var subsecciones = s.secciones;
-            var postsInside=0;
+            if(!s.cantPosts)
+            {
+                var subsecciones = s.secciones;
+                var postsInside=0;
 
-            $.each(subsecciones,function (k,v) {
-                if(v.cantPosts)
-                {
-                    postsInside+=parseInt(v.cantPosts);
-                }
-            });
+                $.each(subsecciones,function (k,v) {
+                    if(v.cantPosts)
+                    {
+                        postsInside+=parseInt(v.cantPosts);
+                    }
+                });
 
-            s.cantPosts=postsInside;
+                s.cantPosts=postsInside;
 
+
+            }
 
 
             /*
