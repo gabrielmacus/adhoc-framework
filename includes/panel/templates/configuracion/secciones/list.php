@@ -134,7 +134,7 @@ function loadSecciones() {
             }
             else {
                 console.log("No posts inside");
-                return true;
+                return false;
             }
 
 
