@@ -120,6 +120,8 @@ function loadSecciones() {
 
             var subsecciones = s.secciones;
             var postsInside=s.postsInside;
+            if(!postsInside)
+            {postsInside=0;}
             $.each(subsecciones,function (k,v) {
                 if(v.cantPosts)
                 {
