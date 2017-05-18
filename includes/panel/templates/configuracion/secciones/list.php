@@ -78,6 +78,7 @@ scope.deleteSeccion=function (s) {
                         success:function (e) {
 
                             toastr.success('', 'Seccion eliminada');
+                            loadSecciones();
 
                         },
                         error:error
