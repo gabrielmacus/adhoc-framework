@@ -3,6 +3,7 @@
     angular.element(function () {
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
+
         scope.seccion={};
 scope.addSeccion=function () {
 
@@ -124,7 +125,7 @@ function loadSecciones() {
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-    <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+    <i data-ng-click="deleteSeccion(seccion)" data-posts="{{seccion.cantPosts}}" data-ng-hide="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
 
