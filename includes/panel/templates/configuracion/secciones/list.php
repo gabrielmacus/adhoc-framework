@@ -167,9 +167,9 @@ function loadSecciones() {
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
     <i data-ng-click="deleteSeccion(seccion)"  data-ng-init="checkPostsInside(seccion)" data-ng-hide="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-   <span>{{seccion.cantPosts}} elemento/s</span>
-    <ul ng-if="seccion.secciones">
-        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
+   <span data-ng-if="seccion.cantPosts">{{seccion.cantPosts}} elemento/s</span>
+    <ul data-ng-if="seccion.secciones">
+        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" data-ng-include="'categoryTree'">
 
         </li>
     </ul>
@@ -180,7 +180,7 @@ function loadSecciones() {
     <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
 
     <ul class="secciones">
-        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
+        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
     </ul>
     <h3 class="no-content" data-ng-if="secciones.length==0">No hay secciones para mostrar</h3>
 </div>
