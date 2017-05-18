@@ -1,10 +1,10 @@
-<h3>asd</h3>
+
 <script>
     angular.element(function () {
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
         scope.seccion={};
-scope.$apply();
+
         scope.checkSeccionesEmpty=function () {
             alert("a");
         }
@@ -43,8 +43,8 @@ scope.deleteSeccion=function (s) {
         }
     })
 
-
-}
+    scope.$apply();
+}});
 scope.addSubseccion=function (tipo) {
 
     scope.seccion.tipo=tipo;
