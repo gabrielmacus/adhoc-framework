@@ -67,7 +67,7 @@ scope.deleteSeccion=function (s) {
             } else {
 
                 scope.seccion.nombre=data.name;
-                var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=delete&id="+scope.seccion.id;;
+                var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=delete&id="+s.id;;
 
                 $.ajax
                 (
