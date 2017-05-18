@@ -43,6 +43,14 @@ try{
 
             break;
 
+        case "list":
+
+            $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones() ;
+
+            echo json_encode($secciones);
+
+            break;
+
     }
 
 
