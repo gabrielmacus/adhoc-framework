@@ -121,7 +121,7 @@ scope.addSubseccion=function (tipo) {
 
         </li>
     </ul>
-    <h3 data-ng-if="checkSeccionesEmpty()">D</h3>
+    <h3 data-ng-show="checkSeccionesEmpty()">D</h3>
 </script>
 
 <div class="body">
