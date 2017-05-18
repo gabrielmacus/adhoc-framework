@@ -1068,3 +1068,8 @@ position: absolute
     width: 100%;
     display: none;
 }
+.no-content
+{
+    background-color: rgba(191, 195, 189, 1);
+    padding: 20px;
+}
