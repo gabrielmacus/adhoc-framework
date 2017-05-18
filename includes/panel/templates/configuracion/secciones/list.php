@@ -131,6 +131,7 @@ function loadSecciones() {
             scope.cantPosts=postsInside;
 
 
+            /*
             if(postsInside)
             {
                 return true;
@@ -139,7 +140,7 @@ function loadSecciones() {
             {
                 return false;
 
-            }
+            }*/
 
         }
         scope.$apply();
@@ -152,7 +153,7 @@ function loadSecciones() {
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-    <i data-ng-click="deleteSeccion(seccion)"  data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+    <i data-ng-click="deleteSeccion(seccion)"  data-ng-hide="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
 
