@@ -38,10 +38,10 @@ scope.addSubseccion=function (tipo) {
                         data:angular.copy(scope.seccion),
                         dataType:"json",
                         success:function (e) {
-                            if(!scope.idioma.id)
+                            if(!scope.seccion.id)
                             {
-                                scope.idioma.id=e;
-                                scope.idiomas.push(angular.copy(scope.idioma));
+                                scope.seccion.id=e;
+                                scope.secciones.push(angular.copy(scope.seccion));
                                 scope.$apply();
                             }
 
