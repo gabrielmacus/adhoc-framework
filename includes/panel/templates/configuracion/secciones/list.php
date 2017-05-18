@@ -129,6 +129,7 @@ function loadSecciones() {
 
             s.cantPosts=postsInside;
 
+            console.log(s.cantPosts);
             if(s.cantPosts>0)
             {
                 return true;
