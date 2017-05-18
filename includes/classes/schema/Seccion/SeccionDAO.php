@@ -147,6 +147,11 @@ GROUP BY s.seccion_id";
             $s->setId($data["seccion_id"]);
             $s->setNombre($data["seccion_nombre"]);
             $s->setTipo($data["seccion_tipo"]);
+            if($data["posts"])
+            {
+                $s->setCantPosts($data["posts"]);
+            }
+           
 
 
             $this->arrangeSeccionesTree($s,$this->secciones);

@@ -12,6 +12,7 @@ class Seccion implements JsonSerializable
     protected $id;
     protected $nombre;
     protected  $tipo=0;
+    protected  $cantPosts;
     protected $secciones=array();
     function __construct()
     {
@@ -82,6 +83,23 @@ class Seccion implements JsonSerializable
         $this->tipo = $tipo;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCantPosts()
+    {
+        return $this->cantPosts;
+    }
+
+    /**
+     * @param mixed $cantPosts
+     */
+    public function setCantPosts($cantPosts)
+    {
+        $this->cantPosts = $cantPosts;
+    }
+
+
 
     function jsonSerialize()
     {
@@ -89,7 +107,8 @@ class Seccion implements JsonSerializable
             "id"=>$this->getId(),
             "nombre"=>$this->getNombre(),
             "tipo"=>$this->getTipo(),
-            "secciones"=>$this->getSecciones()
+            "secciones"=>$this->getSecciones(),
+            "cantPosts"=>$this->getCantPosts()
         );
     }
 }
