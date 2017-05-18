@@ -43,8 +43,8 @@ scope.deleteSeccion=function (s) {
         }
     })
 
-    scope.$apply();
-}});
+
+}
 scope.addSubseccion=function (tipo) {
 
     scope.seccion.tipo=tipo;
@@ -105,7 +105,7 @@ scope.addSubseccion=function (tipo) {
 }
 
 
-
+        scope.$apply();
     });
 </script>
 
