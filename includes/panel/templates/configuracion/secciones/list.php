@@ -10,8 +10,8 @@ scope.deleteSeccion=function (s) {
     vex.dialog.open({
         message: '¿Eliminar la seccion #'+s.id+' '+s.nombre+'?',
         buttons: [
-            $.extend({}, vex.dialog.buttons.YES, { text: 'Si' }),
-            $.extend({}, vex.dialog.buttons.NO, { text: 'No' })
+            $.extend({}, vex.dialog.buttons.YES, { text: 'Cancelar' }),
+            $.extend({}, vex.dialog.buttons.NO, { text: 'Ok' })
         ],
         callback: function (data) {
             if (!data) {
