@@ -128,7 +128,7 @@ function loadSecciones() {
                 }
             });
 
-         s=postsInside;
+            s.cantPosts=postsInside;
 
 
             /*
