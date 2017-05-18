@@ -116,19 +116,27 @@ function loadSecciones() {
     );
 }
         scope.checkPostsInside=function (s) {
+            var postsInside=0;
+            function iterateSecciones(secciones) {
 
-
-            if(!s.cantPosts)
-            {
-                var subsecciones = s.secciones;
-                var postsInside=0;
-
-                $.each(subsecciones,function (k,v) {
+                $.each(secciones,function (k,v) {
                     if(v.cantPosts)
                     {
                         postsInside+=parseInt(v.cantPosts);
                     }
+                    if(v.secciones)
+                    {
+                        iterateSecciones(v.secciones);
+                    }
                 });
+            }
+
+
+
+            if(!s.cantPosts)
+            {
+                
+                iterateSecciones(s.secciones);
 
                 s.cantPosts=postsInside;
 
