@@ -3,23 +3,62 @@
     angular.element(function () {
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
-console.log(scope.secciones);
+        scope.seccion={};
 scope.$apply();
 
-$(document).on("click",".add-seccion",function (e) {
+scope.addSubseccion=function (tipo) {
 
-    var HTML="<ul>";
-    HTML+="<li>";
-    HTML+="<div class='form-block'>";
-    HTML+="<input type='text' style='width: 60%'>";
-    HTML+='<i class="fa fa-check" aria-hidden="true"></i>';
-    HTML+='<i class="fa fa-times" aria-hidden="true"></i>';
-    HTML+="</div>";
-    HTML+="</li>";
-    HTML+="</ul>";
-    $(e.target).closest("li").append(HTML);
+    scope.seccion.tipo=tipo;
 
-});
+    vex.dialog.open({
+        message: 'Nombre de la seccion',
+        input: [
+            '<input name="name" type="text" required />',
+        ].join(''),
+        buttons: [
+            $.extend({}, vex.dialog.buttons.YES, { text: 'Cancelar' }),
+            $.extend({}, vex.dialog.buttons.NO, { text: 'Aceptar' })
+        ],
+        callback: function (data) {
+            if (!data) {
+
+            } else {
+
+                scope.seccion.nombre=data.name;
+                var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=save";
+                if(scope.seccion.id)
+                {
+                     url+="&id="+scope.seccion.id;
+                }
+                $.ajax
+                (
+                    {
+                        method:"post",
+                        url:url,
+                        data:angular.copy(scope.seccion),
+                        dataType:"json",
+                        success:function (e) {
+                            if(!scope.idioma.id)
+                            {
+                                scope.idioma.id=e;
+                                scope.idiomas.push(angular.copy(scope.idioma));
+                                scope.$apply();
+                            }
+
+                            toastr.success('', 'Idioma guardado con éxito');
+
+                        },
+                        error:error
+                    }
+                );
+
+            }
+        }
+    })
+
+}
+
+
 
     });
 </script>
@@ -29,7 +68,7 @@ $(document).on("click",".add-seccion",function (e) {
 </header>
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
-    <i class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+    <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
     <i class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">

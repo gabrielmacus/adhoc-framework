@@ -7,7 +7,7 @@
 
  */
 
-include "../../../../includes/autoload.php";
+include "../../../includes/autoload.php";
 //include_once DIR_PATH."/extras/api/check-login.php"; TODO agregar usuarios con sus permisos
 
 $htmlTitle=$configuracion->getSiteName();
@@ -23,23 +23,23 @@ try{
         case "save":
 
             $post = new Seccion();
-            $post->setNombre($_POST["name"]);
-            $post->setNombre($_POST["name"]);
-            $post->setPredeterminado($_POST["predeterminado"]);
+            $post->setNombre($_POST["nombre"]);
+            $post->setTipo($_POST["tipo"]);
 
             if ($_POST["id"]) {
 
                 $post->setId($_POST["id"]);
-                echo json_encode($GLOBALS["idiomaDAO"]->updateIdioma($post));
+                echo json_encode($GLOBALS["seccionDAO"]->updateSeccion($post));
             } else {
-                echo json_encode($GLOBALS["idiomaDAO"]->insertIdioma($post));
+                echo json_encode($GLOBALS["idiomaDAO"]->insertSeccion($post));
 
             }
 
             break;
 
         case "delete":
-            echo json_encode($GLOBALS["idiomaDAO"]->deleteIdiomaById($_GET["id"]));
+
+            echo json_encode($GLOBALS["idiomaDAO"]->deleteSeccionById($_GET["id"]));
 
             break;
 
