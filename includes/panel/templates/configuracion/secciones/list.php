@@ -126,5 +126,5 @@ scope.addSubseccion=function (tipo) {
     <ul class="secciones">
         <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
     </ul>
-    <h3 class="" data-ng-if="secciones.length==0">No hay secciones para mostrar</h3>
+    <h3 class="no-content" data-ng-if="secciones.length==0">No hay secciones para mostrar</h3>
 </div>
