@@ -31,7 +31,7 @@ try{
                 $post->setId($_POST["id"]);
                 echo json_encode($GLOBALS["seccionDAO"]->updateSeccion($post));
             } else {
-                echo json_encode($GLOBALS["idiomaDAO"]->insertSeccion($post));
+                echo json_encode($GLOBALS["seccionDAO"]->insertSeccion($post));
 
             }
 
@@ -39,7 +39,7 @@ try{
 
         case "delete":
 
-            echo json_encode($GLOBALS["idiomaDAO"]->deleteSeccionById($_GET["id"]));
+            echo json_encode($GLOBALS["seccionDAO"]->deleteSeccionById($_GET["id"]));
 
             break;
 
