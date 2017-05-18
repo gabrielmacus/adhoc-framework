@@ -115,6 +115,9 @@ function loadSecciones() {
         }
     );
 }
+        scope.checkPostsInside=function (s) {
+            console.log(s);
+        }
         scope.$apply();
     });
 </script>
@@ -125,9 +128,9 @@ function loadSecciones() {
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-    <i data-ng-click="deleteSeccion(seccion)" data-posts="{{seccion.cantPosts}}" data-ng-hide="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+    <i data-ng-click="deleteSeccion(seccion)"  data-ng-hide="checkPostsInside(seccion)" class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
-        <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
+        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
 
         </li>
     </ul>
@@ -138,7 +141,7 @@ function loadSecciones() {
     <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
 
     <ul class="secciones">
-        <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
+        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
     </ul>
     <h3 class="no-content" data-ng-if="secciones.length==0">No hay secciones para mostrar</h3>
 </div>
