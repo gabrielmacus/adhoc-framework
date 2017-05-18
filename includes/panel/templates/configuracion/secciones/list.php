@@ -1,4 +1,6 @@
-
+<?php
+var_dump($secciones);
+?>
 <script>
     angular.element(function () {
 
