@@ -101,17 +101,36 @@ class SeccionDAO implements ISeccion
 
     }
 
-    public function selectSeccionesSubsecciones($tipo=false)
-    {        $this->secciones=array();
+    public function selectSeccionesSubsecciones($tipo=false,$cantPosts=false)
+    {
+        $this->secciones=array();
 
-    if(is_numeric($tipo))
-    {
-        $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo} OR seccion_id={$tipo}";
-    }
-    else
-    {
-        $sql = "SELECT * FROM {$this->tableName}";
-    }
+
+        if(!$cantPosts)
+        {
+            if(is_numeric($tipo))
+            {
+                $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo} OR seccion_id={$tipo}";
+            }
+            else
+            {
+                $sql = "SELECT * FROM {$this->tableName}";
+            }
+
+
+        }
+        else
+        {
+            if(is_numeric($tipo))
+            {
+                $sql = "SELECT count(*), s.* FROM posts p LEFT JOIN secciones s ON seccion_id = post_seccion AND (seccion_tipo={$tipo} OR seccion_id={$tipo}) GROUP BY post_seccion";
+            }
+            else
+            {
+                $sql = "SELECT count(*), s.* FROM posts p LEFT JOIN secciones s ON seccion_id = post_seccion GROUP BY post_seccion";
+            }
+
+        }
 
 
 

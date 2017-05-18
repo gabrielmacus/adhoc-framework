@@ -2,6 +2,9 @@
 
     angular.element(function () {
 
+        $(document).on("click","#<?php echo $id?>",function (e) {
+        $(this).val("");
+        });
         $(document).on("change","#<?php echo $id?>",function (e) {
 
 
