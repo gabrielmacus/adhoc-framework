@@ -42,19 +42,18 @@ scope.addSubseccion=function (tipo) {
                                 $.ajax
                                 (
                                     {
-                                        method:"get",
-                                        url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
-                                        dataType:"json",
-                                        success:function (e) {
+                                        method: "get",
+                                        url: "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
+                                        dataType: "json",
+                                        success: function (e) {
 
                                             console.log(e);
                                             scope.secciones = e;
                                         }
-                                )
+                                    }
+                                );
 
-
-
-                            toastr.success('', 'Idioma guardado con éxito');
+                            toastr.success('', 'Seccion guardada con éxito');
 
                         },
                         error:error
