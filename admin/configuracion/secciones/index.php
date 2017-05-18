@@ -23,6 +23,8 @@ try{
 
 
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(false,true) ;
+
+    echo json_encode($secciones);
     $site="configuracion/secciones";
     $action="list";
 
