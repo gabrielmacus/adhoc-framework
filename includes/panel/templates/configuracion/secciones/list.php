@@ -76,7 +76,7 @@ scope.addSubseccion=function (tipo) {
 <script type="text/ng-template" id="categoryTree">
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-    <i data-ng-if="seccion.posts>0" class="fa fa-trash icon" aria-hidden="true"></i>
+    <i data-ng-if="seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
     <ul ng-if="seccion.secciones">
         <li ng-repeat="(key,seccion)  in seccion.secciones" ng-include="'categoryTree'">
 
