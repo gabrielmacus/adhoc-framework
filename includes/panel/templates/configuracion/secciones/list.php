@@ -6,7 +6,7 @@
         scope.seccion={};
 
         scope.checkSeccionesEmpty=function () {
-            alert("a");
+         console.log("AD");
         }
 scope.deleteSeccion=function (s) {
 
