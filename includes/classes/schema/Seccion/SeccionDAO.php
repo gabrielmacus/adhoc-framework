@@ -242,7 +242,9 @@ GROUP BY s.seccion_id";
     public function deleteSeccionById($id)
     {
 
-        $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id OR seccion_tipo=:seccion_id ";
+        $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id ";
+        
+        //TODO: implementar eliminacion recursiva 
 
         
         
