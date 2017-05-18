@@ -116,7 +116,24 @@ function loadSecciones() {
     );
 }
         scope.checkPostsInside=function (s) {
-            console.log(s);
+
+            if(s.cantPosts)
+            {
+                var subsecciones = s.secciones;
+                var postsInside=0;
+                $.each(subsecciones,function (k,v) {
+                    if(v.cantPosts)
+                    {
+                        postsInside+=v.cantPosts;
+                    }
+                });
+
+                s.cantPosts=postsInside;
+                console.log("Posts inside:" +postsInside);
+            }
+
+
+
         }
         scope.$apply();
     });
