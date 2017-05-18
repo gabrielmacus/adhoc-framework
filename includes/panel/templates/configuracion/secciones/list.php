@@ -125,7 +125,7 @@ function loadSecciones() {
             $.each(subsecciones,function (k,v) {
                 if(v.cantPosts)
                 {
-                    postsInside+=v.cantPosts;
+                    postsInside+=parseInt(v.cantPosts);
                 }
             });
 
