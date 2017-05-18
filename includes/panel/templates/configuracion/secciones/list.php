@@ -4,7 +4,55 @@
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
         scope.seccion={};
+scope.addSeccion=function () {
 
+    scope.seccion.tipo=0;
+    addSeccion();
+}
+        function addSeccion() {
+            vex.dialog.open({
+                message: 'Nombre de la seccion',
+                input: [
+                    '<input name="name" type="text" required />',
+                ].join(''),
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
+                ],
+                callback: function (data) {
+                    if (!data) {
+
+                    } else {
+
+                        scope.seccion.nombre=data.name;
+                        var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=save";
+                        if(scope.seccion.id)
+                        {
+                            url+="&id="+scope.seccion.id;
+                        }
+
+                        $.ajax
+                        (
+                            {
+                                method:"post",
+                                url:url,
+                                data:angular.copy(scope.seccion),
+                                dataType:"json",
+                                success:function (e) {
+
+                                    toastr.success('', 'Sección guardada con éxito');
+                                    loadSecciones();
+
+
+                                },
+                                error:error
+                            }
+                        );
+
+                    }
+                }
+            })
+        }
 scope.deleteSeccion=function (s) {
 
     vex.dialog.open({
@@ -45,63 +93,26 @@ scope.deleteSeccion=function (s) {
 scope.addSubseccion=function (tipo) {
 
     scope.seccion.tipo=tipo;
+addSeccion();
 
-    vex.dialog.open({
-        message: 'Nombre de la seccion',
-        input: [
-            '<input name="name" type="text" required />',
-        ].join(''),
-        buttons: [
-            $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
-            $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
-        ],
-        callback: function (data) {
-            if (!data) {
-
-            } else {
-
-                scope.seccion.nombre=data.name;
-                var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=save";
-                if(scope.seccion.id)
-                {
-                     url+="&id="+scope.seccion.id;
-                }
-                $.ajax
-                (
-                    {
-                        method:"post",
-                        url:url,
-                        data:angular.copy(scope.seccion),
-                        dataType:"json",
-                        success:function (e) {
-
-                                $.ajax
-                                (
-                                    {
-                                        method: "get",
-                                        url: "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
-                                        dataType: "json",
-                                        success: function (e) {
-                                            scope.secciones = e;
-                                            scope.$apply();
-                                            toastr.success('', 'Seccion guardada con éxito');
-                                        }
-                                    }
-                                );
-
-
-                        },
-                        error:error
-                    }
-                );
-
-            }
-        }
-    })
 
 }
 
-
+function loadSecciones() {
+    $.ajax
+    (
+        {
+            method: "get",
+            url: "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=list",
+            dataType: "json",
+            success: function (e) {
+                scope.secciones = e;
+                scope.$apply();
+                toastr.info('','Secciones actualizadas');
+            }
+        }
+    );
+}
         scope.$apply();
     });
 </script>
@@ -122,7 +133,7 @@ scope.addSubseccion=function (tipo) {
 </script>
 
 <div class="body">
-    <button class="btn" style="margin-bottom: 10px">Nueva sección</button>
+    <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
 
     <ul class="secciones">
         <li data-ng-repeat="(key,seccion) in secciones"  ng-include="'categoryTree'"></li>
