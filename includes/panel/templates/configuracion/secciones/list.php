@@ -119,9 +119,8 @@ function loadSecciones() {
 
 
             var subsecciones = s.secciones;
-            var postsInside=s.postsInside;
-            if(!postsInside)
-            {postsInside=0;}
+            var postsInside=0;
+
             $.each(subsecciones,function (k,v) {
                 if(v.cantPosts)
                 {
@@ -129,10 +128,9 @@ function loadSecciones() {
                 }
             });
 
-            s.cantPosts=postsInside;
 
-            console.log(s.cantPosts);
-            if(s.cantPosts>0)
+
+            if(postsInside)
             {
                 return true;
             }
