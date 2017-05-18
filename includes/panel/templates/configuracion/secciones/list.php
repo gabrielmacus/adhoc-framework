@@ -1,6 +1,4 @@
-<?php
-var_dump($secciones);
-?>
+
 <script>
     angular.element(function () {
 
@@ -119,27 +117,27 @@ function loadSecciones() {
 }
         scope.checkPostsInside=function (s) {
 
-            if(s.cantPosts)
-            {
-                var subsecciones = s.secciones;
-                var postsInside=0;
-                $.each(subsecciones,function (k,v) {
-                    if(v.cantPosts)
-                    {
-                        postsInside+=v.cantPosts;
-                    }
-                });
 
-                s.cantPosts=postsInside;
-                console.log("Posts inside:" +postsInside);
+            var subsecciones = s.secciones;
+            var postsInside=s.postsInside;
+            $.each(subsecciones,function (k,v) {
+                if(v.cantPosts)
+                {
+                    postsInside+=v.cantPosts;
+                }
+            });
+
+            s.cantPosts=postsInside;
+
+            if(s.cantPosts>0)
+            {
                 return true;
             }
-            else {
-                console.log("No posts inside");
+            else
+            {
                 return false;
+
             }
-
-
 
         }
         scope.$apply();
