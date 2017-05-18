@@ -127,7 +127,7 @@ class SeccionDAO implements ISeccion
             }
             else
             {
-                $sql = "SELECT count(*), s.* FROM posts p LEFT JOIN secciones s ON seccion_id = post_seccion GROUP BY post_seccion";
+                $sql = "SELECT count(*), s.* FROM posts p RIGHT JOIN secciones s ON seccion_id = post_seccion GROUP BY post_seccion";
             }
 
         }
