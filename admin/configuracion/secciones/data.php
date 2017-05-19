@@ -29,7 +29,7 @@ try{
             $post->setNombre($_POST["nombre"]);
             $post->setTipo($_POST["tipo"]);
 
-            var_dump($_POST);
+
             if ($_POST["id"]) {
 
                 $post->setId($_POST["id"]);

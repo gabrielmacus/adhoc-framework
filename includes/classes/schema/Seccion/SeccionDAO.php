@@ -233,6 +233,7 @@ GROUP BY s.seccion_id";
     {
         $this->validate($s);
 
+        var_dump($s);
         $sql = $this->updateSql;
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($s));
