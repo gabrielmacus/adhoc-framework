@@ -1102,8 +1102,21 @@ position: absolute
     background-color: rgba(221, 217, 216, 1);
     padding: 8px;
 }
-.seccion:hover
+.seccion .mask
 {
-    background-color: rgba(59, 61, 57, 1);
-    color: white;
+    float: right;
+    width: 0%;
+    overflow: hidden;
 }
+.seccion:hover .mask
+{
+    width: 25%;
+    background-color: rgba(59, 61, 57, 1);
+
+}.seccion:hover
+ {
+
+     background-color: rgba(59, 61, 57, 1);
+color: w
+ ;
+ }
