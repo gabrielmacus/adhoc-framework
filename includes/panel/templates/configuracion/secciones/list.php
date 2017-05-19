@@ -39,7 +39,7 @@ scope.addSeccion=function () {
                         var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=save";
                         if(scope.s.id)
                         {
-                            url+="&id="+scope.seccion.id;
+                            url+="&id="+scope.s.id;
                         }
 
                         $.ajax
