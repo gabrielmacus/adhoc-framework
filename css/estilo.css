@@ -1102,3 +1102,8 @@ position: absolute
     background-color: rgba(221, 217, 216, 1);
     padding: 8px;
 }
+.seccion:hover
+{
+    background-color: #0f0f10;
+    color: white;
+}
