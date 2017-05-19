@@ -8,7 +8,7 @@
 
         scope.editSeccion=function (s) {
             scope.seccion = s;
-
+            addSeccion();
         }
 scope.addSeccion=function () {
 
