@@ -1073,3 +1073,16 @@ position: absolute
     background-color: rgba(205, 206, 198, 1);
     padding: 20px;
 }
+.info{
+    padding: 15px;
+}
+.info i
+{
+    float: left;
+    font-size: 30px;
+}
+.info p
+
+{
+    float: left;
+}
