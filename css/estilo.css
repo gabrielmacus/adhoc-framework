@@ -1079,10 +1079,12 @@ position: absolute
 .info i
 {
     float: left;
-    font-size: 30px;
+    font-size: 35px;
+    margin-right: 20px;
 }
 .info p
 
 {
     float: left;
+    font-size: 30px;
 }
