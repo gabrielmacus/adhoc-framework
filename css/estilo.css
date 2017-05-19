@@ -1103,6 +1103,10 @@ position: absolute
     padding: 8px;
     position: relative;
 }
+.seccion .content
+{
+    z-index: 3;
+}
 .seccion .mask
 {
     width: 0%;
