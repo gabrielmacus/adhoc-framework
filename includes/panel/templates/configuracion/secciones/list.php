@@ -108,7 +108,8 @@ scope.deleteSeccion=function (s) {
 
 }
 scope.addSubseccion=function (tipo) {
-alert(tipo);
+    scope.s= {};
+    scope.s.tipo=0;
     scope.s.tipo=tipo;
 addSeccion();
 
