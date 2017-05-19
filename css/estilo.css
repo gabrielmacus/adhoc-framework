@@ -1106,6 +1106,7 @@ position: absolute
 .seccion .content
 {
     z-index: 3;
+    float: left;width: 100%;
 }
 .seccion .mask
 {
