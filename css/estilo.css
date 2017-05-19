@@ -1101,12 +1101,14 @@ position: absolute
 {
     background-color: rgba(221, 217, 216, 1);
     padding: 8px;
+    position: relative;
 }
 .seccion .mask
 {
     float: right;
     width: 0%;
     overflow: hidden;
+    position: absolute;
 }
 .seccion:hover .mask
 {
@@ -1116,7 +1118,7 @@ position: absolute
 }.seccion:hover
  {
 
-     background-color: rgba(59, 61, 57, 1);
-color: w
+
+color: white;
  ;
  }
