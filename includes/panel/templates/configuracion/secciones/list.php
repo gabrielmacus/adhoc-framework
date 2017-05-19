@@ -41,7 +41,7 @@ scope.addSeccion=function () {
                         {
                             url+="&id="+scope.seccion.id;
                         }
-
+        
                         $.ajax
                         (
                             {
