@@ -171,7 +171,7 @@ function loadSecciones() {
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
     <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-   
+
     <ul data-ng-if="seccion.secciones">
         <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" data-ng-include="'categoryTree'">
 
@@ -182,7 +182,10 @@ function loadSecciones() {
 
 <div class="body">
     <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
-
+    <div class="info">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <p>Si la sección contiene elementos, no se puede eliminar</p>
+    </div>
     <ul class="secciones">
         <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
     </ul>
