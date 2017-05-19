@@ -21,7 +21,7 @@ scope.addSeccion=function () {
             vex.dialog.open({
                 message: 'Nombre de la seccion',
                 input: [
-                    '<input value="'+value+'" name="name" type="text" required />',
+                    '<input  name="name" type="text" required />',
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
