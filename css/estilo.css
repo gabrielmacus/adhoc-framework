@@ -1116,14 +1116,13 @@ position: absolute
 .seccion:hover .mask
 {
 
-    width: 20%;
+    width: 15%;
     background-color: rgba(59, 61, 57, 1);
 
 }
 .seccion .cant-posts
 {    text-align: center;
     color: white;
-    float: right;
+    float: left;
     padding: 10px;
-    color: rgba(50, 50, 50, 1);
 }
