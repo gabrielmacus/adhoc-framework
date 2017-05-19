@@ -1094,8 +1094,10 @@ position: absolute
     position: relative;
     top: 8px;
     line-height: 27px;
+
 }
 .seccion
 {
     background-color: rgba(221, 217, 216, 1);
+    padding: 8px;
 }
