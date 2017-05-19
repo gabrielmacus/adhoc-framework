@@ -179,10 +179,10 @@ function loadSecciones() {
 
 <div class="body">
     <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
-    <div class="info">
+    <!--<div class="info">
         <i class="fa fa-info-circle" aria-hidden="true"></i>
         <p>Si la sección contiene elementos, no se puede eliminar</p>
-    </div>
+    </div>-->
     <ul class="secciones">
         <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
     </ul>
