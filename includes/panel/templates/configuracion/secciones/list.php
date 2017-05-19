@@ -107,7 +107,7 @@ scope.deleteSeccion=function (s) {
 
 }
 scope.addSubseccion=function (tipo) {
-
+alert(tipo);
     scope.s.tipo=tipo;
 addSeccion();
 
