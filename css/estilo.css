@@ -1115,7 +1115,7 @@ position: absolute
 }
 .seccion:hover .mask
 {
-    width: 100%;
+    width: 10%;
     background-color: rgba(59, 61, 57, 1);
 
 }
