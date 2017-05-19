@@ -1074,7 +1074,10 @@ position: absolute
     padding: 20px;
 }
 .info{
+    background-color: rgba(61, 138, 206, 1);
     padding: 15px;
+    float: left;
+    width: 100%;
 }
 .info i
 {
@@ -1087,4 +1090,6 @@ position: absolute
 {
     float: left;
     font-size: 20px;
+    position: relative;
+    top: 8px;
 }
