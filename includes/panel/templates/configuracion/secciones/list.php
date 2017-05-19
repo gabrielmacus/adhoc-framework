@@ -4,16 +4,16 @@
 
         scope.secciones=<?php    echo json_encode($secciones)?>;
 
-        scope.seccion={};
+        scope.s={};
 
         scope.editSeccion=function (s) {
-            scope.seccion = s;
+            scope.s = s;
 
             addSeccion(s.nombre);
         }
 scope.addSeccion=function () {
 
-    scope.seccion.tipo=0;
+    scope.s.tipo=0;
     addSeccion();
 }
         function addSeccion(value) {
@@ -35,19 +35,19 @@ scope.addSeccion=function () {
 
                     } else {
 
-                        scope.seccion.nombre=data.name;
+                        scope.s.nombre=data.name;
                         var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=save";
-                        if(scope.seccion.id)
+                        if(scope.s.id)
                         {
                             url+="&id="+scope.seccion.id;
                         }
-        
+
                         $.ajax
                         (
                             {
                                 method:"post",
                                 url:url,
-                                data:angular.copy(scope.seccion),
+                                data:angular.copy(scope.s),
                                 dataType:"json",
                                 success:function (e) {
 
@@ -81,7 +81,7 @@ scope.deleteSeccion=function (s) {
 
             } else {
 
-                scope.seccion.nombre=data.name;
+                scope.s.nombre=data.name;
                 var url = "<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/secciones/data.php?act=delete&id="+s.id;;
 
                 $.ajax
@@ -108,7 +108,7 @@ scope.deleteSeccion=function (s) {
 }
 scope.addSubseccion=function (tipo) {
 
-    scope.seccion.tipo=tipo;
+    scope.s.tipo=tipo;
 addSeccion();
 
 
