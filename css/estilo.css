@@ -1104,6 +1104,6 @@ position: absolute
 }
 .seccion:hover
 {
-    background-color: #0f0f10;
+    background-color: rgba(59, 61, 57, 1);
     color: white;
 }

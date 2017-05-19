@@ -165,7 +165,7 @@ function loadSecciones() {
     <h2><?php echo $lang["secciones"]?></h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-    <div class="seccion">
+    <div class="seccion animated">
     <span>{{ seccion.nombre }}</span>
     <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
     <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
