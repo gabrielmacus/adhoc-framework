@@ -8,8 +8,9 @@
 
         scope.editSeccion=function (s) {
             scope.seccion = s;
-            $("[name='name'][data-seccion]").val(s.name);
+
             addSeccion();
+            $("[name='name'][data-seccion]").val(s.name);
         }
 scope.addSeccion=function () {
 
