@@ -1119,3 +1119,10 @@ position: absolute
     background-color: rgba(59, 61, 57, 1);
 
 }
+.seccion .cant-posts
+{
+    float: right;
+    padding: 10px;
+    background-color: #0f0f10;
+    color: white;
+}

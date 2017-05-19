@@ -170,7 +170,8 @@ function loadSecciones() {
             <span>{{ seccion.nombre }}</span>
             <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
             <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i>
+            <i class="fa fa-pencil icon" aria-hidden="true"></i> 
+        <span class="cant-posts">{{seccion.cantPosts}}</span>
             <div class="mask animated"></div>
 
 
