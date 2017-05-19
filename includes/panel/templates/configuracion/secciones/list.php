@@ -13,6 +13,7 @@
         }
 scope.addSeccion=function () {
 
+    scope.s= {};
     scope.s.tipo=0;
     addSeccion();
 }
