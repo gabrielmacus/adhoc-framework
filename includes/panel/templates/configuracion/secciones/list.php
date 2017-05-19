@@ -8,6 +8,7 @@
 
         scope.editSeccion=function (s) {
             scope.seccion = s;
+            $("[name='name'][data-seccion]").val(s.name);
             addSeccion();
         }
 scope.addSeccion=function () {
@@ -19,7 +20,7 @@ scope.addSeccion=function () {
             vex.dialog.open({
                 message: 'Nombre de la seccion',
                 input: [
-                    '<input data-seccion data-ng-model="seccion.nombre" name="name" type="text" required />',
+                    '<input data-seccion name="name" type="text" required />',
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
