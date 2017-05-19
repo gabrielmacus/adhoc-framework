@@ -1109,16 +1109,11 @@ position: absolute
     width: 0%;
     overflow: hidden;
     position: absolute;
+    height: 100%;
 }
 .seccion:hover .mask
 {
-    width: 25%;
+    width: 100%;
     background-color: rgba(59, 61, 57, 1);
 
-}.seccion:hover
- {
-
-
-color: white;
- ;
- }
+}
