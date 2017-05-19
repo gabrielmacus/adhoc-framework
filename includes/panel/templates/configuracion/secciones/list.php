@@ -1,7 +1,4 @@
-<?php
-echo json_encode($secciones);
 
-?>
 <script>
     angular.element(function () {
 
