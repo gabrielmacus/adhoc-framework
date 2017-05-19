@@ -119,6 +119,7 @@ function loadSecciones() {
     );
 }
         scope.checkPostsInside=function (s) {
+            console.log("CHEK");
             var postsInside=0;
             function iterateSecciones(secciones) {
 
