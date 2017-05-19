@@ -58,7 +58,10 @@ scope.addSeccion=function () {
                     }
                 }
             });
-            scope.$apply();
+
+            setTimeout(function () {
+                scope.$apply();
+            });
         }
 scope.deleteSeccion=function (s) {
 
