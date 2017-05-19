@@ -5,6 +5,11 @@
         scope.secciones=<?php    echo json_encode($secciones)?>;
 
         scope.seccion={};
+
+        scope.editSeccion=function (s) {
+            scope.seccion = s;
+
+        }
 scope.addSeccion=function () {
 
     scope.seccion.tipo=0;
@@ -14,7 +19,7 @@ scope.addSeccion=function () {
             vex.dialog.open({
                 message: 'Nombre de la seccion',
                 input: [
-                    '<input name="name" type="text" required />',
+                    '<input data-seccion data-ng-model="seccion.nombre" name="name" type="text" required />',
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Aceptar' }),
@@ -52,7 +57,8 @@ scope.addSeccion=function () {
 
                     }
                 }
-            })
+            });
+            scope.$apply();
         }
 scope.deleteSeccion=function (s) {
 
@@ -170,7 +176,7 @@ function loadSecciones() {
             <span>{{ seccion.nombre }}</span>
             <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
             <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i> 
+            <i data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
            <div class="mask animated">
 
                <span class="cant-posts">{{seccion.cantPosts}}</span>
