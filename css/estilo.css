@@ -103,6 +103,7 @@ padding-left: 0px;
 .secciones .icon
 {
 
+    cursor: pointer;
     padding: 7px;
 }
 header h2
