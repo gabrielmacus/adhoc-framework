@@ -35,7 +35,10 @@
             <?php
             }?>
 
-            console.log(tags);
+if(!tags)
+{
+    tags=[];
+}
           var <?php echo $model?>=  new Taggle('<?php echo $id?>', {
 
                 tags:tags,
