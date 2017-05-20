@@ -19,8 +19,14 @@
             }
 
             if(typeof  scope.post.<?php echo $model?> ==='string')
+            {try
+            {             tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+            }
+            catch (e)
             {
-                tags = JSON.parse(angular.copy(scope.post.<?php echo $model?>));
+
+            }
+
 
             }
             else
