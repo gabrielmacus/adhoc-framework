@@ -50,7 +50,7 @@
 
 
 
-        $label="Hoyos adjuntos";
+        $label="Posts adjuntos";
         $grupo=26;
         $s="posts";
         $tipo=65;
