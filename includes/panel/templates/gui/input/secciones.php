@@ -9,7 +9,7 @@
 
             var seccionId = $(this).val();
 
-            if(seccionId)
+            if($.isNumeric(seccionId))
             {
                 $.ajax(
                     {
