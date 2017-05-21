@@ -9,8 +9,15 @@
 </script>
 <div title="Secciones"  class="form-block <?php echo implode(" ",$class);?>">
     <label>Sección</label>
-    <select  >
+    <select>
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
+
+    <label>Sección</label>
+    <select>
+        <option value="">-</option>
+        <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
+    </select>
+
 </div>
