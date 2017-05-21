@@ -62,7 +62,6 @@ try{
 
          $sidenav=$fileContents["sidenav"];
 
-         $sidenav["data"]["text"]="AA";
             $fileContents["sidenav"]=$sidenav;
 
           file_put_contents($langFile,json_decode($fileContents));
