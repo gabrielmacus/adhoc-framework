@@ -1,9 +1,9 @@
 
 <?php
-$secciones = $_POST["seccionDAO"]->selectSeccionesSubsecciones();
 
 
-var_dump($secciones);
+
+var_dump($subsecciones);
 
 ?>
 <script>
