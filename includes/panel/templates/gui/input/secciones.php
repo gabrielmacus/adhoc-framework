@@ -17,7 +17,7 @@
                     dataType:"json",
                     success:function (e) {
 
-                        scope.secciones_group=e;
+                        scope.secciones_group.push(e);
 
                         scope.$apply();
 
