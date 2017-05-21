@@ -12,7 +12,7 @@
 
             $.ajax(
                 {
-                    url:"<?php echo DIR_PATH."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
+                    url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
                     method:"get",
                     dataType:"json",
                     success:function (e) {
