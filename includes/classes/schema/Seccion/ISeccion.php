@@ -15,7 +15,7 @@ interface ISeccion
     /** Read **/
     public function selectSecciones();
     public function selectSeccionById($id);
-    public function selectSeccionesSubsecciones($tipo,$cantPosts);
+    public function selectSeccionesSubsecciones($cantPosts);
     public function selectSeccionesByTipo($tipo);
     /** **/
 
