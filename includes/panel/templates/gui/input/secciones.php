@@ -5,18 +5,35 @@
 
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
 
-        scope.loadSecciones = function (s) {
+        $(document).on("change",".select-secciones",function () {
 
-            console.log(s);
-        }
+            var seccionId = $(this).val();
+            alert(seccionId);
+
+            $.ajax(
+                {
+                    url:"<?php echo DIR_PATH."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
+                    method:"get",
+                    dataType:"json",
+                    success:function (e) {
+
+                        console.log(e);
+
+                    },
+                    error:error
+                }
+            );
+
+        });
     });
 </script>
 <div title="Secciones"  class="form-block <?php echo implode(" ",$class);?>">
     <label>Sección</label>
-    <select data-ng-model="a" data-ng-change="loadSecciones(s)">
+    <select  class="select-secciones">
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
+
 
 
 </div>

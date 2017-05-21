@@ -25,57 +25,8 @@ try{
     {
         case "save":
 
-/*
-            $previews=array();
-            foreach ($_POST["previews"] as $file)//Para subida de archivos directa
-            {
-
-                $file["tmp"]=DIR_PATH.$file["tmp"];
-
-
-                switch ($file["type"])
-                {
-                    default:
-
-
-                        $a = new Archivo($file["size"],$file["name"],$file["mime"]);
-
-                        $a->setTmpPath($file["tmp"]);
-                        $a->setExtension($file["type"]);
-                        $a->setRepositorio($r);
-                        $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
-                        $previews[]=$res[0];
-                        break;
-
-
-                    case "svg":
-                    case "jpeg":
-                    case "bmp":
-                    case "png":
-                    case "gif":
-                    case "jpg":
-
-
-                        $a = new Imagen($file["size"],$file["name"],$file["mime"]);
-                        $a->setTmpPath($file["tmp"]);
-                        $a->setExtension($file["type"]);
-                        $a->setRepositorio($r);
-
-
-                        $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
-                    $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");
-                        break;
-
-                }
-
-            }
-*/
-
 
       uploadTmp($r) ;
-           // $a =new ArchivoDAO();
-            //$a->selectArchivoById(,false);
-
             $post = new Post();
             $post->setTitulo($_POST["titulo"]);
             $post->setTexto($_POST["texto"]);

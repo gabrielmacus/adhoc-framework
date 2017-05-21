@@ -23,6 +23,8 @@ try{
 
     switch ($_GET["act"])
     {
+
+
         case "save":
 
             $post = new Seccion();
@@ -49,26 +51,34 @@ try{
 
         case "list":
 
-            $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(false,true) ;
+            $t =false;
+            if(is_numeric($_GET["id"]))
+            {
+                $t=$_GET["id"];
+            }
+
+                $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones($t,true) ;
+
+
 
             echo json_encode($secciones);
 
             break;
 
 
-          $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
-
-         $fileContents= json_decode(file_get_contents($langFile),true);
-
-         $sidenav=$fileContents["sidenav"];
-
-            $fileContents["sidenav"]=$sidenav;
-
-          file_put_contents($langFile,json_decode($fileContents));
-
 
     }
 
+/*    $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
+
+    $fileContents= json_decode(file_get_contents($langFile),true);
+
+    $sidenav=$fileContents["sidenav"];
+
+    $fileContents["sidenav"]=$sidenav;
+
+    file_put_contents($langFile,json_decode($fileContents));
+*/
 
 }
 catch (Exception $e)
