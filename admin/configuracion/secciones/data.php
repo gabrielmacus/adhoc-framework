@@ -55,7 +55,14 @@ try{
             if(is_numeric($_GET["id"]))
             {
                 $t=$_GET["id"];
+                $secciones = $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
             }
+            else
+            {
+                $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(true) ;
+            }
+
+
 
 
 
