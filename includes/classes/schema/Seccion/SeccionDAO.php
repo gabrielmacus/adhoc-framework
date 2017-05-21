@@ -83,10 +83,10 @@ class SeccionDAO implements ISeccion
                 }
                 else
                 {
-                    var_dump(2);
+                    var_dump($array);
                     foreach ($array as $seccion)
                     {
-                        var_dump("DATA");
+
                         if(count($seccion->getSecciones())>0)
                         {
                             $this->arrangeSeccionesTree($s,$seccion->getSecciones());
