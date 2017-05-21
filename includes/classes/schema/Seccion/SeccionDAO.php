@@ -67,11 +67,11 @@ class SeccionDAO implements ISeccion
             {
                 $array[$id]=$s;
 
-var_dump("A");
             }
             else
             {
 
+                var_dump("A");
                 if($array[$tipo])
                 {
                     $secciones = $array[$tipo]->getSecciones();
