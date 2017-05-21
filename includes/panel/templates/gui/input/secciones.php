@@ -38,7 +38,7 @@
     </select>
 
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
-        <label>Subsección {{k}}</label>
+        <label>Subsección {{k+1}}</label>
         <select  class="select-secciones">
             <option value="">-</option>
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
