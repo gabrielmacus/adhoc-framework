@@ -140,6 +140,8 @@ GROUP BY s.seccion_id";
         }
         $this->dataSource->runQuery($sql,array(),function($data){
 
+            var_dump($data);
+
             $s=new Seccion();
             $s->setId($data["seccion_id"]);
             $s->setNombre($data["seccion_nombre"]);
