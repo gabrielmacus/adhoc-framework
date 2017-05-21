@@ -121,11 +121,12 @@ class SeccionDAO implements ISeccion
         }
         else
         {
+            /*OR s.seccion_id={$tipo}*/
             if(is_numeric($tipo))
             {
                 $sql = "SELECT s . * , COUNT( p.post_seccion ) AS posts
 FROM secciones s
-LEFT JOIN posts p ON p.post_seccion = s.seccion_id WHERE s.seccion_tipo={$tipo} OR s.seccion_id={$tipo}
+LEFT JOIN posts p ON p.post_seccion = s.seccion_id WHERE s.seccion_tipo={$tipo} 
 GROUP BY s.seccion_id";
             }
             else
