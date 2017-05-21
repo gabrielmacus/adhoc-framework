@@ -18,9 +18,13 @@
                         dataType:"json",
                         success:function (e) {
 
-                            scope.secciones_group.push(e);
+                            if(e.length>0)
+                            {
+                                scope.secciones_group.push(e);
 
-                            scope.$apply();
+                                scope.$apply();
+
+                            }
 
 
                         },
