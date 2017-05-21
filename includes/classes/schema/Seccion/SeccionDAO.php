@@ -67,7 +67,7 @@ class SeccionDAO implements ISeccion
             {
                 $array[$id]=$s;
 
-
+var_dump("A");
             }
             else
             {
@@ -140,7 +140,7 @@ GROUP BY s.seccion_id";
         }
         $this->dataSource->runQuery($sql,array(),function($data){
 
-            var_dump($data);
+
 
             $s=new Seccion();
             $s->setId($data["seccion_id"]);
@@ -150,8 +150,6 @@ GROUP BY s.seccion_id";
             {
                 $s->setCantPosts($data["posts"]);
             }
-           
-
 
             $this->arrangeSeccionesTree($s,$this->secciones);
 
