@@ -13,7 +13,7 @@
 </script>
 <div title="Secciones"  class="form-block <?php echo implode(" ",$class);?>">
     <label>Sección</label>
-    <select data-ng-change="loadSecciones(s)">
+    <select data-ng-model="a" data-ng-change="loadSecciones(s)">
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
