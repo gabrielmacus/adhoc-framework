@@ -20,7 +20,7 @@ try{
 
 
 
-    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(false,true) ;
+    $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(true) ;
 
     $site="configuracion/secciones";
     $action="list";

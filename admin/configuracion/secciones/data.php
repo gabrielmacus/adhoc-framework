@@ -57,8 +57,6 @@ try{
                 $t=$_GET["id"];
             }
 
-                $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones($t,true) ;
-
 
 
             echo json_encode($secciones);

@@ -67,14 +67,13 @@ class SeccionDAO implements ISeccion
             {
                 $array[$id]=$s;
 
+
             }
             else
             {
 
-
                 if($array[$tipo])
                 {
-                    var_dump(1);
                     $secciones = $array[$tipo]->getSecciones();
 
                     $secciones[$id]=$s;
@@ -83,10 +82,8 @@ class SeccionDAO implements ISeccion
                 }
                 else
                 {
-                    var_dump($array);
                     foreach ($array as $seccion)
                     {
-
                         if(count($seccion->getSecciones())>0)
                         {
                             $this->arrangeSeccionesTree($s,$seccion->getSecciones());
@@ -104,7 +101,7 @@ class SeccionDAO implements ISeccion
 
     }
 
-    public function selectSeccionesSubsecciones($tipo=false,$cantPosts=false)
+    public function selectSeccionesSubsecciones($cantPosts=false)
     {
         $this->secciones=array();
 
@@ -124,26 +121,18 @@ class SeccionDAO implements ISeccion
         }
         else
         {
-            /*OR s.seccion_id={$tipo}*/
-            if(is_numeric($tipo))
-            {
-                $sql = "SELECT s . * , COUNT( p.post_seccion ) AS posts
-FROM secciones s
-LEFT JOIN posts p ON p.post_seccion = s.seccion_id WHERE s.seccion_tipo={$tipo} 
-GROUP BY s.seccion_id";
-            }
-            else
-            {
                 $sql = "SELECT s . * , COUNT( p.post_seccion ) AS posts
 FROM secciones s
 LEFT JOIN posts p ON p.post_seccion = s.seccion_id
 GROUP BY s.seccion_id";
-            }
+
 
         }
+
+
+
+
         $this->dataSource->runQuery($sql,array(),function($data){
-
-
 
             $s=new Seccion();
             $s->setId($data["seccion_id"]);
@@ -153,6 +142,8 @@ GROUP BY s.seccion_id";
             {
                 $s->setCantPosts($data["posts"]);
             }
+
+
 
             $this->arrangeSeccionesTree($s,$this->secciones);
 
