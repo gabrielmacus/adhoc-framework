@@ -3,7 +3,7 @@
     angular.element(function () {
 
 
-        scope.secciones = <?php  echo  json_decode($subsecciones);?>;
+        scope.secciones = <?php  echo  json_encode($subsecciones);?>;
 
     });
 </script>
