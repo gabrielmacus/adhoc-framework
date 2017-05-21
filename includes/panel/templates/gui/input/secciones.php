@@ -8,24 +8,28 @@
         $(document).on("change",".select-secciones",function () {
 
             var seccionId = $(this).val();
-            alert(seccionId);
 
-            $.ajax(
-                {
-                    url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
-                    method:"get",
-                    dataType:"json",
-                    success:function (e) {
+            if(seccionId)
+            {
+                $.ajax(
+                    {
+                        url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
+                        method:"get",
+                        dataType:"json",
+                        success:function (e) {
 
-                        scope.secciones_group.push(e);
+                            scope.secciones_group.push(e);
 
-                        scope.$apply();
+                            scope.$apply();
 
 
-                    },
-                    error:error
-                }
-            );
+                        },
+                        error:error
+                    }
+                );
+            }
+
+
 
         });
     });
