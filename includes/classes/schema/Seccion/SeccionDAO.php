@@ -108,14 +108,9 @@ class SeccionDAO implements ISeccion
 
         if(!$cantPosts)
         {
-            if(is_numeric($tipo))
-            {
-                $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo} OR seccion_id={$tipo}";
-            }
-            else
-            {
+
                 $sql = "SELECT * FROM {$this->tableName}";
-            }
+
 
 
         }
