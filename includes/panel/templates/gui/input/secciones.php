@@ -1,6 +1,6 @@
 
 <?php
-$secciones = $_POST["seccionDAO"]->selectSeccionesSubsecciones();
+$secciones = $_POST["seccionesDAO"]->selectSeccionesSubsecciones();
 
 
 var_dump($secciones);
