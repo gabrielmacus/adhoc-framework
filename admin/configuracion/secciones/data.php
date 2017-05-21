@@ -55,6 +55,19 @@ try{
 
             break;
 
+
+          $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
+
+         $fileContents= json_decode(file_get_contents($langFile),true);
+
+         $sidenav=$fileContents["sidenav"];
+
+         $sidenav["data"]["text"]="AA";
+            $fileContents["sidenav"]=$sidenav;
+
+          file_put_contents($langFile,json_decode($fileContents));
+
+
     }
 
 

@@ -32,6 +32,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 
 $configuracion->setHtdocsFolder("public_html");
 
+
 $GLOBALS["configuracion"]  =$configuracion;
 
 
