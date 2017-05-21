@@ -137,11 +137,6 @@ GROUP BY s.seccion_id";
             }
 
         }
-        var_dump($sql);
-
-
-
-
         $this->dataSource->runQuery($sql,array(),function($data){
 
             $s=new Seccion();
