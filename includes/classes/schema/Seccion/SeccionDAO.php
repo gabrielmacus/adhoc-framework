@@ -238,9 +238,7 @@ GROUP BY s.seccion_id";
 
 
         $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id ";
-
-        //TODO: implementar eliminacion recursiva
-
+        
 
         $this->dataSource->runUpdate($sql,
             array(
@@ -248,7 +246,7 @@ GROUP BY s.seccion_id";
             ));
 
 
-
+//Eliminacion recursiva
         foreach ($res as $seccion)
         {
           $id=  $seccion["seccion_id"];

@@ -74,12 +74,14 @@ try{
 
     }
 
-/*    $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
+    $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
 
     $fileContents= json_decode(file_get_contents($langFile),true);
 
     $sidenav=$fileContents["sidenav"];
 
+    var_dump($sidenav);
+    /*
     $fileContents["sidenav"]=$sidenav;
 
     file_put_contents($langFile,json_decode($fileContents));
