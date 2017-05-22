@@ -17,9 +17,9 @@ class MenuDAO implements IMenu
      * MenuDAO constructor.
     
      */
-    public function __construct($lang)
+    public function __construct($menuDir)
     {
-        $this->menuDir = DIR_PATH."/includes/panel/templates/comun/lang/{$lang}.json";
+        $this->menuDir =$menuDir;
     }
 
 
