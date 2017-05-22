@@ -2,7 +2,7 @@
 <script>
     angular.element(function () {
 
-        scope.menu=<?php    echo json_encode($menu)?>;
+        scope.secciones=<?php    echo json_encode($menu)?>;
 
 
         scope.$apply();
