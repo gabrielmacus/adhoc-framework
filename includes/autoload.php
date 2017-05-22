@@ -44,6 +44,11 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 
 require_once "classes/autoload-classes.php";//Cargo las clases
 require_once "helpers/autoload-helpers.php";//Cargo las funciones utiles
+/*** Constantes **/
+
+define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());
+
+/**  */
 
 /** DAOs**/
 
@@ -79,11 +84,6 @@ $GLOBALS["mapsConfig"]=array(
 );
 
 /** **/
-/*** Constantes **/
-
-define("DIR_PATH",$_SERVER['DOCUMENT_ROOT']."/".$configuracion->getSiteFolder());
-
-/**  */
 
 
 
