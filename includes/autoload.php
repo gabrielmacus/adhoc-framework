@@ -62,8 +62,7 @@ $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
 $GLOBALS["idiomaDAO"] = new IdiomaDAO($configuracion->getDataSource());
 
-var_dump(DIR_PATH."/includes/panel/templates/comun/lang/{$lang}.json");
-$GLOBALS["menuDAO"] = new MenuDAO(DIR_PATH."/includes/panel/templates/comun/lang/{$lang}.json");
+$GLOBALS["menuDAO"] = new MenuDAO(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json");
 
 
 
