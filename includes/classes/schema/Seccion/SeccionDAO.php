@@ -249,8 +249,12 @@ GROUP BY s.seccion_id";
 
 
 
+        foreach ($res as $seccion)
+        {
+          $id=  $seccion["seccion_id"];
+            $this->deleteSeccionById($id);
+        }
 
-        var_dump($res);
 
 
         return $res;
