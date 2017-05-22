@@ -15,20 +15,15 @@
 <script type="text/ng-template" id="categoryTree">
     <div class="seccion animated">
 
-        <span>{{ seccion.nombre }}</span>
-        <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-        <i data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
-        <div class="mask animated">
-
-            <span class="cant-posts">{{seccion.cantPosts}}</span>
-
-        </div>
+        <span>{{ seccion.text }}</span>
+        <i class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+        <i  data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  class="fa fa-pencil icon" aria-hidden="true"></i>
 
 
     </div>
-    <ul data-ng-if="seccion.secciones">
-        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion)  in seccion.secciones" data-ng-include="'categoryTree'">
+    <ul data-ng-if="seccion.items">
+        <li  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
     </ul>
