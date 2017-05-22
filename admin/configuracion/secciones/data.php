@@ -78,7 +78,7 @@ try{
 
     $fileContents= json_decode(file_get_contents($langFile),true);
 
-    $sidenav=$fileContents["sidenav"];
+    $sidenav=$fileContents;
 
     var_dump($sidenav);
     /*
