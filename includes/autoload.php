@@ -56,6 +56,7 @@ $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
 $GLOBALS["idiomaDAO"] = new IdiomaDAO($configuracion->getDataSource());
+$GLOBALS["menuDAO"] = new MenuDAO($configuracion->getLanguage());
 
 
 

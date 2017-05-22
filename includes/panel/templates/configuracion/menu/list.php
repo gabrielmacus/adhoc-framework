@@ -5,8 +5,7 @@
         scope.menu=<?php    echo json_encode($menu)?>;
 
 
-
-
+        scope.$apply();
     });
 </script>
 
@@ -16,15 +15,15 @@
 <script type="text/ng-template" id="categoryTree">
     <div class="seccion animated">
 
-            <span>{{ seccion.nombre }}</span>
-            <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-            <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-            <i data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
-           <div class="mask animated">
+        <span>{{ seccion.nombre }}</span>
+        <i data-ng-click="addSubseccion(seccion.id)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+        <i data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
+        <div class="mask animated">
 
-               <span class="cant-posts">{{seccion.cantPosts}}</span>
+            <span class="cant-posts">{{seccion.cantPosts}}</span>
 
-           </div>
+        </div>
 
 
     </div>
@@ -46,5 +45,5 @@
     <ul class="secciones">
         <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
     </ul>
-    <h3 class="no-content" data-ng-if="secciones.length==0">No hay contenido en el menú</h3>
+    <h3 class="no-content" data-ng-if="secciones.length==0">No hay secciones para mostrar</h3>
 </div>

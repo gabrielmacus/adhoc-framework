@@ -22,6 +22,9 @@ try{
 
     $secciones=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones(true) ;
 
+
+    $menu=$GLOBALS["menuDAO"]->readMenu();
+    var_dump($menu);
     $site="configuracion/menu";
     $action="list";
 
