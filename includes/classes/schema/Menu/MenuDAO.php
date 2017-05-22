@@ -34,6 +34,7 @@ class MenuDAO implements IMenu
         
         // TODO: Implement readMenu() method.
        $menu= file_get_contents($this->menuDir);
+        var_dump($menu);
         $menu= json_decode($menu,true);
         $this->menu = $menu["sidenav"];
 
