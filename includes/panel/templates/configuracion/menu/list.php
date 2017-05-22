@@ -17,7 +17,7 @@
 
         <span>{{ seccion.text }}</span>
         <i class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  data-ng-show="seccion.delete" class="fa fa-trash icon" aria-hidden="true"></i>
         <i  class="fa fa-pencil icon" aria-hidden="true"></i>
 
 
