@@ -227,18 +227,35 @@ GROUP BY s.seccion_id";
 
     public function deleteSeccionById($id)
     {
+        $sqlSubsecciones="SELECT * FROM {$this->tableName} WHERE seccion_tipo=:seccion_tipo";
+
+
+        $res=$this->dataSource->runQuery($sqlSubsecciones,
+            array(
+                "seccion_tipo"=>$id
+            ),false);
+
+
 
         $sql = "DELETE FROM {$this->tableName} WHERE seccion_id= :seccion_id ";
-        
-        //TODO: implementar eliminacion recursiva 
 
-        
-        
-        $res= $this->dataSource->runUpdate($sql,
+        //TODO: implementar eliminacion recursiva
+
+
+        $this->dataSource->runUpdate($sql,
             array(
                 ":seccion_id"=>$id
             ));
-    
+
+
+
+        foreach ($res as $seccion)
+        {
+            $seccion->getId();
+        }
+
+
+
         return $res;
     }
 
