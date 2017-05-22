@@ -249,11 +249,8 @@ GROUP BY s.seccion_id";
 
 
 
-        foreach ($res as $seccion)
-        {
-            $seccion->getId();
-        }
 
+        var_dump($res);
 
 
         return $res;
