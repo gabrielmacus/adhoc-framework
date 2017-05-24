@@ -26,7 +26,7 @@
     }
 
 
-    var app = angular.module('panel', ['ngAnimate','ngDragDrop']);
+    var app = angular.module('panel', ['ngAnimate']);
     var scope;
     var timeout;
     var http;
