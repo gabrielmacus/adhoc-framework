@@ -14,7 +14,7 @@
                 message: 'Agregando item de menú',
                 input: [
                     '<label  for="menu-name">Nombre</label>',
-                    '<inpu id="menu-name" placeholder="Nombre"  name="name" type="text" required />',
+                    '<input id="menu-name" placeholder="Nombre"  name="name" type="text" required />',
                     '<input placeholder="URL relativa (opcional)" name="name" type="text"  />',
                     '<div><h1>a</h1></div>'
                 ].join(''),
