@@ -13,6 +13,7 @@
             vex.dialog.open({
                 message: 'Agregando item de menú',
                 input: [
+                    '<label>Nombre</label>'
                     '<input placeholder="Nombre"  name="name" type="text" required />',
                     '<input placeholder="URL relativa (opcional)" name="name" type="text"  />',
                     '<div><h1>a</h1></div>'
