@@ -16,10 +16,9 @@
                     '<label  for="menu-name">Nombre</label>',
                     '<input id="menu-name"  name="name" type="text" required />',
                     '<label>Url (opcional)</label>',
-                    '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>',
                     '<input  name="url" type="text"  />',
-                    ,
-                    '<div><h1>a</h1></div>'
+                    '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
