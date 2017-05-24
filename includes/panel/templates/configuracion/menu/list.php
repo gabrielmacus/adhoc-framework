@@ -16,6 +16,7 @@
                     '<label  for="menu-name">Nombre</label>',
                     '<input id="menu-name"  name="name" type="text" required />',
                     '<label>Url (opcional)</label>',
+                    '<br>',
                     '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>',
                     '<input  name="url" type="text"  />',
                     ,
