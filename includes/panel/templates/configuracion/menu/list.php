@@ -43,7 +43,7 @@
     <h2>Menú</h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-    <div class="seccion animated">
+    <div class="seccion animated"  data-drop="true" data-jqyoui-options ng-model="seccion.items" jqyoui-droppable>
 
         <span >{{ seccion.text }}</span>
         <i data-ng-show="seccion.append" data-ng-click="addSubmenu(seccion)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
@@ -52,7 +52,7 @@
 
 
     </div>
-    <ul data-ng-if="seccion.items"  data-drop="true" data-jqyoui-options data-ng-model="seccion.items" jqyoui-droppable>
+    <ul data-ng-if="seccion.items" >
         <li  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
