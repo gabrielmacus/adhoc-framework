@@ -52,7 +52,7 @@
 
 
     </div>
-    <ul data-ng-if="seccion.items"  data-drop="true" data-jqyoui-options jqyoui-droppable>
+    <ul data-ng-if="seccion.items"  data-drop="true" data-jqyoui-options data-ng-model="seccion.items" jqyoui-droppable>
         <li  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
