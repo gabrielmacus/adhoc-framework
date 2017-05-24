@@ -20,7 +20,7 @@
     <div class="seccion animated">
 
         <span>{{ seccion.text }}</span>
-        <i data-ng-click="addSubmenu(seccion)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+        <i data-ng-show="seccion.append" data-ng-click="addSubmenu(seccion)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
         <i  data-ng-show="seccion.delete" class="fa fa-trash icon" aria-hidden="true"></i>
         <i data-ng-show="seccion.edit" class="fa fa-pencil icon" aria-hidden="true"></i>
 
