@@ -14,8 +14,11 @@
                 message: 'Agregando item de menú',
                 input: [
                     '<label  for="menu-name">Nombre</label>',
-                    '<input id="menu-name" placeholder="Nombre"  name="name" type="text" required />',
-                    '<input placeholder="URL relativa (opcional)" name="name" type="text"  />',
+                    '<input id="menu-name"  name="name" type="text" required />',
+                    '<label>Url (opcional)</label>',
+                    '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>',
+                    '<input  name="url" type="text"  />',
+                    ,
                     '<div><h1>a</h1></div>'
                 ].join(''),
                 buttons: [
