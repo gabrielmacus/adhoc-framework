@@ -4,9 +4,27 @@
 
         scope.secciones=<?php    echo json_encode($menu)?>;
 
+        function saveMenu() {
+            
+        }
 
-        scope.addSubmenu=function (seccion) {
+        scope.addItem=function () {
 
+            vex.dialog.open({
+                message: 'Agregando item de menú',
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
+                ],
+                callback: function (data) {
+                   
+                    if(data)
+                    {
+                      
+                    }
+                }
+                    
+                });
         }
         
         scope.$apply();
@@ -14,7 +32,7 @@
 </script>
 
 <header>
-    <h2><?php echo $lang["secciones"]?></h2>
+    <h2>Menú</h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
     <div class="seccion animated">
@@ -36,7 +54,7 @@
 </script>
 
 <div class="body">
-    <button data-ng-click="addSeccion()" class="btn" style="margin-bottom: 10px">Nueva sección</button>
+    <button data-ng-click="addItem()" class="btn" style="margin-bottom: 10px">Nuevo item</button>
     <!--<div class="info">
         <i class="fa fa-info-circle" aria-hidden="true"></i>
         <p>Si la sección contiene elementos, no se puede eliminar</p>
