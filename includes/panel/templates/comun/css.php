@@ -15,5 +15,5 @@
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/select-theme-default.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/contextMenu.min.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/ng-animate.css">
-
+<link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/angular-ui-tree.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

@@ -17,7 +17,7 @@
                     '<input id="menu-name"  name="name" type="text" required />',
                     '<label>Url (opcional)</label>',
                     '<input  name="url" type="text"  />',
-                    '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+                    '<label><input type="checkbox" name="submenu" > Permite submenú</label>'
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
@@ -42,7 +42,7 @@
     <h2>Menú</h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-    <div class="seccion animated">
+    <div class=" animated"  ui-tree-handle>
 
         <span>{{ seccion.text }}</span>
         <i data-ng-show="seccion.append" data-ng-click="addSubmenu(seccion)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
@@ -51,11 +51,11 @@
 
 
     </div>
-    <ul data-ng-if="seccion.items">
-        <li  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
+    <ol ui-tree-nodes="" data-ng-if="seccion.items">
+        <li  ui-tree-node data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
-    </ul>
+    </ol>
 
 
 </script>
@@ -66,8 +66,10 @@
         <i class="fa fa-info-circle" aria-hidden="true"></i>
         <p>Si la sección contiene elementos, no se puede eliminar</p>
     </div>-->
-    <ul class="secciones">
-        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
-    </ul>
+    <div class="" ui-tree>
+        <ol ui-tree-nodes="" data-ng-model="secciones">
+            <li ui-tree-node  data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
+        </ol>
+     </div>
     <h3 class="no-content" data-ng-if="secciones.length==0">No hay items de menu para mostrar</h3>
 </div>
