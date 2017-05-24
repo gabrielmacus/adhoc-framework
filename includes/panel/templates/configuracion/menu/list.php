@@ -53,7 +53,7 @@
 
     </div>
     <ul data-ng-if="seccion.items">
-        <li  data-drag="true" jqyoui-draggable  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
+        <li  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
     </ul>
