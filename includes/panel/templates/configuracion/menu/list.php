@@ -12,6 +12,11 @@
 
             vex.dialog.open({
                 message: 'Agregando item de menú',
+                input: [
+                    '<input placeholder="Nombre" value="'+value+'" name="name" type="text" required />',
+                    '<input placeholder="URL relativa (opcional)" value="'+value+'" name="name" type="text"  />'
+                    '<div><h1>a</h1></div>'
+                ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
                     $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
