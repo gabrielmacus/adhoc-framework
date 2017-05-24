@@ -52,8 +52,8 @@
 
 
     </div>
-    <ul data-ng-if="seccion.items">
-        <li  data-drop="true" data-jqyoui-options jqyoui-droppable  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
+    <ul data-ng-if="seccion.items"  data-drop="true" data-jqyoui-options jqyoui-droppable>
+        <li  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
     </ul>
@@ -68,7 +68,7 @@
         <p>Si la sección contiene elementos, no se puede eliminar</p>
     </div>-->
     <ul class="secciones">
-        <li  data-drop="true" data-jqyoui-options jqyoui-droppable data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
+        <li  data-drag="true" jqyoui-draggable  data-jqyoui-options="{revert: 'invalid'}"  jqyoui-draggable="{animate:true}"  data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
     </ul>
     <h3 class="no-content" data-ng-if="secciones.length==0">No hay items de menu para mostrar</h3>
 </div>
