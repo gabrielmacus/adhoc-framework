@@ -2,62 +2,7 @@
 <script>
     angular.element(function () {
 
-
-
         scope.secciones=<?php    echo json_encode($menu)?>;
-
-        scope.secciones=[
-            {
-                "id": 1,
-                "title": "node1",
-                "nodes": [
-                    {
-                        "id": 11,
-                        "title": "node1.1",
-                        "nodes": [
-                            {
-                                "id": 111,
-                                "title": "node1.1.1",
-                                "nodes": []
-                            }
-                        ]
-                    },
-                    {
-                        "id": 12,
-                        "title": "node1.2",
-                        "nodes": []
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "title": "node2",
-                "nodrop": true,
-                "nodes": [
-                    {
-                        "id": 21,
-                        "title": "node2.1",
-                        "nodes": []
-                    },
-                    {
-                        "id": 22,
-                        "title": "node2.2",
-                        "nodes": []
-                    }
-                ]
-            },
-            {
-                "id": 3,
-                "title": "node3",
-                "nodes": [
-                    {
-                        "id": 31,
-                        "title": "node3.1",
-                        "nodes": []
-                    }
-                ]
-            }
-        ];
 
         function saveMenu() {
             
@@ -71,8 +16,10 @@
                     '<label  for="menu-name">Nombre</label>',
                     '<input id="menu-name"  name="name" type="text" required />',
                     '<label>Url (opcional)</label>',
+                    '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>',
                     '<input  name="url" type="text"  />',
-                    '<label><input type="checkbox" name="submenu" > Permite submenú</label>'
+                    ,
+                    '<div><h1>a</h1></div>'
                 ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
@@ -97,7 +44,7 @@
     <h2>Menú</h2>
 </header>
 <script type="text/ng-template" id="categoryTree">
-    <div class=" animated"  ui-tree-handle>
+    <div class="seccion animated">
 
         <span>{{ seccion.text }}</span>
         <i data-ng-show="seccion.append" data-ng-click="addSubmenu(seccion)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
@@ -106,11 +53,11 @@
 
 
     </div>
-    <ol ui-tree-nodes="" data-ng-if="seccion.items">
-        <li  ui-tree-node data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
+    <ul data-ng-if="seccion.items">
+        <li  data-ng-repeat="(key,seccion)  in seccion.items" data-ng-include="'categoryTree'">
 
         </li>
-    </ol>
+    </ul>
 
 
 </script>
@@ -121,10 +68,8 @@
         <i class="fa fa-info-circle" aria-hidden="true"></i>
         <p>Si la sección contiene elementos, no se puede eliminar</p>
     </div>-->
-    <div class="" ui-tree>
-        <ol ui-tree-nodes="" data-ng-model="secciones">
-            <li ui-tree-node  data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
-        </ol>
-     </div>
+    <ul class="secciones">
+        <li data-posts="{{seccion.cantPosts}}" data-ng-repeat="(key,seccion) in secciones"  data-ng-include="'categoryTree'"></li>
+    </ul>
     <h3 class="no-content" data-ng-if="secciones.length==0">No hay items de menu para mostrar</h3>
 </div>
