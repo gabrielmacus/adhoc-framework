@@ -15,8 +15,14 @@
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/contextMenu.min.js"?>"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.js"></script>
+<!--
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/angular-ui-tree.min.js"?>"></script>
-
+-->
+<script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+<script  src="<?php  echo $configuracion->getJsCdn()."/js/angular-dragdrop.min.js"?>"></script>
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/quill.js"?>"></script>
 <script
 
