@@ -9,6 +9,9 @@
 </script>
 
 
+<header>
+    <h2>Árbol de menú</h2>
+</header>
 
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
