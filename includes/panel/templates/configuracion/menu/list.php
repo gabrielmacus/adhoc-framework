@@ -1,25 +1,7 @@
 <script>
     angular.element(function () {
 
-        scope.data=[
-            {
-                "id": 3,
-                "title": "node3",
-                "nodes": [
-                    {
-                        "id": 31,
-                        "title": "node3.1",
-                        "nodes": [
-                            {
-                                "id": 310,
-                                "title": "node3.1.1",
-                                "nodes": []
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        scope.data=<?php echo json_encode($menu)?>;
 
         scope.$apply();
     });
