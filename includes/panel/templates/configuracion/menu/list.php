@@ -11,14 +11,15 @@
                         "title": "node3.1",
                         "nodes": [
                             {
-                                "id": 321,
-                                "title": "node3.2"
+                                "id": 310,
+                                "title": "node3.1.1",
+                                "nodes": []
                             }
                         ]
                     }
                 ]
             }
-        ];
+        ]
 
         scope.$apply();
     });
