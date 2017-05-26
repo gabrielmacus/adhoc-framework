@@ -26,7 +26,7 @@
     }
 
 
-    var app = angular.module('panel', ['ngAnimate']);
+    var app = angular.module('panel', ['ngAnimate','ui.tree']);
     var scope;
     var timeout;
     var http;
