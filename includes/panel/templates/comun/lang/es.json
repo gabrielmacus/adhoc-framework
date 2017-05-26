@@ -4,18 +4,18 @@
 
 
   "sidenavTitle":"FootGolf",
-  "sidenav":{
-    "inicio":{"text":"Inicio","href":"/admin/"},
-   "configuracion":{"text":"Configuraci\u00f3n","items":
-    {
-      "secciones":{"text":"Secciones","href":"/admin/configuracion/secciones"}
+  "sidenav":[
+{"text":"Inicio","href":"/admin/"},
+   {"text":"Configuraci\u00f3n","items":
+    [
+     {"text":"Secciones","href":"/admin/configuracion/secciones"}
 
-      }},
-    "repositorios":{"text":"Repositorios","href":"/admin/repositorios"},
+      ]},
+  {"text":"Repositorios","href":"/admin/repositorios"},
 
-    "salir":{"text":"Salir","href":"/admin/logout.php"}
+   {"text":"Salir","href":"/admin/logout.php"}
 
-    }
+    ]
   ,
 
   "dateFormat":"d\/m\/Y","dateFormatFiles":"d-m-Y",
