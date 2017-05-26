@@ -12,7 +12,7 @@
 
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
-    <div ui-tree-handle>
+    <div class="seccion" ui-tree-handle>
         {{v.text}}
     </div>
     <ol ui-tree-nodes="" ng-model="v.items">
@@ -23,7 +23,7 @@
 
 <div class="secciones" ui-tree>
     <ol ui-tree-nodes="" ng-model="data" id="tree-root">
-        <li ng-repeat="(k,v) in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+        <li  ng-repeat="(k,v) in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
     </ol>
 </div>
 
