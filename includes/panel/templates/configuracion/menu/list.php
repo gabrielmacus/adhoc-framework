@@ -15,15 +15,15 @@
     <div class="seccion" ui-tree-handle>
         {{v.text}}
     </div>
-    <ol ui-tree-nodes="" ng-model="v.items">
+    <ul ui-tree-nodes="" ng-model="v.items">
         <li ng-repeat="(k,v) in v.items" ui-tree-node ng-include="'nodes_renderer.html'">
         </li>
-    </ol>
+    </ul>
 </script>
 
 <div class="secciones" ui-tree>
-    <ol ui-tree-nodes="" ng-model="data" id="tree-root">
+    <ul ui-tree-nodes="" ng-model="data" id="tree-root">
         <li  ng-repeat="(k,v) in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
-    </ol>
+    </ul>
 </div>
 
