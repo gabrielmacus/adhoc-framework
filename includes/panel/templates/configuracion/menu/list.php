@@ -1,7 +1,7 @@
 <script>
     angular.element(function () {
 
-        scope.list=[
+        scope.data=[
             {
                 "id": 3,
                 "title": "node3",
