@@ -9,7 +9,15 @@
                     {
                         "id": 31,
                         "title": "node3.1",
-                        "nodes": []
+                        "nodes": [
+                            {
+                                "id": 31,
+                                "title": "node3.2",
+                                "nodes": [
+
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
