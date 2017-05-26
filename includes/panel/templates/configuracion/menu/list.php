@@ -12,10 +12,7 @@
                         "nodes": [
                             {
                                 "id": 321,
-                                "title": "node3.2",
-                                "nodes": [
-
-                                ]
+                                "title": "node3.2"
                             }
                         ]
                     }
