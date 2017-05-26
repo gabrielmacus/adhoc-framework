@@ -21,7 +21,7 @@
     </ol>
 </script>
 
-<div ui-tree>
+<div class="secciones" ui-tree>
     <ol ui-tree-nodes="" ng-model="data" id="tree-root">
         <li ng-repeat="(k,v) in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
     </ol>
