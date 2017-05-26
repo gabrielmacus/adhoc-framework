@@ -26,7 +26,7 @@
 
 </script>
 <div ui-tree>
-    <ol ui-tree-nodes="" ng-model="list">
+    <ol ui-tree-nodes="" ng-model="nodes">
         <li ng-repeat="item in list" ui-tree-node>
             <div ui-tree-handle>
                 {{item.title}}
