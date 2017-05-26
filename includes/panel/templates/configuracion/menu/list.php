@@ -14,6 +14,8 @@
                 ]
             }
         ];
+
+        scope.$apply();
     });
 
 </script>
@@ -23,8 +25,8 @@
             <div ui-tree-handle>
                 {{item.title}}
             </div>
-            <ol ui-tree-nodes="" ng-model="item.items">
-                <li ng-repeat="subItem in item.items" ui-tree-node>
+            <ol ui-tree-nodes="" ng-model="item.nodes">
+                <li ng-repeat="subItem in item.nodes" ui-tree-node>
                     <div ui-tree-handle>
                         {{subItem.title}}
                     </div>
