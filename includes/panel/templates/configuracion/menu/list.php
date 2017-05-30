@@ -3,6 +3,18 @@
 
         scope.data=<?php echo json_encode($menu)?>;
 
+        scope.save=function () {
+        
+            $.ajax(
+                {
+                    method:"post",
+                    url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/menu/data.php?act=save",
+                    data:angular.copy(scope.menu),
+                    
+                }
+            );
+
+        }
         scope.$apply();
     });
 
@@ -35,8 +47,8 @@
     </ul>
 </div>
 
-<div class="fila " style="margin-top: 15px">
-    <button class="btn">
+<div class="fila center" style="margin-top: 25px">
+    <button data-ng-click="save()" class="btn">
         Guardar Menú
     </button>
 </div>

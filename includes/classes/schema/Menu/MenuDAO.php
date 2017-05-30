@@ -25,14 +25,24 @@ class MenuDAO implements IMenu
 
     public function saveMenu($menuArray)
     {
-        // TODO: Implement saveMenu() method.
+
+        $menu= file_get_contents($this->menuDir);
+
+        $menu= json_decode($menu,true);
+
+        $menu["sidenav"]=$menuArray;
+
+        if(! file_put_contents($this->menuDir,json_encode($menu)))
+        {
+            throw new Exception("MenuDAO:0");
+        }
+
         
     }
 
     public function readMenu()
     {
-        
-        // TODO: Implement readMenu() method.
+
        $menu= file_get_contents($this->menuDir);
         
         $menu= json_decode($menu,true);
