@@ -27,6 +27,7 @@ try{
 
         case "save":
 
+            var_dump($_POST);
             $GLOBALS["menuDAO"]->saveMenu($_POST);
 
             break;
