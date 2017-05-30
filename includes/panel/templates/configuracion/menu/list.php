@@ -10,6 +10,7 @@
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/menu/data.php?act=save",
                     data:angular.copy(scope.data),
+                    dataType:"json",
                     success:function (e) {
 
                         console.log(e);
