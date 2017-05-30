@@ -37,6 +37,9 @@ class MenuDAO implements IMenu
             throw new Exception("MenuDAO:0");
         }
 
+            return true;
+        
+
         
     }
 

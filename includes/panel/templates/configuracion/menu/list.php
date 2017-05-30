@@ -9,7 +9,7 @@
                 {
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/menu/data.php?act=save",
-                    data:angular.copy(scope.menu),
+                    data:angular.copy(scope.data),
                     success:function (e) {
 
                         console.log(e);
