@@ -34,7 +34,7 @@
     </ul>
 </div>
 
-<div class="fila center">
+<div class="fila center" style="margin-top: 15px">
     <button class="btn">
         Guardar Menú
     </button>
