@@ -13,6 +13,7 @@
     <h2>Árbol de menú</h2>
 </header>
 
+<div class="body">
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
     <div class="seccion" ui-tree-handle>
@@ -34,8 +35,10 @@
     </ul>
 </div>
 
-<div class="fila center" style="margin-top: 15px">
+<div class="fila " style="margin-top: 15px">
     <button class="btn">
         Guardar Menú
     </button>
 </div>
+
+    </div>
