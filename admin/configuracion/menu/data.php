@@ -27,7 +27,8 @@ try{
 
         case "save":
 
-            $GLOBALS["menuDAO"]->saveMenu($_POST["sidenav"]);
+           $res= $GLOBALS["menuDAO"]->saveMenu($_POST["sidenav"]);
+
 
             break;
 
@@ -43,16 +44,7 @@ try{
 
     }
 
-    /*    $langFile= DIR_PATH."/includes/comun/lang/{$GLOBALS["configuracion"]->getLanguage()}.es";
-    
-        $fileContents= json_decode(file_get_contents($langFile),true);
-    
-        $sidenav=$fileContents["sidenav"];
-    
-        $fileContents["sidenav"]=$sidenav;
-    
-        file_put_contents($langFile,json_decode($fileContents));
-    */
+    echo json_encode($res);
 
 }
 catch (Exception $e)
