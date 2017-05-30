@@ -10,6 +10,12 @@
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/menu/data.php?act=save",
                     data:angular.copy(scope.menu),
+                    success:function (e) {
+
+                        console.log(e);
+                        toastr.success('', 'Menú guardado con éxito');
+                    },
+                    error:error
                     
                 }
             );
