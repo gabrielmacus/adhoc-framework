@@ -13,8 +13,8 @@
                     dataType:"json",
                     success:function (e) {
 
-                        console.log(e);
                         toastr.success('', 'Menú guardado con éxito');
+                        location.reload();
                     },
                     error:error
                     
