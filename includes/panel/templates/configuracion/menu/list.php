@@ -4,12 +4,12 @@
         scope.data=<?php echo json_encode($menu)?>;
 
         scope.save=function () {
-        
+
             $.ajax(
                 {
                     method:"post",
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/configuracion/menu/data.php?act=save",
-                    data:angular.copy(scope.data),
+                    data:{"sidenav":angular.copy(scope.data)},
                     dataType:"json",
                     success:function (e) {
 
