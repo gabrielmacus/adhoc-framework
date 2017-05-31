@@ -77,11 +77,6 @@ scope.addSubitem=function (v,mainItem) {
 </header>
 
 <div class="body">
-    <div class="fila center" style="margin-top: 25px">
-        <button data-ng-click="addSubitem(data,true)" class="btn">
-           Nuevo ítem
-        </button>
-    </div>
 
     <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
@@ -105,9 +100,13 @@ scope.addSubitem=function (v,mainItem) {
 </div>
 
 <div class="fila center" style="margin-top: 25px">
+    <button data-ng-click="addSubitem(data,true)" class="btn">
+        Nuevo ítem
+    </button>
     <button data-ng-click="save()" class="btn">
         Guardar Menú
     </button>
+
 </div>
 
     </div>
