@@ -42,7 +42,7 @@
         <i data-ng-if="v.edit" data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
-    <ul data-nodrop-enabled="!v.submenu" ui-tree-nodes="" data-ng-model="v.items">
+    <ul ui-tree-nodes="" data-ng-model="v.items">
         <li ng-repeat="(k,v) in v.items" ui-tree-node data-ng-include="'nodes_renderer.html'">
         </li>
     </ul>
