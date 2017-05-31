@@ -46,7 +46,7 @@ scope.addItem=function (v,mainItem) {
 
 
 }
-        scope.deleteItem=function (k,parent) {
+        scope.deleteItem=function (parent,k) {
 
             console.log(parent);
             vex.dialog.open({
