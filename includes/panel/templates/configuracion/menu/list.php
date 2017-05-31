@@ -2,7 +2,7 @@
     angular.element(function () {
 
         scope.data=<?php echo json_encode($menu)?>;
-scope.addSubitem=function (v,mainItem) {
+scope.addItem=function (v,mainItem) {
     vex.dialog.open({
         message: 'Agregando item de menú',
         input: [
@@ -46,6 +46,29 @@ scope.addSubitem=function (v,mainItem) {
 
 
 }
+        scope.deleteItem=function (k) {
+            vex.dialog.open({
+                message: 'Agregando item de menú',
+                input: [
+                    '<p>Confirmar eliminación</p>',
+                    //  '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+
+                ].join(''),
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
+                ],
+                callback: function (data) {
+
+                    if(data)
+                    {
+                        delete scope.data[k];
+
+                        scope.$apply();
+                    }
+                    );
+
+        }
 
         scope.save=function () {
 
@@ -82,9 +105,9 @@ scope.addSubitem=function (v,mainItem) {
 <script type="text/ng-template" id="nodes_renderer.html">
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
-        <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addSubitem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-        <i data-ng-if="v.edit" data-nodrag data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
+        <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(k)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i data-ng-if="v.edit" data-nodrag data-ng-click="editItem(v)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
     <ul ui-tree-nodes="" data-ng-model="v.items">
@@ -100,7 +123,7 @@ scope.addSubitem=function (v,mainItem) {
 </div>
 
 <div class="fila center" style="margin-top: 25px">
-    <button data-ng-click="addSubitem(data,true)" class="btn">
+    <button data-ng-click="addItem(data,true)" class="btn">
         Nuevo ítem
     </button>
     <button data-ng-click="save()" class="btn">
