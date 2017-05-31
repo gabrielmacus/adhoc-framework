@@ -13,6 +13,7 @@ class Configuracion
     protected $siteName;
     protected $comanyName;
     protected $htdocsFolder;
+    protected $defaultImageSizes=array();
     /**
      * Configuracion constructor.
      * @param $language
@@ -41,6 +42,23 @@ class Configuracion
         $this->comanyName=$companyName;
     }
 
+    /**
+     * @return array
+     */
+    public function getDefaultImageSizes()
+    {
+        return $this->defaultImageSizes;
+    }
+
+    /**
+     * @param array $defaultImageSizes
+     */
+    public function setDefaultImageSizes($defaultImageSizes)
+    {
+        $this->defaultImageSizes = $defaultImageSizes;
+    }
+
+    
     /**
      * @return mixed
      */
