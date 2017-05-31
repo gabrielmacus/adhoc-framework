@@ -79,6 +79,17 @@ if(!$shownText)
                     }
                   
                 }
+
+                if($json=json_decode($text,true))
+                {
+                    $text="";
+                    foreach ($json as $j)
+                    {
+                        $text.="{$j},";
+                    }
+                    $text=rtrim($text,",");
+
+                }
          
                 
 
