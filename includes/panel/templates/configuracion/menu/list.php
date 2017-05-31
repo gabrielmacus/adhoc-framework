@@ -49,7 +49,6 @@ scope.addItem=function (v,mainItem) {
         scope.deleteItem=function (func,item) {
 
 
-            return false;
             vex.dialog.open({
 
                 message: 'Confirmar eliminación',
