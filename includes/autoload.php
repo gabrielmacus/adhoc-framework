@@ -29,13 +29,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
     "uipasd",0.1,"http://footgolf.mapucheonline.com","Adhoc Framework","Gamaware Web Tech",
     "", "http://footgolf.mapucheonline.com","http://footgolf.mapucheonline.com");
 
-$configuracion->setDefaultImageSizes(
 
-    array(
-      "panel_repositorio:250x250"
-    )
-
-);
 $configuracion->setHtdocsFolder("public_html");
 
 
