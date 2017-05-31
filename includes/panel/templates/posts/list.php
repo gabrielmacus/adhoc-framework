@@ -11,7 +11,7 @@
     foreach ($posts as $post)
     {
 
-        $row["#"]["data"]=$post->getId();
+     //   $row["#"]["data"]=$post->getId();
         $row["Titulo"]["data"]=$post->getTitulo();
         $row["Volanta"]["data"]=$post->getVolanta();
 
