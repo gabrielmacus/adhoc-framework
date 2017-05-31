@@ -66,9 +66,11 @@ scope.addItem=function (v,mainItem) {
 
                         scope.$apply();
                     }
-                    );
 
+
+        });
         }
+    }
 
         scope.save=function () {
 
