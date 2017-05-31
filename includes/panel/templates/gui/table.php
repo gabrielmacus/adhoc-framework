@@ -88,6 +88,9 @@ if(!$shownText)
                     {
                         ?>
                         <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php
+
+                                var_dump($v["data"]);
+
                                 if($json=json_decode($v["data"],true))
                                 {
                                     $v["data"]="";
@@ -98,10 +101,6 @@ if(!$shownText)
                                     $v["data"]=rtrim($v["data"],",");
 
                                 }
-
-
-
-
                                 echo $v["data"];
 
 
