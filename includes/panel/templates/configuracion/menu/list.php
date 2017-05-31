@@ -108,7 +108,7 @@ scope.addItem=function (v,mainItem) {
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(v.items,k)" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="remove(this)" class="fa fa-trash icon" aria-hidden="true"></i>
         <i data-ng-if="v.edit" data-nodrag data-ng-click="editItem(v)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
