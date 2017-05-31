@@ -26,7 +26,9 @@ scope.addSubitem=function (v) {
                 {
                     v.items=[];
                 }
-                v.items.push({text:data.name,href:data.url});
+                v.items.push({text:data.name,href:data.url,submenu:true,edit:true,delete:true});
+
+                scope.$apply();
             }
         }
 
