@@ -20,7 +20,7 @@
         $rows[]=$row;
     }
 
-    include DIR_PATH."/includes/panel/templates/posts/table.php";
+    include DIR_PATH."/includes/panel/templates/gui/table.php";
     ?>
 
 </div>
