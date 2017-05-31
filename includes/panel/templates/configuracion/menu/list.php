@@ -58,7 +58,7 @@ scope.addItem=function (v,mainItem) {
                 callback: function (data) {
 
                     if (data) {
-                        delete scope.data[k];
+                        scope.data.splice(scope.data[k],1);
 
                         scope.$apply();
 
