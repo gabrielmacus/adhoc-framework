@@ -10,7 +10,11 @@
     [
      {
        "text":"Secciones","href":"/admin/configuracion/secciones"
-     }
+     },
+      {
+        "text":"Men&uacute;",
+        "href":"/admin/configuracion/menu"
+      }
 
       ]},
 
