@@ -14,7 +14,7 @@
        "items":[]
      }
 
-      ]},
+      ],"submenu":"true"},
 
   {"text":"Repositorios","href":"/admin/repositorios"},
 
