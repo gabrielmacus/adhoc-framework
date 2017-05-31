@@ -40,6 +40,8 @@ class ImagenDAO extends ArchivoDAO
 $versiones =$r->getVersiones();
 
 
+        $versiones = array_merge($versiones,$GLOBALS["configuracion"]->getDefaultImageSizes());
+
   foreach ($versiones as $version)
   {
       $version = $version["text"];

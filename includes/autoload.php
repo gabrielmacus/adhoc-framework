@@ -26,8 +26,8 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 */
 
 $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c0580153_adhoc",
-    "uipasd",0.1,"http://footgolf.mapucheonline.com","Adhoc Framework","Gamaware Web Tech",
-    "", "http://footgolf.mapucheonline.com","http://footgolf.mapucheonline.com");
+    "uipasd",0.1,"http://admin.mapucheonline.com","Adhoc Framework","Gamaware Web Tech",
+    "", "http://admin.mapucheonline.com","http://admin.mapucheonline.com");
 
 $configuracion->setDefaultImageSizes(
 
