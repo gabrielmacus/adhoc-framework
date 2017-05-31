@@ -6,7 +6,7 @@ scope.addSubitem=function (v) {
     vex.dialog.open({
         message: 'Agregando item de menú',
         input: [
-            '<label  for="menu-name">Nombre</label>',
+            '<label  for="menu-name">Texto</label>',
             '<input id="menu-name"  name="name" type="text" required />',
             '<label>Url (opcional)</label>',
             '<input  name="url" type="text"  />',
@@ -22,6 +22,11 @@ scope.addSubitem=function (v) {
             if(data)
             {
 
+                if(!v.items)
+                {
+                    v.items=[];
+                }
+                v.items.push({text:data.name,href:data.url});
             }
         }
 
