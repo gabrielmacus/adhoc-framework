@@ -94,7 +94,7 @@ if(!$shownText)
                                 {
                                     $v["data"]="";
 
-                                    if(count($json)>1)
+                                    if(count($json)>0)
                                     {
                                         foreach ($json as $j)
                                         {
