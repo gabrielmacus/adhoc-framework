@@ -79,7 +79,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
             ":repositorio_creation"=>$r->getCreation(),
             ":repositorio_modification"=>$r->getModification(),
             ":repositorio_url"=>$r->getUrl(),
-            ":repositorio_versiones"=>json_encode($r->getVersiones())
+            ":repositorio_versiones"=>$r->getVersiones()
         );
     }
 
