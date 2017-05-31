@@ -10,7 +10,7 @@ scope.addSubitem=function (v) {
             '<input id="menu-name"  name="name" type="text" required />',
             '<label>Url (opcional)</label>',
             '<input  name="url" type="text"  />',
-            '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+          //  '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
 
         ].join(''),
         buttons: [
