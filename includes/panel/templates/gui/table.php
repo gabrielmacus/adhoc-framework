@@ -88,16 +88,24 @@ if(!$shownText)
                     {
                         ?>
                         <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php
-                                
+
 
                                 if($json=json_decode($v["data"],true))
                                 {
-                                    var_dump($json);
                                     $v["data"]="";
-                                    foreach ($json as $j)
+
+                                    if(count($json)>1)
                                     {
-                                        $v["data"].="{$j},";
+                                        foreach ($json as $j)
+                                        {
+                                            $v["data"].="{$j},";
+                                        }
                                     }
+                                    else
+                                    {
+                                $v["data"].="{$json}";
+                                    }
+
                                     $v["data"]=rtrim($v["data"],",");
 
                                 }
