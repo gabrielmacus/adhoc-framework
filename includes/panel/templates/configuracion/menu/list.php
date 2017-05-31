@@ -2,7 +2,7 @@
     angular.element(function () {
 
         scope.data=<?php echo json_encode($menu)?>;
-scope.addSubitem=function (v) {
+scope.addSubitem=function (v,mainItem) {
     vex.dialog.open({
         message: 'Agregando item de menú',
         input: [
@@ -21,13 +21,23 @@ scope.addSubitem=function (v) {
 
             if(data)
             {
-
-                if(!v.items)
+                var item={text:data.name,href:data.url,submenu:true,edit:true,delete:true};
+                if(!mainItem)
                 {
-                    v.items=[];
-                }
-                v.items.push({text:data.name,href:data.url,submenu:true,edit:true,delete:true});
 
+                    if(!v.items)
+                    {
+                        v.items=[];
+                    }
+                    v.items.push(item);
+
+
+                }
+                else
+                {
+                    v.push(item);
+
+                }
                 scope.$apply();
             }
         }
@@ -68,7 +78,7 @@ scope.addSubitem=function (v) {
 
 <div class="body">
     <div class="fila center" style="margin-top: 25px">
-        <button data-ng-click="addSubitem(data)" class="btn">
+        <button data-ng-click="addSubitem(data,true)" class="btn">
            Nuevo ítem
         </button>
     </div>
