@@ -68,7 +68,7 @@ scope.addItem=function (v,mainItem) {
 
                     if(data)
                     {
-                        item.text=data.text;
+                        item.text=data.name;
                         item.href=data.url;
                         scope.$apply();
 
