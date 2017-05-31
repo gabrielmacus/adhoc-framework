@@ -90,6 +90,7 @@ if(!$shownText)
                         <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php
 
 
+                                //Codigo empleado por si recibo un json
                                 if($json=json_decode($v["data"],true))
                                 {
                                     $v["data"]="";
