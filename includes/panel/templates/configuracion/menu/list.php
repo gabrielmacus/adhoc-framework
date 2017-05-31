@@ -67,7 +67,13 @@ scope.addSubitem=function (v) {
 </header>
 
 <div class="body">
-<!-- Nested node template -->
+    <div class="fila center" style="margin-top: 25px">
+        <button data-ng-click="addSubitem(data)" class="btn">
+           Nuevo ítem
+        </button>
+    </div>
+
+    <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
