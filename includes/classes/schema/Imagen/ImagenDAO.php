@@ -49,8 +49,8 @@ $versiones =$r->getVersiones();
 
   foreach ($versiones as $version)
   {
-      var_dump($version);
-      $version = $version["text"];
+
+     // $version = $version["text"];
 
       $arr=array();
 
