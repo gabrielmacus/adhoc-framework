@@ -58,7 +58,7 @@ scope.addItem=function (v,mainItem) {
                 callback: function (data) {
 
                     if (data) {
-                        scope.data.splice(scope.data[k],1);
+                        scope.data.splice(1,scope.data[k]);
 
                         scope.$apply();
 
