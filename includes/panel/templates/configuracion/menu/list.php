@@ -66,7 +66,7 @@ scope.addSubitem=function (v) {
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addSubitem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
         <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-        <i data-ng-if="v.edit" data-nodrag="false" data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
+        <i data-ng-if="v.edit" data-nodrag data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
     <ul ui-tree-nodes="" data-ng-model="v.items">
