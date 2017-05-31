@@ -46,9 +46,9 @@ scope.addItem=function (v,mainItem) {
 
 
 }
-        scope.deleteItem=function (item) {
+        scope.deleteItem=function (func,item) {
 
-            console.log(item);
+
             return false;
             vex.dialog.open({
 
@@ -63,7 +63,7 @@ scope.addItem=function (v,mainItem) {
                     if (data) {
 //                        list.splice(scope.data[k],1);
 
-                        scope.remove(item);
+                        func(item);
                         //delete v;
                         scope.$apply();
 
@@ -110,7 +110,7 @@ scope.addItem=function (v,mainItem) {
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(remove)" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(remove,this)" class="fa fa-trash icon" aria-hidden="true"></i>
         <i data-ng-if="v.edit" data-nodrag data-ng-click="editItem(v)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
