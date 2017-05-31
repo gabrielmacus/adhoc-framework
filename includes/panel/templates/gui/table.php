@@ -79,7 +79,7 @@ if(!$shownText)
                     }
                   
                 }
-
+var_dump($text);
                 if($json=json_decode($text,true))
                 {
                     $text="";
