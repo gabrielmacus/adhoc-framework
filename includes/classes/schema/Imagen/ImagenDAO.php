@@ -46,10 +46,10 @@ $versiones =$r->getVersiones();
 
 
 
-        var_dump($versiones);
+
   foreach ($versiones as $version)
   {
-
+      var_dump($version);
       $version = $version["text"];
 
       $arr=array();
