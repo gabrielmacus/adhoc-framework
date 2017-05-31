@@ -97,6 +97,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         $data["repositorio_modification"],$data["repositorio_id"]);
 
         $r->setUrl($data["repositorio_url"]);
+        $data["repositorio_versiones"] =str_replace('"', "",     $data["repositorio_versiones"] );
         $r->setVersiones(json_decode($data["repositorio_versiones"],true));
         if(!$assoc)
         {
