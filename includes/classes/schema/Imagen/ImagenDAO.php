@@ -42,7 +42,7 @@ $versiones =$r->getVersiones();
 
 //        $versiones = array_merge($versiones,$GLOBALS["configuracion"]->getDefaultImageSizes());
 
-        var_dump($versiones);
+
   foreach ($versiones as $version)
   {
       $version = $version["text"];
@@ -58,7 +58,7 @@ $versiones =$r->getVersiones();
 
       $resoluciones[]=$arr;
   }
-
+        var_dump($resoluciones);
 
         /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
