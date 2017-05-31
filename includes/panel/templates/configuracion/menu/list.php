@@ -48,25 +48,24 @@ scope.addItem=function (v,mainItem) {
 }
         scope.deleteItem=function (k) {
             vex.dialog.open({
+
                 message: 'Confirmar eliminación',
 
                 buttons: [
-                    $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
-                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
+                    $.extend({}, vex.dialog.buttons.YES, {text: 'Ok'}),
+                    $.extend({}, vex.dialog.buttons.NO, {text: 'Cancelar'})
                 ],
                 callback: function (data) {
 
-                    if(data)
-                    {
+                    if (data) {
                         delete scope.data[k];
 
                         scope.$apply();
 
                         toastr.success('', 'Item eliminado con éxito');
                     }
-
-
-        });
+                }
+            })
         }
 
 
