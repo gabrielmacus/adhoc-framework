@@ -79,26 +79,33 @@ if(!$shownText)
                     }
                   
                 }
-var_dump($text);
-                if($json=json_decode($text,true))
-                {
-                    $text="";
-                    foreach ($json as $j)
-                    {
-                        $text.="{$j},";
-                    }
-                    $text=rtrim($text,",");
 
-                }
-         
-                
+
 
                 ?>
                 <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $text?>" data-grupo="<?php echo $_GET["grupo"]?>">
                     <?php foreach ($row as $k=>$v)
                     {
                         ?>
-                        <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php echo $v["data"]; ?></a></td>
+                        <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php
+                                if($json=json_decode($v["data"],true))
+                                {
+                                    $v["data"]="";
+                                    foreach ($json as $j)
+                                    {
+                                        $v["data"].="{$j},";
+                                    }
+                                    $v["data"]=rtrim($v["data"],",");
+
+                                }
+
+
+
+
+                                echo $v["data"];
+
+
+                                ?></a></td>
                         <?php
                     }?>
                     <td title="<?php echo $lang["editar"];?>"><a class="icon " href="?t=<?php echo $_GET["t"]?>&s=<?php echo $_GET["s"]?>&act=save&id=<?php echo $row["#"]["data"];?>"><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
