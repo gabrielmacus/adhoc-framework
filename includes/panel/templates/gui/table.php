@@ -88,11 +88,11 @@ if(!$shownText)
                     {
                         ?>
                         <td title="<?php echo $v["data"];?>" data-label="<?php echo $k;?>"><a <?php if($v["modal"]){ echo "data-lity";} ?> href="<?php echo $v["href"];  ?>"><?php
-
-                                var_dump($v["data"]);
+                                
 
                                 if($json=json_decode($v["data"],true))
                                 {
+                                    var_dump($json);
                                     $v["data"]="";
                                     foreach ($json as $j)
                                     {
