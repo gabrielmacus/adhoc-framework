@@ -39,6 +39,8 @@ scope.addItem=function (v,mainItem) {
 
                 }
                 scope.$apply();
+
+                toastr.success('', 'Item agregado con éxito');
             }
         }
 
@@ -46,6 +48,36 @@ scope.addItem=function (v,mainItem) {
 
 
 }
+
+        scope.editItem=function (item) {
+            vex.dialog.open({
+                message: 'Editando item de menú',
+                input: [
+                    '<label  for="menu-name">Texto</label>',
+                    '<input value="'+item.text+'" id="menu-name"  name="name" type="text" required />',
+                    '<label>Url (opcional)</label>',
+                    '<input  value="'+item.href+'"   name="url" type="text"  />',
+                    //  '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+
+                ].join(''),
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
+                    $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
+                ],
+                callback: function (data) {
+
+                    if(data)
+                    {
+                        item.text=data.text;
+                        item.href=data.url;
+                        scope.$apply();
+
+                        toastr.success('', 'Item agregado con éxito');
+                    }
+                }
+
+            });
+        }
         scope.deleteItem=function (func,item) {
 
 
