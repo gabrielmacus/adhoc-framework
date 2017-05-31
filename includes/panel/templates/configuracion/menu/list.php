@@ -108,12 +108,12 @@ scope.addItem=function (v,mainItem) {
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(parent,k)" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(v.items,k)" class="fa fa-trash icon" aria-hidden="true"></i>
         <i data-ng-if="v.edit" data-nodrag data-ng-click="editItem(v)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
     <ul ui-tree-nodes="" data-ng-model="v.items">
-        <li ng-repeat="(k,v) in v.items" data-ng-init="parent = v.items" ui-tree-node data-ng-include="'nodes_renderer.html'">
+        <li ng-repeat="(k,v) in v.items" ui-tree-node data-ng-include="'nodes_renderer.html'">
         </li>
     </ul>
 </script>
