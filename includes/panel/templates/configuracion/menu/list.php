@@ -46,7 +46,7 @@ scope.addItem=function (v,mainItem) {
 
 
 }
-        scope.deleteItem=function (k) {
+        scope.deleteItem=function (k,list) {
             vex.dialog.open({
 
                 message: 'Confirmar eliminación',
@@ -58,7 +58,7 @@ scope.addItem=function (v,mainItem) {
                 callback: function (data) {
 
                     if (data) {
-                        scope.data.splice(1,scope.data[k]);
+                        seccion.splice(scope.data[k],1);
 
                         scope.$apply();
 
@@ -105,7 +105,7 @@ scope.addItem=function (v,mainItem) {
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(k)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(k,seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
         <i data-ng-if="v.edit" data-nodrag data-ng-click="editItem(v)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
