@@ -64,9 +64,9 @@ scope.addSubitem=function (v) {
 <script type="text/ng-template" id="nodes_renderer.html">
     <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
-        <i data-ng-if="v.submenu"    data-ng-click="addSubitem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
-        <i  data-ng-if="v.delete"  data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
-        <i data-ng-if="v.edit" data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
+        <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addSubitem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
+        <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteSeccion(seccion)" data-ng-hide="checkPostsInside(seccion) || seccion.cantPosts > 0" class="fa fa-trash icon" aria-hidden="true"></i>
+        <i data-ng-if="v.edit" data-nodrag data-ng-click="editSeccion(seccion)" class="fa fa-pencil icon" aria-hidden="true"></i>
 
     </div>
     <ul ui-tree-nodes="" data-ng-model="v.items">
