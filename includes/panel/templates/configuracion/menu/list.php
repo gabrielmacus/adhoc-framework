@@ -48,12 +48,8 @@ scope.addItem=function (v,mainItem) {
 }
         scope.deleteItem=function (k) {
             vex.dialog.open({
-                message: 'Agregando item de menú',
-                input: [
-                    '<p>Confirmar eliminación</p>',
-                    //  '<label><input type="checkbox" name="submenu" checked> Permite submenú</label>'
+                message: 'Confirmar eliminación',
 
-                ].join(''),
                 buttons: [
                     $.extend({}, vex.dialog.buttons.YES, { text: 'Ok' }),
                     $.extend({}, vex.dialog.buttons.NO, { text: 'Cancelar' })
@@ -65,12 +61,14 @@ scope.addItem=function (v,mainItem) {
                         delete scope.data[k];
 
                         scope.$apply();
+
+                        toastr.success('', 'Item eliminado con éxito');
                     }
 
 
         });
         }
-    }
+
 
         scope.save=function () {
 
