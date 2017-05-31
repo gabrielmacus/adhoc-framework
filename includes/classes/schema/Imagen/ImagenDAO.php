@@ -42,9 +42,9 @@ $versiones =$r->getVersiones();
 
 //        $versiones = array_merge($versiones,$GLOBALS["configuracion"]->getDefaultImageSizes());
 
-
+        var_dump($versiones);
   foreach ($versiones as $version)
-  {        var_dump($version);
+  {
       $version = $version["text"];
 
       $arr=array();
