@@ -9,9 +9,7 @@
    {"text":"Configuraci\u00f3n","items":
     [
      {
-       "text":"Secciones","href":"/admin/configuracion/secciones",
-       "submenu":"true",
-       "items":[]
+       "text":"Secciones","href":"/admin/configuracion/secciones"
      }
 
       ],"submenu":"true"},
