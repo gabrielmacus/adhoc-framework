@@ -44,9 +44,11 @@ $versiones =$r->getVersiones();
 
        // $versiones = json_decode($versiones);
 
+        var_dump($versiones);
 
   foreach ($versiones as $version)
-  {   var_dump($version);
+  {
+
       $version = $version["text"];
 
       $arr=array();
