@@ -42,7 +42,7 @@ $versiones =$r->getVersiones();
 
 //        $versiones = array_merge($versiones,$GLOBALS["configuracion"]->getDefaultImageSizes());
 
-        $versiones = json_encode($versiones);
+        $versiones = json_decode($versiones);
 
 
   foreach ($versiones as $version)
