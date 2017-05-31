@@ -44,7 +44,7 @@ $versiones =$r->getVersiones();
 
        // $versiones = json_decode($versiones);
 
-        var_dump($versiones);
+
 
   foreach ($versiones as $version)
   {
@@ -63,6 +63,7 @@ $versiones =$r->getVersiones();
       $resoluciones[]=$arr;
   }
 
+        var_dump($resoluciones);
 
         /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
