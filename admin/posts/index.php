@@ -17,8 +17,9 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $t =$_GET["t"];
-    $site=$_GET["s"];
+    $t =$_GET["t"]; //tipo o seccion
+    $site=$_GET["s"]; //Template
+
     $fileVersion="original";
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
