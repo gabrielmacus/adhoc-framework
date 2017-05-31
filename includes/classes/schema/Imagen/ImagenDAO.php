@@ -44,7 +44,7 @@ $versiones =$r->getVersiones();
 
 
   foreach ($versiones as $version)
-  {
+  {        var_dump($version);
       $version = $version["text"];
 
       $arr=array();
@@ -58,7 +58,7 @@ $versiones =$r->getVersiones();
 
       $resoluciones[]=$arr;
   }
-        var_dump($resoluciones);
+
 
         /*$resoluciones=array(
             array("ancho"=>300,"alto"=>300,"nombre"=>"portada"),
