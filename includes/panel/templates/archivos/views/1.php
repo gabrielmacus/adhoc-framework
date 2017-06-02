@@ -9,9 +9,9 @@ foreach ($archivos as $k=>$archivo)
     {
 
 
-
+        echo json_encode($grupo);
         foreach ($grupo as $versiones) {
-            echo json_encode($versiones);
+
 
             $version= reset($versiones);
 
