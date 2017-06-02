@@ -92,6 +92,9 @@
                         dataType:"json",
                         success:function (e) {
                             console.log(e);
+
+
+                            toastr.success('', 'Archivos actualizados correctamente');
                         location.reload();
                         },
                         error:error
