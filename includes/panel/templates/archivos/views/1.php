@@ -13,7 +13,8 @@ foreach ($archivos as $k=>$archivo)
 
 
             $version= reset($versiones);
-            if(!$versiones[$versionPanel])
+
+            if(!$versiones[$versionPanel])//Si no encuentro la version de panel, cargo la original
             {
                 $versionPanel="original";
             }
