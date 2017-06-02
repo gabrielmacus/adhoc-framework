@@ -20,6 +20,8 @@
 
                             if(e.length>0)
                             {
+                               var idx= scope.secciones_group.indexOf(e);
+                                console.log(idx);
                                 scope.secciones_group.push(e);
 
                                 scope.$apply();
