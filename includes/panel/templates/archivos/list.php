@@ -82,7 +82,7 @@
 
             scope.save=function () {
                 console.log(scope.previews);
-
+                toastr.info('',"Se están actualizando los archivos");
                   $.ajax
                 (
                     {
