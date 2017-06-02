@@ -16,8 +16,13 @@ foreach ($archivos as $k=>$archivo)
 
             if(!$versiones[$versionPanel])//Si no encuentro la version de panel, cargo la original
             {
-                $versionPanel="original";
+                $vp="original";
             }
+            else
+            {
+                $vp=$versionPanel;
+            }
+
 
 
 
@@ -69,7 +74,7 @@ foreach ($archivos as $k=>$archivo)
                             </div>
                             <figure>
                                 <?php
-                                $version= $versiones[$versionPanel];
+                                $version= $versiones[$vp];
 
                                 ?>
                                 <img data-ng-src="<?php echo $version->getRealName()?>">
@@ -96,7 +101,7 @@ foreach ($archivos as $k=>$archivo)
 
                             <figure>
                                 <?php
-                                $version= $versiones[$versionPanel];
+                                $version= $versiones[$vp];
 
                                 ?>
                              <video>
