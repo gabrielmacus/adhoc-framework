@@ -32,7 +32,7 @@ $configuracion = new Configuracion("localhost","c0580153_adhoc","Mapuche17","c05
 $configuracion->setDefaultImageSizes(
 
     array(
-      "panel_repositorio:250x250"
+      "panel_repositorio:300x300"
     )
 
 );
@@ -94,6 +94,8 @@ $GLOBALS["mapsConfig"]=array(
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json"),true);
 
+//Autoload del sitio
+include "site/autoload.php";
 
 /*
 //Cargo las secciones al menu
