@@ -13,7 +13,7 @@ foreach ($archivos as $k=>$archivo)
         foreach ($grupo as $versiones) {
 
             $version= reset($versiones);
-var_dump($versiones);
+var_dump($versiones["panel_repositorio"]);
 
 
 
