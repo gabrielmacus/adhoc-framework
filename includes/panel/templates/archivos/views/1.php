@@ -9,11 +9,14 @@ foreach ($archivos as $k=>$archivo)
     {
 
 
-        echo json_encode($grupo);
         foreach ($grupo as $versiones) {
 
 
             $version= reset($versiones);
+            if(!$versiones[$versionPanel])
+            {
+                $versionPanel="original";
+            }
 
 
 
