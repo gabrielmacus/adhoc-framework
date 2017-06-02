@@ -16,14 +16,14 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $versionPanel="panel_repositorio";
+    $versionPanel="original";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
     $GLOBALS["archivoDAO"]->setLimit(12);
     $GLOBALS["archivoDAO"]->setPadding(3);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel]);
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,[$versionPanel,"original"]);
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
