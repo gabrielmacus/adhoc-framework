@@ -11,7 +11,7 @@ foreach ($archivos as $k=>$archivo)
 
 
         foreach ($grupo as $versiones) {
-            var_dump($versiones["panel_repositorio"]);
+            echo json_encode($versiones);
 
             $version= reset($versiones);
 
