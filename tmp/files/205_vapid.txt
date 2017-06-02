@@ -1,1 +1,0 @@
-array(2) { ["publicKey"]=> string(88) "BBfOvwLA8AyaKKBVLeXt8hLilY/1FWNIaAbuUadFy5MnXR/Y3/eIxwviGwqELxIf2HQhsyAwwZLPu//ECM6mELU=" ["privateKey"]=> string(44) "c50oNiSpSzh8+AmWkuJ3rRO8WrHkDRVw06wc1eZBLiM=" }
