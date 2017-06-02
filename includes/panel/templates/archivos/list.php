@@ -94,10 +94,7 @@
                             console.log(e);
                         location.reload();
                         },
-                        error:function (e) {
-                            
-                            console.log(e);
-                        }
+                        error:error
                     }
                 );
 
