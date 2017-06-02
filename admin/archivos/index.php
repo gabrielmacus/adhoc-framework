@@ -16,7 +16,7 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $versionPanel="panel_repositorio";
+    $versionPanel="original";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
     $GLOBALS["archivoDAO"]->setLimit(12);
