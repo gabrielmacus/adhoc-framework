@@ -2,6 +2,17 @@
 <script>
     angular.element(function () {
 
+        <?php
+
+       if($post)
+       {
+
+       ?>
+        console.log(<?php echo $post->getSeccion() ?>);
+       // $(".select-secciones").last().val();
+        <?php
+       }
+        ?>
 
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
