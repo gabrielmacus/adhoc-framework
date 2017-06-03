@@ -20,6 +20,7 @@
         }
 
 
+        loadSeccionesGroup(scope.secciones);
 
 
         /*
