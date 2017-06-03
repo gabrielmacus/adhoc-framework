@@ -2,18 +2,8 @@
 <script>
     angular.element(function () {
 
-        <?php
 
-       if($post)
-       {
-
-$arbolSecciones=$GLOBALS["seccionDAO"]->selectSeccionesByTipo($post->getSeccion() );
-       ?>
-        console.log(<?php echo json_encode($arbolSecciones); ?>);
-       // $(".select-secciones").last().val();
-        <?php
-       }
-        ?>
+        /*
 
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
@@ -73,7 +63,7 @@ $arbolSecciones=$GLOBALS["seccionDAO"]->selectSeccionesByTipo($post->getSeccion(
 
             scope.post.seccion=seccionId;
 
-        });
+        });*/
     });
 </script>
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
@@ -82,7 +72,7 @@ $arbolSecciones=$GLOBALS["seccionDAO"]->selectSeccionesByTipo($post->getSeccion(
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
-
+<!--
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
         <label>Subsección {{k+1}}</label>
         <select  class="select-secciones">
@@ -90,6 +80,6 @@ $arbolSecciones=$GLOBALS["seccionDAO"]->selectSeccionesByTipo($post->getSeccion(
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
         </select>
     </div>
-
+-->
 
 </div>
