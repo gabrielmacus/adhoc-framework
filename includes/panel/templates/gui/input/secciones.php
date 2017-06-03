@@ -4,27 +4,8 @@
 
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
-        function loadSeccionesGroup(secciones)
-        {
-            $.each(secciones,
-                function(k,v)
-                {
-                    console.log(v);
-                    scope.secciones_group.push(v);
-                    if(v.secciones)
-                    {
-                        loadSeccionesGroup(v.secciones);
-
-                    }
-                }
-            );
-        }
 
 
-        loadSeccionesGroup(scope.secciones);
-
-
-        /*
         $(document).on("change",".select-secciones",function () {
 
             var seccionId = $(this).val();
@@ -81,7 +62,7 @@
 
             scope.post.seccion=seccionId;
 
-        });*/
+        });
     });
 </script>
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
