@@ -2,10 +2,10 @@
 <script>
     angular.element(function () {
 
-
+        scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         /*
 
-        scope.secciones = <?php  echo  json_encode($subsecciones);?>;
+
         scope.secciones_group=[];
         $(document).on("change",".select-secciones",function () {
 
