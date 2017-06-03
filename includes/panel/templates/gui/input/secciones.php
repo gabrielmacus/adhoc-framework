@@ -64,7 +64,7 @@
 
             scope.post.seccion=seccionId;
 
-        });*/
+        });
     });
 </script>
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
