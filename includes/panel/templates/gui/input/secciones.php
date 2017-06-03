@@ -25,12 +25,10 @@
 
                                     $.each(e,function(clave,valor)
                                     {
-                                        console.log("Seccion rendered");
-                                        console.log(isSeccionRendered);
+
 
                                         $.each( scope.secciones_group,function(k,v){
 
-                                            console.log(v);
                                             isSeccionRendered= v.filter(
                                             function(el)
                                             {
@@ -43,9 +41,14 @@
                                             });
                                     });
 
+                                if(!isSeccionRendered || isSeccionRendered.length==0)
+                                {
+                                    //Si la seccion ya existe,no la muestro
+                                    scope.secciones_group.push(e);
+                                    scope.$apply();
+                                }
 
-                                scope.secciones_group.push(e);
-                                scope.$apply();
+
 
                             }
 
