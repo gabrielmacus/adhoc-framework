@@ -7,8 +7,9 @@
        if($post)
        {
 
+$arbolSecciones=$GLOBALS["seccionDAO"]->selectSeccionesByTipo($post->getSeccion() );
        ?>
-        console.log(<?php echo $post->getSeccion() ?>);
+        console.log(<?php echo json_encode($arbolSecciones); ?>);
        // $(".select-secciones").last().val();
         <?php
        }
