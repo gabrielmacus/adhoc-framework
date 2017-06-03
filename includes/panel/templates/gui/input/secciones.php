@@ -59,7 +59,7 @@
                 );
             }
 
-
+            scope.post.seccion=seccionId;
 
         });
     });
