@@ -24,6 +24,8 @@ try{
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
 
+    $seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
+
     $processFiles = true;
     $processAnexos=true;
     $action=$_GET["act"];

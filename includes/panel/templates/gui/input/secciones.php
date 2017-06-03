@@ -2,7 +2,8 @@
 <script>
     angular.element(function () {
 
-        scope.secciones = <?php  echo  json_encode($subsecciones);?>;
+        scope.secciones = <?php echo json_encode($seccionesTree); ?>;
+      /*  scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
 
 
@@ -64,9 +65,11 @@
 
             scope.post.seccion=seccionId;
 
-        });
+        });*/
     });
 </script>
+
+<!--
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
     <label>Sección</label>
     <select  class="select-secciones">
@@ -76,7 +79,7 @@
 
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
         <label>Subsección {{k+1}}</label>
-        <select data-idx="{{k}}" class="select-secciones">
+        <select  class="select-secciones">
             <option value="">-</option>
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
         </select>
@@ -84,3 +87,4 @@
 
 
 </div>
+-->
