@@ -8,6 +8,8 @@
 
         $(document).on("change",".select-secciones",function () {
 
+            var idx =$(this).data("idx");
+            alert(idx);
             var seccionId = $(this).val();
 
             if($.isNumeric(seccionId))
@@ -62,7 +64,7 @@
 
             scope.post.seccion=seccionId;
 
-        });
+        });*/
     });
 </script>
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
@@ -74,7 +76,7 @@
 
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
         <label>Subsección {{k+1}}</label>
-        <select  class="select-secciones">
+        <select data-idx="{{k}}" class="select-secciones">
             <option value="">-</option>
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
         </select>
