@@ -9,6 +9,7 @@
             $.each(secciones,
                 function(k,v)
                 {
+                    console.log(v);
                     scope.secciones_group.push(v);
                     if(v.secciones)
                     {
