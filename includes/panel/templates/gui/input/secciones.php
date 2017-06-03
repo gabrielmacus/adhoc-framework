@@ -20,10 +20,31 @@
 
                             if(e.length>0)
                             {
-                               var idx= scope.secciones_group.indexOf(e);
-                                console.log(idx);
-                                scope.secciones_group.push(e);
 
+                                var isSeccionRendered=false;
+
+                                    $.each(e,function(clave,valor)
+                                    {
+                                        console.log("Seccion rendered");
+                                        console.log(isSeccionRendered);
+
+                                        $.each( scope.secciones_group,function(k,v){
+
+                                            console.log(v);
+                                            isSeccionRendered= v.filter(
+                                            function(el)
+                                            {
+                                                if(el.id==valor.id)
+
+                                                return el;
+
+                                                    }
+                                                );
+                                            });
+                                    });
+
+
+                                scope.secciones_group.push(e);
                                 scope.$apply();
 
                             }
