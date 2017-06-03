@@ -3,10 +3,26 @@
     angular.element(function () {
 
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
-        /*
-
-
         scope.secciones_group=[];
+        function loadSeccionesGroup(secciones)
+        {
+            $.each(secciones,
+                function(k,v)
+                {
+                    scope.secciones_group.push(v);
+                    if(v.secciones)
+                    {
+                        loadSeccionesGroup(v.secciones);
+
+                    }
+                }
+            );
+        }
+
+
+
+
+        /*
         $(document).on("change",".select-secciones",function () {
 
             var seccionId = $(this).val();
@@ -72,7 +88,7 @@
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
-<!--
+
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
         <label>Subsección {{k+1}}</label>
         <select  class="select-secciones">
@@ -80,6 +96,6 @@
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
         </select>
     </div>
--->
+
 
 </div>
