@@ -275,8 +275,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 
     }
-
-
+    
     private  function processFiles($process=true)
     {
         $in = "0";
@@ -473,8 +472,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
   
 
         /**** Proceso los anexos */
-
-        $this->processAnexos($processAnexos);
+        if($process)
+        {
+            $this->processAnexos($processAnexos);
+        }
         /*** **/
 
         $this->processFiles($process);

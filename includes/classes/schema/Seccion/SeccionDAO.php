@@ -38,6 +38,35 @@ class SeccionDAO implements ISeccion
 
     }
 
+
+    protected $breadcrumb=array();
+    public function selectSeccionesConcat($seccionId)
+    {
+
+
+        $oSql = "SELECT * FROM {$this->tableName} WHERE seccion_id=:seccion_id";
+
+        $s = $this->dataSource->runQuery($oSql, array(
+            ":seccion_id" => $seccionId
+        ))[0];
+        $seccion = new Seccion();
+        $seccion->setId($s["seccion_id"]);
+        $seccion->setNombre($s["seccion_nombre"]);
+        $seccion->setTipo($s["seccion_tipo"]);
+        $this->breadcrumb[] = $seccion;
+        if ($seccion->getTipo() != 0)
+        {
+            $this->selectSeccionesConcat($seccionId);
+
+        }
+
+        return $this->breadcrumb;
+
+
+    }
+
+
+
     public function selectSeccionesByTipo($tipo)
     {
 
@@ -182,9 +211,6 @@ GROUP BY s.seccion_id";
         array_push($this->secciones, $s);
 
     }
-
- 
-
     public function selectSecciones()
     {        $this->secciones=array();
         $sql = "SELECT * FROM {$this->tableName}";
@@ -200,9 +226,6 @@ GROUP BY s.seccion_id";
         return $this->secciones;
     }
 
-
-
-
     public function selectSeccionById($id)
     {
 
@@ -213,6 +236,8 @@ GROUP BY s.seccion_id";
         });
 
         return $this->secciones[0];
+
+
     }
 
     public function updateSeccion(Seccion $s)
