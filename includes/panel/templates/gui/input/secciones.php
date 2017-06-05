@@ -3,7 +3,7 @@
     angular.element(function () {
 
         scope.secciones = <?php echo json_encode($seccionesTree); ?>;
-      /*  scope.secciones = <?php  echo  json_encode($subsecciones);?>;
+   scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
 
 
@@ -65,11 +65,10 @@
 
             scope.post.seccion=seccionId;
 
-        });*/
+        });
     });
 </script>
 
-<!--
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
     <label>Sección</label>
     <select  class="select-secciones">
@@ -87,4 +86,3 @@
 
 
 </div>
--->
