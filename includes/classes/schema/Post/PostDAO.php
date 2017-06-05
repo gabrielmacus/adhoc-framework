@@ -355,13 +355,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
       $breadcrumb=  $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
 
-        var_dump($breadcrumb);
+
         $in="";
         foreach ($breadcrumb as $s)
         {
             $in.="{$s->getId()},";
         }
-
+        var_dump($in);
         $this->posts=array();
 
         $in=rtrim($in,",");
