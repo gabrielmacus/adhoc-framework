@@ -20,7 +20,7 @@ s
     }
 
     include DIR_PATH."/includes/panel/templates/gui/table.php";
-    $href="/admin/posts/?s=posts&t={$_GET["s"]}";
+    $href="/admin/posts/?s=posts&t={$_GET["t"]}";
     $title="Nueva entrada";
     include DIR_PATH."/includes/panel/templates/gui/input/add.php";
     ?>
