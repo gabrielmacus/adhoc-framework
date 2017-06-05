@@ -49,6 +49,7 @@ class SeccionDAO implements ISeccion
         $s = $this->dataSource->runQuery($oSql, array(
             ":seccion_id" => $seccionId
         ))[0];
+        var_dump($s);
         $seccion = new Seccion();
         $seccion->setId($s["seccion_id"]);
         $seccion->setNombre($s["seccion_nombre"]);
