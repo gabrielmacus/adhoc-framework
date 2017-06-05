@@ -9,9 +9,16 @@
 
         $(document).on("change",".select-secciones",function () {
 
-            var idx =$(this).data("idx");
-            alert(idx);
             var seccionId = $(this).val();
+
+            var idx= $(this).data("id");
+
+
+            alert(idx);
+
+
+
+
 
             if($.isNumeric(seccionId))
             {
@@ -24,35 +31,9 @@
 
                             if(e.length>0)
                             {
-
-                                var isSeccionRendered=false;
-
-                                    $.each(e,function(clave,valor)
-                                    {
-
-
-                                        $.each( scope.secciones_group,function(k,v){
-
-                                            isSeccionRendered= v.filter(
-                                            function(el)
-                                            {
-                                                if(el.id==valor.id)
-
-                                                return el;
-
-                                                    }
-                                                );
-                                            });
-                                    });
-
-                                if(!isSeccionRendered || isSeccionRendered.length==0)
-                                {
                                     //Si la seccion ya existe,no la muestro
                                     scope.secciones_group.push(e);
                                     scope.$apply();
-                                }
-
-
 
                             }
 
@@ -78,7 +59,7 @@
 
     <div data-ng-repeat="(k,subsecciones) in secciones_group">
         <label>Subsección {{k+1}}</label>
-        <select  class="select-secciones">
+        <select data-id="{{k}}"  class="select-secciones">
             <option value="">-</option>
             <option  data-ng-repeat="sub in subsecciones" value="{{sub.id}}">{{sub.nombre}}</option>
         </select>
