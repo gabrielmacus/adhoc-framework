@@ -353,12 +353,29 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function selectPostByTipo($tipo,$process=true,$processAnexos=true)
     {
-        $this->posts=array();
-        $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
+      $breadcrumb=  $GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($tipo);
 
-        $this->dataSource->runQuery($sql,array(":post_seccion"=>$tipo),function($data){
+        $in="";
+        foreach ($breadcrumb as $s)
+        {
+            $in.="{$s->getId()},";
+        }
+
+        $this->posts=array();
+
+        $in=rtrim($in,",");
+        $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion IN ({$in})";
+        $this->dataSource->runQuery($sql,array(),function($data){
             $this->query($data,true);
         });
+       // $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
+
+
+
+        /*
+        $this->dataSource->runQuery($sql,array(":post_seccion"=>$tipo),function($data){
+            $this->query($data,true);
+        });*/
 
         /**** Proceso los anexos */
 
