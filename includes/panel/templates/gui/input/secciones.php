@@ -13,14 +13,20 @@
 
             var idx= $(this).data("id");
 
-            alert(idx);
 
             if(idx)
             {
 
-                scope.secciones_group=  scope.secciones_group.slice(0,(idx+1));
-                scope.$apply();
+         scope.secciones_group.slice((idx+1),scope.secciones_group.length-1);
+
             }
+            else
+            {
+                scope.secciones_group=[];
+            }
+
+            scope.$apply();
+
             if($.isNumeric(seccionId))
             {
                 $.ajax(
