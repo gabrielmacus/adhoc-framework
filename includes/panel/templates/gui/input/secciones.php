@@ -13,6 +13,7 @@
 
             var idx= $(this).data("id");
 
+            alert(idx);
 
             if($.isNumeric(idx))
             {
