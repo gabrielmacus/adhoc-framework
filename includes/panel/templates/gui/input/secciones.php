@@ -100,6 +100,9 @@
         <?php
         }?>
 
+        scope.call=function () {
+            alert("FINISH");
+        }
 
 
     });
@@ -112,7 +115,7 @@
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
 
-    <div data-ng-repeat="(k,subsecciones) in secciones_group">
+    <div data-ng-repeat="(k,subsecciones) in secciones_group" on-finish-render="call()">
         <label>Subsección {{k+1}}</label>
         <select data-id="{{k}}"  class="select-secciones">
             <option value="">-</option>
