@@ -14,8 +14,6 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
         $row["Titulo"]["data"]=$post->getTitulo();
         $row["Volanta"]["data"]=$post->getVolanta();
 
-
-s
         $rows[]=$row;
     }
 
