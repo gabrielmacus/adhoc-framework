@@ -18,7 +18,7 @@
             if($.isNumeric(idx))
             {
 
-         scope.secciones_group.slice(0,(idx+1));
+                scope.secciones_group=scope.secciones_group.slice(0,(idx+1));
 
             }
             else
