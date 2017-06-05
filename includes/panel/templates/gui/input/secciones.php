@@ -7,7 +7,7 @@
 
 
             ?>
-        console.log(<?Php echo json_encode($post->getSeccion())?>);
+        console.log(<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionesConcat($post->getSeccion()))?>);
 
         <?php
         }?>
