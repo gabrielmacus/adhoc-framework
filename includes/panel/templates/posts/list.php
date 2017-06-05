@@ -1,4 +1,5 @@
 <?php
+$title="Lista de elementos";
 include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
 ?>
 
