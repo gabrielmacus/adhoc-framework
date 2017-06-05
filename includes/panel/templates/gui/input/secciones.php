@@ -6,7 +6,7 @@
         <?php
 
         ?>
-        var secciones = <?php echo  json_encode(  $GLOBALS["seccionDAO"]->selectSecciones());?>
+        var secciones = <?php echo  json_encode(  $GLOBALS["seccionDAO"]->selectSecciones());?>;
         console.log(secciones);
         <?php
 
