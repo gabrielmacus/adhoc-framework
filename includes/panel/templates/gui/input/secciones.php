@@ -54,7 +54,7 @@
                 });
 
 
-                scope.secciones_group=result;
+                scope.secciones_group.push(result);
 
 
 
