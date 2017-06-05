@@ -88,6 +88,12 @@
         console.log(breadcrumb);
         $.each(breadcrumb,function (k,v) {
 
+            if(v.tipo!=0)
+            {
+                var select=$(".select-secciones").last();
+                select.val(v.id);
+                select.trigger("select");
+            }
 
         });
         <?php
