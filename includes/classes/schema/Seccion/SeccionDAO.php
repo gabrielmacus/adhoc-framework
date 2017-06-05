@@ -39,10 +39,14 @@ class SeccionDAO implements ISeccion
     }
 
 
-    protected $breadcrumb=array();
-    public function selectSeccionBreadcrumb($seccionId)
+
+    public function selectSeccionBreadcrumb($seccionId,$recursive=false)
     {
 
+        if(!$recursive)
+        {
+            $this->secciones=array();
+        }
 
         $oSql = "SELECT * FROM {$this->tableName} WHERE seccion_id=:seccion_id";
 
@@ -54,27 +58,53 @@ class SeccionDAO implements ISeccion
         $seccion->setId($s["seccion_id"]);
         $seccion->setNombre($s["seccion_nombre"]);
         $seccion->setTipo($s["seccion_tipo"]);
-        $this->breadcrumb[] = $seccion;
+        $this->secciones[] = $seccion;
         if ($seccion->getTipo() != 0)
         {
-            $this->selectSeccionBreadcrumb($seccion->getTipo());
+            $this->selectSeccionBreadcrumb($seccion->getTipo(),true);
 
         }
 
 
 
-        return   array_reverse($this->breadcrumb);
+        return   array_reverse($this->secciones);
+
+
+    }
+
+    public function selectCompleteSeccionBreadcrumb($seccionId, $recursive = false)
+    {
+        if(!$recursive)
+        {
+            $this->secciones=array();
+        }
+
+        $oSql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo=:seccion_tipo";
+
+        $s = $this->dataSource->runQuery($oSql, array(
+            ":seccion_tipo" => $seccionId
+        ))[0];
+        
+        if($s)
+        {
+            $seccion = new Seccion();
+            $seccion->setId($s["seccion_id"]);
+            $seccion->setNombre($s["seccion_nombre"]);
+            $seccion->setTipo($s["seccion_tipo"]);
+            $this->secciones[] = $seccion;
+            $this->selectCompleteSeccionBreadcrumb($seccion->getId(),true);
+
+        }
+        
+
+        return   array_reverse($this->secciones);
 
 
     }
 
 
-
     public function selectSeccionesByTipo($tipo)
     {
-
-
-
         $sql = "SELECT * FROM {$this->tableName} WHERE seccion_tipo={$tipo}";
         $this->secciones=array();
         $this->dataSource->runQuery($sql,array(),function($data){

@@ -22,11 +22,21 @@ interface ISeccion
      * @param $seccionId
      * @return mixed
      * 
-     * Devuelve un array con el breadcrum de secciones segun el id requerido 
+     * Devuelve un array con el breadcrum de secciones hasta el id requerido
      */
-    public function selectSeccionBreadcrumb($seccionId);
+    public function selectSeccionBreadcrumb($seccionId,$recursive=false);
+
+    /**
+     * @param $seccionId
+     * @param bool $recursive
+     * @return mixed
+     * Devuelve un array  con el breadcrumb completo, es decir, de la primer seccion a la ultima,segun el id requerido
+     */
+    public function selectCompleteSeccionBreadcrumb($seccionId,$recursive=false);
+    
     /** **/
 
+    
     /** Update**/
     public function updateSeccion(Seccion $s);
     /** */
