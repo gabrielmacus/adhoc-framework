@@ -1,8 +1,6 @@
-
-<header>
-    <h2><?php echo $lang["jugadores"]?></h2>
-</header>
-
+<?php
+include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
+?>
 
 <div class="body">
 
