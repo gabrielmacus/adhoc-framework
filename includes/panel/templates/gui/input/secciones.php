@@ -14,12 +14,11 @@
             var idx= $(this).data("id");
 
 
-            alert(idx);
-
-
-
-
-
+            if(idx)
+            {
+                scope.secciones_group.slice(0,(idx+1));
+                scope.$apply();
+            }
             if($.isNumeric(seccionId))
             {
                 $.ajax(
@@ -33,7 +32,10 @@
                             {
                                     //Si la seccion ya existe,no la muestro
                                     scope.secciones_group.push(e);
+
+                                setTimeout(function () {
                                     scope.$apply();
+                                });
 
                             }
 
