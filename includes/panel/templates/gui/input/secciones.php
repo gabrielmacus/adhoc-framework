@@ -43,7 +43,6 @@
                 scope.secciones_group=[];
             }
 
-            scope.$apply();
 
             if($.isNumeric(seccionId))
             {
@@ -53,9 +52,12 @@
                     return el.tipo == seccionId;
 
                 });
-                console.log(result);
 
-                
+
+                scope.secciones_group=result;
+
+
+
 
                 /*
                 $.ajax(
@@ -85,6 +87,7 @@
 
             scope.post.seccion=seccionId;
 
+            scope.$apply();
         });
     });
 </script>
