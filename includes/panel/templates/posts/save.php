@@ -56,7 +56,7 @@
         $label="Posts adjuntos";
         $grupo=26;
         $s="posts";
-        $tipo=65;
+        $tipo=84;
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
 
