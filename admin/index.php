@@ -16,6 +16,7 @@ $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
+var_dump($GLOBALS["seccionDAO"]->selectSeccionesConcat(92));
 try{
     $site="home";
     $action="index";
