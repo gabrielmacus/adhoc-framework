@@ -365,7 +365,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $this->posts=array();
 
-        $in=rtrim($in,",");
+        $in.=$tipo;
+        
         $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion IN ({$in})";
         $this->dataSource->runQuery($sql,array(),function($data){
             $this->query($data,true);
