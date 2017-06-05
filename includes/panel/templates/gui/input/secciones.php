@@ -88,6 +88,7 @@
         console.log(breadcrumb);
         $.each(breadcrumb,function (k,v) {
 
+            console.log(v);
             if(v.tipo!=0)
             {
                 var select=$(".select-secciones").last();
