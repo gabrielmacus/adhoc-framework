@@ -7,7 +7,7 @@
 <div class="body">
 
     <?php
-    $title=$lang["jugadoreslistado"];
+    $title="Listado de posts";
     foreach ($posts as $post)
     {
 
