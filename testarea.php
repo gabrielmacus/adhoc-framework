@@ -7,5 +7,5 @@
  */
 
 include "includes/autoload.php";
-var_dump(
-    $GLOBALS["seccionDAO"]->selectSeccionesConcat(92));
+var_dump("data");
+var_dump($GLOBALS["seccionDAO"]->selectSeccionesConcat(92));
