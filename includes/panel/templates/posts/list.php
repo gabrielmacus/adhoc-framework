@@ -15,11 +15,15 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
         $row["Volanta"]["data"]=$post->getVolanta();
 
 
-
+s
         $rows[]=$row;
     }
 
     include DIR_PATH."/includes/panel/templates/gui/table.php";
+    $href="/admin/posts/?s=posts&t={$_GET["s"]}";
+    $title="Nueva entrada";
+    include DIR_PATH."/includes/panel/templates/gui/input/save.php";
     ?>
+
 
 </div>
