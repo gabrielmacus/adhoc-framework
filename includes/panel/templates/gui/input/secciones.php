@@ -88,7 +88,7 @@
             ?>
             var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
 
-            console.log(breadcrumb);
+
             $.each(breadcrumb,function (k,v) {
 
                 if(v.tipo!=0)
