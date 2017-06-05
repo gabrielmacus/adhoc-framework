@@ -355,6 +355,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
       $breadcrumb=  $GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($tipo);
 
+        var_dump($breadcrumb);
         $in="";
         foreach ($breadcrumb as $s)
         {
