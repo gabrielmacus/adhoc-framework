@@ -14,7 +14,7 @@
             var idx= $(this).data("id");
 
 
-            if(idx)
+            if($.isNumeric(idx))
             {
 
          scope.secciones_group.slice((idx+1),scope.secciones_group.length-1);
@@ -62,7 +62,7 @@
 
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
     <label>Sección</label>
-    <select  class="select-secciones">
+    <select   class="select-secciones">
         <option value="">-</option>
         <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
