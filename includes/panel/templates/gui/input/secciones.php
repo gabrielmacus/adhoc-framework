@@ -95,8 +95,8 @@
                 {
                     console.log(v);
                     var select=$(".select-secciones").last();
-
-                    select.val(parseInt(v.id));
+                    console.log(parseInt(v.id));
+                    select.val();
                     select.trigger("select");
                 }
 
