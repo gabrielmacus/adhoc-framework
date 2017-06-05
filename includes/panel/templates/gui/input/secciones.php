@@ -88,9 +88,9 @@
         console.log(breadcrumb);
         $.each(breadcrumb,function (k,v) {
 
-            console.log(v);
             if(v.tipo!=0)
             {
+                console.log(v);
                 var select=$(".select-secciones").last();
                 select.val(v.id);
                 select.trigger("select");
