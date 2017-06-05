@@ -47,6 +47,17 @@
 
             if($.isNumeric(seccionId))
             {
+
+               var result= secciones.filter(function (el) {
+
+                    return el.tipo == seccionId;
+
+                });
+                console.log(result);
+
+                
+
+                /*
                 $.ajax(
                     {
                         url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
@@ -69,7 +80,7 @@
                         },
                         error:error
                     }
-                );
+                );*/
             }
 
             scope.post.seccion=seccionId;
