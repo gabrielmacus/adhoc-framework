@@ -2,6 +2,16 @@
 <script>
     angular.element(function () {
 
+        <?php if($post)
+        {
+
+
+            ?>
+        console.log(<?Php echo json_encode($post->getSeccion())?>);
+
+        <?php
+        }?>
+
         scope.secciones = <?php echo json_encode($seccionesTree); ?>;
    scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
@@ -13,7 +23,7 @@
 
             var idx= $(this).data("id");
 
-  
+
             if($.isNumeric(idx))
             {
 
