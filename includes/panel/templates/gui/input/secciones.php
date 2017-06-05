@@ -1,29 +1,11 @@
 
 <script>
     angular.element(function () {
-
-
-        <?php
-
-        ?>
         var secciones = <?php echo  json_encode(  $GLOBALS["seccionDAO"]->selectSecciones());?>;
-        console.log(secciones);
-        <?php
-
-        if($post)
-        {
-
-
-            ?>
-      var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
-
-        <?php
-        }?>
 
         scope.secciones = <?php echo json_encode($seccionesTree); ?>;
-   scope.secciones = <?php  echo  json_encode($subsecciones);?>;
+        scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
-
 
         $(document).on("change",".select-secciones",function () {
 
@@ -47,7 +29,7 @@
             if($.isNumeric(seccionId))
             {
 
-               var result= secciones.filter(function (el) {
+                var result= secciones.filter(function (el) {
 
                     return el.tipo == seccionId;
 
@@ -64,35 +46,55 @@
 
 
                 /*
-                $.ajax(
-                    {
-                        url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
-                        method:"get",
-                        dataType:"json",
-                        success:function (e) {
+                 $.ajax(
+                 {
+                 url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
+             method:"get",
+             dataType:"json",
+             success:function (e) {
 
-                            if(e.length>0)
-                            {
-                                    //Si la seccion ya existe,no la muestro
-                                    scope.secciones_group.push(e);
+             if(e.length>0)
+             {
+             //Si la seccion ya existe,no la muestro
+             scope.secciones_group.push(e);
 
-                                setTimeout(function () {
-                                    scope.$apply();
-                                });
+             setTimeout(function () {
+             scope.$apply();
+             });
 
-                            }
+             }
 
 
-                        },
-                        error:error
-                    }
-                );*/
+             },
+             error:error
+             }
+             );*/
             }
 
             scope.post.seccion=seccionId;
 
             scope.$apply();
         });
+
+        <?php
+
+        if($post)
+        {
+
+
+            ?>
+      var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
+
+        console.log(breadcrumb);
+        $.each(breadcrumb,function (k,v) {
+
+
+        });
+        <?php
+        }?>
+
+
+
     });
 </script>
 
