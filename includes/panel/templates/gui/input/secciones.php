@@ -76,32 +76,32 @@
             scope.$apply();
         });
 
-        <?php
 
-        if($post)
-        {
+        scope.seccionesLoaded=function () {
+
+            <?php
+
+            if($post)
+            {
 
 
             ?>
-      var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
+            var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
 
-        console.log(breadcrumb);
-        $.each(breadcrumb,function (k,v) {
+            console.log(breadcrumb);
+            $.each(breadcrumb,function (k,v) {
 
-            if(v.tipo!=0)
-            {
-                console.log(v);
-                var select=$(".select-secciones").last();
-                select.val(v.id);
-                select.trigger("select");
-            }
+                if(v.tipo!=0)
+                {
+                    console.log(v);
+                    var select=$(".select-secciones").last();
+                    select.val(v.id);
+                    select.trigger("select");
+                }
 
-        });
-        <?php
-        }?>
-
-        scope.call=function () {
-            alert("FINISH");
+            });
+            <?php
+            }?>
         }
 
 
@@ -112,10 +112,10 @@
     <label>Sección</label>
     <select   class="select-secciones">
         <option value="">-</option>
-        <option  data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
+        <option on-finish-render="seccionesLoaded()" data-ng-repeat="s in secciones" value="{{s.id}}">{{s.nombre}}</option>
     </select>
 
-    <div data-ng-repeat="(k,subsecciones) in secciones_group" on-finish-render="call()">
+    <div data-ng-repeat="(k,subsecciones) in secciones_group" >
         <label>Subsección {{k+1}}</label>
         <select data-id="{{k}}"  class="select-secciones">
             <option value="">-</option>
