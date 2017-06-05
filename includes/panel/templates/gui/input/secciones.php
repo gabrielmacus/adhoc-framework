@@ -54,7 +54,11 @@
                 });
 
 
-                scope.secciones_group.push(result);
+                if(result.length>0)
+                {
+
+                    scope.secciones_group.push(result);
+                }
 
 
 
