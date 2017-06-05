@@ -95,9 +95,8 @@
                 {
                     console.log(v);
                     var select=$(".select-secciones").last();
-                    console.log(parseInt(v.id));
-                    select.val();
-                    select.trigger("select");
+                    select.val(parseInt(v.id));
+                    select.trigger("change");
                 }
 
             });
