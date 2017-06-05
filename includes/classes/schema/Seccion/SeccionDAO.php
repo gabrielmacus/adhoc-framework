@@ -61,7 +61,9 @@ class SeccionDAO implements ISeccion
 
         }
 
-        return $this->breadcrumb;
+
+
+        return   array_reverse($this->breadcrumb);
 
 
     }
