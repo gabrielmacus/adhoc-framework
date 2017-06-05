@@ -18,6 +18,8 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
     }
 
     include DIR_PATH."/includes/panel/templates/gui/table.php";
+
+
     $href="/admin/posts/?s=posts&t={$_GET["t"]}";
     $title="Nueva entrada";
     include DIR_PATH."/includes/panel/templates/gui/input/add.php";
