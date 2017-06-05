@@ -24,7 +24,7 @@ interface ISeccion
      * 
      * Devuelve un array con el breadcrum de secciones segun el id requerido 
      */
-    public function selectSeccionesConcat($seccionId);
+    public function selectSeccionBreadcrumb($seccionId);
     /** **/
 
     /** Update**/

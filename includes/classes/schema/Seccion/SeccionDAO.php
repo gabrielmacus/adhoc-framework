@@ -40,7 +40,7 @@ class SeccionDAO implements ISeccion
 
 
     protected $breadcrumb=array();
-    public function selectSeccionesConcat($seccionId)
+    public function selectSeccionBreadcrumb($seccionId)
     {
 
 
@@ -57,7 +57,7 @@ class SeccionDAO implements ISeccion
         $this->breadcrumb[] = $seccion;
         if ($seccion->getTipo() != 0)
         {
-            $this->selectSeccionesConcat($seccion->getTipo());
+            $this->selectSeccionBreadcrumb($seccion->getTipo());
 
         }
 

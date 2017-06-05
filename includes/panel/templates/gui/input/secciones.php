@@ -2,12 +2,20 @@
 <script>
     angular.element(function () {
 
-        <?php if($post)
+
+        <?php
+
+        ?>
+        var secciones = <?php echo  json_encode(  $GLOBALS["seccionDAO"]->selectSecciones());?>
+        console.log(secciones);
+        <?php
+
+        if($post)
         {
 
 
             ?>
-        console.log(<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionesConcat($post->getSeccion()))?>);
+      var breadcrumb=<?Php echo json_encode($GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($post->getSeccion()))?>;
 
         <?php
         }?>
