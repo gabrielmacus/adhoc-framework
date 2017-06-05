@@ -353,7 +353,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     public function selectPostByTipo($tipo,$process=true,$processAnexos=true)
     {
-      $breadcrumb=  $GLOBALS["seccionDAO"]->selectSeccionBreadcrumb($tipo);
+      $breadcrumb=  $GLOBALS["seccionDAO"]->selectSeccionesByTipo($tipo);
 
         var_dump($breadcrumb);
         $in="";
