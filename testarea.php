@@ -11,5 +11,8 @@ $p=new PostDAO();
 
 $post=$GLOBALS["postDAO"]->selectPostById(10);
 
-
-echo json_encode($post->getAnexos());
+$anexos=$post->getAnexos();
+foreach ($anexos as $a)
+{
+    var_dump($a);
+}
