@@ -101,8 +101,8 @@ if(!$shownText)
             scope.post.anexos=[];
         }
 
-         scope.post.anexos.concat(anexos);
 
+        angular.merge(scope.post.anexos,anexos);
 
         scope.$apply();
 
