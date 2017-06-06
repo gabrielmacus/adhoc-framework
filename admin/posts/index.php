@@ -35,6 +35,9 @@ try{
             $action="list";
             break;
         case "view":
+
+            $processFiles=false;
+            $processAnexos=false;
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
