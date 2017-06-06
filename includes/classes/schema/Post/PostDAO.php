@@ -391,79 +391,81 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     }
 
 
+
     private function processAnexos($process=true)
-    {
-        $in="";
-        foreach ($this->posts as $post) {
+{
+    $in="";
+    foreach ($this->posts as $post) {
 
-            $in.= ",{$post->getId()}";
-        }
+        $in.= ",{$post->getId()}";
+    }
 
-        /*  $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n
-       LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
-        OR n.post_anexo_id IN (0{$in})
-       ORDER BY post_nexo_orden ASC";
-      */
+  /*  $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n
+ LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
+  OR n.post_anexo_id IN (0{$in})
+ ORDER BY post_nexo_orden ASC";
+*/
 
 
-        /*$anexosSql="SELECT p.*,n.* ,p.post_id as 'id' FROM `posts_nexos` n
-     LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
-     ORDER BY post_nexo_orden ASC";
-        */
+    /*$anexosSql="SELECT p.*,n.* ,p.post_id as 'id' FROM `posts_nexos` n
+ LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
+ ORDER BY post_nexo_orden ASC";
+    */
 
-        $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
+    $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
  ORDER BY post_nexo_orden ASC";
 
 
 
-        $postAnexos =array();
-        $anexos=  $this->dataSource->runQuery($anexosSql);
+    $postAnexos =array();
+    $anexos=  $this->dataSource->runQuery($anexosSql);
 
-        foreach ($anexos as $anexo)
+    foreach ($anexos as $anexo)
+    {
+
+        $post =new Post();
+        $post->setTitulo($anexo["post_titulo"]);
+        $post->setVolanta($anexo["post_volanta"]);
+        $post->setBajada($anexo["post_bajada"]);
+        $post->setTexto($anexo["post_texto"]);
+        $post->setExtra1($anexo["post_extra_1"]);
+        $post->setExtra2($anexo["post_extra_2"]);
+        $post->setExtra3($anexo["post_extra_3"]);
+        $post->setExtra4($anexo["post_extra_4"]);
+        $post->setCreacion($anexo["post_creacion"]);
+        $post->setModificacion($anexo["post_modificacion"]);
+        $post->setId($anexo["id"]);
+        $post->setNexoGrupo($anexo["post_nexo_grupo"]);
+        $post->setNexoOrden($anexo["post_nexo_orden"]);
+        $post->setNexoId($anexo["post_nexo_id"]);
+        $post->setAnexoId($anexo["post_anexo_id"]);
+
+
+
+        if($process)
         {
-
-            $post =new Post();
-            $post->setId($anexo["id"]);
-
-            /**
-             * Traigo las asociaciones de los post asociados a este, recursivamente
-             */
-            $post=$GLOBALS["postDAO"]->selectPostById($post->getId());
-            var_dump($post);
-
-            /**  */
-            $post->setNexoGrupo($anexo["post_nexo_grupo"]);
-            $post->setNexoOrden($anexo["post_nexo_orden"]);
-            $post->setNexoId($anexo["post_nexo_id"]);
-            $post->setAnexoId($anexo["post_anexo_id"]);
+            $postAnexos[$anexo["post_nexo_grupo"]][]=$post;
+        }
+        else
+        {
+            $postAnexos[]=$post;
+        }
 
 
-            if($process)
-            {
-                $postAnexos[$anexo["post_nexo_grupo"]][]=$post;
-            }
-            else
-            {
-                $postAnexos[]=$post;
-            }
+        if($this->posts[$anexo["id"]])
+        {
+            $this->posts[$anexo["id"]]->setAnexos($postAnexos);
+        }
+        if($this->posts[$anexo["post_id"]])
+        {
+            $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
+        }
 
-
-            if($this->posts[$anexo["id"]])
-            {
-                $this->posts[$anexo["id"]]->setAnexos($postAnexos);
-            }
-            if($this->posts[$anexo["post_id"]])
-            {
-                $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
-            }
-
-            //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
-
-
-    }
+        //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
     }
 
+}
 
     public function selectPosts($process=true,$processAnexos=true)
     {
