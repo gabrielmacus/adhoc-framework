@@ -64,8 +64,9 @@ if(!$shownText)
 
             var text="";
             console.log(<?php echo $grupo;?>);
+            console.log(v);
             if(v.post_nexo_grupo== <?php echo $grupo;?>)
-            {           console.log(v);
+            {
 
                 <?Php if(!is_array($shownText))
                 {
