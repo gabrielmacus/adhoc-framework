@@ -9,7 +9,7 @@
 include "includes/autoload.php";
 $p=new PostDAO();
 
-$post=$GLOBALS["postDAO"]->selectPostById(10);
+$post=$GLOBALS["postDAO"]->selectPostById(11);
 
 $anexos=$post->getAnexos();
 var_dump($anexos);
