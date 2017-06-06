@@ -11,7 +11,6 @@ $p=new PostDAO();
 
 $post=$GLOBALS["postDAO"]->selectPostById(10);
 
-$post= new Post();
 
 foreach ($post->getAnexos() as $a)
 {
