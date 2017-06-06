@@ -17,6 +17,7 @@ foreach ($anexos as $grupo=>$v)
 {
     foreach ($v as $clave=>$anexo)
     {
-        var_dump($anexo);
+        $post=$GLOBALS["postDAO"]->selectPostById($anexo->getId());
+        echo json_encode($post);
     }
 }
