@@ -60,12 +60,13 @@ if(!$shownText)
 
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
-            console.log(v);
+
 
             var text="";
             console.log(<?php echo $grupo;?>);
             if(v.post_nexo_grupo== <?php echo $grupo;?>)
-            {
+            {           console.log(v);
+
                 <?Php if(!is_array($shownText))
                 {
                 ?>       text+=v.post_<?php echo $shownText?>;
