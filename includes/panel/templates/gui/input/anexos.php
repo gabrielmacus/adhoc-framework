@@ -85,7 +85,9 @@ if(!$shownText)
                     }?>
 
 
-                    scope.post.anexos.push({post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo});
+                    var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
+                    console.log(anexo);
+                    scope.post.anexos.push(anexo);
 
                 }
 
