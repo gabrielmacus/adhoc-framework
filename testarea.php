@@ -12,7 +12,4 @@ $p=new PostDAO();
 $post=$GLOBALS["postDAO"]->selectPostById(10);
 
 
-foreach ($post->getAnexos() as $a)
-{
-    var_dump($a->getAnexos());
-}
+var_dump($post->getAnexos());
