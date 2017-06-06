@@ -15,7 +15,7 @@ $anexos=$post->getAnexos();
 
 foreach ($anexos as $grupo=>$v)
 {
-    foreach ($grupo as $clave=>$anexo)
+    foreach ($v as $clave=>$anexo)
     {
         var_dump($anexo);
     }
