@@ -102,7 +102,7 @@ if(!$shownText)
         }
 
 
-        angular.merge(scope.post.anexos,anexos);
+        angular.extend(scope.post.anexos,anexos);
 
         scope.$apply();
 
