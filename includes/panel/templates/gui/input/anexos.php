@@ -96,6 +96,10 @@ if(!$shownText)
 
         console.log(anexos);
 
+        if(!scope.post.anexos)
+        {
+            scope.post.anexos=[];
+        }
 
          scope.post.anexos.concat(anexos);
 
