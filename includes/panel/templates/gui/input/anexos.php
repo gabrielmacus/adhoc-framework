@@ -57,11 +57,10 @@ if(!$shownText)
         }
 
 
-        <?php
-        /*
-         *
+
         var anexos =[];
         $.each(scope.post.anexos,function (k,v) {
+            console.log(v);
 
             var text="";
             if(v.post_nexo_grupo== <?php echo $grupo;?>)
@@ -96,8 +95,7 @@ if(!$shownText)
 
 
         scope.$apply();
-         * */
-        ?>
+
 
 
         <?Php
