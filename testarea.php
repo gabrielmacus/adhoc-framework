@@ -12,4 +12,11 @@ $p=new PostDAO();
 $post=$GLOBALS["postDAO"]->selectPostById(11);
 
 $anexos=$post->getAnexos();
-var_dump($anexos);
+
+foreach ($anexos as $grupo=>$v)
+{
+    foreach ($grupo as $clave=>$anexo)
+    {
+        var_dump($anexo);
+    }
+}
