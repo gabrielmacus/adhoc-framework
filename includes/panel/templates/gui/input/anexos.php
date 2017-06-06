@@ -49,11 +49,15 @@ if(!$shownText)
         if(!scope.post)
         {
             scope.post= <?php echo json_encode($post)?>;
-            scope.anexos= scope.post.anexos;
-            scope.post.anexos=[];
-            console.log("HERE");
+
         }
 
+        if(!scope.anexos)
+        {
+            scope.anexos= scope.post.anexos;
+            scope.post.anexos=[];
+        }
+        
         $.each(scope.anexos,function (clave,valor) {
 
             $.each(valor,function (k,v) {
