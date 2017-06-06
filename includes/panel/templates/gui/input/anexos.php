@@ -59,36 +59,39 @@ if(!$shownText)
 
 
         var anexos =[];
-        $.each(scope.post.anexos,function (k,v) {
+        $.each(scope.post.anexos,function (clave,valor) {
 
 
             var text="";
-            console.log(<?php echo $grupo;?>);
-            console.log(v);
-            if(v.post_nexo_grupo== <?php echo $grupo;?>)
-            {
 
-                <?Php if(!is_array($shownText))
+            $.each(valor,function (k,v) {
+
+                if(v.post_nexo_grupo== <?php echo $grupo;?>)
                 {
-                ?>       text+=v.post_<?php echo $shownText?>;
 
-                <?Php
+                    <?Php if(!is_array($shownText))
+                    {
+                    ?>       text+=v.post_<?php echo $shownText?>;
+
+                    <?Php
+                    }
+                    else
+                    {
+                    foreach ($shownText as $t)
+                    {
+                    ?>
+                    text+=v.post_<?php echo $t?>+" ";
+                    <?php
+                    }
+                    }?>
+
+
+                    anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
+
                 }
-                else
-                {
-                foreach ($shownText as $t)
-                {
-                ?>
-                text+=v.post_<?php echo $t?>+" ";
-                <?php
-                }
-                }?>
 
 
-                anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
-
-            }
-
+            });
 
         });
 
