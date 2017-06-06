@@ -14,5 +14,5 @@ $post=$GLOBALS["postDAO"]->selectPostById(10);
 $anexos=$post->getAnexos();
 foreach ($anexos as $a)
 {
-    var_dump($a[0]);
+    var_dump($a[0]->getId());
 }
