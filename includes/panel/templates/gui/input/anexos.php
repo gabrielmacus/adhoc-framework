@@ -50,11 +50,15 @@ if(!$shownText)
         {
             scope.post= <?php echo json_encode($post)?>;
         }
+
+
+        var anexos=<?php echo json_encode($post->getAnexos())?>;
+        /*
         if(!scope.post.anexos)
         {
             scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
 
-        }
+        }*/
 
 
         if(!scope.post.anexos)
@@ -63,7 +67,7 @@ if(!$shownText)
         }
 
 //        var anexos =[];
-        $.each(scope.post.anexos,function (clave,valor) {
+        $.each(anexos,function (clave,valor) {
 
             $.each(valor,function (k,v) {
 
