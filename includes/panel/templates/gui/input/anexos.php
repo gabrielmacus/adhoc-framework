@@ -66,6 +66,7 @@ if(!$shownText)
             scope.post.anexos=[];
         }
 
+        console.log(scope.post.anexos);
 //        var anexos =[];
         $.each(anexos,function (clave,valor) {
 
