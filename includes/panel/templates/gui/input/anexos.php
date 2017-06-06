@@ -70,7 +70,7 @@ if(!$shownText)
 
                     <?Php if(!is_array($shownText))
                     {
-                    ?>       text+=v.post_<?php echo $shownText?>;
+                    ?>       text+=v.<?php echo $shownText?>;
 
                     <?Php
                     }
