@@ -38,8 +38,6 @@ try{
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
-            $processFiles=false;
-            $processAnexos=false;
             
             break;
     }
@@ -47,7 +45,7 @@ try{
 
     if(is_numeric($_GET["id"]))
     {
-        echo $processAnexos;
+
         $post= $GLOBALS["postDAO"]->selectPostById($_GET["id"],$processFiles,$processAnexos);
 
     }
