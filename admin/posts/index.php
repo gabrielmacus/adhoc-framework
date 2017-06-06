@@ -56,6 +56,8 @@ try{
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
 
+    echo json_encode($post);
+
 
 }
 catch (Exception $e)
