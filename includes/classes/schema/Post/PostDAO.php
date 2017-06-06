@@ -165,7 +165,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     if(!$id)
                     {
                         $values.=" ('','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
-                        $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                  //Asociacion bidireccional desactivada      $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
                     }
                     else
                     {
