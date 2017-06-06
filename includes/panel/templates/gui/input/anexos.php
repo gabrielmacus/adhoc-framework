@@ -55,8 +55,8 @@ if(!$shownText)
 
         if(!scope.anexos)
         {
-           // scope.anexos= scope.post.anexos;
-           // scope.post.anexos=[];
+           scope.anexos= scope.post.anexos;
+            scope.post.anexos=[];
         }
 
         $.each(scope.anexos,function (clave,valor) {
@@ -85,7 +85,7 @@ if(!$shownText)
                     }?>
 
 
-                    scope.post.anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
+                    scope.post.anexos.push({post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo});
 
                 }
 
