@@ -97,7 +97,7 @@ if(!$shownText)
         console.log(anexos);
 
 
-         scope.post.anexos =anexos;
+         scope.post.anexos.concat(anexos);
 
 
         scope.$apply();
