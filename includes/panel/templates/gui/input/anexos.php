@@ -50,14 +50,15 @@ if(!$shownText)
         {
             scope.post= <?php echo json_encode($post)?>;
 
+
         }
 
         if(!scope.anexos)
         {
-            scope.anexos= scope.post.anexos;
-            scope.post.anexos=[];
+           // scope.anexos= scope.post.anexos;
+           // scope.post.anexos=[];
         }
-        
+
         $.each(scope.anexos,function (clave,valor) {
 
             $.each(valor,function (k,v) {
