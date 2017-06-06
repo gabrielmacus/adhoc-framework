@@ -12,4 +12,4 @@ $p=new PostDAO();
 $post=$GLOBALS["postDAO"]->selectPostById(10);
 
 
-var_dump($post->getAnexos());
+echo json_encode($post->getAnexos());
