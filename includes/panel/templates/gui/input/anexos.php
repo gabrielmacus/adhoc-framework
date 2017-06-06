@@ -79,7 +79,7 @@ if(!$shownText)
                     foreach ($shownText as $t)
                     {
                     ?>
-                    text+=v.post_<?php echo $t?>+" ";
+                    text+=v.<?php echo $t?>+" ";
                     <?php
                     }
                     }?>
