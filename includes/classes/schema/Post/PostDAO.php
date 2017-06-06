@@ -430,6 +430,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
              * Traigo las asociaciones de los post asociados a este, recursivamente
              */
             $post=$GLOBALS["postDAO"]->selectPostById($post->getId());
+            var_dump($post);
 
             /**  */
             $post->setNexoGrupo($anexo["post_nexo_grupo"]);
