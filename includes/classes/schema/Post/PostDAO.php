@@ -438,6 +438,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setNexoOrden($anexo["post_nexo_orden"]);
         $post->setNexoId($anexo["post_nexo_id"]);
         $post->setAnexoId($anexo["post_anexo_id"]);
+
+        var_dump($post);
+
         if($process)
         {
             $postAnexos[$anexo["post_nexo_grupo"]][]=$post;
