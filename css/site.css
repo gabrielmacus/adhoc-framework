@@ -19,8 +19,8 @@ html,body
 
 .portada > section > .body
 {
-    padding: 1200px;
-    width:100%;
+
+    width:1200px;
     display: flex;
     display: -webkit-flex;
     margin: auto;
