@@ -17,6 +17,10 @@
 .portada .swiper-container figure{
     width: 100%;
     height: 100%;
+
+}
+.portada .swiper-container figure img
+{
     object-fit: cover;
 }
 
