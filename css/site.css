@@ -59,13 +59,10 @@ html,body
 {
     overflow: hidden;
     text-overflow: ellipsis;
-
     font-size:35px;
-    position: absolute;
-right: 0px;
     z-index: 101;
     /* background: white; */
-    background-color: rgba(1,1,1,0.7);
+    background-color: rgba(56, 58, 51, 1);
     color: white;
     padding: 15px;
     width: 450px;
