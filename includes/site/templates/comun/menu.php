@@ -1,5 +1,5 @@
-<nav class="navigation main-color">
+<nav>
 
-    <a class="item"></a>
-    <a class="title"></a>
+  <a>Item 1</a>
+    <a>Item 2</a>
 </nav>
