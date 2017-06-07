@@ -82,7 +82,9 @@ html,body
 .portada .slider-title .profile .name
 {
 
-   font-size: 25px;
+    font-size: 20px;
+    margin-top: 5px;
+    color: #00aced;
 }
 .portada .slider-title .profile
 {
@@ -96,7 +98,7 @@ html,body
 {
 
     width:  70%;
-
+    line-height: 40px;
 }
 .portada .slider-title .line
 {
