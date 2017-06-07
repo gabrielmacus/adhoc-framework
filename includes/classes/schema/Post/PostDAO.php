@@ -424,6 +424,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $postAnexos =array();
         $anexos=  $this->dataSource->runQuery($anexosSql);
 
+        $arrayToRecursive=array();
+
         foreach ($anexos as $anexo)
         {
 
@@ -454,7 +456,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 $postAnexos[]=$post;
             }
-
+            $arrayToRecursive[]=$post;
 
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
         }
@@ -474,12 +476,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $anexos =       $this->posts[$anexo["post_id"]]->getAnexos();
 
 
-        echo json_encode($anexos);
-
-        exit();
         if(count($anexos)>0)
         {
-            $this->processRecursiveAnexos($anexos);
+
+            $this->processRecursiveAnexos($arrayToRecursive);
         }
 
 
