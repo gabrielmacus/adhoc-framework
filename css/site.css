@@ -1,151 +1,48 @@
-@media screen and  (min-width:1025px)  {
-
-    .player-form,.form-title
-    {
-
-
-        padding: 20px;
-        width: 40%;
-        float: left;
-        left: 30%;
-        position: relative;
-        font-weight: 300;
-        font-size: 30px;
-
-
-    }
-}
-
-@media screen and  (min-width:769px)  and (max-width: 1024px) {
-
-    .player-form,.form-title
-    {
-
-
-        padding: 20px;
-        width: 60%;
-        float: left;
-        left: 20%;
-        position: relative;
-        font-weight: 300;
-        font-size: 30px;
-
-
-    }
-}
-
-@media screen and (min-width:601px) and (max-width:768px) {
-    .player-form,.form-title
-    {
-
-
-        padding: 20px;
-        width: 80%;
-        float: left;
-        left: 10%;
-        position: relative;
-        font-weight: 300;
-        font-size: 30px;
-
-
-    }
-}
-@media screen and (max-width:600px) {
-    .player-form,.form-title
-    {
-
-
-        padding: 10px;
-        width: 100%;
-        float: left;
-
-        position: relative;
-        font-weight: 300;
-        font-size: 30px;
-
-    }
-    .body
-    {
-        padding: 10px;
-    }
-}
-
-
-.overlay
+@media screen and (max-width: 1199px)
 {
-    min-height: 100%;
-    width: 100%;
-    background-color: rgba(6,12,5,0.58);
-    float: left;
-    position: fixed;
-    top:0;
-    left:0;
-z-index: 0;
+
+
 }
-.form-title
+@media screen and (max-width: 1023px)
 {
-    text-align: center!important;
-}
-.overlay-2
-{
-    background-image: url("http://hondusports.com/wp-content/uploads/2016/09/Futgolf-Honduras-Indura-e1472798015817.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat:no-repeat;
-    float: left;
-    position: fixed!important;
-    min-height: 100%!important;
-    width: 100%;
-    top:0;
-    left:0;
-    z-index: -1;
+
 }
 
-.form-title
+@media screen and (max-width: 768px)
 {
-    background-color: #26A65B;
+
 }
-.player-form input,.player-form select
+
+
+@media screen and (max-width: 640px)
 {
-    padding: 10px;
+
 }
-.player-form
+
+
+
+
+@media screen and (max-width: 480px)
 {
-    background-color: white;
+
 }
-.player-form-container
+
+
+
+@media screen and (max-width: 414px)
 {
-    padding: 0% 0px 10% 0px;
-    width: 100%;
-    float: left;
-    height: 100%;
+
 }
-.form-block input,select{
-    padding: 5px;
-    font-size: 20px;
-}
-.form-block  label
+
+@media screen and (max-width: 375px)
 {
-    margin-top: 0px;
+
 }
-.form-block input[type='submit']
+@media screen and (max-width: 360px)
 {
-    padding: 10px;
+
 }
-.file-preview img
+
+@media screen and (max-width: 320px)
 {
-    object-fit: contain!important;
-    background-color: #dfdfdf;
-}
-.file
-{
-    position: relative;
-    background-color: #d2dce1;
-}
-.file-preview .delete
-{
-    color: #e5463d;
-    position: absolute;
-    top:10px;
-    right:10px;
 }
