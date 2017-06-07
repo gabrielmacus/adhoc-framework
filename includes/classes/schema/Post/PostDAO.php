@@ -498,15 +498,16 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $posts[$anexo["post_id"]]->setAnexos($postAnexos);
             }
 
+            if(count($posts[$anexo["post_id"]]->getAnexos())>0)
+            {
+
+                $this->processRecursiveAnexos($posts[$anexo["post_id"]]->getAnexos());
+            }
+
 
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
         }
 
-        if(count($posts[$anexo["post_id"]]->getAnexos())>0)
-        {
-
-            $this->processRecursiveAnexos($posts[$anexo["post_id"]]->getAnexos());
-        }
 
 
 
