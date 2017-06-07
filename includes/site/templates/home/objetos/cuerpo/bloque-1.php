@@ -27,7 +27,7 @@
                <span class="tag">
                    <?php
 
-                   var_dump($data->getSeccion());
+                   echo  $secciones[$data->getSeccion()]->getNombre();
                    ;
                    ?>
                </span>
