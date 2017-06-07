@@ -142,7 +142,7 @@ html,body
 .portada .body .col-1
 {
 
-    width: 70%;
+    width: 100%;
 }
 
 aside
@@ -153,11 +153,6 @@ aside
     display: flex;
 
     display: -webkit-flex;;
-}
-.portada .body .col-2
-{
-
-    width: 30%;
 }
 
 
