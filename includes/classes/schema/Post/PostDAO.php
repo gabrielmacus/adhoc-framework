@@ -408,10 +408,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
 
         $in="";
+
+
         foreach ($this->posts as $post) {
 
             $in.= ",{$post->getId()}";
         }
+var_dump($in);
 
         $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
@@ -469,7 +472,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $anexos =       $this->posts[$anexo["post_id"]]->getAnexos();
 
-        echo json_encode($anexos);
+
         if(count($anexos)>0)
         {
             $this->processRecursiveAnexos($anexos);
