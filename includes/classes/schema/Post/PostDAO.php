@@ -572,7 +572,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->dataSource->runQuery($sql,array(":post_id"=>$id),function($data){
                 $this->query($data,true);
             });
-  
+
+        var_dump($processAnexos);
 
         /**** Proceso los anexos */
         switch ($processAnexos)
@@ -583,7 +584,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 break;
 
                 case RECURSIVE:
-                    var_dump("A");
                     $this->processRecursiveAnexos($processAnexos);
                     break;
 
