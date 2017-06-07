@@ -89,7 +89,13 @@ $GLOBALS["mapsConfig"]=array(
 );
 
 /** **/
-$secciones =   $GLOBALS["seccionDAO"] ->selectSecciones();
+$s =   $GLOBALS["seccionDAO"] ->selectSecciones();
+$secciones=array();
+
+foreach ($s as $sec)
+{
+    $secciones[$sec->getId()]=$sec;
+}
 
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json"),true);
