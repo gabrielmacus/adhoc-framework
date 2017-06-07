@@ -31,11 +31,13 @@
             scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
         }
 
-        $.each( scope.post.archivos ,function (tipo,versiones) {
+        $.each( scope.post.archivos ,function (tipo,grupos) {
 
-            console.log(versiones);
+           $.each(grupos,function (k,versiones) {
+               archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
-            archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+           });
+
 
         });
 
