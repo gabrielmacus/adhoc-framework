@@ -155,6 +155,20 @@ aside
     display: -webkit-flex;;
 }
 
+.portada .bloque-1
+{
+
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+
+}
+.portada .bloque-1 .item
+{
+
+    width: 33.33333%;
+
+}
 
 
 @media screen and (max-width: 1199px)
