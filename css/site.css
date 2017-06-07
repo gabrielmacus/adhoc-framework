@@ -55,7 +55,18 @@
 }
 
 
-
+.portada .slider-title
+{
+    font-size: 40px;
+    position: absolute;
+    left: -50%;
+    /* background: white; */
+    background-color: rgba(1,1,1,0.7);
+    color: white;
+    padding: 20px;
+    width: 300px;
+    top: 60px;
+}
 
 @media screen and (max-width: 1199px)
 {
