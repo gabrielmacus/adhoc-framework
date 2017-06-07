@@ -1,5 +1,8 @@
 {
 
-
+  "menu":
+  {
+    "item1":{"text":"Item 1"}
+  }
 
 }

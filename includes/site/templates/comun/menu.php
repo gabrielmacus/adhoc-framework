@@ -1,5 +1,12 @@
 <nav>
 
-  <a>Item 1</a>
-    <a>Item 2</a>
+    <?php
+    foreach ($lang["menu"] as $k=>$v)
+    {
+        ?>
+        <a href="<?php echo $v["href"]?>"><?php echo $v["text"];?></a>
+        <?php
+    }
+    ?>
+    
 </nav>
