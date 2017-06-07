@@ -178,7 +178,7 @@ aside
 {
 
     width: 100%;
-
+    position: relative;
 
 }
 
@@ -205,9 +205,11 @@ aside
 }
 .portada .bloque-1 .item .title
 {
-    position: absolute;
-    bottom:0;
+
     width: 100%;
+    color: white;
+    line-height: 23px;
+    padding: 10px;
 
 }
 
