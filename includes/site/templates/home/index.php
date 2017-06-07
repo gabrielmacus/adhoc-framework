@@ -10,7 +10,6 @@
     </div>
     <div class="col-2">
 
-       <?php include DIR_PATH."/includes/site/templates/banners/banner-1.php"?>
     </div>
 
 </div>
