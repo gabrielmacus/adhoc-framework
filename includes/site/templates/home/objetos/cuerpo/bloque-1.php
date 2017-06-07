@@ -4,15 +4,17 @@
     for ($i=0;$i<6;$i++)
     {
         ?>
-        <article class="item">
-            <figure>
-                <img src="<?php echo $arr[rand(0,count($arr)-1)];?>">
+       <div class="item-container">
+           <article class="item">
+               <figure>
+                   <img src="<?php echo $arr[rand(0,count($arr)-1)];?>">
 
-            </figure>
-            <h3 class="title">
-              <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
-            </h3>
-        </article>
+               </figure>
+               <h3 class="title">
+                   <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
+               </h3>
+           </article>
+       </div>
         <?php
     }
     ?>

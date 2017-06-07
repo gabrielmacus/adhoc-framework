@@ -164,7 +164,7 @@ aside
 
     padding-top: 15px;
 }
-.portada .bloque-1 .item
+.portada .bloque-1 .item-container
 {
 
     width: 33.33333%;
@@ -173,6 +173,15 @@ aside
 
 
 }
+
+.portada .bloque-1 .item
+{
+
+    width: 100%;
+
+
+}
+
 
 .portada .bloque-1 .item figure
 {
