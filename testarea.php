@@ -11,4 +11,15 @@ $p=new PostDAO();
 
 $post=$GLOBALS["postDAO"]->selectPostById(11);
 
-$anexos=$post->getAnexos();
+foreach ($post->getAnexos() as $grupo)
+{
+
+    foreach ($grupo as $k=>$p)
+    {
+
+        echo json_encode(   $GLOBALS["postDAO"]->selectPostById($p->getId()));
+
+        echo "<br>";
+    }
+
+}

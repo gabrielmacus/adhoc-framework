@@ -29,7 +29,7 @@ if(!$shownText)
 
     });
 </script>
-<div class="body">
+
     <?php  if(count($rows)>0)
 
     {
@@ -159,4 +159,3 @@ if(!$shownText)
     font-size: 30px;">No hay contenido disponible</h3>
         <?php
     }?>
-</div>

@@ -1,8 +1,7 @@
-
-<header>
-    <h2><?php echo $lang["jugadores"]?></h2>
-</header>
-
+<?php
+$title="Lista de elementos";
+include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
+?>
 
 <div class="body">
 
@@ -15,12 +14,16 @@
         $row["Titulo"]["data"]=$post->getTitulo();
         $row["Volanta"]["data"]=$post->getVolanta();
 
-
-
         $rows[]=$row;
     }
 
     include DIR_PATH."/includes/panel/templates/gui/table.php";
+
+
+    $href=$configuracion->getSiteAddress()."/admin/posts/?s=posts&t={$_GET["t"]}&act=save";
+    $title="Nueva entrada";
+    include DIR_PATH."/includes/panel/templates/gui/input/add.php";
     ?>
+
 
 </div>
