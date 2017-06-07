@@ -406,6 +406,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
      */
     private  function processRecursiveAnexos($posts,$process=true)
     {
+        //TODO Esto no se sabe si anda (?)
 
         $in="";
 
@@ -433,7 +434,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $anexos=  $this->dataSource->runQuery($anexosSql);
 
         $arrayToRecursive=array();
-        var_dump($in);
+
         foreach ($anexos as $anexo)
         {
 
