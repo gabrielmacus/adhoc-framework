@@ -183,10 +183,15 @@ aside
 
 }
 
-
+img
+{
+    display: flex;
+    display: -webkit-flex;
+}
 
 .portada .bloque-1 .item img
 {
+
     width: 100%;
     object-fit: cover;
     height: auto;
@@ -207,12 +212,19 @@ aside
 {
 
 }
+.portada .bloque-1 .item .tag
+{
+
+}
 
 .portada .body-container-1
 {
     width: 100%;
     background-color:  #f2f2f2;
 }
+
+
+
 
 @media screen and (max-width: 1199px)
 {

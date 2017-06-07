@@ -13,6 +13,9 @@
                <h3 class="title">
                    <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
                </h3>
+               <span class="tag">
+                   Policiales
+               </span>
            </article>
        </div>
         <?php
