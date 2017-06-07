@@ -119,6 +119,28 @@ html,body
 
 }
 
+.portada .body
+{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.portada .body .col-1
+{
+
+    width: 80%;
+}
+
+
+.portada .body .col-2
+{
+
+    width: 20%;
+}
+
 
 
 @media screen and (max-width: 1199px)
