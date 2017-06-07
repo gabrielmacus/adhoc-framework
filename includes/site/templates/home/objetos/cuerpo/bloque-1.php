@@ -26,6 +26,8 @@
                </h3>
                <span class="tag">
                    <?php
+
+                   var_dump($data);
                    $data->getSeccion();
                    ?>
                </span>
