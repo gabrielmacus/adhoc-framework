@@ -30,7 +30,8 @@ $(document).ready(
     function () {
         var swiper = new Swiper('.swiper-container',
             {
-                slidesPerView: 1
+                slidesPerView: 1,
+                effect:"fade"
             });
     }
 );
