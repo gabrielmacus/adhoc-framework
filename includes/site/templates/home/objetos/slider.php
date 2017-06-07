@@ -46,6 +46,9 @@
         </div>
 
 
+    <span class="slider-tag">
+        Internacionales
+    </span>
   
 
 
