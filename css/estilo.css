@@ -715,7 +715,7 @@ form
     outline: 0;
     background-color: black;
 }
-.form-block input,select,.tags
+.form-block input,select,.tags,.form-block textarea
 {
    width: 100%;
     float: left;
@@ -735,6 +735,10 @@ form
     padding: 10px;
     cursor: pointer;
 }
+
+
+
+
 input[type='button']:hover,input[type='submit']:hover,button:hover
 {
     outline:1px solid #2e3032;
