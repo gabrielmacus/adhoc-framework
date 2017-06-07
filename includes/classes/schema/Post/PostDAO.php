@@ -404,7 +404,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
      *
      * Proceso los anexos de manera recursiva de un post
      */
-    private  function processRecursiveAnexos($posts,$process=true)
+    private  function processRecursiveAnexos(&$posts,$process=true)
     {
         //TODO Esto no se sabe si anda (?)
 
@@ -466,13 +466,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $postAnexos[]=$post;
             }
 
-            if($this->posts[$anexo["id"]])
+            if($posts[$anexo["id"]])
             {
-                $this->posts[$anexo["id"]]->setAnexos($postAnexos);
+                $posts[$anexo["id"]]->setAnexos($postAnexos);
             }
-            if($this->posts[$anexo["post_id"]])
+            if($posts[$anexo["post_id"]])
             {
-                $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
+                $posts[$anexo["post_id"]]->setAnexos($postAnexos);
             }
             $arrayToRecursive[]=$post;
 
