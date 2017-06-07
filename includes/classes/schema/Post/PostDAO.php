@@ -456,6 +456,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 $postAnexos[]=$post;
             }
+
+            if($this->posts[$anexo["id"]])
+            {
+                $this->posts[$anexo["id"]]->setAnexos($postAnexos);
+            }
+            if($this->posts[$anexo["post_id"]])
+            {
+                $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
+            }
             $arrayToRecursive[]=$post;
 
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
@@ -464,14 +473,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 
 
-        if($this->posts[$anexo["id"]])
-        {
-            $this->posts[$anexo["id"]]->setAnexos($postAnexos);
-        }
-        if($this->posts[$anexo["post_id"]])
-        {
-            $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
-        }
+
 
         $anexos =       $this->posts[$anexo["post_id"]]->getAnexos();
 
