@@ -64,7 +64,7 @@ $(document).ready(
     function () {
         var swiper = new Swiper('.swiper-container',
             {
-                slidesPerView: 4
+                slidesPerView: 1
             });
     }
 );
