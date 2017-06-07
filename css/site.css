@@ -137,7 +137,10 @@ html,body
 aside
 {
     background-color: #f2f2f2;
-    padding: 10px;
+    padding-top: 25px;
+    display: flex;
+
+    display: -webkit-flex;;
 }
 .portada .body .col-2
 {
