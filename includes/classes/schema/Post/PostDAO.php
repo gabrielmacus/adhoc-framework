@@ -472,12 +472,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 
 
-
-
-
-        $anexos =       $this->posts[$anexo["post_id"]]->getAnexos();
-
-
         var_dump($arrayToRecursive);
         if(count($arrayToRecursive)>0)
         {
