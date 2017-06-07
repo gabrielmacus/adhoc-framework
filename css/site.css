@@ -162,11 +162,13 @@ aside
     display: -webkit-flex;
     flex-wrap: wrap;
 
+    padding-top: 15px;
 }
 .portada .bloque-1 .item
 {
 
     width: 33.33333%;
+    padding: 15px;
 
 
 }
