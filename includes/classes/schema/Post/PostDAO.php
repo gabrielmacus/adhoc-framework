@@ -479,8 +479,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
         }
 
-        var_dump($arrayToRecursive);
-
         if(count($arrayToRecursive)>0)
         {
 
@@ -604,7 +602,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         }
         /*** **/
-
+var_dump($this->posts);
         $this->processFiles($process);
 
         
