@@ -73,6 +73,8 @@
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
+
+    align-items: center;
 }
 .portada .slider-title figure img
 {
@@ -91,7 +93,6 @@
 {
 
     width:  70%;
-    text-align: center;
 
 }
 .portada .slider-title .text
