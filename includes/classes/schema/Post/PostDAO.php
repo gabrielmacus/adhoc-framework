@@ -412,7 +412,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         foreach ($posts as $post) {
 
-            $in.= ",{$post->getId()}";
+            if(!$anexoId=$post->getAnexoId())
+            {
+                $in.= ",{$post->getId()}";
+            }
+            else
+            {
+                $in.= ",{$anexoId}";
+            }
+
         }
 
         $in = ltrim($in,",");
