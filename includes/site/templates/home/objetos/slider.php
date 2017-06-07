@@ -21,6 +21,7 @@
 
         </div>
     </div>
+    
 
     <div class="slider-bar">
         <div class="slider-title">
