@@ -7,10 +7,11 @@
         <article class="item">
             <figure>
                 <img src="<?php echo $arr[rand(0,count($arr)-1)];?>">
-                <figcaption class="title">
-                    Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías
-                </figcaption>
+
             </figure>
+            <h3 class="title">
+              <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
+            </h3>
         </article>
         <?php
     }
