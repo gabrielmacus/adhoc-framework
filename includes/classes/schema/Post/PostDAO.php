@@ -469,7 +469,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $anexos =       $this->posts[$anexo["post_id"]]->getAnexos();
 
-        var_dump($anexos);
+        echo json_encode($anexos);
         if(count($anexos)>0)
         {
             $this->processRecursiveAnexos($anexos);
