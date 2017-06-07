@@ -118,10 +118,9 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 
 
 <section>
-
-    
     
     <?php include DIR_PATH."/includes/site/templates/{$site}/{$action}.php"?>
+    
 </section>
 
 <footer>

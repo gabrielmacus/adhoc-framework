@@ -1,4 +1,8 @@
-<?PHP
-
-include "objetos/slider.php";
-?>
+<div class="header">
+    <?PHP
+    include "objetos/header.php";
+    ?>
+</div>
+<div class="body">
+    
+</div>

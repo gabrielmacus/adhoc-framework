@@ -1,7 +1,14 @@
 
 
 
-.portada > section
+.portada > section > .header
+{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.portada > section > .body
 {
     width: 1200px;
     display: flex;
