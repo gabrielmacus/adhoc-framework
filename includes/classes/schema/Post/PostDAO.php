@@ -425,7 +425,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $anexos=  $this->dataSource->runQuery($anexosSql);
 
         $arrayToRecursive=array();
-
+        var_dump($in);
         foreach ($anexos as $anexo)
         {
 
@@ -471,8 +471,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         }
 
 
-
-        var_dump($arrayToRecursive);
         if(count($arrayToRecursive)>0)
         {
 
