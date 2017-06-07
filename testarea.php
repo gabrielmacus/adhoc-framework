@@ -9,5 +9,5 @@
 include "includes/autoload.php";
 $p=new PostDAO();
 
-$post=$GLOBALS["postDAO"]->selectPostById(11,SINGLE);
+$post=$GLOBALS["postDAO"]->selectPostById(11,RECURSIVE);
 var_dump($post);
