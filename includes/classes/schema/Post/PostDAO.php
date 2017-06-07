@@ -583,6 +583,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 break;
 
                 case RECURSIVE:
+                    var_dump("A");
                     $this->processRecursiveAnexos($processAnexos);
                     break;
 
