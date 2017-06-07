@@ -6,10 +6,10 @@
         ?>
        <div class="item-container">
            <article class="item">
-               <div class="image">
+               <figure class="image">
                    <img src="<?php echo $arr[rand(0,count($arr)-1)];?>">
 
-               </div>
+               </figure>
                <h3 class="title">
                    <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
                </h3>
