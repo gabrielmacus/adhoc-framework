@@ -24,11 +24,11 @@
                <h3 class="title">
                    <span class="text"><?php echo $data->getTitulo();?></span>
                </h3>
-               <span class="tag">
+               <span class="tag" style="background-color: <?php echo $lang["seccionesColores"][$data->getSeccion()]?>">
                    <?php
 
                    echo  $secciones[$data->getSeccion()]->getNombre();
-                   ;
+
                    ?>
                </span>
            </article>

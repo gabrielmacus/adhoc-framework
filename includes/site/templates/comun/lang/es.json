@@ -3,6 +3,10 @@
   "menu":
   {
     "item1":{"text":"Item 1"}
+  },
+  "seccionesColores":
+  {
+    101:"rgba(44, 249, 123,0.8)"
   }
 
 }
