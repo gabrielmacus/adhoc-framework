@@ -59,7 +59,7 @@ html,body
     z-index: 102;
     bottom: 10px;
     left: 10px;
-    background: red;
+    background-color: rgba(255, 225, 26, 0.8);
     padding: 8px;
     font-weight: 600;
     color: white;
