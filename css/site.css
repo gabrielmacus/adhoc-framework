@@ -218,6 +218,12 @@ aside
 
 }
 
+.portada .body-container-1
+{
+    width: 100%;
+    background-color: rgba(205, 206, 198, 0.69);
+}
+
 @media screen and (max-width: 1199px)
 {
 
