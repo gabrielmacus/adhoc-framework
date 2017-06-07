@@ -16,8 +16,9 @@
 
             <?php
 
-            $dataToSkin=$GLOBALS["postDAO"]->selectPosts();
-            var_dump($dataToSkin);
+
+            $dataToSkin=$GLOBALS["postDAO"]->selectPosts(false);
+            echo json_encode($dataToSkin);
             include "objetos/cuerpo/bloque-1.php";
 
             ?>
