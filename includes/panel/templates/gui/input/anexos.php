@@ -49,55 +49,56 @@ if(!$shownText)
         if(!scope.post)
         {
             scope.post= <?php echo json_encode($post)?>;
+
+
         }
-        if(!scope.post.anexos)
+
+        if(!scope.anexos)
         {
-            scope.post.anexos =<?php echo json_encode($post->getAnexos())?>;
-
+           scope.anexos= scope.post.anexos;
+            scope.post.anexos=[];
         }
 
+        $.each(scope.anexos,function (clave,valor) {
 
-        <?php
-        /*
-         *
-        var anexos =[];
-        $.each(scope.post.anexos,function (k,v) {
+            $.each(valor,function (k,v) {
 
-            var text="";
-            if(v.post_nexo_grupo== <?php echo $grupo;?>)
-            {
-                <?Php if(!is_array($shownText))
+                var  text="";
+
+                if(v.nexoGrupo== <?php echo $grupo;?>)
                 {
-                ?>       text+=v.post_<?php echo $shownText?>;
 
-                <?Php
+                    <?Php if(!is_array($shownText))
+                    {
+                    ?>       text+=v.<?php echo $shownText?>;
+
+                    <?Php
+                    }
+                    else
+                    {
+                    foreach ($shownText as $t)
+                    {
+                    ?>
+                    text+=v.<?php echo $t?>+" ";
+                    <?php
+                    }
+                    }?>
+
+
+                    var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
+
+                    scope.post.anexos.push(anexo);
+
                 }
-                else
-                {
-                foreach ($shownText as $t)
-                {
-                ?>
-                text+=v.post_<?php echo $t?>+" ";
-                <?php
-                }
-                }?>
 
 
-                anexos.push({post_id:v.id,post_nexo_id:v.post_nexo_id,post_anexo_id:v.post_anexo_id,text:text, post_nexo_grupo:v.post_nexo_grupo});
-
-            }
-
+            });
 
         });
 
 
-
-         scope.post.anexos =anexos;
-
-
         scope.$apply();
-         * */
-        ?>
+
 
 
         <?Php

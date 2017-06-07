@@ -24,6 +24,82 @@ class Post implements JsonSerializable
     protected $extra4;
     protected $archivos=array();
     protected $anexos =array();
+    
+    /** Variables para trabajar el post como anexos */
+    
+    protected $nexoId;
+    protected $nexoGrupo;
+    protected $nexoOrden;
+    protected $anexoId;
+
+    /**
+     * @return mixed
+     */
+    public function getAnexoId()
+    {
+        return $this->anexoId;
+    }
+
+    /**
+     * @param mixed $anexoId
+     */
+    public function setAnexoId($anexoId)
+    {
+        $this->anexoId = $anexoId;
+    }
+
+    
+    /**
+     * @return mixed
+     */
+    public function getNexoId()
+    {
+        return $this->nexoId;
+    }
+
+    /**
+     * @param mixed $nexoId
+     */
+    public function setNexoId($nexoId)
+    {
+        $this->nexoId = $nexoId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNexoGrupo()
+    {
+        return $this->nexoGrupo;
+    }
+
+    /**
+     * @param mixed $nexoGrupo
+     */
+    public function setNexoGrupo($nexoGrupo)
+    {
+        $this->nexoGrupo = $nexoGrupo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNexoOrden()
+    {
+        return $this->nexoOrden;
+    }
+
+    /**
+     * @param mixed $nexoOrden
+     */
+    public function setNexoOrden($nexoOrden)
+    {
+        $this->nexoOrden = $nexoOrden;
+    }
+    
+    /** * */
+    
+    
 
     function __construct()
     {
@@ -47,11 +123,18 @@ class Post implements JsonSerializable
             "extra3"=>$this->getExtra3(),
             "extra4"=>$this->getExtra4(),
             "archivos"=>$this->getArchivos(),
-            "anexos"=>$this->getAnexos()
+            "anexos"=>$this->getAnexos(),
+            "nexoId"=>$this->getNexoId(),
+            "nexoGrupo"=>$this->getNexoGrupo(),
+            "nexoOrden"=>$this->getNexoOrden(),
+            "anexoId"=>$this->getAnexoId()
         );
     }
 
 
+    
+    
+    
     /**
      * @return array
      */

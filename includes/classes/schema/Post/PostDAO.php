@@ -165,7 +165,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     if(!$id)
                     {
                         $values.=" ('','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
-                        $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                  //Asociacion bidireccional desactivada      $values.=" ('','{$anexo['post_anexo_id']}','{$p->getId()}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
                     }
                     else
                     {
@@ -390,6 +390,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         return $this->posts;
     }
 
+
+
     private function processAnexos($process=true)
 {
     $in="";
@@ -400,7 +402,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
   /*  $anexosSql="SELECT *,n.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
-  OR n.post_anexo_id IN (0{$in}) 
+  OR n.post_anexo_id IN (0{$in})
  ORDER BY post_nexo_orden ASC";
 */
 
@@ -434,14 +436,20 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $post->setCreacion($anexo["post_creacion"]);
         $post->setModificacion($anexo["post_modificacion"]);
         $post->setId($anexo["id"]);
+        $post->setNexoGrupo($anexo["post_nexo_grupo"]);
+        $post->setNexoOrden($anexo["post_nexo_orden"]);
+        $post->setNexoId($anexo["post_nexo_id"]);
+        $post->setAnexoId($anexo["post_anexo_id"]);
+
+
 
         if($process)
         {
-            $postAnexos[$anexo["post_nexo_grupo"]][]=$anexo;
+            $postAnexos[$anexo["post_nexo_grupo"]][]=$post;
         }
         else
         {
-            $postAnexos[]=$anexo;
+            $postAnexos[]=$post;
         }
 
 

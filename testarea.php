@@ -7,5 +7,8 @@
  */
 
 include "includes/autoload.php";
-var_dump("data");
-var_dump($GLOBALS["seccionDAO"]->selectSeccionesConcat(92));
+$p=new PostDAO();
+
+$post=$GLOBALS["postDAO"]->selectPostById(11);
+
+$anexos=$post->getAnexos();
