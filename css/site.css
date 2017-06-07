@@ -175,8 +175,14 @@ aside
 .portada .bloque-1 .item img
 {
     width: 100%;
-    object-fit: auto;
+    object-fit: cover;
     height: auto;
+}
+.portada .bloque-1 .item .title
+{
+    position: absolute;
+    bottom:0;
+
 }
 
 @media screen and (max-width: 1199px)
