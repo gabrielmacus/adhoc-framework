@@ -245,8 +245,9 @@ GROUP BY s.seccion_id";
         $s->setNombre($data["seccion_nombre"]);
         $s->setTipo($data["seccion_tipo"]);
 
-        array_push($this->secciones, $s);
+      //  array_push($this->secciones, $s);
 
+        $this->secciones[$data["seccion_id"]]=$s;
     }
     public function selectSecciones()
     {        $this->secciones=array();

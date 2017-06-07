@@ -90,7 +90,7 @@ $GLOBALS["mapsConfig"]=array(
 
 /** **/
 $secciones =   $GLOBALS["seccionDAO"] ->selectSecciones();
-echo json_encode($secciones);
+
 
 $lang=json_decode(file_get_contents(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json"),true);
 
