@@ -413,14 +413,34 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         foreach ($posts as $post) {
 
-            if(!$anexoId=$post->getAnexoId())
+            if(!is_array($post))
             {
-                $in.= ",{$post->getId()}";
+                if(!$anexoId=$post->getAnexoId())
+                {
+                    $in.= ",{$post->getId()}";
+                }
+                else
+                {
+                    $in.= ",{$anexoId}";
+                }
+
             }
             else
             {
-                $in.= ",{$anexoId}";
+                foreach ($post as $p)
+                {
+                    if(!$anexoId=$p->getAnexoId())
+                    {
+                        $in.= ",{$p->getId()}";
+                    }
+                    else
+                    {
+                        $in.= ",{$anexoId}";
+                    }
+
+                }
             }
+
 
         }
 
@@ -435,7 +455,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $postAnexos =array();
         $anexos=  $this->dataSource->runQuery($anexosSql);
 
-        $arrayToRecursive=array();
 
         foreach ($anexos as $anexo)
         {
@@ -476,15 +495,15 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 $posts[$anexo["post_id"]]->setAnexos($postAnexos);
             }
-            $arrayToRecursive[]=$post;
+
 
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
         }
 
-        if(count($arrayToRecursive)>0)
+        if(count($posts[$anexo["post_id"]]->getAnexos())>0)
         {
 
-            $this->processRecursiveAnexos($arrayToRecursive);
+            $this->processRecursiveAnexos($posts[$anexo["post_id"]]->getAnexos());
         }
 
 
