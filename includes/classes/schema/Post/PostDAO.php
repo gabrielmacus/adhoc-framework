@@ -407,48 +407,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     private  function processRecursiveAnexos(&$posts,$process=true)
     {
 
-
         $in="";
+        foreach ($this->posts as $post) {
 
-
-        foreach ($posts as $post) {
-
-            if(!is_array($post))
-            {
-                if(!$anexoId=$post->getAnexoId())
-                {
-                    $in.= ",{$post->getId()}";
-                }
-                else
-                {
-                    $in.= ",{$anexoId}";
-                }
-
-            }
-            else
-            {
-                foreach ($post as $p)
-                {
-
-                    var_dump($p);
-                    if(!$anexoId=$p->getAnexoId())
-                    {
-                        $in.= ",{$p->getId()}";
-                    }
-                    else
-                    {
-                        $in.= ",{$anexoId}";
-                    }
-
-                }
-            }
-
-
+            $in.= ",{$post->getId()}";
         }
-
-        $in = ltrim($in,",");
-
-        var_dump($in);
 
         $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
@@ -456,7 +419,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $postAnexos =array();
         $anexos=  $this->dataSource->runQuery($anexosSql);
-
 
         foreach ($anexos as $anexo)
         {
@@ -489,27 +451,18 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $postAnexos[]=$post;
             }
 
-            if($posts[$anexo["id"]])
-            {
-                $posts[$anexo["id"]]->setAnexos($postAnexos);
-            }
-            if($posts[$anexo["post_id"]])
-            {
-                $posts[$anexo["post_id"]]->setAnexos($postAnexos);
-            }
 
-            if(count($posts[$anexo["post_id"]]->getAnexos())>0)
+            if($this->posts[$anexo["id"]])
             {
-
-                $this->processRecursiveAnexos($posts[$anexo["post_id"]]->getAnexos());
+                $this->posts[$anexo["id"]]->setAnexos($postAnexos);
             }
-
+            if($this->posts[$anexo["post_id"]])
+            {
+                $this->posts[$anexo["post_id"]]->setAnexos($postAnexos);
+            }
 
             //  $this->posts[$anexo["objeto_id"]]->setAnexos($postAnexos);
         }
-
-
-
 
     }
 
@@ -619,7 +572,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 break;
 
                 case RECURSIVE:
-                    $this->processRecursiveAnexos($this->posts,$processAnexos);
+                //DESHABILITADO POR AHORA
+                //    $this->processRecursiveAnexos($this->posts,$processAnexos);
                     break;
 
 
