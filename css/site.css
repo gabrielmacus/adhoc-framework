@@ -19,7 +19,7 @@ html,body
 
 .portada > section > .body
 {
-    padding: 10px;
+    padding: 50px;
     width:100%;
     display: flex;
     display: -webkit-flex;
