@@ -602,7 +602,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         }
         /*** **/
-
+        var_dump($this->posts);
         $this->processFiles($process);
 
         
