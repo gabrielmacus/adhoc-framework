@@ -73,16 +73,22 @@ html,body
 
     align-items: center;
 }
-.portada .slider-title figure img
+.portada .slider-title .profile img
 {
 
     width:  30%;
     height: 100%;
 }
-
-.portada .slider-title figure
+.portada .slider-title .profile .name
 {
 
+   font-size: 10px;
+}
+.portada .slider-title .profile
+{
+
+    position: relative;
+    left: 20px;
     width:  100%;
 
 }
