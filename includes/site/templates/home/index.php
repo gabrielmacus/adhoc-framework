@@ -10,10 +10,7 @@
     </div>
     <div class="col-2">
 
-        <aside class="banner-1">
-            <img src="https://tpc.googlesyndication.com/simgad/11545181438776527248">
-        </aside>
-
+       <?php include ?>
     </div>
 
 </div>
