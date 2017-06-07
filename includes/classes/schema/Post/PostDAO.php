@@ -429,7 +429,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 foreach ($post as $p)
                 {
-                    var_dump($p);
+                   return false;
                     if(!$anexoId=$p->getAnexoId())
                     {
                         $in.= ",{$p->getId()}";
