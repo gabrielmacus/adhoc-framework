@@ -53,7 +53,17 @@ html,body
     margin: auto;
 }
 
-
+.portada .slider-tag
+{
+    position: absolute;
+    z-index: 102;
+    bottom: 10px;
+    left: 10px;
+    background: red;
+    padding: 8px;
+    font-weight: 600;
+    color: white;
+}
 
 
 .portada .slider-title
