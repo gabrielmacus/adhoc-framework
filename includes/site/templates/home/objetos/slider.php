@@ -25,17 +25,19 @@
 
         <div class="slider-title">
 
-            <figure class="profile">
-                <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
-                 <figcaption>
-                     <h3 class="name">@rober_tito</h3>
-                 </figcaption>
-            </figure>
-            <h2 class="title">
+           <div class="content">
+               <figure class="profile">
+                   <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
+                   <figcaption>
+                       <h3 class="name">@rober_tito</h3>
+                   </figcaption>
+               </figure>
+               <h2 class="title">
 
-                <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
+                   <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
 
-            </h2>
+               </h2>
+           </div>
 
 
         </div>
