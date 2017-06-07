@@ -410,7 +410,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $in="";
 
 
-        foreach ($this->posts as $post) {
+        foreach ($posts as $post) {
 
             $in.= ",{$post->getId()}";
         }
@@ -592,7 +592,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 break;
 
                 case RECURSIVE:
-                    $this->processRecursiveAnexos($processAnexos);
+                    $this->processRecursiveAnexos($this->posts,$processAnexos);
                     break;
 
 
