@@ -23,7 +23,6 @@
     </div>
     
 
-    <div class="slider-bar">
         <div class="slider-title">
             <figure>
                 <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
@@ -34,7 +33,7 @@
                 
             </h2>
         </div>
-    </div>
+
 
   
 
