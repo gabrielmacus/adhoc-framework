@@ -9,7 +9,7 @@ html,body
 {
     font-family: 'Raleway', sans-serif!important;
 }
-.portada > section > .top
+.portada > section  .top
 {
     width: 100%;
     display: flex;
