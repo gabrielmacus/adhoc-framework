@@ -17,7 +17,7 @@ foreach ($post->getAnexos() as $grupo)
     foreach ($grupo as $k=>$p)
     {
 
-        echo $p->getId();
+        echo json_encode(   $GLOBALS["postDAO"]->selectPostById($p->getId()));
 
         echo "<br>";
     }
