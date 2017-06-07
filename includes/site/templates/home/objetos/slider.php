@@ -5,6 +5,15 @@
 
 
 
+<style>
+
+    .swiper-container {
+        width: 500px;
+        height: 300px;
+        margin: 20px auto;
+    }
+
+</style>
 <!-- Swiper -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
