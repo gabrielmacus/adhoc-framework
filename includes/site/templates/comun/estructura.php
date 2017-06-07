@@ -114,7 +114,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <header>
 
 </header>
-
+<?php  include DIR_PATH."/includes/site/templates/comun/menu.php"; ?>
 <section>
     <?php include DIR_PATH."/includes/site/templates/{$site}/{$action}.php"?>
 </section>
