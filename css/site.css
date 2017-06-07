@@ -8,6 +8,12 @@
     margin: auto;
 }
 
+.portada .swiper-container {
+    width: 100%;
+    height: 300px;
+
+}
+
 @media screen and (max-width: 1199px)
 {
 

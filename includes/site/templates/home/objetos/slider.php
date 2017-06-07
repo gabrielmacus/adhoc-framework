@@ -4,16 +4,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 
 
-
-<style>
-
-    .swiper-container {
-        width: 500px;
-        height: 300px;
-        margin: 20px auto;
-    }
-
-</style>
 <!-- Swiper -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
