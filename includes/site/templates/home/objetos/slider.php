@@ -23,11 +23,12 @@
     </div>
 
     <div class="slider-bar">
+        <div class="slider-title">
+            <h2>Titulo del slider de prueba</h2>
+        </div>
     </div>
 
-    <div class="slider-title">
-        <h2>Titulo del slider de prueba</h2>
-    </div>
+  
 
 
 </div>
