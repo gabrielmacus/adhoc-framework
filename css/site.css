@@ -19,7 +19,7 @@ html,body
 
 .portada > section > .body
 {
-    width: 1200px;
+    width:100%;
     display: flex;
     display: -webkit-flex;
     margin: auto;
