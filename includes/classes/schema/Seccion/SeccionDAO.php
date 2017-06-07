@@ -236,7 +236,7 @@ GROUP BY s.seccion_id";
             ":seccion_tipo"=>$s->getTipo()
         );
     }
-    private function query($data,$assoc=false)
+    private function query($data)
     {
 
 
@@ -244,17 +244,9 @@ GROUP BY s.seccion_id";
         $s->setId($data["seccion_id"]);
         $s->setNombre($data["seccion_nombre"]);
         $s->setTipo($data["seccion_tipo"]);
+        
 
-        if(!$assoc){
-            array_push($this->secciones, $s);
-        }
-        else
-        {
-            $this->secciones[$data["seccion_id"]]=$s;
-        }
-
-
-
+        $this->secciones[$data["seccion_id"]]=$s;
     }
     public function selectSecciones()
     {        $this->secciones=array();
@@ -264,7 +256,7 @@ GROUP BY s.seccion_id";
 
 
 
-            $this->query($data,true);
+            $this->query($data);
 
         });
 
