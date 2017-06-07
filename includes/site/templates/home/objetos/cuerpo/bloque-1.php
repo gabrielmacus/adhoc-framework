@@ -1,8 +1,10 @@
 <div class="bloque-1">
     <?php
     $arr =["http://elonce-media.elonce.com/fotos-nuevo/2015/10/22/s_1445526983.jpg","http://elonce-media.elonce.com/fotos-nuevo/2017/05/29/s_1496079365.jpg","http://elonce-media.elonce.com/fotos-nuevo/2017/06/07/b_1496845430.jpg"];
-    for ($i=0;$i<6;$i++)
+    foreach($dataToSkin as $k => $data)
     {
+    
+        var_dump($data->getSeccion());
         ?>
        <div class="item-container">
            <article class="item">
@@ -11,7 +13,7 @@
 
                </figure>
                <h3 class="title">
-                   <span class="text">Cuenta regresiva para Tecnópolis Federal: capacitaron a los guías</span>
+                   <span class="text"><?php echo $data["titulo"];?></span>
                </h3>
                <span class="tag">
                    Policiales
