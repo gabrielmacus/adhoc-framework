@@ -34,6 +34,28 @@
 }
 
 
+.portada .slider-container
+{
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin: auto;
+}
+
+.portada .slider-bar
+{
+    width: 100px;
+    background-color: white;
+    top: 0;
+    right:10%;
+    display: flex;
+    position: absolute;
+    margin: auto;
+}
+
+
+
+
 @media screen and (max-width: 1199px)
 {
 
