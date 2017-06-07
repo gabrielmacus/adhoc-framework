@@ -426,6 +426,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $in = ltrim($in,",");
 
+        var_dump($in);
+
         $anexosSql="SELECT p.*,n.* ,n.post_id as 'id' FROM `posts_nexos` n
  LEFT JOIN posts p ON p.post_id = n.post_anexo_id WHERE n.post_id IN (0{$in})
  ORDER BY post_nexo_orden ASC";
@@ -602,7 +604,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         }
         /*** **/
-        var_dump($this->posts);
         $this->processFiles($process);
 
         
