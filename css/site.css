@@ -1,8 +1,11 @@
 
 
+
 .portada > section
 {
     width: 1200px;
+    display: flex;
+    margin: auto;
 }
 
 @media screen and (max-width: 1199px)
