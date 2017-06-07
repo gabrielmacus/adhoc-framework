@@ -62,5 +62,9 @@
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper('.swiper-container');
+$(document).ready(
+    function () {
+        var swiper = new Swiper('.swiper-container');
+    }
+);
 </script>
