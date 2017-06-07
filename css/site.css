@@ -175,6 +175,7 @@ aside
 .portada .bloque-1 .item img
 {
     width: 100%;
+    object-fit: auto;
     height: auto;
 }
 
