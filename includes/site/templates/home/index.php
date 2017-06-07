@@ -1,12 +1,12 @@
 <div class="top">
-    <?PHP
-    include "objetos/header.php";
-    ?>
+
 </div>
 <div class="body">
 
     <div class="col-1">
-        
+        <?PHP
+        include "objetos/header.php";
+        ?>
     </div>
     <div class="col-2">
 
