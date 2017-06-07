@@ -9,5 +9,5 @@
 include "includes/autoload.php";
 $p=new PostDAO();
 
-$post=$GLOBALS["postDAO"]->selectPostById(11,2);
+$post=$GLOBALS["postDAO"]->selectPostById(11,true,RECURSIVE);
 echo json_encode($post);
