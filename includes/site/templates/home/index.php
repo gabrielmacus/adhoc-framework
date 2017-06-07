@@ -16,6 +16,7 @@
 
             <?php
 
+            $imgSize="portada";
 
             $dataToSkin=$GLOBALS["postDAO"]->selectPosts(false);
            
