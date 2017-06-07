@@ -406,7 +406,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
      */
     private  function processRecursiveAnexos(&$posts,$process=true)
     {
-        //TODO Esto no se sabe si anda (?)
+
 
         $in="";
 
@@ -429,7 +429,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 foreach ($post as $p)
                 {
-                   return false;
+
+                    var_dump($p);
                     if(!$anexoId=$p->getAnexoId())
                     {
                         $in.= ",{$p->getId()}";
