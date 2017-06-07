@@ -1,7 +1,6 @@
-
+<link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/reset.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/site.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/lity.min.css">
-<link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/reset.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/animate.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/font-awesome-4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/vegas.min.css">
