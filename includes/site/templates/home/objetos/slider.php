@@ -27,6 +27,9 @@
 
             <figure>
                 <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
+                 <figcaption>
+                     <h3>@rober_tito</h3>
+                 </figcaption>
             </figure>
             <h2 class="title">
 
