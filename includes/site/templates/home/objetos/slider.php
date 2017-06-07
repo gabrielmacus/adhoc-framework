@@ -32,6 +32,9 @@
                        <h3 class="name">@rober_tito</h3>
                    </figcaption>
                </figure>
+               
+               <div class="line"></div>
+               
                <h2 class="title">
 
                    <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
