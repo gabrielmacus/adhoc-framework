@@ -196,14 +196,7 @@ aside
     object-fit: cover;
     height: auto;
 }
-.portada .bloque-1 .item .title
-{
-    position: absolute;
-    bottom:0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.69);
 
-}
 .portada .bloque-1 .item .title
 {
 
