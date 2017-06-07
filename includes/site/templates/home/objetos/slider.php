@@ -25,15 +25,15 @@
 
         <div class="slider-title">
 
+            <figure>
+                <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
+            </figure>
             <h2 class="title">
 
                 <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
 
             </h2>
-          <!---
-            <figure>
-                <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
-            </figure>-->
+
 
         </div>
 
