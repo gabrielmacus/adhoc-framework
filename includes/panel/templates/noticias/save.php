@@ -18,7 +18,7 @@
 
         $label="Bajada";
         $model="bajada";
-        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/textarea.php";
 
 
         $label="Galeria multimedia (imágenes,videos,audios,etc...)";
