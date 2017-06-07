@@ -1,3 +1,5 @@
+
+
 <div class="top">
     <?PHP
     include "objetos/header.php";
@@ -12,13 +14,13 @@
 
         <div class="col-1">
 
-            <?php include "objetos/cuerpo/bloque-1.php"; ?>
+            <?php
 
-        </div>
-        
-        <div class="col-1">
+            $dataToSkin=$GLOBALS["postDAO"]->selectPosts();
+            var_dump($dataToSkin);
+            include "objetos/cuerpo/bloque-1.php";
 
-            <?php include "objetos/cuerpo/bloque-1.php"; ?>
+            ?>
 
         </div>
 
