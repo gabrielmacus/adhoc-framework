@@ -86,12 +86,22 @@
     width:  30%;
 
 }
-.portada .slider-title h2
+.portada .slider-title .title
 {
 
     width:  70%;
+    text-align: center;
 
 }
+.portada .slider-title .text
+{
+
+    width:  100%;
+
+}
+
+
+
 @media screen and (max-width: 1199px)
 {
 
