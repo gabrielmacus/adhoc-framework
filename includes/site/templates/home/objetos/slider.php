@@ -24,14 +24,16 @@
     
 
         <div class="slider-title">
+
+            <h2 class="title">
+
+                <span class="text">Titulo del slider de prueba</span>
+
+            </h2>
             <figure>
                 <img src="http://www2.mmu.ac.uk/media/mmuacuk/content/images/health-professions/student-profile-simone-bianchi-piantini.jpg">
             </figure>
-            <h2 class="title">
-                
-                <span class="text">Titulo del slider de prueba</span>
-                
-            </h2>
+
         </div>
 
 
