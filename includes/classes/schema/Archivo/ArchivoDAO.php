@@ -233,6 +233,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
+        var_dump($sql);
 
         $originales = $this->dataSource->runQuery($sql);
 
