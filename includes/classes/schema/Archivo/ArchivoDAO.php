@@ -202,8 +202,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $sql="SELECT count(*) as 'total' FROM archivos WHERE {$where}";
 
 
-        $r=count($this->dataSource->runQuery($sql));
-        
+        $r=$this->dataSource->runQuery($sql)['total'];
+
+        var_dump($r);
         parent::setResults($r);
     }
 
