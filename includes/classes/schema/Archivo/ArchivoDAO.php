@@ -295,10 +295,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
         /**
-         * Uno originales + versiones
+         * Uno originales + versiones, y los paso a objetos
          */
 
         $archivos = array_merge($originales,$versiones);
+
+        foreach ($archivos as $archivo)
+        {
+          $this->query($archivo);
+        }
 
         /**
          */
