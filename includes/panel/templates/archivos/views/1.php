@@ -1,6 +1,5 @@
 
 <?php
-echo '<pre>' . var_export($archivos, true) . '</pre>';
 
 
 
@@ -27,6 +26,7 @@ foreach ($archivos as $k=>$archivo)
             }
 
 
+            var_dump($vp);
 
 
             switch ($k)
