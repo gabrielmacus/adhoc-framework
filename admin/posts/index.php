@@ -32,12 +32,13 @@ try{
     switch ($action)
     {
         default:
+            $processFiles=false;
+            $processAnexos=false;
             $action="list";
             break;
         case "view":
 
-            $processFiles=false;
-            $processAnexos=false;
+
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
@@ -54,6 +55,8 @@ try{
     }
     else
     {
+
+        $p = new PostDAO();
 
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
