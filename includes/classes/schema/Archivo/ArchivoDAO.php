@@ -186,6 +186,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
     }
+    public function setResults($sql)
+    {
+
+        var_dump($sql);
+        $r=count($this->dataSource->runQuery($sql));
+        
+        parent::setResults($r);
+    }
 
     /**
      * @param $in Especifico los ids de los repositorios de los archivos que quiero traer
@@ -196,8 +204,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
      */
     public function selectArchivoByRepositorioId($in,$process=true,$version=false)
     {
-        $this->setResults(0);
-        
         $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
@@ -251,7 +257,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in}) AND archivo_version_name='original'";
 
-
+        $this->setResults($sql);
 
         if($this->getLimit())
         {
@@ -337,15 +343,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 break;
         }
-
-        if(!$r=$this->getResults())
-        {
-            $this->setResults(0);
-        }
-        $r++;
-
-        $this->setResults($r);
-
+        
+   
         array_push($this->files, $a);
 
     }
