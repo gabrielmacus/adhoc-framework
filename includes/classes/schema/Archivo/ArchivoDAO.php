@@ -340,36 +340,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $this->files;
 
     }
-    public function selectArchivoOriginalByRepositorioId($in,$process=true)
-    {
-        $this->files=array();
-
-        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in}) AND archivo_version_name='original'";
-
-        $this->setResults($sql);
-
-        if($this->getLimit())
-        {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
-        }
-
-
-        $this->dataSource->runQuery($sql,array(),
-            function($data){
-
-
-                $this->query($data);
-            });
-
-        if($process)
-        {
-
-            $this->processArchivos();
-        }
-
-
-        return $this->files;
-    }
     public function selectArchivoByVersions($id,$process=true)
     {
         $this->files=array();
