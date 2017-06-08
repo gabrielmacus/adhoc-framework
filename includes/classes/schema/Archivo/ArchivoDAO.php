@@ -201,7 +201,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
-        var_dump($sql);
+
         parent::setResults($r);
     }
 
@@ -242,6 +242,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
+
+        $this->setResults($where);
+
         /**
          *
          */
@@ -270,7 +273,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
 
 
-            $this->setResults($where);
 
             $sql.=" ORDER BY archivo_creation DESC";
 
