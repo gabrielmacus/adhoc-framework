@@ -321,7 +321,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
           $this->query($archivo);
         }
-        echo '<pre>' . var_export($this->files, true) . '</pre>';
 
 
   

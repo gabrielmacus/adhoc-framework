@@ -14,6 +14,9 @@ foreach ($archivos as $k=>$archivo)
 
             $version= reset($versiones);
 
+            echo '<pre>' . var_export($this->files, true) . '</pre>';
+
+
             if(!$versiones[$versionPanel])//Si no encuentro la version de panel, cargo la original
             {
                 $vp="original";
