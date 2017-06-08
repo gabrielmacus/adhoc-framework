@@ -191,7 +191,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $r = count($this->dataSource->runQuery($sql));
 
-        var_dump($sql);
         parent::setResults($r);
     }
 
