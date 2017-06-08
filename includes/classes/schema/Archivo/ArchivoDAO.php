@@ -234,20 +234,18 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $where.=" AND archivo_version_name IN ({$v})";
         }
-
-
-
+        
         $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
 
         $this->setResults($where);
 
         $sql.=" ORDER BY archivo_creation DESC";
 
-
+        $offset=$this->getOffset();
 
         if($this->getLimit())
         {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
 
