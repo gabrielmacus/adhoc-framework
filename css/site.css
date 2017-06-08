@@ -229,8 +229,9 @@ img
     padding: 8px;
     height: 203px;
     width: 100%;
-    color: white;
+    color: white!important;
     font-weight: 600;
+
 }
 .portada .bloque-1 .item .tag:hover
 {
