@@ -200,7 +200,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $where.= " AND archivo_version = 0";
         }
         $sql="SELECT count(*) as 'total' FROM archivos WHERE {$where}";
-
+        
+        var_dump($sql);
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
@@ -234,7 +235,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $where.=" AND archivo_version_name IN ({$v})";
         }
-        
+
         $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
 
         $this->setResults($where);
