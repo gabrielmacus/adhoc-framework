@@ -230,11 +230,12 @@ img
     height: 203px;
     width: 100%;
     color: white;
+    font-weight: 600;
 }
 .portada .bloque-1 .item .tag:hover
 {
 
-background-color: red;
+height: 10%;
 
 }
 
