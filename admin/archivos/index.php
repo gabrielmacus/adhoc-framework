@@ -29,6 +29,8 @@ try{
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
     $pages =$GLOBALS["archivoDAO"]->getPages();
 
+    var_dump($pages);
+
     $site="archivos";
     $action="list";
 
