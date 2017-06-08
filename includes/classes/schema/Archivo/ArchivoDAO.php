@@ -224,21 +224,33 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql.=" ORDER BY archivo_creation DESC";
 
-        var_dump($sql);
-        $this->setResults($sql);
 
         if($this->getLimit())
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
         }
-   
-        
-        $this->dataSource->runQuery($sql,array(),
+
+        /**
+         *
+         *
+         *
+         *
+         */
+
+
+
+
+       $results= $this->dataSource->runQuery($sql,array(),
             function($data){
 
 
                 $this->query($data);
             });
+
+        var_dump($results);
+
+
+
 
 
         if($process)
