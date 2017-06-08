@@ -224,6 +224,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql.=" ORDER BY archivo_creation DESC";
 
+        var_dump($sql);
         $this->setResults($sql);
 
         if($this->getLimit())
