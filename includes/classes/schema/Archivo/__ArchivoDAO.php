@@ -186,12 +186,24 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
     }
-    public function setResults($sql)
+    public function setResults($where=false)
     {
 
-        $r = count($this->dataSource->runQuery($sql));
 
-        var_dump($sql);
+        if(!$where)
+        {
+
+            $where="archivo_version = 0";
+        }
+        else
+        {
+            $where.= " AND archivo_version = 0";
+        }
+        $sql="SELECT count(*) as 'total' FROM archivos WHERE {$where}";
+
+
+        $r=$this->dataSource->runQuery($sql)[0]['total'];
+
         parent::setResults($r);
     }
 
@@ -206,7 +218,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     {
         $this->files=array();
 
-        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+        $where="archivo_repositorio IN ({$in})";
 
 
         if(is_array($version)){
@@ -220,18 +232,25 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $v =rtrim($v,",");
 
-            $sql.=" AND archivo_version_name IN ({$v})";
+            $where.=" AND archivo_version_name IN ({$v})";
         }
+        
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+        $this->setResults($where);
 
         $sql.=" ORDER BY archivo_creation DESC";
 
-        $this->setResults($sql);
+        $offset=$this->getOffset();
 
         if($this->getLimit())
         {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
+
+
+        
         $this->dataSource->runQuery($sql,array(),
             function($data){
 
