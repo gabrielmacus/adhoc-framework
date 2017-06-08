@@ -186,12 +186,26 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
     }
-    public function setResults($sql)
+    public function setResults($where=false)
     {
 
-        $r = count($this->dataSource->runQuery($sql));
+
+        if(!$where)
+        {
+
+            $where="archivo_version = 0";
+        }
+        else
+        {
+            $where.= " AND archivo_version = 0";
+        }
+        $sql="SELECT count(*) as 'total' FROM archivos WHERE {$where}";
+
+
+        $r=$this->dataSource->runQuery($sql)[0]['total'];
 
         var_dump($sql);
+        var_dump($r);
         parent::setResults($r);
     }
 
@@ -206,8 +220,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     {
         $this->files=array();
 
-        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_repositorio IN ({$in})";
+        $where="archivo_repositorio IN ({$in})";
 
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+        $this->setResults($where);
 
         if(is_array($version)){
 
