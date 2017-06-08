@@ -243,7 +243,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
-
+        //Calculo la cant de resultados
         $this->setResults($where);
 
         /**
@@ -302,7 +302,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
          * Uno originales + versiones, y los paso a objetos
          */
 
-        $archivos = array_merge($originales,$versiones);
+        if($versiones)
+        {
+
+            $archivos = array_merge($originales,$versiones);
+        }
+        else
+        {
+            $archivos = $originales;
+        }
 
         foreach ($archivos as $archivo)
         {
