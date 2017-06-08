@@ -180,7 +180,7 @@ aside
 
 .portada .bloque-1 .item
 {
-
+    background-color: rgba(0, 0, 0, 0.69);
     width: 100%;
     position: relative;
     display: flex;
@@ -206,7 +206,7 @@ img
 .portada .bloque-1 .item .title
 {
 
-    background-color: rgba(0, 0, 0, 0.69);
+
     width: 100%;
     color: white;
     line-height: 23px;
