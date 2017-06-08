@@ -143,43 +143,37 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $res;
     }
 
+    /**
+     * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
+     *
+     * Traigo todos los archivos existentes
+    */
     public function selectArchivos($process=true)
     {
-        $this->files=array();
 
-        $sql = "SELECT * FROM {$this->tableName} LEFT JOIN
- repositorios ON repositorio_id=archivo_repositorio";
 
-        if($this->getLimit())
+        /**
+         * Traigo todos los repositorios
+         */
+        $sql = "SELECT * FROM  `repositorios` LIMIT 0 , 30";
+
+       $repositorios= $this->dataSource->runQuery($sql);
+
+        $ids=[];
+
+        foreach ($repositorios as $repositorio)
         {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+            $ids[]=$repositorio["repositorio_id"];
         }
 
-        $this->dataSource->runQuery($sql,array(),function($data){
+        /** **/
 
-
-            $r =new Repositorio($data["repositorio_host"],$data["repositorio_user"],
-                $data["repositorio_pass"],$data["repositorio_name"], $data["repositorio_path"],
-                $data["repositorio_port"],$data["repositorio_creation"],
-                $data["repositorio_modification"],$data["repositorio_id"]);
-
-
-            $a = new Archivo($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
-                $data["archivo_version"],$data["archivo_real_name"],null,$r,
-                $data["archivo_path"],$data["archivo_creation"],
-                $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
-            array_push($this->files, $a);
-
-            $a->setPathName($data["archivo_path_name"]);
-
-        });
-        if($process)
-        {
-
-            $this->processArchivos();
-        }
-
-        return $this->files;
+        /**
+         * Traigo los archivos de dichos repositorios
+         */
+        $ids = implode(",",$ids);
+  return   $this->selectArchivoByRepositorioId($ids,$process);
+        /** */
 
 
     }
@@ -334,53 +328,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         /**
          */
 
-
-
-        /*
-        $where="archivo_repositorio IN ({$in})";
-
-        if(is_array($version)){
-
-            $v ="";
-
-            foreach ($version as $version)
-            {
-                $v.="'{$version}',";
-            }
-
-            $v =rtrim($v,",");
-
-            $where.=" AND archivo_version_name IN ({$v})";
-        }
-
-
-        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
-
-
-        $this->setResults($where);
-
-        $sql.=" ORDER BY archivo_creation DESC";
-
-        $offset=$this->getOffset();
-
-        if($this->getLimit())
-        {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
-        }
-
-
-
-
-
-        var_dump($sql);
-
-        $this->dataSource->runQuery($sql,array(),
-            function($data){
-
-
-                $this->query($data);
-            });
-*/
 
         if($process)
         {
