@@ -1,7 +1,6 @@
 
 <?php
 
-echo json_encode($archivos);
 
 foreach ($archivos as $k=>$archivo)
 {
