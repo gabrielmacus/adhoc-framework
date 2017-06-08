@@ -271,11 +271,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             {
                 $v.="'{$version}',";
             }
-            $v.="'original'";
 
             $v =rtrim($v,",");
 
             $where.=" AND archivo_version_name IN ({$v})";
+
+            //Agrego los ids de los originales a la consulta para traer sus respectivas versiones
+          $ids = implode("," ,$ids);
+           $where.=" AND  archivo_id IN ({$ids})";
 
 
             $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
