@@ -53,7 +53,8 @@ foreach ($archivos as $k=>$archivo)
                     break;
 
                 case 1://Imagen
-                  
+
+                    var_dump($versiones);
                     $version= $versiones[$vp];
 
                     ?>
