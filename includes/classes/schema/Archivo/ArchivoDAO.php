@@ -47,9 +47,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
-
-
-
     private function processArchivos()
     {
 
@@ -200,8 +197,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $where.= " AND archivo_version = 0";
         }
         $sql="SELECT count(*) as 'total' FROM archivos WHERE {$where}";
-        
-        var_dump($sql);
+
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
@@ -249,8 +245,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
-
-
+        var_dump($sql);
         
         $this->dataSource->runQuery($sql,array(),
             function($data){
@@ -326,7 +321,25 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $this->files;
 
     }
+    public function selectArchivoById($id,$process=true)
+    {
 
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
+
+        $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),function($data){
+
+            $this->query($data);
+        });
+        if($process)
+        {
+
+            $this->processArchivos();
+        }
+        return $this->files;
+
+
+    }
 
     private function query($data){
 
@@ -404,25 +417,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
 
-    public function selectArchivoById($id,$process=true)
-    {
-
-
-        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
-
-        $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),function($data){
-
-            $this->query($data);
-        });
-        if($process)
-        {
-
-            $this->processArchivos();
-        }
-        return $this->files;
-
-
-    }
 
     public function updateArchivo(IArchivo $a)
     {
