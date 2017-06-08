@@ -143,40 +143,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $res;
     }
 
-    /**
-     * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
-     *
-     * Traigo todos los archivos existentes
-    */
-    public function selectArchivos($process=true)
-    {
 
-
-        /**
-         * Traigo todos los repositorios
-         */
-        $sql = "SELECT * FROM  `repositorios` LIMIT 0 , 30";
-
-       $repositorios= $this->dataSource->runQuery($sql);
-
-        $ids=[];
-
-        foreach ($repositorios as $repositorio)
-        {
-            $ids[]=$repositorio["repositorio_id"];
-        }
-
-        /** **/
-
-        /**
-         * Traigo los archivos de dichos repositorios
-         */
-        $ids = implode(",",$ids);
-  return   $this->selectArchivoByRepositorioId($ids,$process);
-        /** */
-
-
-    }
     public function setResults($where=false)
     {
 
@@ -340,31 +307,50 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $this->files;
 
     }
-    public function selectArchivoByVersions($id,$process=true)
+    /**
+     * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
+     *
+     * Traigo todos los archivos existentes
+     */
+    public function selectArchivos($process=true)
     {
-        $this->files=array();
 
-        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id OR archivo_version=:archivo_id";
-        $this->setResults($sql);
 
-        if($this->getLimit())
+        /**
+         * Traigo todos los repositorios
+         */
+        $sql = "SELECT * FROM  `repositorios` LIMIT 0 , 30";
+
+        $repositorios= $this->dataSource->runQuery($sql);
+
+        $ids=[];
+
+        foreach ($repositorios as $repositorio)
         {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+            $ids[]=$repositorio["repositorio_id"];
         }
 
+        /** **/
 
-        $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),
-            function($data){
-            $this->query($data);
-            });
-        if($process)
-        {
+        /**
+         * Traigo los archivos de dichos repositorios
+         */
+        $ids = implode(",",$ids);
+        return   $this->selectArchivoByRepositorioId($ids,$process);
+        /** */
 
-            $this->processArchivos();
-        }
-        return $this->files;
 
     }
+
+    /**
+     * @param $id Id del archivo
+     * @param bool $processSi me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
+     *
+     * @return array
+     * @throws Exception
+     *
+     * Traigo un archivo especifico por id
+     */
     public function selectArchivoById($id,$process=true)
     {
 
