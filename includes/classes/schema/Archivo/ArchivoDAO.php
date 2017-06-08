@@ -213,10 +213,89 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
      */
     public function selectArchivoByRepositorioId($in,$process=true,$version=false)
     {
-        $this->files=array();
+        $this->files = array();
 
         $where="archivo_repositorio IN ({$in})";
 
+
+        /***
+         * Traigo los originales para paginarlos
+         */
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE archivo_version=0 AND {$where}";
+
+        $offset = $this->getOffset();
+
+        if ($this->getLimit()) {
+            $sql .= "  LIMIT {$this->getLimit()} OFFSET {$offset}";
+        }
+
+        $originales = $this->dataSource->runQuery($sql);
+
+
+        //Lista de los ids que traje
+        $ids=[];
+        foreach ($originales as $o)
+        {
+            $ids[]=$o["archivo_id"];
+        }
+
+
+        /**
+         *
+         */
+
+        /**
+         * Traigo las versiones requeridas
+         */
+
+
+
+        if(is_array($version))
+        {
+
+            $v ="";
+
+            foreach ($version as $version)
+            {
+                $v.="'{$version}',";
+            }
+
+            $v =rtrim($v,",");
+
+            $where.=" AND archivo_version_name IN ({$v})";
+
+
+            $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+
+            $this->setResults($where);
+
+            $sql.=" ORDER BY archivo_creation DESC";
+
+            $offset=$this->getOffset();
+
+            if($this->getLimit())
+            {
+                $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
+            }
+
+
+          $versiones=  $this->dataSource->runQuery($sql);
+
+            var_dump($versiones);
+            exit();
+
+        }
+
+
+        /**
+         *
+         *
+         */
+
+        /*
+        $where="archivo_repositorio IN ({$in})";
 
         if(is_array($version)){
 
@@ -232,7 +311,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $where.=" AND archivo_version_name IN ({$v})";
         }
 
+
         $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
 
         $this->setResults($where);
 
@@ -245,6 +326,10 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
+
+
+
+
         var_dump($sql);
         
         $this->dataSource->runQuery($sql,array(),
@@ -253,7 +338,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 $this->query($data);
             });
-
+*/
 
         if($process)
         {

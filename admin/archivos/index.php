@@ -23,7 +23,7 @@ try{
     $GLOBALS["archivoDAO"]->setPadding(3);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
-    $versionesRequeridas=[$versionPanel,"original"];
+    $versionesRequeridas=[$versionPanel];//No agrego la original porq la traigo por defecto
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
 
