@@ -232,6 +232,14 @@ img
     color: white;
     font-weight: 600;
 }
+.portada .bloque-1 .item .tag:hover
+{
+
+    -ms-filter:invert(100%);
+    filter: invert(100%);
+}
+
+
 .animated
 {
     -webkit-transition: all 300ms;
