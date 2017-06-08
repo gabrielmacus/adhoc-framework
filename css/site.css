@@ -236,6 +236,7 @@ img
 {
 
 background-color: transparent!important;;
+    color:attr(data-color);
 
 }
 
