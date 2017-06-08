@@ -283,8 +283,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
           $versiones=  $this->dataSource->runQuery($sql);
 
-            echo json_encode($originales);
-            exit();
+
 
         }
 
@@ -293,6 +292,19 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
          *
          *
          */
+
+
+        /**
+         * Uno originales + versiones
+         */
+
+        $archivos = array_merge($originales,$versiones);
+
+        /**
+         */
+
+        echo json_encode($archivos);
+        exit();
 
         /*
         $where="archivo_repositorio IN ({$in})";
