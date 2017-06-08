@@ -211,7 +211,10 @@ img
     color: white;
     line-height: 23px;
     padding: 10px;
-
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .portada .bloque-1 .item .title .text
