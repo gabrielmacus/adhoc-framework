@@ -222,9 +222,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $where="archivo_repositorio IN ({$in})";
 
-        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
-
-        $this->setResults($where);
 
         if(is_array($version)){
 
@@ -237,8 +234,20 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $v =rtrim($v,",");
 
-            $sql.=" AND archivo_version_name IN ({$v})";
+            $where.=" AND archivo_version_name IN ({$v})";
         }
+
+
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+
+
+
+        $this->setResults($where);
+
+
+
 
         $sql.=" ORDER BY archivo_creation DESC";
 
