@@ -1,7 +1,7 @@
 
 <?php
 
-
+echo json_encode($versiones);
 
 foreach ($archivos as $k=>$archivo)
 {
@@ -54,7 +54,6 @@ foreach ($archivos as $k=>$archivo)
 
                 case 1://Imagen
 
-                    var_dump($versiones[$vp]);
                     $version= $versiones[$vp];
 
                     ?>
