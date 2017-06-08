@@ -171,6 +171,9 @@ aside
     width: 33.33333%;
     padding: 15px;
     position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
 
 
 }
@@ -180,7 +183,9 @@ aside
 
     width: 100%;
     position: relative;
-
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
 }
 
 img
