@@ -311,14 +311,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $archivos = $originales;
         }
-
+   echo json_encode($archivos);
+        exit();
         foreach ($archivos as $archivo)
         {
           $this->query($archivo);
         }
 
-        var_dump($this->files);
-        exit();
+
 
         /**
          */
