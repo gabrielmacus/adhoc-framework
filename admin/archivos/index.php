@@ -19,7 +19,7 @@ try{
     $versionPanel="panel_repositorio";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
-    $GLOBALS["archivoDAO"]->setLimit(12);
+    $GLOBALS["archivoDAO"]->setLimit(3);
     $GLOBALS["archivoDAO"]->setPadding(3);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
