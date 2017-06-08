@@ -15,7 +15,7 @@ require_once "Post.php";
 const SINGLE=1;
 const RECURSIVE=2;
 const NO_PROCESS=0;
-class PostDAO implements IPost
+class PostDAO  extends Paginable implements IPost
 {
 
 
@@ -80,6 +80,22 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $this->processFiles($process);
 
         return $this->posts;
+    }
+
+    public function setResults($where=false)
+    {
+
+        if (!$where)
+        {
+            $where="";
+        }
+
+        $sql="SELECT count(*) as 'total' FROM {$this->tableName} WHERE {$where}";
+
+
+        $r=$this->dataSource->runQuery($sql)[0]['total'];
+
+        parent::setResults($r);
     }
 
 
@@ -533,6 +549,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $this->posts=array();
         $sql = "SELECT * FROM {$this->tableName} ";
 
+        $this->setResults();
+        
         $this->dataSource->runQuery($sql, array(), function ($data) {
 
             $this->query($data, true);
