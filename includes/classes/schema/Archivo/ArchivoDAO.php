@@ -189,8 +189,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function setResults($sql)
     {
 
-        $r=count($this->dataSource->runQuery($sql));
-        
+        $r = count($this->dataSource->runQuery($sql));
+
+        var_dump($sql);
         parent::setResults($r);
     }
 
