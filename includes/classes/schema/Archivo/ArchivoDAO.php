@@ -219,6 +219,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $where="archivo_repositorio IN ({$in})";
 
+        $orderBy=  "archivo_creation DESC";
 
         /***
          * Traigo los originales para paginarlos
@@ -226,14 +227,17 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_version=0 AND {$where}";
 
+        $sql.=" ORDER BY {$orderBy}";
+
         $offset = $this->getOffset();
+
 
         if ($this->getLimit()) {
             $sql .= "  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
 
-        var_dump($sql);
+
 
         $originales = $this->dataSource->runQuery($sql);
 
@@ -276,9 +280,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
 
-
-
-            $sql.=" ORDER BY archivo_creation DESC";
+            $sql.=" ORDER BY {$orderBy}";
 
             $offset=$this->getOffset();
 
@@ -286,7 +288,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             {
                 $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
             }
-            var_dump($sql);
+
 
           $versiones=  $this->dataSource->runQuery($sql);
 
