@@ -56,6 +56,7 @@ try{
     else
     {
 
+        var_dump($processFiles);
 
         $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
