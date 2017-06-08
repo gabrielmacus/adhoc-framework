@@ -54,7 +54,7 @@ foreach ($archivos as $k=>$archivo)
 
                 case 1://Imagen
 
-                    var_dump($versiones);
+                    var_dump($vp);
                     $version= $versiones[$vp];
 
                     ?>
