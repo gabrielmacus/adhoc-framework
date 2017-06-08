@@ -201,6 +201,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
+        var_dump($r);
         parent::setResults($r);
     }
 
@@ -309,6 +310,52 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
          */
 
 
+
+        /*
+        $where="archivo_repositorio IN ({$in})";
+
+        if(is_array($version)){
+
+            $v ="";
+
+            foreach ($version as $version)
+            {
+                $v.="'{$version}',";
+            }
+
+            $v =rtrim($v,",");
+
+            $where.=" AND archivo_version_name IN ({$v})";
+        }
+
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+
+        $this->setResults($where);
+
+        $sql.=" ORDER BY archivo_creation DESC";
+
+        $offset=$this->getOffset();
+
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
+        }
+
+
+
+
+
+        var_dump($sql);
+
+        $this->dataSource->runQuery($sql,array(),
+            function($data){
+
+
+                $this->query($data);
+            });
+*/
 
         if($process)
         {
