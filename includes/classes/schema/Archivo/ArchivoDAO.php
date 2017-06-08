@@ -148,17 +148,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     public function selectArchivos($process=true)
     {
-        $this->files = array();
+        $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} LEFT JOIN
  repositorios ON repositorio_id=archivo_repositorio";
 
-        if ($this->getLimit()) {
-            $sql .= "  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
         }
-
-
-
 
         $this->dataSource->runQuery($sql,array(),function($data){
 
@@ -191,7 +189,10 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function setResults($sql)
     {
 
-        parent::setResults(count($this->dataSource->runQuery($sql)));
+        $r=count($this->dataSource->runQuery($sql));
+
+        var_dump($r);
+        parent::setResults($r);
     }
 
     /**
@@ -224,33 +225,19 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $sql.=" ORDER BY archivo_creation DESC";
 
+        $this->setResults($sql);
 
         if($this->getLimit())
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$this->getOffset()}";
         }
 
-        /**
-         *
-         *
-         *
-         *
-         */
-
-
-
-
-       $results= $this->dataSource->runQuery($sql,array(),
+        $this->dataSource->runQuery($sql,array(),
             function($data){
 
 
                 $this->query($data);
             });
-
-        var_dump($results);
-
-
-
 
 
         if($process)
