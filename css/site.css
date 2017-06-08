@@ -235,7 +235,8 @@ img
 .portada .bloque-1 .item .tag:hover
 {
 
-   height: 10%;
+background-color: transparent;
+    color:attr(data-color);
 }
 
 
