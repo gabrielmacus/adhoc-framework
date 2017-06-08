@@ -25,8 +25,8 @@ try{
 
     $versionesRequeridas=[$versionPanel];//No agrego la original porq la traigo por defecto
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
-
+  //  $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivos();
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
     $pages =$GLOBALS["archivoDAO"]->getPages();
