@@ -323,7 +323,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
-        var_dump($this->files);
+        echo json_encode($this->files);
         exit();
 
 
