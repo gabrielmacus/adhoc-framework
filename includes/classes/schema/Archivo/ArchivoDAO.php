@@ -283,7 +283,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
           $versiones=  $this->dataSource->runQuery($sql);
 
-            echo json_encode($versiones);
+            echo json_encode($originales);
             exit();
 
         }
