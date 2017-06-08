@@ -23,9 +23,9 @@ try{
     $GLOBALS["archivoDAO"]->setPadding(3);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
-    //$archivosVersiones=[$versionPanel,"original"];
+    $versionesRequeridas=[$versionPanel,"original"];
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true);
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
