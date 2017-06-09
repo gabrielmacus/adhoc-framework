@@ -32,7 +32,7 @@
                    ?>
                </span>
 
-               <div class="text-2">
+               <div class="text-2" style="background-color: rgba(<?php echo $lang["seccionesColores"][$data->getSeccion()];?>,1)">
                    <p><?php  echo $data->getBajada();?></p>
                </div>
            </article>
