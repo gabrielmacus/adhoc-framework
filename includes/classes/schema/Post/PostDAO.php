@@ -25,6 +25,7 @@ class PostDAO  extends Paginable implements IPost
     protected $posts=array();
     private $insertSql;
     private $updateSql;
+    protected $orderBy;
 
     /**
      * UserDAO constructor.
@@ -53,16 +54,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
     }
 
-  /*  public function insertAnexo(Post $p,Post $p2,$orden=0)
-    {
-        $sql="INSERT INTO post_nexos SET post__id='{$p->getId()}', SET post_b_id ='{$p2->getId()}',SET post_nexo_orden = '{$orden}'";
-        
-        return $this->dataSource->runUpdate($sql);
-        
-        
-        // TODO: Implement insertAnexo() method.
-    }
-*/
     public function selectPostByTipoAndPertenece($tipo,$process=true,$processAnexos=true)
     {
         $this->posts=array();
@@ -98,6 +89,23 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         parent::setResults($r);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getOrderBy()
+    {
+        return $this->orderBy;
+    }
+
+    /**
+     * @param mixed $orderBy
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->orderBy = $orderBy;
+    }
+
+    
 
     private function assocFiles(Post $p)
     {
@@ -424,10 +432,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         return $this->posts;
     }
 
-
     /**
-     *
-     *
      * Proceso los anexos de manera recursiva de un post
      */
     private  function processRecursiveAnexos(&$posts,$process=true)
@@ -557,7 +562,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     public function selectPosts($process=true,$processAnexos=true)
     {
         $this->posts=array();
-        $sql = "SELECT * FROM {$this->tableName} ";
+        
+        $sql = "SELECT * FROM {$this->tableName} ORDER BY {$this->getOrderBy()}";
 
         $this->setResults();
         

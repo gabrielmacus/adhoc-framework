@@ -1,6 +1,8 @@
 <div class="bloque-1">
     
     <?php
+
+    $GLOBALS["postDAO"]->setOrderBy(" post_creacion ASC");
      foreach($dataToSkin as $k => $data)
     {
 
