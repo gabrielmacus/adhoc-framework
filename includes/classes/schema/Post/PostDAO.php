@@ -583,13 +583,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
 
         $this->setResults();
-        
-        $this->dataSource->runQuery($sql, array(), function ($data) {
-
-            $this->query($data, true);
-
-        });
-
 
         $offset=$this->getOffset();
 
@@ -597,8 +590,14 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
-        var_dump($sql);
 
+        $this->dataSource->runQuery($sql, array(), function ($data) {
+
+            $this->query($data, true);
+
+        });
+
+        
         /**** Proceso los anexos */
 
         $this->processAnexos($processAnexos);
