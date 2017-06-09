@@ -3,6 +3,8 @@
     angular.element(function () {
         var secciones = <?php echo  json_encode(  $GLOBALS["seccionDAO"]->selectSecciones());?>;
 
+        console.log(<?php echo json_encode($seccionesTree); ?>);
+
         scope.secciones = <?php echo json_encode($seccionesTree); ?>;
         scope.secciones = <?php  echo  json_encode($subsecciones);?>;
         scope.secciones_group=[];
