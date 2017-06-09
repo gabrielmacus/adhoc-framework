@@ -24,7 +24,7 @@
                <h3 class="title">
                    <span class="text"><?php echo $data->getTitulo();?></span>
                </h3>
-               <span class="tag animated" style="background-color: <?php echo $lang["seccionesColores"][$data->getSeccion()];?>">
+               <span class="tag animated" style="background-color: rgba(<?php echo $lang["seccionesColores"][$data->getSeccion()];?>,0.25)">
                    <?php
 
                    echo  $secciones[$data->getSeccion()]->getNombre();
