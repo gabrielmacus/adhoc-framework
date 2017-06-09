@@ -597,7 +597,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         });
 
-        
+
+
+        var_dump($sql);
+
         /**** Proceso los anexos */
 
         $this->processAnexos($processAnexos);
