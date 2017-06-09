@@ -9,8 +9,15 @@
         {
             scope.post={};
         }
-   
 
+        <?php
+        if($_GET["id"])
+        {
+            ?>
+        scope.post.id=<?php  echo $_GET["id"];?>;
+        <?php
+        }
+        ?>
 
 
         <?php if($post)
