@@ -186,6 +186,9 @@ aside
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
+    -webkit-box-shadow: 10px 7px 5px -6px rgba(0,0,0,0.47);
+    -moz-box-shadow: 10px 7px 5px -6px rgba(0,0,0,0.47);
+    box-shadow: 10px 7px 5px -6px rgba(0,0,0,0.47);
 }
 
 img
