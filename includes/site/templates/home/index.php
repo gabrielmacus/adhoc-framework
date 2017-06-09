@@ -20,6 +20,7 @@
             $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
             $GLOBALS["postDAO"]->setLimit(9);
             $GLOBALS["postDAO"]->setActualPage(1);
+            
             $imgSize="portada";
 
             $dataToSkin=$GLOBALS["postDAO"]->selectPosts(false);
