@@ -10,10 +10,10 @@
         <?php
 
 
-        $label="Notas relacionadas";
+        $label="Notas destacadas";
         $grupo=1;
         $s="posts";
-        $tipo="109,103";
+        $tipo="84";
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
 
