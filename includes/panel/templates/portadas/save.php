@@ -9,10 +9,8 @@
     <form data-ng-submit="save()">
         <?php
 
-        include DIR_PATH."/includes/panel/templates/gui/input/secciones.php";
 
-
-        $label="Titulo";
+        $label="";
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
