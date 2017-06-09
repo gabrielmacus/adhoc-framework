@@ -6,7 +6,7 @@
 
 <div class="body">
 
-    <form data-ng-submit="save()">
+    <form data-ng-submit="save()">  
         <?php
 
 
