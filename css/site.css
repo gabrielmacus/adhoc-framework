@@ -289,6 +289,14 @@ background-color: transparent!important;
     width: 100%;
 }
 
+.portada .bloque-1 .item .tag:hover .ribbon .ribbon-text
+{
+    z-index: 200;
+    position: relative;
+}
+
+
+
 @media screen and (max-width: 1199px)
 {
 
