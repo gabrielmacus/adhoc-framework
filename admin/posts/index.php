@@ -22,9 +22,9 @@ try{
 
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
-    $GLOBALS["archivoDAO"]->setLimit(2);
-    $GLOBALS["archivoDAO"]->setPadding(3);
-    $GLOBALS["archivoDAO"]->setActualPage($p);
+    $GLOBALS["postDAO"]->setLimit(2);
+    $GLOBALS["postDAO"]->setPadding(3);
+    $GLOBALS["postDAO"]->setActualPage($p);
 
     $fileVersion="original";
 
