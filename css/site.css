@@ -278,12 +278,16 @@ background-color: transparent!important;
 {
 
     position: absolute;
-    width: 100%;
+    width: 0%;
+    overflow: hidden;
     height: 100%;
     left: 0;
     top:0;
 }
-
+.portada .bloque-1 .item .tag:hover .ribbon .ribbon-background
+{
+    width: 100%;
+}
 
 @media screen and (max-width: 1199px)
 {
