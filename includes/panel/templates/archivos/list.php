@@ -193,7 +193,7 @@ include DIR_PATH."/includes/panel/templates/archivos/input/files.php";
 
         <?php
 
-        include DIR_PATH."/includes/panel/templates/posts/paginador.php";
+        include DIR_PATH."/includes/panel/templates/gui/paginador.php";
         ?>
 
 
