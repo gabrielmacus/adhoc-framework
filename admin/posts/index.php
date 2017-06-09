@@ -20,6 +20,12 @@ try{
     $t =$_GET["t"]; //tipo o seccion
     $site=$_GET["s"]; //Template
 
+    $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
+
+    $GLOBALS["archivoDAO"]->setLimit(2);
+    $GLOBALS["archivoDAO"]->setPadding(3);
+    $GLOBALS["archivoDAO"]->setActualPage($p);
+
     $fileVersion="original";
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);

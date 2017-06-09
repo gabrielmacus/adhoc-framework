@@ -379,7 +379,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
       $breadcrumb=  $GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($tipo);
 
-
         $in="";
         foreach ($breadcrumb as $s)
         {
@@ -390,15 +389,26 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $this->posts=array();
 
         $in.=$tipo;
-        
 
-        $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion IN ({$in})";
+        $where="post_seccion IN ({$in})";
+
+        $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
+
+        $offset=$this->getOffset();
+
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
+        }
+
         $this->dataSource->runQuery($sql,array(),function($data){
             $this->query($data,true);
         });
+
+
        // $sql = "SELECT * FROM {$this->tableName} WHERE post_seccion=:post_seccion";
 
-
+        $this->setResults($where);
 
         /*
         $this->dataSource->runQuery($sql,array(":post_seccion"=>$tipo),function($data){
