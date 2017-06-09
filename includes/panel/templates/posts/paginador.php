@@ -1,5 +1,5 @@
 <?php
-
+var_dump($p);
 ?>
 <script>
     $(document).ready(
