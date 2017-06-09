@@ -10,7 +10,7 @@
         <?php
 
 
-        $label="";
+        $label="Titulo";
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
