@@ -5,7 +5,6 @@ if(!$shownText)
     $shownText="titulo";
 }
 
-var_dump($shownText);
 ?>
 <script>
     angular.element(function () {
@@ -30,6 +29,7 @@ var_dump($shownText);
                     <?php foreach ($shownText as $t)
                     {
                         ?>
+                    console.log(<?php echo $t?>);
                     a.text+=a.post_<?php echo $t?>+" ";
                     <?php
                     }?>
