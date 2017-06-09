@@ -417,6 +417,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         }
 
 
+        var_dump($sql);
 
         $this->dataSource->runQuery($sql,array(),function($data){
             $this->query($data,true);
