@@ -26,4 +26,8 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
     ?>
 
 
+    <?php
+
+    include DIR_PATH."/includes/panel/templates/posts/paginador.php";
+    ?>
 </div>
