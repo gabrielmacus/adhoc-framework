@@ -242,6 +242,29 @@ img
 background-color: transparent!important;
 }
 
+.portada .bloque-1 .item:hover .text-2
+{
+
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    z-index: 102;
+    display: none;
+
+}
+
+.portada .bloque-1 .item .text-2
+{
+
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    height: 0%;
+    z-index: 102;
+    display: none;
+
+}
+
 
 .animated
 {
