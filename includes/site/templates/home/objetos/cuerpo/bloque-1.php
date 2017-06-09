@@ -1,6 +1,7 @@
 <div class="bloque-1">
     
     <?php
+    var_dump($dataToSkin);
 
      foreach($dataToSkin as $k => $data)
     {
