@@ -84,13 +84,12 @@ if(!$shownText)
                     {
                     ?>
 
-
                     text+=v.<?php echo $t?>;
                     <?php
                     }
                     }?>
 
-                    console.log(text);
+
                     var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
 
                     scope.post.anexos.push(anexo);
