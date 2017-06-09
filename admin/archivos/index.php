@@ -15,12 +15,14 @@ $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
 try{
+    $limit= 15;
+    $padding=6;
 
     $versionPanel="panel_repositorio";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
-    $GLOBALS["archivoDAO"]->setLimit(2);
-    $GLOBALS["archivoDAO"]->setPadding(3);
+    $GLOBALS["archivoDAO"]->setLimit($limit);
+    $GLOBALS["archivoDAO"]->setPadding($padding);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $versionesRequeridas=[$versionPanel];//No agrego la original porq la traigo por defecto
