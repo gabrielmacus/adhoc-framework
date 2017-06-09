@@ -88,7 +88,7 @@ if(!$shownText)
                     }
                     }?>
 
-                    console.log(text);
+                    console.log(<?php echo json_encode($shownText)?>);
 
                     var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
 
