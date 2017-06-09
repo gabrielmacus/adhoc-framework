@@ -402,6 +402,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
         $sql = "SELECT * FROM {$this->tableName} WHERE {$where}";
 
+        $orderBy=$this->getOrderBy();
+        if($orderBy)
+        {
+            $sql.="  ORDER BY {$orderBy}";
+        }
+
+
         $offset=$this->getOffset();
 
         if($this->getLimit())
@@ -409,11 +416,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
-        $orderBy=$this->getOrderBy();
-        if($orderBy)
-        {
-            $sql.="  ORDER BY {$orderBy}";
-        }
 
 
         $this->dataSource->runQuery($sql,array(),function($data){
