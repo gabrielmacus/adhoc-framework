@@ -17,7 +17,7 @@
             <h2 class="header">Lo último...</h2>
             <?php
 
-            $GLOBALS["postDAO"]->setOrderBy(" post_creacion ASC");
+            $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
 ;
             $imgSize="portada";
 
