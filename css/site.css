@@ -269,6 +269,19 @@ background-color: transparent!important;
 .portada .ribbon
 {
 
+    position: relative;
+    left: -8px;
+    padding: 5px;
+    top: 8px;
+}
+.portada .ribbon .ribbon-background
+{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
 }
 
 
