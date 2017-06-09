@@ -12,7 +12,7 @@
 
         $label="Notas destacadas";
         $grupo=1;
-        $s="posts";
+        $s="noticias";
         $tipo="84";
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
