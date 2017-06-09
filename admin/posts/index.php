@@ -68,9 +68,9 @@ try{
     }
 
 
-    $pg=$GLOBALS["archivoDAO"]->getPaginador();
-    $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
-    $pages =$GLOBALS["archivoDAO"]->getPages();
+    $pg=$GLOBALS["postDAO"]->getPaginador();
+    $actualPage=$GLOBALS["postDAO"]->getActualPage()+1;
+    $pages =$GLOBALS["postDAO"]->getPages();
 
 }
 catch (Exception $e)
