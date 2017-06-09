@@ -2,7 +2,7 @@
     
     <?php
 
-    $GLOBALS["postsDAO"]->setOrderBy(" post_creacion ASC");
+    $GLOBALS["postDAO"]->setOrderBy(" post_creacion ASC");
 
      foreach($dataToSkin as $k => $data)
     {
