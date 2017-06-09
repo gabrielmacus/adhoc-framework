@@ -40,7 +40,7 @@
 
                                   ?>
                             </span>
-                              <span style=" background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,1)" class="ribbon-background"></span>
+                              <span style=" background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,1)" class="animated ribbon-background"></span>
                           </span>
 
                </span>
