@@ -23,7 +23,8 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
     $href=$configuracion->getSiteAddress()."/admin/posts/?s={$_GET["s"]}&t={$_GET["t"]}&act=save";
     $title="Nueva entrada";
     include DIR_PATH."/includes/panel/templates/gui/input/add.php";
-    ?>
 
+    include DIR_PATH."/includes/panel/templates/gui/paginador.php";
+    ?>
 
 </div>
