@@ -236,7 +236,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $p->setCreacion(time());
         }
 
-   
+
+        var_dump($p->getCreacion());
             $p->setModificacion(time());
 
 
