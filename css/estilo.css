@@ -872,11 +872,10 @@ position: absolute
     background: white;
 }
 .adjunto
-{
-    white-space: pre-wrap;
+{  text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
     overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 25px;
 }
 .file .name
 {

@@ -183,7 +183,10 @@ if(!$shownText)
                 <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
             </figure>-->
             <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
-                <span class="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" data-ng-bind="getText<?php echo $grupo?>(a)"></span>
+                <span class="name" style="white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;" data-ng-bind="getText<?php echo $grupo?>(a)"></span>
             </a>
         </div>
 
