@@ -11,7 +11,6 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
     {
 
         $row["#"]["data"]=$post->getId();
-        
 
         $rows[]=$row;
     }
