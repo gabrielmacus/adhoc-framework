@@ -633,8 +633,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         $this->validate($p);
 
 
-        var_dump($p->getCreacion());
 
+        var_dump($p->getCreacion());
+        
         $p->setModificacion(time());
 
         $sql = $this->updateSql;
