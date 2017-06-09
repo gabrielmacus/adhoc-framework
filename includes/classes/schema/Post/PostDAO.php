@@ -563,8 +563,12 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
         $this->posts=array();
         
-        $sql = "SELECT * FROM {$this->tableName} ORDER BY {$this->getOrderBy()}";
+        $sql = "SELECT * FROM {$this->tableName}";
 
+        if($this->getOrderBy())
+        {
+            $sql.="  ORDER BY {$this->getOrderBy()}";
+        }
         var_dump($sql);
 
         $this->setResults();
