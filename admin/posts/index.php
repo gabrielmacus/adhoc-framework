@@ -16,7 +16,7 @@ $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
 try{
-
+    $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
     $limit= 15;
     $padding=6;
 

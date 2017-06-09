@@ -18,7 +18,6 @@
             <?php
 
             $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
-;
             $imgSize="portada";
 
             $dataToSkin=$GLOBALS["postDAO"]->selectPosts(false);
