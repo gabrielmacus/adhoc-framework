@@ -32,11 +32,14 @@
 
 
                           <span style="" class="ribbon">
-                              <?php
+                            <span class="ribbon-text">
 
-                              echo  $secciones[$data->getSeccion()]->getNombre();
+                                  <?php
 
-                              ?>
+                                  echo  $secciones[$data->getSeccion()]->getNombre();
+
+                                  ?>
+                            </span>
                               <span style=" background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,1)" class="ribbon-background"></span>
                           </span>
 
