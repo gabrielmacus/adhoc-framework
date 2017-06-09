@@ -31,7 +31,7 @@
                <span class="tag animated" style="background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,0.25)">
 
 
-                          <span style="" class="ribbon">
+                          <span style="" class="ribbon animated">
                             <span class="ribbon-text">
 
                                   <?php

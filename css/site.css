@@ -272,7 +272,7 @@ background-color: transparent!important;
     position: relative;
     left: -8px;
     padding: 5px;
-    top: 8px;
+    top: 0px ;
 }
 .portada .ribbon .ribbon-background
 {
@@ -283,6 +283,11 @@ background-color: transparent!important;
     height: 100%;
     left: 0;
     top:0;
+}
+
+.portada .bloque-1 .item .tag:hover .ribbon
+{
+    top: 8px ;
 }
 .portada .bloque-1 .item .tag:hover .ribbon .ribbon-background
 {
