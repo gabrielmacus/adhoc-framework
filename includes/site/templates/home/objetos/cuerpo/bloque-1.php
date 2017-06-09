@@ -2,9 +2,6 @@
     
     <?php
 
-    $GLOBALS["postDAO"]->setOrderBy(" post_creacion ASC");
-
-    var_dump(   $GLOBALS["postDAO"]->getOrderBy());
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());

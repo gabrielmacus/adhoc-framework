@@ -570,7 +570,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
             $sql.="  ORDER BY {$orderBy}";
         }
-        var_dump($sql);
+       
 
         $this->setResults();
         
