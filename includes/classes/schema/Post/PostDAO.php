@@ -409,6 +409,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
+        $orderBy=$this->getOrderBy();
+        if($orderBy)
+        {
+            $sql.="  ORDER BY {$orderBy}";
+        }
+
+
         $this->dataSource->runQuery($sql,array(),function($data){
             $this->query($data,true);
         });
@@ -631,7 +638,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
 
         $this->validate($p);
-        
+
         $p->setModificacion(time());
 
         $sql = $this->updateSql;
