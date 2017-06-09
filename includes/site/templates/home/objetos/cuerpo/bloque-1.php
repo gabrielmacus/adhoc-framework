@@ -25,12 +25,20 @@
                <h3 class="title">
                    <span class="text"><?php echo $data->getTitulo();?></span>
                </h3>
+
+
+
                <span class="tag animated" style="background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,0.25)">
-                   <?php
 
-                   echo  $secciones[$data->getSeccion()]->getNombre();
 
-                   ?>
+                          <span style="background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>" class="ribbon">
+                              <?php
+
+                              echo  $secciones[$data->getSeccion()]->getNombre();
+
+                              ?>
+                          </span>
+
                </span>
 
            </article>
