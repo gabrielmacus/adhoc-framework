@@ -37,6 +37,7 @@
                               echo  $secciones[$data->getSeccion()]->getNombre();
 
                               ?>
+                              <span class="ribbon-background"></span>
                           </span>
 
                </span>
