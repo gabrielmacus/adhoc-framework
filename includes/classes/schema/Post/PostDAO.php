@@ -565,6 +565,8 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         
         $sql = "SELECT * FROM {$this->tableName} ORDER BY {$this->getOrderBy()}";
 
+        var_dump($sql);
+
         $this->setResults();
         
         $this->dataSource->runQuery($sql, array(), function ($data) {
