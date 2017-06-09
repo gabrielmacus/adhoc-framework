@@ -39,6 +39,12 @@ try{
             $post->setExtra3($_POST["extra3"]);
             $post->setExtra4($_POST["extra4"]);
             $post->setAnexos($_POST["anexos"]);
+
+            if($_POST["creacion"])
+      {
+          $post->setCreacion($_POST["creacion"]);
+      }
+
             $post->setSeccion($t);
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
