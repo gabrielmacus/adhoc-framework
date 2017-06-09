@@ -13,7 +13,7 @@
         $label="Notas relacionadas";
         $grupo=1;
         $s="posts";
-        $tipo="109,102";
+        $tipo="109,103";
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
 
