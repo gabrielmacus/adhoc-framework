@@ -13,7 +13,7 @@
         {
             $img=$img["original"];
         }
-var_dump($img);
+
         ?>
        <div class="item-container">
            <article class="item">

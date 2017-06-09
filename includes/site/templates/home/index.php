@@ -20,10 +20,10 @@
             $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
             $GLOBALS["postDAO"]->setLimit(9);
             $GLOBALS["postDAO"]->setActualPage(1);
-            
+
             $imgSize="portada";
 
-            $dataToSkin=$GLOBALS["postDAO"]->selectPosts(false);
+            $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84,false);
 
             include "objetos/cuerpo/bloque-1.php";
 
