@@ -589,6 +589,14 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $this->query($data, true);
 
         });
+
+
+        $offset=$this->getOffset();
+
+        if($this->getLimit())
+        {
+            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
+        }
         var_dump($sql);
 
         /**** Proceso los anexos */
