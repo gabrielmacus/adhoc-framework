@@ -236,10 +236,9 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             $p->setCreacion(time());
         }
 
-        if(!$p->getModificacion())
-        {
+   
             $p->setModificacion(time());
-        }
+
 
         $p->setId($this->dataSource->runUpdate($sql,
             $this->getParamsArray($p)));
@@ -570,7 +569,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
         {
             $sql.="  ORDER BY {$orderBy}";
         }
-       
+
 
         $this->setResults();
         
