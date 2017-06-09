@@ -1,7 +1,6 @@
 <div class="bloque-1">
     
     <?php
-    var_dump($dataToSkin);
 
      foreach($dataToSkin as $k => $data)
     {
@@ -14,7 +13,7 @@
         {
             $img=$img["original"];
         }
-
+var_dump($img);
         ?>
        <div class="item-container">
            <article class="item">
