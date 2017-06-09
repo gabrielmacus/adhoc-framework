@@ -249,7 +249,7 @@ background-color: transparent!important;
     top: 0px;
     height: 100%;
     z-index: 102;
-    display: none;
+    display: block;
 
 }
 
@@ -259,7 +259,7 @@ background-color: transparent!important;
     position: absolute;
     top: 0px;
     overflow: hidden;
-    height: 0%;
+    height: 100%;
     z-index: 102;
     display: none;
 
