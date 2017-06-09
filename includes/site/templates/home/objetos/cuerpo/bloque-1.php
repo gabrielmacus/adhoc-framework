@@ -37,7 +37,7 @@
                               echo  $secciones[$data->getSeccion()]->getNombre();
 
                               ?>
-                              <span style="background-color: background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,1)" class="ribbon-background"></span>
+                              <span style=" background-color: rgba(<?php echo $lang["secciones"][$data->getSeccion()]["color"];?>,1)" class="ribbon-background"></span>
                           </span>
 
                </span>
