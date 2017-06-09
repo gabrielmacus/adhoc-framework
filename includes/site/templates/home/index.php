@@ -14,7 +14,7 @@
 
         <div class="col-1">
 
-           
+            <h2 class="header">Lo último...</h2>
             <?php
 
             $imgSize="portada";

@@ -1,5 +1,5 @@
 <div class="bloque-1">
-    <h2 class="header">Lo último...</h2>
+    
     <?php
      foreach($dataToSkin as $k => $data)
     {
