@@ -14,12 +14,13 @@ if(!$shownText)
 
         scope.getText<?php echo $grupo;?>=function (a) {
 
+            console.log(a);
 
             if(!a.text)
             {
                 a.text="";
                 var shownText=<?php echo json_encode($shownText)?>;
-                console.log(shownText);
+
                 if( typeof shownText === 'string' ) {
 
                     a.text= a.post_<?php echo $shownText?>;
