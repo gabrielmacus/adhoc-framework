@@ -31,6 +31,10 @@
 
                    ?>
                </span>
+
+               <div class="text-2">
+                   <p><?php  echo $data->getBajada();?></p>
+               </div>
            </article>
        </div>
         <?php
