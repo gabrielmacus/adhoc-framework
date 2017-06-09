@@ -83,12 +83,13 @@ if(!$shownText)
                     foreach ($shownText as $t)
                     {
                     ?>
+
+                    console.log(v.<?php echo $t?>);
                     text+=v.<?php echo $t?>+" ";
                     <?php
                     }
                     }?>
 
-                    console.log(v);
 
                     var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
 
