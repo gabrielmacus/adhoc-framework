@@ -1,12 +1,12 @@
 <?php
-$title="Noticias";
+$title="Portadas";
 include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
 ?>
 
 <div class="body">
 
     <?php
-    $title="Listado de noticias";
+    $title="Listado de portadas";
     foreach ($posts as $post)
     {
 
