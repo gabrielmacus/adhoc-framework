@@ -18,7 +18,7 @@ if(!$shownText)
             {
                 a.text="";
                 var shownText=<?php echo json_encode($shownText)?>;
-
+                console.log(shownText);
                 if( typeof shownText === 'string' ) {
 
                     a.text= a.post_<?php echo $shownText?>;
@@ -29,7 +29,7 @@ if(!$shownText)
                     <?php foreach ($shownText as $t)
                     {
                         ?>
-                    console.log(<?php echo $t?>);
+
                     a.text+=a.post_<?php echo $t?>+" ";
                     <?php
                     }?>
