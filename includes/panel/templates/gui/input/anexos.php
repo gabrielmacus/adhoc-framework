@@ -14,6 +14,7 @@ if(!$shownText)
 
         scope.getText<?php echo $grupo;?>=function (a) {
 
+            console.log(a.text);
             if(!a.text)
             {
                 a.text="";
