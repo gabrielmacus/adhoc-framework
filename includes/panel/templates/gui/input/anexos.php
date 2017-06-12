@@ -8,7 +8,7 @@ if(!$shownText)
 ?>
 <script>
     angular.element(function () {
-        scope.people = ["John","Fred","Teddy","Deloris","Brian"];
+      
          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
@@ -200,12 +200,7 @@ if(!$shownText)
 
 
     </div>
-    <div class="container">
-        <h2>People</h2>
-        <ul ui-sortable="sortableOptions" ng-model="people" class="list-group">
-            <li ng-repeat="person in people" class="list-group-item">{{person}}</li>
-        </ul>
-    </div>
+
 
 </div>
 
