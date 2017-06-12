@@ -208,7 +208,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     else
                     {
 
-                        $values.=" ('{$id}','{$anexo['post_id']}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
+                        $values.=" ('{$id}','{$p->getId()}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
 
                     }
 
