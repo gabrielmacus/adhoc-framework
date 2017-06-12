@@ -36,12 +36,12 @@
             accept: function (sourceItemHandleScope, destSortableScope) {return boolean}//override to determine drag is allowed or not. default is true.
             itemMoved: function (event) {},
                 orderChanged: function (event) {//Do what you want},
-                    containment: '#board'//optional param.
+                    
                     clone: true //optional param for clone feature.
                     allowDuplicates: false //optional param allows duplicates to be dropped.
                 }
 
-            }
+            };
 
 
         vex.dialog.buttons.YES.text = 'Ok';
