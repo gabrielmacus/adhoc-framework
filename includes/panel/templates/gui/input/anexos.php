@@ -206,9 +206,7 @@ if(!$shownText)
         </div>
 
     </div>
+        <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>"><?php echo $textBtn;?></a>
 
-</div>
-<div class="fila" style="margin-top: 15px">
-    <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>"><?php echo $textBtn;?></a>
 
 </div>
