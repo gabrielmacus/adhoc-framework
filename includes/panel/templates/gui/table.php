@@ -83,7 +83,7 @@ if(!$shownText)
 
 
                 ?>
-                <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text="<?php echo $text?>" data-grupo="<?php echo $_GET["grupo"]?>">
+                <tr  data-id="<?php echo $row["#"]["data"]; ?>" data-text='<?php echo $text?>' data-grupo="<?php echo $_GET["grupo"]?>">
                     <?php foreach ($row as $k=>$v)
                     {
                         //Codigo empleado por si recibo un json
