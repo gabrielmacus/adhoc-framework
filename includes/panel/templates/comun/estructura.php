@@ -26,7 +26,7 @@
     }
 
 
-    var app = angular.module('panel', ['ngAnimate','ui.tree']);
+    var app = angular.module('panel', ['ngAnimate','ui.tree','ngSanitize']);
     var scope;
     var timeout;
     var http;

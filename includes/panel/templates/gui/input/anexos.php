@@ -193,7 +193,7 @@ if(!$shownText)
                 <span class="name" style="white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 25px;" data-ng-bind="getText<?php echo $grupo?>(a)"></span>
+    line-height: 25px;" data-ng-bind-html="getText<?php echo $grupo?>(a)"></span>
             </a>
         </div>
 
