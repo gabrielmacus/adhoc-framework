@@ -57,7 +57,7 @@
         padding: 10px;
     }
 </style>
-<div class="fila adjuntos">
+<div class="fila adjuntos"  ui-sortable="sortableOptions<?php echo $grupo;?>"  data-ng-model="post.archivos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
     <div class="s12 m6 l4 padding " data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
