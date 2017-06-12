@@ -111,13 +111,17 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
     {
         $archivos = $p->getArchivos();//Inserto los archivos adjuntos
 
-        foreach ($archivos as  $archivo) {
+        foreach ($archivos as  $k=>$archivo) {
 
             $archivo["objeto_id"]=$p->getId();
             $archivo["objeto_tabla"]=$this->tableName;
 
             if(!$archivo["delete"])
             {
+                if(!$archivo["archivo_orden"])
+                {
+                    $archivo["archivo_orden"]=$k;
+                }
                 $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
                 $set="archivo_id={$archivo["archivo_id"]},
