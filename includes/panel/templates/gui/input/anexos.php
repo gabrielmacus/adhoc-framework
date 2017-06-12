@@ -212,6 +212,8 @@ if(!$shownText)
 
 <div class="fila">
     <div class="sortable-container" sv-root sv-part="data.items1">
+
+        <span sv-handle>handle</span>
         <div ng-repeat="item in data.items1" sv-element="opts" class="well">
             {{item}}
         </div>
