@@ -25,6 +25,8 @@
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/angular-dragdrop.min.js"?>"></script>
 -->
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/quill.js"?>"></script>
+
+<script  src="<?php  echo $configuracion->getJsCdn()."/js/ng-sortable.min"?>"></script>
 <script
 
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmTWqtcbhdnNXdv-Ow60PedAtYwYgbQ5Q&callback=initMap">
