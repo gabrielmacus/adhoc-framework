@@ -71,6 +71,79 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=$archivos;
     }
 
+    public function _insertArchivo(Archivo $a,$versionName="original",$versionId=0)
+    {
+        $this->validate($a);
+
+        $r =$a->getRepositorio();
+
+        $ftp  =$r->getFtp();
+
+        $randName=substr($a->getName(),0,6).rand(0,9999);
+
+        $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+
+        $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
+
+        $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
+
+        $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
+
+        $a->setPathName($mainPath);
+
+        $mainPath="{$mainPath}/{$fileNameVersion}";
+
+        $fullDir = $r->getPath().$mainPath; //Directorio completo, nombre del archivo incluido
+
+        if(!$ftp->isDir($mainFolder))//Chequeo si no existe el directorio, en tal caso lo creo
+        {
+            $ftp->mkdir($mainFolder,true);
+        }
+
+
+        //   echo json_encode(array("fullDir"=>$fullDir,"tmpDir"=>$a->getTmpPath()));
+
+        //  echo json_encode( $r->getName());
+
+        // echo json_encode($ftp->put("/httpdocs/data/2017/04/12/1492008967.jpg/1492008967_original.jpg","C:/xampp5/htdocs/adhoc-framework/tmp/files/606453_7up.jpg",FTP_BINARY));
+        //    exit();
+
+        /*      echo $fullDir." ".$a->getTmpPath();
+
+              exit();
+      */
+        $ftp->pasv(true);
+        if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
+        {
+            throw new Exception("ArchivoDAO:0");
+        }
+
+        $a->setVersion($versionId);
+
+
+        $a->setRealName($r->getUrl().$mainPath); //Url + Ruta completa
+        $a->setVersionName($versionName);
+
+
+        $sql = $this->insertSql;
+
+        if(!$a->getCreation())
+        {
+            $a->setCreation(time());
+        }
+        if(!$a->getModification())
+        {
+            $a->setModification(time());
+        }
+
+        $a->setPath($mainPath);
+
+        $res= $this->dataSource->runUpdate($sql,
+            $this->getParamsArray($a));
+        return $res;
+    }
+
+
     public function insertArchivo(Archivo $a,$versionName="original",$versionId=0)
     {
         $this->validate($a);
@@ -84,11 +157,11 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
 
         $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
-        
+
         $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
 
         $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
-        
+
         $a->setPathName($mainPath);
 
         $mainPath="{$mainPath}/{$fileNameVersion}";
@@ -157,7 +230,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $where.= " AND archivo_version = 0";
         }
-        
+
         $sql="SELECT count(*) as 'total' FROM {$this->tableName} WHERE {$where}";
 
 
@@ -380,7 +453,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $repositorioDAO = new RepositorioDAO($this->dataSource);
 
-    
+
         $repositorio=$data["archivo_repositorio"];
 
         switch ($data["archivo_type"])
@@ -392,7 +465,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                     $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
                 $a->setPathName($data["archivo_path_name"]);
                 break;
-            
+
             case 1:
                 $a = new Imagen($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
                     $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
@@ -410,8 +483,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 break;
         }
-        
-   
+
+
         array_push($this->files, $a);
 
     }
