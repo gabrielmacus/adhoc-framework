@@ -180,8 +180,6 @@ if(!$shownText)
 </style>
 
 
-
-
 <div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" ng-model="post.anexos"  >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
