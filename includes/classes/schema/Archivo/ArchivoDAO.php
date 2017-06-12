@@ -344,18 +344,22 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     /**
      * @param $id Id del archivo
-     * @param bool $processSi me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
-     *
+     * @param bool $process Si me procesa la salida en un array ordenado en $array[tipo][galeria/grupo][id_del_original][version]
+     * @param $versions Indica si traigo el archivo y sus versiones
      * @return array
      * @throws Exception
      *
      * Traigo un archivo especifico por id
      */
-    public function selectArchivoById($id,$process=true)
+    public function selectArchivoById($id,$process=true,$versions=true)
     {
 
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
+        if($versions)
+        {
+            $sql.=" OR archivo_version=:archivo_id";
+        }
 
         $this->dataSource->runQuery($sql,array(":archivo_id"=>$id),function($data){
 
@@ -495,19 +499,19 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 /** **/
 
 
-                $archivos=array_merge($archivos,$this->selectArchivoByVersions($file["archivo_id"],false));
+                $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
             }
 
 
         }
         else
         {
-            $archivos=$this->selectArchivoByVersions($ids,false);
+            $archivos=$this->selectArchivoById($ids,false);
         }
 
 
 
-        var_dump($archivos);
+
 
 
        $repositorio= $archivos[0]->getRepositorio();
