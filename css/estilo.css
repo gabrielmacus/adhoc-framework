@@ -1135,3 +1135,8 @@ position: absolute
     display: block;
     margin-top: 10px;
 }
+
+.paragraph-preview:nth-child(1)
+{
+    font-size: 30px;
+}
