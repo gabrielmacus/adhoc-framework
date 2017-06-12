@@ -16,7 +16,7 @@
 
     /****/
 
-    .l4.padding:nth-child(2n+1):not(.ng-hide) /*  El elemento del medio en filas de 3*/
+    .l4.padding:nth-child(2n+1)/*  El elemento del medio en filas de 3*/
     {
         padding-left: 10px;
         padding-right: 10px;
