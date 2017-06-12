@@ -13,12 +13,6 @@ if(!$shownText)
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-        scope.sortableOptions<?php echo $grupo;?> = {
-            stop: function(e, ui) {
-                // do something here
-        
-            }
-        };
 
 
         scope.getText<?php echo $grupo;?>=function (a) {
