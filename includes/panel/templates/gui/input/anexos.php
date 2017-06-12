@@ -8,7 +8,7 @@ if(!$shownText)
 ?>
 <script>
     angular.element(function () {
-
+        scope.people = ["John","Fred","Teddy","Deloris","Brian"];
          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
@@ -200,10 +200,12 @@ if(!$shownText)
 
 
     </div>
-    <div class="fila margin">
-        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&grupo=<?php echo $grupo?>&t=<?php echo $tipo?>&s=<?php echo $s?>">Adjuntar anexos</a>
+    <div class="container">
+        <h2>People</h2>
+        <ul ui-sortable="sortableOptions" ng-model="people" class="list-group">
+            <li ng-repeat="person in people" class="list-group-item">{{person}}</li>
+        </ul>
     </div>
-
 
 </div>
 
