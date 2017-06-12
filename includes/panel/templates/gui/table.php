@@ -1,5 +1,5 @@
 <?php
-
+$shownText = json_decode($_GET["shownText"],true);
 if(!$shownText)
 {
     $shownText="titulo";
