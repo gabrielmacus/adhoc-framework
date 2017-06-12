@@ -8,6 +8,8 @@ if(!$shownText)
 ?>
 <script>
     angular.element(function () {
+
+        scope.data={items1:["1.0", "1.1", "1.3", "1.2", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "1.18", "1.19"]};
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
@@ -172,11 +174,11 @@ if(!$shownText)
 
     }
 </style>
-<div class="fila adjuntos" data-as-sortable="board.dragControlListeners"  data-ng-model="post.anexos" >
+<div class="fila adjuntos" >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <div data-as-sortable-item-handle data-as-sortable-item class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div  class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
         <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
@@ -204,4 +206,14 @@ if(!$shownText)
     </div>
 
 
+</div>
+
+
+
+<div class="fila">
+    <div class="sortable-container" sv-root sv-part="data.items1">
+        <div ng-repeat="item in data.items1" sv-element="opts" class="well">
+            {{item}}
+        </div>
+    </div>
 </div>
