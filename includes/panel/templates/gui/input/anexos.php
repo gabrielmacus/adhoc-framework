@@ -207,7 +207,7 @@ if(!$shownText)
 
     </div>
     <div class="fila" style="margin-top: 15px">
-        <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>&shownText=<?php echo json_decode($shownText)?>"><?php echo $textBtn;?></a>
+        <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>&shownText=<?php echo json_encode($shownText)?>"><?php echo $textBtn;?></a>
 
     </div>
 
