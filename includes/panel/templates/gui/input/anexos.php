@@ -74,7 +74,8 @@ if(!$shownText)
 
                     <?Php if(!is_array($shownText))
                     {
-                    ?>       text+=v.<?php echo $shownText?>;
+                    ?>
+                       text+=v.<?php echo $shownText?>;
 
                     <?Php
                     }
@@ -82,9 +83,14 @@ if(!$shownText)
                     {
                     foreach ($shownText as $t)
                     {
+
                     ?>
 
-                    text+=v.<?php echo $t?>;
+                    if( v.<?php echo $t?>)
+                    {
+                        text += v.<?php echo $t?>;
+                    }
+                    
                     <?php
                     }
                     }?>
