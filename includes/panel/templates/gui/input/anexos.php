@@ -1,5 +1,8 @@
 <?php
-
+if(!$textBtn)
+{
+    $textBtn="Adjuntar anexo";
+}
 if(!$shownText)
 {
     $shownText="titulo";
@@ -200,11 +203,12 @@ if(!$shownText)
             </a>
         </div>
 
-
     </div>
-
 
 </div>
 
+<div class="fila">
+    <a class="btn" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>"><?php echo $textBtn;?></a>
+</div>
 
 
