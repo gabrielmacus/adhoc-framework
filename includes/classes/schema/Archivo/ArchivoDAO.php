@@ -528,8 +528,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $in.="{$archivo->getId()},";
 
-            $ftp=new \FtpClient\FtpClient();
-
+         
            if(!$ftp->remove($deleteFile))//Elimino cada archivo
             {
                 throw new Exception("ArchivoDAO:1:".$archivo->getName().":{$deleteFile}");//Codigo de error al eliminar un archivo
