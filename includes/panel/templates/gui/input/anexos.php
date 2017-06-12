@@ -9,8 +9,7 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-        scope.data={items1:["1.0", "1.1", "1.3", "1.2", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "1.18", "1.19"]};
-        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
@@ -210,12 +209,3 @@ if(!$shownText)
 
 
 
-<div class="fila">
-    <div class="sortable-container" sv-root sv-part="data.items1">
-
-
-        <div ng-repeat="item in data.items1" sv-element="opts" class="well">
-            {{item}}		<span sv-handle>handle</span>
-        </div>
-    </div>
-</div>
