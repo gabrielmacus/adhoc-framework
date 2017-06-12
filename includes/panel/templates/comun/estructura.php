@@ -33,7 +33,12 @@
     app.controller('panelCtrl', function($scope,$timeout,$http) {
 
         $scope.dragControlListeners = {
-            accept: function (sourceItemHandleScope, destSortableScope) {return boolean},//override to determine drag is allowed or not. default is true.
+            accept: function (sourceItemHandleScope, destSortableScope)
+            {
+
+
+
+            },//override to determine drag is allowed or not. default is true.
             itemMoved: function (event) {},
                 orderChanged: function (event) {//Do what you want},
 
