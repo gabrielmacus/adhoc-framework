@@ -179,40 +179,38 @@ if(!$shownText)
     }
 </style>
 
-<div class="body">
-    <div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" ng-model="post.anexos"  >
-        <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-        <div  class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
 
-            <div  class="adjunto-wrapper" style="position: relative">
+<div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" ng-model="post.anexos"  >
+    <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
+
+
+    <div  class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+
+        <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
 
 
 
-                <!--
-                <figure style="height: 150px;width: 100%">
-                    <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
-                </figure>-->
-                <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
+            <!--
+            <figure style="height: 150px;width: 100%">
+                <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
+            </figure>-->
+            <a   data-lity href="<?php echo $configuracion->getSiteAddress()?>/admin/posts/?modal=true&t=<?php echo $tipo?>&s=<?php echo $s?>&act=view&id={{a.post_anexo_id}}"  class="adjunto">
                 <span class="name" style="white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 25px;" data-ng-bind-html="getText<?php echo $grupo?>(a)"></span>
-                </a>
-            </div>
-
+            </a>
         </div>
-
-    </div>
-    <div class="fila" style="margin-top: 15px">
-        <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>"><?php echo $textBtn;?></a>
 
     </div>
 
 </div>
+<div class="fila" style="margin-top: 15px">
+    <a data-lity class="btn" style="color: white!important;" href="/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>"><?php echo $textBtn;?></a>
 
-
+</div>
