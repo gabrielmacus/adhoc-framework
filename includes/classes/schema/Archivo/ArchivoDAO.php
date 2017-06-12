@@ -512,9 +512,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
        $repositorio= $archivos[0]->getRepositorio();
        $ftp=$repositorio->getFtp();
-        $ftp->pasv(true);
-
-
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
