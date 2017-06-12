@@ -176,9 +176,9 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <div data-as-sortable-item class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
-<div data-as-sortable-item-handle>X</div>
-        <div class="adjunto-wrapper" style="position: relative">
+    <div data-as-sortable-item-handle data-as-sortable-item class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+
+        <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
