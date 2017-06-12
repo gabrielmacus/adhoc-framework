@@ -507,6 +507,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
 
+        var_dump($archivos);
+
+
        $repositorio= $archivos[0]->getRepositorio();
        $ftp=$repositorio->getFtp();
 
