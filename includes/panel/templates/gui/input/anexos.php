@@ -88,8 +88,8 @@ if(!$shownText)
 
                     if( v.<?php echo $t?>)
                     {
-                        console.log(v.<?php echo $t?>);
-                        text += v.<?php echo $t?>;
+
+                        text += "<p>"+v.<?php echo $t?>+"</p>";
                     }
 
                     <?php
