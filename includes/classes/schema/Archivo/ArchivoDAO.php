@@ -522,20 +522,20 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
+        $deletings="";
         foreach ($archivos as $archivo)
         {
             $deleteFile= $repositorio->getPath().$archivo->getPath();
 
             $in.="{$archivo->getId()},";
 
-
+            $deletings.="{$archivo->getRealName()},";
            if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
-                if(!$ftp->rmdir($deletePath))
-                {
+
                     throw new Exception("ArchivoDAO:1:".$archivo->getName().":{$deleteFile}");//Codigo de error al eliminar un archivo
 
-                }
+
              }
         }
 
