@@ -529,7 +529,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $in.="{$archivo->getId()},";
 
 
-           if(!$ftp->remove($deleteFile))//Elimino cada archivo
+           if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
                 if(!$ftp->rmdir($deletePath))
                 {
