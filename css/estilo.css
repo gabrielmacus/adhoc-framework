@@ -1130,3 +1130,8 @@ position: absolute
     float: left;
     padding: 10px;
 }
+.paragraph-preview
+{
+    display: block;
+    margin-top: 10px;
+}

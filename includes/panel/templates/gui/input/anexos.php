@@ -89,7 +89,7 @@ if(!$shownText)
                     if( v.<?php echo $t?>)
                     {
 
-                        text += "<p>"+v.<?php echo $t?>+"</p>";
+                        text += "<p class='paragraph-preview'>"+v.<?php echo $t?>+"</p>";
                     }
 
                     <?php
