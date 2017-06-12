@@ -8,10 +8,18 @@ if(!$shownText)
 ?>
 <script>
     angular.element(function () {
-      
+
          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+        scope.sortableOptions<?php echo $grupo;?> = {
+            stop: function(e, ui) {
+                // do something here
+                console.log(e);
+            }
+        };
+
 
         scope.getText<?php echo $grupo;?>=function (a) {
 
@@ -173,7 +181,7 @@ if(!$shownText)
 
     }
 </style>
-<div class="fila adjuntos" ui-sortable="sortableOptions" ng-model="post.anexos"  >
+<div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" ng-model="post.anexos"  >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 

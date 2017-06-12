@@ -53,14 +53,7 @@
 
         /**  **/
 
-        /**  Cargo anexos**/
-
-        $.each(scope.post.anexos,function (k,v) {
-
-            v.post_nexo_orden=v;
-
-        });
-        /*** */
+      
 
 
         <?Php
