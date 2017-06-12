@@ -157,13 +157,17 @@ if(!$shownText)
     {
 
         padding: 10px;
+        display: flex!important;
+        flex-wrap: wrap;
     }
 
 
     .adjunto-wrapper
-    { box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
         padding: 0px;
         margin-bottom: 20px;
+        height: 100%;
     }
 
     .adjuntos .adjunto
@@ -175,6 +179,7 @@ if(!$shownText)
         width: 100%;
         float: left;
         display: block;
+        height: 100%;
 
     }
 </style>
