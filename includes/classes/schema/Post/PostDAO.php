@@ -173,7 +173,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
             $values ="";
 
-            foreach ($anexos as $anexo)
+            foreach ($anexos as $k=> $anexo)
             {
 
                 if($anexo["delete"])
@@ -201,6 +201,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     }
                     else
                     {
+                        if(!$anexo["post_nexo_orden"])
+                        {
+                            $anexo["post_nexo_orden"]=$k;
+                        }
                         $values.=" ('{$id}','{$anexo['post_id']}','{$anexo['post_anexo_id']}','{$anexo["post_nexo_grupo"]}','{$anexo['post_nexo_orden']}'),";
 
                     }

@@ -16,7 +16,7 @@ if(!$shownText)
         scope.sortableOptions<?php echo $grupo;?> = {
             stop: function(e, ui) {
                 // do something here
-                console.log(ui);
+        
             }
         };
 
