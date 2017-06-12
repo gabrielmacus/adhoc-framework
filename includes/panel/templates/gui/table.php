@@ -4,6 +4,7 @@ if(!$shownText)
 {
     $shownText="titulo";
 }
+var_dump($shownText);
 ?>
 <script>
     angular.element(function () {
