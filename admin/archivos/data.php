@@ -56,7 +56,8 @@ try{
 
         case "delete":
             
-            
+
+            var_dump($_POST);
             
             $GLOBALS["archivoDAO"]->deleteArchivoById($_POST["files"]);
 

@@ -332,7 +332,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 */
 
   //$joinArchivos="SELECT * FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id ) WHERE ao.objeto_id IN ({$in})";
-        $joinArchivos="SELECT *,a.archivo_id as 'id'  FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id OR a.archivo_version=ao.archivo_id) WHERE ao.objeto_id IN ({$in}) ORDER BY archivo_grupo,archivo_orden DESC";
+        $joinArchivos="SELECT *,a.archivo_id as 'id'  FROM archivos_objetos ao LEFT JOIN archivos a ON (ao.archivo_id = a.archivo_id OR a.archivo_version=ao.archivo_id) WHERE ao.objeto_id IN ({$in})";
 
 
 
