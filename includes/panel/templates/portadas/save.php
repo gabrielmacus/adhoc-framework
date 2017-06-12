@@ -14,7 +14,7 @@
         $grupo=1;
         $s="noticias";
         $tipo="84";
-        $shownText=['titulo','bajada'];
+        $shownText=["titulo","bajada"];
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
 
 

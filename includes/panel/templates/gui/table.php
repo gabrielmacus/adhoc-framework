@@ -1,5 +1,5 @@
 <?php
-var_dump($_GET["shownText"]);
+
 $shownText = json_decode($_GET["shownText"],true);
 if(!$shownText)
 {
