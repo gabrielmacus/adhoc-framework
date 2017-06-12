@@ -173,7 +173,7 @@ if(!$shownText)
 
     }
 </style>
-<div class="fila adjuntos" >
+<div class="fila adjuntos" ui-sortable="sortableOptions" ng-model="post.anexos"  >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
@@ -206,7 +206,7 @@ if(!$shownText)
             <li ng-repeat="person in people" class="list-group-item">{{person}}</li>
         </ul>
     </div>
-
+}
 </div>
 
 
