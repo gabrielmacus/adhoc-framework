@@ -232,7 +232,8 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $r->setModification(time());
 
-        $r->setVersiones(json_decode( $r->getVersiones(),true));
+        $r->setVersiones(json_encode( $r->getVersiones()));
+
 
 
         $res= $this->dataSource->runUpdate($sql,
