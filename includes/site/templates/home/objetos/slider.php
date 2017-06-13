@@ -2,7 +2,7 @@
 $bloqId=1;
 $bloque=$portada->getAnexos()[$bloqId];
 
-echo "<pre>". var_dump($portada->getAnexos())."</pre>";
+echo json_encode($portada->getAnexos());
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -17,9 +17,6 @@ echo "<pre>". var_dump($portada->getAnexos())."</pre>";
 
    foreach ($bloque as $k=>$v)
    {
-
-
-
 
 
        ?>
