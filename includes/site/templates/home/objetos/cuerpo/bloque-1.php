@@ -3,7 +3,7 @@ $bloqId=2;
 $bloque=$portada->getAnexos()[$bloqId];
 $sliderGroupId=1;
 $version="portada";
-var_dump($bloque);
+
 
 ?>
 <div class="bloque-1">
