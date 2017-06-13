@@ -24,7 +24,7 @@ try{
     //Cargo la portada
 
     $portada=$GLOBALS["postDAO"]->selectPostById($lang["portadaId"],false);
-echo json_encode($portada);
+
 
 }
 catch (Exception $e)
