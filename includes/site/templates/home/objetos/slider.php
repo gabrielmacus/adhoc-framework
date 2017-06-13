@@ -105,7 +105,6 @@ $(document).ready(
 
         var slides=<?php  echo json_encode($bloque);?>;
 
-        var i=0;
 
 
         var swiper = new Swiper('.swiper-container',
@@ -120,7 +119,8 @@ $(document).ready(
                     console.log(e.realIndex);
 
 
-
+                    $(".slider-title .text").html(slides[e.realIndex].titulo);
+        
                 }
             });
     }
