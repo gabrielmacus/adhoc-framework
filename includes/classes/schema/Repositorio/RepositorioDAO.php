@@ -231,8 +231,8 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         $sql=$this->updateSql;
 
         $r->setModification(time());
-var_dump( $r->getVersiones());
-        $r->setVersiones(str_replace('\"',"",json_encode( $r->getVersiones())));
+
+        $r->setVersiones(ltrim(rtrim($r->getVersiones(),'"'),'"'));
 
 
 
