@@ -115,18 +115,11 @@ $(document).ready(
                 effect:"fade",
                 speed:500,
                 autoplay:4000,
-                onProgress:function (e,progress) {
+                onTransitionStart:function (e) {
 
-                    console.log(progress);
+                    console.log(e);
 
-                    if(i==slides.length)
-                    {
-                        i=0;
-                    }
-
-
-                       $(".slider-title .text").html(slides[i].titulo);
-                   i++;
+               
 
                 }
             });
