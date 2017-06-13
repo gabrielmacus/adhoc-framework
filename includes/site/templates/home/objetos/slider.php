@@ -99,7 +99,7 @@ $(document).ready(
                 effect:"fade",
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
-                    console.log(e);
+                    console.log(e.activeIndex);
                 }
             });
     }
