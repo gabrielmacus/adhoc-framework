@@ -73,7 +73,7 @@ $version="original";
 
                <h2 class="title">
 
-                   <span class="text"><?php echo  $firstSlide->getTitulo();?></span>
+                   <span class="text" data-ng-bind="slide.text"><?php echo  $firstSlide->getTitulo();?></span>
 
                </h2>
            </div>
@@ -110,11 +110,7 @@ $(document).ready(
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
 
-                    var slide=$($(".swiper-slide")[e.activeIndex]);
-
-                    console.log(slides[e.activeIndex].titulo);
-
-                    slide.find(".text").html(slides[e.activeIndex].titulo);
+                    slides[e.activeIndex].titulo
                 }
             });
     }
