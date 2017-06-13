@@ -376,13 +376,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 $archivo->setGrupo($nexo["archivo_grupo"]);//El grupo o galeria al que pertenece el archivo dentro del post
                 if($process)
                 {
-                    $postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$idOriginal][$archivo->getVersionName()]=$archivo;
+                    $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
 
                 }
                 else
                 {
 
-                    $postArchivos[$nexo["archivo_orden"]][$idOriginal][$archivo->getVersionName()]=$archivo;
+                    $postArchivos[$idOriginal][$archivo->getVersionName()]=$archivo;
                 }
 
 

@@ -24,6 +24,12 @@
             $imgSize="portada";
             $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84,false);
             */
+            $bloqId=2;
+            $bloque=$portada->getAnexos()[$bloqId];
+            $sliderGroupId=1;
+            $version="portada";
+
+
             include "objetos/cuerpo/bloque-1.php";
 
             ?>
