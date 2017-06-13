@@ -12,7 +12,7 @@ $bloque=$portada->getAnexos()[$bloqId];
    <?php
    foreach ($bloque as $k=>$v)
    {
-       var_dump( $v->getArchivos());
+       var_dump( $v);
        ?>
        <div class="swiper-container">
            <div class="swiper-wrapper">
