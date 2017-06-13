@@ -431,6 +431,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function selectArchivoById($id,$process=true,$versions=true)
     {
 
+        $this->files=array();
 
         $sql = "SELECT * FROM {$this->tableName} WHERE archivo_id=:archivo_id";
         if($versions)
@@ -656,7 +657,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 /** **/
 
-                var_dump(json_encode($this->selectArchivoById($file["archivo_id"],false)));
+
 
 
               $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
@@ -668,7 +669,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         {
             $archivos=$this->selectArchivoById($ids,false);
         }
-
+        var_dump(json_encode($archivos));
         exit();
 
         foreach ($archivos as $archivo)
