@@ -23,7 +23,7 @@
 
             $imgSize="portada";
 
-            $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84,false);
+            $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84);
 
             include "objetos/cuerpo/bloque-1.php";
 
