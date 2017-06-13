@@ -115,8 +115,9 @@ $(document).ready(
                 effect:"fade",
                 speed:500,
                 autoplay:4000,
-                onSlideChangeEnd:function (e) {
+                onProgress:function (e,progress) {
 
+                    console.log(progress);
 
                     if(i==slides.length)
                     {
