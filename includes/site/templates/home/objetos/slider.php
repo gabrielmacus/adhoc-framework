@@ -43,13 +43,14 @@ $version="original";
                    <figure>
                        <img src="<?php echo $archivo->getRealName();?>">
                    </figure>
+                              <span class="slider-tag">
+        Internacionales
+    </span>
                </div>
 
 
 
-                   <span class="slider-tag">
-        Internacionales
-    </span>
+
 
 
 
