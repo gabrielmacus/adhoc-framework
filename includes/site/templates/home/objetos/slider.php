@@ -105,6 +105,7 @@ $(document).ready(
 
         var slides=<?php  echo json_encode($bloque);?>;
 
+        var i=0;
 
 
         var swiper = new Swiper('.swiper-container',
@@ -116,13 +117,15 @@ $(document).ready(
                 autoplay:4000,
                 onSlideChangeStart:function (e) {
 
-                    console.log(e);
 
-                    var idx=e.activeIndex-1;
-                   if(slides[idx])
-                   {
-                       $(".slider-title .text").html(slides[idx].titulo);
-                   }
+                    if(i==slides.length)
+                    {
+                        i=0;
+                    }
+
+
+                       $(".slider-title .text").html(slides[i].titulo);
+                   i++;
 
                 }
             });
