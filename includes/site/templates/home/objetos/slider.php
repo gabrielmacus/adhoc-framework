@@ -12,7 +12,10 @@ $bloque=$portada->getAnexos()[$bloqId];
    <?php
    foreach ($bloque as $k=>$v)
    {
-       echo json_encode( $v);
+  echo "<pre>". var_dump($v)."</pre>";
+
+
+
        ?>
        <div class="swiper-container">
            <div class="swiper-wrapper">
