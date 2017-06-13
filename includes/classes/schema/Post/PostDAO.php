@@ -351,7 +351,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 $p= $this->posts[$archivo["objeto_id"]];
                 $nexo =array("archivo_objeto_id"=>$archivo["archivo_objeto_id"],
-                    "archivo_grupo"=>$archivo["archivo_grupo"]);
+                    "archivo_grupo"=>$archivo["archivo_grupo"],"archivo_orden"=>$archivo["archivo_orden"]);
                 $postArchivos=$p->getArchivos();
 
 
