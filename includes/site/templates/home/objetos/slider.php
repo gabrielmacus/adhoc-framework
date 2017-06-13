@@ -97,7 +97,10 @@ $(document).ready(
             {
                 slidesPerView: 1,
                 effect:"fade",
-                autoplay:2000
+                autoplay:2000,
+                onSlideChangeStart:function (e) {
+                    console.log(e);
+                }
             });
     }
 );
