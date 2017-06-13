@@ -101,7 +101,7 @@ $(document).ready(
 
         var slides=<?php  echo json_encode($bloque);?>;
 
-        console.log(slides);
+
 
         var swiper = new Swiper('.swiper-container',
             {
@@ -110,8 +110,8 @@ $(document).ready(
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
 
-
-                    $(".swiper-slide").index(e.activeIndex);
+                    var slide=$(".swiper-slide").index(e.activeIndex);
+                    slide.find(".text").html(slides[e.activeIndex].titulo);
                 }
             });
     }
