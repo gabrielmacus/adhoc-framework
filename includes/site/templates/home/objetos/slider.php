@@ -113,6 +113,7 @@ $(document).ready(
                 effect:"fade",
                 speed:500,
                 autoplay:4000,
+                loop:true,
                 onSlideChangeStart:function (e) {
 
                     $(".slider-title .text").html(slides[e.activeIndex].titulo);
