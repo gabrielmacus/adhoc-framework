@@ -2,7 +2,6 @@
 $bloqId=1;
 $bloque=$portada->getAnexos()[$bloqId];
 
-echo json_encode($portada->getAnexos());
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -18,6 +17,7 @@ echo json_encode($portada->getAnexos());
    foreach ($bloque as $k=>$v)
    {
 
+       var_dump($v->getAnexos());
 
        ?>
        <div class="swiper-container">
