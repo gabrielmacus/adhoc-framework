@@ -656,8 +656,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 /** **/
 
-
-                $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
+                $archivos[]=$this->selectArchivoById($file["archivo_id"]);
+             //   $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
             }
 
 
@@ -668,16 +668,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
-        $repositorio= $archivos[0]->getRepositorio();
-        $ftp=$repositorio->getFtp();
-
-        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
-
-foreach ($archivos as $archivo)
-{
-
-    echo    $archivo->getPath()."\n";
-    }
+        echo json_encode($archivos);
 
 
 
