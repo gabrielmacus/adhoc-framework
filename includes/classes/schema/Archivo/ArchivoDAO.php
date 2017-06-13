@@ -492,7 +492,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         /**
          * Cambiado el 13.6.2017 , revertir si trae problemas
          */
-        $this->files[$a->getId()]=$a;
+        $this->files[$a->getId()][$a->getVersion()]=$a;
       //  array_push($this->files, $a);
 
     }
