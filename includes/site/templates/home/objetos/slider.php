@@ -3,7 +3,7 @@ $bloqId=1;
 $bloque=$portada->getAnexos()[$bloqId];
 
 $sliderGroupId=1;
-
+$version="original";
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -23,7 +23,18 @@ $sliderGroupId=1;
 
                    $archivos = $v->getArchivos();
 
-                   $archivo = reset($archivos[$sliderGroupId])["original"];
+                   $archivo = reset($archivos[$sliderGroupId]);
+
+                   if($archivo[$version])
+                   {
+                       $archivo = $archivo[$version];
+                   }
+                   else
+                   {
+                       $archivo = $archivo["original"];
+                   }
+
+
 
                        ?>
                <div class="swiper-slide" data-n="<?php echo $k?>" data-title="<?php echo $v->getTitulo();?>">
