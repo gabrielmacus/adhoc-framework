@@ -37,6 +37,7 @@
         if(!scope.post.archivos) {
             scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
         }
+        console.log(scope.post.archivos);
 
         $.each( scope.post.archivos ,function (tipo,grupos) {
 
