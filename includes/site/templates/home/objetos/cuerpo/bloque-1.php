@@ -8,7 +8,7 @@
         $data = $GLOBALS["postDAO"]->selectPostById($data->getId());
 
         $img =reset($data->getArchivos()[$sliderGroupId]);
-
+var_dump($img);
         if($img)
         {
             if($img[$version])

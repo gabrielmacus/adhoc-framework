@@ -25,8 +25,6 @@ $version="original";
 
                    $archivos = $v->getArchivos();
 
-                   var_dump($archivos);
-
                    $archivo = reset($archivos[$sliderGroupId]);
 
                    if($archivo[$version])
@@ -117,7 +115,7 @@ $(document).ready(
                 speed:500,
                 autoplay:4000,
                 onTransitionStart:function (e) {
-
+                    
                     $(".slider-title .text").html(slides[e.realIndex].titulo);
 
                 }
