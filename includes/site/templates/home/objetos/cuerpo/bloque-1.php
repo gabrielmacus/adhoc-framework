@@ -57,7 +57,7 @@
         }
         else
         {
-            echo "NO FILES";
+            echo json_encode($data->getArchivos());
         }
 
 
