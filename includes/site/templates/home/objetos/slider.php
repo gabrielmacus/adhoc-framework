@@ -117,8 +117,11 @@ $(document).ready(
                 onSlideChangeStart:function (e) {
 
                     var idx=e.activeIndex-1;
-                    console.log(idx);
-                    $(".slider-title .text").html(slides[idx].titulo);
+                   if(slides[idx])
+                   {
+                       $(".slider-title .text").html(slides[idx].titulo);
+                   }
+
                 }
             });
     }
