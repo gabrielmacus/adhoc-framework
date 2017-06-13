@@ -111,6 +111,9 @@ $(document).ready(
                 onSlideChangeStart:function (e) {
 
                     var slide=$(".swiper-slide").index(e.activeIndex);
+
+                    console.log(slide);
+
                     slide.find(".text").html(slides[e.activeIndex].titulo);
                 }
             });
