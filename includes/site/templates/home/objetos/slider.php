@@ -112,7 +112,7 @@ $(document).ready(
 
                     var slide=$($(".swiper-slide")[e.activeIndex]);
 
-                    console.log(slide);
+                    console.log(slides[e.activeIndex].titulo);
 
                     slide.find(".text").html(slides[e.activeIndex].titulo);
                 }
