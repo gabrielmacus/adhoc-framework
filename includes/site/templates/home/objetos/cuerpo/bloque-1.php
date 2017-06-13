@@ -18,9 +18,9 @@ $version="portada";
 
         if($img)
         {
-            if($img[$imgSize])
+            if($img[$version])
             {
-                $img=$img[$imgSize];
+                $img=$img[$version];
             }
             else
             {
