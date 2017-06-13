@@ -106,6 +106,7 @@ $(document).ready(
         var swiper = new Swiper('.swiper-container',
             {
                 slidesPerView: 1,
+                effect:"fade",
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
 
