@@ -18,6 +18,15 @@
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
 
 
+        $label="Cuerpo informativo";
+        $grupo=2;
+        $s="noticias";
+        $tipo="84";
+        $shownText=["titulo","bajada"];
+        include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
+
+
+
         $successMessage="Noticia guardada correctamente";
         include DIR_PATH."/includes/panel/templates/gui/save.php";
 

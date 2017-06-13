@@ -3,8 +3,6 @@
     
     <?php
 
-    echo "NO FILES";
-  
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
@@ -55,7 +53,7 @@
             </div>
             <?php
         }
-  
+
 
     }
     ?>
