@@ -232,8 +232,12 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $r->setModification(time());
 
+        $r->setVersiones(json_decode( $r->getVersiones(),true));
+
+
         $res= $this->dataSource->runUpdate($sql,
-            $this->getParamsArray($r));
+            $this->getParamsArray($r)
+        );
         return $res;
 
     }
