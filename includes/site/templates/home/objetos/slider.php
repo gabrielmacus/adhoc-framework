@@ -98,6 +98,11 @@ $version="original";
 <script>
 $(document).ready(
     function () {
+
+        var slides=<?php  echo json_encode($bloque);?>;
+
+        console.log(slides);
+
         var swiper = new Swiper('.swiper-container',
             {
                 slidesPerView: 1,
