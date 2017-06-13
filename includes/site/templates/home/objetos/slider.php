@@ -16,7 +16,8 @@ $bloque=$portada->getAnexos()[$bloqId];
 
    foreach ($bloque as $k=>$v)
    {
-      echo $v->getId();
+       $v = $GLOBALS["postDAO"]->selectPostById($v->getId());
+
 
        ?>
        <div class="swiper-container">
