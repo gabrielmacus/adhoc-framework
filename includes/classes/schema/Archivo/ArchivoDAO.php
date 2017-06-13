@@ -680,7 +680,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 if(!$ftp->delete($deleteFile))
                 {
-                    throw new Exception("ArchivoDAO:1:".$version->getName());//Codigo de error al eliminar un archivo
+                    throw new Exception("ArchivoDAO:1:".$deleteFile);//Codigo de error al eliminar un archivo
                 }
 
 
