@@ -5,25 +5,29 @@
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
-        if($img[$imgSize])
-        {
-         $img=$img[$imgSize];
-        }
-        else
-        {
-            $img=$img["original"];
-        }
 
-        ?>
-       <div class="item-container">
-           <article class="item">
-               <figure class="image">
-                   <img src="<?php echo $img->getRealName();?>">
+        if($img)
+        {
+            if($img[$imgSize])
+            {
+                $img=$img[$imgSize];
+            }
+            else
+            {
+                $img=$img["original"];
+            }
 
-               </figure>
-               <h3 class="title">
-                   <span class="text"><?php echo $data->getTitulo();?></span>
-               </h3>
+            ?>
+
+            <div class="item-container">
+                <article class="item">
+                    <figure class="image">
+                        <img src="<?php echo $img->getRealName();?>">
+
+                    </figure>
+                    <h3 class="title">
+                        <span class="text"><?php echo $data->getTitulo();?></span>
+                    </h3>
 
 
 
@@ -44,9 +48,15 @@
 
                </span>
 
-           </article>
-       </div>
-        <?php
+                </article>
+            </div>
+            <?php
+        }
+        else
+        {
+            echo "Sin File";
+        }
+
     }
     ?>
 </div>
