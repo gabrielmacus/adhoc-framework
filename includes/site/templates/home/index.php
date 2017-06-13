@@ -23,6 +23,7 @@
             $imgSize="portada";
             $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84,false);
 
+            unset($dataToSkin["texto"]);
 
             echo json_encode($dataToSkin);
 
