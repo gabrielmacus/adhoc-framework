@@ -634,7 +634,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function deleteArchivoById($ids)
     {
 
-        $in="";
         $archivos=array();
         if (is_array($ids))
         {
@@ -676,13 +675,34 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             foreach ($archivo as $version)
             {
+                $deleteFile=$repositorio->getPath().$version->getPath();
 
-                echo $ftp->delete($repositorio->getPath().$version->getPath())."\n";
+
+                if(!$ftp->delete($deleteFile))
+                {
+                    throw new Exception("ArchivoDAO:1:".$archivo->getName());//Codigo de error al eliminar un archivo
+                }
+
+
+                $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
+
+                $res= $this->dataSource->runUpdate($sql,array(
+                    ":archivo_id"=>$archivo->getId()
+                ));
+
             }
+
+            $deletePath=$repositorio->getPath().reset($archivo)->getPathName();
+
+            if(!$ftp->remove($deletePath))//Elimino la carpeta
+            {
+                throw new Exception("ArchivoDAO:2:{$deletePath}");//Codigo de error al eliminar una carpeta
+            }
+
         }
 
 
-
+     return true;
 
     }
 
