@@ -656,7 +656,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 /** **/
 
-                $archivos[]=$this->selectArchivoById($file["archivo_id"]);
+                $archivos[]=$this->selectArchivoById($file["archivo_id"],false);
              //   $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
             }
 
