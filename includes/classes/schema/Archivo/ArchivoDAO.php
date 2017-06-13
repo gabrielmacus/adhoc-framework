@@ -673,16 +673,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
-        if($ftp->remove($deletePath)===false)
-        {
-           if($children= $ftp->nlist($deletePath))
-           {
-               foreach ($children as $c)
-               {
-                echo    $c."\n";
-               }
-           }
-        }
+        echo    $deletePath."\n";
 
 
     }
