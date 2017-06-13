@@ -3,7 +3,7 @@
     
     <?php
 
-    var_dump($dataToSkin);
+    var_dump(count($dataToSkin));
 
      foreach($dataToSkin as $k => $data)
     {
