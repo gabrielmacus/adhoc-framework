@@ -1,6 +1,8 @@
 <?php
 $bloqId=1;
 $bloque=$portada->getAnexos()[$bloqId];
+
+echo "<pre>". var_dump($portada->getAnexos())."</pre>";
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -11,7 +13,6 @@ $bloque=$portada->getAnexos()[$bloqId];
     <!-- Swiper -->
    <?php
 
-   echo "<pre>". var_dump($portada->getAnexos())."</pre>";
 
 
    foreach ($bloque as $k=>$v)
