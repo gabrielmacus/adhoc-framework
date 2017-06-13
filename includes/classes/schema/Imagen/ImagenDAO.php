@@ -31,6 +31,8 @@ class ImagenDAO extends ArchivoDAO
         $i->setAlto($originalSize[1]);
         $i->setAncho($originalSize[0]);
 
+      
+        
        $original=  parent::insertArchivo($i);//Agrego el archivo original
 
         $files[]=$original;
