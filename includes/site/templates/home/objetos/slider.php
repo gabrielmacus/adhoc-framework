@@ -115,12 +115,9 @@ $(document).ready(
                 speed:500,
                 autoplay:4000,
                 onTransitionStart:function (e) {
-
-                    console.log(e.realIndex);
-
-
+                    
                     $(".slider-title .text").html(slides[e.realIndex].titulo);
-        
+
                 }
             });
     }
