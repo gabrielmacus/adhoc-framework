@@ -232,7 +232,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $r->setModification(time());
 
-        $r->setVersiones(str_replace('"',"",json_encode( $r->getVersiones())));
+        $r->setVersiones(str_replace('\"',"",json_encode( $r->getVersiones())));
 
 
 
