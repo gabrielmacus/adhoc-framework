@@ -107,6 +107,7 @@ $(document).ready(
             {
                 slidesPerView: 1,
                 effect:"fade",
+                speed:500,
                 autoplay:4000,
                 onSlideChangeStart:function (e) {
 
