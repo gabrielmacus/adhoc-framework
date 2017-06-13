@@ -23,7 +23,7 @@ try{
 
     //Cargo la portada
 
-    $portada=$GLOBALS["postDAO"]->selectPostById($lang["portadaId"],false);
+    $portada=$GLOBALS["postDAO"]->selectPostById($lang["portadaId"],false,NO_PROCESS);
 
     var_dump($portada);
 
