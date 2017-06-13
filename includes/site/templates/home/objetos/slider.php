@@ -117,9 +117,9 @@ $(document).ready(
                 autoplay:4000,
                 onTransitionStart:function (e) {
 
-                    console.log(e);
+                    console.log(e.realIndex);
 
-               
+
 
                 }
             });
