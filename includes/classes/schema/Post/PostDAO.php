@@ -390,7 +390,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     $postArchivos[$nexo["archivo_orden"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                 }
 
-                 arsort($postArchivos);
+                 krsort($postArchivos);
                 echo json_encode($postArchivos);
                 /**
                  *
