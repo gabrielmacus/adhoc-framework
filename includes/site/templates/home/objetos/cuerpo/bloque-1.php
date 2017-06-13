@@ -55,11 +55,7 @@
             </div>
             <?php
         }
-        else
-        {
-            echo json_encode($data->getArchivos());
-        }
-
+  
 
     }
     ?>
