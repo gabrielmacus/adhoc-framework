@@ -128,7 +128,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 objeto_id={$archivo["objeto_id"]},
                 objeto_tabla='{$archivo["objeto_tabla"]}',
                 archivo_grupo='{$archivo["archivo_grupo"]}',
-                archivo_orden='{$archivo["archivo_orden"]}',archivo_objeto_id='{$archivo["archivo_objeto_id"]}'";
+                archivo_orden='{$archivo["archivo_orden"]}'";
 
   /*              $set="";
                 foreach ($archivo as $k=>$v)
@@ -367,8 +367,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     $archivo["archivo_version"],$archivo["archivo_real_name"],null,$archivo["archivo_repositorio"],$archivo["archivo_path"],
                     $archivo["archivo_creation"],$archivo["archivo_modification"],$archivo["archivo_id"],$archivo["archivo_version_name"],$archivo["archivo_type"]);
 
-                $archivo->setNexoId($nexo["archivo_objeto_id"]);
-                
 //                $postArchivos[$archivo->getType()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
                 $archivo->setNexo($nexo);
@@ -377,28 +375,23 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
 
                 $archivo->setGrupo($nexo["archivo_grupo"]);//El grupo o galeria al que pertenece el archivo dentro del post
 
-                /**
-                 * 13.6.2017: Agregado orden
-                 */
+           
 
                 if($process)
                 {
-                   // $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
-                    $postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
+                   $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
+                    //$postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
 
                 }
                 else
                 {
 
-                    $postArchivos[$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
+                    //$postArchivos[$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
 
-                    //$postArchivos[$idOriginal][$archivo->getVersionName()]=$archivo;
+                    $postArchivos[$idOriginal][$archivo->getVersionName()]=$archivo;
                 }
 
-                 arsort($postArchivos);
-                /**
-                 *
-                 */
+             
 
                 $p->setArchivos($postArchivos);
 

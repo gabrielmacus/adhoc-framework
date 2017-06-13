@@ -24,6 +24,7 @@ class Archivo implements JsonSerializable
     protected $version;
     protected $versionName;
     protected $type;
+    protected $nexoId;
     /**
      * @var int
      * @deprecated
@@ -66,6 +67,24 @@ class Archivo implements JsonSerializable
         $this->type=$type;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNexoId()
+    {
+        return $this->nexoId;
+    }
+
+    /**
+     * @param mixed $nexoId
+     */
+    public function setNexoId($nexoId)
+    {
+        $this->nexoId = $nexoId;
+    }
+
+
+
     function jsonSerialize()
     {
        return array(
@@ -84,7 +103,9 @@ class Archivo implements JsonSerializable
            "type"=>$this->getType(),
            "pathName"=>$this->getPathName(),
            "nexo"=>$this->getNexo(),
-           "grupo"=>$this->getGrupo()
+           "grupo"=>$this->getGrupo(),
+           "nexoId"=>$this->getNexoId(),
+           
            
        );
     }
