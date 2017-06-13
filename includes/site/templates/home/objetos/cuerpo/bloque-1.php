@@ -52,10 +52,7 @@
             </div>
             <?php
         }
-        else
-        {
-            echo "Sin File";
-        }
+    
 
     }
     ?>
