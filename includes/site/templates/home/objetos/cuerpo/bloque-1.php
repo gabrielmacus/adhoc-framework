@@ -3,8 +3,7 @@
     
     <?php
 
-    var_dump(count($dataToSkin));
-
+  
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
