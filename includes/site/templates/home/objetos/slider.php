@@ -96,7 +96,8 @@ $(document).ready(
         var swiper = new Swiper('.swiper-container',
             {
                 slidesPerView: 1,
-                effect:"fade"
+                effect:"fade",
+                autoplay:2000
             });
     }
 );
