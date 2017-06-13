@@ -109,6 +109,7 @@ $(document).ready(
 
         var swiper = new Swiper('.swiper-container',
             {
+                loop: true,
                 slidesPerView: 1,
                 effect:"fade",
                 speed:500,
