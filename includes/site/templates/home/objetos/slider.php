@@ -114,7 +114,9 @@ $(document).ready(
                 effect:"fade",
                 speed:500,
                 autoplay:4000,
-                onSlideChangeEnd:function (e) {
+                onSlideChangeStart:function (e) {
+
+                    console.log(e);
 
                     var idx=e.activeIndex-1;
                    if(slides[idx])
