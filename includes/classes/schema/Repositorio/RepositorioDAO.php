@@ -236,7 +236,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
        if(is_array($r->getVersiones()))
        {
-           $r->setVersiones(json_decode($r->getVersiones()));
+           $r->setVersiones(json_encode($r->getVersiones()));
        }
 
         $r->setVersiones(ltrim(rtrim($r->getVersiones(),'"'),'"'));
