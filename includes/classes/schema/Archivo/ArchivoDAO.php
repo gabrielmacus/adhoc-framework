@@ -670,6 +670,10 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         foreach ($archivos as $archivo)
         {
+
+            $repositorio= reset($archivo)->getRepositorio();
+            $ftp=$repositorio->getFtp();
+
             foreach ($archivo as $version)
             {
                 echo $version->getPath()."\n";
