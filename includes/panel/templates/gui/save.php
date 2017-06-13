@@ -34,21 +34,16 @@
         /***  cargo adjuntos **/
 
         var archivos=[];
-
         if(!scope.post.archivos) {
             scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
         }
 
-        console.log( scope.post.archivos);
-        $.each( scope.post.archivos ,function (tipo,arr) {
+        $.each( scope.post.archivos ,function (tipo,grupos) {
 
-            $.each(arr,function (clave,grupos) {
-                $.each(grupos,function (k,versiones) {
-                    archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+           $.each(grupos,function (k,versiones) {
+               archivos.push({archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
-                });
-            });
-
+           });
 
 
         });
