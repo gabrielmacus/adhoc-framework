@@ -550,7 +550,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
      * @return string
      * @throws Exception
      */
-    public function deleteArchivoById($ids)
+    public function _deleteArchivoById($ids)
     {
 
         $in="";
@@ -600,6 +600,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $in.="{$archivo->getId()},";
 
             $deletings.="{$archivo->getRealName()},";
+            $ftp = new \FtpClient\FtpClient();
+
            if(!$ftp->delete($deleteFile))//Elimino cada archivo
             {
 
@@ -627,6 +629,51 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $res= $this->dataSource->runUpdate($sql);
         return $res;
+    }
+
+    public function deleteArchivoById($ids)
+    {
+
+        $in="";
+        $archivos=array();
+        if (is_array($ids))
+        {
+            foreach ($ids as $file)
+            {
+
+                /** Chequeo si los archivos tienen objetos asociados**/
+
+                $sqlArchivosObjetos="SELECT * FROM archivos_objetos WHERE archivo_id=:archivo_id";
+
+                $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$file["archivo_id"])));
+
+
+                if($objetosAsociados>0)
+                {
+                    throw new Exception("ArchivoDAO:3");//Codigo de error al intentar eliminar un archivo con objetos asociados
+
+                }
+
+                /** **/
+
+
+                $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
+            }
+
+
+        }
+        else
+        {
+            $archivos=$this->selectArchivoById($ids,false);
+        }
+
+
+        $repositorio= $archivos[0]->getRepositorio();
+        $ftp=$repositorio->getFtp();
+
+        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
+
+        var_dump($deletePath);
     }
 
     public function validate(IArchivo $a)
