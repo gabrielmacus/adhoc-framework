@@ -666,7 +666,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $archivos=$this->selectArchivoById($ids,false);
         }
 
-        echo json_encode($archivos);
+        var_dump(json_encode($archivos));
         exit();
 
         foreach ($archivos as $archivo)
