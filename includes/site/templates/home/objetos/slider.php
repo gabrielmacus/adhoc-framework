@@ -110,7 +110,7 @@ $(document).ready(
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
 
-                    var slide=$(".swiper-slide").index(e.activeIndex);
+                    var slide=$($(".swiper-slide")[e.activeIndex]);
 
                     console.log(slide);
 
