@@ -116,6 +116,7 @@ $(document).ready(
                 autoplay:4000,
                 onSlideChangeStart:function (e) {
 
+                    console.log(slides);
                     $(".slider-title .text").html(slides[e.activeIndex].titulo);
                 }
             });
