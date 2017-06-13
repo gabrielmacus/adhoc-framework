@@ -679,7 +679,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
            {
                foreach ($children as $c)
                {
-                   $ftp->delete($c);
+                var_dump(   $ftp->delete($c));
                }
            }
         }
