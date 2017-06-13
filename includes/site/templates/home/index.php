@@ -22,12 +22,7 @@
             $GLOBALS["postDAO"]->setActualPage(1);
             $imgSize="portada";
             $dataToSkin=$GLOBALS["postDAO"]->selectPostByTipo(84,false);
-
-            unset($dataToSkin["texto"]);
-
-            echo json_encode($dataToSkin);
-
-
+            
             include "objetos/cuerpo/bloque-1.php";
 
             ?>

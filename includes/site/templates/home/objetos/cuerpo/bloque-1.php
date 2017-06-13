@@ -3,13 +3,12 @@
     
     <?php
 
+    echo "NO FILES";
   
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
 
-        if($img)
-        {
             if($img[$imgSize])
             {
                 $img=$img[$imgSize];
@@ -53,7 +52,7 @@
                 </article>
             </div>
             <?php
-        }
+
 
 
     }
