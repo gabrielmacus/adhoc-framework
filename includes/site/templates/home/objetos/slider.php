@@ -73,7 +73,7 @@ $version="original";
 
                <h2 class="title">
 
-                   <span class="text" data-ng-bind="slide.text"><?php echo  $firstSlide->getTitulo();?></span>
+                   <span class="text"><?php echo  $firstSlide->getTitulo();?></span>
 
                </h2>
            </div>
@@ -109,8 +109,8 @@ $(document).ready(
                 effect:"fade",
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
-
-                    slides[e.activeIndex].titulo
+                    
+                    $(".slider-title .text").html(slides[e.activeIndex].titulo);
                 }
             });
     }
