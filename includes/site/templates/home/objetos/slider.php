@@ -116,7 +116,7 @@ $(document).ready(
                 autoplay:4000,
                 onSlideChangeStart:function (e) {
 
-                    console.log(slides);
+                    console.log(e.activeIndex);
                     $(".slider-title .text").html(slides[e.activeIndex].titulo);
                 }
             });
