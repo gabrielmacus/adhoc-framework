@@ -44,7 +44,7 @@ $version="original";
                        <img src="<?php echo $archivo->getRealName();?>">
                    </figure>
 
-                   <span class="slider-tag" style="background-color: (<?php echo $lang["secciones"][$v->getSeccion()]["color"];?>,0.8)">
+                   <span class="slider-tag" style="background-color:rgba(<?php echo $lang["secciones"][$v->getSeccion()]["color"];?>,0.8)">
                       <?php echo $secciones[$v->getSeccion()]->getNombre();?>
                    </span>
                </div>
