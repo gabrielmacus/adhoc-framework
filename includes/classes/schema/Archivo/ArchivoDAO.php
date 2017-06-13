@@ -673,6 +673,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
 
+        var_dump($archivos);
         echo    $deletePath."\n";
 
 
