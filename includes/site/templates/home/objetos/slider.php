@@ -12,11 +12,9 @@ $bloque=$portada->getAnexos()[$bloqId];
    <?php
    foreach ($bloque as $k=>$v)
    {
-       $v =json_decode( json_encode($v),true);
-       unset($v["noticia_texto"]);
 
 
-  echo "<pre>". var_dump($v)."</pre>";
+  echo "<pre>". var_dump($v->getArchivos())."</pre>";
 
 
 
