@@ -12,6 +12,8 @@ $version="portada";
 
      foreach($bloque as $k => $data)
     {
+        $data = $GLOBALS["postDAO"]->selectPostById($data->getId());
+        
         $img =reset($data->getArchivos());
 
         if($img)
