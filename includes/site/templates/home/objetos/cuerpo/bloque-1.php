@@ -1,13 +1,11 @@
-<?php
-$bloqId=1;
-?>
+
 <div class="bloque-1">
     
     <?php
 
-    $bloque=$portada->getAnexos()[$bloqId];
 
-    var_dump($bloque);
+
+
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());

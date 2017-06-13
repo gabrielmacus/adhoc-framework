@@ -30,6 +30,7 @@ try{
                 $r = new Repositorio($_POST["host"],$_POST["usuario"],$_POST["pass"],$_POST["nombre"],$_POST["ruta"],$_POST["puerto"],$_POST["creation"],$_POST["modification"],$_POST["id"]);
                 $r->setUrl($_POST["url"]);
                 $r->setVersiones($_POST["versiones"]);
+                var_dump($_POST);
                 echo json_encode($GLOBALS["repositorioDAO"]->updateRepositorio($r));
 
 

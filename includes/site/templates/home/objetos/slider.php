@@ -1,4 +1,7 @@
-
+<?php
+$bloqId=1;
+$bloque=$portada->getAnexos()[$bloqId];
+?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
@@ -6,22 +9,30 @@
 <div class="slider-container">
 
     <!-- Swiper -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <figure>
-                    <img src="http://www.markgray.com.au/images/gallery/large/desert-light.jpg">
-                </figure>
-            </div>
-            <div class="swiper-slide">
-                <figure>
-                    <img src="http://digital-photography-school.com/wp-content/uploads/flickr/205125227_3f160763a0_o.jpg">
-                </figure>
-            </div>
+   <?php
+   foreach ($bloque as $k=>$v)
+   {
+       ?>
+       <div class="swiper-container">
+           <div class="swiper-wrapper">
+               <div class="swiper-slide" data-n="<?php echo $k?>" data-title="<?php echo $v->getTitulo();?>">
+                   <figure>
+                       <img src="http://www.markgray.com.au/images/gallery/large/desert-light.jpg">
+                   </figure>
+               </div>
+               <div class="swiper-slide">
+                   <figure>
+                       <img src="http://digital-photography-school.com/wp-content/uploads/flickr/205125227_3f160763a0_o.jpg">
+                   </figure>
+               </div>
 
-        </div>
-    </div>
-    
+           </div>
+       </div>
+       <?php
+   }
+   ?>
+
+
 
         <div class="slider-title">
 
@@ -32,9 +43,9 @@
                        <h3 class="name"><a>@robertoGomezBolanos</a></h3>
                    </figcaption>
                </figure>
-               
+
                <div class="line"></div>
-               
+
                <h2 class="title">
 
                    <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
