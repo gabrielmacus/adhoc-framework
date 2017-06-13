@@ -2,7 +2,7 @@
     
     <?php
 
-    echo json_encode($portada);
+    var_dump($portada->getAnexos());
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
