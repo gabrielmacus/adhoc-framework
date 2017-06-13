@@ -35,7 +35,7 @@ class ImagenDAO extends ArchivoDAO
          * Genero el nombre de la carpeta para que todos esten en la misma
          */
         $randName=substr($i->getName(),0,6).rand(0,9999);
-        $mainPath = time()."{$randName}.{$i->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+        $mainPath = time()."{$randName}"; //Nombre de la carpeta contenedora de todas las versiones
         /**
          *
          */
