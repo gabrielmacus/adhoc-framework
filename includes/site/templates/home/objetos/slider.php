@@ -11,7 +11,7 @@ $bloque=$portada->getAnexos()[$bloqId];
     <!-- Swiper -->
    <?php
 
-   echo "<pre>". var_dump($bloque->getAnexos())."</pre>";
+   echo "<pre>". var_dump($portada->getAnexos())."</pre>";
 
 
    foreach ($bloque as $k=>$v)
