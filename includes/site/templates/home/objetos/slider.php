@@ -2,6 +2,8 @@
 $bloqId=1;
 $bloque=$portada->getAnexos()[$bloqId];
 
+$sliderGroupId=1;
+
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -10,35 +12,34 @@ $bloque=$portada->getAnexos()[$bloqId];
 <div class="slider-container">
 
     <!-- Swiper -->
-   <?php
 
-
-
-   foreach ($bloque as $k=>$v)
-   {
-       $v = $GLOBALS["postDAO"]->selectPostById($v->getId());
-
-       var_dump($v->getArchivos());
-
-       ?>
        <div class="swiper-container">
            <div class="swiper-wrapper">
+               <?php
+
+               foreach ($bloque as $k=>$v)
+               {
+                   $v = $GLOBALS["postDAO"]->selectPostById($v->getId());
+
+                   $archivos = $v->getArchivos();
+
+                   $archivo = reset($archivos[$sliderGroupId])["original"];
+
+                       ?>
                <div class="swiper-slide" data-n="<?php echo $k?>" data-title="<?php echo $v->getTitulo();?>">
                    <figure>
-                       <img src="http://www.markgray.com.au/images/gallery/large/desert-light.jpg">
+                       <img src="<?php echo $archivo->getRealName();?>">
                    </figure>
                </div>
-               <div class="swiper-slide">
-                   <figure>
-                       <img src="http://digital-photography-school.com/wp-content/uploads/flickr/205125227_3f160763a0_o.jpg">
-                   </figure>
-               </div>
+
+               <?php
+
+
+               }
+               ?>
 
            </div>
        </div>
-       <?php
-   }
-   ?>
 
 
 
