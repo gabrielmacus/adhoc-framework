@@ -10,6 +10,7 @@
     {
         $img =reset($data->getArchivos());
 
+        var_dump($img);
         if($img)
         {
             if($img[$imgSize])
