@@ -14,7 +14,9 @@ $version="portada";
     {
         $data = $GLOBALS["postDAO"]->selectPostById($data->getId());
 
-        var_dump($data->getArchivos());
+        var_dump($data);
+
+
         $img =reset($data->getArchivos()[$sliderGroupId]);
 
         if($img)
