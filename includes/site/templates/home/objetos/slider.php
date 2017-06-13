@@ -107,7 +107,7 @@ $(document).ready(
             {
                 slidesPerView: 1,
                 effect:"fade",
-                autoplay:2000,
+                autoplay:4000,
                 onSlideChangeStart:function (e) {
 
                     $(".slider-title .text").html(slides[e.activeIndex].titulo);
