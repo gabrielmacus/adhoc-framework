@@ -144,7 +144,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
-    public function insertArchivo(Archivo $a,$versionName="original",$versionId=0)
+    public function insertArchivo(Archivo $a,$versionName="original",$versionId=0,$mainPath=false)
     {
         $this->validate($a);
 
@@ -154,8 +154,12 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $randName=substr($a->getName(),0,6).rand(0,9999);
 
-        $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+        if(!$mainPath)
+        {
+            $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
 
+        }
+      
         $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
 
         $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version

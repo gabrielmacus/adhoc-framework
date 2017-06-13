@@ -31,9 +31,16 @@ class ImagenDAO extends ArchivoDAO
         $i->setAlto($originalSize[1]);
         $i->setAncho($originalSize[0]);
 
-      
-        
-       $original=  parent::insertArchivo($i);//Agrego el archivo original
+        /**
+         * Genero el nombre de la carpeta para que todos esten en la misma
+         */
+        $randName=substr($i->getName(),0,6).rand(0,9999);
+        $mainPath = time()."{$randName}.{$i->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+        /**
+         *
+         */
+
+        $original=  parent::insertArchivo($i,"original",0,$mainPath);//Agrego el archivo original
 
         $files[]=$original;
         //get resoluciones del repositorio
@@ -100,7 +107,8 @@ $versiones =$r->getVersiones();
             $i->setAlto($finalSize[0]);
             $i->setAncho($finalSize[1]);
 
-            $files[]=parent::insertArchivo($i,$resolucion["nombre"],$original);
+
+            $files[]=parent::insertArchivo($i,$resolucion["nombre"],$original,$mainPath);
         }
 
         return $files;
