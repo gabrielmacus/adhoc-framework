@@ -1,9 +1,16 @@
+<?php
+$bloqId=2;
+$bloque=$portada->getAnexos()[$bloqId];
+$sliderGroupId=1;
+$version="portada";
 
+
+?>
 <div class="bloque-1">
     
     <?php
 
-     foreach($dataToSkin as $k => $data)
+     foreach($bloque as $k => $data)
     {
         $img =reset($data->getArchivos());
 
