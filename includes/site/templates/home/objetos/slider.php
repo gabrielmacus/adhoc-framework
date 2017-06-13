@@ -17,6 +17,8 @@ $version="original";
            <div class="swiper-wrapper">
                <?php
 
+
+
                foreach ($bloque as $k=>$v)
                {
                    $v = $GLOBALS["postDAO"]->selectPostById($v->getId());
@@ -52,9 +54,12 @@ $version="original";
            </div>
        </div>
 
+    <?php
 
+    $firstSlide=reset($bloque);
 
-        <div class="slider-title">
+    ?>
+    <div class="slider-title">
 
            <div class="content">
                <figure class="profile">
@@ -68,7 +73,7 @@ $version="original";
 
                <h2 class="title">
 
-                   <span class="text">Bordet y la paritaria: "Vamos a mejorar sustancialmente la propuesta salarial"</span>
+                   <span class="text"><?php echo  $firstSlide->getTitulo();?></span>
 
                </h2>
            </div>
@@ -99,7 +104,9 @@ $(document).ready(
                 effect:"fade",
                 autoplay:2000,
                 onSlideChangeStart:function (e) {
-                    console.log(e.activeIndex);
+
+
+                    $(".swiper-slide").index(e.activeIndex);
                 }
             });
     }
