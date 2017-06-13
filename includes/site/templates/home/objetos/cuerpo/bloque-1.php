@@ -3,14 +3,12 @@
     
     <?php
 
-
-
+    var_dump($dataToSkin);
 
      foreach($dataToSkin as $k => $data)
     {
         $img =reset($data->getArchivos());
 
-        var_dump($img);
         if($img)
         {
             if($img[$imgSize])
