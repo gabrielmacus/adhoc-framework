@@ -391,7 +391,6 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 }
 
                  arsort($postArchivos);
-                echo json_encode($postArchivos);
                 /**
                  *
                  */
