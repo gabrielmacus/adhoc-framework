@@ -100,6 +100,7 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         
         
         $r->setVersiones(json_decode($data["repositorio_versiones"],true));
+
         if(!$assoc)
         {
             array_push($this->repositorios, $r);
@@ -233,7 +234,10 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
         $r->setModification(time());
 
 
-        var_dump($r->getVersiones());
+       if(is_array($r->getVersiones()))
+       {
+           $r->setVersiones(json_decode($r->getVersiones()));
+       }
 
         $r->setVersiones(ltrim(rtrim($r->getVersiones(),'"'),'"'));
 
