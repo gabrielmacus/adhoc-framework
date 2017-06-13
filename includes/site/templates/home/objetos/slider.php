@@ -45,7 +45,15 @@ $version="original";
                    </figure>
                </div>
 
-               <?php
+
+
+                   <span class="slider-tag">
+        Internacionales
+    </span>
+
+
+
+                   <?php
 
 
                }
@@ -80,12 +88,6 @@ $version="original";
 
 
         </div>
-
-
-    <span class="slider-tag">
-        Internacionales
-    </span>
-  
 
 
 </div>
