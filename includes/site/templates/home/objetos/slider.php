@@ -43,9 +43,10 @@ $version="original";
                    <figure>
                        <img src="<?php echo $archivo->getRealName();?>">
                    </figure>
-                              <span class="slider-tag">
-        Internacionales
-    </span>
+
+                   <span class="slider-tag" style="background-color: (<?php echo $lang["secciones"][$v->getSeccion()]["color"];?>,0.8)">
+                      <?php echo $secciones[$v->getSeccion()]->getNombre();?>
+                   </span>
                </div>
 
 
