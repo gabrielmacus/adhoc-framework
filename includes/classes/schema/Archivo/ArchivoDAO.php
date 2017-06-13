@@ -668,7 +668,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
 
-        echo json_encode($archivos);
+        foreach ($archivos as $archivo)
+        {
+            foreach ($archivo as $version)
+            {
+                echo $version->getPath()."\n";
+            }
+        }
+
 
 
 
