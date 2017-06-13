@@ -16,7 +16,7 @@ $bloque=$portada->getAnexos()[$bloqId];
 
    foreach ($bloque as $k=>$v)
    {
-       $v = $GLOBALS["postDAO"]->selectPostsById($v->getId());
+       $v = $GLOBALS["postDAO"]->selectPostById($v->getId());
 
        var_dump($v->getAnexos());
 
