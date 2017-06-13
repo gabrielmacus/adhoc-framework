@@ -680,14 +680,14 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 if(!$ftp->delete($deleteFile))
                 {
-                    throw new Exception("ArchivoDAO:1:".$archivo->getName());//Codigo de error al eliminar un archivo
+                    throw new Exception("ArchivoDAO:1:".$version->getName());//Codigo de error al eliminar un archivo
                 }
 
 
                 $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
 
                 $res= $this->dataSource->runUpdate($sql,array(
-                    ":archivo_id"=>$archivo->getId()
+                    ":archivo_id"=>$version->getId()
                 ));
 
             }
