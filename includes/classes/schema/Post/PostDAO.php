@@ -374,6 +374,11 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 //$postArchivos[$archivo->getType()][$archivo->getGaleria()][$idOriginal][$archivo->getVersionName()]=$archivo;
 
                 $archivo->setGrupo($nexo["archivo_grupo"]);//El grupo o galeria al que pertenece el archivo dentro del post
+
+                /**
+                 * 13.6.2017: Agregado orden
+                 */
+
                 if($process)
                 {
                     $postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$idOriginal][$archivo->getVersionName()]=$archivo;
@@ -385,6 +390,10 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                     $postArchivos[$nexo["archivo_orden"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                 }
 
+                 arsort($postArchivos);
+                /**
+                 * 
+                 */
 
                 $p->setArchivos($postArchivos);
 
