@@ -232,6 +232,9 @@ repositorio_modification=:repositorio_modification,repositorio_url=:repositorio_
 
         $r->setModification(time());
 
+
+        var_dump($r->getVersiones());
+
         $r->setVersiones(ltrim(rtrim($r->getVersiones(),'"'),'"'));
 
 
