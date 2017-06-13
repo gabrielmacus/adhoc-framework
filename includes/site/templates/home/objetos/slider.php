@@ -14,7 +14,7 @@ $bloque=$portada->getAnexos()[$bloqId];
    {
 
 
-  echo "<pre>". var_dump($v->getArchivos())."</pre>";
+  echo "<pre>". var_dump($v->getAnexos())."</pre>";
 
 
 
