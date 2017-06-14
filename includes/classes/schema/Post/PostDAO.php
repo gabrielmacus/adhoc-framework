@@ -638,7 +638,7 @@ class PostDAO  extends Paginable implements IPost
             //Cantidad de archivos
             $archivosWhere="";
 
-            $fields.=",count(archivos_filter.*) as 'total_archivos'";
+            $fields.=",count(archivos_filter.objeto_id) as 'total_archivos'";
 
             $where.= (empty($where))?" WHERE total_archivos {$filters['archivos']}":" AND total_archivos {$filters['archivos']}";
 
