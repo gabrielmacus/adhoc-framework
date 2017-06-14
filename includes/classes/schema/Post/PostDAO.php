@@ -617,7 +617,95 @@ class PostDAO  extends Paginable implements IPost
     {
         $this->posts=array();
 
-        $sql = "SELECT * FROM {$this->tableName}";
+        //$sql = "SELECT * FROM {$this->tableName}";
+        //TODO
+
+
+
+        $fields="p.*";
+
+        $where="";
+
+
+        /** 14.6.2017 Filtrado **/
+        $filters =$this->getFilters();
+
+
+        /** Filtro por  archivos **/
+
+        if($filters["archivos"])
+        {
+            //Cantidad de archivos
+            $archivosWhere="";
+
+            $fields.=",count(archivos_filter.*) as 'total_archivos'";
+
+            $where.= (empty($where))?" WHERE total_archivos {$filters['archivos']}":" AND total_archivos {$filters['archivos']}";
+
+            //Tipos de archivos
+            if(is_array($filters["archivosExtensions"]))
+            {
+                $filters["archivosExtensions"] = array_map(function($column) {
+                    return "'{$column}''";
+                },   $filters["archivosExtensions"]);
+
+                $filters["archivosExtensions"]=implode(",",$filters["archivosExtensions"]);
+
+                $archivosWhere.=" WHERE a.archivo_extension IN ({$filters["archivosExtensions"]})";
+            }
+
+            $archivosFilterSql=" LEFT JOIN 
+
+(SELECT ao.* FROM `archivos_objetos` ao LEFT JOIN archivos a ON a.archivo_id= ao.archivo_id {$archivosWhere}) as archivos_filter 
+
+ON archivos_filter.objeto_id= p.post_id ";
+        }
+
+/**  * */
+
+        //Cantidad de anexos
+
+        if($filters["anexos"])
+        {
+
+            $anexosWhere="";
+
+            $fields.=",count(posts_filter.*) as 'total_anexos'";
+
+            $where.= (empty($where))?" WHERE total_anexos {$filters['anexos']}":" AND total_anexos {$filters['anexos']}";
+
+            //Tipos de archivos
+            if(is_array($filters["anexosTypes"]))
+            {
+                $filters["anexosTypes"] = array_map(function($column) {
+                    return "'{$column}''";
+                },   $filters["anexosTypes"]);
+
+                $filters["anexosTypes"]=implode(",",$filters["anexosTypes"]);
+
+                $anexosWhere.=" WHERE archivo_extension IN ({$filters["anexosTypes"]})";
+            }
+
+
+
+            $anexosFilterSql="LEFT JOIN 
+
+(SELECT pn.* FROM `posts_nexos` pn LEFT JOIN posts pt ON pt.post_id= pn.post_id {$anexosWhere}) as posts_filter
+
+ON posts_filter.post_id = p.post_id";
+
+        }
+
+
+        /*** **/
+
+
+
+        $sql = "SELECT {$fields} FROM {$this->tableName} {$archivosFilterSql} {$anexosFilterSql} {$where} GROUP BY p.post_id";
+
+        var_dump($sql);
+
+        exit();
 
 
         $orderBy=$this->getOrderBy();
@@ -625,16 +713,6 @@ class PostDAO  extends Paginable implements IPost
         {
             $sql.="  ORDER BY {$orderBy}";
         }
-
-        /** 14.6.2017 Filtrado **/
-        $filters =$this->getFilters();
-
-        //Cantidad de adjuntos
-        
-
-        //Cantidad de anexos
-
-        /*** **/
 
         /** Pagino */
         $this->setResults();
