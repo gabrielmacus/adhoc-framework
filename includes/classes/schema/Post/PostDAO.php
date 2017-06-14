@@ -670,7 +670,7 @@ ON archivos_filter.objeto_id= p.post_id ";
 
             $anexosWhere="";
 
-            $fields.=",count(posts_filter.*) as 'total_anexos'";
+            $fields.=",count(posts_filter.post_id) as 'total_anexos'";
 
             $where.= (empty($where))?" WHERE total_anexos {$filters['anexos']}":" AND total_anexos {$filters['anexos']}";
 
