@@ -9,6 +9,7 @@
 
         $img =reset($data->getArchivos()[$sliderGroupId]);
 echo json_encode($data->getArchivos());
+        echo "<br>";
         if($img)
         {
             if($img[$version])
