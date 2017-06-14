@@ -7,9 +7,8 @@
     {
         $data = $GLOBALS["postDAO"]->selectPostById($data->getId());
 
-        $img =reset($data->getArchivos()[$sliderGroupId]);
-echo json_encode($data->getArchivos());
-        echo "<br>";
+        $img =$data->getArchivos()[$sliderGroupId][0];
+
         if($img)
         {
             if($img[$version])
