@@ -745,6 +745,7 @@ ON posts_filter.post_id = p.post_id";
         return $this->posts;
     }
 
+
     public function selectPostById($id,$process=true,$processAnexos=SINGLE)
     {
         $this->posts=array();
