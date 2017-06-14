@@ -8,9 +8,6 @@
 
     <form data-ng-submit="save()">  
         <?php
-        $label="Titulo";
-        $model="titulo";
-        include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
 
         $label="Notas destacadas";
