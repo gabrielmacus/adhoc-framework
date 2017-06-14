@@ -9,4 +9,11 @@
 include "includes/autoload.php";
 $p=new PostDAO();
 
+$GLOBALS["postDAO"]->setFilters(
+    array(
+
+        "archivos"=>">0"
+    )
+
+);
 $post=$GLOBALS["postDAO"]->selectPosts();
