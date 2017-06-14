@@ -703,7 +703,7 @@ ON posts_filter.post_id = p.post_id";
         $subQuery="SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} {$where} GROUP BY p.post_id";
 
 
-        $sql = "SELECT * FROM ({$subQuery}) {$where}";
+        $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
 
         var_dump($sql);
 
