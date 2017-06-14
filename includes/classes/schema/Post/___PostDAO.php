@@ -29,8 +29,6 @@ class PostDAO  extends Paginable implements IPost
     private $insertSql;
     private $updateSql;
     protected $orderBy;
-    protected $filters=array();
-
 
     /**
      * UserDAO constructor.
@@ -557,7 +555,7 @@ class PostDAO  extends Paginable implements IPost
 
 }
 
-    public function _selectPosts($process=true,$processAnexos=true)
+    public function selectPosts($process=true,$processAnexos=true)
     {
         $this->posts=array();
         
@@ -596,75 +594,7 @@ class PostDAO  extends Paginable implements IPost
 
         return $this->posts;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getFilters()
-    {
-        return $this->filters;
-    }
-
-    /**
-     * @param mixed $filters
-     */
-    public function setFilters($filters)
-    {
-        $this->filters = $filters;
-    }
-
-    public function selectPosts($processArchivos=true,$processAnexos=true)
-    {
-        $this->posts=array();
-
-        $sql = "SELECT * FROM {$this->tableName}";
-
-
-        $orderBy=$this->getOrderBy();
-        if($orderBy)
-        {
-            $sql.="  ORDER BY {$orderBy}";
-        }
-
-        /** 14.6.2017 Filtrado **/
-        $filters =$this->getFilters();
-
-        //Cantidad de adjuntos
-        
-
-        //Cantidad de anexos
-
-        /*** **/
-
-        /** Pagino */
-        $this->setResults();
-
-        $offset=$this->getOffset();
-
-        if($this->getLimit())
-        {
-            $sql.="  LIMIT {$this->getLimit()} OFFSET {$offset}";
-        }
-        /**  * */
-
-        $this->dataSource->runQuery($sql, array(), function ($data) {
-
-            $this->query($data, true);
-
-        });
-
-
-
-        /**** Proceso los anexos */
-
-        $this->processAnexos($processAnexos);
-        /*** **/
-        $this->processFiles($processArchivos);
-
-
-        return $this->posts;
-    }
-
+    
     public function selectPostById($id,$process=true,$processAnexos=SINGLE)
     {
         $this->posts=array();
