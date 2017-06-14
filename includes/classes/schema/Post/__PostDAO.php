@@ -19,9 +19,6 @@ class PostDAO  extends Paginable implements IPost
 {
 
 
-    private $fields=array("post_id","post_titulo","post_volanta","post_bajada","post_texto","post_etiquetas",
-       "post_seccion","post_creacion","post_modificacion",
-        "post_extra_1","post_extra_2","post_extra_3","post_extra_4");
 
     protected $dataSource;
     protected $tableName;
@@ -39,34 +36,21 @@ class PostDAO  extends Paginable implements IPost
     {
         $this->dataSource = $dataSource;
         $this->tableName = $tableName;
-
-
-        /**
-         * 14.6.2017 : Agregada funcionalidad para mapear los campos en la consulta de manera mas transparente
-         */
-
-        $fields=implode(",",$this->fields);
-
-        $fields2 = array_map(function($column) {
-            return ":{$column}";
-        }, $this->fields);
-
-        $fields2=implode(",",$fields2);
-
         $this->insertSql="INSERT INTO  {$this->tableName} 
- ({$fields})
+ (post_id,post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas,
+ post_seccion,post_creacion,post_modificacion,
+ post_extra_1,post_extra_2,post_extra_3,post_extra_4)
  VALUES 
- ({$fields2})";
-
-
-        $fields = array_map(function($column) {
-            return "{$column}=:{$column}";
-        }, $this->fields);
-
-        $fields=implode(",",$fields);
+ (:post_id,:post_titulo,:post_volanta,:post_bajada,:post_texto,:post_etiquetas,
+ :post_seccion,:post_creacion,:post_modificacion,
+  :post_extra_1,:post_extra_2,:post_extra_3,:post_extra_4)";
 
         $this->updateSql="UPDATE {$this->tableName}  SET
-{$fields} WHERE post_id=:post_id";
+post_id=:post_id,post_titulo=:post_titulo,
+post_volanta=:post_volanta,post_bajada=:post_bajada,
+post_texto=:post_texto,post_etiquetas=:post_etiquetas,
+ post_seccion=:post_seccion,post_creacion=:post_creacion,post_modificacion=:post_modificacion,
+  post_extra_1=:post_extra_1,post_extra_2=:post_extra_2,post_extra_3=:post_extra_3,post_extra_4=:post_extra_4 WHERE post_id=:post_id";
 
     }
 
@@ -401,7 +385,7 @@ class PostDAO  extends Paginable implements IPost
                 {
                    // $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                     $postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
-
+                    
                 }
                 else
                 {
