@@ -45,6 +45,13 @@ class PostDAO  extends Paginable implements IPost
          * 14.6.2017 : Agregada funcionalidad para mapear los campos en la consulta de manera mas transparente
          */
 
+      $this->generateSql();
+
+    }
+
+    private function generateSql()
+    {
+
         $fields=implode(",",$this->fields);
 
         $fields2 = array_map(function($column) {
@@ -67,7 +74,6 @@ class PostDAO  extends Paginable implements IPost
 
         $this->updateSql="UPDATE {$this->tableName}  SET
 {$fields} WHERE post_id=:post_id";
-
     }
 
     public function selectPostByTipoAndPertenece($tipo,$process=true,$processAnexos=true)
