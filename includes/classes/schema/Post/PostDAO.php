@@ -385,14 +385,13 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
                 {
                    // $postArchivos[$nexo["archivo_grupo"]][$idOriginal][$archivo->getVersionName()]=$archivo;
                     $postArchivos[$nexo["archivo_grupo"]][$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
-                    arsort(  $postArchivos[$nexo["archivo_grupo"]]);
+                
                 }
                 else
                 {
 
                     $postArchivos[$nexo["archivo_orden"]][$archivo->getVersionName()]=$archivo;
 
-                    arsort($postArchivos[$nexo["archivo_orden"]]);
                     //$postArchivos[$idOriginal][$archivo->getVersionName()]=$archivo;
                 }
 
