@@ -701,7 +701,7 @@ ON posts_filter.post_id = p.post_id";
 
 
 
-        $sql = "SELECT {$fields} FROM {$this->tableName} {$archivosFilterSql} {$anexosFilterSql} {$where} GROUP BY p.post_id";
+        $sql = "SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} {$where} GROUP BY p.post_id";
 
         var_dump($sql);
 
