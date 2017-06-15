@@ -517,6 +517,7 @@ body
 {
     padding: 20px;
     position: relative;
+    float: left;
 }
 .list
 {
