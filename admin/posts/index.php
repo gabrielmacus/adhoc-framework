@@ -70,12 +70,13 @@ try{
     {
 
         $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
-        echo json_encode($s);
+
         $s=array_map(function($value){
 
             return $value->getId();
         },$s);
 
+        $s[]=$t;
 
         $GLOBALS["postDAO"]->setFilters(
             array(
