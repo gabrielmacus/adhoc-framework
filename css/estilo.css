@@ -16,7 +16,8 @@
 
     /****/
 
-    .l4.padding:nth-child(2n+1)/*  El elemento del medio en filas de 3*/
+    /*
+    .l4.padding:nth-child(2n+1)
     {
         padding-left: 10px;
         padding-right: 10px;
@@ -25,7 +26,7 @@
     .l4.padding
     {
         padding-bottom: 10px;
-    }
+    }*/
 
 
 /***/
@@ -51,7 +52,8 @@
     .m12{width:99.99999%!important;float: left}
 
 
-    .m6.padding:nth-child(even) /*  El elemento 1 filas de 2*/
+    /*
+    .m6.padding:nth-child(even)
     {
 
         padding-top: 15px;
@@ -59,12 +61,12 @@
 
     }
 
-    .m6.padding:nth-child(odd) /*  El elemento 1 filas de 2*/
+    .m6.padding:nth-child(odd)
     {
         padding-top: 15px;
         padding-left: 10px;
 
-    }
+    }*/
 
 
 }
