@@ -661,7 +661,7 @@ class PostDAO  extends Paginable implements IPost
             if(is_array($filters["archivosExtensions"]))
             {
                 $filters["archivosExtensions"] = array_map(function($column) {
-                    return "'{$column}''";
+                    return "'{$column}'";
                 },   $filters["archivosExtensions"]);
 
                 $filters["archivosExtensions"]=implode(",",$filters["archivosExtensions"]);
