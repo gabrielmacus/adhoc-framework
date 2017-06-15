@@ -716,18 +716,18 @@ ON posts_filter.post_id = p.post_id";
         if(is_array($filters["seccion"]))
         {
             $filters["seccion"] =  implode(",",$filters["seccion"]);
-        $where.= (empty($where))?" WHERE post_seccion IN ({$filters["seccion"]})":" AND post_seccion IN ({$filters["seccion"]})";
+        $where.= (empty($where))?" WHERE post_seccion IN ({$filters["seccion"]})":" AND  post_seccion IN ({$filters["seccion"]})";
 
         }
-
+      
 
         /*** **/
 
 
         $subQuery="SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} GROUP BY p.post_id";
 
-
-
+   
+        
         $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
 
 
