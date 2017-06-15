@@ -18,8 +18,8 @@
             </div>
 
             <div class="form-block s12 m6 l4">
-                <label>Con archivos</label>
-               <input type="checkbox">
+
+                <label><input type="checkbox" /> Con archivos</label>
             </div>
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
