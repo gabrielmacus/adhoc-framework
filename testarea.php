@@ -14,7 +14,7 @@ $GLOBALS["postDAO"]->setFilters(
 
         "archivos"=>">=0",
         "anexos"=>">0",
-        "anexosTypes"=>array(84)
+        "anexosTypes"=>array(98)
     )
 
 );
