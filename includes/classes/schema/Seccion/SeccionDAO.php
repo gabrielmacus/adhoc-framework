@@ -90,33 +90,7 @@ class SeccionDAO implements ISeccion
         if(!$recursive)
         {
 
-
-
-
-            $oSql = "SELECT * FROM {$this->tableName} WHERE seccion_id=:seccion_id";
-
-            $res = $this->dataSource->runQuery($oSql, array(
-                ":seccion_id" => $seccionId
-            ));
-
-
-            if($res)
-            {
-                foreach ($res as $s)
-                {
-                    $seccion = new Seccion();
-                    $seccion->setId($s["seccion_id"]);
-                    $seccion->setNombre($s["seccion_nombre"]);
-                    $seccion->setTipo($s["seccion_tipo"]);
-                    $this->secciones[] = $seccion;
-                    $this->selectCompleteSeccionBreadcrumb($seccion->getId(),true);
-
-                }
-
-            }
-
-
-            $this->secciones=array($seccion);
+            $this->secciones=array();
 
 
         }
