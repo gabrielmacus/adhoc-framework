@@ -14,7 +14,7 @@ $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb(84);
 
 $s=array_map(function($value){
 
-   return $value["id"];
+   return $value;
 },$s);
 
 var_dump($s);
