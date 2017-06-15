@@ -1175,9 +1175,7 @@ position: absolute
 
 .filters .search-action:hover
 {
-    float: left;
-    padding: 7px;
-    font-size: 21px;
-    background-color: white;
+
+    background-color: transparent;
     color: #2a2a2a;
 }
