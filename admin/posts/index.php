@@ -77,16 +77,12 @@ try{
         $GLOBALS["postDAO"]->setFilters(
             array(
 
-                "archivos"=>">=0",
-                "seccion"=>$seccionesFilter,
-                "archivosExtensions"=>array("jpg"),
-                "anexos"=>">=0",
-                "anexosTypes"=>array(98),
+                "seccion"=>$seccionesFilter
 
             )
 
         );
-        $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
+        $posts=    $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
 
       //  $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
