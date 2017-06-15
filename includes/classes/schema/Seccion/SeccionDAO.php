@@ -112,7 +112,7 @@ class SeccionDAO implements ISeccion
             }
 
         }
-        
+
 echo json_encode($this->secciones);
         return   array_reverse($this->secciones);
 
