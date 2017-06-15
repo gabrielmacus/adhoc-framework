@@ -9,14 +9,18 @@
 include "includes/autoload.php";
 $p=new PostDAO();
 
+
+$s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb(84);
+var_dump($s);
 $GLOBALS["postDAO"]->setFilters(
     array(
 
         "archivos"=>">=0",
+        "seccion"=>array(103),
         "archivosExtensions"=>array("jpg"),
         "anexos"=>">=0",
         "anexosTypes"=>array(98),
-        "seccion"=>array(103)
+
     )
 
 );
