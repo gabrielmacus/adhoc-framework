@@ -727,9 +727,6 @@ ON posts_filter.post_id = p.post_id";
             $sql.="  ORDER BY {$orderBy}";
         }
 
-
-        var_dump($sql);
-
         /** Pagino */
         $this->setResultsCount($subQuery);
 
