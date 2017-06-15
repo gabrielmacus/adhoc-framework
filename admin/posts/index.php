@@ -31,11 +31,6 @@ try{
 
     $fileVersion="original";
 
-   $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
-
-    //$seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
-
-
 
     $processFiles = true;
     $processAnexos=true;
@@ -53,7 +48,14 @@ try{
             $seccion=  $GLOBALS["seccionDAO"]->selectSeccionById($t);
             break;
         case "save":
-            
+
+
+            $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
+
+            //$seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
+
+
+
             break;
     }
 
