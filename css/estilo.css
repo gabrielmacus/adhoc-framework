@@ -1162,15 +1162,19 @@ position: absolute
 }
 
 
-.filters  .search-action,.search-plus,.search-minus:hover
+.filters  .search-action,.search-plus,.search-minus
 {
     float: left;
     padding: 14px;
     font-size: 21px;
     background-color: #2a2a2a;
     color: white;
-    width: 15%;
+    width: 14%;
     text-align: center;
+}
+.search-plus,.search-minus
+{
+    margin-left: 2%;
 }
 
 .filters .search-action:hover,.search-plus:hover,.search-minus:hover
