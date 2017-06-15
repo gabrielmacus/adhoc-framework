@@ -12,10 +12,11 @@ $p=new PostDAO();
 $GLOBALS["postDAO"]->setFilters(
     array(
 
-        "archivos"=>">0",
+        "archivos"=>">=0",
         "archivosExtensions"=>array("jpg"),
-        "anexos"=>">0",
-        "anexosTypes"=>array(98)
+        "anexos"=>">=0",
+        "anexosTypes"=>array(98),
+        "seccion"=>array(105)
     )
 
 );

@@ -676,7 +676,7 @@ class PostDAO  extends Paginable implements IPost
 ON archivos_filter.objeto_id= p.post_id ";
         }
 
-        /**  Filtro por anexos  z* */
+        /**  Filtro por anexos  **/
 
         //Cantidad de anexos
 
@@ -712,10 +712,20 @@ ON posts_filter.post_id = p.post_id";
         }
 
 
+        //Filtro por seccion
+        if(is_array($filters["seccion"]))
+        {
+            $filters["seccion"] =  implode(",",$filters["seccion"]);
+        $where.= (empty($where))?" WHERE post_seccion IN ({$filters["seccion"]})":" AND post_seccion IN ({$filters["seccion"]})";
+
+        }
+
+
         /*** **/
 
 
         $subQuery="SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} GROUP BY p.post_id";
+
 
 
         $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
