@@ -32,7 +32,6 @@ try{
     $fileVersion="original";
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
-var_dump($subsecciones);
     $seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
 
 
@@ -67,9 +66,23 @@ var_dump($subsecciones);
     else
     {
 
+        $seccionesFilter=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
+        
+        $GLOBALS["postDAO"]->setFilters(
+            array(
 
+                "archivos"=>">=0",
+                "seccion"=>$s,
+                "archivosExtensions"=>array("jpg"),
+                "anexos"=>">=0",
+                "anexosTypes"=>array(98),
 
-        $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
+            )
+
+        );
+        $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
+
+      //  $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
 
 
