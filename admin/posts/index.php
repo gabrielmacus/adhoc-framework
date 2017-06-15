@@ -68,6 +68,8 @@ try{
 
         $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
 
+        var_dump($s);
+
         $s=array_map(function($value){
 
             return $value->getId();
