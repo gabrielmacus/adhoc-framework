@@ -17,7 +17,7 @@ $s=array_map(function($value){
    return $value["id"];
 },$s);
 
-
+var_dump($s);
 $GLOBALS["postDAO"]->setFilters(
     array(
 
