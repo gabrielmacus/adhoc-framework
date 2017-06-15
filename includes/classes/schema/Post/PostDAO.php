@@ -693,12 +693,12 @@ ON archivos_filter.objeto_id= p.post_id ";
             if(is_array($filters["anexosTypes"]))
             {
                 $filters["anexosTypes"] = array_map(function($column) {
-                    return "'{$column}''";
+                    return "'{$column}'";
                 },   $filters["anexosTypes"]);
 
                 $filters["anexosTypes"]=implode(",",$filters["anexosTypes"]);
 
-                $anexosWhere.=" WHERE archivo_extension IN ({$filters["anexosTypes"]})";
+                $anexosWhere.=" WHERE post_seccion IN ({$filters["anexosTypes"]})";
             }
 
 
