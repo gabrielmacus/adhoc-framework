@@ -32,8 +32,10 @@ try{
     $fileVersion="original";
 
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
-
+var_dump($subsecciones);
     $seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
+
+
 
     $processFiles = true;
     $processAnexos=true;

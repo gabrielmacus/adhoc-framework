@@ -39,7 +39,13 @@ class SeccionDAO implements ISeccion
     }
 
 
-
+    /**
+     * @param $seccionId
+     * @param bool $recursive
+     * @return array
+     * @throws Exception
+     * Selecciona el breadcrum hasta llegar a la seccion requerida
+     */
     public function selectSeccionBreadcrumb($seccionId,$recursive=false)
     {
 
@@ -72,6 +78,13 @@ class SeccionDAO implements ISeccion
 
     }
 
+    /**
+     * @param $seccionId
+     * @param bool $recursive
+     * @return array
+     * @throws Exception
+     * Selecciona un breadcrum completo en base a la seccion requerida
+     */
     public function selectCompleteSeccionBreadcrumb($seccionId, $recursive = false)
     {
         if(!$recursive)
