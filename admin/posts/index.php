@@ -66,7 +66,26 @@ try{
     else
     {
 
-       $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
+        $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
+
+
+
+        $s=array_map(function($value){
+
+            return $value->getId();
+        },$s);
+
+        $GLOBALS["postDAO"]->setFilters(
+            array(
+
+                "seccion"=>$s
+
+            )
+
+        );
+        $posts=    $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
+
+      //  $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
 
 
