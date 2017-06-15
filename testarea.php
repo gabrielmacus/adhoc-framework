@@ -18,3 +18,4 @@ $GLOBALS["postDAO"]->setFilters(
 
 );
 $post=$GLOBALS["postDAO"]->selectPosts();
+var_dump($post);
