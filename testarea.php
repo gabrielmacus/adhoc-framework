@@ -11,7 +11,7 @@ $p=new PostDAO();
 
 
 $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb(84);
-var_dump($s);
+echo json_encode($s);
 $GLOBALS["postDAO"]->setFilters(
     array(
 
