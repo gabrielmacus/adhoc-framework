@@ -17,7 +17,6 @@ $s=array_map(function($value){
    return $value->getId();
 },$s);
 
-var_dump($s);
 $GLOBALS["postDAO"]->setFilters(
     array(
 
@@ -31,4 +30,3 @@ $GLOBALS["postDAO"]->setFilters(
 
 );
 $post=$GLOBALS["postDAO"]->selectPosts();
-var_dump($post);
