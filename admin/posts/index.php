@@ -68,6 +68,7 @@ try{
 
         $seccionesFilter=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
 
+        var_dump($seccionesFilter);
         $GLOBALS["postDAO"]->setFilters(
             array(
 
