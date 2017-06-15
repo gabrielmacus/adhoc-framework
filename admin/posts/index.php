@@ -30,10 +30,10 @@ try{
     $GLOBALS["postDAO"]->setActualPage($p);
 
     $fileVersion="original";
-
-    /*
+/*
    $subsecciones =    $GLOBALS["seccionDAO"]->selectSeccionesByTipo($t);
-    $seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();*/
+*/
+    $seccionesTree=$GLOBALS["seccionDAO"]->selectSeccionesSubsecciones();
 
 
 
