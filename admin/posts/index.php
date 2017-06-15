@@ -66,28 +66,7 @@ try{
     else
     {
 
-        $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
-
-
-
-        $s=array_map(function($value){
-
-            return $value->getId();
-        },$s);
-
-        echo json_encode($s);
-
-        $GLOBALS["postDAO"]->setFilters(
-            array(
-
-                "seccion"=>$s
-
-            )
-
-        );
-        $posts=    $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
-
-      //  $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
+       $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
 
 
