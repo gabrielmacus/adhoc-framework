@@ -1157,7 +1157,7 @@ position: absolute
 
 .filters .search input
 {
-    width: 90%;
+    width: 80%;
     padding: 10px;
 }
 
@@ -1169,7 +1169,7 @@ position: absolute
     font-size: 21px;
     background-color: #2a2a2a;
     color: white;
-    width: 10%;
+    width: 20%;
     text-align: center;
 }
 
