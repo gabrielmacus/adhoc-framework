@@ -113,6 +113,15 @@ class PostDAO  extends Paginable implements IPost
         parent::setResults($r);
     }
 
+    public function setResultsCount($sql)
+    {
+        $sql="SELECT count(*) as 'total' FROM ({$sql}) as tabla";
+
+        $r=$this->dataSource->runQuery($sql)[0]['total'];
+
+        parent::setResults($r);
+    }
+
     /**
      * @return mixed
      */
@@ -704,11 +713,7 @@ ON posts_filter.post_id = p.post_id";
 
 
         $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
-
-        var_dump($sql);
-
-        exit();
-
+        
 
         $orderBy=$this->getOrderBy();
         if($orderBy)
@@ -717,7 +722,7 @@ ON posts_filter.post_id = p.post_id";
         }
 
         /** Pagino */
-        $this->setResults();
+        $this->setResultsCount($subQuery);
 
         $offset=$this->getOffset();
 
