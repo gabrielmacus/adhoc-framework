@@ -67,12 +67,12 @@ try{
     {
 
         $seccionesFilter=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
-        
+
         $GLOBALS["postDAO"]->setFilters(
             array(
 
                 "archivos"=>">=0",
-                "seccion"=>$s,
+                "seccion"=>$seccionesFilter,
                 "archivosExtensions"=>array("jpg"),
                 "anexos"=>">=0",
                 "anexosTypes"=>array(98),
