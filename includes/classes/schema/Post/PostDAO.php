@@ -29,6 +29,12 @@ class PostDAO  extends Paginable implements IPost
     private $insertSql;
     private $updateSql;
     protected $orderBy;
+    /**
+     * @var array
+     *
+     *
+     *
+     */
     protected $filters=array();
 
 
@@ -670,7 +676,7 @@ class PostDAO  extends Paginable implements IPost
 ON archivos_filter.objeto_id= p.post_id ";
         }
 
-/**  * */
+        /**  Filtro por anexos  z* */
 
         //Cantidad de anexos
 
@@ -713,7 +719,7 @@ ON posts_filter.post_id = p.post_id";
 
 
         $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
-        
+
 
         $orderBy=$this->getOrderBy();
         if($orderBy)
