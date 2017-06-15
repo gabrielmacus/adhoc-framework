@@ -1150,5 +1150,7 @@ position: absolute
 }
 .filters
 {
-    padding: 10px;
+   background-color: whitesmoke;
+    float: left;
+    width: 100%;
 }
