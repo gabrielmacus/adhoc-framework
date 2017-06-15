@@ -1,4 +1,4 @@
-<form  class="fila">
+<form  class="fila filters">
     <div class="form-block">
         <label>Buscar por texto</label>
         <input type="text" name="q">
