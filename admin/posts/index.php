@@ -68,7 +68,7 @@ try{
 
         $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
 
-        var_dump($s);
+        echo json_encode($s);
 
         $s=array_map(function($value){
 
