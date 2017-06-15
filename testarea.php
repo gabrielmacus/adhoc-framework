@@ -13,6 +13,7 @@ $GLOBALS["postDAO"]->setFilters(
     array(
 
         "archivos"=>">=0",
+        "archivosExtensions"=>array("jpg"),
         "anexos"=>">0",
         "anexosTypes"=>array(98)
     )
