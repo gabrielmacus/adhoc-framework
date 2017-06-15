@@ -1155,10 +1155,12 @@ position: absolute
     width: 100%;
 }
 
-.filters .search
+.filters .search input
 {
     width: 90%;
 }
+
+
 .filters  .search-action
 {
     float: left;
@@ -1166,6 +1168,8 @@ position: absolute
     font-size: 21px;
     background-color: #2a2a2a;
     color: white;
+    width: 10%;
+    text-align: center;
 }
 
 .filters .search-action:hover
