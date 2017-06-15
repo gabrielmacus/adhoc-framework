@@ -17,7 +17,7 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
     $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
-    $limit= 15;
+    $limit= 5;
     $padding=6;
 
     $t =$_GET["t"]; //tipo o seccion
