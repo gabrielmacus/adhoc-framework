@@ -18,10 +18,8 @@
             </div>
 
             <div class="form-block s12 m6 l4">
-                <label>Buscar por sección</label>
-                <select>
-                    <option>A</option>
-                </select>
+                <label>Con archivos</label>
+               <input type="checkbox">
             </div>
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
@@ -43,6 +41,7 @@
 
         $(".search-plus").toggle();
         $(".search-minus").toggle();
+        $(".advanced-filters").stop();
         $(".advanced-filters").slideToggle();
 
 
