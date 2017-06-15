@@ -705,7 +705,7 @@ ON archivos_filter.objeto_id= p.post_id ";
 
             $anexosFilterSql="LEFT JOIN 
 
-(SELECT pn.* FROM `posts_nexos` pn LEFT JOIN posts pt ON pt.post_id= pn.post_id {$anexosWhere}) as posts_filter
+(SELECT pn.* FROM `posts_nexos` pn LEFT JOIN posts pt ON pt.post_id= pn.post_anexo_id {$anexosWhere}) as posts_filter
 
 ON posts_filter.post_id = p.post_id";
 
