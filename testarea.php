@@ -12,7 +12,7 @@ $p=new PostDAO();
 $GLOBALS["postDAO"]->setFilters(
     array(
 
-        "archivos"=>">0",
+        "archivos"=>">=0",
         "anexos"=>">0"
     )
 
