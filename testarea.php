@@ -11,13 +11,18 @@ $p=new PostDAO();
 
 
 $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb(84);
-echo json_encode($s);
-echo "<br>";
+
+$s=array_map(function($value){
+
+   return $value["id"];
+},$s);
+
+
 $GLOBALS["postDAO"]->setFilters(
     array(
 
         "archivos"=>">=0",
-        "seccion"=>array(103),
+        "seccion"=>$s,
         "archivosExtensions"=>array("jpg"),
         "anexos"=>">=0",
         "anexosTypes"=>array(98),
