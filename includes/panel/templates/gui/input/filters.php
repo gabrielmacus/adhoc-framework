@@ -9,7 +9,7 @@
             <a class="search-plus animated"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
             <a class="search-minus animated" style="display: none"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
         </div>
-        <div class="advanced-filters" style="display: none">
+        <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
                 <select>
