@@ -17,32 +17,14 @@
                 </select>
             </div>
 
-            <style>
-                .checkboxes label {
-                    display: block;
-                    float: left;
-                    padding-right: 10px;
-                    white-space: nowrap;
-                }
-                .checkboxes input {
-                    vertical-align: middle;
-                }
-                .checkboxes label span {
-                    vertical-align: middle;
-                }
-            </style>
-
             <div class="form-block s12 m6 l4">
-                <label>Con archivos</label>
+                <label><input type="checkbox" /> Con archivos</label>
             </div>
             <div class="form-block s12 m6 l4">
-                <form>
-                    <div class="checkboxes">
-                        <label for="x"><input type="checkbox" id="x" /> <span>Label text x</span></label>
-                        <label for="y"><input type="checkbox" id="y" /> <span>Label text y</span></label>
-                        <label for="z"><input type="checkbox" id="z" /> <span>Label text z</span></label>
-                    </div>
-                </form>
+                <label>Buscar por sección</label>
+                <select>
+                    <option>A</option>
+                </select>
             </div>
 
 
