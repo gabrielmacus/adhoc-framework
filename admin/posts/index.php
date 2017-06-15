@@ -76,6 +76,7 @@ try{
             return $value->getId();
         },$s);
 
+        echo json_encode($s);
         $GLOBALS["postDAO"]->setFilters(
             array(
 
