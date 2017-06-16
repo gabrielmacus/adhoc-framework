@@ -14,8 +14,8 @@
 </script>
 
 <?php
-var_dump($pg);
-if(count($pg))
+
+if(count($pg)==1)
 
 {
     ?>
