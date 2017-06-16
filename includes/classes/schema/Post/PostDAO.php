@@ -732,7 +732,7 @@ AGAINST (
     '{$filters["q"]}'
 IN NATURAL LANGUAGE MODE
 )"
-                :" AND   WHERE MATCH (
+                :" AND  MATCH (
                 post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
             )
 AGAINST (
