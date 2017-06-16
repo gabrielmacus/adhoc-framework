@@ -15,11 +15,13 @@
                 <label>Buscar por sección</label>
                 <select>
                     <?php
-                    foreach ($secciones as $seccion)
+                    foreach ($secciones as $s)
                     {
                         ?>
 
-                     
+                        <option value="<?Php echo $s->getId();?>"><?Php echo $s->getNombre();?></option>
+
+
                     <?php} ?>
                 </select>
             </div>
