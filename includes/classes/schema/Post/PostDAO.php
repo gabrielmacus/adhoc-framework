@@ -753,12 +753,14 @@ IN NATURAL LANGUAGE MODE
         $sql = "SELECT * FROM ({$subQuery}) as tabla {$where}";
 
 
+
         $orderBy=$this->getOrderBy();
         if($orderBy)
         {
             $sql.="  ORDER BY {$orderBy}";
         }
-        
+
+        var_dump($sql);
 
         /** Pagino */
         $this->setResultsCount($subQuery);
