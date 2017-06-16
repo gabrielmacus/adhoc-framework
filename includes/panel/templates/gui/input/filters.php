@@ -6,7 +6,8 @@
         <div class="form-block s12 m6 l6 search" >
             <label>Buscar por texto</label>
             <input type="text" name="q">
-            <a  class="search-action" ><i class="fa fa-search" aria-hidden="true"></i>
+            <a  class="search-action" >
+                <i class="fa fa-search" aria-hidden="true"></i>
             </a>
             <a class="search-plus "><i class="fa fa-search-plus" aria-hidden="true"></i></a>
             <a class="search-minus " style="display: none"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
@@ -76,16 +77,23 @@
     );
 
     var q = <?php echo json_encode($_GET);?>;
+
+    $(document).on("click",".search-action",function () {
+       $(".search-form").submit();
+    });
     $(document).on("submit",".search-form",function (e) {
 
         e.preventDefault();
 
         var array=$(".search-form").serializeArray();
         var query="";
+
+
+
         $.each(array,function (k,v) {
 
             console.log(v.name);
-            if(v.name!="t")
+            if(v.name!="t" || $("[name='t']").val()!="")
             {
                 delete q[v.name];
             }
