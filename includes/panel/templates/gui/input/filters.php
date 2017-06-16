@@ -58,6 +58,7 @@
 
        var query= $(".search-form").serialize()+"&<?php echo http_build_query($_GET);?>";
 
+        console.log(query);
     });
 
     $(document).on("click",".search-plus,.search-minus",function () {
