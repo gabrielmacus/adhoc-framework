@@ -12,7 +12,38 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
-         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+
+
+
+        /***  cargo adjuntos **/
+
+         scope.archivos<?php echo $grupo?>=[];
+         if(!scope.post.archivos) {
+         scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
+         }
+
+         $.each( scope.post.archivos ,function (tipo,grupos) {
+
+         $.each(grupos,function (k,versiones) {
+
+         console.log(versiones);
+
+             scope.archivos<?php echo $grupo?>.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+
+         });
+
+
+         });
+
+        // scope.post.archivos = archivos;
+         scope.$apply();
+
+        /**  **/
+
+
+
+
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
@@ -189,7 +220,7 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <div   class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div   class="s12 m6 l4 padding " data-ng-repeat="a in          scope.archivos<?php echo $grupo?>"  data-ng-hide="a.delete">
 
         <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
