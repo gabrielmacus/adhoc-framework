@@ -16,7 +16,10 @@ class DataSource
     public function __construct($user, $pass, $host,$db)
     {
 
-            $this->conn = new PDO("mysql:host={$host};dbname={$db}",$user,$pass);
+            $this->conn = new PDO("mysql:host={$host};dbname={$db}",$user,$pass,
+
+                array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+            );
 
 
 
@@ -42,7 +45,8 @@ class DataSource
 
             foreach ($data as $row)
             {
-              
+                $row = utf8_encode($row);
+
             }
 
             if(is_callable($process))
