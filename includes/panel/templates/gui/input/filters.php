@@ -1,12 +1,5 @@
 
-<?php
-foreach ($secciones as $seccion)
-{
-    ?>
-    <option value="<?php echo $seccion->getId();?>"><?php echo $seccion->getNombre();?></option>
-    <?php
-}
-?>
+
 <form  class="fila padding" >
     
     <div class="filters">
@@ -22,7 +15,14 @@ foreach ($secciones as $seccion)
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
                 <select>
-
+                    <?php
+                    foreach ($secciones as $seccion)
+                    {
+                        ?>
+                        <option value="<?php echo $seccion->getId();?>"><?php echo $seccion->getNombre();?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
             </div>
 
