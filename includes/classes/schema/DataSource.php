@@ -98,9 +98,9 @@ class DataSource
         }
 
         //Transformo el contenido a utf8
-        foreach ($params as $p)
+        foreach ($params as $k=>$p)
         {
-            $p = utf8_encode($p);
+            $params[$k]=utf8_encode($p);
         }
 
 
