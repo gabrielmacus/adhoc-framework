@@ -1194,3 +1194,8 @@ position: absolute
     right: 0px;
     bottom: 0px;
 }
+.grid
+{
+    display: flex;
+    flex-wrap: wrap;
+}

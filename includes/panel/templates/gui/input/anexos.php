@@ -191,7 +191,7 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <ul  id="sortable<?php echo $grupo;?>" >
+    <ul class="grid"  id="sortable<?php echo $grupo;?>" >
         <li class="s12 m6 l4 padding " data-ng-repeat="a in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
