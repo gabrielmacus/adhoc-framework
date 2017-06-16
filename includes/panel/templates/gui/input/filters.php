@@ -1,6 +1,6 @@
 
 
-<form  class="fila padding" >
+<form method="get" action="?"  class="fila padding" >
     
     <div class="filters">
         <div class="form-block s12 m6 l6 search" >
