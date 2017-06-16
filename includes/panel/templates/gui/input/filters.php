@@ -14,7 +14,7 @@
         <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
-                <select name="sec">
+                <select name="s">
                     <option value="">-</option>
                     <?php
                     foreach ($secciones as $seccion)
