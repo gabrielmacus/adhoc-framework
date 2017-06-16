@@ -1188,3 +1188,8 @@ position: absolute
     right: 20px;
     bottom: 60px;
 }
+.fixed-button .btn
+{
+    position: absolute;
+    right: 0px;
+}
