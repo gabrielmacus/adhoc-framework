@@ -14,6 +14,7 @@ class Configuracion
     protected $comanyName;
     protected $htdocsFolder;
     protected $defaultImageSizes=array();
+    protected $dbEncoding;
     /**
      * Configuracion constructor.
      * @param $language
@@ -42,6 +43,24 @@ class Configuracion
         $this->comanyName=$companyName;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDbEncoding()
+    {
+        return $this->dbEncoding;
+    }
+
+    /**
+     * @param mixed $dbEncoding
+     */
+    public function setDbEncoding($dbEncoding)
+    {
+        $this->dbEncoding = $dbEncoding;
+    }
+
+    
+    
     /**
      * @return array
      */

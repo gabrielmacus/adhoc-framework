@@ -30,6 +30,17 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
+        if($GLOBALS["configuracion"]->getDbEncoding()!="utf-8")
+        {
+            //Transformo el contenido a utf8
+            foreach ($params as $k=>$p)
+            {
+                $params[$k]= utf8_decode($p);
+
+            }
+
+        }
+
 
         if($sql && $sql!="")
         {
@@ -97,13 +108,18 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
-        //Transformo el contenido a utf8
-  /*      foreach ($params as $k=>$p)
+
+        if($GLOBALS["configuracion"]->getDbEncoding()!="utf-8")
         {
-            $params[$k]= utf8_decode($p);
+            //Transformo el contenido a utf8
+            foreach ($params as $k=>$p)
+            {
+                $params[$k]= utf8_decode($p);
+
+            }
 
         }
-*/
+
 
         if($sql && $sql!="")
         {

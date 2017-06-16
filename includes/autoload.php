@@ -37,7 +37,7 @@ $configuracion->setDefaultImageSizes(
 
 );
 $configuracion->setHtdocsFolder("public_html");
-
+$configuracion->setDbEncoding("latin_1");
 
 $GLOBALS["configuracion"]  =$configuracion;
 
