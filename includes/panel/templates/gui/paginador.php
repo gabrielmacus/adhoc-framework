@@ -13,7 +13,7 @@
     );
 </script>
 
-<?php if(!empty($pg))
+<?php if(count($pg))
 
 {
     ?>
