@@ -754,7 +754,6 @@ IN NATURAL LANGUAGE MODE
             $sql.="  ORDER BY {$orderBy}";
         }
 
-        var_dump($sql);
 
         /** Pagino */
         $this->setResultsCount($subQuery);
