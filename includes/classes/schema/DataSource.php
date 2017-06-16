@@ -42,7 +42,7 @@ class DataSource
 
             foreach ($data as $row)
             {
-                $row = utf8_encode($row);
+              
             }
 
             if(is_callable($process))
