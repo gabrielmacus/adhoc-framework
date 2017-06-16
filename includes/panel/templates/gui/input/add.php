@@ -13,7 +13,7 @@
 
            var timeout= setTimeout(function () {
                $(".fixed-button").css("opacity","1");
-               clearTimeout(timeout):
+               clearTimeout(timeout);
             },2500)
 
         }
