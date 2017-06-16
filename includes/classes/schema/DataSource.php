@@ -104,8 +104,6 @@ class DataSource
         }
 
         
-
-
         if($sql && $sql!="")
         {
             $q = $this->conn->prepare($sql);

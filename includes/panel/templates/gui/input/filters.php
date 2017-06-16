@@ -82,6 +82,7 @@
         var query="";
         $.each(array,function (k,v) {
 
+            console.log(v.name);
             if(v.name!="t")
             {
                 delete q[v.name];
