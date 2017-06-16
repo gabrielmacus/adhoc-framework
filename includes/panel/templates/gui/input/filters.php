@@ -18,10 +18,8 @@
                     foreach ($secciones as $seccion)
                     {
                         ?>
-                        
-                        <option value="<?Php echo $seccion->getId();?>"><?Php echo $seccion->getNombre();?></option>
 
-
+                     
                     <?php} ?>
                 </select>
             </div>
