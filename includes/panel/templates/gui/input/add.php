@@ -6,10 +6,12 @@
 
 </div>
 <script>
-    $(document).scroll(
-        function () {
 
-            clearTimeout(timeout);
+    $(document).ready(function () {
+        $(document).scroll(
+            function () {
+
+                clearTimeout(timeout);
 
                 // do something
 
@@ -23,6 +25,7 @@
 
 
 
-        }
-    );
+            }
+        );
+    });
 </script>
