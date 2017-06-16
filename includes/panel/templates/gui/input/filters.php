@@ -17,9 +17,9 @@
                     <?php
                     foreach ($secciones as $seccion)
                     {
+                        var_dump($seccion);
                     ?>
-                    <option value="<?Php echo $seccion->getId();?>"><?Php echo $seccion->getNombre();?></option>
-                    <?php} ?>
+                     <?php} ?>
                 </select>
             </div>
 
