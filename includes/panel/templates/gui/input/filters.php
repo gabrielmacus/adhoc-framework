@@ -17,6 +17,9 @@
                 <select name="t">
                     <option value="">-</option>
                     <?php
+
+                    $seccionesBreadcrumb=array_reverse($seccionesBreadcrumb);
+
                     foreach ($seccionesBreadcrumb as $seccion)
                     {
                         ?>
