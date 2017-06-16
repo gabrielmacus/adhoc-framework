@@ -1,3 +1,6 @@
+<?php
+var_dump($secciones);
+?>
 <form  class="fila padding" >
     
     <div class="filters">
