@@ -192,7 +192,7 @@ if(!$shownText)
 
 
     <ul class="grid"  id="sortable<?php echo $grupo;?>" >
-        <li class="item" data-idx="{{k}}" class="s12 m6 l4 padding " data-ng-repeat="(k,a) in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
+        <li class="grid-item" data-idx="{{k}}" class="s12 m6 l4 padding " data-ng-repeat="(k,a) in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
@@ -225,7 +225,24 @@ if(!$shownText)
             revert: true,
             stop: function() {
 
-           
+                var anexos=angular.copy(scope.post.anexos);
+               var firstIdx= $("#sortable<?php echo $grupo;?> .grid-item").first().data("idx");
+
+                $("#sortable<?php echo $grupo;?> .grid-item").each(
+                    function (k,v) {
+
+                        var idx = $(this).data("idx");
+
+                        scope.post.anexos[firstIdx+k]=anexos[idx];
+
+
+                    }
+                );
+
+                scope.$apply();
+
+
+
                 
             }
         });
