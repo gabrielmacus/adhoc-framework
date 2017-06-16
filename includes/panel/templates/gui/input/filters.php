@@ -14,7 +14,7 @@
         <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
-                <select name="s">
+                <select name="sec">
                     <option value="">-</option>
                     <?php
                     foreach ($secciones as $seccion)
@@ -52,6 +52,17 @@
 </form>
 
 <script>
+
+    $(document).ready(
+        function () {
+
+            $("[name='q']").val("<?php echo $_GET["q"]?>");
+            $("[name='adj']").val("<?php echo $_GET["adj"]?>");
+            $("[name='anx']").val("<?php echo $_GET["anx"]?>");
+            $("[name='s']").val("<?php echo $_GET["s"]?>");
+        }
+
+    );
 
     $(document).on("click",".search-action",function () {
 
