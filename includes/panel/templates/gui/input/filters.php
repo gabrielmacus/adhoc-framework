@@ -67,7 +67,7 @@
             if( $_GET["anx"] ||  $_GET["adj"])
             {
                 ?>
-            $(".advanced-filters").slideToggle();
+            $(".search-plus").click();
             <?php
             }
             ?>
