@@ -14,7 +14,7 @@
         <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
-                <select>
+                <select name="seccion">
                     <option>-</option>
                     <?php
                     foreach ($secciones as $seccion)
@@ -29,7 +29,7 @@
 
             <div class="form-block s12 m6 l4">
                 <label>Con archivos adjuntos</label>
-                <select>
+                <select name="adjuntos">
                     <option>-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
@@ -37,7 +37,7 @@
             </div>
             <div class="form-block s12 m6 l4">
                 <label>Con anexos</label>
-                <select>
+                <select name="anexos">
                     <option>-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
