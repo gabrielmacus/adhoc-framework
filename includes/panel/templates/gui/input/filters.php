@@ -55,7 +55,8 @@
 
     $(document).on("click",".search-action",function () {
 
-        $(".search-form").submit();
+
+       var query= $(".search-form").serialize()+"&<?php echo http_build_query($_GET);?>";
 
     });
 
