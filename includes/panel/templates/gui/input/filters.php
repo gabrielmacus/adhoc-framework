@@ -1,4 +1,8 @@
-
+<?php
+foreach ($secciones as $seccion)
+{
+   var_dump($seccion);
+} ?>
 <form  class="fila padding" >
     
     <div class="filters">
@@ -14,12 +18,7 @@
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
                 <select>
-                    <?php
-                    foreach ($secciones as $seccion)
-                    {
-                        var_dump($seccion);
-                    ?>
-                     <?php} ?>
+
                 </select>
             </div>
 
