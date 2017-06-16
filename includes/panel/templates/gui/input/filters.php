@@ -76,7 +76,7 @@
 
            if(v.value!="")
            {
-               delete array[v.name];
+               delete q[v.name];
                query+=v.name+"="+v.value+"&";
            }
 
