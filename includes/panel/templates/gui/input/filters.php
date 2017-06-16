@@ -71,7 +71,7 @@
     $(document).on("click",".search-action",function () {
 
         var array=$(".search-form").serializeArray();
-        var query="?";
+        var query="";
         $.each(array,function (k,v) {
 
            if(v.value!="")
@@ -90,7 +90,7 @@
 
         console.log(q);
         console.log(url);
-       // location.href=url;
+        location.href=url;
     });
 
 
