@@ -722,17 +722,11 @@ ON posts_filter.post_id = p.post_id";
 
         //Filtro por palabras
 
+        $qFilter="";
         if($filters["q"])
         {
 
-            $where.= (empty($where))?" WHERE MATCH (
-                post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
-            )
-AGAINST (
-    '{$filters["q"]}'
-IN NATURAL LANGUAGE MODE
-)"
-                :" AND  MATCH (
+            $qFilter.=" WHERE MATCH (
                 post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
             )
 AGAINST (
