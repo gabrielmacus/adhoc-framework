@@ -1,12 +1,13 @@
 <?php
 $title="Noticias";
+$mainSeccionFilter=84;//La seccion principal de la lista de secciones que me muestra a filtrar
 include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
 ?>
 
 <div class="body">
 
     <?php
-    $mainSeccionFilter=84;
+  
     $title="Listado de noticias";
     foreach ($posts as $post)
     {
