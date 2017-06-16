@@ -16,7 +16,7 @@
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
                 <select name="t">
-                    <option value="">-</option>
+                    <option value="<?php echo $mainSeccionFilter;?>">-</option>
                     <?php
                     
                     $seccionesBreadcrumb=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($mainSeccionFilter);
