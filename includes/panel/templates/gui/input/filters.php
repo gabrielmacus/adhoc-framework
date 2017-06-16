@@ -82,9 +82,13 @@
         var query="";
         $.each(array,function (k,v) {
 
+            if(v.name!="t")
+            {
+                delete q[v.name];
+            }
+
            if(v.value!="")
            {
-               delete q[v.name];
                query+=v.name+"="+v.value+"&";
            }
 
