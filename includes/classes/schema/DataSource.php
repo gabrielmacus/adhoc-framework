@@ -97,6 +97,12 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
+        //Transformo el contenido a utf8
+        foreach ($params as $p)
+        {
+            $p = utf8_encode($p);
+        }
+
 
         if($sql && $sql!="")
         {
