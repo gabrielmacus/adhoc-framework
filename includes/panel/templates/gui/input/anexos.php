@@ -233,7 +233,7 @@ if(!$shownText)
 
                         var idx = $(this).data("idx");
 
-                        scope.post.anexos[firstIdx+k]=anexos[idx];
+                        scope.post.anexos[firstIdx+k]=anexos[idx+firstIdx];
 
 
                     }
