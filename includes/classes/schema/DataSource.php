@@ -39,6 +39,12 @@ class DataSource
 
             $data = $q->fetchAll(PDO::FETCH_ASSOC);
 
+
+            foreach ($data as $row)
+            {
+                $row = utf8_encode($row);
+            }
+
             if(is_callable($process))
             {
                 /*
