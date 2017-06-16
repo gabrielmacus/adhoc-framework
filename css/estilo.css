@@ -1183,3 +1183,8 @@ position: absolute
     background-color: transparent;
     color: #2a2a2a;
 }
+.fixed-button{
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+}
