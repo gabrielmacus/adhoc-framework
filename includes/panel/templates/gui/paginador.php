@@ -12,7 +12,7 @@
         }
     );
 </script>
-
+<h3>PAGI</h3>
 <?php if(count($pg))
 
 {
