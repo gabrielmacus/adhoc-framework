@@ -33,7 +33,7 @@
 
         /***  cargo adjuntos **/
 
-  /*      var archivos=[];
+        var archivos=[];
         if(!scope.post.archivos) {
             scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
         }
@@ -54,7 +54,7 @@
 
         scope.post.archivos = archivos;
         scope.$apply();
-*/
+
         /**  **/
 
       

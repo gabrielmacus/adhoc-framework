@@ -69,9 +69,6 @@ if(!$shownText)
             scope.post.anexos=[];
         }
 
-
-        scope.post.anexos<?php echo $grupo;?>=[];
-
         $.each(scope.anexos,function (clave,valor) {
 
             $.each(valor,function (k,v) {
@@ -108,7 +105,7 @@ if(!$shownText)
 
                     var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
 
-                    scope.post.anexos<?php echo $grupo;?>.push(anexo);
+                    scope.post.anexos.push(anexo);
 
                 }
 
@@ -130,6 +127,10 @@ if(!$shownText)
             if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
             {
 
+                if(!scope.post.anexos)
+                {
+                    scope.post.anexos=[];
+                }
 
                 $.each(e.data,function (k,v) {
 
@@ -137,7 +138,7 @@ if(!$shownText)
                     if(v.post_nexo_grupo=="<?php echo $grupo?>")
                     {
 
-                        scope.post.anexos<?php echo $grupo;?>.push(v);
+                        scope.post.anexos.push(v);
                     }
 
                 });
@@ -184,11 +185,11 @@ if(!$shownText)
 </style>
 
 
-<div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" data-ng-model="post.anexos<?php echo $grupo;?>"  >
+<div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" data-ng-model="post.anexos"  >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <div   class="s12 m6 l4 padding " data-ng-repeat="a in post.anexos<?php echo $grupo;?>"  data-ng-hide="a.delete">
+    <div   class="s12 m6 l4 padding " data-ng-repeat="a in          scope.archivos<?php echo $grupo?>"  data-ng-hide="a.delete">
 
         <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
