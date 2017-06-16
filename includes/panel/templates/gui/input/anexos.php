@@ -225,24 +225,7 @@ if(!$shownText)
             revert: true,
             stop: function() {
 
-                var anexos=angular.copy(scope.post.anexos);
-               var firstIdx= $("#sortable<?php echo $grupo;?> .item").first().data("idx");
-
-                $("#sortable<?php echo $grupo;?> .item").each(
-                    function (k,v) {
-
-                        var idx = $(this).data("idx");
-
-                        scope.post.anexos[firstIdx+k]=anexos[idx];
-
-
-                    }
-                );
-
-                scope.$apply();
-                
-                
-                
+           
                 
             }
         });
