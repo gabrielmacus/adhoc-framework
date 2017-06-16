@@ -63,6 +63,14 @@
             $("[name='adj']").val("<?php echo $_GET["adj"]?>");
             $("[name='anx']").val("<?php echo $_GET["anx"]?>");
             $("[name='t']").val("<?php echo $_GET["t"]?>");
+            <?php
+            if( $_GET["anx"] ||  $_GET["adj"])
+            {
+                ?>
+            $(".advanced-filters").slideToggle();
+            <?php
+            }
+            ?>
         }
 
     );
@@ -88,8 +96,6 @@
 
         var url = location.origin+location.pathname+"?"+query;
 
-        console.log(q);
-        console.log(url);
         location.href=url;
     });
 
