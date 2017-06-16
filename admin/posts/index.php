@@ -82,6 +82,7 @@ try{
         }
         else
         {
+            $s=array();
             $secciones2Breadcrumb=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($_GET["t2"]);
 
             $s=array_map(function($value){
