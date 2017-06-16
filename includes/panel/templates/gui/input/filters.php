@@ -14,8 +14,8 @@
         <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
-                <select name="seccion">
-                    <option>-</option>
+                <select name="s">
+                    <option value="">-</option>
                     <?php
                     foreach ($secciones as $seccion)
                     {
@@ -29,16 +29,16 @@
 
             <div class="form-block s12 m6 l4">
                 <label>Con archivos adjuntos</label>
-                <select name="adjuntos">
-                    <option>-</option>
+                <select name="adj">
+                    <option value="">-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
                 </select>
             </div>
             <div class="form-block s12 m6 l4">
                 <label>Con anexos</label>
-                <select name="anexos">
-                    <option>-</option>
+                <select name="anx">
+                    <option value="">-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
                 </select>
@@ -57,8 +57,9 @@
 
 
        var query= $(".search-form").serialize()+"&<?php echo http_build_query($_GET);?>";
+        var url = location.origin+location.pathname+"?"+query;
 
-        console.log(query);
+        console.log(url);
     });
 
     $(document).on("click",".search-plus,.search-minus",function () {
