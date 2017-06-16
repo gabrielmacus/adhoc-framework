@@ -71,30 +71,16 @@ try{
 
         $seccionesBreadcrumb=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
 
-        if(!$_GET["t2"])
-        {
+
+        
             $s=array_map(function($value){
 
                 return $value->getId();
             },$seccionesBreadcrumb);
 
             $s[]=$t;
-        }
-        else
-        {
-            $s=array();
-            $secciones2Breadcrumb=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($_GET["t2"]);
-
-            $s=array_map(function($value){
-
-                return $value->getId();
-            },$secciones2Breadcrumb);
-
-            $s[]=$t;
-        }
 
 
-        var_dump($s);
 
 
 
