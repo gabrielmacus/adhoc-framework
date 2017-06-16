@@ -191,9 +191,9 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <div   class="s12 m6 l4 padding " data-ng-repeat="a in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
+    <ul  id="#sortable<?php echo $grupo;?>" class="s12 m6 l4 padding " data-ng-repeat="a in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
-        <div  class="adjunto-wrapper" style="position: relative">
+        <li  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
@@ -210,9 +210,9 @@ if(!$shownText)
     text-overflow: ellipsis;
     line-height: 25px;" data-ng-bind-html="getText<?php echo $grupo?>(a)"></span>
             </a>
-        </div>
+        </li>
 
-    </div>
+    </ul>
     <div class="fila" style="margin-top: 15px">
         <a data-lity class="btn" style="color: white!important;" href='/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>&shownText=<?php echo json_encode($shownText)?>'><?php echo $textBtn;?></a>
 
@@ -221,26 +221,11 @@ if(!$shownText)
 </div>
 <script>
     $( function() {
-        $( "#sortable" ).sortable({
+        $( "#sortable<?php echo $grupo;?>" ).sortable({
             revert: true
         });
-        $( "#draggable" ).draggable({
-            connectToSortable: "#sortable",
-            helper: "clone",
-            revert: "invalid"
-        });
+    
         $( "ul, li" ).disableSelection();
     } );
 </script>
 
-<ul>
-    <li id="draggable" class="ui-state-highlight">Drag me down</li>
-</ul>
-
-<ul id="sortable">
-    <li class="ui-state-default">Item 1</li>
-    <li class="ui-state-default">Item 2</li>
-    <li class="ui-state-default">Item 3</li>
-    <li class="ui-state-default">Item 4</li>
-    <li class="ui-state-default">Item 5</li>
-</ul>
