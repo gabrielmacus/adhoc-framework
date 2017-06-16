@@ -15,7 +15,7 @@
 
 <?php
 
-if(count($pg)==1)
+if(count($pg)>1)
 
 {
     ?>
