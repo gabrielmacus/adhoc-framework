@@ -78,12 +78,36 @@ try{
 
         $s[]=$t;
 
+        $filters=array(
+
+            "seccion"=>$s,
+
+
+        );
+
+        switch ($_GET["anx"])
+        {
+            case "0":
+                $filters["anexos"] ="=0";
+                break;
+            case "1":
+                $filters["anexos"] =">0";
+                break;
+        }
+
+        switch ($_GET["adj"])
+        {
+            case "0":
+                $filters["archivos"] ="=0";
+                break;
+            case "1":
+                $filters["archivos"] =">0";
+                break;
+        }
+
+
         $GLOBALS["postDAO"]->setFilters(
-            array(
-
-                "seccion"=>$s
-
-            )
+            $filters
 
         );
         $posts=    $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
