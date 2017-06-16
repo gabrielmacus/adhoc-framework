@@ -198,9 +198,6 @@ if(!$shownText)
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
-
-
-
                 <!--
                 <figure style="height: 150px;width: 100%">
                     <img data-ng-src="{{a.url}}" style="height: 100%;width: 100%;object-fit: cover">
@@ -225,7 +222,25 @@ if(!$shownText)
 <script>
     $( function() {
         $( "#sortable<?php echo $grupo;?>" ).sortable({
-            revert: true
+            revert: true,
+            stop: function() {
+             
+                var i=0;
+                
+                $("#sortable<?php echo $grupo;?>").each(
+                    function (k,v) {
+
+                        console.log(k);
+
+                        console.log(v);
+
+                    }
+                );
+                
+                
+                
+                
+            }
         });
 
         $( "ul, li" ).disableSelection();
