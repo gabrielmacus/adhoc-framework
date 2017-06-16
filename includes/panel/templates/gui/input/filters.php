@@ -67,14 +67,32 @@
 
     );
 
+    var q = <?php echo json_encode($_GET);?>;
     $(document).on("click",".search-action",function () {
 
+        var array=$(".search-form").serializeArray();
+        var query="?";
+        $.each(array,function (k,v) {
 
-       var query= "<?php echo http_build_query($_GET);?>&"+$(".search-form").serialize();
+           if(v.value!="")
+           {
+               delete array[v.name];
+               query+=v.name+"="+v.value+"&";
+           }
+
+        });
+
+        $.each(q,function (k,v) {
+            query+=k+"="+v+"&";
+        });
+
         var url = location.origin+location.pathname+"?"+query;
 
         location.href=url;
     });
+
+
+
 
     $(document).on("click",".search-plus,.search-minus",function () {
 
