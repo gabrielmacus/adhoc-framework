@@ -76,7 +76,9 @@
     );
 
     var q = <?php echo json_encode($_GET);?>;
-    $(document).on("click",".search-action",function () {
+    $(document).on("submit",".search-form",function (e) {
+
+        e.preventDefault();
 
         var array=$(".search-form").serializeArray();
         var query="";
@@ -101,7 +103,7 @@
 
         var url = location.origin+location.pathname+"?"+query;
 
-        return false;
+
         location.href=url;
     });
 
