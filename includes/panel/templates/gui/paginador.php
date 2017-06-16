@@ -12,8 +12,10 @@
         }
     );
 </script>
-<h3>PAGI</h3>
-<?php if(count($pg))
+
+<?php
+var_dump($pg);
+if(count($pg))
 
 {
     ?>
