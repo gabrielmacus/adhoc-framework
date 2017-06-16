@@ -1,13 +1,13 @@
 
 
-<form method="get" action="?"  class="fila padding" >
+<form  method="get" action="?"  class="fila padding search-form" >
     
     <div class="filters">
         <div class="form-block s12 m6 l6 search" >
             <label>Buscar por texto</label>
             <input type="text" name="q">
-            <button type="submit" class="search-action " ><i class="fa fa-search" aria-hidden="true"></i>
-            </button>
+            <a  class="search-action" ><i class="fa fa-search" aria-hidden="true"></i>
+            </a>
             <a class="search-plus "><i class="fa fa-search-plus" aria-hidden="true"></i></a>
             <a class="search-minus " style="display: none"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
         </div>
@@ -52,6 +52,13 @@
 </form>
 
 <script>
+
+    $(document).on("click",".search-action",function () {
+
+        $(".search-form").submit();
+
+    });
+
     $(document).on("click",".search-plus,.search-minus",function () {
 
 
