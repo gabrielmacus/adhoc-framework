@@ -56,7 +56,12 @@ class DataSource
                 while ($row=$q->fetch(PDO::FETCH_ASSOC))
                 {
 
-                    
+                    if($GLOBALS["configuracion"]->getDbEncoding()!="utf-8")
+                    {
+                        //Transformo el contenido a utf8
+                           $row= utf8_encode($row);
+
+                    }
                     $process($row);
                 }
 
@@ -67,16 +72,7 @@ class DataSource
                 $data = $q->fetchAll(PDO::FETCH_ASSOC);
 
 
-                if($GLOBALS["configuracion"]->getDbEncoding()!="utf-8")
-                {
-                    //Transformo el contenido a utf8
-                    foreach ($data as $k=>$p)
-                    {
-                        $data[$k]= utf8_encode($p);
-
-                    }
-
-                }
+                
             }
 
 
