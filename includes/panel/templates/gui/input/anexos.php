@@ -12,6 +12,7 @@ if(!$shownText)
 <script>
     angular.element(function () {
 
+        console.log("DATAAA");
 
 
 
