@@ -98,12 +98,12 @@ class DataSource
         }
 
         //Transformo el contenido a utf8
-        foreach ($params as $k=>$p)
+  /*      foreach ($params as $k=>$p)
         {
             $params[$k]= utf8_decode($p);
 
         }
-
+*/
 
         if($sql && $sql!="")
         {
