@@ -21,7 +21,7 @@
                  timeout= setTimeout(function () {
                     $(".fixed-button").css("opacity","1");
                     clearTimeout(timeout);
-                },1500)
+                },1000)
 
 
 
