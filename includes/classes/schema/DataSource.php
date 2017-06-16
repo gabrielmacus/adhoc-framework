@@ -41,7 +41,7 @@ class DataSource
             $qRes=  $q->execute($params);
 
             $data = $q->fetchAll(PDO::FETCH_ASSOC);
-            
+
             if(is_callable($process))
             {
                 /*
@@ -103,17 +103,7 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
-
-        if($GLOBALS["configuracion"]->getDbEncoding()!="utf-8")
-        {
-            //Transformo el contenido a utf8
-            foreach ($params as $k=>$p)
-            {
-                $params[$k]= utf8_decode($p);
-
-            }
-
-        }
+        
 
 
         if($sql && $sql!="")
