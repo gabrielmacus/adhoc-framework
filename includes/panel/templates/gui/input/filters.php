@@ -15,6 +15,7 @@
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
                 <select>
+                    <option>-</option>
                     <?php
                     foreach ($secciones as $seccion)
                     {
@@ -27,12 +28,17 @@
             </div>
 
             <div class="form-block s12 m6 l4">
-                <label><input type="checkbox" /> Con archivos</label>
+                <label>Con archivos adjuntos</label>
+                <select>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                </select>
             </div>
             <div class="form-block s12 m6 l4">
-                <label>Buscar por sección</label>
+                <label>Con anexos</label>
                 <select>
-                    <option>A</option>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
                 </select>
             </div>
 
