@@ -6,6 +6,7 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
 <div class="body">
 
     <?php
+    $mainSeccionFilter=84;
     $title="Listado de noticias";
     foreach ($posts as $post)
     {
