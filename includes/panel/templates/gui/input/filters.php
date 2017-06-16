@@ -15,7 +15,7 @@
         <div class="advanced-filters fila" style="display: none">
             <div class="form-block s12 m6 l4">
                 <label>Buscar por sección</label>
-                <select name="t">
+                <select name="t2">
                     <option value="">-</option>
                     <?php
 
@@ -92,12 +92,13 @@
 
         $.each(array,function (k,v) {
 
+            /*
             console.log(v.name);
             if(v.name!="t" || $("[name='t']").val()!="")
             {
-                delete q[v.name];
-            }
-
+             
+            }*/
+            delete q[v.name];
            if(v.value!="")
            {
                query+=v.name+"="+v.value+"&";
