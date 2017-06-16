@@ -105,6 +105,10 @@ try{
                 break;
         }
 
+        if(!empty(trim($_GET["q"])))
+        {
+            $filters["q"]=$_GET["q"];
+        }
 
         $GLOBALS["postDAO"]->setFilters(
             $filters

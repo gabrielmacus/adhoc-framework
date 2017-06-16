@@ -9,6 +9,7 @@
 
     $(document).ready(function () {
         var timeout;
+        
         $(document).scroll(
             function () {
 

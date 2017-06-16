@@ -719,7 +719,29 @@ ON posts_filter.post_id = p.post_id";
         $where.= (empty($where))?" WHERE post_seccion IN ({$filters["seccion"]})":" AND  post_seccion IN ({$filters["seccion"]})";
 
         }
-      
+
+        //Filtro por palabras
+
+        if($filters["q"])
+        {
+
+            $where.= (empty($where))?" WHERE MATCH (
+                post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
+            )
+AGAINST (
+    '{$filters["q"]}'
+IN NATURAL LANGUAGE MODE
+)"
+                :" AND   WHERE MATCH (
+                post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
+            )
+AGAINST (
+    '{$filters["q"]}'
+IN NATURAL LANGUAGE MODE
+)";
+
+
+        }
 
         /*** **/
 
