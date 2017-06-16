@@ -55,7 +55,7 @@ class DataSource
 
                 while ($row=$q->fetch(PDO::FETCH_ASSOC))
                 {
-                    var_dump($row);
+               
                     $process($row);
                 }
 
