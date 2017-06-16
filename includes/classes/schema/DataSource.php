@@ -60,8 +60,8 @@ class DataSource
             }
             else
             {
-
                 $data = $q->fetchAll(PDO::FETCH_ASSOC);
+                var_dump($data);
             }
 
 
