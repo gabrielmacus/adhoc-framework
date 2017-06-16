@@ -88,7 +88,9 @@
 
         var url = location.origin+location.pathname+"?"+query;
 
-        location.href=url;
+        console.log(q);
+        console.log(url);
+       // location.href=url;
     });
 
 
