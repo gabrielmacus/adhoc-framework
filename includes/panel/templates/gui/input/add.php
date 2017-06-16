@@ -8,6 +8,7 @@
 <script>
 
     $(document).ready(function () {
+        var timeout;
         $(document).scroll(
             function () {
 
@@ -17,7 +18,7 @@
 
                 $(".fixed-button").css("opacity","0.15");
 
-                var timeout= setTimeout(function () {
+                 timeout= setTimeout(function () {
                     $(".fixed-button").css("opacity","1");
                     clearTimeout(timeout);
                 },2500)
