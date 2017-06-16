@@ -101,6 +101,7 @@
 
         var url = location.origin+location.pathname+"?"+query;
 
+        return false;
         location.href=url;
     });
 
