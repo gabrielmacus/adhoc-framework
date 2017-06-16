@@ -1,7 +1,7 @@
 <?php
 foreach ($secciones as $seccion)
 {
-   var_dump($seccion);
+   var_dump($seccion->getId());
 } ?>
 <form  class="fila padding" >
     
