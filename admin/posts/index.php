@@ -93,7 +93,7 @@ try{
         }
 
 
-
+        var_dump($s);
 
 
 
