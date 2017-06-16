@@ -30,6 +30,7 @@
             <div class="form-block s12 m6 l4">
                 <label>Con archivos adjuntos</label>
                 <select>
+                    <option>-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
                 </select>
@@ -37,6 +38,7 @@
             <div class="form-block s12 m6 l4">
                 <label>Con anexos</label>
                 <select>
+                    <option>-</option>
                     <option value="1">Si</option>
                     <option value="0">No</option>
                 </select>
