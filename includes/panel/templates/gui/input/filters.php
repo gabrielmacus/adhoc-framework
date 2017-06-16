@@ -17,7 +17,7 @@
                 <select name="t">
                     <option value="">-</option>
                     <?php
-                    foreach ($secciones as $seccion)
+                    foreach ($seccionesBreadcrumb as $seccion)
                     {
                         ?>
                         <option value="<?php echo $seccion->getId();?>"><?php echo $seccion->getNombre();?></option>

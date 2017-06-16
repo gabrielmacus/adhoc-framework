@@ -69,12 +69,12 @@ try{
     else
     {
 
-        $s=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
+        $seccionesBreadcrumb=$GLOBALS["seccionDAO"]->selectCompleteSeccionBreadcrumb($t);
 
         $s=array_map(function($value){
 
             return $value->getId();
-        },$s);
+        },$seccionesBreadcrumb);
 
         $s[]=$t;
 
