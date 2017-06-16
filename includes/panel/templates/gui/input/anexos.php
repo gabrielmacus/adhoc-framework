@@ -187,7 +187,7 @@ if(!$shownText)
 </style>
 
 
-<div class="fila adjuntos" ui-sortable="sortableOptions<?php echo $grupo;?>" data-ng-model="post.anexos"  >
+<div class="fila adjuntos"   >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
