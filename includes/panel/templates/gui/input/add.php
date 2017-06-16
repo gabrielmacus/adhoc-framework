@@ -1,6 +1,6 @@
 
 
-<div class="fila fixed-button" style="margin-top: 15px">
+<div class=" fixed-button" >
 
     <a class="btn" href="<?php echo $href;?>" style="color: white!important;"><?php echo $title;?></a>
 
