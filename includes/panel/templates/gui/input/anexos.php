@@ -18,6 +18,23 @@ if(!$shownText)
         /***  cargo adjuntos **/
 
          scope.archivos<?php echo $grupo?>=[];
+        if(!scope.post)
+        {
+            <?php
+            if($post)
+            {
+                ?>
+            scope.post=<?php echo json_encode($post);?>;
+            <?php
+            }
+            else
+            {
+                ?>
+            scope.post=[];
+            <?php
+            }
+            ?>
+        }
          if(!scope.post.archivos) {
          scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
          }
