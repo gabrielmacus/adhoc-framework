@@ -100,7 +100,7 @@ class DataSource
         //Transformo el contenido a utf8
         foreach ($params as $k=>$p)
         {
-            $params[$k]= iconv(mb_detect_encoding($p, mb_detect_order(), true), "UTF-8", $p);
+            $params[$k]= utf8_decode($p);
 
         }
 
