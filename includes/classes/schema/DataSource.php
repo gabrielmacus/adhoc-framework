@@ -37,8 +37,7 @@ class DataSource
             $q = $this->conn->prepare($sql);
             $qRes=  $q->execute($params);
 
-            $data=array();
-
+            $data = $q->fetchAll(PDO::FETCH_ASSOC);
 
             if(is_callable($process))
             {
@@ -52,19 +51,20 @@ class DataSource
 
 
 
-
-                while ($row=$q->fetch(PDO::FETCH_ASSOC))
+                foreach ($data as $row)
                 {
-               
                     $process($row);
                 }
 
-            }
-            else
-            {
-                $data = $q->fetchAll(PDO::FETCH_ASSOC);
+                /*
+                while ($row=$q->fetch(PDO::FETCH_ASSOC))
+                {
+
+                    $process($row);
+                }*/
 
             }
+
 
 
 
