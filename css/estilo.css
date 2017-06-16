@@ -518,6 +518,7 @@ body
     padding: 20px;
     position: relative;
     float: left;
+    width: 100%;
 }
 .list
 {
