@@ -740,7 +740,7 @@ IN NATURAL LANGUAGE MODE
         /*** **/
 
 
-        $subQuery="SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} GROUP BY p.post_id";
+        $subQuery="SELECT {$fields} FROM {$this->tableName} p {$archivosFilterSql} {$anexosFilterSql} {$qFilter} GROUP BY p.post_id";
 
    
         
