@@ -6,8 +6,8 @@
         <div class="form-block s12 m6 l6 search" >
             <label>Buscar por texto</label>
             <input type="text" name="q">
-            <a class="search-action " ><i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            <input type="submit" class="search-action " ><i class="fa fa-search" aria-hidden="true"></i>
+            </input>
             <a class="search-plus "><i class="fa fa-search-plus" aria-hidden="true"></i></a>
             <a class="search-minus " style="display: none"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
         </div>
