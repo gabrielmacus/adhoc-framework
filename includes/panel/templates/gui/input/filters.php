@@ -70,10 +70,10 @@
     $(document).on("click",".search-action",function () {
 
 
-       var query= $(".search-form").serialize()+"&<?php echo http_build_query($_GET);?>";
+       var query= "<?php echo http_build_query($_GET);?>&"+$(".search-form").serialize();
         var url = location.origin+location.pathname+"?"+query;
 
-        console.log(url);
+        location.href=url;
     });
 
     $(document).on("click",".search-plus,.search-minus",function () {
