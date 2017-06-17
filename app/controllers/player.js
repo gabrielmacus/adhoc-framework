@@ -2,7 +2,11 @@
 
             console.log($rootScope.song);
 
-        $rootScope.youtubePlayerloadVideoById($rootScope.song.href);
+            if($rootScope.song)
+            {
+
+                $rootScope.youtubePlayerloadVideoById($rootScope.song.href);
+            }
         
     });
         
