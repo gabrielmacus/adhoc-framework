@@ -73,4 +73,3 @@ function getVideoDirectLink($config,$my_id)
 }
 
 
-$directlink= getVideoDirectLink($config,$videoId);
