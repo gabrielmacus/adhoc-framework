@@ -15,12 +15,8 @@ function youtube_parser(url){
             videoId: videoId
         });
 
-            console.log($rootScope.song);
 
-            if($rootScope.song)
-            {
-
-            }
+        youtubePlayer.playVideo();
         
     });
         
