@@ -37,3 +37,7 @@ require_once "schema/Facebook/autoload.php";
 /** JWT **/
 require_once "JWT/JWT.php";
 /**  ** */
+
+/** HTML parser */
+require_once "simple_html_dom.php";
+/** **/
