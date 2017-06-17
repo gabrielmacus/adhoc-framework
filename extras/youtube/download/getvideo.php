@@ -62,9 +62,7 @@ $stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
 
 /* create an array of available download formats */
 $avail_formats = $stream_map->getStreams();
-echo json_encode($avail_formats);
-if ($my_type == 'Download')
-{
+
 
 
 	/* now that we have the array, print the options */
@@ -74,4 +72,4 @@ if ($my_type == 'Download')
         var_dump($directlink);
 	}
 
-}
+
