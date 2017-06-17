@@ -14,7 +14,11 @@ $html = file_get_html('https://www.youtube.com/results?search_query=cerati');
 // Find all images
 foreach($html->find('.yt-lockup-title') as $element)
 {
-    echo $element->outertext  . '<br>';
+    $a =$element->find('a');
+    foreach ($a as $item)
+    {
+        var_dump($item);
+    }
 }
 
 
