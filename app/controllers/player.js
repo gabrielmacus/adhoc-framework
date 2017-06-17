@@ -14,7 +14,6 @@
             if($rootScope.song)
             {
 
-      youtubePlayer.loadVideoById($rootScope.song.href);
             }
         
     });
