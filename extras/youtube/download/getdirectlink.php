@@ -37,7 +37,7 @@ function getVideoDirectLink($config,$my_id)
     /* First get the video info page for this video id */
 // $my_video_info = 'http://www.youtube.com/get_video_info?&video_id='. $my_id;
 // thanks to amit kumar @ bloggertale.com for sharing the fix
-    $video_info_url = 'http://www.youtube.com/get_video_info?&video_id=' . $my_id . '&asv=3&el=detailpage&hl=en_US';
+    $video_info_url = 'http://www.youtube.com/get_video_info?&video_id=' . $my_id . '&asv=3&el=detailpage&hl=es_ES';
     $video_info_string = \YoutubeDownloader\YoutubeDownloader::curlGet($video_info_url, $config);
 
     /* TODO: Check return from curl for status code */
