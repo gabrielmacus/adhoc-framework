@@ -8,7 +8,7 @@
 include_once "../../includes/autoload.php";
 
 $Video = new YouTube();
-$result = $Video->Search('phpclasses');
+$result = $Video->Search('cerati');
 
 echo "<table width=\"300px\">
 <th>VideoID</th>
