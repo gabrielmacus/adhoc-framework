@@ -33,3 +33,5 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="https://code.angularjs.org/1.6.3/angular-sanitize.js"></script>
 
+
+<script src="<?php  echo $configuracion->getJsCdn();?>/js/html5-sortable.js"></script>
