@@ -2,7 +2,7 @@
 
     angularApp.controller('playerCtrl', function( $rootScope,$scope,$timeout) {
 
-        youtubePlayer = new YT.Player('youtubePlayer', {
+        var youtubePlayer = new YT.Player('youtubePlayer', {
 
             height: '360',
             width: '640',
