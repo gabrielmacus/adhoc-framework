@@ -28,25 +28,12 @@ angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location
         
         
             $rootScope.playSong=function(song){
-            
-                      $.ajax(
-       {
-        "method":"get",
-        "url":"http://admin.mapucheonline.com/extras/youtube/download/getdirectlink.php",
-        "data":song,   
-        "dataType":"json",
-        "success":function(e){
+                $rootScope.song=song;
+                $location.path('/player');
 
-            console.log(e);
-            $rootScope.song={url:e};
-            $location.path('/player');
-            
-                        $rootScope.$apply();
-        
-        },
-        "error":error   
-       });
-        }
+                $rootScope.$apply();
+
+            }
         
     });
         
