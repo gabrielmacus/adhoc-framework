@@ -11,7 +11,7 @@ require 'class.YouTubeBean.php';
 require 'class.YouTubeVideoDownloader.php';
 
 $bean = new YouTubeBean();
-$bean->setVideoId("xACG4MClvLo");
+$bean->setVideoId("uLIs0j2WnlM");
 $bean->setVideoFormat("43");
 $bean->setMethod("curl");
 $bean->setDestination("./");
