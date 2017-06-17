@@ -68,7 +68,7 @@ foreach ($avail_formats as $format)
 {
     if($directlink =$format["url"])
     {
-        break();
+        break;
     }
 }
 
