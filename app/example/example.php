@@ -30,7 +30,9 @@ try {
 		
 		$downloader = new YouTubeVideoDownloader();
 		$downloader->startDownload($bean);
-		
+
+		var_dump($bean);
+
 	endfor;
 } catch (YouTubeInvalidVideoIdException $e) {
 	die("<strong>YouTubeInvalidVideoIdException</strong> : ".$e->getMessage());
