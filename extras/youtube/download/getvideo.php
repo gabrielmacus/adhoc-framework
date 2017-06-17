@@ -8,7 +8,7 @@
 
 include_once('common.php');
 
-function getVideoDirectLink()
+function getVideoDirectLink($config)
 {
     $my_id = $_GET['videoid'];
 
@@ -64,10 +64,6 @@ function getVideoDirectLink()
     $avail_formats = $stream_map->getStreams();
 
 
-    if(!count($avail_formats))
-    {
-        getVideoDirectLink();
-    }
 
     foreach ($avail_formats as $format)
     {
@@ -82,4 +78,4 @@ function getVideoDirectLink()
 
 }
 
-echo getVideoDirectLink();
+echo getVideoDirectLink($config);
