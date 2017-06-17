@@ -29,20 +29,7 @@
 
 
 
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
 
-        function onYouTubeIframeAPIReady() {
-            $rootScope.youtubePlayer = new YT.Player('player', {
-
-            });
-        }
-
-
-        function error(e)
-        {
-            alert(JSON.stringify(e));
-        }
 
         angularApp.config(function($routeProvider) {
             $routeProvider

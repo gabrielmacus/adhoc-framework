@@ -3,6 +3,16 @@ var scope;
 
 angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location) {
 
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+
+    function onYouTubeIframeAPIReady() {
+        $rootScope.youtubePlayer = new YT.Player('player', {
+
+        });
+    }
+
+
     scope=$rootScope;
            $rootScope.playlist=[];
          $rootScope.search=function(){
