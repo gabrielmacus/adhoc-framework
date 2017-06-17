@@ -11,14 +11,14 @@ include_once('common.php');
 function getVideoDirectLink($config,$my_id)
 {
 
-    var_dump($my_id);
-
     if( \YoutubeDownloader\YoutubeDownloader::isMobileUrl($my_id) )
     {
         $my_id = \YoutubeDownloader\YoutubeDownloader::treatMobileUrl($my_id);
     }
 
     $my_id = \YoutubeDownloader\YoutubeDownloader::validateVideoId($my_id);
+
+    var_dump($my_id);
 
 
 
