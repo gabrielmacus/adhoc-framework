@@ -226,7 +226,7 @@ if(!$shownText)
             stop: function() {
 
                 var anexos=angular.copy(scope.post.anexos);
-                scope.post.anexos=[];
+
                var firstIdx= $("#sortable<?php echo $grupo;?> .item").first().data("idx");
 
                 $("#sortable<?php echo $grupo;?> .item").each(
@@ -236,7 +236,7 @@ if(!$shownText)
 
                         console.log(idx+" "+firstIdx+" = "+(idx+firstIdx));
 
-                        scope.post.anexos.push(anexos[idx]);
+                        scope.post.anexos[k-1]=anexos[idx];
 
 
                     }
