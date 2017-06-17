@@ -11,6 +11,7 @@ include_once('common.php');
 function getVideoDirectLink($config,$my_id)
 {
 
+    var_dump($my_id);
 
     if( \YoutubeDownloader\YoutubeDownloader::isMobileUrl($my_id) )
     {
@@ -75,5 +76,4 @@ function getVideoDirectLink($config,$my_id)
 }
 
 
-var_dump($videoId);
 $directlink= getVideoDirectLink($config,$videoId);
