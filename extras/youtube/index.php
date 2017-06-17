@@ -17,7 +17,7 @@ foreach($html->find('.yt-lockup-title') as $element)
     $a =$element->find('a');
     foreach ($a as $item)
     {
-        var_dump($item);
+        var_dump($item->href);
     }
 }
 
