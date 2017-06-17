@@ -38,7 +38,6 @@ angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location
         "success":function(e){
 
             console.log(e);
-return false;
             $rootScope.song={url:e};
             $location.path('/player');
             
