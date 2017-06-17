@@ -12,13 +12,12 @@ include_once "../../includes/autoload.php";
 $html = file_get_html('https://www.youtube.com/results?search_query=cerati');
 
 // Find all images
-foreach($html->find('.yt-lockup-title') as $element)
+foreach($html->find('.yt-lockup-title a') as $element)
 {
-    $a =$element->find('a');
-    foreach ($a as $item)
-    {
-        var_dump($item->href);
-    }
+
+
+        var_dump($element->href);
+
 }
 
 
