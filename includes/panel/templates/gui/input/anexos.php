@@ -234,6 +234,7 @@ if(!$shownText)
 
                         var idx = $(this).data("idx");
 
+                        console.log(idx+firstIdx);
 
                         scope.post.anexos.push(anexos[idx+firstIdx]);
 
