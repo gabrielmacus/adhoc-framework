@@ -138,7 +138,7 @@ scope.addItem=function (v,mainItem) {
 
     <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
-    <div class="" ui-tree-handle>
+    <div class="seccion" ui-tree-handle>
         <span>{{v.text}}</span>
         <i data-ng-if="v.submenu"  data-nodrag  data-ng-click="addItem(v)" class="fa fa-plus-square-o icon add-seccion" aria-hidden="true"></i>
         <i  data-ng-if="v.delete"  data-nodrag data-ng-click="deleteItem(remove,this)" class="fa fa-trash icon" aria-hidden="true"></i>
@@ -151,13 +151,13 @@ scope.addItem=function (v,mainItem) {
     </ul>
 </script>
 
-<div class="" ui-tree>
+<div class="secciones" ui-tree>
     <ul ui-tree-nodes="" data-ng-model="data" id="tree-root">
         <li  data-ng-repeat="(k,v) in data" ui-tree-node data-ng-include="'nodes_renderer.html'"></li>
     </ul>
 </div>
 
-<div class=" " style="margin-top: 25px">
+<div class="fila center" style="margin-top: 25px">
     <button data-ng-click="addItem(data,true)" class="btn">
         Nuevo ítem
     </button>
