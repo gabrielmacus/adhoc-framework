@@ -5,8 +5,7 @@
  * Date: 16/06/2017
  * Time: 22:30
  */
-//Prueba, borrar en produccion
-header('Access-Control-Allow-Origin: *');
+
 
 include_once "../../includes/autoload.php";
 

@@ -1,5 +1,9 @@
 <?php
+
+
 ob_start();//Importante para que cree un buffer antes de enviar
+//Prueba, borrar en produccion
+header('Access-Control-Allow-Origin: *');
 /**
  * Created by PhpStorm.
  * User: Gabriel
