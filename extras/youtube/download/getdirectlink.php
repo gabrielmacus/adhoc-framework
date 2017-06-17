@@ -73,6 +73,6 @@ function getVideoDirectLink($config,$my_id)
 }
 
 
-$directlink= getVideoDirectLink($config,$_GET["videoId"]);
+$directlink= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($directlink);
