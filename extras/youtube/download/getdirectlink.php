@@ -19,11 +19,7 @@ function getVideoDirectLink($config,$my_id)
 
     $my_id = \YoutubeDownloader\YoutubeDownloader::validateVideoId($my_id);
 
-    if ( $my_id === null )
-    {
-        echo '<p>Invalid url</p>';
-        exit;
-    }
+
 
     if (isset($_GET['type']))
     {
