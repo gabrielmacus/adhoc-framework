@@ -18,9 +18,6 @@ function getVideoDirectLink($config,$my_id)
 
     $my_id = \YoutubeDownloader\YoutubeDownloader::validateVideoId($my_id);
 
-    var_dump($my_id);
-
-
 
     if (isset($_GET['type']))
     {
