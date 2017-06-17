@@ -1,7 +1,7 @@
 <?php
 require_once 'PhpTube.php';
 $tube = new PhpTube();
-$videos = $tube->getDownloadLink('http://www.youtube.com/watch?v=Q-0p7ogC51k');
+$videos = $tube->getDownloadLink('https://www.youtube.com/watch?v=uLIs0j2WnlM');
 
 var_dump($videos);
 ?>
