@@ -10,7 +10,7 @@ include_once "../../includes/autoload.php";
 include "url_parser.php";
 
 // Create DOM from URL or file
-$html = file_get_html("https://www.youtube.com/results?sp=EgIQAQ%253D%253D&search_query={$_GET["q"]}");
+$html = file_get_html("https://www.youtube.com/results?search_query={$_GET["q"]}&sp=EgIQAQ%253D%253D");
 
 
 
