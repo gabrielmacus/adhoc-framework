@@ -6,8 +6,8 @@
 
             height: '360',
             width: '640',
-            videoId: 'M7lc1UVf-VE'
-        })
+            videoId: $rootScope.song.href
+        });
 
             console.log($rootScope.song);
 
