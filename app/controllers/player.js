@@ -12,8 +12,6 @@ function youtube_parser(url){
 
         var youtubePlayer = new YT.Player('youtubePlayer', {
 
-            height: '360',
-            width: '640',
             videoId: videoId
         });
 
