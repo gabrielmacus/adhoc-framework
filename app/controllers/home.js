@@ -1,5 +1,9 @@
-    angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location) {     
-      
+
+var scope;
+
+angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location) {
+
+    scope=$rootScope;
            $rootScope.playlist=[];
          $rootScope.search=function(){
             
