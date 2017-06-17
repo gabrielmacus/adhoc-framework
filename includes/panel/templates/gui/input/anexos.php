@@ -70,6 +70,7 @@ if(!$shownText)
            scope.anexos= scope.post.anexos;
             scope.post.anexos=[];
         }
+        scope.post.anexos<?php echo $grupo;?>=[];
 
         $.each(scope.anexos,function (clave,valor) {
 
@@ -107,7 +108,7 @@ if(!$shownText)
 
                     var anexo={post_id:v.id,post_nexo_id:v.nexoId,post_anexo_id:v.anexoId,text:text, post_nexo_grupo:v.nexoGrupo};
 
-                    scope.post.anexos.push(anexo);
+                    scope.post.anexos<?php echo $grupo;?>.push(anexo);
 
                 }
 
@@ -192,7 +193,7 @@ if(!$shownText)
 
 
     <ul class="grid"  html-sortable="sortable_option"  data-ng-model="post.anexos<?php echo $grupo;?>" id="sortable<?php echo $grupo;?>" >
-        <li  data-idx="{{k}}" class="s12 m6 l4 padding item" data-ng-repeat="(k,a) in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
+        <li  data-idx="{{k}}" class="s12 m6 l4 padding item" data-ng-repeat="(k,a) in  post.anexos<?php echo $grupo;?>" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
