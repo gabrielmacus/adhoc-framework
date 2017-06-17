@@ -29,7 +29,7 @@
         var angularApp = angular.module('app', ['ngAnimate','ngSanitize','ngRoute']);
 
         function onYouTubeIframeAPIReady() {
-             youtubePlayer = new YT.Player('player', {
+             youtubePlayer = new YT.Player('youtubePlayer', {
 
                  height: '360',
                  width: '640',
@@ -69,7 +69,7 @@
 <body data-ng-app="app">
 <script src="controllers/player.js"></script>
 
-<div id="player"></div>
+
 <script src="controllers/home.js"></script>
 <section  class="ng-view">
 
