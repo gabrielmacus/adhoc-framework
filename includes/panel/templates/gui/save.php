@@ -13,7 +13,7 @@
         <?php
         if($_GET["id"])
         {
-            ?>
+        ?>
         scope.post.id=<?php  echo $_GET["id"];?>;
         <?php
         }
@@ -41,13 +41,13 @@
 
         $.each( scope.post.archivos ,function (tipo,grupos) {
 
-           $.each(grupos,function (k,versiones) {
+            $.each(grupos,function (k,versiones) {
 
-               console.log(versiones);
+                console.log(versiones);
 
-               archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+                archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
-           });
+            });
 
 
         });
@@ -114,12 +114,12 @@
 
                         <?php if($successMessage)
                         {
-                            ?>
+                        ?>
                         /*
-                        vex.dialog.alert({message:"<?php
-                            echo $successMessage;?>",callback:function () {
-                            location.reload();
-                        }})*/
+                         vex.dialog.alert({message:"<?php
+                        echo $successMessage;?>",callback:function () {
+                         location.reload();
+                         }})*/
 
 
                         toastr.success('', '<?php echo $successMessage;?>');
