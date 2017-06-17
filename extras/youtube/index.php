@@ -9,7 +9,7 @@ include_once "../../includes/autoload.php";
 
 
 // Create DOM from URL or file
-$html = file_get_html('https://www.youtube.com/results?search_query=cerati');
+$html = file_get_html("https://www.youtube.com/results?search_query={$_GET["q"]}");
 
 
 
