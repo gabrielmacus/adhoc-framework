@@ -7,62 +7,79 @@
 // downloaded
 
 include_once('common.php');
-ob_start();// if not, some servers will show this php warning: header is already set in line 46...
 
-
-$my_id = $_GET['videoid'];
-
-if( \YoutubeDownloader\YoutubeDownloader::isMobileUrl($my_id) )
+function getVideoDirectLink()
 {
-	$my_id = \YoutubeDownloader\YoutubeDownloader::treatMobileUrl($my_id);
-}
+    $my_id = $_GET['videoid'];
 
-$my_id = \YoutubeDownloader\YoutubeDownloader::validateVideoId($my_id);
+    if( \YoutubeDownloader\YoutubeDownloader::isMobileUrl($my_id) )
+    {
+        $my_id = \YoutubeDownloader\YoutubeDownloader::treatMobileUrl($my_id);
+    }
 
-if ( $my_id === null )
-{
-    echo '<p>Invalid url</p>';
-    exit;
-}
+    $my_id = \YoutubeDownloader\YoutubeDownloader::validateVideoId($my_id);
 
-if (isset($_GET['type']))
-{
-	$my_type = $_GET['type'];
-}
-else
-{
-	$my_type = 'redirect';
-}
+    if ( $my_id === null )
+    {
+        echo '<p>Invalid url</p>';
+        exit;
+    }
 
-if ($my_type == 'Download')
-{
+    if (isset($_GET['type']))
+    {
+        $my_type = $_GET['type'];
+    }
+    else
+    {
+        $my_type = 'redirect';
+    }
+
+    if ($my_type == 'Download')
+    {
 
 
-} // end of if for type=Download
+    } // end of if for type=Download
 
-/* First get the video info page for this video id */
+    /* First get the video info page for this video id */
 // $my_video_info = 'http://www.youtube.com/get_video_info?&video_id='. $my_id;
 // thanks to amit kumar @ bloggertale.com for sharing the fix
-$video_info_url = 'http://www.youtube.com/get_video_info?&video_id=' . $my_id . '&asv=3&el=detailpage&hl=en_US';
-$video_info_string = \YoutubeDownloader\YoutubeDownloader::curlGet($video_info_url, $config);
+    $video_info_url = 'http://www.youtube.com/get_video_info?&video_id=' . $my_id . '&asv=3&el=detailpage&hl=en_US';
+    $video_info_string = \YoutubeDownloader\YoutubeDownloader::curlGet($video_info_url, $config);
 
-/* TODO: Check return from curl for status code */
-$video_info = \YoutubeDownloader\VideoInfo::createFromString($video_info_string);
-
-
-
-$my_title = $video_info->getTitle();
-$cleanedtitle = $video_info->getCleanedTitle();
+    /* TODO: Check return from curl for status code */
+    $video_info = \YoutubeDownloader\VideoInfo::createFromString($video_info_string);
 
 
 
-$stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
+    $my_title = $video_info->getTitle();
+    $cleanedtitle = $video_info->getCleanedTitle();
 
 
 
-/* create an array of available download formats */
-$avail_formats = $stream_map->getStreams();
+    $stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
 
 
-echo json_encode($avail_formats);
 
+    /* create an array of available download formats */
+    $avail_formats = $stream_map->getStreams();
+
+
+    if(!count($avail_formats))
+    {
+        getVideoDirectLink();
+    }
+
+    foreach ($avail_formats as $format)
+    {
+        if($directlink =$format["url"])
+        {
+            break;
+        }
+    }
+
+    return $directlink;
+
+
+}
+
+echo getVideoDirectLink();
