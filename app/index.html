@@ -25,14 +25,16 @@
     </script>
 
     <script>
+        var youtubePlayer;
         var angularApp = angular.module('app', ['ngAnimate','ngSanitize','ngRoute']);
 
-
         function onYouTubeIframeAPIReady() {
-            $rootScope.youtubePlayer = new YT.Player('player', {
+             youtubePlayer = new YT.Player('player', {
 
-            });
+            })
         }
+
+;
 
 
         function error(e)
