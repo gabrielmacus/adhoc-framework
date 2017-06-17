@@ -8,8 +8,6 @@
 include_once "../../includes/autoload.php";
 
 include "url_parser.php";
-
-include "download/getdirectlink.php";
 // el parametro sp es para que solo me traiga videos
 $html = file_get_html("https://www.youtube.com/results?search_query={$_GET["q"]}&sp=EgIQAQ%253D%253D");
 
@@ -22,8 +20,8 @@ foreach($html->find('.yt-lockup-title a') as $element)
     $video["href"]="https://www.youtube.com".$element->href;
     $videoId=  $video["href"];
     $video["title"]=$element->innertext;
-    $directlink= getVideoDirectLink($config,$videoId);
-    $video["url"]=$directlink;
+
+
     $videos[]=$video;
 
 
