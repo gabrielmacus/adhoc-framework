@@ -191,7 +191,7 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <ul class="grid"  id="sortable<?php echo $grupo;?>" >
+    <ul class="grid"  html-sortable="sortable_option"  data-ng-model="post.anexos" id="sortable<?php echo $grupo;?>" >
         <li  data-idx="{{k}}" class="s12 m6 l4 padding item" data-ng-repeat="(k,a) in  post.anexos" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
@@ -220,37 +220,6 @@ if(!$shownText)
 
 </div>
 <script>
-    $( function() {
-        $( "#sortable<?php echo $grupo;?>" ).sortable({
-            revert: true,
-            stop: function() {
 
-                var anexos=angular.copy(scope.post.anexos);
-
-               var firstIdx= $("#sortable<?php echo $grupo;?> .item").first().data("idx");
-
-                $("#sortable<?php echo $grupo;?> .item").each(
-                    function (k,v) {
-
-                        var idx = $(this).data("idx");
-
-                        console.log(idx+" "+firstIdx+" = "+(idx+firstIdx));
-
-                        scope.post.anexos[k-1]=anexos[idx];
-
-
-                    }
-                );
-
-                scope.$apply();
-
-
-
-                
-            }
-        });
-
-        $( "ul, li" ).disableSelection();
-    } );
 </script>
 
