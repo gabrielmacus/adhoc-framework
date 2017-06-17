@@ -1,4 +1,13 @@
-    angularApp.controller('playerCtrl', function( $rootScope,$scope,$timeout) {     
+
+
+    angularApp.controller('playerCtrl', function( $rootScope,$scope,$timeout) {
+
+        youtubePlayer = new YT.Player('youtubePlayer', {
+
+            height: '360',
+            width: '640',
+            videoId: 'M7lc1UVf-VE'
+        })
 
             console.log($rootScope.song);
 

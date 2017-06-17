@@ -26,20 +26,8 @@
 
     <script>
         var youtubePlayer;
+
         var angularApp = angular.module('app', ['ngAnimate','ngSanitize','ngRoute']);
-
-        function onYouTubeIframeAPIReady() {
-             youtubePlayer = new YT.Player('youtubePlayer', {
-
-                 height: '360',
-                 width: '640',
-                 videoId: 'M7lc1UVf-VE'
-            })
-
-            console.log(youtubePlayer);
-        }
-
-;
 
 
         function error(e)
