@@ -64,14 +64,5 @@ $stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
 $avail_formats = $stream_map->getStreams();
 
 
-foreach ($avail_formats as $format)
-{
-    if($directlink =$format["url"])
-    {
-        break;
-    }
-}
-
-echo json_encode($directlink);
-
+echo json_encode($avail_formats);
 
