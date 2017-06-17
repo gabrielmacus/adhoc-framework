@@ -12,11 +12,14 @@ function youtube_parser(url){
 
         var youtubePlayer = new YT.Player('youtubePlayer', {
 
-            videoId: videoId
+            videoId: videoId,
+            events: {
+                'onReady': function () {
+                    youtubePlayer.playVideo();
+                }
+            }
         });
 
-
-        youtubePlayer.playVideo();
         
     });
         
