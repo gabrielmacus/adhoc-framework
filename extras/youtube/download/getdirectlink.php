@@ -58,21 +58,22 @@ function getVideoDirectLink($config,$my_id)
     $avail_formats = $stream_map->getStreams();
 
 
+    $links=[];
 
     foreach ($avail_formats as $format)
     {
         if($directlink =$format["url"])
         {
-            break;
+            $links[]=$directlink;
         }
     }
 
-    return $directlink;
+    return $links;
 
 
 }
 
 
-$directlink= getVideoDirectLink($config,$_GET["href"]);
+$links= getVideoDirectLink($config,$_GET["href"]);
 
-echo json_encode($directlink);
+echo json_encode($links);
