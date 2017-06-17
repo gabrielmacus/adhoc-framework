@@ -31,4 +31,4 @@ foreach($html->find('.yt-lockup-title a') as $element)
 
 }
 
-echo json_encode($videos[0]);
+echo json_encode($videos);
