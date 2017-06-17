@@ -21,6 +21,10 @@ foreach($html->find('.yt-lockup-title a') as $element)
     $video["href"]="https://www.youtube.com".$element->href;
     $video["title"]=$element->innertext;
     $videos[]=$video;
+    $videoId=  $video["href"];
+    var_dump($directLink);
+
+    include "download/getdirectlink.php";
 
 }
 
