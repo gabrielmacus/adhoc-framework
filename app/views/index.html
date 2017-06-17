@@ -1,0 +1,16 @@
+
+<form class="home" data-ng-submit="search()">
+ 
+    <div class="form-block">
+        <input type="text" data-ng-model="search.q"> 
+    </div>
+    
+    <button type="submit">Buscar</button>
+  
+</form>
+
+<ul>
+   
+     <li data-ng-repeat="song in playlist" data-ng-click="playSong(song)"><a >{{song.title}}</a></li>
+     
+</ul>
