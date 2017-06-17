@@ -236,7 +236,7 @@ if(!$shownText)
 
                         console.log(idx+" "+firstIdx+" = "+(idx+firstIdx));
 
-                        scope.post.anexos.push(anexos[idx+firstIdx]);
+                        scope.post.anexos.push(anexos[idx]);
 
 
                     }
