@@ -31,6 +31,11 @@
 
 
 
+        function error(e)
+        {
+            alert(JSON.stringify(e));
+        }
+
         angularApp.config(function($routeProvider) {
             $routeProvider
                 .when("/", {
