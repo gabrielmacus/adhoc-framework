@@ -49,7 +49,6 @@ function getVideoDirectLink($config,$my_id)
     $cleanedtitle = $video_info->getCleanedTitle();
 
 
-
     $stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
 
 
