@@ -37,3 +37,7 @@ require_once "schema/Facebook/autoload.php";
 /** JWT **/
 require_once "JWT/JWT.php";
 /**  ** */
+
+/** Youtube */
+require_once "youtube/YouTube.php";
+/** * */
