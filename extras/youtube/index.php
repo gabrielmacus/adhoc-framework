@@ -9,7 +9,7 @@ include_once "../../includes/autoload.php";
 
 
 // Create DOM from URL or file
-$html = file_get_html('http://www.google.com/');
+$html = file_get_html('https://www.youtube.com/results?search_query=cerati');
 
 // Find all images
 foreach($html->find('img') as $element)
