@@ -9,7 +9,7 @@ include_once "../../includes/autoload.php";
 
 include "url_parser.php";
 
-// Create DOM from URL or file
+// el parametro sp es para que solo me traiga videos
 $html = file_get_html("https://www.youtube.com/results?search_query={$_GET["q"]}&sp=EgIQAQ%253D%253D");
 
 
@@ -24,5 +24,4 @@ foreach($html->find('.yt-lockup-title a') as $element)
 
 }
 
-
-var_dump($videos);
+echo json_encode($videos);
