@@ -72,7 +72,7 @@
 
             scope.post.anexos=[];
             $.each(
-                post.anexosGroups,function (k,group) {
+                scope.post.anexosGroups,function (k,group) {
 
 
                     $.each(group,function (clave,valor) {
