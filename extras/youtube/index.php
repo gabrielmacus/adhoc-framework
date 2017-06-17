@@ -20,3 +20,4 @@ curl_setopt_array($curl, array(
 $resp = curl_exec($curl);
 // Close request to clear up some resources
 curl_close($curl);
+var_dump($resp);
