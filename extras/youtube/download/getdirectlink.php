@@ -77,18 +77,16 @@ $links= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($links[0]);
 
-// Get cURL resource
-$curl = curl_init();
-// Set some options - we are passing in a useragent too here
-curl_setopt_array($curl, array(
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => $links[0],
-    CURLOPT_USERAGENT => 'Codular Sample cURL Request'
-));
-// Send the request & save response to $resp
-$resp = curl_exec($curl);
-// Close request to clear up some resources
-curl_close($curl);
 
+$url=$links[0];
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, TRUE);
+curl_setopt($ch, CURLOPT_NOBODY, TRUE);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$data = curl_exec($ch);
+$size = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
 
-var_dump($resp);
+curl_close($ch);
+return $size;
