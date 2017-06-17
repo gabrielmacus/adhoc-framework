@@ -77,3 +77,8 @@ function getVideoDirectLink($config,$my_id)
 $links= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($links);
+
+foreach ($links as $l)
+{
+    var_dump($l);
+}
