@@ -26,15 +26,3 @@ foreach($streams as $stream){
     }
 }
 
-foreach($streams as $stream){
-    parse_str($stream,$data); //decode the stream
-    if(stripos($data['type'],$format) !== false){ //We've found the right stream with the correct format
-        $video = fopen($data['url'].'&amp;signature='.$data['sig'],'r'); //the video
-        $file = fopen('video.'.str_replace($format,'video/',''),'w');
-        stream_copy_to_stream($video,$file); //copy it to the file
-        fclose($video);
-        fclose($file);
-        echo 'Download finished! Check the file.';
-        break;
-    }
-}
