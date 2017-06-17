@@ -134,7 +134,7 @@ scope.addItem=function (v,mainItem) {
     <h2>Árbol de menú</h2>
 </header>
 
-<div class="body">
+<div class="">
 
     <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
