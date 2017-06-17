@@ -14,7 +14,8 @@ angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location
         "data":$scope.search,   
         "dataType":"json",
         "success":function(e){
-        
+
+
             ///alert(JSON.stringify(e));
              $rootScope.playlist=e;
              $rootScope.$apply();
@@ -35,8 +36,9 @@ angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location
         "data":song,   
         "dataType":"json",
         "success":function(e){
-        
-            
+
+            console.log(e);
+
             $rootScope.song={url:e};
             $location.path('/player');
             
