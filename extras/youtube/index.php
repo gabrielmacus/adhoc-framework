@@ -13,14 +13,16 @@ include "url_parser.php";
 $html = file_get_html("https://www.youtube.com/results?search_query={$_GET["q"]}&sp=EgIQAQ%253D%253D");
 
 
+$videos=array();
 
 foreach($html->find('.yt-lockup-title a') as $element)
 {
 
+    $video["href"]="https://www.youtube.com".$element->href;
+    $video["title"]=$element->innertext;
+    $videos[]=$video;
 
-
-        var_dump($element->href);
-    var_dump($element->innertext);
 }
 
 
+var_dump($videos);
