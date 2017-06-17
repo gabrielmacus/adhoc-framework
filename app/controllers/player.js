@@ -5,7 +5,7 @@
             if($rootScope.song)
             {
 
-                $rootScope.youtubePlayer.loadVideoById($rootScope.song.href);
+      youtubePlayer.loadVideoById($rootScope.song.href);
             }
         
     });

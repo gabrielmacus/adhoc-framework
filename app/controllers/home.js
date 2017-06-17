@@ -3,7 +3,6 @@ var scope;
 
 angularApp.controller('homeCtrl', function( $rootScope,$scope,$timeout,$location) {
 
-   console.log(youtubePlayer);
 
     scope=$rootScope;
            $rootScope.playlist=[];
