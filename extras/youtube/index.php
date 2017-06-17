@@ -11,13 +11,13 @@ include_once "../../includes/autoload.php";
 // Create DOM from URL or file
 $html = file_get_html('https://www.youtube.com/results?search_query=cerati');
 
-// Find all images
+
+
 foreach($html->find('.yt-lockup-title a') as $element)
 {
 
-
         var_dump($element->href);
-
+    var_dump($element->innertext);
 }
 
 
