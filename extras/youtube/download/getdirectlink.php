@@ -80,5 +80,7 @@ echo json_encode($links);
 
 foreach ($links as $l)
 {
+    echo "<br>";
     var_dump($l);
+    echo "<br>";
 }
