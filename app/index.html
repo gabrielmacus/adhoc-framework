@@ -31,9 +31,9 @@
 
         // 3. This function creates an <iframe> (and YouTube player)
         //    after the API code downloads.
-        var youtubePlayer;
+
         function onYouTubeIframeAPIReady() {
-            youtubePlayer = new YT.Player('player', {
+            $rootScope.youtubePlayer = new YT.Player('player', {
 
             });
         }
