@@ -57,7 +57,7 @@
 
         /**  **/
 
-      
+
 
 
         <?Php
@@ -66,6 +66,26 @@
 
 
         scope.save=function () {
+
+
+            /** preparo anexos **/
+
+            scope.post.anexos=[];
+            $.each(
+                post.anexosGroups,function (k,group) {
+
+
+                    $.each(group,function (clave,valor) {
+
+                        scope.post.anexos.push(valor);
+
+                    });
+
+                }
+            );
+            /** **/
+
+
             if(scope.previews)//Para subida de archivos directa
             {
                 scope.post.previews=scope.previews;
