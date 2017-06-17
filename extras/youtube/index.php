@@ -19,7 +19,7 @@ foreach($html->find('.yt-lockup-title a') as $element)
 
 
 
-        var_dump(VideoUrlParser::get_url_id($element->href));
+        var_dump($element->href);
     var_dump($element->innertext);
 }
 
