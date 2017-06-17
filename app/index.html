@@ -31,6 +31,8 @@
         function onYouTubeIframeAPIReady() {
              youtubePlayer = new YT.Player('player', {
 
+                 height: '360',
+                 width: '640',
                  videoId: 'M7lc1UVf-VE'
             })
 
@@ -67,7 +69,7 @@
 <body data-ng-app="app">
 <script src="controllers/player.js"></script>
 
-
+<div id="player"></div>
 <script src="controllers/home.js"></script>
 <section  class="ng-view">
 
