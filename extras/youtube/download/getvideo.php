@@ -62,7 +62,7 @@ $stream_map = \YoutubeDownloader\StreamMap::createFromVideoInfo($video_info);
 
 /* create an array of available download formats */
 $avail_formats = $stream_map->getStreams();
-
+var_dump($avail_format);
 if ($my_type == 'Download')
 {
 
