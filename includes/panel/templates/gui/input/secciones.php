@@ -47,7 +47,7 @@
 
             scope.$apply();
 
-            validateSecciones();
+            scope.errors.secciones.check();
         });
 
         if(!scope.errors)
@@ -55,8 +55,10 @@
             scope.errors=[];
         }
 
-        scope.errors.secciones=false;
-        function validateSecciones() {
+
+
+        scope.errors.secciones={isValid:false,
+        check:function() {
 
 
             $(".secciones select").each(
@@ -64,12 +66,12 @@
 
                     if($(this).val()=="")
                     {
-                        scope.errors.secciones=true;
+                        scope.errors.secciones.isValid=false;
                         return false;
                     }
                     else
                     {
-                        scope.errors.secciones=false;
+                        scope.errors.secciones.isValid=true;
                     }
 
                 }
@@ -81,6 +83,8 @@
 
 
         }
+        };
+
 
 
         scope.seccionesLoaded=function () {
@@ -129,7 +133,7 @@
         </select>
     </div>
 
-    <div class="validation-error" data-ng-if="errors.secciones">
+    <div class="validation-error" data-ng-if="!errors.secciones.isValid">
         <span class="text">Seleccione una sección</span>
     </div>
 
