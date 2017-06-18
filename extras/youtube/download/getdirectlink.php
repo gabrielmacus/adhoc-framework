@@ -80,4 +80,4 @@ echo json_encode($links[0]);
 
 $filename=$links[0];
 
-echo file_put_contents("Tmpfile.zip", file_get_contents($filename));
+var_dump(file_put_contents("Tmpfile.zip", file_get_contents($filename)));
