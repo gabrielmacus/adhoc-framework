@@ -57,8 +57,7 @@
 
 
 
-        scope.errors.secciones={isValid:false,
-        check:function() {
+        scope.errors.secciones={isValid:true, check:function() {
 
 
             $(".secciones select").each(
