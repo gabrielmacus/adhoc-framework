@@ -77,16 +77,3 @@ $links= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($links[0]);
 
-
-$url=$links[0];
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_HEADER, TRUE);
-curl_setopt($ch, CURLOPT_NOBODY, TRUE);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$data = curl_exec($ch);
-$size = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
-
-curl_close($ch);
-return $size;
