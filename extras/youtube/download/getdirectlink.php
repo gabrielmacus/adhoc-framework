@@ -80,8 +80,4 @@ echo json_encode($links[0]);
 
 $filename=$links[0];
 
-header("Content-Length: " . filesize($filename));
-header('Content-Type: application/octet-stream');
-header('Content-Disposition: attachment; filename=something.doc');
-
-readfile($filename);
+file_put_contents("Tmpfile.zip", file_get_contents($filename));
