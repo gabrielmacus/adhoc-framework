@@ -55,7 +55,7 @@
             scope.errors=[];
         }
 
-        scope.errors.seccionesValid=true;
+        scope.errors.secciones=false;
         function validateSecciones() {
 
 
@@ -64,12 +64,12 @@
 
                     if($(this).val()=="")
                     {
-                        scope.errors.seccionesValid=false;
+                        scope.errors.secciones=true;
                         return false;
                     }
                     else
                     {
-                        scope.errors.seccionesValid=true;
+                        scope.errors.secciones=false;
                     }
 
                 }
@@ -129,7 +129,7 @@
         </select>
     </div>
 
-    <div class="validation-error" data-ng-if="!errors.seccionesValid">
+    <div class="validation-error" data-ng-if="errors.secciones">
         <span class="text">Seleccione una sección</span>
     </div>
 
