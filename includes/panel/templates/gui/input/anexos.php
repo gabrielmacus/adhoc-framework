@@ -146,7 +146,9 @@ if(!$shownText)
                     if(v.post_nexo_grupo=="<?php echo $grupo?>")
                     {
 
-                        scope.post.anexos.push(v);
+                        scope.post.anexosGroups[<?php echo $grupo;?>].push(v);
+
+                      //  scope.post.anexos.push(v);
                     }
 
                 });
