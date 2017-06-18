@@ -1199,3 +1199,13 @@ position: absolute
     display: flex;
     flex-wrap: wrap;
 }
+
+.validation-error
+{
+    color: #c41b1e;
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: 600;
+}
