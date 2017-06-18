@@ -41,41 +41,16 @@
                     scope.secciones_group.push(result);
                 }
 
-
-
-
-
             }
 
             scope.post.seccion=seccionId;
 
             scope.$apply();
-
-            validateSecciones();
         });
 
         scope.seccionesValid=true;
 
-        function validateSecciones() {
 
-
-            $(".secciones select").each(
-                function () {
-
-
-                    if($(this).val()==""
-                    {
-                        scope.seccionesValid=false;
-                    }
-
-                }
-            );
-
-                    setTimeout(function () {
-                        scope.$apply();
-                    });
-
-        }
 
         scope.seccionesLoaded=function () {
 
@@ -123,10 +98,5 @@
         </select>
     </div>
 
-    <span data-ng-if="!scope.seccionesValid" class="field-error">
-
-        Debe seleccionar
-
-    </span>
 
 </div>
