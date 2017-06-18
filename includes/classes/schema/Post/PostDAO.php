@@ -760,7 +760,7 @@ IN NATURAL LANGUAGE MODE
 
 
         /** Pagino */
-        $this->setResultsCount($subQuery);
+        $this->setResultsCount($sql);
 
         $offset=$this->getOffset();
 
