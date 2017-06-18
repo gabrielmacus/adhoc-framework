@@ -5,7 +5,7 @@
 //
 // Takes a VideoID and outputs a list of formats in which the video can be
 // downloaded
-
+ob_start();
 
 include_once('common.php');
 
