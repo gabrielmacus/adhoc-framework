@@ -125,6 +125,8 @@ class PostDAO  extends Paginable implements IPost
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
+        var_dump($r);
+
         parent::setResults($r);
     }
 
@@ -754,7 +756,7 @@ IN NATURAL LANGUAGE MODE
             $sql.="  ORDER BY {$orderBy}";
         }
 
-    
+
 
         /** Pagino */
         $this->setResultsCount($subQuery);
