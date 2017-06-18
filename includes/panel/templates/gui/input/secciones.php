@@ -57,11 +57,14 @@
             $(".secciones select").each(
                 function () {
 
-
-                    console.log($(this).val());
                     if($(this).val()=="")
                     {
                         scope.seccionesValid=false;
+                        return false;
+                    }
+                    else
+                    {
+                        scope.seccionesValid=true;
                     }
 
                 }
