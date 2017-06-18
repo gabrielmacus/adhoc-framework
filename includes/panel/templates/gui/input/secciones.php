@@ -44,30 +44,7 @@
 
 
 
-                /*
-                 $.ajax(
-                 {
-                 url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
-             method:"get",
-             dataType:"json",
-             success:function (e) {
 
-             if(e.length>0)
-             {
-             //Si la seccion ya existe,no la muestro
-             scope.secciones_group.push(e);
-
-             setTimeout(function () {
-             scope.$apply();
-             });
-
-             }
-
-
-             },
-             error:error
-             }
-             );*/
             }
 
             scope.post.seccion=seccionId;
