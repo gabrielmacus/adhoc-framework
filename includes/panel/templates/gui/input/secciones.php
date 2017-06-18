@@ -117,6 +117,13 @@
     });
 </script>
 
+<?php
+if(!$errorMsg)
+{
+    $errorMsg="Seleccione una sección";
+}
+?>
+
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
     <label>Sección</label>
     <select   class="select-secciones">
@@ -132,8 +139,10 @@
         </select>
     </div>
 
-    <div class="validation-error" data-ng-if="!errors.secciones.isValid">
-        <span class="text">Seleccione una sección</span>
-    </div>
+    <?php
+    $model="secciones";
+    include "error.php";
+
+    ?>
 
 </div>
