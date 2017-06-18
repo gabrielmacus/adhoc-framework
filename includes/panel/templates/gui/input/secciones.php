@@ -56,6 +56,7 @@
                 function () {
 
 
+                    console.log($(this).val());
                     if($(this).val()=="")
                     {
                         scope.seccionesValid=false;
