@@ -75,6 +75,28 @@
             scope.$apply();
         });
 
+        scope.seccionesValid=true;
+
+        function validateSecciones() {
+
+
+            $(".secciones select").each(
+                function () {
+
+
+                    if($(this).val()==""
+                    {
+                        scope.seccionesValid=false;
+                    }
+
+                }
+            );
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+        }
 
         scope.seccionesLoaded=function () {
 
@@ -122,5 +144,10 @@
         </select>
     </div>
 
+    <span data-ng-if="!scope.seccionesValid" class="field-error">
+
+        Debe seleccionar
+
+    </span>
 
 </div>
