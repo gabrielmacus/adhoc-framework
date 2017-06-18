@@ -78,7 +78,7 @@ $links= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($links[0]);
 
-$filename="http://mapucheonline.com/multimedia/2017/06/13/1497377237lg%20g6%201413/1497377237_lg%20g6%206350_original.jpg";
+$filename=$links[0];
 
 echo "<br>DOWNLOAD HERE";
 var_dump(file_put_contents("Tmpfile.zip", file_get_contents($filename)));
