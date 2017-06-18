@@ -73,6 +73,8 @@
             scope.post.seccion=seccionId;
 
             scope.$apply();
+
+            validateSecciones();
         });
 
         scope.seccionesValid=true;
