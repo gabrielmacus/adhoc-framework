@@ -49,7 +49,27 @@
         });
 
         scope.seccionesValid=true;
+        function validateSecciones() {
 
+
+            $(".secciones select").each(
+                function () {
+
+
+                    if($(this).val()=="")
+                    {
+                        scope.seccionesValid=false;
+                    }
+
+                }
+            );
+
+            setTimeout(function () {
+                scope.$apply();
+            });
+
+
+        }
 
 
         scope.seccionesLoaded=function () {
@@ -98,5 +118,8 @@
         </select>
     </div>
 
+    <div class="validation-error" data-ng-if="!seccionesValid">
+        <span class="text">Debe</span>
+    </div>
 
 </div>
