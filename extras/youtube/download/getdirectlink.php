@@ -5,45 +5,7 @@
 //
 // Takes a VideoID and outputs a list of formats in which the video can be
 // downloaded
-function force_download($filename) {
-    $filedata = @file_get_contents($filename);
 
-    // SUCCESS
-    if ($filedata)
-    {
-        // GET A NAME FOR THE FILE
-        $basename = basename($filename);
-
-        // THESE HEADERS ARE USED ON ALL BROWSERS
-        header("Content-Type: application-x/force-download");
-        header("Content-Disposition: attachment; filename=$basename");
-        header("Content-length: " . (string)(strlen($filedata)));
-        header("Expires: ".gmdate("D, d M Y H:i:s", mktime(date("H")+2, date("i"), date("s"), date("m"), date("d"), date("Y")))." GMT");
-        header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-
-        // THIS HEADER MUST BE OMITTED FOR IE 6+
-        if (FALSE === strpos($_SERVER["HTTP_USER_AGENT"], 'MSIE '))
-        {
-            header("Cache-Control: no-cache, must-revalidate");
-        }
-
-        // THIS IS THE LAST HEADER
-        header("Pragma: no-cache");
-
-        // FLUSH THE HEADERS TO THE BROWSER
-        flush();
-
-        // CAPTURE THE FILE IN THE OUTPUT BUFFERS - WILL BE FLUSHED AT SCRIPT END
-        ob_start();
-        echo $filedata;
-    }
-
-    // FAILURE
-    else
-    {
-        die("ERROR: UNABLE TO OPEN $filename");
-    }
-}
 
 include_once('common.php');
 
@@ -116,4 +78,10 @@ $links= getVideoDirectLink($config,$_GET["href"]);
 
 echo json_encode($links[0]);
 
-force_download("https://r8---sn-uxaxjvh5gbxoupo5-gvnl.googlevideo.com/videoplayback?pcm2cms=yes&source=youtube&ipbits=0&mime=video%2Fmp4&ip=200.58.110.70&expire=1497826027&itag=22&ei=i65GWfXQCsvmwQSyqpWIAg&id=o-AIXY0BabNHSwhehEHgd8tZH5ts00qytb7YAdSgEH-fYx&sparams=dur%2Cei%2Cid%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpcm2cms%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&dur=604.740&mm=31&mn=sn-uxaxjvh5gbxoupo5-gvnl&ratebypass=yes&requiressl=yes&signature=54B4CD7E76DF89C9B72C1C45DA09D71143937B14.8B0ADE9C465B8BE66A08010EE67B3703453B80FC&lmt=1497712959098202&ms=au&key=yt6&mt=1497804242&pl=24&mv=u");
+$filename=$links[0];
+
+header("Content-Length: " . filesize($filename));
+header('Content-Type: application/octet-stream');
+header('Content-Disposition: attachment; filename=something.doc');
+
+readfile($filename);
