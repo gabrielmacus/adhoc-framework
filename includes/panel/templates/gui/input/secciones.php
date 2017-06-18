@@ -125,7 +125,7 @@
     </div>
 
     <div class="validation-error" data-ng-if="!seccionesValid">
-        <span class="text">Debe</span>
+        <span class="text">Seleccione una sección</span>
     </div>
 
 </div>
