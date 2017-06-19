@@ -22,6 +22,8 @@
 
 
                     var arr=JSON.parse(scope.post.<?php echo $model?>);
+
+
                     <?php
                     if(is_numeric($max))
                     {
@@ -73,7 +75,7 @@
 
                     $.each(arr,function (clave,valor) {
                         
-                        if(!pattern.test(valor) || !valor)
+                        if(!pattern.test(valor))
                         {
                             scope.validation.<?php echo $model?>.isValid=false;
                             scope.$apply();
