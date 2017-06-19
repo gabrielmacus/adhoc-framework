@@ -17,6 +17,11 @@
             isValid: true, check: function () {
 
 
+                if(!post.<?php echo $model?>.match(/<?php echo $regex?>/i))
+                {
+                    scope.validation.<?php echo $model?>.isValid=false;
+                }
+
             }
         };
 
@@ -28,10 +33,11 @@
 </script>
 <div class="form-block <?php echo implode(" ",$class);?>">
     <label><?php echo $label?></label>
-    <input type="text" title="<?php echo $label?>" placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>" maxlength="<?php echo $max?>" minlength="<?php echo $min;?>">
+    <input type="text" title="<?php echo $label?>" placeholder="<?php echo $placeholder?>" data-ng-model="post.<?php echo $model?>">
 </div>
 
 <?php
-include "error.php";
-
+if($regex) {
+    include "error.php";
+}
 ?>

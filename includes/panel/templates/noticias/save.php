@@ -15,6 +15,8 @@
         $label="Titulo";
         $model="titulo";
         $errorMsg="Ingrese el título correctamente";
+        //Letras y numeros, min 5 , max 90
+        $regex='^[a-zA-Z\d]{5,90}$';
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Bajada";
