@@ -1,4 +1,9 @@
-
+<?php
+if(!$errorWarningMsg)
+{
+    $errorWarningMsg="Hay errores en el formulario";
+}
+?>
 <script>
 
 
@@ -110,7 +115,7 @@
                     {
                       areErrors=true;
 
-
+                        toastr.warning('', '<?php echo $errorWarningMsg;?>');
                     }
                 }
 
