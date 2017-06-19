@@ -2,10 +2,6 @@
     angular.element(function () {
 
 
-        if(!scope.post.<?php echo $model?>)
-        {
-            scope.post.<?php echo $model?>="";
-        }
 
         <?php
         if($regex)
@@ -24,7 +20,7 @@
                 var pattern=/<?php echo $regex?>/g;
 
 
-                if(!pattern.test(scope.post.<?php echo $model?>))
+                if(!pattern.test(scope.post.<?php echo $model?>) || !scope.post.<?php echo $model?>)
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
                 }
