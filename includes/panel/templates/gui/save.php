@@ -140,13 +140,6 @@ console.log(v);
 
                         <?php if($successMessage)
                         {
-                        ?>
-                        /*
-                         vex.dialog.alert({message:"<?php
-                        echo $successMessage;?>",callback:function () {
-                         location.reload();
-                         }})*/
-
 
                         toastr.success('', '<?php echo $successMessage;?>');
                         <?php
