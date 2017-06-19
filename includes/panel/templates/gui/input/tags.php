@@ -41,6 +41,8 @@
                     });
 
                     <?php
+
+
                     if(is_numeric($max))
                     {
                         ?>
@@ -52,12 +54,8 @@
 
 
                     <?php
-                    }?>
-
-
-
-                    <?php
-                    if(is_numeric($min))
+                    }
+                    else if(is_numeric($min))
                     {
                     ?>
                     if(arr.length<<?php echo $min;?>)
@@ -65,7 +63,28 @@
                         scope.validation.<?php echo $model?>.isValid = false;
                     }
                     <?php
-                    }?>
+                    }
+                    else if(is_numeric($min) && is_numeric($max))
+                    {
+                        ?>
+                    if(arr.length<<?php echo $min;?> && arr.length><?php echo $max;?>)
+                    {
+                        scope.validation.<?php echo $model?>.isValid = false;
+                    }
+             
+                    <?Php
+                    }
+
+
+                    ?>
+
+
+
+
+
+
+
+
 
 
                     setTimeout(function () {
