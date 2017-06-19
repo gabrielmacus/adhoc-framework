@@ -109,6 +109,9 @@ if(!tags)
                 onTagRemove:function () {
 
                     scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags().values);
+
+
+                    scope.validation.<?php echo $model?>.check();
                 }
             });
 
