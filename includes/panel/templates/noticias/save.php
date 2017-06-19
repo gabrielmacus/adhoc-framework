@@ -14,6 +14,7 @@
 
         $label="Titulo";
         $model="titulo";
+        $errorMsg="Ingrese el título correctamente";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Bajada";
