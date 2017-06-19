@@ -18,7 +18,7 @@
 
                 console.log("<?php echo $regex?>");
 
-                if(!scope.post.<?php echo $model?>.match(/<?php echo $regex?>/i))
+                if(!scope.post.<?php echo $model?>.match(/<?php echo $regex?>/g))
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
                 }
