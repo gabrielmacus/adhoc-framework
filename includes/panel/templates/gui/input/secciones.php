@@ -41,39 +41,49 @@
                     scope.secciones_group.push(result);
                 }
 
-
-
-
-                /*
-                 $.ajax(
-                 {
-                 url:"<?php echo $configuracion->getSiteAddress()."/admin/configuracion/secciones/data.php?act=list&id="?>"+seccionId,
-             method:"get",
-             dataType:"json",
-             success:function (e) {
-
-             if(e.length>0)
-             {
-             //Si la seccion ya existe,no la muestro
-             scope.secciones_group.push(e);
-
-             setTimeout(function () {
-             scope.$apply();
-             });
-
-             }
-
-
-             },
-             error:error
-             }
-             );*/
             }
 
             scope.post.seccion=seccionId;
 
             scope.$apply();
+
+            scope.validation.secciones.check();
         });
+
+        if(!scope.validation)
+        {
+            scope.validation={};
+        }
+
+
+
+        scope.validation.secciones={isValid:true, check:function() {
+
+
+            $(".secciones select").each(
+                function () {
+
+                    if($(this).val()=="")
+                    {
+                        scope.validation.secciones.isValid=false;
+                        return false;
+                    }
+                    else
+                    {
+                        scope.validation.secciones.isValid=true;
+                    }
+
+                }
+            );
+
+            setTimeout(function () {
+                scope.$apply();
+            });
+
+
+    }
+    };
+
 
 
         scope.seccionesLoaded=function () {
@@ -107,6 +117,13 @@
     });
 </script>
 
+<?php
+if(!$errorMsg)
+{
+    $errorMsg="Seleccione una sección";
+}
+?>
+
 <div title="Secciones"  class="form-block secciones <?php echo implode(" ",$class);?>">
     <label>Sección</label>
     <select   class="select-secciones">
@@ -122,5 +139,10 @@
         </select>
     </div>
 
+    <?php
+    $model="secciones";
+    include "error.php";
+
+    ?>
 
 </div>

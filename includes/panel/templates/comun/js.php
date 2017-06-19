@@ -2,7 +2,6 @@
     src="https://code.jquery.com/jquery-1.12.4.min.js"
     integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
     crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 <script src="<?php echo $configuracion->getJsCdn()."/js/facebook.js"; ?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
@@ -10,7 +9,6 @@
 <!--<script src="<?php  echo $configuracion->getJsCdn()."/js/ng-tags-input.min.js"?>"></script>-->
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/taggle.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/vex.combined.min.js"?>"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.js"></script>
 <!--<script  src="<?php  echo $configuracion->getJsCdn()."/js/select.min.js"?>"></script>-->
 <script  src="<?php  echo $configuracion->getJsCdn()."/js/contextMenu.min.js"?>"></script>
 
@@ -35,4 +33,4 @@
 <script src="https://code.angularjs.org/1.6.3/angular-sanitize.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-sortable/0.15.0/sortable.min.js"></script>
+<script src="<?php  echo $configuracion->getJsCdn();?>/js/html5-sortable.js"></script>

@@ -1,8 +1,14 @@
-
+<?php
+if(!$errorWarningMsg)
+{
+    $errorWarningMsg="Hay errores en el formulario";
+}
+?>
 <script>
 
 
     angular.element(function () {
+
 
 
         if(!scope.post)
@@ -13,7 +19,7 @@
         <?php
         if($_GET["id"])
         {
-            ?>
+        ?>
         scope.post.id=<?php  echo $_GET["id"];?>;
         <?php
         }
@@ -41,13 +47,13 @@
 
         $.each( scope.post.archivos ,function (tipo,grupos) {
 
-           $.each(grupos,function (k,versiones) {
+            $.each(grupos,function (k,versiones) {
 
-               console.log(versiones);
+                console.log(versiones);
 
-               archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+                archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
-           });
+            });
 
 
         });
@@ -57,7 +63,7 @@
 
         /**  **/
 
-      
+
 
 
         <?Php
@@ -66,6 +72,45 @@
 
 
         scope.save=function () {
+
+            var areErrors=false;
+
+            $.each(scope.validation,
+                function (k,v) {
+                    console.log(v);
+                    v.check();
+                    if(!v.isValid)
+                    {
+                        toastr.warning('', '<?php echo $errorWarningMsg;?>');
+                        areErrors=true;
+                        return false;
+                    }
+
+                });
+
+            if(areErrors)
+            {
+                return false;
+            }
+
+            /** preparo anexos **/
+
+            scope.post.anexos=[];
+            $.each(
+                scope.post.anexosGroups,function (k,group) {
+
+
+                    $.each(group,function (clave,valor) {
+
+                        scope.post.anexos.push(valor);
+
+                    });
+
+                }
+            );
+            /** **/
+
+
             if(scope.previews)//Para subida de archivos directa
             {
                 scope.post.previews=scope.previews;
@@ -94,14 +139,7 @@
 
                         <?php if($successMessage)
                         {
-                            ?>
-                        /*
-                        vex.dialog.alert({message:"<?php
-                            echo $successMessage;?>",callback:function () {
-                            location.reload();
-                        }})*/
-
-                    
+                        ?>
                         toastr.success('', '<?php echo $successMessage;?>');
                         <?php
                         }?>
@@ -113,9 +151,9 @@
                 }
             );
 
-            console.log(scope.post);
         }
 
     });
 
 </script>
+
