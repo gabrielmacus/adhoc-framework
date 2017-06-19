@@ -109,7 +109,7 @@ if(!$errorWarningMsg)
 
             $.each(
                 scope.errors,function (k,v) {
-
+console.log(v);
                     v.check();
                     if(!v.isValid)
                     {
