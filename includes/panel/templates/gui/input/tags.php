@@ -76,13 +76,13 @@
 
 
                     $.each(arr,function (clave,valor) {
-                        
+
+                        console.log(valor);
                         if(!pattern.test(valor) || !valor)
                         {
                             scope.validation.<?php echo $model?>.isValid=false;
                             scope.$apply();
 
-                            console.log(pattern);
                             return false;
                         }
                         else
