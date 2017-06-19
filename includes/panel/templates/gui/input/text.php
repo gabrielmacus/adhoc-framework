@@ -17,8 +17,9 @@
             isValid: true, check: function () {
 
 
+                var pattern=/<?php echo $regex?>/g;
 
-                if(!/<?php echo $regex?>/g.test(scope.post.<?php echo $model?>))
+                if(!pattern.test(scope.post.<?php echo $model?>))
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
                 }
