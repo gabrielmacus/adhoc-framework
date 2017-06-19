@@ -75,7 +75,6 @@ if(!$errorWarningMsg)
 
             var areErrors=false;
 
-            console.log(scope.validation);
             $.each(scope.validation,
                 function (k,v) {
                     console.log(v);
