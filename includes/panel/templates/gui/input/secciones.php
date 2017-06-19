@@ -47,17 +47,17 @@
 
             scope.$apply();
 
-            scope.errors.secciones.check();
+            scope.validation.secciones.check();
         });
 
-        if(!scope.errors)
+        if(!scope.validation)
         {
-            scope.errors=[];
+            scope.validation=[];
         }
 
 
 
-        scope.errors.secciones={isValid:true, check:function() {
+        scope.validation.secciones={isValid:true, check:function() {
 
 
             $(".secciones select").each(
@@ -65,12 +65,12 @@
 
                     if($(this).val()=="")
                     {
-                        scope.errors.secciones.isValid=false;
+                        scope.validation.secciones.isValid=false;
                         return false;
                     }
                     else
                     {
-                        scope.errors.secciones.isValid=true;
+                        scope.validation.secciones.isValid=true;
                     }
 
                 }
