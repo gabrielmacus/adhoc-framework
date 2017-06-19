@@ -72,7 +72,7 @@ if(!$errorWarningMsg)
 
         scope.save=function () {
 
-            console.log("S");
+            console.log(       scope.errors);
 
             /** preparo anexos **/
 
