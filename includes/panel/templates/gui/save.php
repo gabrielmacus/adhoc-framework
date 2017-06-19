@@ -83,7 +83,7 @@ if(!$errorWarningMsg)
                     {
                         toastr.warning('', '<?php echo $errorWarningMsg;?>');
                         areErrors=true;
-                        return false;
+             
                     }
 
                 });
