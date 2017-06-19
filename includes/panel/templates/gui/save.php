@@ -79,11 +79,12 @@ if(!$errorWarningMsg)
                 function (k,v) {
                     console.log(v);
                     v.check();
-                    if(!v.isValid)
+                    if(!v.isValid && !areErrors)
                     {
                         toastr.warning('', '<?php echo $errorWarningMsg;?>');
+
                         areErrors=true;
-             
+
                     }
 
                 });
