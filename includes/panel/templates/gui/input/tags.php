@@ -41,8 +41,6 @@
                     });
 
                     <?php
-
-
                     if(is_numeric($max))
                     {
                         ?>
@@ -51,39 +49,37 @@
                     {
                         scope.validation.<?php echo $model?>.isValid=false;
                     }
+                    else
+                    {
+                        if( scope.validation.<?php echo $model?>.isValid!==false)
+                        {
+                            scope.validation.<?php echo $model?>.isValid=true;
+                        }
+                    }
 
 
                     <?php
-                    }
-                    else if(is_numeric($min))
+                    }?>
+
+
+
+                    <?php
+                    if(is_numeric($min))
                     {
                     ?>
                     if(arr.length<<?php echo $min;?>)
                     {
                         scope.validation.<?php echo $model?>.isValid = false;
                     }
+                    else
+                    {
+                        if( scope.validation.<?php echo $model?>.isValid!==false)
+                        {
+                            scope.validation.<?php echo $model?>.isValid=true;
+                        }
+                    }
                     <?php
-                    }
-                    else if(is_numeric($min) && is_numeric($max))
-                    {
-                        ?>
-                    if(arr.length<<?php echo $min;?> && arr.length><?php echo $max;?>)
-                    {
-                        scope.validation.<?php echo $model?>.isValid = false;
-                    }
-             
-                    <?Php
-                    }
-
-
-                    ?>
-
-
-
-
-
-
-
+                    }?>
 
 
 
