@@ -21,6 +21,7 @@
                 isValid: true, check: function () {
 
 
+                    var arr=JSON.parse(scope.post.<?php echo $model?>);
                     <?php
                     if(is_numeric($max))
                     {
@@ -67,7 +68,6 @@
 
                     var pattern=/<?php echo $regex?>/g;
 
-                    var arr=JSON.parse(scope.post.<?php echo $model?>);
 
                     $.each(arr,function (clave,valor) {
                         
