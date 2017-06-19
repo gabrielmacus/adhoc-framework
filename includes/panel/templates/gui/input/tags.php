@@ -31,6 +31,7 @@
                     {
 
                         scope.validation.<?php echo $model?>.isValid=false;
+                        scope.$apply();
                         return false;
                     }
                     else
@@ -53,6 +54,7 @@
                     if(arr.length<<?php echo $min;?>)
                     {
                         scope.validation.<?php echo $model?>.isValid = false;
+                        scope.$apply();
                         return false;
                     }
                     else
@@ -74,7 +76,7 @@
                         if(!pattern.test(valor) || !valor)
                         {
                             scope.validation.<?php echo $model?>.isValid=false;
-
+                            scope.$apply();
                             return false;
                         }
                         else
@@ -84,6 +86,7 @@
 
                     });
 
+                    scope.$apply();
 
 
 
