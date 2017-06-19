@@ -24,6 +24,11 @@
                     scope.validation.<?php echo $model?>.isValid=false;
                 }
 
+                setTimeout(function () {
+                    scope.$apply();
+                });
+
+
             }
         };
 
