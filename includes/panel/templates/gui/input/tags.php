@@ -34,6 +34,7 @@
 
                         scope.validation.<?php echo $model?>.isValid=false;
                         scope.$apply();
+                        console.log("Max");
                         return false;
                     }
                     else
@@ -57,6 +58,7 @@
                     {
                         scope.validation.<?php echo $model?>.isValid = false;
                         scope.$apply();
+                        console.log("Min");
                         return false;
                     }
                     else
@@ -75,7 +77,7 @@
 
                     $.each(arr,function (clave,valor) {
                         
-                        if(!pattern.test(valor))
+                        if(!pattern.test(valor) || !valor)
                         {
                             scope.validation.<?php echo $model?>.isValid=false;
                             scope.$apply();
