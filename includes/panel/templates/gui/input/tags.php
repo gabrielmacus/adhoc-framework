@@ -81,6 +81,8 @@
                         {
                             scope.validation.<?php echo $model?>.isValid=false;
                             scope.$apply();
+
+                            console.log("Err");
                             return false;
                         }
                         else
