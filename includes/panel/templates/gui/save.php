@@ -93,7 +93,6 @@ if(!$errorWarningMsg)
                 return false;
             }
 
-            return false;
             /** preparo anexos **/
 
             scope.post.anexos=[];
