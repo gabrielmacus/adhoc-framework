@@ -78,6 +78,7 @@
                         for(var i=0;i<arr.length;i++)
                         {
                             var valor = arr[i];
+                            console.log(valor);
                             if(!pattern.test(valor) || !valor)
                             {
                                 scope.validation.<?php echo $model?>.isValid=false;
