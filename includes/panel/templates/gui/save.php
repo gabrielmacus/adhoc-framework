@@ -100,6 +100,26 @@
 
             }
 
+            var areErrors=false;
+
+            $.each(
+                scope.errors,function (k,v) {
+
+                    v.check();
+                    if(!v.isValid)
+                    {
+                      areErrors=true;
+
+
+                    }
+                }
+
+            );
+
+            if(areErrors)
+            {
+                return false;
+            }
 
             $.ajax
             (
