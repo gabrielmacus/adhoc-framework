@@ -16,9 +16,9 @@
         scope.validation.<?php echo $model?>= {
             isValid: true, check: function () {
 
-                console.log("<?php echo $regex?>");
 
-                if(!scope.post.<?php echo $model?>.match(/<?php echo $regex?>/g))
+
+                if(!/<?php echo $regex?>/g.test(scope.post.<?php echo $model?>))
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
                 }
