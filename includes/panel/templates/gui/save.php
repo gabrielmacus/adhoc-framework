@@ -116,7 +116,6 @@ console.log(v);
                     {
                       areErrors=true;
 
-                        toastr.warning('', '<?php echo $errorWarningMsg;?>');
                     }
                 }
 
@@ -152,7 +151,6 @@ console.log(v);
                 }
             );
 
-            console.log(scope.post);
         }
 
     });
