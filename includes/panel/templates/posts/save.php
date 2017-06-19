@@ -28,9 +28,9 @@
 
         );
 
-        $errorMsg="Los telefonos deben contener solo números, y ser mínimo 1, máximo 5";
         include DIR_PATH."/includes/panel/templates/gui/input/select.php";
 
+        $errorMsg="Los telefonos deben contener solo números, y ser mínimo 1, máximo 5";
         $label="Telefonos";
         $model="volanta";
         $id="telefonos1";
