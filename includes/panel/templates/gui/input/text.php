@@ -2,6 +2,10 @@
     angular.element(function () {
 
 
+        if(!scope.post.<?php echo $model?>)
+        {
+            scope.post.<?php echo $model?>="";
+        }
 
         <?php
         if($regex)
@@ -19,7 +23,6 @@
 
                 var pattern=/<?php echo $regex?>/g;
 
-                console.log("Titulo:" +scope.post.<?php echo $model?>);
 
                 if(!pattern.test(scope.post.<?php echo $model?>))
                 {
