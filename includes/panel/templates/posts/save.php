@@ -28,13 +28,13 @@
 
         );
 
-        $errorMsg="Seleccione un nivel válido";
+        $errorMsg="Los telefonos deben contener solo números, y ser mínimo 1, máximo 5";
         include DIR_PATH."/includes/panel/templates/gui/input/select.php";
 
         $label="Telefonos";
         $model="volanta";
         $id="telefonos1";
-        $regex='^[a-z]*$';
+        $regex='^[0-9]*$';
         $max=5;
         $min=1;
         include DIR_PATH."/includes/panel/templates/gui/input/tags.php";
