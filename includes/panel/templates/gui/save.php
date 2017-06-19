@@ -107,6 +107,7 @@ if(!$errorWarningMsg)
 
             var areErrors=false;
 
+console.log(scope.errors);
             $.each(scope.errors,function (k,v) {
 console.log(v);
                     v.check();
