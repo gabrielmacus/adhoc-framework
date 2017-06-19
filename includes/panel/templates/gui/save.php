@@ -82,8 +82,8 @@ if(!$errorWarningMsg)
                     if(!v.isValid)
                     {
                         toastr.warning('', '<?php echo $errorWarningMsg;?>');
-                        return false;
                         areErrors=true;
+                        return false;
                     }
 
                 });
