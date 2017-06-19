@@ -33,4 +33,8 @@
 <script src="https://code.angularjs.org/1.6.3/angular-sanitize.js"></script>
 
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-sortable/0.15.0/sortable.min.js"></script>
+<!--
 <script src="<?php  echo $configuracion->getJsCdn();?>/js/html5-sortable.js"></script>
+-->

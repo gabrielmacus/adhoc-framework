@@ -199,7 +199,7 @@ if(!$shownText)
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
 
-    <ul class="grid"  html-sortable="sortable_option"  data-ng-model="post.anexosGroups[<?php echo $grupo;?>]" id="sortable<?php echo $grupo;?>" >
+    <ul class="grid"  ui-sortable  data-ng-model="post.anexosGroups[<?php echo $grupo;?>]" id="sortable<?php echo $grupo;?>" >
         <li  data-idx="{{k}}" class="s12 m6 l4 padding item" data-ng-repeat="(k,a) in post.anexosGroups[<?php echo $grupo;?>]" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
