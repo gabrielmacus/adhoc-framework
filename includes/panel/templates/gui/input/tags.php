@@ -74,26 +74,7 @@
 
                     var pattern=/<?php echo $regex?>/g;
 
-
-                        for(var i=0;i<arr.length;i++)
-                        {
-                            var valor = arr[i];
-                            console.log(valor);
-                            if(!pattern.test(valor) || !valor)
-                            {
-                                scope.validation.<?php echo $model?>.isValid=false;
-                                scope.$apply();
-
-                                return false;
-                            }
-                            else
-                            {
-                                scope.validation.<?php echo $model?>.isValid=true;
-                            }
-                        }
-
-
-                    /*    console.log(arr);
+                        console.log(arr);
 
                     $.each(arr,function (clave,valor) {
 
@@ -112,10 +93,8 @@
 
                     });
 
-                    */
+
                     scope.$apply();
-
-
 
 
                 }
