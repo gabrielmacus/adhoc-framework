@@ -18,7 +18,9 @@
 
 
                 var pattern=/<?php echo $regex?>/g;
-                
+
+                console.log("Titulo:" +scope.post.<?php echo $model?>);
+
                 if(!pattern.test(scope.post.<?php echo $model?>))
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
