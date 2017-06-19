@@ -16,6 +16,7 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
+        //Solo es valida la opcion 'Data 1'
         $regex='^Data 1$';
         $model ="bajada";
         $label="Nivel";
