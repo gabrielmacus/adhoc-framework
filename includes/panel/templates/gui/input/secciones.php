@@ -52,7 +52,7 @@
 
         if(!scope.validation)
         {
-            scope.validation=[];
+            scope.validation={};
         }
 
 

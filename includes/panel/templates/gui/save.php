@@ -73,15 +73,21 @@ if(!$errorWarningMsg)
 
         scope.save=function () {
 
+            var areErrors=false;
+            //toastr.warning('', '<?php echo $errorWarningMsg;?>');
+            $.each(scope.validation,
+                function (k,v) {
+                    console.log(v);
 
 
-            if( $(".validation-error:visible").length)
+                });
+
+            if(areErrors)
             {
-                toastr.warning('', '<?php echo $errorWarningMsg;?>');
                 return false;
             }
 
-
+            return false;
             /** preparo anexos **/
 
             scope.post.anexos=[];
