@@ -51,7 +51,6 @@
 </div>
 
 <?php
-$model="secciones";
 include "error.php";
 
 ?>
