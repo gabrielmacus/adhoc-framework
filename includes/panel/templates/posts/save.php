@@ -18,6 +18,7 @@
 
         //Chequea el value de cada option
         //Solo es valida la opcion 'Data 1'
+        $errorMsg="Seleccione una opción válida";
         $regex='^Data 1$';
         $model ="bajada";
         $label="Nivel";
