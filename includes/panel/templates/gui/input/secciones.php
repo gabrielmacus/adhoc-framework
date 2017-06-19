@@ -139,10 +139,11 @@ if(!$errorMsg)
         </select>
     </div>
 
-    <?php
-    $model="secciones";
-    include "error.php";
-
-    ?>
-
 </div>
+
+
+<?php
+$model="secciones";
+include "error.php";
+
+?>
