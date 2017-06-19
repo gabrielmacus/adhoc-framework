@@ -10,6 +10,21 @@ if(!$errorWarningMsg)
     angular.element(function () {
 
 
+        var areErrors=false;
+
+        console.log(scope.validation);
+        $.each(scope.validation,
+            function (k,v) {
+                console.log(v);
+
+
+            });
+
+        if(areErrors)
+        {
+            return false;
+        }
+
         if(!scope.post)
         {
             scope.post={};
@@ -105,20 +120,6 @@ if(!$errorWarningMsg)
 
             }
 
-            var areErrors=false;
-
-console.log(scope.validation);
-            $.each(scope.validation,
-                function (k,v) {
-console.log(v);
-
-
-            });
-
-            if(areErrors)
-            {
-                return false;
-            }
 
             $.ajax
             (
