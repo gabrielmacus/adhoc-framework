@@ -74,6 +74,7 @@
 
                     var pattern=/<?php echo $regex?>/g;
 
+                        console.log(arr);
 
                     $.each(arr,function (clave,valor) {
 
