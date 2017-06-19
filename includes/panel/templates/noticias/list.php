@@ -22,7 +22,7 @@ include DIR_PATH."/includes/panel/templates/gui/titles/header.php";
     include DIR_PATH."/includes/panel/templates/gui/table.php";
 
 
-    $href=$configuracion->getSiteAddress()."/admin/posts/?s={$mainSeccionFilter}&t={$_GET["t"]}&act=save";
+    $href=$configuracion->getSiteAddress()."/admin/posts/?s={$_GET["s"]}&t={$mainSeccionFilter}&act=save";
     $title="Nueva entrada";
     include DIR_PATH."/includes/panel/templates/gui/input/add.php";
 
