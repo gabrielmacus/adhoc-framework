@@ -74,11 +74,17 @@ if(!$errorWarningMsg)
         scope.save=function () {
 
             var areErrors=false;
-            //toastr.warning('', '<?php echo $errorWarningMsg;?>');
+
             $.each(scope.validation,
                 function (k,v) {
                     console.log(v);
-
+                    v.check();
+                    if(!v.isValid)
+                    {
+                        toastr.warning('', '<?php echo $errorWarningMsg;?>');
+                        return false;
+                        areErrors=true;
+                    }
 
                 });
 
