@@ -21,6 +21,50 @@
                 isValid: true, check: function () {
 
 
+                    <?php
+                    if(is_numeric($max))
+                    {
+                    ?>
+
+                    if(arr.length><?php echo $max;?>)
+                    {
+
+                        scope.validation.<?php echo $model?>.isValid=false;
+                        return false;
+                    }
+                    else
+                    {
+
+                        scope.validation.<?php echo $model?>.isValid=true;
+
+                    }
+
+
+                    <?php
+                    }?>
+
+
+
+                    <?php
+                    if(is_numeric($min))
+                    {
+                    ?>
+                    if(arr.length<<?php echo $min;?>)
+                    {
+                        scope.validation.<?php echo $model?>.isValid = false;
+                        return false;
+                    }
+                    else
+                    {
+
+                        scope.validation.<?php echo $model?>.isValid=true;
+
+                    }
+                    <?php
+                    }?>
+
+
+
                     var pattern=/<?php echo $regex?>/g;
 
                     var arr=JSON.parse(scope.post.<?php echo $model?>);
@@ -40,52 +84,8 @@
 
                     });
 
-                    <?php
-                    if(is_numeric($max))
-                    {
-                        ?>
-
-                    if(arr.length><?php echo $max;?>)
-                    {
-                        scope.validation.<?php echo $model?>.isValid=false;
-                    }
-                    else
-                    {
-                        if( scope.validation.<?php echo $model?>.isValid!==false)
-                        {
-                            scope.validation.<?php echo $model?>.isValid=true;
-                        }
-                    }
 
 
-                    <?php
-                    }?>
-
-
-
-                    <?php
-                    if(is_numeric($min))
-                    {
-                    ?>
-                    if(arr.length<<?php echo $min;?>)
-                    {
-                        scope.validation.<?php echo $model?>.isValid = false;
-                    }
-                    else
-                    {
-                        if( scope.validation.<?php echo $model?>.isValid!==false)
-                        {
-                            scope.validation.<?php echo $model?>.isValid=true;
-                        }
-                    }
-                    <?php
-                    }?>
-
-
-
-                    setTimeout(function () {
-                        scope.$apply();
-                    });
 
 
                 }
