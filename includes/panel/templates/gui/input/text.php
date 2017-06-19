@@ -17,25 +17,6 @@
             isValid: true, check: function () {
 
 
-                $(".secciones select").each(
-                    function () {
-
-                        if ($(this).val() == "") {
-                            scope.validation.secciones.isValid = false;
-                            return false;
-                        }
-                        else {
-                            scope.validation.secciones.isValid = true;
-                        }
-
-                    }
-                );
-
-                setTimeout(function () {
-                    scope.$apply();
-                });
-
-
             }
         };
 
