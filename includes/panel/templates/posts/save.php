@@ -25,6 +25,8 @@
             3 =>"Data 3"
 
         );
+
+        $errorMsg="Seleccione un nivel válido";
         include DIR_PATH."/includes/panel/templates/gui/input/select.php";
 
         $label="Telefonos";
