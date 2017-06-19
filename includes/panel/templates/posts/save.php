@@ -16,7 +16,7 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
-        $regex='^.{1,4}$';
+        $regex='^Data 1$';
         $model ="bajada";
         $label="Nivel";
         $options=array(
