@@ -72,7 +72,6 @@ if(!$errorWarningMsg)
 
         scope.save=function () {
 
-            console.log(       scope.errors);
 
             /** preparo anexos **/
 
@@ -108,8 +107,7 @@ if(!$errorWarningMsg)
 
             var areErrors=false;
 
-            $.each(
-                scope.errors,function (k,v) {
+            $.each(scope.errors,function (k,v) {
 console.log(v);
                     v.check();
                     if(!v.isValid)
