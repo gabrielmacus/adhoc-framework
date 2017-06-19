@@ -30,6 +30,11 @@
 
     });
 
+    $(document).on("input","[data-ng-model='post.<?php echo $model?>']",function () {
+
+        scope.validation.<?php echo $model?>.check();
+    });
+
 </script>
 <div class="form-block <?php echo implode(" ",$class);?>">
     <label><?php echo $label?></label>
