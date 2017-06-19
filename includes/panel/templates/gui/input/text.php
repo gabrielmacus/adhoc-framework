@@ -18,10 +18,14 @@
 
 
                 var pattern=/<?php echo $regex?>/g;
-
+                
                 if(!pattern.test(scope.post.<?php echo $model?>))
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
+                }
+                else
+                {
+                    scope.validation.<?php echo $model?>.isValid=true;
                 }
 
                 setTimeout(function () {
