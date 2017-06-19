@@ -60,7 +60,8 @@
                     if(is_numeric($min))
                     {
                     ?>
-                    if(arr.length><?php echo $min;?>) {
+                    if(arr.length<<?php echo $min;?>)
+                    {
                         scope.validation.<?php echo $model?>.isValid = false;
                     }
                     <?php
