@@ -40,6 +40,32 @@
 
                     });
 
+                    <?php
+                    if(is_numeric($max))
+                    {
+                        ?>
+
+                    if(arr.length><?php echo $max;?>)
+                    {
+                        scope.validation.<?php echo $model?>.isValid=false;
+                    }
+
+
+                    <?php
+                    }?>
+
+
+
+                    <?php
+                    if(is_numeric($min))
+                    {
+                    ?>
+                    if(arr.length><?php echo $min;?>) {
+                        scope.validation.<?php echo $model?>.isValid = false;
+                    }
+                    <?php
+                    }?>
+
 
                     setTimeout(function () {
                         scope.$apply();
@@ -109,8 +135,6 @@ if(!tags)
                 onTagRemove:function () {
 
                     scope.post.<?php echo $model?>  = JSON.stringify(<?php echo $model?>.getTags().values);
-
-
                     scope.validation.<?php echo $model?>.check();
                 }
             });

@@ -35,6 +35,8 @@
         $model="volanta";
         $id="telefonos1";
         $regex='^[a-z]*$';
+        $max=5;
+        $min=1;
         include DIR_PATH."/includes/panel/templates/gui/input/tags.php";
 
 /*
