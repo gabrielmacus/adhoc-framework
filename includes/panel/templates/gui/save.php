@@ -141,9 +141,6 @@ console.log(v);
                         <?php if($successMessage)
                         {
                         ?>
-
-
-
                         toastr.success('', '<?php echo $successMessage;?>');
                         <?php
                         }?>
