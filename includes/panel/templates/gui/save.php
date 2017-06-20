@@ -58,12 +58,16 @@ if(!$errorWarningMsg)
 
 //                archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
-                if(!scope.post.archivosGroups[k])
+                var group=versiones["<?php echo $fileVersion?>"].grupo;
+
+                if(!scope.post.archivosGroups[group])
                 {
-                    scope.post.archivosGroups[k]=[];
+                    scope.post.archivosGroups[group]=[];
                 }
 
-                scope.post.archivosGroups[k].push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+                scope.post.archivosGroups[group].push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:group});
+
+
 
             });
 
