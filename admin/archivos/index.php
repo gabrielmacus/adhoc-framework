@@ -29,6 +29,8 @@ try{
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
 
+    var_dump($archivos);
+
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
     $pages =$GLOBALS["archivoDAO"]->getPages();
