@@ -20,6 +20,11 @@ if(!$errorMsg)
 
         }
 
+        if(!scope.post)
+        {
+            scope.post={};
+        }
+
         if(!scope.post.archivosGroups)
         {
             scope.post.archivosGroups={};
