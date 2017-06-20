@@ -72,13 +72,13 @@
 
 
 
-                    var pattern=/<?php echo $regex?>/g;
-
+                    var pattern= new RegExp("<?php echo $regex?>", "g"); /*/<?php echo $regex?>/g;
+*/
 
                     $.each(arr,function (clave,valor) {
 
 
-                        var test=pattern.test(valor.toString());
+                        var test=pattern.exec(valor);
                         console.log(valor+" against "+pattern+" = "+test);
                         if(test)
                         {
