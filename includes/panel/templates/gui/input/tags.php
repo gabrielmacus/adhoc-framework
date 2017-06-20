@@ -77,9 +77,9 @@
 
                     $.each(arr,function (clave,valor) {
 
-                        console.log(valor);
+
                         var test=pattern.test(valor);
-                        console.log(test+" against "+pattern);
+                        console.log(valor+" against "+pattern+" = "+valor);
                         if(test)
                         {
 
