@@ -195,6 +195,7 @@ if(!$shownText)
 </style>
 
 
+
 <div class="fila adjuntos"   >
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 

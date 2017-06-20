@@ -1,16 +1,26 @@
+<?php
 
+if(!$errorMsg)
+{
+    $errorMsg="Seleccione archivos válidos";
+}
+?>
 <script>
     angular.element(function () {
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
+        /*
+        scope.$watch($scope.cart, $scope.updateCart(), true);
+*/
         scope.removeAdjunto=function (a) {
 
             a.delete=true;
 
         }
-  
+
+
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);
@@ -22,6 +32,8 @@
                 {
                     scope.post.archivos=[];
                 }
+
+
                 $.each(e.data,function (k,v) {
 
                     if(v.archivo_grupo==<?php echo $grupo?> && !e.embeed)

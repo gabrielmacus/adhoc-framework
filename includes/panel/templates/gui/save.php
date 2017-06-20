@@ -43,6 +43,11 @@ if(!$errorWarningMsg)
         if(!scope.post.archivos) {
             scope.post.archivos = <?php echo json_encode($post->getArchivos())?>;
         }
+
+        if(!scope.post.archivosGroups)
+        {
+            scope.post.archivosGroups={};
+        }
         console.log(scope.post.archivos);
 
         $.each( scope.post.archivos ,function (tipo,grupos) {
@@ -51,7 +56,14 @@ if(!$errorWarningMsg)
 
                 console.log(versiones);
 
-                archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+//                archivos.push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
+
+                if(!scope.post.archivosGroups[k])
+                {
+                    scope.post.archivosGroups[k]=[];
+                }
+
+                scope.post.archivosGroups[k].push({archivo_objeto_id:versiones["<?php echo $fileVersion?>"].nexoId,archivo_id:versiones["<?php echo $fileVersion?>"].id,url:versiones["<?php echo $fileVersion?>"].realName,name:versiones["<?php echo $fileVersion?>"].name,archivo_grupo:versiones["<?php echo $fileVersion?>"].grupo});
 
             });
 

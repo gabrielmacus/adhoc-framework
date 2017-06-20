@@ -47,9 +47,14 @@
         include DIR_PATH."/includes/panel/templates/gui/input/collection.php";
 */
 
+        $max=6;
+        $min=3;
+        $formats=["jpg"];
+        $errorMsg="Debe seleccionar entre {$min} y {$max} archivos de los tipos permitidos (".implode(",",$formats).")";
+
         $label="Galeria de imágenes";
         $grupo=1;
-        $formats=[];//TODO proximamente
+
         include DIR_PATH."/includes/panel/templates/gui/input/filesadj.php";
 
 
