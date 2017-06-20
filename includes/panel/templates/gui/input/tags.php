@@ -117,6 +117,16 @@
                     }catch (e)
                     {
 
+                        <?php
+                        if(is_numeric($min)  && $min  > 0)
+                        {
+                        ?>
+                        scope.validation.<?php echo $model?>.isValid=false;
+
+                        <?php
+                        }?>
+
+
                     }
 
                     setTimeout(function () {
