@@ -127,6 +127,22 @@ if(!$errorWarningMsg)
                 }
             );
             /** **/
+            /** Preparo adjuntos **/
+
+            scope.post.archivos=[];
+            $.each(
+                scope.post.archivosGroups,function (k,group) {
+
+
+                    $.each(group,function (clave,valor) {
+
+                        scope.post.archivos.push(valor);
+
+                    });
+
+                }
+            );
+            /**  ***/
 
 
             if(scope.previews)//Para subida de archivos directa
