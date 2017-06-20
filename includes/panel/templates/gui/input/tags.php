@@ -79,7 +79,7 @@
 
 
                         var test=pattern.test(valor);
-                        console.log(valor+" against "+pattern+" = "+valor);
+                        console.log(valor+" against "+pattern+" = "+test);
                         if(test)
                         {
 
