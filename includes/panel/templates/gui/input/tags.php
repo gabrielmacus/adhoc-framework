@@ -79,7 +79,7 @@
                     $.each(arr,function (clave,valor) {
 
                         console.log(pattern.test(valor));
-                        if(valor.match(pattern)==true)
+                        if(pattern.test(valor)==true)
                         {
 
                             scope.validation.<?php echo $model?>.isValid=true;
