@@ -106,7 +106,7 @@ if(!$errorMsg)
 
     </div>
     <div class="fila margin">
-        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo?>">Adjuntar archivo</a>
+        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(is_array($formats)){ echo "&formats=".implode(",",$formats); } ?>">Adjuntar archivo</a>
     </div>
 
 
