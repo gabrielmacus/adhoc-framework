@@ -60,6 +60,7 @@ if(!$errorWarningMsg)
 
                 var group=versiones["<?php echo $fileVersion?>"].grupo;
 
+
                 if(!scope.post.archivosGroups[group])
                 {
                     scope.post.archivosGroups[group]=[];

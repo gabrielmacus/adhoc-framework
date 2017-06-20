@@ -21,87 +21,107 @@
                 isValid: true, check: function () {
 
 
-                    var arr=JSON.parse(scope.post.<?php echo $model?>);
-
-
-                    <?php
-                    if(is_numeric($max))
-                    {
-                    ?>
-
-                    if(arr.length><?php echo $max;?>)
+                    try
                     {
 
-                        scope.validation.<?php echo $model?>.isValid=false;
-                        scope.$apply();
-                        console.log("Max");
-                        return false;
-                    }
-                    else
-                    {
-
-                        scope.validation.<?php echo $model?>.isValid=true;
-
-                    }
+                        var arr=JSON.parse(scope.post.<?php echo $model?>);
 
 
-                    <?php
-                    }?>
+                        <?php
+                        if(is_numeric($max))
+                        {
+                        ?>
 
+                        if(arr.length><?php echo $max;?>)
+                        {
 
+                            scope.validation.<?php echo $model?>.isValid=false;
 
-                    <?php
-                    if(is_numeric($min))
-                    {
-                    ?>
-                    if(arr.length<<?php echo $min;?>)
-                    {
-                        scope.validation.<?php echo $model?>.isValid = false;
-                        scope.$apply();
-                        console.log("Min");
-                        return false;
-                    }
-                    else
-                    {
+                            setTimeout(function () {
+                                scope.$apply();
+                            });
 
-                        scope.validation.<?php echo $model?>.isValid=true;
-
-                    }
-                    <?php
-                    }?>
-
-
-
-                    var pattern= new RegExp("<?php echo $regex?>"); /*/<?php echo $regex?>/g;
-*/
-
-
-
-                    $.each(arr,function (clave,valor) {
-
-
-                        var test=pattern.exec(valor);
-                        console.log(valor+" against "+pattern+" = "+test);
-                        if(test)
+                            console.log("Max");
+                            return false;
+                        }
+                        else
                         {
 
                             scope.validation.<?php echo $model?>.isValid=true;
 
                         }
+
+
+                        <?php
+                        }?>
+
+
+
+                        <?php
+                        if(is_numeric($min))
+                        {
+                        ?>
+                        if(arr.length<<?php echo $min;?>)
+                        {
+                            scope.validation.<?php echo $model?>.isValid = false;
+
+                            setTimeout(function () {
+                                scope.$apply();
+                            });
+
+                            console.log("Min");
+                            return false;
+                        }
                         else
                         {
-                            scope.validation.<?php echo $model?>.isValid=false;
-                            scope.$apply();
 
-                            return false;
+                            scope.validation.<?php echo $model?>.isValid=true;
 
                         }
+                        <?php
+                        }?>
 
+
+
+                        var pattern= new RegExp("<?php echo $regex?>"); /*/<?php echo $regex?>/g;
+                     */
+
+
+
+                        $.each(arr,function (clave,valor) {
+
+
+                            var test=pattern.exec(valor);
+                            console.log(valor+" against "+pattern+" = "+test);
+                            if(test)
+                            {
+
+                                scope.validation.<?php echo $model?>.isValid=true;
+
+                            }
+                            else
+                            {
+                                scope.validation.<?php echo $model?>.isValid=false;
+                                setTimeout(function () {
+                                    scope.$apply();
+                                });
+
+                                return false;
+
+                            }
+
+                        });
+
+
+
+                    }catch (e)
+                    {
+
+                    }
+
+                    setTimeout(function () {
+                        scope.$apply();
                     });
-
-
-                    scope.$apply();
-
 
                 }
             };

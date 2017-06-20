@@ -20,7 +20,10 @@ if(!$errorMsg)
 
         }
 
-
+        if(!scope.post.archivosGroups)
+        {
+            scope.post.archivosGroups={};
+        }
         // Listen to message from child window
         eventer(messageEvent,function(e) {
             console.log(e);
@@ -38,7 +41,15 @@ if(!$errorMsg)
 
                     if(v.archivo_grupo==<?php echo $grupo?> && !e.embeed)
                     {
-                        scope.post.archivos.push(v);
+
+                        if(!scope.post.archivosGroups["<?php echo $grupo?>"])
+                        {
+                            scope.post.archivosGroups["<?php echo $grupo?>"]=[];
+                        }
+
+                        scope.post.archivosGroups["<?php echo $grupo?>"].push(v);
+
+                        //scope.post.archivos.push(v);
                     }
 
                 });
@@ -72,7 +83,7 @@ if(!$errorMsg)
 <div style="display: block!important;" class="fila adjuntos"  ui-sortable="sortableOptions<?php echo $grupo;?>"  data-ng-model="post.archivos">
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div   class="s12 m6 l4 padding " data-ng-repeat="a in post.archivos" data-ng-if="a.archivo_grupo==<?php echo $grupo;?>" data-ng-hide="a.delete">
+    <div   class="s12 m6 l4 padding " data-ng-repeat="a in post.archivosGroups.<?php echo $grupo?>"  data-ng-hide="a.delete">
 
         <div class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAdjunto(a)" style="font-size:30px;cursor: pointer;position: absolute;top:5px;right:5px;color: rgba(220, 69, 47, 1)">
