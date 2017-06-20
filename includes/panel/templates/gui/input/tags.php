@@ -78,24 +78,30 @@
 
                     if(arr.length)
                     {
-                        var valor = arr[arr.length-1];
 
-                        var test=pattern.exec(valor);
-                        console.log(valor+" against "+pattern+" = "+test);
-                        if(test)
+
+                        for(var i=0;i<arr.length;i++)
                         {
+                            var valor = arr[i];
 
-                            scope.validation.<?php echo $model?>.isValid=true;
+                            var test=pattern.exec(valor);
+                            console.log(valor+" against "+pattern+" = "+test);
+                            if(test)
+                            {
 
+                                scope.validation.<?php echo $model?>.isValid=true;
+
+                            }
+                            else
+                            {
+                                scope.validation.<?php echo $model?>.isValid=false;
+                                scope.$apply();
+
+                                return false;
+
+                            }
                         }
-                        else
-                        {
-                            scope.validation.<?php echo $model?>.isValid=false;
-                            scope.$apply();
 
-                            return false;
-
-                        }
 
                     }
 
