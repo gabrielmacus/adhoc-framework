@@ -76,36 +76,7 @@
 */
 
 
-                    if(arr.length)
-                    {
 
-
-                        for(var i=0;i<arr.length;i++)
-                        {
-                            var valor = arr[i];
-
-                            var test=pattern.exec(valor);
-                            console.log(valor+" against "+pattern+" = "+test);
-                            if(test)
-                            {
-
-                                scope.validation.<?php echo $model?>.isValid=true;
-
-                            }
-                            else
-                            {
-                                scope.validation.<?php echo $model?>.isValid=false;
-                                scope.$apply();
-
-                                return false;
-
-                            }
-                        }
-
-
-                    }
-
-                    /*
                     $.each(arr,function (clave,valor) {
 
 
@@ -126,7 +97,7 @@
 
                         }
 
-                    });*/
+                    });
 
 
                     scope.$apply();
