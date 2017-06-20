@@ -76,6 +76,16 @@
 */
 
 
+                 console.log(   arr.filter(
+                     function (el) {
+
+                         return pattern.exec(el);
+                     }
+                 ));
+
+
+
+                    /*
 
                     $.each(arr,function (clave,valor) {
 
@@ -97,7 +107,7 @@
 
                         }
 
-                    });
+                    });*/
 
 
                     scope.$apply();
