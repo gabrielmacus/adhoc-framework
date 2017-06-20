@@ -74,10 +74,10 @@
 
                     var pattern=/<?php echo $regex?>/g;
 
-                        console.log(arr);
 
                     $.each(arr,function (clave,valor) {
 
+                        console.log(valor);
                         var test=pattern.test(valor);
                         console.log(test);
                         if(test)
