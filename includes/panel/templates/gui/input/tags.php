@@ -76,12 +76,29 @@
 */
 
 
-                 console.log(   arr.filter(
-                     function (el) {
+                    $("#<?php echo $id?> .taggle_text").each(
+                        function () {
 
-                         return pattern.exec(el);
-                     }
-                 ));
+                            var valor= $(this).html();
+                            var test=pattern.exec(valor);
+                            console.log(valor+" against "+pattern+" = "+test);
+                            if(test)
+                            {
+
+                                scope.validation.<?php echo $model?>.isValid=true;
+
+                            }
+                            else
+                            {
+                                scope.validation.<?php echo $model?>.isValid=false;
+                                scope.$apply();
+
+                                return false;
+
+                            }
+
+                        }
+                    );
 
 
 
