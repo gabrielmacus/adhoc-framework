@@ -29,41 +29,7 @@ if(!$errorMsg)
         {
             scope.post.archivosGroups={};
         }
-        // Listen to message from child window
-        eventer(messageEvent,function(e) {
-            console.log(e);
-            if(e.origin == "<?php echo $configuracion->getSiteAddress()?>")
-            {
-                
 
-                if(!scope.post.archivos)
-                {
-                    scope.post.archivos=[];
-                }
-
-
-                $.each(e.data,function (k,v) {
-
-                    if(v.archivo_grupo==<?php echo $grupo?> && !e.embeed)
-                    {
-
-                        if(!scope.post.archivosGroups["<?php echo $grupo?>"])
-                        {
-                            scope.post.archivosGroups["<?php echo $grupo?>"]=[];
-                        }
-
-                        scope.post.archivosGroups["<?php echo $grupo?>"].push(v);
-
-                        //scope.post.archivos.push(v);
-                    }
-
-                });
-              setTimeout(function () {
-                  scope.$apply();
-              });
-
-            }
-        },false);
     });
 
 
