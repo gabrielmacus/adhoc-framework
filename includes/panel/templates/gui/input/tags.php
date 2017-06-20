@@ -72,7 +72,7 @@
 
 
 
-                    var pattern= new RegExp("<?php echo $regex?>", "g"); /*/<?php echo $regex?>/g;
+                    var pattern= new RegExp("<?php echo $regex?>"); /*/<?php echo $regex?>/g;
 */
 
 
