@@ -26,6 +26,7 @@
 
                         var arr=JSON.parse(scope.post.<?php echo $model?>);
 
+                        console.log("Data");
 
                         <?php
                         if(is_numeric($max))
