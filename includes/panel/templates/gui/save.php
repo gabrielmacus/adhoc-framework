@@ -136,6 +136,8 @@ if(!$errorWarningMsg)
 
                     $.each(group,function (clave,valor) {
 
+                        valor.archivo_orden=clave;
+                        console.log(clave);
                         scope.post.archivos.push(valor);
 
                     });

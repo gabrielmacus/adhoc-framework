@@ -120,7 +120,7 @@ post_texto=:post_texto,post_etiquetas=:post_etiquetas,
             {
                 if(!$archivo["archivo_orden"])
                 {
-                    $archivo["archivo_orden"]=$k;
+                    $archivo["archivo_orden"]=0;
                 }
                 $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
