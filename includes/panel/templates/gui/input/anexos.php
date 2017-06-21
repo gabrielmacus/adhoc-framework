@@ -249,6 +249,9 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
                         scope.post.anexosGroups[<?php echo $grupo;?>].push(v);
 
+                        setTimeout(function () {
+                            scope.$apply();
+                        });
 
                         scope.validation.anexos<?php echo $grupo?>.check();
                       //  scope.post.anexos.push(v);
