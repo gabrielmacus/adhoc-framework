@@ -149,6 +149,22 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         return $res;
     }
 
+    /**
+     * @return array
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    /**
+     * @param array $filters
+     */
+    public function setFilters($filters)
+    {
+        $this->filters = $filters;
+    }
+
 
     public function setResults($sql)
     {
@@ -365,6 +381,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $this->setResults($sql);
         /** ** */
+
+        var_dump($sql);
 
         $res = $this->dataSource->runQuery($sql);
 

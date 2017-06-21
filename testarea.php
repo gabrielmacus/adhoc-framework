@@ -7,6 +7,17 @@
  */
 
 include "includes/autoload.php";
+
+$GLOBALS["archivoDAO"]->setFilters(
+  array(
+
+      "repositorios"=>array(31)
+  )
+);
+$archivos = $GLOBALS["archivoDAO"]->selectArchivos();
+
+var_dump($archivos);
+/*
 $p=new PostDAO();
 
 
@@ -30,3 +41,4 @@ $GLOBALS["postDAO"]->setFilters(
 
 );
 $post=$GLOBALS["postDAO"]->selectPosts();
+*/
