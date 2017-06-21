@@ -20,7 +20,8 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
         scope.anexos<?php echo $grupo;?>IsEmpty=function () {
-         //   scope.validation.<?php echo $model?>.check();
+
+        scope.validation.<?php echo $model?>.check();
 
             var group=scope.post.anexosGroups["<?php echo $grupo?>"];
 
