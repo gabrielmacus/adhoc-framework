@@ -186,6 +186,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             isValid: true, check: function () {
 
 
+                console.log("checking anexo");
 
                 <?php
                 if($showError)
