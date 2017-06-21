@@ -181,6 +181,13 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
         if(group && group.length)
         {
+
+            group=group.filter(
+                function (el) {
+
+                    return !el.delete;
+                }
+            );
             var ids=group.map(
                 function (el) {
                     return el.archivo_id;
