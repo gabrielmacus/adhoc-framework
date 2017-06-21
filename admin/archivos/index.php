@@ -27,8 +27,7 @@ try{
     $r =explode(",",$_GET["rep"]);
     $f = explode(",",$_GET["formats"]);
     $filters=    array(
-        "repositorios"=>$r,
-        "formats" => $f
+        "repositorios"=>$r
     );
 
 
