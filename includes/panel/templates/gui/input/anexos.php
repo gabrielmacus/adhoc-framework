@@ -80,7 +80,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             isValid: true, check: function () {
 
 
-                console.log("checking anexo");
+                console.log("checking anexos grupo <?php echo $grupo;?>");
 
                 <?php
                 if($showError)
@@ -247,6 +247,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                     {
 
                         scope.post.anexosGroups[<?php echo $grupo;?>].push(v);
+
 
                         scope.validation.anexos<?php echo $grupo?>.check();
                       //  scope.post.anexos.push(v);
