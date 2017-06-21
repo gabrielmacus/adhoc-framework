@@ -366,11 +366,30 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             }
 
-            if($name=$this->filters["name"])
+            if(is_array($this->filters["exclude"]) && !empty($this->filters["exclude"]))
             {
-                $where.= (empty($where))?" WHERE archivo_name LIKE  '%{$size}%' ":" AND   archivo_name LIKE  '%{$size}%' ";
+                $exclude=implode(",",$this->filters["exclude"]);
+
+                $where.= (empty($where))?" WHERE archivo_id NOT IN ({$exclude}) ":" AND archivo_id NOT IN ({$exclude}) ";
 
             }
+
+
+            if($name=$this->filters["exclude"])
+            {
+
+
+                $formats = array_map(function($f){
+
+                    return "'{$f}'";
+
+                },$this->filters["formats"]);
+
+                $formats=implode(",",$formats);
+                $where.= (empty($where))?" WHERE archivo_id IN  '%{$size}%' ":" AND   archivo_name LIKE  '%{$size}%' ";
+
+            }
+
 
         }
 

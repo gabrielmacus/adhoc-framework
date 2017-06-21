@@ -35,6 +35,12 @@ try{
         $filters["formats"]=$f;
     }
 
+    if($_GET["exclude"])
+    {
+        $e = explode(",",$_GET["exclude"]);
+        $filters["exclude"]=$e;
+    }
+
 
     $GLOBALS["archivoDAO"]->setFilters(
     $filters
