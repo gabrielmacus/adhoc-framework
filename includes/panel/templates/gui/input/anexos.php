@@ -149,7 +149,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         };
 
 
-        scope.removeAnexo=function (a) {
+        scope.removeAnexo<?php echo $grupo;?>=function (a) {
 
             a.delete=true;
 
@@ -312,7 +312,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         <li  data-idx="{{k}}" class="s12 m6 l4 padding item" data-ng-repeat="(k,a) in post.anexosGroups[<?php echo $grupo;?>]" data-ng-if="a.post_nexo_grupo==<?php echo $grupo;?>"  data-ng-hide="a.delete">
 
             <div  class="adjunto-wrapper" style="position: relative">
-              <span data-ng-click="removeAnexo(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
+              <span data-ng-click="removeAnexo<?php echo $grupo;?>(a)" style="font-size:30px;cursor: pointer;position: absolute;z-index: 55;top: 5px;right:5px;color: rgba(220, 69, 47, 1)">
             <i class="fa fa-times" aria-hidden="true"></i>
         </span>
                 <!--
