@@ -391,13 +391,13 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         foreach ($res as $r)
         {
-           $in="{$r["archivo_id"]},";
+           $in.="{$r["archivo_id"]},";
         }
 
         $in =rtrim($in,",");
-        var_dump($in);
-        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in})";
 
+        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in})";
+        var_dump($sql);
         $res = $this->dataSource->runQuery($sql);
 
         foreach ($res as $archivo)
