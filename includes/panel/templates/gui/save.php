@@ -8,24 +8,6 @@ if(!$errorWarningMsg)
 
 
     angular.element(function () {
-
-
-
-        if(!scope.post)
-        {
-            scope.post={};
-        }
-
-        <?php
-        if($_GET["id"])
-        {
-        ?>
-        scope.post.id=<?php  echo $_GET["id"];?>;
-        <?php
-        }
-        ?>
-
-
         <?php if($post)
 
         {
@@ -85,6 +67,24 @@ if(!$errorWarningMsg)
 
         <?Php
         }?>
+
+
+        if(!scope.post)
+        {
+            scope.post={};
+        }
+
+        <?php
+        if($_GET["id"])
+        {
+        ?>
+        scope.post.id=<?php  echo $_GET["id"];?>;
+        <?php
+        }
+        ?>
+
+
+
         scope.$apply();
 
 
