@@ -15,7 +15,7 @@ $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
 try{
-    $limit= 15;
+    $limit= 16;
     $padding=6;
     $versionPanel="panel_repositorio";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
