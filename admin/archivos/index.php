@@ -18,16 +18,23 @@ try{
     $limit= 15;
     $padding=6;
 
-    $versionPanel="panel_repositorio";
     $p =is_numeric( $_GET["p"])?$_GET["p"]: 1;
 
     $GLOBALS["archivoDAO"]->setLimit($limit);
     $GLOBALS["archivoDAO"]->setPadding($padding);
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
-    $versionesRequeridas=[$versionPanel];//No agrego la original porq la traigo por defecto
+    $r =explode(",",$_GET["rep"]);
+    $filters=    array(
+        "repositorios"=>$r
+    );
 
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivoByRepositorioId($_GET["rep"],true,$versionesRequeridas);
+    var_dump($filters);
+
+    $GLOBALS["archivoDAO"]->setFilters(
+    $filters
+    );
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivos(true);
 
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();

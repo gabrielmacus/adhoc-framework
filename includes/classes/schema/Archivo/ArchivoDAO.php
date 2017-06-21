@@ -351,9 +351,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             if(is_array($this->filters["formats"]))
             {
 
-                $formats=$this->filters["formats"];
+                $formats=implode(",",$this->filters["formats"]);
 
-                $where.= (empty($where))?" WHERE archivo_extension IN ({$size}) ":" AND  archivo_extension IN ({$size}) ";
+                $where.= (empty($where))?" WHERE archivo_extension IN ({$formats}) ":" AND  archivo_extension IN ({$formats}) ";
 
             }
 
@@ -382,7 +382,6 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->setResults($sql);
         /** ** */
 
-        var_dump($sql);
 
         $res = $this->dataSource->runQuery($sql);
 
