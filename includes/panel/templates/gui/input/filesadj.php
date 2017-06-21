@@ -27,10 +27,6 @@ if(!$errorMsg)
                         return !el.delete;
                     }
                 );
-                console.log("Filter");
-
-                console.log(filter);
-
                 return  filter.length==0;
             }
             else
