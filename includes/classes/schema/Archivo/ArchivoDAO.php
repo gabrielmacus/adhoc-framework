@@ -173,6 +173,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
 
+        var_dump($r);
 
         parent::setResults($r);
     }
