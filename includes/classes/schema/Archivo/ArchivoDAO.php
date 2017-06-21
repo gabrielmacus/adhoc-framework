@@ -344,7 +344,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 $where.= (empty($where))?" WHERE archivo_repositorio IN ({$r}) ":" AND  archivo_repositorio IN ({$r}) ";
             }
 
-            if($size=$this->filters["size"] && is_numeric($this->filters["size"]))
+            if(!empty($this->filters["size"]) )
             {
                 $where.= (empty($where))?" WHERE archivo_size {$size} ":" AND  archivo_size {$size} ";
 
