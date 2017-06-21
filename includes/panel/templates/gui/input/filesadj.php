@@ -82,7 +82,7 @@ if(!$errorMsg)
 
             ids= ids.join();
 
-            href+="&exclude="ids;
+            href+="&exclude="+ids;
         }
 
         console.log(href);
