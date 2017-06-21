@@ -398,7 +398,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $in =rtrim($in,",");
 
-        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})";
+        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})  ORDER BY `archivo_creation` DESC";
 
         $res = $this->dataSource->runQuery($sql);
 
