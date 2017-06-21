@@ -19,12 +19,8 @@
         $regex='^.{5,90}$';
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
-        $label="Bajada";
-        $model="bajada";
-        include DIR_PATH."/includes/panel/templates/gui/input/textarea.php";
+   
 
-
-       
         $successMessage="Noticia guardada correctamente";
         include DIR_PATH."/includes/panel/templates/gui/save.php";
 
