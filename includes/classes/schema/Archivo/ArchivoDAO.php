@@ -331,6 +331,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         /** 21.06.2017: Filtros **/
 
+        $orderBy=" ORDER BY `archivo_creation` DESC ";
+
         $where="";
 
         if(!empty($this->filters))
@@ -369,7 +371,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $where.= (empty($where))?" WHERE  archivo_version = 0  ":" AND  archivo_version = 0 ";
 
-        $sql.=" {$where} ORDER BY `archivo_creation` DESC";
+        $sql.=" {$where} {$orderBy}";
 
 
         /** Paginacion */
@@ -398,7 +400,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $in =rtrim($in,",");
 
-        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})  ORDER BY `archivo_creation` DESC";
+        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in}) {$orderBy}";
 
         $res = $this->dataSource->runQuery($sql);
 
