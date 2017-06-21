@@ -152,14 +152,15 @@ if(!$errorMsg)
 
     </div>
 
-    <div class="fila margin empty" data-ng-if='adjuntos<?php echo $grupo;?>IsEmpty()'>
-
-        <h3><?php echo $label;?> no tiene contenido</h3>
-
-    </div>
-    <div class="fila margin">
-        <a id="adjuntarArchivo<?php echo $grupo;?>" style="display: block;color: white!important;;" class="fila btn" >Adjuntar archivo</a>
-    </div>
 
 
+
+</div>
+<div class="fila margin empty" data-ng-if='adjuntos<?php echo $grupo;?>IsEmpty()'>
+
+    <h3><?php echo $label;?> no tiene contenido</h3>
+
+</div>
+<div class="fila margin">
+    <a id="adjuntarArchivo<?php echo $grupo;?>" style="display: block;color: white!important;;" class="fila btn" >Adjuntar archivo</a>
 </div>
