@@ -67,8 +67,26 @@ if(!$errorMsg)
     });
 
     $(document).on("click","#adjuntarArchivo<?php echo $grupo;?>",function (e) {
-        e.preventDefault();
 
+        var href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(!empty($formats)){ echo "&formats=".implode(",",$formats); } ?>";
+
+        var group=post.archivosGroups["<?php echo $grupo?>"];
+
+        if(group && group.length)
+        {
+            var ids=group.map(
+                function (el) {
+                    return el.archivo_id;
+                }
+            );
+
+            ids= ids.join();
+
+            href+="&exclude="ids;
+        }
+
+
+        var lightbox = lity(href);
 
     });
 
@@ -111,7 +129,7 @@ if(!$errorMsg)
 
     </div>
     <div class="fila margin">
-        <a id="adjuntarArchivo<?php echo $grupo;?>"  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(!empty($formats)){ echo "&formats=".implode(",",$formats); } ?>">Adjuntar archivo</a>
+        <a id="adjuntarArchivo<?php echo $grupo;?>" style="display: block;color: white!important;;" class="fila btn" >Adjuntar archivo</a>
     </div>
 
 
