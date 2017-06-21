@@ -20,13 +20,13 @@ $htmlLocality="Paraná,Entre Rios";
 try{
 
     $t =$_GET["t"];
-    $r=31;
+    $r=$_GET["r"];
     switch ($_GET["act"])
     {
         case "save":
-
-
+            
       uploadTmp($r) ;
+      
             $post = new Post();
             $post->setTitulo($_POST["titulo"]);
             $post->setTexto($_POST["texto"]);
@@ -39,6 +39,7 @@ try{
             $post->setExtra3($_POST["extra3"]);
             $post->setExtra4($_POST["extra4"]);
             $post->setAnexos($_POST["anexos"]);
+            //$post->setUsuario($)
 
             if($_POST["creacion"])
       {

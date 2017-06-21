@@ -24,7 +24,7 @@ class Post implements JsonSerializable
     protected $extra4;
     protected $archivos=array();
     protected $anexos =array();
-    
+    protected $usuario;
     /** Variables para trabajar el post como anexos */
     
     protected $nexoId;
@@ -32,6 +32,23 @@ class Post implements JsonSerializable
     protected $nexoOrden;
     protected $anexoId;
 
+    /**
+     * @return mixed
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * @param mixed $usuario
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+    }
+
+    
     /**
      * @return mixed
      */
