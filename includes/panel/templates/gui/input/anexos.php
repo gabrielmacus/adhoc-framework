@@ -73,6 +73,82 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
 
         }
+
+
+
+        scope.validation.anexos<?php echo $grupo?>= {
+            isValid: true, check: function () {
+
+
+                console.log("checking anexo");
+
+                <?php
+                if($showError)
+                {
+
+                if($min)
+                {
+                ?>
+                if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
+                {
+                    scope.validation.anexos<?php echo $grupo?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.anexos<?php echo $grupo?>.isValid=true;
+                }
+
+
+                <?php
+                }
+
+                if($max)
+                {
+                ?>
+                if(scope.post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
+                {
+                    scope.validation.anexos<?php echo $grupo?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.anexos<?php echo $grupo?>.isValid=true;
+                }
+
+                <?php
+                }
+                ?>
+
+
+
+
+
+
+                setTimeout(function () {
+                    scope.$apply();
+                });
+
+                <?php
+                }
+
+                ?>
+
+
+            }
+        };
+
+
         scope.removeAnexo=function (a) {
 
             a.delete=true;
@@ -184,78 +260,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             }
         },false);
 
-
-        scope.validation.anexos<?php echo $grupo?>= {
-            isValid: true, check: function () {
-
-
-                console.log("checking anexo");
-
-                <?php
-                if($showError)
-              {
-
-                if($min)
-                {
-                    ?>
-                if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
-                {
-                    scope.validation.anexos<?php echo $grupo?>.isValid=false;
-
-                    setTimeout(function () {
-                        scope.$apply();
-                    });
-
-                    return false;
-                }
-                else
-                {
-                    scope.validation.anexos<?php echo $grupo?>.isValid=true;
-                }
-
-
-            <?php
-                }
-
-                if($max)
-                {
-                    ?>
-                if(scope.post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
-                {
-                    scope.validation.anexos<?php echo $grupo?>.isValid=false;
-
-                    setTimeout(function () {
-                        scope.$apply();
-                    });
-
-                    return false;
-                }
-                else
-                {
-                    scope.validation.anexos<?php echo $grupo?>.isValid=true;
-                }
-
-            <?php
-                }
-                ?>
-
-
-
-
-
-
-                setTimeout(function () {
-                    scope.$apply();
-                });
-
-            <?php
-            }
-
-                ?>
-
-
-            }
-        };
 
 
 
