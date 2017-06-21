@@ -369,7 +369,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $where.= (empty($where))?" WHERE  archivo_version = 0  ":" AND  archivo_version = 0 ";
 
-        $sql.=" {$where} ORDER BY `archivo_creation` DESC,archivo_id DESC ";
+        $sql.=" {$where} ORDER BY `archivo_creation` DESC";
 
 
         /** Paginacion */
