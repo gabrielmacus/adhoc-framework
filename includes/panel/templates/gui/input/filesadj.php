@@ -35,7 +35,7 @@ if(!$errorMsg)
             }
             else
             {
-                return false;
+                return true;
             }
 
 
