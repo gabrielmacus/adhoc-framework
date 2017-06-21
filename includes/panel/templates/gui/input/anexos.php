@@ -7,6 +7,7 @@ if(!$shownText)
 {
     $shownText="titulo";
 }
+$showError = (is_array($min) || is_numeric($max) || $formats);
 
 ?>
 <script>
@@ -177,6 +178,79 @@ if(!$shownText)
 
             }
         },false);
+
+
+        scope.validation.<?php echo $model?>= {
+            isValid: true, check: function () {
+
+
+
+                <?php
+                if($showError)
+              {
+
+                if($min)
+                {
+                    ?>
+                if(post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
+                {
+                    scope.validation.<?php echo $model?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.<?php echo $model?>.isValid=true;
+                }
+
+
+            <?php
+                }
+
+                if($max)
+                {
+                    ?>
+                if(post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
+                {
+                    scope.validation.<?php echo $model?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.<?php echo $model?>.isValid=true;
+                }
+
+            <?php
+                }
+                ?>
+
+
+
+
+
+
+                setTimeout(function () {
+                    scope.$apply();
+                });
+
+            <?php
+            }
+
+                ?>
+
+
+            }
+        };
+
     });
 
 
@@ -250,6 +324,11 @@ if(!$shownText)
 
     </div>
 
+    <?php
+    if($showError) {
+        include "error.php";
+    }
+    ?>
 </div>
 
 <script>

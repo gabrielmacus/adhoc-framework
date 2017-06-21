@@ -50,7 +50,7 @@
         $max=6;
         $min=3;
         $formats=["jpg"];
-        $errorMsg="Debe seleccionar entre {$min} y {$max} archivos de los tipos permitidos (".implode(",",$formats).")";
+        $errorMsg="Debe seleccionar entre {$min} y {$max} archivos";
 
         $label="Galeria de imágenes";
         $grupo=1;
