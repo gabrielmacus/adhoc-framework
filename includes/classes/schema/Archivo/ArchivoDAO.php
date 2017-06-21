@@ -396,8 +396,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $in =rtrim($in,",");
 
-        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in})";
-        var_dump($sql);
+        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})";
+
         $res = $this->dataSource->runQuery($sql);
 
         foreach ($res as $archivo)
