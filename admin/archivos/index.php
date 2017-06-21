@@ -25,12 +25,13 @@ try{
     $GLOBALS["archivoDAO"]->setActualPage($p);
 
     $r =explode(",",$_GET["rep"]);
-    $f = explode(",",$_GET["formats"]);
+
     $filters=    array(
         "repositorios"=>$r
     );
-    if(!empty($f))
-    {
+
+    if($_GET["formats"])
+    {    $f = explode(",",$_GET["formats"]);
         $filters["formats"]=$f;
     }
 
