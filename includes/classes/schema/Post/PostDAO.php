@@ -421,6 +421,8 @@ class PostDAO  extends Paginable implements IPost
 
                 $archivo->setGrupo($nexo["archivo_grupo"]);//El grupo o galeria al que pertenece el archivo dentro del post
 
+                $archivo->setOrden($nexo["archivo_orden"]);
+
                 /**
                  * 13.6.2017: Agregado orden
                  */

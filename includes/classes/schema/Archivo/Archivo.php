@@ -33,6 +33,7 @@ class Archivo implements JsonSerializable
     protected $pathName;
     protected $grupo;
     protected $nexo;
+    protected $orden;
 
     /**
      * Archivo constructor.
@@ -83,6 +84,23 @@ class Archivo implements JsonSerializable
         $this->nexoId = $nexoId;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getOrden()
+    {
+        return $this->orden;
+    }
+
+    /**
+     * @param mixed $orden
+     */
+    public function setOrden($orden)
+    {
+        $this->orden = $orden;
+    }
+
+    
 
 
     function jsonSerialize()
@@ -105,6 +123,7 @@ class Archivo implements JsonSerializable
            "nexo"=>$this->getNexo(),
            "grupo"=>$this->getGrupo(),
            "nexoId"=>$this->getNexoId(),
+           "orden"=>$this->getOrden()
            
            
        );
