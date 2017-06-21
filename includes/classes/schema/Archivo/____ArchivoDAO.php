@@ -21,7 +21,6 @@ class ArchivoDAO extends Paginable implements IArchivo
     protected $dataSource;
     protected $tableName;
     protected $files=array();
-    protected $filters=array();
 
     public function __construct(DataSource $dataSource, $tableName="archivos")
     {
@@ -70,6 +69,78 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         }
         $this->files=$archivos;
+    }
+
+    public function _insertArchivo(Archivo $a,$versionName="original",$versionId=0)
+    {
+        $this->validate($a);
+
+        $r =$a->getRepositorio();
+
+        $ftp  =$r->getFtp();
+
+        $randName=substr($a->getName(),0,6).rand(0,9999);
+
+        $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+
+        $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
+
+        $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
+
+        $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
+
+        $a->setPathName($mainPath);
+
+        $mainPath="{$mainPath}/{$fileNameVersion}";
+
+        $fullDir = $r->getPath().$mainPath; //Directorio completo, nombre del archivo incluido
+
+        if(!$ftp->isDir($mainFolder))//Chequeo si no existe el directorio, en tal caso lo creo
+        {
+            $ftp->mkdir($mainFolder,true);
+        }
+
+
+        //   echo json_encode(array("fullDir"=>$fullDir,"tmpDir"=>$a->getTmpPath()));
+
+        //  echo json_encode( $r->getName());
+
+        // echo json_encode($ftp->put("/httpdocs/data/2017/04/12/1492008967.jpg/1492008967_original.jpg","C:/xampp5/htdocs/adhoc-framework/tmp/files/606453_7up.jpg",FTP_BINARY));
+        //    exit();
+
+        /*      echo $fullDir." ".$a->getTmpPath();
+
+              exit();
+      */
+        $ftp->pasv(true);
+        if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
+        {
+            throw new Exception("ArchivoDAO:0");
+        }
+
+        $a->setVersion($versionId);
+
+
+        $a->setRealName($r->getUrl().$mainPath); //Url + Ruta completa
+        $a->setVersionName($versionName);
+
+
+        $sql = $this->insertSql;
+
+        if(!$a->getCreation())
+        {
+            $a->setCreation(time());
+        }
+        if(!$a->getModification())
+        {
+            $a->setModification(time());
+        }
+
+        $a->setPath($mainPath);
+
+        $res= $this->dataSource->runUpdate($sql,
+            $this->getParamsArray($a));
+        return $res;
     }
 
 
@@ -150,12 +221,25 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     }
 
 
-    public function setResults($sql)
+    public function setResults($where=false)
     {
 
-        $sql="SELECT count(*) as 'total' FROM ({$sql}) as tabla";
+
+        if(!$where)
+        {
+
+            $where="archivo_version = 0";
+        }
+        else
+        {
+            $where.= " AND archivo_version = 0";
+        }
+
+        $sql="SELECT count(*) as 'total' FROM {$this->tableName} WHERE {$where}";
+
 
         $r=$this->dataSource->runQuery($sql)[0]['total'];
+
 
 
         parent::setResults($r);
@@ -308,88 +392,30 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     public function selectArchivos($process=true)
     {
 
-        $this->files=array();
 
-        $sql="SELECT * FROM archivos ";
+        /**
+         * Traigo todos los repositorios
+         */
+        $sql = "SELECT * FROM  `repositorios` LIMIT 0 , 30";
 
-        /** 21.06.2017: Filtros **/
+        $repositorios= $this->dataSource->runQuery($sql);
 
-        $where="";
+        $ids=[];
 
-        if(!empty($this->filters))
+        foreach ($repositorios as $repositorio)
         {
-
-            if(is_array($this->filters["repositorios"]))
-            {
-
-                $r = implode(",",$this->filters["repositorios"]);
-                $where.= (empty($where))?" WHERE archivo_repositorio IN ({$r}) ":" AND  archivo_repositorio IN ({$r}) ";
-            }
-
-            if($size=$this->filters["size"])
-            {
-                $where.= (empty($where))?" WHERE archivo_size {$size} ":" AND  archivo_size {$size} ";
-
-            }
-
-            if(is_array($this->filters["formats"]))
-            {
-
-                $formats=$this->filters["formats"];
-
-                $where.= (empty($where))?" WHERE archivo_extension IN ({$size}) ":" AND  archivo_extension IN ({$size}) ";
-
-            }
-
-            if($name=$this->filters["name"])
-            {
-                $where.= (empty($where))?" WHERE archivo_name LIKE  '%{$size}%' ":" AND   archivo_name LIKE  '%{$size}%' ";
-
-            }
-
+            $ids[]=$repositorio["repositorio_id"];
         }
 
+        /** **/
 
-        $where.= (empty($where))?" WHERE  archivo_version = 0  ":" AND  archivo_version = 0 ";
+        /**
+         * Traigo los archivos de dichos repositorios
+         */
+        $ids = implode(",",$ids);
+        return   $this->selectArchivoByRepositorioId($ids,$process);
+        /** */
 
-        $sql.=" {$where} ORDER BY `archivo_creation` DESC ";
-
-
-        /** Paginacion */
-
-        $offset = $this->getOffset();
-
-        if ($this->getLimit()) {
-            $sql .= "  LIMIT {$this->getLimit()} OFFSET {$offset}";
-        }
-
-        $this->setResults($sql);
-        /** ** */
-
-        $res = $this->dataSource->runQuery($sql);
-
-        $in="";
-
-        foreach ($res as $r)
-        {
-           $in="{$r["archivo_id"]},";
-        }
-
-        $in =rtrim($in,",");
-
-        $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in})";
-
-        $res = $this->dataSource->runQuery($sql);
-
-        foreach ($res as $archivo)
-        {
-            $this->query($archivo);
-        }
-
-        return $this->files;
-
-
-        /** ** */
 
     }
 
@@ -525,6 +551,86 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
      * @return string
      * @throws Exception
      */
+    public function _deleteArchivoById($ids)
+    {
+
+        $in="";
+        $archivos=array();
+        if (is_array($ids))
+        {
+            foreach ($ids as $file)
+            {
+
+                /** Chequeo si los archivos tienen objetos asociados**/
+
+                $sqlArchivosObjetos="SELECT * FROM archivos_objetos WHERE archivo_id=:archivo_id";
+
+                $objetosAsociados=count($this->dataSource->runQuery($sqlArchivosObjetos,array(":archivo_id"=>$file["archivo_id"])));
+
+
+                if($objetosAsociados>0)
+                {
+                    throw new Exception("ArchivoDAO:3");//Codigo de error al intentar eliminar un archivo con objetos asociados
+
+                }
+
+                /** **/
+
+
+                $archivos=array_merge($archivos,$this->selectArchivoById($file["archivo_id"],false));
+            }
+
+
+        }
+        else
+        {
+            $archivos=$this->selectArchivoById($ids,false);
+        }
+
+
+       $repositorio= $archivos[0]->getRepositorio();
+       $ftp=$repositorio->getFtp();
+
+        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
+
+        $deletings="";
+        foreach ($archivos as $archivo)
+        {
+            $deleteFile= $repositorio->getPath().$archivo->getPath();
+
+            $in.="{$archivo->getId()},";
+
+            $deletings.="{$archivo->getRealName()},";
+            $ftp = new \FtpClient\FtpClient();
+
+           if(!$ftp->delete($deleteFile))//Elimino cada archivo
+            {
+
+                    throw new Exception("ArchivoDAO:1:".$archivo->getName().":{$deletings}");//Codigo de error al eliminar un archivo
+
+
+             }
+        }
+
+
+        $deletePath=$repositorio->getPath().$archivos[0]->getPathName();
+
+        if(!$ftp->remove($deletePath))//Elimino la carpeta
+        {
+            throw new Exception("ArchivoDAO:2");//Codigo de error al eliminar una carpeta
+        }
+
+        $ftp->close();
+
+       // $sql = $this->deleteSql;
+        $in =rtrim($in,",");
+
+        $sql ="DELETE FROM {$this->tableName} WHERE archivo_id IN ({$in}) OR archivo_version IN ({$in})";
+
+
+        $res= $this->dataSource->runUpdate($sql);
+        return $res;
+    }
 
     public function deleteArchivoById($ids)
     {
