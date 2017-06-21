@@ -21,7 +21,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
         scope.anexos<?php echo $grupo;?>IsEmpty=function () {
             scope.validation.<?php echo $model?>.check();
-            
+
             var group=scope.post.anexosGroups["<?php echo $grupo?>"];
 
             if(group)
@@ -193,7 +193,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($min)
                 {
                     ?>
-                if(post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
+                if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
 
@@ -215,7 +215,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($max)
                 {
                     ?>
-                if(post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
+                if(scope.post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
                 {
                     scope.validation.<?php echo $model?>.isValid=false;
 
