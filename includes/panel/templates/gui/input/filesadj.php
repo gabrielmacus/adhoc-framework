@@ -85,6 +85,7 @@ if(!$errorMsg)
             href+="&exclude="ids;
         }
 
+        console.log(href);
 
         var lightbox = lity(href);
 
