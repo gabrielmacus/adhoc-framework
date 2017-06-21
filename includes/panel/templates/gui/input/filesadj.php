@@ -14,6 +14,20 @@ if(!$errorMsg)
         /*
         scope.$watch($scope.cart, $scope.updateCart(), true);
 */
+        scope.adjuntos<?php echo $grupo;?>IsEmpty=function () {
+
+            var group=post.archivosGroups["<?php echo $grupo?>"];
+
+            var filter = group.filter(
+                function (el) {
+
+                    return el.delete;
+                }
+            );
+
+            return filter.length==0;
+
+        }
         scope.removeAdjunto=function (a) {
 
             a.delete=true;
@@ -130,7 +144,7 @@ if(!$errorMsg)
 
     </div>
 
-    <div class="fila margin empty" data-ng-if='!post.archivosGroups["<?php echo $grupo?>"] || post.archivosGroups["<?php echo $grupo?>"].length==0'>
+    <div class="fila margin empty" data-ng-if='adjuntos<?php echo $grupo;?>IsEmpty()'>
 
         <h3><?php echo $label;?> no tiene contenido</h3>
 
