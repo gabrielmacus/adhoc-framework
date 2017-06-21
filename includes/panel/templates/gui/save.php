@@ -177,6 +177,7 @@ if(!$errorWarningMsg)
                         {
                         ?>
                         toastr.success('', '<?php echo $successMessage;?>');
+                        location.reload();
                         <?php
                         }?>
 
