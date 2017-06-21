@@ -750,7 +750,6 @@ IN NATURAL LANGUAGE MODE
 
         //Filtro por elementos excluidos
 
-        $qFilter="";
         if($filters["exclude"])
         {
             $exclude = implode(",",$filters["exclude"]);
