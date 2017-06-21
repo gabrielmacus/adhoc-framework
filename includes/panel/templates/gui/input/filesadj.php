@@ -16,7 +16,10 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         /*
         scope.$watch($scope.cart, $scope.updateCart(), true);
 */
-
+        if(!   scope.validation)
+        {
+            scope.validation={};
+        }
         scope.validation.archivos<?php echo $grupo?>=
         {
             isValid: true, check: function () {

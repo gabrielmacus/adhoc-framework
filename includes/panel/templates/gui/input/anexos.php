@@ -76,6 +76,10 @@ $showError = (is_array($min) || is_numeric($max));
 
 
 
+        if(!   scope.validation)
+        {
+            scope.validation={};
+        }
         scope.validation.anexos<?php echo $grupo?>= {
             isValid: true, check: function () {
 
