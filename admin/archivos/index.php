@@ -26,10 +26,9 @@ try{
 
     $r =explode(",",$_GET["rep"]);
     $filters=    array(
-        "repositorios"=>$r
+        "repositorios"=>[31]
     );
 
-    var_dump($filters);
 
     $GLOBALS["archivoDAO"]->setFilters(
     $filters
