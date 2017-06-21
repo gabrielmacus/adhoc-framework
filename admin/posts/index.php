@@ -111,6 +111,16 @@ try{
                 break;
         }
 
+        
+        if($_GET["exclude"]){
+            
+            
+            $exclude = explode(",",$_GET["exclude"]);
+            $filters["exclude"]=$exclude;
+            
+        }
+        
+        
         if(!empty(trim($_GET["q"])))
         {
             $filters["q"]=$_GET["q"];

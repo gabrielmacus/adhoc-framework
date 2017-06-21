@@ -729,16 +729,38 @@ ON posts_filter.post_id = p.post_id";
         if($filters["q"])
         {
 
-            $qFilter.=" WHERE MATCH (
+            $qFilter.= (empty($qFilter))?"  WHERE MATCH (
                 post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
             )
 AGAINST (
     '{$filters["q"]}'
 IN NATURAL LANGUAGE MODE
-)";
+)":" AND WHERE MATCH (
+                post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
+            )
+AGAINST (
+    '{$filters["q"]}'
+IN NATURAL LANGUAGE MODE
+) ";
+
 
 
         }
+
+
+        //Filtro por elementos excluidos
+
+        $qFilter="";
+        if($filters["exclude"])
+        {
+            $exclude = implode(",",$filters["exclude"]);
+
+            $qFilter.= (empty($qFilter))?"  WHERE post_id NOT IN ({$exclude}) ":" AND post_id NOT IN ({$exclude}) ";
+
+
+        }
+
+
 
         /*** **/
 
