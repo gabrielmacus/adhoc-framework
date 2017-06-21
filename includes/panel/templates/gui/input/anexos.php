@@ -80,8 +80,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             isValid: true, check: function () {
 
 
-                console.log("checking anexos grupo <?php echo $grupo;?>");
-
                 <?php
                 if($showError)
                 {
@@ -89,8 +87,15 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($min)
                 {
                 ?>
-                console.log(scope.post.anexosGroups[<?php echo $grupo;?>].length+" < <?php echo $min?>");
-                if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
+
+                var arr = scope.post.anexosGroups[<?php echo $grupo;?>].filter(
+                    function (el) {
+                        return !el.delete;
+                    }
+                );
+
+                console.log(arr.length+" < <?php echo $min?>");
+                if(arr.length<<?php echo $min;?>)
                 {
                     scope.validation.anexos<?php echo $grupo?>.isValid=false;
 
@@ -112,7 +117,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($max)
                 {
                 ?>
-                if(scope.post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
+                if(arr.length><?php echo $max;?>)
                 {
                     scope.validation.anexos<?php echo $grupo?>.isValid=false;
 
@@ -248,10 +253,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                     {
 
                         scope.post.anexosGroups[<?php echo $grupo;?>].push(v);
-
-                        setTimeout(function () {
-                            scope.$apply();
-                        });
 
                         scope.validation.anexos<?php echo $grupo?>.check();
                       //  scope.post.anexos.push(v);
