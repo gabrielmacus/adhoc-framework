@@ -50,6 +50,21 @@ if(!$type)
         <?php
         }?>
 
+        <?php if($post)
+        {
+            ?>
+        if(!scope.post)
+        {
+            scope.post= <?php echo json_encode($post);?>;
+        }
+        <?php
+        }?>
+
+        if(!scope.post)
+        {
+            scope.post={};
+        }
+
     });
 
 
