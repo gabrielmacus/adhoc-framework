@@ -24,14 +24,14 @@ if(!$errorMsg)
                 var filter = group.filter(
                     function (el) {
 
-                        return el.delete;
+                        return !el.delete;
                     }
                 );
                 console.log("Filter");
 
                 console.log(filter);
 
-                return !filter.length==0;
+                return  filter.length==0;
             }
             else
             {
