@@ -26,7 +26,6 @@
 
                         var arr=JSON.parse(scope.post.<?php echo $model?>);
 
-                        console.log("Data");
 
                         <?php
                         if(is_numeric($max))
@@ -115,7 +114,8 @@
 
 
 
-                    }catch (e)
+                    }
+                    catch (e)
                     {
 
                         <?php
@@ -136,10 +136,8 @@
 
                 }
             };
-            $(document).on("change","[data-ng-model='post.<?php echo $model?>']",function () {
 
-                scope.validation.<?php echo $model?>.check();
-            });
+            
 
             <?php
             }?>
