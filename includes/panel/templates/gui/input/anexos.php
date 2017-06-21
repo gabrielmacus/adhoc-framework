@@ -240,18 +240,18 @@ if(!$shownText)
 
         </li>
     </ul>
+    <div class="fila margin empty" data-ng-if='anexos<?php echo $grupo;?>IsEmpty()'>
 
+        <h3><?php echo $label;?> no tiene contenido</h3>
+
+    </div>
     <div class="fila" style="margin-top: 15px">
         <a data-lity class="btn" style="color: white!important;" href='/admin/posts/?modal=true&grupo=<?php echo $grupo?>&s=<?php echo $s;?>&t=<?php echo $tipo;?>&shownText=<?php echo json_encode($shownText)?>'><?php echo $textBtn;?></a>
 
     </div>
 
 </div>
-<div class="fila margin empty" data-ng-if='anexos<?php echo $grupo;?>IsEmpty()'>
 
-    <h3><?php echo $label;?> no tiene contenido</h3>
-
-</div>
 <script>
 
 </script>
