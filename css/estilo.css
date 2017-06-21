@@ -1217,3 +1217,10 @@ position: absolute
     overflow: hidden;
 
 }
+.empty
+{
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(224, 225, 217, 1);
+}
+

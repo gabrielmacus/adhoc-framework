@@ -130,7 +130,7 @@ if(!$errorMsg)
 
     </div>
 
-    <div class="fila margin" data-ng-if='!post.archivosGroups["<?php echo $grupo?>"] || post.archivosGroups["<?php echo $grupo?>"].length==0'>
+    <div class="fila margin empty" data-ng-if='!post.archivosGroups["<?php echo $grupo?>"] || post.archivosGroups["<?php echo $grupo?>"].length==0'>
 
         <h3><?php echo $label;?> no tiene contenido</h3>
 
