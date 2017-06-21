@@ -360,7 +360,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                 },$this->filters["formats"]);
 
-                $formats=implode(",",$this->filters["formats"]);
+                $formats=implode(",",$formats);
 
                 $where.= (empty($where))?" WHERE archivo_extension IN ({$formats}) ":" AND  archivo_extension IN ({$formats}) ";
 
