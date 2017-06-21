@@ -1209,3 +1209,11 @@ position: absolute
     padding: 10px;
     font-weight: 600;
 }
+
+.file .name
+
+{    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+
+}
