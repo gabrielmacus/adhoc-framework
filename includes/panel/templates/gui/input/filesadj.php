@@ -66,6 +66,11 @@ if(!$errorMsg)
         },false);
     });
 
+    $(document).on("click","#adjuntarArchivo<?php echo $grupo;?>",function (e) {
+        e.preventDefault();
+
+
+    });
 
 </script>
 <style>
@@ -106,7 +111,7 @@ if(!$errorMsg)
 
     </div>
     <div class="fila margin">
-        <a  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(!empty($formats)){ echo "&formats=".implode(",",$formats); } ?>">Adjuntar archivo</a>
+        <a id="adjuntarArchivo<?php echo $grupo;?>"  data-lity  style="display: block;color: white!important;;" class="fila btn" href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(!empty($formats)){ echo "&formats=".implode(",",$formats); } ?>">Adjuntar archivo</a>
     </div>
 
 
