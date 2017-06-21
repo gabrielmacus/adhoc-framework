@@ -337,20 +337,20 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         if(!empty($this->filters))
         {
 
-            if(is_array($this->filters["repositorios"]))
+            if(is_array($this->filters["repositorios"]) && !empty($this->filters["repositorios"]))
             {
 
                 $r = implode(",",$this->filters["repositorios"]);
                 $where.= (empty($where))?" WHERE archivo_repositorio IN ({$r}) ":" AND  archivo_repositorio IN ({$r}) ";
             }
 
-            if($size=$this->filters["size"])
+            if($size=$this->filters["size"] && is_numeric($this->filters["size"]))
             {
                 $where.= (empty($where))?" WHERE archivo_size {$size} ":" AND  archivo_size {$size} ";
 
             }
 
-            if(is_array($this->filters["formats"]))
+            if(is_array($this->filters["formats"]) && !empty($this->filters["formats"]))
             {
 
                 $formats=implode(",",$this->filters["formats"]);
