@@ -23,15 +23,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
 
 
-            scope.$watchCollection(
-                "post.anexosGroups[<?php echo $grupo;?>]",
-                function( newValue, oldValue ) {
-
-                    scope.validation.<?php echo $model?>.check();
-
-                }
-            );
-
 
             var group=scope.post.anexosGroups["<?php echo $grupo?>"];
 
@@ -263,6 +254,17 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             }
         };
 
+
+
+
+        scope.$watchCollection(
+            "post.anexosGroups[<?php echo $grupo;?>]",
+            function( newValue, oldValue ) {
+
+                scope.validation.<?php echo $model?>.check();
+
+            }
+        );
     });
 
 
