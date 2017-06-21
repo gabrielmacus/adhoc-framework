@@ -188,8 +188,6 @@ class PostDAO  extends Paginable implements IPost
             }
 
 
-            echo $archivosSql."<br>";
-
             $this->dataSource->runUpdate($archivosSql);
 
         }
