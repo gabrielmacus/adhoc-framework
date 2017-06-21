@@ -89,6 +89,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($min)
                 {
                 ?>
+                console.log(scope.post.anexosGroups[<?php echo $grupo;?>].length+" < <?php echo $min?>");
                 if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
                 {
                     scope.validation.anexos<?php echo $grupo?>.isValid=false;
