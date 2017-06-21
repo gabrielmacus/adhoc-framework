@@ -226,7 +226,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 <div style="display: block!important;" class="fila adjuntos"  ui-sortable="sortableOptions<?php echo $grupo;?>"  data-ng-model='post.archivosGroups["<?php echo $grupo?>"]'>
     <label class="fila" style="margin-bottom: 10px;"><?php echo $label;?></label>
 
-    <div   class="s12 m6 l4 padding " data-ng-repeat='a in post.archivosGroups["<?php echo $grupo?>"]  | orderBy:"archivo_orden"'  data-ng-hide="a.delete">
+    <div   class="s12 m6 l4 padding " data-ng-repeat='a in post.archivosGroups["<?php echo $grupo?>"]'  data-ng-hide="a.delete">
 
         <div class="adjunto-wrapper" style="position: relative">
               <span data-ng-click="removeAdjunto<?php echo $grupo;?>(a)" style="font-size:30px;cursor: pointer;position: absolute;top:5px;right:5px;color: rgba(220, 69, 47, 1)">
