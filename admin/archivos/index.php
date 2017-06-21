@@ -29,6 +29,10 @@ try{
     $filters=    array(
         "repositorios"=>$r
     );
+    if(!empty($f))
+    {
+        $filters["formats"]=$f;
+    }
 
 
     $GLOBALS["archivoDAO"]->setFilters(
