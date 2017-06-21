@@ -26,15 +26,17 @@ try{
 
     $r =explode(",",$_GET["rep"]);
     $filters=    array(
-        "repositorios"=>[31]
+        "repositorios"=>$r
     );
 
 
     $GLOBALS["archivoDAO"]->setFilters(
     $filters
     );
-    $archivos= $GLOBALS["archivoDAO"]->selectArchivos(true);
 
+    $archivos= $GLOBALS["archivoDAO"]->selectArchivos();
+
+    echo json_encode($archivos);
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
