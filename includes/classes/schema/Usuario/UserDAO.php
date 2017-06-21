@@ -85,7 +85,7 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
     {
         $u = new User($data["usuario_name"],$data["usuario_surname"],$data["usuario_age"],$data["usuario_email"],
             $data["usuario_password"],$data["usuario_nickname"]
-            ,$data["usuario_creation"],$data["usuario_modification"]);
+            ,$data["usuario_creation"],$data["usuario_modification"],$data["usuario_id"]);
 
         $u->setStatus($data["usuario_status"]);
 
