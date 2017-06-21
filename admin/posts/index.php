@@ -132,10 +132,10 @@ try{
         );
         $posts=    $GLOBALS["postDAO"]->selectPosts($processFiles,$processAnexos);
 
-        var_dump($posts);
+
       //  $posts= $GLOBALS["postDAO"]->selectPostByTipo($t,$processFiles,$processAnexos);
     }
-
+    var_dump($post);
 
     $pg=$GLOBALS["postDAO"]->getPaginador();
     $actualPage=$GLOBALS["postDAO"]->getActualPage()+1;
