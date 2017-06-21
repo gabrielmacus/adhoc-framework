@@ -346,6 +346,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             if(!empty($this->filters["size"]) )
             {
+                $size=$this->filters["size"];
                 $where.= (empty($where))?" WHERE archivo_size {$size} ":" AND  archivo_size {$size} ";
 
             }
