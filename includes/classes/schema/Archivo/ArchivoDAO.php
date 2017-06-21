@@ -354,6 +354,12 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             if(is_array($this->filters["formats"]) && !empty($this->filters["formats"]))
             {
 
+                $formats = array_map(function($f){
+
+                    return "'{$f}'";
+
+                },$this->filters["formats"]);
+
                 $formats=implode(",",$this->filters["formats"]);
 
                 $where.= (empty($where))?" WHERE archivo_extension IN ({$formats}) ":" AND  archivo_extension IN ({$formats}) ";
@@ -372,7 +378,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $where.= (empty($where))?" WHERE  archivo_version = 0  ":" AND  archivo_version = 0 ";
 
         $sql.=" {$where} {$orderBy}";
-var_dump($sql);
+
 
         /** Paginacion */
         $this->setResults($sql);
