@@ -39,7 +39,7 @@ try{
             $post->setExtra3($_POST["extra3"]);
             $post->setExtra4($_POST["extra4"]);
             $post->setAnexos($_POST["anexos"]);
-            //$post->setUsuario($)
+            $post->setUsuario($user["id"]);
 
             if($_POST["creacion"])
       {
