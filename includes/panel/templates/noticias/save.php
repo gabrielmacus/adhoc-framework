@@ -16,7 +16,7 @@
         $model="titulo";
         $errorMsg="Ingrese el título correctamente";
         //Cualquier caracter, min 5 , max 90
-        $regex='^.{5,200}$';
+        $regex='^.{5,250}$';
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
         $label="Bajada";
