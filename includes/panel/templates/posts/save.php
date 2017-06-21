@@ -47,7 +47,42 @@
         include DIR_PATH."/includes/panel/templates/gui/input/collection.php";
 */
 
-   
+        $max=6;
+        $min=3;
+        $formats=["jpg"];
+        $errorMsg="Debe seleccionar entre {$min} y {$max} archivos";
+
+        $label="Galeria de imágenes";
+        $grupo=1;
+
+        include DIR_PATH."/includes/panel/templates/gui/input/filesadj.php";
+
+        /*
+
+        $label="Galeria de imágenes 2";
+        $grupo=45;
+        $formats=[];//TODO proximamente
+        include DIR_PATH."/includes/panel/templates/gui/input/filesadj.php";
+
+
+
+        $label="Posts adjuntos";
+        $grupo=26;
+        $s="posts";
+        $tipo=84;
+        $shownText="titulo";
+        include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
+
+
+
+        $label="Posts adjuntos 2";
+        $grupo=27;
+        $s="posts";
+        $tipo=84;
+        $shownText="titulo";
+        include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
+*/
+
 
 
         $label="Texto";
