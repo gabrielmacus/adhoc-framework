@@ -158,10 +158,8 @@ class PostDAO  extends Paginable implements IPost
 
             if(!$archivo["delete"])
             {
-                if(!$archivo["archivo_orden"])
-                {
-                    $archivo["archivo_orden"]=$k;
-                }
+
+                
                 $archivosSql ="REPLACE INTO archivos_objetos SET ";
 
                 $set="archivo_id={$archivo["archivo_id"]},
