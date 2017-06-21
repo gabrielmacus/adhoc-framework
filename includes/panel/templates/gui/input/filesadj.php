@@ -31,7 +31,7 @@ if(!$errorMsg)
 
                 console.log(filter);
 
-                return filter.length==0;
+                return !filter.length==0;
             }
             else
             {
