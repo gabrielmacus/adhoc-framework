@@ -405,6 +405,12 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $this->query($archivo);
         }
 
+
+        if($process)
+        {
+            $this->processArchivos();
+        }
+
         return $this->files;
 
 
