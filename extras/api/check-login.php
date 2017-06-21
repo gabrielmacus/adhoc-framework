@@ -22,7 +22,7 @@ try
     $user=(array)\Firebase\JWT\JWT::decode($token,$configuracion->getTokenSecret(),array('HS512'));
     $user=(array)$user["data"];
 
-
+    var_dump($user);
 }
 catch (Exception $e)
 {
