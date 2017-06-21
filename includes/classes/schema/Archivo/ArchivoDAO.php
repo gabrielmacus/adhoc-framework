@@ -383,7 +383,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         /** ** */
 
 
-        var_dump($sql);
+
 
         $res = $this->dataSource->runQuery($sql);
 
@@ -395,7 +395,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         }
 
         $in =rtrim($in,",");
-
+        var_dump($in);
         $sql ="SELECT * FROM archivos WHERE archivo_id IN ({$in})";
 
         $res = $this->dataSource->runQuery($sql);
