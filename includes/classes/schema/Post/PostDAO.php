@@ -181,6 +181,7 @@ class PostDAO  extends Paginable implements IPost
             }
             else
             {
+                /** 21.06.2017 Fixed**/
                // $archivosSql="DELETE FROM archivos_objetos WHERE archivo_id ='{$archivo["archivo_id"]}' AND  objeto_id ='{$archivo["objeto_id"]}' ";
                 $archivosSql="DELETE FROM archivos_objetos WHERE archivo_objeto_id ='{$archivo["archivo_objeto_id"]}'";
 
