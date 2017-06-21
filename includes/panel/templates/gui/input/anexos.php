@@ -327,7 +327,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
     <?php
     if($showError) {
-        $model=$grupo;
+        $model="anexos".$grupo;
         include "error.php";
     }
     ?>
