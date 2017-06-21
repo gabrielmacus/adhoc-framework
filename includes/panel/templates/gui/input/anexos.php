@@ -77,7 +77,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
             a.delete=true;
 
-            scope.validation.<?php echo $grupo?>.check();
+            scope.validation.anexos<?php echo $grupo?>.check();
         }
         <?php if($post)
         {
@@ -172,7 +172,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
                         scope.post.anexosGroups[<?php echo $grupo;?>].push(v);
 
-                        scope.validation.<?php echo $grupo?>.check();
+                        scope.validation.anexos<?php echo $grupo?>.check();
                       //  scope.post.anexos.push(v);
                     }
 
