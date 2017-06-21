@@ -18,7 +18,7 @@ if(!$shownText)
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-        anexos<?php echo $grupo;?>IsEmpty=function () {
+        scope.anexos<?php echo $grupo;?>IsEmpty=function () {
 
             var group=scope.post.anexosGroups["<?php echo $grupo?>"];
 
