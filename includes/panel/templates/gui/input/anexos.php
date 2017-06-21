@@ -7,7 +7,7 @@ if(!$shownText)
 {
     $shownText="titulo";
 }
-$showError = (is_array($min) || is_numeric($max) || $formats);
+$showError = (is_array($min) || is_numeric($max));
 
 ?>
 <script>

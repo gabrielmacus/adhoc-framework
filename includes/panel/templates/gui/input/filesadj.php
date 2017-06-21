@@ -4,6 +4,8 @@ if(!$errorMsg)
 {
     $errorMsg="Seleccione archivos válidos";
 }
+
+$showError = (is_array($min) || is_numeric($max) || $formats);
 ?>
 <script>
     angular.element(function () {
@@ -243,6 +245,11 @@ if(!$errorMsg)
     <div class="fila margin">
         <a id="adjuntarArchivo<?php echo $grupo;?>" style="display: block;color: white!important;;" class="fila btn" >Adjuntar archivo</a>
     </div>
-
+    <?php
+    if($showError) {
+        $model="anexos".$grupo;
+        include "error.php";
+    }
+    ?>
 
 </div>
