@@ -72,16 +72,16 @@
         $tipo=84;
         $shownText="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
-        /*
 
 
-                $label="Posts adjuntos 2";
-                $grupo=27;
-                $s="posts";
-                $tipo=84;
-                $shownText="titulo";
-                include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
-        */
+
+        $label="Posts adjuntos 2";
+        $grupo=27;
+        $s="posts";
+        $tipo=84;
+        $shownText="titulo";
+        include DIR_PATH."/includes/panel/templates/gui/input/anexos.php";
+
 
 
 

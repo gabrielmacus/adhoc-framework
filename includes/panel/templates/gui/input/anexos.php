@@ -181,7 +181,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         },false);
 
 
-        scope.validation.<?php echo $model?>= {
+        scope.validation.<?php echo $grupo?>= {
             isValid: true, check: function () {
 
 
@@ -195,7 +195,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                     ?>
                 if(scope.post.anexosGroups[<?php echo $grupo;?>].length<<?php echo $min;?>)
                 {
-                    scope.validation.<?php echo $model?>.isValid=false;
+                    scope.validation.<?php echo $grupo?>.isValid=false;
 
                     setTimeout(function () {
                         scope.$apply();
@@ -205,7 +205,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 }
                 else
                 {
-                    scope.validation.<?php echo $model?>.isValid=true;
+                    scope.validation.<?php echo $grupo?>.isValid=true;
                 }
 
 
@@ -217,7 +217,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                     ?>
                 if(scope.post.anexosGroups[<?php echo $grupo;?>].length><?php echo $max;?>)
                 {
-                    scope.validation.<?php echo $model?>.isValid=false;
+                    scope.validation.<?php echo $grupo?>.isValid=false;
 
                     setTimeout(function () {
                         scope.$apply();
@@ -227,7 +227,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 }
                 else
                 {
-                    scope.validation.<?php echo $model?>.isValid=true;
+                    scope.validation.<?php echo $grupo?>.isValid=true;
                 }
 
             <?php
@@ -327,6 +327,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
     <?php
     if($showError) {
+        $model=$grupo;
         include "error.php";
     }
     ?>
