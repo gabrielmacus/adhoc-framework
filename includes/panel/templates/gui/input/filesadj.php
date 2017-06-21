@@ -160,7 +160,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
                         scope.post.archivosGroups["<?php echo $grupo?>"].push(v);
 
-                        scope.validation.archivos<?php echo $grupo?>.check();
                         //scope.post.archivos.push(v);
                     }
 
