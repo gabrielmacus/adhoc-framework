@@ -15,13 +15,13 @@ foreach ($archivos as $k=>$archivo)
 
             $version= reset($versiones);
 
-            if(!$versiones[$versionPanel])//Si no encuentro la version de panel, cargo la original
+            if(!$versiones[$configuracion->getVersion()])//Si no encuentro la version de panel, cargo la original
             {
                 $vp="original";
             }
             else
             {
-                $vp=$versionPanel;
+                $vp=$configuracion->getVersion();
             }
 
 
