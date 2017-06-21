@@ -16,7 +16,7 @@ if(!$errorMsg)
 */
         scope.adjuntos<?php echo $grupo;?>IsEmpty=function () {
 
-            var group=post.archivosGroups["<?php echo $grupo?>"];
+            var group=scope.post.archivosGroups["<?php echo $grupo?>"];
 
             var filter = group.filter(
                 function (el) {
