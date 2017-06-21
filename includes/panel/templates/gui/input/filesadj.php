@@ -123,6 +123,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 
             a.delete=true;
 
+            scope.validation.archivos<?php echo $grupo?>.check();
         }
 
         if(!scope.post)
@@ -244,11 +245,12 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
     <div class="fila margin">
         <a id="adjuntarArchivo<?php echo $grupo;?>" style="display: block;color: white!important;;" class="fila btn" >Adjuntar archivo</a>
     </div>
-    <?php
-    if($showError) {
-        $model="anexos".$grupo;
-        include "error.php";
-    }
-    ?>
+
 
 </div>
+<?php
+if($showError) {
+    $model="archivos".$grupo;
+    include "error.php";
+}
+?>
