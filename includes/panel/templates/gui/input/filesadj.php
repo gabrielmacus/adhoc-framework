@@ -16,16 +16,25 @@ if(!$errorMsg)
 */
         scope.adjuntos<?php echo $grupo;?>IsEmpty=function () {
 
+
             var group=scope.post.archivosGroups["<?php echo $grupo?>"];
 
-            var filter = group.filter(
-                function (el) {
+            if(group)
+            {
+                var filter = group.filter(
+                    function (el) {
 
-                    return el.delete;
-                }
-            );
+                        return el.delete;
+                    }
+                );
 
-            return filter.length==0;
+                return filter.length==0;
+            }
+            else
+            {
+                return false;
+            }
+
 
         }
         scope.removeAdjunto=function (a) {
