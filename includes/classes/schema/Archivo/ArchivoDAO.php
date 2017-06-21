@@ -373,6 +373,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
 
         /** Paginacion */
+        $this->setResults($sql);
 
         $offset = $this->getOffset();
 
@@ -380,7 +381,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $sql .= "  LIMIT {$this->getLimit()} OFFSET {$offset}";
         }
 
-        $this->setResults($sql);
+
         /** ** */
 
 
