@@ -14,6 +14,87 @@ if(!$errorMsg)
         /*
         scope.$watch($scope.cart, $scope.updateCart(), true);
 */
+
+        scope.validation.archivos<?php echo $grupo?>=
+        {
+            isValid: true, check: function () {
+
+
+                <?php
+                if($showError)
+                {
+
+                if($min)
+                {
+                ?>
+
+                var arr = scope.post.archivosGroups[<?php echo $grupo;?>].filter(
+                    function (el) {
+                        return !el.delete;
+                    }
+                );
+
+                if(arr.length<<?php echo $min;?>)
+                {
+                    scope.validation.archivos<?php echo $grupo?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.archivos<?php echo $grupo?>.isValid=true;
+                }
+
+
+                <?php
+                }
+
+                if($max)
+                {
+                ?>
+                if(arr.length><?php echo $max;?>)
+                {
+                    scope.validation.archivos<?php echo $grupo?>.isValid=false;
+
+                    setTimeout(function () {
+                        scope.$apply();
+                    });
+
+                    return false;
+                }
+                else
+                {
+                    scope.validation.archivos<?php echo $grupo?>.isValid=true;
+                }
+
+                <?php
+                }
+                ?>
+
+
+
+
+
+
+                setTimeout(function () {
+                    scope.$apply();
+                });
+
+                <?php
+                }
+
+                ?>
+
+
+            }
+        };
+
+
+
         scope.adjuntos<?php echo $grupo;?>IsEmpty=function () {
 
 
@@ -40,6 +121,7 @@ if(!$errorMsg)
 
             a.delete=true;
 
+            scope.validation.archivos<?php echo $grupo?>.check();
         }
 
         if(!scope.post)
@@ -76,6 +158,7 @@ if(!$errorMsg)
 
                         scope.post.archivosGroups["<?php echo $grupo?>"].push(v);
 
+                        scope.validation.archivos<?php echo $grupo?>.check();
                         //scope.post.archivos.push(v);
                     }
 

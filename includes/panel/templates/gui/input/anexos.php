@@ -94,7 +94,6 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                     }
                 );
 
-                console.log(arr.length+" < <?php echo $min?>");
                 if(arr.length<<?php echo $min;?>)
                 {
                     scope.validation.anexos<?php echo $grupo?>.isValid=false;
