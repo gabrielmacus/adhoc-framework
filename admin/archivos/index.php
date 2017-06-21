@@ -36,7 +36,6 @@ try{
 
     $archivos= $GLOBALS["archivoDAO"]->selectArchivos();
 
-    echo json_encode($archivos);
 
     $pg=$GLOBALS["archivoDAO"]->getPaginador();
     $actualPage=$GLOBALS["archivoDAO"]->getActualPage()+1;
