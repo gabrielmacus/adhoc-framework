@@ -70,7 +70,7 @@ if(!$errorMsg)
 
         var href="<?php echo $configuracion->getSiteAddress()?>/admin/repositorios/?modal=true&grupo=<?php echo $grupo; ?><?php if(!empty($formats)){ echo "&formats=".implode(",",$formats); } ?>";
 
-        var group=post.archivosGroups["<?php echo $grupo?>"];
+        var group=scope.post.archivosGroups["<?php echo $grupo?>"];
 
         if(group && group.length)
         {
