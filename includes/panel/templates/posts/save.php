@@ -57,14 +57,14 @@
 
         include DIR_PATH."/includes/panel/templates/gui/input/filesadj.php";
 
-        /*
+
 
         $label="Galeria de imágenes 2";
         $grupo=45;
         $formats=[];//TODO proximamente
         include DIR_PATH."/includes/panel/templates/gui/input/filesadj.php";
 
-
+/*
 
         $label="Posts adjuntos";
         $grupo=26;
