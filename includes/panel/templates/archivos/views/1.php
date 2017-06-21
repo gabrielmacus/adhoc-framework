@@ -24,6 +24,8 @@ foreach ($archivos as $k=>$archivo)
                 $vp=$configuracion->getVersion();
             }
 
+            var_dump($configuracion->getVersion());
+
 
             switch ($k)
             {
