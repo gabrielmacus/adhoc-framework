@@ -144,7 +144,13 @@ foreach ($archivos as $k=>$archivo)
                         <input data-url="<?Php echo $version->getRealName();?>" data-name="<?php echo $version->getName()?>"   data-id="<?php echo $versiones["original"]->getId()?>" style="position: absolute;top: 20px;left: 20px;-webkit-transform: scale(1.7);-moz-transform: scale(1.7);-ms-transform: scale(1.7);-o-transform: scale(1.7);transform: scale(1.7);" type="checkbox">
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div  class="file">
+                            <figure>
+                                <i style="    font-size: 150px;
+    top: 15%;
+    position: relative;
+    z-index: 0;" class="fa fa-music" aria-hidden="true"></i>
 
+                            </figure>
                             <div class="mask animated">
                                 <div class="half" >
                                     <a data-lity  href="<?php echo $version->getRealName()?>" class="icon">
@@ -157,11 +163,7 @@ foreach ($archivos as $k=>$archivo)
                                     </a>
                                 </div>
                             </div>
-                            <figure>
-                                <i style="font-size: 150px;    bottom: 10px;
-    position: relative;" class="fa fa-music" aria-hidden="true"></i>
 
-                            </figure>
 
                             <span class="name"><?php echo $version->getName()?></span>
                             <!--
