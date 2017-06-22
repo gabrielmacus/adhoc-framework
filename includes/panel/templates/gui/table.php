@@ -180,7 +180,7 @@ var_dump($shownText);
                     $.ajax
                     (
                         {
-                            method:"post",
+                            method:"get",
                             url:"<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?act=delete"?>",
                             data:{id:id},
                             dataType:"json",
