@@ -22,6 +22,7 @@
                     "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+url,
                      "success":function (e) {
 
+                         console.log(e);
 
                          scope.previews.push(
                              {url:url,youtube:true,
