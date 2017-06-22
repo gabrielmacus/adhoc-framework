@@ -41,6 +41,8 @@ try{
             $post->setAnexos($_POST["anexos"]);
             $post->setUsuario($user["id"]);
 
+      var_dump($post);
+
             if($_POST["creacion"])
       {
           $post->setCreacion($_POST["creacion"]);
