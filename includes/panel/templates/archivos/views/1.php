@@ -229,7 +229,7 @@ foreach ($archivos as $k=>$archivo)
                                 </div>
                             </div>
                             <figure style=" text-align: center;padding-top: 11%;">
-                                <i style="font-size: 150px" class="fa fa-file-o" aria-hidden="true"></i>
+                                <i style="font-size: 150px;background-color: rgba(225, 62, 69, 1)" class="fa fa-youtube-play" aria-hidden="true"></i>
 
                             </figure>
 
