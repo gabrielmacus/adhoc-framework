@@ -18,7 +18,7 @@
                 {
                     "dataType":"json",
                     "method":"get",
-                    "url":"https://www.youtube.com/oembed?url="+$(this).val()+"&format=json",
+                    "url":"",
                      "success":function (e) {
 
                          console.log(e);
