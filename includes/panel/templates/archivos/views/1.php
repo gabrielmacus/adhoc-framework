@@ -150,7 +150,7 @@ foreach ($archivos as $k=>$archivo)
                                 <i style="    font-size: 150px;
     top: 15%;
     position: relative;
-    z-index: 0;" class="fa fa-music" aria-hidden="true"></i>
+    z-index: 0;"  class="fa fa-video-camera" aria-hidden="true"></i>
 
                             </figure>
                             <div class="mask animated">
