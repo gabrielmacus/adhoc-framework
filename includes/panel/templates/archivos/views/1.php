@@ -121,7 +121,7 @@ foreach ($archivos as $k=>$archivo)
                                 $version= $versiones[$vp];
 
                                 ?>
-                             <video>
+                             <video controls>
                                  <source src="<?php echo $version->getRealName()?>">
                              </video>
                             </figure>
