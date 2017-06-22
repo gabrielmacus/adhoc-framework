@@ -167,7 +167,7 @@ var_dump($shownText);
         <?php
         if(!$deleteMsg)
         {
-            $deleteMsg="Confirmar eliminación";
+            $deleteMsg="¿Desea eliminar el post?";
         }
         
         ?>
