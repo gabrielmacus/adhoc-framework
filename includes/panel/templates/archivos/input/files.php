@@ -145,7 +145,7 @@
 
 <div class="form-block">
 
-    <label data-ng-if="scope.previews.length>0"><?php echo $label?></label>
+    <label data-ng-if="previews.length > 0"><?php echo $label?></label>
 <!--
     <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"  >
     -->
