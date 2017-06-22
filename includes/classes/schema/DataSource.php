@@ -103,12 +103,14 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
+        var_dump($params);
         var_dump($sql);
         
         if($sql && $sql!="")
         {
             $q = $this->conn->prepare($sql);
             $qRes= $q->execute($params);
+
             $data = $this->conn->lastInsertId();
 
             $ecode=$q->errorCode();
