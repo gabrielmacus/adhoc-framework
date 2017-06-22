@@ -9,7 +9,12 @@
     $(document).on("input","#<?php echo $id;?>sindicado",function (e) {
         var patternYoutube=/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/g;
 
-        console.log(patternYoutube.test($(this).val()));
+        patternYoutube=patternYoutube.test($(this).val());
+
+        if(patternYoutube)
+        {
+
+        }
 
     });
 
@@ -165,6 +170,7 @@
     <div class="fila">
         <label for="<?php echo $id;?>sindicado" >Cargar url</label>
         <input id="<?php echo $id;?>sindicado" style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
+        <button>Aceptar</button>
     </div>
 
 
