@@ -6,42 +6,44 @@
 
     });
 
-    $(document).on("input","#<?php echo $id;?>sindicado",function (e) {
-        var patternYoutube=/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/g;
+   function loadSindicado() {
+       var e =$("#<?php echo $id;?>sindicado");
+           var patternYoutube=/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/g;
 
-        patternYoutube=patternYoutube.test($(this).val());
+           patternYoutube=patternYoutube.test($(this).val());
 
-        if(patternYoutube)
-        {
-            var url=$(this).val();
+           if(patternYoutube)
+           {
+               var url=$(this).val();
 
-            $.ajax(
-                {
-                    "dataType":"json",
-                    "method":"get",
-                    "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+url,
-                     "success":function (e) {
+               $.ajax(
+                   {
+                       "dataType":"json",
+                       "method":"get",
+                       "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+url,
+                       "success":function (e) {
 
-                         console.log(e);
-                         var yt={url:url,type:"youtube",
-                             size:e.thumbnail_url,
-                             name:e.title,
-                             mime:e.author_url
-                         };
+                           console.log(e);
+                           var yt={url:url,type:"youtube",
+                               size:e.thumbnail_url,
+                               name:e.title,
+                               mime:e.author_url
+                           };
 
-                         scope.previews.push(yt);
-                         setTimeout(function () {
-                             scope.$apply();
-                         })
-                     },
-                    "error":error
-                }
+                           scope.previews.push(yt);
+                           setTimeout(function () {
+                               scope.$apply();
+                           })
+                       },
+                       "error":error
+                   }
 
-            );
+               );
 
-        }
+           }
 
-    });
+
+   }
 
     $(document).on("change","#<?php echo $id?>",function (e) {
 
@@ -194,7 +196,7 @@
 
     <div class="fila">
         <input class="s12 m8 l10" id="<?php echo $id;?>sindicado" style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
-        <button class="s12 m4 l2" style="    height: 49px;">Cargar url</button>
+        <button onclick="loadSindicado()" class="s12 m4 l2" style="    height: 49px;">Cargar url</button>
     </div>
 
 
