@@ -18,7 +18,7 @@
                 {
                     "dataType":"json",
                     "method":"get",
-                    "url":"<?php echo $configuracion->getSiteAddress()?>/extra/get_info.php?url="+$(this).val(),
+                    "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+$(this).val(),
                      "success":function (e) {
 
                          console.log(e);
