@@ -186,7 +186,7 @@ var_dump($shownText);
                             dataType:"json",
                             success:function (e) {
                                 console.log(e);
-                                location.reload();
+                             //   location.reload();
                             },
                             error:function (e) {
 
