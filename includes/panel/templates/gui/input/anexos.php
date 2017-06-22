@@ -19,6 +19,22 @@ $showError = (is_array($min) || is_numeric($max));
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
+        if(!scope.post)
+        {
+            <?php if($post)
+            {
+            ?>
+            scope.post=<?php echo json_encode($post); ?>;
+            <?php
+
+            }
+            else
+            {
+            ?>
+            scope.post={};
+            <?php
+            }?>
+        }
         if(!scope.post.anexosGroups)
         {
             scope.post.anexosGroups={};
