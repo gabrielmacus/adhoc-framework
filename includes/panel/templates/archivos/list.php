@@ -19,6 +19,7 @@
 
             scope.checkMime=function (mime) {
 
+                console.log(mime);
                 mime = mime.split("/");
                 mime = mime[0];
 
@@ -120,7 +121,7 @@
 
         <div class="files">
 
-            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="checkMime(p.type)=='image'">
+            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="checkMime(p.mime)=='image'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  class="file "  >
 
