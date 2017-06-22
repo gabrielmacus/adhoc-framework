@@ -103,8 +103,6 @@ class DataSource
             throw new Exception("DataSource:0");
         }
 
-        var_dump($params);
-        var_dump($sql);
         
         if($sql && $sql!="")
         {
