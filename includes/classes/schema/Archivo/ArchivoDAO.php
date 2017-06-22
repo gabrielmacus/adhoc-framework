@@ -770,7 +770,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
                         $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
 
-                        var_dump($sql);
+                        $dontDeleteFolder=true;
+
 
                         $res= $this->dataSource->runUpdate($sql,array(
                             ":archivo_id"=>$version->getId()
@@ -784,11 +785,15 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             }
 
-            $deletePath=$repositorio->getPath().reset($archivo)->getPathName();
-
-            if(!$ftp->remove($deletePath))//Elimino la carpeta
+            if(!$dontDeleteFolder)
             {
-                throw new Exception("ArchivoDAO:2:{$deletePath}");//Codigo de error al eliminar una carpeta
+                $deletePath=$repositorio->getPath().reset($archivo)->getPathName();
+
+                if(!$ftp->remove($deletePath))//Elimino la carpeta
+                {
+                    throw new Exception("ArchivoDAO:2:{$deletePath}");//Codigo de error al eliminar una carpeta
+                }
+
             }
 
         }
