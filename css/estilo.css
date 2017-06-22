@@ -847,7 +847,7 @@ width: 100%;height: 50%;text-align: center;
 }
 .file:hover .mask
 {
-    background-color:rgba(55,55,55,0.71);
+    opacity: 1;
 }
 .file-preview [type='checkbox']
 {
@@ -857,9 +857,11 @@ width: 100%;height: 50%;text-align: center;
 {
 
 
+    opacity: 0;
     height: 100%;
     width: 100%;
-    background-color:rgba(55,55,55,0);
+
+    background-color:rgba(55,55,55,0.71);
     top:0%;
 
 position: absolute
