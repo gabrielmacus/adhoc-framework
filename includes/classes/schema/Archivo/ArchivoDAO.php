@@ -78,7 +78,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->validate($a);
 
         $sql = $this->insertSql;
-        
+
         if(!$a->getRealName())
         {
             $r =$a->getRepositorio();
@@ -148,6 +148,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setPath($mainPath);
 
         }
+
+        var_dump($a);
 
 
         $res= $this->dataSource->runUpdate($sql,
