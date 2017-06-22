@@ -632,6 +632,13 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                     $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
                 $a->setPathName($data["archivo_path_name"]);
                 break;
+            case 6:
+                $a = new VideoVM($data["archivo_size"],$data["archivo_name"],$data["archivo_mime"],
+                    $data["archivo_version"],$data["archivo_real_name"],null,$repositorio,
+                    $data["archivo_path"],$data["archivo_creation"],
+                    $data["archivo_modification"],$data["archivo_id"],$data["archivo_version_name"],$data["archivo_type"]);
+                $a->setPathName($data["archivo_path_name"]);
+                break;
         }
 
 
