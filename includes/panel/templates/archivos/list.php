@@ -140,10 +140,10 @@
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  data-ng-click="deletePreview(p)" class="file" >
 
-                    <figure>
-                        <img data-ng-src="{{p.url}}">
-                    </figure>
+                    <figure style=" text-align: center;padding-top: 11%;">
+                        <i style="font-size: 150px" class="fa fa-file-o" aria-hidden="true"></i>
 
+                    </figure>
                     <input class="name" data-ng-model="p.name">
                     <span class="size"  data-ng-bind="getMb(p.size)"></span>
                 </div>
