@@ -10,7 +10,7 @@
 
 include "../../includes/autoload.php";
 
-//include_once DIR_PATH."/extras/api/check-login.php"; TODO agregar usuarios con sus permisos
+include_once DIR_PATH."/extras/api/check-login.php"; //TODO agregar usuarios con sus permisos
 
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
