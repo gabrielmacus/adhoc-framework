@@ -22,6 +22,9 @@ class VideoYTDAO extends ArchivoDAO
     {
         $this->validate($a);
 
+        $a->setVersion($versionId);
+        $a->setVersionName($versionName);
+
         $sql = parent::getInsertSql();
 
 
