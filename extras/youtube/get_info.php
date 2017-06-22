@@ -9,7 +9,6 @@
 
 $url="https://www.youtube.com/oembed?url={$_GET["url"]}&format=json";
 
-var_dump( file_get_contents($url));
-
+echo file_get_contents($url);
 
 

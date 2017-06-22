@@ -18,7 +18,7 @@
                 {
                     "dataType":"json",
                     "method":"get",
-                    "url":"",
+                    "url":"<?php echo $configuracion->getSiteAddress()?>/extras/get_info.php?url="+$(this).val(),
                      "success":function (e) {
 
                          console.log(e);
