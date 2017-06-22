@@ -42,7 +42,7 @@
 
            }
 
-       var patternVimeo = /http:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/g;
+       var patternVimeo = /https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/g;
 
        patternVimeo= patternVimeo.test(e.val());
 
