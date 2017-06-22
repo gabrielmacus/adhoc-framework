@@ -136,7 +136,7 @@
 
             </div>
 
-            <div  class="file-preview s6 m4 l3" data-ng-repeat="p in previews" data-ng-if="p.type==''">
+            <div  class="file-preview s6 m4 l3" data-ng-repeat="p in previews" data-ng-if="checkMime(p.mime)=='application'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  data-ng-click="deletePreview(p)" class="file" >
 
