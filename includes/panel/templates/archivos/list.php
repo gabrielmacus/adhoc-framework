@@ -142,6 +142,21 @@
 
                     <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
 
+                    <figure>
+                        <audio controls data-ng-src="{{p.url}}">
+                    </figure>
+                    <input class="name" data-ng-model="p.name">
+                    <span class="size"  data-ng-bind="getMb(p.size)"></span>
+                </div>
+
+            </div>
+
+            <div  class="file-preview s6 m4 l3" data-ng-repeat="p in previews" data-ng-if="checkMime(p.mime)=='audio'">
+                <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
+                <div  class="file" >
+
+                    <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
+
                     <figure style=" text-align: center;padding-top: 11%;">
                         <i style="font-size: 150px" class="fa fa-file-o" aria-hidden="true"></i>
 
