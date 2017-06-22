@@ -21,13 +21,17 @@
                     "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+$(this).val(),
                      "success":function (e) {
 
-                         console.log(e);
+
+                         scope.previews.push({url:$(this).val(),youtube:true,
+                         size:e.thumbnail_url,
+                             name:e.title
+                         });
                      },
                     "error":error
                 }
 
             );
-            scope.previews.push({url:$(this).val(),youtube:true});
+
         }
 
     });
