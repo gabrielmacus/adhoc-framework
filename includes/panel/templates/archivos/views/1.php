@@ -158,8 +158,8 @@ foreach ($archivos as $k=>$archivo)
                                 </div>
                             </div>
                             <figure>
-
-                                <img data-ng-src="<?php echo $version->getRealName()?>">
+                                <i style="font-size: 150px;    bottom: 10px;
+    position: relative;" class="fa fa-music" aria-hidden="true"></i>
 
                             </figure>
 
