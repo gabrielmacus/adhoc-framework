@@ -121,9 +121,11 @@ foreach ($archivos as $k=>$archivo)
                                 $version= $versiones[$vp];
 
                                 ?>
-                             <video controls>
-                                 <source src="<?php echo $version->getRealName()?>">
-                             </video>
+                                <i style="    font-size: 150px;
+    top: 15%;
+    position: relative;
+    z-index: 0;" class="fa fa-music" aria-hidden="true"></i>
+
                             </figure>
 
                             <span class="name"><?php echo $version->getName()?></span>
