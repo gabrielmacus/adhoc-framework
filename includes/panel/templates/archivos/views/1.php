@@ -228,10 +228,9 @@ foreach ($archivos as $k=>$archivo)
                                     </a>
                                 </div>
                             </div>
-                            <figure style=" text-align: center;padding-top: 11%;">
+                            <figure style=" text-align: center;padding-top: 11%;background-image: url('<?php echo $version->getPath();?>');background-repeat: no-repeat;-webkit-background-size: ;background-size: cover;">
                                 <i style="font-size: 150px;color: rgba(225, 62, 69, 1)" class="fa fa-youtube-play" aria-hidden="true"></i>
 
-                                <img src="<?php echo $version->getPath();?>">
 
                             </figure>
 
