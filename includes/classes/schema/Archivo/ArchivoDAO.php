@@ -738,7 +738,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         foreach ($archivos as $archivo)
         {
 
-          switch (  $archivo->getType())
+            $type=reset($archivo)->getType();
+          switch ($type)
           {
 
               default:
