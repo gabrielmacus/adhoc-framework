@@ -8,4 +8,4 @@ $html = file_get_html("{$_GET["url"]}");
 
 $text=$html->find("script[type='application/ld+json']",0)->innertext;
 
-var_dump($text);
+echo $text;
