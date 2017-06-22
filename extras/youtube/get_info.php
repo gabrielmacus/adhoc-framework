@@ -7,10 +7,9 @@
  */
 
 
+$url="https://www.youtube.com/oembed?url={$_GET["url"]}&format=json";
 
-include_once "../../includes/autoload.php";
-
-var_dump(HTTPrequest("https://www.youtube.com/oembed?url={$_GET["url"]}&format=json"));
+var_dump( file_get_contents($url));
 
 
 
