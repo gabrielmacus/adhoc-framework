@@ -19,6 +19,7 @@ require_once "schema/Idioma/IdiomaDAO.php";
 require_once "schema/Menu/MenuDAO.php";
 require_once "schema/Audio/AudioDAO.php";
 require_once "schema/VideoYT/VideoYTDAO.php";
+require_once "schema/VideoVM/VideoVMDAO.php";
 
 /** ImageResize **/
 require_once "ImageResize.php";

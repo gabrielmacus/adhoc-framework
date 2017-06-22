@@ -48,7 +48,6 @@
 
        if(patternVimeo)
        {
-           console.log("is vimeo");
            var url=e.val();
 
            $.ajax(

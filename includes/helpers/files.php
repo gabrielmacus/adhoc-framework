@@ -112,6 +112,20 @@ function uploadTmp($r)
 
 
                 break;
+            case "vimeo":
+                $a = new VideoVM(0, $file["name"], $file["mime"]);
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($r);
+                $a->setRealName($file["url"]);
+                $a->setPath($file["size"]);
+
+
+                $res = $GLOBALS["vimeoDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
+
+
+                break;
         }
 
     }
