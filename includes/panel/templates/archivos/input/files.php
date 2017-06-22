@@ -155,7 +155,7 @@
 
 
     <div class="fila">
-        <label for="<?php echo $id;?>sindicado" class="file-upload__label">Cargar url</label>
+        <label for="<?php echo $id;?>sindicado" >Cargar url</label>
         <input style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
     </div>
 
