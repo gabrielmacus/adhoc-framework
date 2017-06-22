@@ -771,6 +771,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                         $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
 
                         $dontDeleteFolder=true;
+                        var_dump($sql);
 
 
                         $res= $this->dataSource->runUpdate($sql,array(
