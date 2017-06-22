@@ -72,6 +72,8 @@ $GLOBALS["seccionDAO"] = new SeccionDAO($configuracion->getDataSource());
 $GLOBALS["comentarioDAO"] = new ComentarioDAO($configuracion->getDataSource());
 $GLOBALS["postDAO"]  = new PostDAO($configuracion->getDataSource());
 $GLOBALS["idiomaDAO"] = new IdiomaDAO($configuracion->getDataSource());
+$GLOBALS["youtubeDAO"] = new VideoYT($configuracion->getDataSource());
+$GLOBALS["audioDAO"]= new AudioDAO($configuracion->getDataSource());
 
 $GLOBALS["menuDAO"] = new MenuDAO(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json");
 

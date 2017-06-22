@@ -91,7 +91,7 @@ function uploadTmp($r)
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
-                $res = $GLOBALS["documentoDAO"]->insertArchivo($a);
+                $res = $GLOBALS["audioDAO"]->insertArchivo($a);
                 $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
 
@@ -104,7 +104,7 @@ function uploadTmp($r)
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
                 $a->setRealName($file["url"]);
-                $res = $GLOBALS["documentoDAO"]->insertArchivo($a);
+                $res = $GLOBALS["youtubeDAO"]->insertArchivo($a);
                 $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
 
