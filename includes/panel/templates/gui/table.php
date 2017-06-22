@@ -122,8 +122,8 @@ var_dump($shownText);
                         </td>
                         <?php
                     }?>
-                    <td title="<?php echo $lang["editar"];?>"><a class="icon " href="?t=<?php echo $_GET["t"]?>&s=<?php echo $_GET["s"]?>&act=save&id=<?php echo $row["#"]["data"];?>"><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
-                    <td title="<?php echo $lang["eliminar"];?>"><a class="icon "><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
+                    <td title="<?php echo $lang["editar"];?>"><a class="icon "  href="?t=<?php echo $_GET["t"]?>&s=<?php echo $_GET["s"]?>&act=save&id=<?php echo $row["#"]["data"];?>"><i class="fa fa-pencil-square-o animated" aria-hidden="true"></i></a></td>
+                    <td title="<?php echo $lang["eliminar"];?>"><a class="icon " onclick="deletePost(<?php echo $row["#"]["data"]; ?>)"><i class="fa fa-trash-o animated" aria-hidden="true"></i></a></td>
                     <td title="Más info"><a class="icon"  href="?t=<?php echo $_GET["t"]?>&s=<?php echo $_GET["s"]?>&act=view&id=<?php echo $row["#"]["data"];?>"><i class="fa fa-info animated" aria-hidden="true"></a></i></td>
                     <?php if($_GET["modal"])
                     {
@@ -161,3 +161,43 @@ var_dump($shownText);
     font-size: 30px;">No hay contenido disponible</h3>
         <?php
     }?>
+<script>
+    function deletePost(id) {
+        
+        <?php
+        if(!$deleteMsg)
+        {
+            $deleteMsg="Confirmar eliminación";
+        }
+        
+        ?>
+        
+        vex.dialog.confirm({
+            message: '<?php echo $deleteMsg;?>',
+            callback: function (value) {
+                if (value) {
+
+                    $.ajax
+                    (
+                        {
+                            method:"post",
+                            url:"<?php echo $configuracion->getSiteAddress()."/admin/posts/data.php?act=delete"?>",
+                            data:{id:id},
+                            dataType:"json",
+                            success:function (e) {
+                                console.log(e);
+                                location.reload();
+                            },
+                            error:function (e) {
+
+                                console.log(e);
+                            }
+                        }
+                    );
+
+                }
+            }
+        })
+    }
+    
+</script>
