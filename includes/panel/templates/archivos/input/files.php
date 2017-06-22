@@ -10,11 +10,11 @@
        var e =$("#<?php echo $id;?>sindicado");
            var patternYoutube=/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/g;
 
-           patternYoutube=patternYoutube.test($(this).val());
+           patternYoutube=patternYoutube.test(e.val());
 
            if(patternYoutube)
            {
-               var url=$(this).val();
+               var url=e.val();
 
                $.ajax(
                    {
