@@ -42,6 +42,41 @@
 
            }
 
+       var patternVimeo = /http:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/g;
+
+       patternVimeo= patternVimeo.test(e.val());
+
+       if(patternVimeo)
+       {
+           var url=e.val();
+
+           $.ajax(
+               {
+                   "dataType":"json",
+                   "method":"get",
+                   "url":"<?php echo $configuracion->getSiteAddress()?>/extras/vimeo/get_info.php?url="+url,
+                   "success":function (e) {
+
+                       e = e[0];
+                       console.log(e);
+                       var vm={url:url,type:"vimeo",
+                           size:e.thumbnailUrl,
+                           name:e.name,
+                           mime:e.author.url
+                       };
+
+                       scope.previews.push(vm);
+                       setTimeout(function () {
+                           scope.$apply();
+                       })
+                   },
+                   "error":error
+               }
+
+           );
+       }
+
+
 
    }
 
