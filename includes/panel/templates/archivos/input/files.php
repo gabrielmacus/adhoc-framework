@@ -153,13 +153,9 @@
         <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
     </div>
 
-    <div class="file-upload">
-        <label for="<?php echo $id;?>sindicado" class="file-upload__label">Cargar url</label>
-        <input    id="<?php echo $id;?>sindicado" type="button"   class="file-upload__input">
-
-    </div>
 
     <div class="fila">
+        <label for="<?php echo $id;?>sindicado" class="file-upload__label">Cargar url</label>
         <input style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
     </div>
 
