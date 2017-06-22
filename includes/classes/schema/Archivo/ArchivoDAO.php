@@ -15,9 +15,9 @@ require_once ("Archivo.php");
 class ArchivoDAO extends Paginable implements IArchivo
 {
 
-    private $updateSql;
-    private $insertSql;
-    private $deleteSql;
+    protected $updateSql;
+    protected $insertSql;
+    protected $deleteSql;
     protected $dataSource;
     protected $tableName;
     protected $files=array();
@@ -48,7 +48,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
-    private function processArchivos()
+    protected function processArchivos()
     {
 
         $archivos = array();
@@ -72,15 +72,109 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
         $this->files=$archivos;
     }
 
+    /**
+     * @return string
+     */
+    public function getUpdateSql()
+    {
+        return $this->updateSql;
+    }
+
+    /**
+     * @param string $updateSql
+     */
+    public function setUpdateSql($updateSql)
+    {
+        $this->updateSql = $updateSql;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInsertSql()
+    {
+        return $this->insertSql;
+    }
+
+    /**
+     * @param string $insertSql
+     */
+    public function setInsertSql($insertSql)
+    {
+        $this->insertSql = $insertSql;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeleteSql()
+    {
+        return $this->deleteSql;
+    }
+
+    /**
+     * @param string $deleteSql
+     */
+    public function setDeleteSql($deleteSql)
+    {
+        $this->deleteSql = $deleteSql;
+    }
+
+    /**
+     * @return DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->dataSource;
+    }
+
+    /**
+     * @param DataSource $dataSource
+     */
+    public function setDataSource($dataSource)
+    {
+        $this->dataSource = $dataSource;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTableName()
+    {
+        return $this->tableName;
+    }
+
+    /**
+     * @param string $tableName
+     */
+    public function setTableName($tableName)
+    {
+        $this->tableName = $tableName;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param array $files
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+    }
+
+    
 
     public function insertArchivo(Archivo $a,$versionName="original",$versionId=0,$mainPath=false)
     {
         $this->validate($a);
 
-        $sql = $this->insertSql;
-
-        if(!$a->getRealName())
-        {
+     
             $r =$a->getRepositorio();
 
             $ftp  =$r->getFtp();
@@ -119,7 +213,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             //    exit();
 
             /*      echo $fullDir." ".$a->getTmpPath();
-
+    
                   exit();
           */
             $ftp->pasv(true);
@@ -135,6 +229,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
             $a->setVersionName($versionName);
 
 
+            $sql = $this->insertSql;
 
             if(!$a->getCreation())
             {
@@ -147,11 +242,9 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             $a->setPath($mainPath);
 
-        }
-
-        var_dump($a);
-
-
+        
+        
+     
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($a));
         return $res;
@@ -488,7 +581,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
     }
 
-    private function query($data){
+    protected function query($data){
 
 
         $repositorioDAO = new RepositorioDAO($this->dataSource);
