@@ -749,6 +749,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                 switch ($type)
                 {
                     default:
+                        $dontDeleteFolder=false;
                         $deleteFile=$repositorio->getPath().$version->getPath();
 
 
@@ -765,6 +766,7 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
                         ));
                         break;
 
+                    case "6":
                     case "5":
 
 
