@@ -84,6 +84,20 @@ function uploadTmp($r)
 
             break;
 
+            case "mp3":
+            case "ogg":
+            case "wav":
+
+            $a = new Audio($file["size"],$file["name"],$file["mime"]);
+            $a->setTmpPath($file["tmp"]);
+            $a->setExtension($file["type"]);
+            $a->setRepositorio($r);
+            $res= $GLOBALS["documentoDAO"]->insertArchivo($a);
+            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+
+
+            break;
+
         }
 
     }
