@@ -168,9 +168,8 @@
 
 
     <div class="fila">
-        <label for="<?php echo $id;?>sindicado" >Cargar url</label>
-        <input class="s12 m8 l8" id="<?php echo $id;?>sindicado" style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
-        <button class="s12 m4 l4">Aceptar</button>
+        <input class="s12 m8 l10" id="<?php echo $id;?>sindicado" style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
+        <button class="s12 m4 l2" style="    height: 49px;">Cargar url</button>
     </div>
 
 
