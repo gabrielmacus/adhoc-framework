@@ -216,7 +216,7 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div  class="file">
 
-                            <div class="mask animated">
+                            <div class="mask animated" style="z-index: 1000000">
                                 <div class="half" >
                                     <a data-lity  href="http://docs.google.com/gview?url=<?php echo  $version->getRealName();?>&embedded=true" class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
@@ -229,7 +229,9 @@ foreach ($archivos as $k=>$archivo)
                                 </div>
                             </div>
                             <figure style=" text-align: center;padding-top: 11%;background-image: url('<?php echo $version->getPath();?>');background-repeat: no-repeat;-webkit-background-size: ;background-size: cover;">
-                                <i style="font-size: 150px;color: rgba(225, 62, 69, 1)" class="fa fa-youtube-play" aria-hidden="true"></i>
+                                <i style="font-size: 150px;color: rgba(225, 62, 69, 1);    position: relative;
+    font-size: 80px;
+    top: 20%;" class="fa fa-youtube-play" aria-hidden="true"></i>
 
 
                             </figure>
