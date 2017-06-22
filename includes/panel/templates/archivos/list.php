@@ -22,6 +22,7 @@
                 mime = mime.split("/");
                 mime = mime[0];
 
+                console.log(mime);
                 return mime;
 
             }
