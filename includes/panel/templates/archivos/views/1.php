@@ -267,7 +267,7 @@ foreach ($archivos as $k=>$archivo)
                                 </div>
                             </div>
                             <figure style=" text-align: center;padding-top: 11%;background-image: url('<?php echo $version->getPath();?>');background-repeat: no-repeat;-webkit-background-size: ;background-size: cover;">
-                                <i style="font-size: 150px;color: rgba(225, 62, 69, 1);    position: relative;
+                                <i style="font-size: 150px;color:  rgba(56, 146, 225, 1);    position: relative;
     font-size: 80px;
     top: 20%;" class="fa fa-vimeo" aria-hidden="true"></i>
 
