@@ -849,10 +849,7 @@ width: 100%;height: 50%;text-align: center;
 {
     opacity: 1;
 }
-.file:hover figure
-{
-    filter: blur(1px);
-}
+
 
 .file-preview [type='checkbox']
 {
