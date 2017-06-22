@@ -210,6 +210,7 @@ foreach ($archivos as $k=>$archivo)
                     <?Php
                     break;
                 case 5:
+
                     ?>
                     <div class="file-preview s12 m4 l3">
                         <input data-url="<?Php echo $version->getRealName();?>" data-name="<?php echo $version->getName()?>"   data-id="<?php echo $versiones["original"]->getId()?>"  style="position: absolute;top: 20px;left: 20px;-webkit-transform: scale(1.7);-moz-transform: scale(1.7);-ms-transform: scale(1.7);-o-transform: scale(1.7);transform: scale(1.7);" type="checkbox">
@@ -223,7 +224,7 @@ foreach ($archivos as $k=>$archivo)
                                     </a>
                                 </div>
                                 <div class="half"  >
-                                    <a  download href="<?php echo $version->getRealName()?>" class="icon">
+                                    <a  download href="<?php echo $configuracion->getSiteAddress()?>/extras/youtube/download/directdownload.php?videoid=<?php echo  $version->getVideoId();?>" class="icon">
                                         <i class="fa fa-download" aria-hidden="true"></i>
                                     </a>
                                 </div>
