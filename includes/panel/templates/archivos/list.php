@@ -157,8 +157,11 @@
 
                     <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
 
-                    <figure style=" text-align: center;padding-top: 11%;">
-                        <audio controls data-ng-src="{{p.url}}">
+                    <figure style=" height:100px;text-align: center;padding-top: 11%;">
+                        <audio style="    bottom: 40px;
+    width: 100%;
+    position: absolute;
+    left: 0;" controls data-ng-src="{{p.url}}">
                     </figure>
                     <input class="name" data-ng-model="p.name">
                     <span class="size"  data-ng-bind="getMb(p.size)"></span>
