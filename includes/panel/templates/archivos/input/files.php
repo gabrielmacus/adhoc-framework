@@ -196,7 +196,7 @@
 
     <div class="fila">
         <input class="s12 m8 l10" id="<?php echo $id;?>sindicado" style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
-        <button onclick="loadSindicado()" class="s12 m4 l2" style="    height: 49px;">Cargar url</button>
+        <button type="button" onclick="loadSindicado()" class="s12 m4 l2" style="    height: 49px;">Cargar url</button>
     </div>
 
 
