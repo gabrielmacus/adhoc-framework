@@ -19,11 +19,13 @@
 
             scope.checkMime=function (mime) {
 
-                console.log(mime);
-                mime = mime.split("/");
-                mime = mime[0];
+                if(mime)
+                {
+                    mime = mime.split("/");
+                    mime = mime[0];
 
-                console.log(mime);
+                }
+
                 return mime;
 
             }
