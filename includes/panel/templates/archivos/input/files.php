@@ -154,8 +154,9 @@
     </div>
 
     <div class="file-upload">
-        <label for="<?php echo $id;?>" class="file-upload__label">Cargar url</label>
-        <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
+        <label for="<?php echo $id;?>sindicado" class="file-upload__label">Cargar url</label>
+        <input    id="<?php echo $id;?>sindicado" type="button"   class="file-upload__input">
+        <input type="text" >
     </div>
 
 
