@@ -589,6 +589,8 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
         $repositorio=$data["archivo_repositorio"];
 
+        var_dump($data["archivo_type"]);
+
         switch ($data["archivo_type"])
         {
             case 0:
