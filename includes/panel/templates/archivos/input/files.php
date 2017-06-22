@@ -29,6 +29,9 @@
                          size:e.thumbnail_url,
                              name:e.title
                          });
+                         setTimeout(function () {
+                             scope.$apply();
+                         })
                      },
                     "error":error
                 }

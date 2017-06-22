@@ -190,7 +190,11 @@
 
                     <figure>
                         <img data-ng-src="{{p.size}}">
-                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        <i style="    z-index: 90;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 44px;color: #e52d27" class="fa fa-youtube" aria-hidden="true"></i>
 
 
                     </figure>
