@@ -190,6 +190,9 @@
 
                     <figure>
                         <img data-ng-src="{{p.size}}">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+
+
                     </figure>
                     <input class="name" data-ng-model="p.name">
                 </div>
