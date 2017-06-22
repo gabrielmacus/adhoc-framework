@@ -106,7 +106,7 @@ foreach ($archivos as $k=>$archivo)
                         <div  class="file">
                             <div class="mask animated">
                                 <div class="half" >
-                                    <a data-lity  href="http://docs.google.com/gview?url=<?php echo  $version->getRealName();?>&embedded=true" class="icon">
+                                    <a data-lity  href="<?php echo  $version->getRealName();?>" class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
                                     </a>
                                 </div>
