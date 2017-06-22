@@ -155,7 +155,6 @@
 </div>
             <?php
 
-$label="Previsualización de subidas";
 $id="archivos1";
      
             $progressBar=".load-mask";
