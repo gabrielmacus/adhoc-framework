@@ -231,6 +231,8 @@ foreach ($archivos as $k=>$archivo)
                             <figure style=" text-align: center;padding-top: 11%;">
                                 <i style="font-size: 150px;color: rgba(225, 62, 69, 1)" class="fa fa-youtube-play" aria-hidden="true"></i>
 
+                                <img src="<?php echo $version->getPath();?>">
+
                             </figure>
 
                             <span class="name"><?php echo $version->getName()?></span>
