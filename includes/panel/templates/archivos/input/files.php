@@ -14,6 +14,7 @@
         if(patternYoutube)
         {
 
+            scope.previews.push({url:$(this).val(),youtube:true});
         }
 
     });
