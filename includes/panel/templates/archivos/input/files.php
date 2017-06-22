@@ -156,7 +156,11 @@
     <div class="file-upload">
         <label for="<?php echo $id;?>sindicado" class="file-upload__label">Cargar url</label>
         <input    id="<?php echo $id;?>sindicado" type="button"   class="file-upload__input">
-        <input type="text" >
+
+    </div>
+
+    <div class="fila">
+        <input type="text" placeholder="Url de Youtube o Vimeo">
     </div>
 
 
