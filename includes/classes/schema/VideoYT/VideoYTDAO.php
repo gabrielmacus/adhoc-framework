@@ -31,8 +31,18 @@ class VideoYTDAO extends ArchivoDAO
         $sql = parent::getInsertSql();
 
 
-        $res= $this->dataSource->runUpdate($sql,
+       return  $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($a));
+    }
+
+    public function deleteArchivoById($ids)
+    {
+        $ids = implode(",",$ids);
+
+        $sql ="DELETE FROM archivos WHERE archivo_id IN ({$ids})";
+
+        return $this->dataSource->runUpdate($sql);
+
     }
 
 
