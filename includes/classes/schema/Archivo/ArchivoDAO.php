@@ -743,20 +743,42 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
 
             foreach ($archivo as $version)
             {
-                $deleteFile=$repositorio->getPath().$version->getPath();
 
+                $type= $version->getType();
 
-                if(!$ftp->delete($deleteFile))
+                switch ($type)
                 {
-                    throw new Exception("ArchivoDAO:1:".$deleteFile);//Codigo de error al eliminar un archivo
+                    default:
+                        $deleteFile=$repositorio->getPath().$version->getPath();
+
+
+                        if(!$ftp->delete($deleteFile))
+                        {
+                            throw new Exception("ArchivoDAO:1:".$deleteFile);//Codigo de error al eliminar un archivo
+                        }
+
+
+                        $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
+
+                        $res= $this->dataSource->runUpdate($sql,array(
+                            ":archivo_id"=>$version->getId()
+                        ));
+                        break;
+
+                    case "5":
+
+
+                        $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
+
+                        $res= $this->dataSource->runUpdate($sql,array(
+                            ":archivo_id"=>$version->getId()
+                        ));
+
+                        break;
                 }
 
 
-                $sql ="DELETE FROM {$this->tableName} WHERE archivo_id = :archivo_id";
 
-                $res= $this->dataSource->runUpdate($sql,array(
-                    ":archivo_id"=>$version->getId()
-                ));
 
             }
 
