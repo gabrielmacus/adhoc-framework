@@ -15,6 +15,8 @@ $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
 
+var_dump($user);
+
 try{
     $GLOBALS["postDAO"]->setOrderBy(" post_creacion DESC");
     $limit= 15;
