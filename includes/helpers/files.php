@@ -99,11 +99,14 @@ function uploadTmp($r)
 
             case "youtube":
 
-                $a = new VideoYT($file["size"], $file["name"], $file["mime"]);
+                $a = new VideoYT(0, $file["name"], $file["mime"]);
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
                 $a->setRealName($file["url"]);
+                $a->setPath($file["size"]);
+
+
                 $res = $GLOBALS["youtubeDAO"]->insertArchivo($a);
                 $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 

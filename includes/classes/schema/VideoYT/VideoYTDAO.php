@@ -28,6 +28,7 @@ class VideoYTDAO extends ArchivoDAO
         $a->setCreation($now);
         $a->setModification($now);
 
+
         $sql = parent::getInsertSql();
 
 
