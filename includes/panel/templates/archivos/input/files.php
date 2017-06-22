@@ -14,6 +14,19 @@
         if(patternYoutube)
         {
 
+            $.ajax(
+                {
+                    "dataType":"json",
+                    "method":"get",
+                    "url":"https://www.youtube.com/oembed?url="+$(this).val()+"&format=json",
+                     "success":function (e) {
+
+                         console.log(e);
+                     },
+                    "error":error
+                }
+
+            );
             scope.previews.push({url:$(this).val(),youtube:true});
         }
 
