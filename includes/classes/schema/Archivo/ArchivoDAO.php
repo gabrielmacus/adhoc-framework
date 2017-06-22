@@ -77,72 +77,78 @@ archivo_id=:archivo_id, archivo_size=:archivo_size,archivo_mime=:archivo_mime, a
     {
         $this->validate($a);
 
-        $r =$a->getRepositorio();
-
-        $ftp  =$r->getFtp();
-
-        $randName=substr($a->getName(),0,6).rand(0,9999);
-
-        if(!$mainPath)
-        {
-            $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
-
-        }
-      
-        $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
-
-        $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
-
-        $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
-
-        $a->setPathName($mainPath);
-
-        $mainPath="{$mainPath}/{$fileNameVersion}";
-
-        $fullDir = $r->getPath().$mainPath; //Directorio completo, nombre del archivo incluido
-
-        if(!$ftp->isDir($mainFolder))//Chequeo si no existe el directorio, en tal caso lo creo
-        {
-            $ftp->mkdir($mainFolder,true);
-        }
-
-
-        //   echo json_encode(array("fullDir"=>$fullDir,"tmpDir"=>$a->getTmpPath()));
-
-        //  echo json_encode( $r->getName());
-
-        // echo json_encode($ftp->put("/httpdocs/data/2017/04/12/1492008967.jpg/1492008967_original.jpg","C:/xampp5/htdocs/adhoc-framework/tmp/files/606453_7up.jpg",FTP_BINARY));
-        //    exit();
-
-        /*      echo $fullDir." ".$a->getTmpPath();
-
-              exit();
-      */
-        $ftp->pasv(true);
-        if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
-        {
-            throw new Exception("ArchivoDAO:0");
-        }
-
-        $a->setVersion($versionId);
-
-
-        $a->setRealName($r->getUrl().$mainPath); //Url + Ruta completa
-        $a->setVersionName($versionName);
-
-
         $sql = $this->insertSql;
-
-        if(!$a->getCreation())
+        
+        if(!$a->getRealName())
         {
-            $a->setCreation(time());
-        }
-        if(!$a->getModification())
-        {
-            $a->setModification(time());
+            $r =$a->getRepositorio();
+
+            $ftp  =$r->getFtp();
+
+            $randName=substr($a->getName(),0,6).rand(0,9999);
+
+            if(!$mainPath)
+            {
+                $mainPath = time()."{$randName}.{$a->getExtension()}"; //Nombre de la carpeta contenedora de todas las versiones
+
+            }
+
+            $mainPath=$r->getDatePath()."{$mainPath}"; //Directorio donde estan todas las versiones
+
+            $fileNameVersion = time()."_{$randName}_{$versionName}.{$a->getExtension()}";//Nombre del archivo con su version
+
+            $mainFolder= $r->getPath().$mainPath; //La ruta de la carpeta,excluyendo el archivo
+
+            $a->setPathName($mainPath);
+
+            $mainPath="{$mainPath}/{$fileNameVersion}";
+
+            $fullDir = $r->getPath().$mainPath; //Directorio completo, nombre del archivo incluido
+
+            if(!$ftp->isDir($mainFolder))//Chequeo si no existe el directorio, en tal caso lo creo
+            {
+                $ftp->mkdir($mainFolder,true);
+            }
+
+
+            //   echo json_encode(array("fullDir"=>$fullDir,"tmpDir"=>$a->getTmpPath()));
+
+            //  echo json_encode( $r->getName());
+
+            // echo json_encode($ftp->put("/httpdocs/data/2017/04/12/1492008967.jpg/1492008967_original.jpg","C:/xampp5/htdocs/adhoc-framework/tmp/files/606453_7up.jpg",FTP_BINARY));
+            //    exit();
+
+            /*      echo $fullDir." ".$a->getTmpPath();
+
+                  exit();
+          */
+            $ftp->pasv(true);
+            if(!$ftp->put($fullDir,$a->getTmpPath(),FTP_BINARY))
+            {
+                throw new Exception("ArchivoDAO:0");
+            }
+
+            $a->setVersion($versionId);
+
+
+            $a->setRealName($r->getUrl().$mainPath); //Url + Ruta completa
+            $a->setVersionName($versionName);
+
+
+
+            if(!$a->getCreation())
+            {
+                $a->setCreation(time());
+            }
+            if(!$a->getModification())
+            {
+                $a->setModification(time());
+            }
+
+            $a->setPath($mainPath);
+
         }
 
-        $a->setPath($mainPath);
 
         $res= $this->dataSource->runUpdate($sql,
             $this->getParamsArray($a));
