@@ -25,7 +25,7 @@
                          console.log(e);
 
                          scope.previews.push(
-                             {url:url,youtube:true,
+                             {url:url,type:"youtube",
                          size:e.thumbnail_url,
                              name:e.title
                          });

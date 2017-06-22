@@ -150,8 +150,9 @@
 
                     <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
 
-                    <figure>
-                        <i style="font-size: 150px" class="fa fa-file-o" aria-hidden="true"></i>
+                    <figure class="center">
+                        <i style="font-size: 150px;    top: 15%;
+    position: relative;" class="fa fa-file-o" aria-hidden="true"></i>
                     </figure>
                     <input class="name" data-ng-model="p.name">
                     <span class="size"  data-ng-bind="getMb(p.size)"></span>
@@ -181,7 +182,7 @@
             </div>
 
             <!-- videos sindicados -->
-            <div  class="file-preview s12 m4 l3" data-ng-repeat="p in previews" data-ng-if="!p.mime && p.youtube">
+            <div  class="file-preview s12 m4 l3" data-ng-repeat="p in previews" data-ng-if="!p.mime && p.type=='youtube'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  class="file" >
 
