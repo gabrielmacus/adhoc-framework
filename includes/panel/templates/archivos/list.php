@@ -157,7 +157,7 @@
 
                     <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
 
-                    <figure style=" height:100px;text-align: center;padding-top: 11%;">
+                    <figure style="text-align: center;padding-top: 11%;">
                         <audio style="    bottom: 40px;
     width: 100%;
     position: absolute;
