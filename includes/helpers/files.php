@@ -126,6 +126,19 @@ function uploadTmp($r)
 
 
                 break;
+            case "mp4":
+            case "webm":
+
+            $a = new Video($file["size"], $file["name"], $file["mime"]);
+            $a->setTmpPath($file["tmp"]);
+            $a->setExtension($file["type"]);
+            $a->setRepositorio($r);
+            $res = $GLOBALS["videoDAO"]->insertArchivo($a);
+            $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
+
+
+
+            break;
         }
 
     }

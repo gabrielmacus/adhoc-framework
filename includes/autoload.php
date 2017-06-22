@@ -75,6 +75,7 @@ $GLOBALS["idiomaDAO"] = new IdiomaDAO($configuracion->getDataSource());
 $GLOBALS["youtubeDAO"] = new VideoYTDAO($configuracion->getDataSource());
 $GLOBALS["audioDAO"]= new AudioDAO($configuracion->getDataSource());
 $GLOBALS["vimeoDAO"]=new VideoVMDAO($configuracion->getDataSource());
+$GLOBALS["videoDAO"] = new VideoDAO($configuracion->getDataSource());
 
 $GLOBALS["menuDAO"] = new MenuDAO(DIR_PATH."/includes/panel/templates/comun/lang/{$configuracion->getLanguage()}.json");
 
