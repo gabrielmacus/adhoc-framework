@@ -55,6 +55,9 @@ try{
 
 
 
+    $site="archivos";
+    $action="list";
+
 }
 catch (Exception $e)
 {
