@@ -160,7 +160,7 @@
     </div>
 
     <div class="fila">
-        <input class="padding" type="text" placeholder="Url de Youtube o Vimeo">
+        <input style="padding: 10px;" type="text" placeholder="Url de Youtube o Vimeo">
     </div>
 
 
