@@ -14,7 +14,7 @@ class VideoYT extends Archivo
     }
 
 
-    function getId()
+    function getVideoId()
     {
         $url = $this->getRealName();
         parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
