@@ -95,7 +95,7 @@ $versiones =$r->getVersiones();
             $image =new \Eventviva\ImageResize($copy);
 
             //$image->resizeToBestFit($resolucion["ancho"],$resolucion["alto"]); //Redimension
-            $image->crop($resolucion["ancho"],$resolucion["alto"],true);
+            $image->resizeToBestFit($resolucion["ancho"],$resolucion["alto"]);
             $image->save($copy);
 
    
