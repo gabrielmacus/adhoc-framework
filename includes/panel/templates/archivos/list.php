@@ -209,6 +209,21 @@
                 </div>
 
             </div>
+            <!-- video propio -->
+            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="checkMime(p.mime)=='video'">
+                <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
+                <div  class="file "  >
+
+                    <span  data-ng-click="deletePreview(p)" style="position: absolute;left: 10px;top: 10px;color: rgba(220, 69, 47, 1);font-size: 23px;"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    <figure>
+                        <video controls style="width: 100%;height: 100%" data-ng-src="{{p.url}}">
+                    </figure>
+
+                    <input class="name" data-ng-model="p.name">
+                    <span class="size"  data-ng-bind="getMb(p.size)"></span>
+                </div>
+
+            </div>
 
 </div>
             <?php
