@@ -190,11 +190,18 @@
 
                     <figure>
                         <img data-ng-src="{{p.size}}">
-                        <i style="    z-index: 90;
+
+
+                        <i data-ng-if="p.type=='youtube'" style="    z-index: 90;
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 44px;color: #e52d27" class="fa fa-youtube" aria-hidden="true"></i>
+                        <i data-ng-if="p.type=='vimeo'" style="    z-index: 90;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 44px;color: rgba(56, 146, 225, 1)" class="fa fa-vimeo" aria-hidden="true"></i>
 
 
                     </figure>
