@@ -194,7 +194,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 44px;color: #b31217" class="fa fa-youtube" aria-hidden="true"></i>
+    font-size: 44px;color: #e52d27" class="fa fa-youtube" aria-hidden="true"></i>
 
 
                     </figure>

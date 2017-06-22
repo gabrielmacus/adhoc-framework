@@ -23,12 +23,13 @@
                      "success":function (e) {
 
                          console.log(e);
+                         var yt={url:url,type:"youtube",
+                             size:e.thumbnail_url,
+                             name:e.title,
+                             mime:e.author_url
+                         };
 
-                         scope.previews.push(
-                             {url:url,type:"youtube",
-                         size:e.thumbnail_url,
-                             name:e.title
-                         });
+                         scope.previews.push(yt);
                          setTimeout(function () {
                              scope.$apply();
                          })

@@ -17,18 +17,17 @@ function uploadTmp($r)
         $file["tmp"]=DIR_PATH.$file["tmp"];
 
 
-        switch ($file["type"])
-        {
+        switch ($file["type"]) {
             default:
 
 
-                $a = new Archivo($file["size"],$file["name"],$file["mime"]);
+                $a = new Archivo($file["size"], $file["name"], $file["mime"]);
 
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
-                $res= $GLOBALS["archivoDAO"]->insertArchivo($a);
-                $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+                $res = $GLOBALS["archivoDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
                 break;
 
@@ -41,14 +40,14 @@ function uploadTmp($r)
             case "jpg":
 
 
-                $a = new Imagen($file["size"],$file["name"],$file["mime"]);
+                $a = new Imagen($file["size"], $file["name"], $file["mime"]);
                 $a->setTmpPath($file["tmp"]);
                 $a->setExtension($file["type"]);
                 $a->setRepositorio($r);
-                $res= $GLOBALS["imagenDAO"]->insertArchivo($a);
-            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+                $res = $GLOBALS["imagenDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
-            break;
+                break;
 
             case "pdf"://Documentos
             case "docx":
@@ -75,29 +74,40 @@ function uploadTmp($r)
             case "java":
             case "sql":
 
-            $a = new Documento($file["size"],$file["name"],$file["mime"]);
-            $a->setTmpPath($file["tmp"]);
-            $a->setExtension($file["type"]);
-            $a->setRepositorio($r);
-            $res= $GLOBALS["documentoDAO"]->insertArchivo($a);
-            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+                $a = new Documento($file["size"], $file["name"], $file["mime"]);
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($r);
+                $res = $GLOBALS["documentoDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
-            break;
+                break;
 
             case "mp3":
             case "ogg":
             case "wav":
 
-            $a = new Audio($file["size"],$file["name"],$file["mime"]);
-            $a->setTmpPath($file["tmp"]);
-            $a->setExtension($file["type"]);
-            $a->setRepositorio($r);
-            $res= $GLOBALS["documentoDAO"]->insertArchivo($a);
-            $_POST["archivos"][]=array("archivo_id"=>$res[0],"objeto_tabla"=>"posts");//Para subida directa
+                $a = new Audio($file["size"], $file["name"], $file["mime"]);
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($r);
+                $res = $GLOBALS["documentoDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
 
 
-            break;
+                break;
 
+            case "youtube":
+
+                $a = new VideoYT($file["size"], $file["name"], $file["mime"]);
+                $a->setTmpPath($file["tmp"]);
+                $a->setExtension($file["type"]);
+                $a->setRepositorio($r);
+                $res = $GLOBALS["documentoDAO"]->insertArchivo($a);
+                $_POST["archivos"][] = array("archivo_id" => $res[0], "objeto_tabla" => "posts");//Para subida directa
+
+
+                break;
         }
 
     }

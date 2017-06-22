@@ -18,6 +18,7 @@ require_once "schema/Documento/DocumentoDAO.php";
 require_once "schema/Idioma/IdiomaDAO.php";
 require_once "schema/Menu/MenuDAO.php";
 require_once "schema/Audio/AudioDAO.php";
+require_once "schema/VideoYT/VideoYTDAO.php";
 
 /** ImageResize **/
 require_once "ImageResize.php";
