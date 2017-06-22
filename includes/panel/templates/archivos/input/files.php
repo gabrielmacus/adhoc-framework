@@ -13,16 +13,18 @@
 
         if(patternYoutube)
         {
+            var url=$(this).val();
 
             $.ajax(
                 {
                     "dataType":"json",
                     "method":"get",
-                    "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+$(this).val(),
+                    "url":"<?php echo $configuracion->getSiteAddress()?>/extras/youtube/get_info.php?url="+url,
                      "success":function (e) {
 
 
-                         scope.previews.push({url:$(this).val(),youtube:true,
+                         scope.previews.push(
+                             {url:url,youtube:true,
                          size:e.thumbnail_url,
                              name:e.title
                          });
