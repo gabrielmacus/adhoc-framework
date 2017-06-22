@@ -35,11 +35,7 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div class="file">
                             <div class="mask animated">
-                                <div class="half" >
-                                    <a data-lity  href="http://docs.google.com/gview?url=<?php echo  $version->getRealName();?>&embedded=true" class="icon">
-                                        <i class="fa fa-search " aria-hidden="true"></i>
-                                    </a>
-                                </div>
+                              
                                 <div class="half"  >
                                     <a  download href="<?php echo $version->getRealName()?>" class="icon">
                                         <i class="fa fa-download" aria-hidden="true"></i>

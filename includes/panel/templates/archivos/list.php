@@ -17,6 +17,14 @@
             scope.$apply();
 
 
+            scope.checkMime=function (mime) {
+
+                mime = mime.split("/");
+                mime = mime[0];
+
+                return mime;
+
+            }
             scope.deletePreview=function (e) {
                 var idx = scope.previews.indexOf(e);
 
@@ -111,7 +119,7 @@
 
         <div class="files">
 
-            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'">
+            <div  class="file-preview s12 m6 l3 animated bounceIn" data-ng-repeat="p in previews" data-ng-if="checkMime(p.type)=='image'">
                 <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                 <div  class="file "  >
 
