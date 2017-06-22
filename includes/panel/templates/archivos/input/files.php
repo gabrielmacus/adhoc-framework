@@ -153,6 +153,12 @@
         <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
     </div>
 
+    <div class="file-upload">
+        <label for="<?php echo $id;?>" class="file-upload__label">Cargar url</label>
+        <input multiple   id="<?php echo $id;?>" type="file" accept="<?Php  echo implode(",",$formats)?>"   class="file-upload__input">
+    </div>
+
+
 </div>
 
 
