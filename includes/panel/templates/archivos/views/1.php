@@ -216,7 +216,7 @@ foreach ($archivos as $k=>$archivo)
                         <!-- data-ng-if="p.type=='jpg' || p.type=='jpeg' ||p.type=='gif' ||p.type=='jpg' ||p.type=='png'"-->
                         <div  class="file">
 
-                            <div class="mask animated" style="z-index: 1000000">
+                            <div class="mask animated" style="z-index: 100">
                                 <div class="half" >
                                     <a data-lity  href="http://docs.google.com/gview?url=<?php echo  $version->getRealName();?>&embedded=true" class="icon">
                                         <i class="fa fa-search " aria-hidden="true"></i>
