@@ -18,6 +18,9 @@ foreach ($subsecciones as $k=>$v)
         <figure class="fit">
             <img class="fit" src="<?php echo $s["img"]?>">
         </figure>
+        <div class="mask fit animated">
+            
+        </div>
     </div>
     <?php
 

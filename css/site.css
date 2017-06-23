@@ -13,7 +13,14 @@ html,body
 
 
 /** Comunes**/
-
+.animated
+{
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;;
+    -ms-transition: all 250ms;;
+    -o-transition: all 250ms;;
+    transition: all 250ms;;
+}
 .fit
 {
     width: 100%;
@@ -53,6 +60,14 @@ img.fit
 {
     width: 33.33333%;
     height: 340px;
+}
+.portada .grid .cell .mask
+{
+    background-color: black;
+}
+.portada .grid .cell .mask:hover
+{
+    background-color: transparent;
 }
 
 
