@@ -34,7 +34,15 @@ img.fit
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
 
+}
 
+.main-background-color
+{
+    background-color: #009688;
+}
+.main-color
+{
+    color: #009688;
 }
 
 /*** **/
