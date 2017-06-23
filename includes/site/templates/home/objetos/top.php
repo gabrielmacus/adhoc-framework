@@ -8,7 +8,7 @@ $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
 
 foreach ($subsecciones as $k=>$v)
 {
-    $s = $lang[$k];
+    $s = $lang["secciones"][$k];
 
     ?>
     <div class="cell">
