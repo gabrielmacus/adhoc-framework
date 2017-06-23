@@ -87,7 +87,7 @@ img.fit
 {
     background-color: transparent;
 }
-.portada .cell .figcaption
+.portada .cell figcaption
 {
     position: absolute;
 }
