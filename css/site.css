@@ -7,12 +7,17 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 
 html,body
 {
+ height: 100%;
     font-family: 'Open Sans', sans-serif!important;
 }
 
 
 
 /** Comunes**/
+body > section
+{
+    height: 100%;
+}
 .center
 {
     text-align: center;
@@ -72,10 +77,19 @@ img.fit
 
 /** Portada **/
 
+.portada .top
+{
+    height: 100%;
+}
+.portada .grid
+{
+    height: 100%;
+}
+
 .portada  .cell
 {
     width: 33.33333%;
-    height: 340px;
+    height: 50%;
     position: relative;
 }
 .portada  .cell .mask
