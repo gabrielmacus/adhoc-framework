@@ -13,7 +13,10 @@ html,body
 
 
 /** Comunes**/
-
+.center
+{
+    text-align: center;
+}
 .valign
 {
     align-items: center;
