@@ -14,7 +14,7 @@ foreach ($subsecciones as $k=>$v)
     $s = $lang["secciones"][$v->getId()];
 
     ?>
-    <div class="cell">
+    <div class="cell overflow-hidden">
         <div class="mask fit animated">
 
         </div>

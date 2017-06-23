@@ -34,6 +34,10 @@ img.fit
 {
     object-fit: cover;
 }
+.overflow-hidden
+{
+    overflow: hidden;
+}
 .flex
 {
     display: -webkit-box;
