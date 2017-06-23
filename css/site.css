@@ -71,11 +71,14 @@ img.fit
 /*** **/
 
 /** Portada **/
-
+.portada .top
+{
+    height: 100%;
+}
 .portada  .cell
 {
     width: 33.33333%;
-    height: 340px;
+    height: 100%;
     position: relative;
 }
 .portada  .cell .mask
@@ -93,6 +96,7 @@ img.fit
 .portada .cell figcaption
 {
 
+    font-weight: 300;
     position: absolute;
     width: 80%;
     left: 10%;
