@@ -10,7 +10,15 @@ html,body
     font-family: 'Open Sans', sans-serif!important;
 }
 
+
+
 /** Comunes**/
+
+.fit
+{
+    width: 100%;
+    height: 100%;
+}
 .flex
 {
     display: -webkit-box;
@@ -31,7 +39,9 @@ html,body
 .portada .grid .cell
 {
     width: 25%;
+    height: 340px;
 }
+
 
 /** **/
 
