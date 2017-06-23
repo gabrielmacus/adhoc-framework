@@ -1,6 +1,6 @@
 <?php
 
-$subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
+$subsecciones = $secciones[$clasificadosSeccionId]->getSubsecciones();
 
 foreach ($subsecciones as $k=>$v)
 {
