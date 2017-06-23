@@ -82,7 +82,7 @@ img.fit
 {
     position: absolute;
 }
-.portada .cell mask:hover + figure img
+.portada .cell:hover figure img
 {
     width: 150%;
     height: 150%;
