@@ -13,6 +13,11 @@ html,body
 
 
 /** Comunes**/
+
+.valign
+{
+    align-items: center;
+}
 .animated
 {
     -webkit-transition: all 250ms;
@@ -82,7 +87,10 @@ img.fit
 {
     background-color: transparent;
 }
-
+.portada .cell .figcaption
+{
+    position: absolute;
+}
 
 /** **/
 
