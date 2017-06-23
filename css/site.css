@@ -26,6 +26,10 @@ html,body
     width: 100%;
     height: 100%;
 }
+.relative
+{
+    position: relative;
+}
 img.fit
 {
     object-fit: cover;
@@ -56,22 +60,26 @@ img.fit
 
 /** Portada **/
 
-.portada .grid .cell
+.portada  .cell
 {
     width: 33.33333%;
     height: 340px;
     position: relative;
 }
-.portada .grid .cell .mask
+.portada  .cell .mask
 {
     position: absolute;
     top:0;
     right:0;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.portada .grid .cell .mask:hover
+.portada  .cell .mask:hover
 {
     background-color: transparent;
+}
+.portada .cell img
+{
+    position: absolute;
 }
 
 
