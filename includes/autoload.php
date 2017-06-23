@@ -98,7 +98,7 @@ $GLOBALS["mapsConfig"]=array(
 );
 
 /** **/
-$s =   $GLOBALS["seccionDAO"] ->selectSecciones();
+$s =   $GLOBALS["seccionDAO"] ->selectSeccionesSubsecciones();
 $secciones=array();
 
 foreach ($s as $sec)
