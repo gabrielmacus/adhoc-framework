@@ -1,5 +1,5 @@
 
-<div class="grid">
+<div class="grid flex">
 <?php
 
 $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
