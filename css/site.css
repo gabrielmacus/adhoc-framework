@@ -63,6 +63,7 @@ img.fit
 }
 .portada .grid .cell .mask
 {
+    position: absolute;
     background-color: black;
 }
 .portada .grid .cell .mask:hover
