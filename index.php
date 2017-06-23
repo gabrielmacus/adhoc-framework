@@ -14,10 +14,10 @@ $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
-$bodyClasses=[];
+$bodyClasses=["portada"];
 
 try{
-    
+
     $clasificadosSeccionId=116;
     
     $site="home";
