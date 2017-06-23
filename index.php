@@ -17,6 +17,9 @@ $htmlLocality="Paraná,Entre Rios";
 $bodyClasses=[];
 
 try{
+    
+    $clasificadosSeccionId=116;
+    
     $site="home";
     $action="index";
 
