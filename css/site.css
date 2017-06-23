@@ -85,6 +85,11 @@ img.fit
 .portada .cell img
 {
     position: absolute;
+    -webkit-transition: width,height 300ms;
+    -moz-transition: width,height 300ms;
+    -ms-transition: width,height 300ms;
+    -o-transition: width,height 300ms;;
+    transition: width,height 300ms;;
 }
 .portada .cell:hover figure img
 {
