@@ -20,6 +20,21 @@ foreach ($subsecciones as $k=>$v)
         </div>
         <figure class="fit">
             <img class="fit " src="<?php echo $s["img"]?>">
+            <figcaption>
+                <p>
+                    <?php
+                    if(!$s["text"])
+                    {
+                        $txt =$v->getNombre();
+                    }
+                    else
+                    {
+                        $txt= $s["text"];
+                    }
+                    echo $txt;
+                    ?>
+                </p>
+            </figcaption>
         </figure>
        
     </div>
