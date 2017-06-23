@@ -1,10 +1,11 @@
 <?php
+var_dump($secciones);
 
-$subsecciones = $secciones[$clasificadosSeccionId]->getSubsecciones();
+$subsecciones = $secciones[$clasificadosSeccionId]
 
 foreach ($subsecciones as $k=>$v)
 {
-    var_dump($v);
+
 }
 
 
