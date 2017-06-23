@@ -8,6 +8,7 @@ $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
 
 foreach ($subsecciones as $k=>$v)
 {
+    var_dump($lang);
     $s = $lang["secciones"][$v->getId()];
 
     ?>
