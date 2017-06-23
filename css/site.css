@@ -19,6 +19,10 @@ html,body
     width: 100%;
     height: 100%;
 }
+img.fit
+{
+    object-fit: cover;
+}
 .flex
 {
     display: -webkit-box;
@@ -32,6 +36,7 @@ html,body
 
 
 }
+
 /*** **/
 
 /** Portada **/
