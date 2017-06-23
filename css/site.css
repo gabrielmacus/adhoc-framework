@@ -92,7 +92,16 @@ img.fit
 }
 .portada .cell figcaption
 {
+
     position: absolute;
+    width: 80%;
+    left: 10%;
+    font-size: 50px;
+    /* padding: 20px; */
+    padding: 5px;
+    background: white;
+    /* margin: auto; */
+
 }
 
 /** **/
