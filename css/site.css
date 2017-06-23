@@ -82,22 +82,6 @@ img.fit
 {
     background-color: transparent;
 }
-.portada .cell img
-{
-    position: absolute;
-    -webkit-transition: width,height 300ms;
-    -moz-transition: width,height 300ms;
-    -ms-transition: width,height 300ms;
-    -o-transition: width,height 300ms;;
-    transition: width,height 300ms;;
-}
-.portada .cell:hover figure img
-{
-    width: 150%;
-    left: -25%;
-    top:-25%;
-    height: 150%;
-}
 
 
 /** **/
