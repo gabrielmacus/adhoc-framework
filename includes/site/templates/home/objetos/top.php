@@ -15,12 +15,13 @@ foreach ($subsecciones as $k=>$v)
 
     ?>
     <div class="cell">
+        <div class="mask fit animated">
+
+        </div>
         <figure class="fit">
             <img class="fit" src="<?php echo $s["img"]?>">
         </figure>
-        <div class="mask fit animated">
-            
-        </div>
+       
     </div>
     <?php
 
