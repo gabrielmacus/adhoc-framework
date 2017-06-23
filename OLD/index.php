@@ -19,6 +19,12 @@ $bodyClasses=[];
 try{
     $site="home";
     $action="index";
+    $bodyClasses[]="portada";
+
+    //Cargo la portada
+
+    $portada=$GLOBALS["postDAO"]->selectPostById($lang["portadaId"]);
+
 
 }
 catch (Exception $e)
