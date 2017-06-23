@@ -6,4 +6,7 @@
     ?>
 </div>
 
+<div class="body">
+    asdas
+</div>
 
