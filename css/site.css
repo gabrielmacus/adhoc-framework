@@ -60,6 +60,7 @@ img.fit
 {
     width: 33.33333%;
     height: 340px;
+    position: relative;
 }
 .portada .grid .cell .mask
 {
