@@ -12,7 +12,7 @@ foreach ($subsecciones as $k=>$v)
 
     ?>
     <div class="cell">
-        <figure>
+        <figure class="fit">
             <img class="fit" src="<?php echo $s["img"]?>">
         </figure>
     </div>
