@@ -7,7 +7,12 @@
   },
   "secciones":
   {
-   "117":{"img":"/images/car.jpg"}
+   "117":{"img":"/images/car.jpg"},
+    "118":{"img":"/images/laptop.jpg"},
+    "119":{"img":"/images/service.jpg"},
+    "120":{"img":"/images/house.jpg"},
+    "121":{"img":"/images/compras-online.jpg"}
+
   }
 
 }
