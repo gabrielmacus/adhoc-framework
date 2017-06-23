@@ -85,6 +85,7 @@ img.fit
 .portada .cell:hover figure img
 {
     width: 150%;
+    left: -50%;
     height: 150%;
 }
 
