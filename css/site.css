@@ -68,6 +68,7 @@ img.fit
 }
 .portada  .cell .mask
 {
+    z-index: 2;
     position: absolute;
     top:0;
     right:0;
