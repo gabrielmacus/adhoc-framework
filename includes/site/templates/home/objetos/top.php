@@ -1,5 +1,6 @@
+
+<div class="grid">
 <?php
-var_dump($secciones);
 
 $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
 
@@ -7,9 +8,18 @@ $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
 
 foreach ($subsecciones as $k=>$v)
 {
-    var_dump($v); 
+    $s = $lang[$k];
+
+    ?>
+    <div class="cell">
+        <figure>
+            <img src="<?php echo $s["img"]?>">
+        </figure>
+    </div>
+    <?php
 
 }
 
 
 ?>
+</div>
