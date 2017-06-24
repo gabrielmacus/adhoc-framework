@@ -25,7 +25,12 @@
                 <div class="text">
                     <p>PICK UP BARATA OROCH DYNA 1.6 $ 57.100 y TASA BAJA O TASA 0%</p>
                 </div>
-                <div class="mask main-background-color"></div>
+                <footer class="pie main-background-color">
+                    <span>$</span>
+                    <span>
+                        300
+                    </span>
+                </footer>
             </article>
                 <?php
             }

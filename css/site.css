@@ -161,11 +161,11 @@ img.fit
     line-height: 25px;
 }
 
-.portada .ultimos .body .item .mask
+.portada .ultimos .body .item .pie
 {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    position: relative;
+    padding: 15px;
     top:0;
     right: 0;
 }
