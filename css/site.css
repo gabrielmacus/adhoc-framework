@@ -127,7 +127,12 @@ img.fit
 
 }
 
-.portada .ultimos .item
+.portada .ultimos .body
+{
+    width: 100%;
+}
+
+.portada .ultimos .body .item
 {
 
 }
