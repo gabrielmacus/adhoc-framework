@@ -173,7 +173,9 @@ img.fit
 {
     width: 100%;
     position: relative;
-    padding: 15px;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
 }
 /** **/
 
