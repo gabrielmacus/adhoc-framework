@@ -137,6 +137,7 @@ img.fit
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 40px;
+    position: relative;
 }
 
 .portada .ultimos .body .item
@@ -159,6 +160,14 @@ img.fit
     line-height: 25px;
 }
 
+.portada .ultimos .body .item .mask
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    right: 0;
+}
 /** **/
 
 
