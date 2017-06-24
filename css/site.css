@@ -134,10 +134,13 @@ img.fit
 
 .portada .ultimos .body .item
 {
-
+width: 33.33333333%;
 }
 
-
+.portada .ultimos .body .item figure
+{
+    width:50%;
+}
 
 
 /** **/

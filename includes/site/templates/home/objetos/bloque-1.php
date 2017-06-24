@@ -4,7 +4,7 @@
         <h2>Últimos clasificados</h2>
     </header>
 
-    <div class="body">
+    <div class="body flex">
         <article class="item">
             <figure>
                 <img class="fit" src="http://clasionce-media.elonce.com/2017/06/22/1498179809_130420_0_m.jpg">
