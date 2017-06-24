@@ -14,7 +14,7 @@
             "http://clasionce-media.elonce.com/2017/06/22/1498184182_130682_0_l.jpg",
             "http://clasionce-media.elonce.com/2017/06/15/1497548787_20367_0_l.jpg"];
 
-            for ($i=0;$i<6;$i++)
+            for ($i=0;$i<9;$i++)
             {
             ?>
             <article class="item flex">
