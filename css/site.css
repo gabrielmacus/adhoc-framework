@@ -137,7 +137,7 @@ img.fit
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 40px;
-    position: relative;
+
 }
 
 .portada .ultimos .body .item
@@ -145,6 +145,7 @@ img.fit
     width: 33.33333333%;
     padding: 15px 15px 15px 15px;
     height: 250px;
+    position: relative;
 }
 
 .portada .ultimos .body .item figure
