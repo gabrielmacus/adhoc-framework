@@ -1,12 +1,12 @@
 
 
-<div class="top">
+<header class="top">
     <?PHP
     include "objetos/top.php";
     ?>
-</div>
+</header>
 
 <div class="body">
-    asdas
+    <?php echo include "objetos/bloque-1.php";?>
 </div>
 
