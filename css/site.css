@@ -165,9 +165,15 @@ img.fit
 {
     width: 100%;
     position: relative;
-    padding: 15px;
     top:0;
     right: 0;
+}
+
+.portada .ultimos .body .item .pie .text
+{
+    width: 100%;
+    position: relative;
+    padding: 15px;
 }
 /** **/
 
