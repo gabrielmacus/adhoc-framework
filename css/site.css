@@ -156,6 +156,7 @@ img.fit
 .portada .ultimos .body .item .text
 {
     width: 50%;
+    height: 80%;
     background-color: #e4e4e4;
     padding: 10px;
     line-height: 25px;
