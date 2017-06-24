@@ -135,6 +135,7 @@ img.fit
 .portada .ultimos .body .item
 {
 width: 33.33333333%;
+    height: 200px;
 }
 
 .portada .ultimos .body .item figure
@@ -145,6 +146,9 @@ width: 33.33333333%;
 .portada .ultimos .body .item .text
 {
     width: 50%;
+    background-color: #e4e4e4;
+    padding: 20px;
+    line-height: 25px;
 }
 
 /** **/
