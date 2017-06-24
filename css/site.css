@@ -130,12 +130,16 @@ img.fit
 .portada .ultimos .body
 {
     width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 40px;
 }
 
 .portada .ultimos .body .item
 {
-width: 33.33333333%;
-    height: 200px;
+    width: 33.33333333%;
+    padding: 15px 15px 15px 15px;
+    height: 250px;
 }
 
 .portada .ultimos .body .item figure
