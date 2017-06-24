@@ -165,18 +165,17 @@ img.fit
 {
     width: 100%;
     position: relative;
-    top:0;
-    right: 0;
-    align-items: center;
+    height: 20%;
 }
 
 .portada .ultimos .body .item .pie p
 {
     width: 100%;
     position: relative;
-    height: 20%;
     font-weight: 600;
     color: white;
+    height: 100%;
+    align-items: center;
 }
 /** **/
 
