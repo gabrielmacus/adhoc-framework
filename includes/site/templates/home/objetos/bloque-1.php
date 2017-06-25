@@ -20,7 +20,7 @@
             {
             ?>
             <article class="item flex">
-                <div class="shadow-1">
+                <div class="shadow-1 flex">
                     <figure>
                         <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
                     </figure>
