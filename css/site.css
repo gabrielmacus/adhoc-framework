@@ -129,12 +129,9 @@ img.fit
 
 .portada .ultimos .top
 {
-
+    padding: 15px;
+    margin-top: 15px;
     width: 100%;
-
-    padding: 20px;
-    font-size: 30px;
-    background-color: #f2f2f2;
 }
 
 .portada .ultimos .body
