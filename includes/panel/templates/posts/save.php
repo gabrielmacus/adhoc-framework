@@ -23,7 +23,7 @@
             "Si"=>10,
             "No"=>"false"
         );
-        include DIR_PATH."/includes/panel/templates/gui/input/checkbox.php";
+        include DIR_PATH."/includes/panel/templates/gui/input/radio.php";
 
 
 
