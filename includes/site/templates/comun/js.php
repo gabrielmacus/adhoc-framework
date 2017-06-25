@@ -18,3 +18,6 @@
 <script src="<?php  echo $configuracion->getJsCdn()."/js/vegas.min.js"?>"></script>
 
 <script src="<?php  echo $configuracion->getJsCdn()."/js/vex.combined.min.js"?>"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>

@@ -10,3 +10,4 @@
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/ng-animate.css">
 <link rel="stylesheet" href="<?php echo $configuracion->getCssCdn()?>/css/select-theme-default.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
