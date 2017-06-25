@@ -134,7 +134,7 @@ img.fit
     margin-left: 5%;
     margin-right: 5%;
 }
-.portada * .top
+.portada .body * .top
 {
     padding: 15px;
     margin-top: 15px;
