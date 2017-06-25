@@ -16,6 +16,9 @@
                             <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
                         </figure>
 
+                        <div class="mask main-background-color">
+
+                        </div>
                     </div>
 
                     <?php
