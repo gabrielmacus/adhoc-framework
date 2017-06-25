@@ -13,16 +13,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-        /*
-        scope.$watch($scope.cart, $scope.updateCart(), true);
-*/
-
-            scope.post.archivosGroups={};
-        scope.post.archivosGroups[<?php echo $grupo;?>]=[];
-
-
-
-        if(!   scope.validation)
+       if(!   scope.validation)
         {
             scope.validation={};
         }
@@ -31,6 +22,10 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             isValid: true, check: function () {
 
 
+                if(!scope.post.archivosGroups[<?php echo $grupo;?>])
+                {
+                    scope.post.archivosGroups[<?php echo $grupo;?>]=[];
+                }
 
                 <?php
                 if($showError)
