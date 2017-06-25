@@ -33,6 +33,7 @@ if(!$type)
 
                 var pattern =/<?php echo $regex?>/g;
 
+                    console.log(scope.post._<?PHP echo $model; ?>);
                     $.each(scope.post._<?PHP echo $model; ?>,function(k,v){
 
                         if (v!=false&&!pattern.test(v)) {
