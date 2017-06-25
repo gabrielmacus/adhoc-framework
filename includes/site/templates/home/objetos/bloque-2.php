@@ -32,7 +32,12 @@
 <script>
     $(document).ready(
         function () {
-            var swiper = new Swiper('.swiper-container');
+            var swiper = new Swiper('.swiper-container', {
+
+                slidesPerView: 4,
+                paginationClickable: true,
+                spaceBetween: 30
+            });
         }
     );
 </script>
