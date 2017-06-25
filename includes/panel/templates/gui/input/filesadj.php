@@ -18,7 +18,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
 */
         if(!scope.post.archivosGroups)
         {
-            scope.post.archivosGroups={};
+            scope.post.archivosGroups={"<?php echo $grupo;?>":[]};
         }
 
 
