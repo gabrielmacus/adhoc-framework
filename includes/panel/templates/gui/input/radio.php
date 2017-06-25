@@ -68,9 +68,8 @@ if(!$type)
             scope.post = <?php echo json_encode($post);?>;
         }
 
-        $("[data-ng-model='post.<?php echo $model?>'][value='"+scope.post.<?php echo $model?>+"']").prop("checked", true);
 
-console.log("[data-ng-model='post.<?php echo $model?>'][value='"+scope.post.<?php echo $model?>+"']");
+
 
         <?php
         }?>
