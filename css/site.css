@@ -149,14 +149,17 @@ img.fit
 }
 
 .portada .ultimos .body .item figure
-{    height: 80%;
+{
+
+    height: 80%;
     width:50%;
 }
 
 .portada .ultimos .body .item .text
 {
     width: 50%;
-    height: 80%;
+
+
     background-color: #e4e4e4;
     padding: 10px;
     line-height: 25px;
@@ -177,6 +180,7 @@ img.fit
     color: white;
     height: 100%;
     align-items: center;
+    padding-left: 15px;
 }
 /** **/
 
