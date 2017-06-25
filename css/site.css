@@ -212,16 +212,13 @@ img.fit
     align-items: center;
     padding-left: 15px;
 }
-.portada .mas-vistos .slider-wrapper
-{
-    width: 100%;
 
-    padding: 15px;
-}
 .portada .mas-vistos .slider-wrapper .slider
 {
     background-color: #f2f2f2;
     width: 100%;
+
+    margin: 15px;
 }
 .portada .mas-vistos .slider-wrapper .slider .image
 {
@@ -235,8 +232,7 @@ img.fit
     height: 100%;
     top: 0;
     right: 0;
-    background-color: #009688;
-    opacity: 0.5;
+    opacity: 0;
 }
 
 /** **/
