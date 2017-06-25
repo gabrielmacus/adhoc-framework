@@ -1,6 +1,6 @@
 <div class="ultimos flex">
 
-    <header class="top">
+    <header class="top main-color">
         <h2>Últimos clasificados</h2>
 
     </header>
