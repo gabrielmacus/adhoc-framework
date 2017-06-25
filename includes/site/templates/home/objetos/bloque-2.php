@@ -4,9 +4,10 @@
         <h2>Lo más visto</h2>
     </header>
 
-    <div class="slider-wrapper swiper-container">
+    <div class="slider-wrapper ">
 
-        <div class="slider-container flex swiper-wrapper">
+        <div class="swiper-container">
+            <div class="slider-container flex swiper-wrapper">
 
                 <?php  for ($i=0;$i<9;$i++)
                 {
@@ -22,7 +23,9 @@
                 }?>
 
 
+            </div>
         </div>
+
 
     </div>
 
