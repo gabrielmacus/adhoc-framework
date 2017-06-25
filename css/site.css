@@ -235,12 +235,7 @@ img.fit
 {
     height: 100%;
 }
-.portada .mas-vistos .slider-wrapper  .image
-{
-    width: 25%;
-    padding:20px 20px 20px 20px;
-    position: relative;
-}
+
 .portada .mas-vistos .slider-wrapper  .image .mask
 {
     position: absolute;
