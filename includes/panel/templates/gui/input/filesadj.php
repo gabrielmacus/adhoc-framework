@@ -16,7 +16,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         /*
         scope.$watch($scope.cart, $scope.updateCart(), true);
 */
-        if(!scope.post.archivosGroups)
+        if(scope.post.archivosGroups)
         {
             scope.post.archivosGroups={"<?php echo $grupo;?>":[]};
         }
