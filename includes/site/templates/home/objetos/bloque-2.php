@@ -36,7 +36,6 @@
 
                 slidesPerView: 4,
                 paginationClickable: true,
-                spaceBetween: 30
             });
         }
     );
