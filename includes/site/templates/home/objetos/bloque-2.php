@@ -11,11 +11,18 @@
             <?php  for ($i=0;$i<9;$i++)
             {
                 ?>
-                <figure>
-                    <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
-                </figure>
+                <div class="image">
+                    <figure>
+                        <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
+                    </figure>
+                    <div class="mask" style="position: absolute;width: 100%;height: 100%;top:0;right:0;background-color: #0a0a0a;opacity: 0.3">
+
+                    </div>
+                </div>
+
                 <?php
             }?>
+
 
         </div>
     </div>
