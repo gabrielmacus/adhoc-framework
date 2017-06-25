@@ -179,7 +179,9 @@ class Post implements JsonSerializable
             "nexoId"=>$this->getNexoId(),
             "nexoGrupo"=>$this->getNexoGrupo(),
             "nexoOrden"=>$this->getNexoOrden(),
-            "anexoId"=>$this->getAnexoId()
+            "anexoId"=>$this->getAnexoId(),
+            "extra5"=>$this->getExtra5(),
+            "extra6"=>$this->getExtra6()
         );
     }
 
