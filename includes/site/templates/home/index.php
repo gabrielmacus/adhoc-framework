@@ -7,6 +7,7 @@
 </header>
 
 <div class="body">
-    <?php echo include "objetos/bloque-1.php";?>
+    <?php  include "objetos/bloque-1.php";?>
+    <?php include "objetos/bloque-2.php"; ?>
 </div>
 
