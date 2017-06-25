@@ -134,6 +134,7 @@ class Post implements JsonSerializable
             "creacion"=>$this->getCreacion(),
             "modificacion"=>$this->getModificacion(),
             "id"=>$this->getId(),
+            "etiquetas"=>$this->getEtiquetas(),
             "comentarios"=>$this->getComentarios(),
             "extra1"=>$this->getExtra1(),
             "extra2"=>$this->getExtra2(),
