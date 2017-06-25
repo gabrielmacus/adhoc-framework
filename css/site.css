@@ -222,19 +222,19 @@ img.fit
     background-color: #f2f2f2;
     width: 100%;
 }
-.portada .mas-vistos .slider-wrapper .slider
+.portada .mas-vistos .slider-wrapper
 {
 
     width: 100%;
 
 
 }
-.portada .mas-vistos .slider-wrapper .slider .image
+.portada .mas-vistos .slider-wrapper  .image
 {
     width: 25%;
     position: relative;
 }
-.portada .mas-vistos .slider-wrapper .slider .image .mask
+.portada .mas-vistos .slider-wrapper  .image .mask
 {
     position: absolute;
     width: 100%;
@@ -243,10 +243,7 @@ img.fit
     right: 0;
     opacity: 0.5;
 }
-.portada .mas-vistos .slider-wrapper .slider
-{
-    padding: 10px;
-}
+
 /** **/
 
 

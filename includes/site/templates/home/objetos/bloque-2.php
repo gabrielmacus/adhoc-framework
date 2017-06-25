@@ -6,8 +6,7 @@
 
     <div class="slider-wrapper">
 
-        <div class="slider-container">
-            <div class="slider flex">
+        <div class="slider-container flex">
 
                 <?php  for ($i=0;$i<9;$i++)
                 {
@@ -23,7 +22,6 @@
                 }?>
 
 
-            </div>
         </div>
 
     </div>
