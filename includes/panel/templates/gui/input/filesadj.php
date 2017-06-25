@@ -16,6 +16,10 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
         /*
         scope.$watch($scope.cart, $scope.updateCart(), true);
 */
+        if(!scope.post.archivosGroups[<?php echo $grupo;?>])
+        {
+            scope.post.archivosGroups[<?php echo $grupo;?>]=[];
+        }
         if(!   scope.validation)
         {
             scope.validation={};
@@ -25,6 +29,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
             isValid: true, check: function () {
 
 
+
                 <?php
                 if($showError)
                 {
@@ -32,6 +37,7 @@ $showError = (is_array($min) || is_numeric($max) || $formats);
                 if($min)
                 {
                 ?>
+
 
                 var arr = scope.post.archivosGroups[<?php echo $grupo;?>].filter(
                     function (el) {
