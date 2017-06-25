@@ -18,10 +18,10 @@
 
         $label="¿Es un formulario de prueba?";
         $model="extra5";
-        $regex=false;
+        $regex='^[0-9]*$';
         $items = array(
             "Si"=>10,
-            "No"=>"false"
+            "No"=>"data"
         );
         include DIR_PATH."/includes/panel/templates/gui/input/radio.php";
 
