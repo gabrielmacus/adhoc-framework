@@ -215,12 +215,14 @@ img.fit
 .portada .mas-vistos .slider-wrapper
 {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
 }
 .portada .mas-vistos .slider-wrapper .slider-container
 {
     background-color: #f2f2f2;
     width: 100%;
+
+    padding: 10px;
 }
 .portada .mas-vistos .slider-wrapper
 {
