@@ -121,6 +121,12 @@ img.fit
 
 /*--------*/
 
+.portada section > .body
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .portada .ultimos .top
 {
 
@@ -128,16 +134,12 @@ img.fit
 
     padding: 20px;
     font-size: 30px;
+    background-color: #f2f2f2;
 }
-.portada .ultimos .top h2
-{
-    margin-left: 5%;
-}
+
 .portada .ultimos .body
 {
     width: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
     margin-top: 0px;
 
 }
@@ -184,6 +186,7 @@ img.fit
     align-items: center;
     padding-left: 15px;
 }
+
 /** **/
 
 
