@@ -130,7 +130,10 @@ img.fit
     font-size: 20px;
     background-color: #f2f2f2;
 }
-
+.portada .ultimos .top h2
+{
+    margin-left: 5%;
+}
 .portada .ultimos .body
 {
     width: 100%;
