@@ -20,7 +20,7 @@
             for ($i=0;$i<9;$i++)
             {
             ?>
-            <article class="item flex">
+            <article class="item flex shadow-1">
                 <figure>
                     <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
                 </figure>
