@@ -41,6 +41,8 @@ try{
             $post->setEtiquetas($_POST["etiquetas"]);
             $post->setAnexos($_POST["anexos"]);
             $post->setUsuario($user["id"]);
+            $post->setExtra5($_POST["extra5"]);
+            $post->setExtra6($_POST["extra6"]);
 
 
             if($_POST["creacion"])

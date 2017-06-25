@@ -21,7 +21,7 @@ class PostDAO  extends Paginable implements IPost
 
     private $fields=array("post_id","post_titulo","post_volanta","post_bajada","post_texto","post_etiquetas",
        "post_seccion","post_creacion","post_modificacion",
-        "post_extra_1","post_extra_2","post_extra_3","post_extra_4","post_usuario");
+        "post_extra_1","post_extra_2","post_extra_3","post_extra_4","post_usuario","post_extra_5","post_extra_6");
 
     protected $dataSource;
     protected $tableName;
@@ -327,6 +327,8 @@ class PostDAO  extends Paginable implements IPost
             ":post_extra_2"=>$p->getExtra2(),
             ":post_extra_3"=>$p->getExtra3(),
             ":post_extra_4"=>$p->getExtra4(),
+            ":post_extra_5"=>$p->getExtra5(),
+            ":post_extra_6"=>$p->getExtra6(),
             ":post_usuario"=>$p->getUsuario()
             
             
@@ -351,6 +353,8 @@ class PostDAO  extends Paginable implements IPost
         $p->setExtra2($data["post_extra_2"]);
         $p->setExtra3($data["post_extra_3"]);
         $p->setExtra4($data["post_extra_4"]);
+        $p->setExtra5($data["post_extra_5"]);
+        $p->setExtra6($data["post_extra_6"]);
         $p->setUsuario($data["post_usuario"]);
 
         if(!$byId)
@@ -543,6 +547,8 @@ class PostDAO  extends Paginable implements IPost
         $post->setExtra2($anexo["post_extra_2"]);
         $post->setExtra3($anexo["post_extra_3"]);
         $post->setExtra4($anexo["post_extra_4"]);
+        $post->setExtra5($anexo["post_extra_5"]);
+        $post->setExtra6($anexo["post_extra_6"]);
         $post->setCreacion($anexo["post_creacion"]);
         $post->setModificacion($anexo["post_modificacion"]);
         $post->setEtiquetas($anexo["post_etiquetas"]);

@@ -15,6 +15,18 @@
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
 
+
+        $label="¿Es un formulario de prueba?";
+        $model="etiquetas";
+        $regex=false;
+        $items = array(
+            "Si"=>10,
+            "No"=>"false"
+        );
+        include DIR_PATH."/includes/panel/templates/gui/input/checkbox.php";
+
+
+
         $label="Seleccione intereses";
         $model="etiquetas";
         $regex=false;

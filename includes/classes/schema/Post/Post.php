@@ -22,6 +22,8 @@ class Post implements JsonSerializable
     protected $extra2;
     protected $extra3;
     protected $extra4;
+    protected $extra5;
+    protected $extra6;
     protected $archivos=array();
     protected $anexos =array();
     protected $usuario;
@@ -31,6 +33,38 @@ class Post implements JsonSerializable
     protected $nexoGrupo;
     protected $nexoOrden;
     protected $anexoId;
+
+    /**
+     * @return mixed
+     */
+    public function getExtra5()
+    {
+        return $this->extra5;
+    }
+
+    /**
+     * @param mixed $extra5
+     */
+    public function setExtra5($extra5)
+    {
+        $this->extra5 = $extra5;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExtra6()
+    {
+        return $this->extra6;
+    }
+
+    /**
+     * @param mixed $extra6
+     */
+    public function setExtra6($extra6)
+    {
+        $this->extra6 = $extra6;
+    }
 
     /**
      * @return mixed
