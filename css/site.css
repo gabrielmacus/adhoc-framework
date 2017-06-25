@@ -243,7 +243,10 @@ img.fit
     right: 0;
     opacity: 0.5;
 }
-
+.portada .mas-vistos .slider-wrapper .slider
+{
+    padding: 10px;
+}
 /** **/
 
 

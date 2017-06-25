@@ -16,11 +16,7 @@
                         <figure>
                             <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
                         </figure>
-                        <div class="mask main-background-color">
-                            <div class="text">
-                                <p>PICK UP BARATA OROCH DYNA 1.6 $ 57.100 y TASA BAJA O TASA 0%</p>
-                            </div>
-                        </div>
+
                     </div>
 
                     <?php
