@@ -71,6 +71,7 @@ if(!$type)
         if (!scope.post) {
             scope.post = <?php echo json_encode($post);?>;
         }
+        scope.post.<?php echo $model?>=JSON.parse(  scope.post.<?php echo $model?>);
         <?php
         }?>
 
