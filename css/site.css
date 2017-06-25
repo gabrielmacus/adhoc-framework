@@ -229,6 +229,10 @@ img.fit
 
 
 }
+.portada .mas-vistos .slider-wrapper  .image figure
+{
+    height: 100%;
+}
 .portada .mas-vistos .slider-wrapper  .image
 {
     width: 25%;
