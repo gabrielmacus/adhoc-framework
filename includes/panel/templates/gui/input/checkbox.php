@@ -72,16 +72,18 @@ if(!$type)
 <div class="form-block <?php echo implode(" ",$class);?>">
 
     <?php
+    $i=1;
     foreach($items as $k=>$v)
     {
         ?>
 <label>
     <?php echo $k; ?>
-    <input type="checkbox" title="<?php echo $label?>" data-ng-model="post.<?php echo $model?>"
+    <input type="checkbox" title="<?php echo $label?>" data-ng-model="post.<?php echo $model?>.option<?php echo $i; ?>"
            data-ng-true-value="'<?php echo $v; ?>'">
 </label>
 
         <?php
+        $i++;
     }
     ?>
 
