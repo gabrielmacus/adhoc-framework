@@ -8,7 +8,11 @@ if(!$type)
     angular.element(function () {
 
 
+        scope.updateCheckbox<?php echo $model; ?> = function (value) {
 
+            scope.post.<?php echo $model ?>= JSON.stringify(scope.post._<?php echo $model ?>);
+
+        }
         <?php
         if($regex)
         {
@@ -19,20 +23,18 @@ if(!$type)
         }
 
 
-        scope.validation.<?php echo $model?>= {
+        scope.validation.<?php echo $model?> = {
             isValid: true, check: function () {
 
 
-                var pattern=/<?php echo $regex?>/g;
+                var pattern =/<?php echo $regex?>/g;
 
 
-                if(!pattern.test(scope.post.<?php echo $model?>) || !scope.post.<?php echo $model?>)
-                {
-                    scope.validation.<?php echo $model?>.isValid=false;
+                if (!pattern.test(scope.post.<?php echo $model?>) || !scope.post.<?php echo $model?>) {
+                    scope.validation.<?php echo $model?>.isValid = false;
                 }
-                else
-                {
-                    scope.validation.<?php echo $model?>.isValid=true;
+                else {
+                    scope.validation.<?php echo $model?>.isValid = true;
                 }
 
                 setTimeout(function () {
@@ -42,7 +44,7 @@ if(!$type)
 
             }
         };
-        $(document).on("input","[data-ng-model='post.<?php echo $model?>']",function () {
+        $(document).on("input", "[data-ng-model='post.<?php echo $model?>']", function () {
 
             scope.validation.<?php echo $model?>.check();
         });
@@ -53,17 +55,12 @@ if(!$type)
         <?php if($post)
         {
             ?>
-        if(!scope.post)
-        {
-            scope.post= <?php echo json_encode($post);?>;
+        if (!scope.post) {
+            scope.post = <?php echo json_encode($post);?>;
         }
         <?php
         }?>
 
-        if(!scope.post)
-        {
-            scope.post={};
-        }
 
     });
 
@@ -78,7 +75,7 @@ if(!$type)
         ?>
 <label>
     <?php echo $k; ?>
-    <input type="checkbox" title="<?php echo $label?>" data-ng-model="post.<?php echo $model?>.option<?php echo $i; ?>"
+    <input data-ng-click="updateCheckbox<?php echo $model; ?>(post._<?php echo $model?>.option<?php echo $i; ?>)" type="checkbox" title="<?php echo $label?>" data-ng-model="post._<?php echo $model?>.option<?php echo $i; ?>"
            data-ng-true-value="'<?php echo $v; ?>'">
 </label>
 
