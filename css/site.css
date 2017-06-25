@@ -212,7 +212,11 @@ img.fit
     align-items: center;
     padding-left: 15px;
 }
-
+.portada .mas-vistos .slider-wrapper
+{
+    width: 100%;
+    padding: 15px;
+}
 .portada .mas-vistos .slider-wrapper .slider-container
 {
     background-color: #f2f2f2;
