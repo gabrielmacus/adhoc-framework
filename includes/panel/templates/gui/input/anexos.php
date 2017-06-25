@@ -110,6 +110,17 @@ $showError = (is_array($min) || is_numeric($max));
             isValid: true, check: function () {
 
 
+                var arr = scope.post.anexosGroups[<?php echo $grupo;?>].filter(
+                    function (el) {
+                        return !el.delete;
+                    }
+                );
+
+                if(!arr)
+                {
+                    arr=[];
+                }
+
                 <?php
                 if($showError)
                 {
@@ -118,11 +129,6 @@ $showError = (is_array($min) || is_numeric($max));
                 {
                 ?>
 
-                var arr = scope.post.anexosGroups[<?php echo $grupo;?>].filter(
-                    function (el) {
-                        return !el.delete;
-                    }
-                );
 
                 if(arr.length<<?php echo $min;?>)
                 {
