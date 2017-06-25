@@ -6,7 +6,7 @@
 
     <div class="slider-wrapper">
 
-        <div class="slider">
+        <div class="slider flex">
 
             <?php  for ($i=0;$i<9;$i++)
             {
