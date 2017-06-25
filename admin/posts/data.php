@@ -38,6 +38,7 @@ try{
             $post->setExtra2($_POST["extra2"]);
             $post->setExtra3($_POST["extra3"]);
             $post->setExtra4($_POST["extra4"]);
+            $post->setEtiquetas($_POST["etiquetas"]);
             $post->setAnexos($_POST["anexos"]);
             $post->setUsuario($user["id"]);
 

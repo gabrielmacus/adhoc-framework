@@ -16,6 +16,16 @@
         $model="titulo";
         include DIR_PATH."/includes/panel/templates/gui/input/text.php";
 
+
+        $label="Seleccione intereses";
+        $model="etiquetas";
+        $items = array(
+            "Programación"=>"P",
+            "Maquetación"=>"M",
+            "Diseño"=>"D"
+        );
+        include DIR_PATH."/includes/panel/templates/gui/input/checkbox.php";
+
         //Chequea el value de cada option
         //Solo es valida la opcion 'Data 1'
         $errorMsg="Seleccione una opción válida";
