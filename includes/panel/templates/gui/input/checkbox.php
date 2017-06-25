@@ -12,6 +12,10 @@ if(!$type)
 
             scope.post.<?php echo $model ?>= JSON.stringify(scope.post._<?php echo $model ?>);
 
+            if(scope.validation && scope.validation.<?php echo $model?>)
+            {
+                scope.validation.<?php echo $model?>.check();
+            }
         }
         <?php
         if($regex)
