@@ -545,6 +545,7 @@ class PostDAO  extends Paginable implements IPost
         $post->setExtra4($anexo["post_extra_4"]);
         $post->setCreacion($anexo["post_creacion"]);
         $post->setModificacion($anexo["post_modificacion"]);
+        $post->setEtiquetas($anexo["post_etiquetas"]);
         $post->setId($anexo["post_anexo_id"]);
         $post->setNexoGrupo($anexo["post_nexo_grupo"]);
         $post->setNexoOrden($anexo["post_nexo_orden"]);

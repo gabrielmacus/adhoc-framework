@@ -141,6 +141,7 @@ try{
     $pg=$GLOBALS["postDAO"]->getPaginador();
     $actualPage=$GLOBALS["postDAO"]->getActualPage()+1;
     $pages =$GLOBALS["postDAO"]->getPages();
+    var_dump($post);
 
 }
 catch (Exception $e)
