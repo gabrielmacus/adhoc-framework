@@ -35,7 +35,7 @@ if(!$type)
 
                     $.each(scope.post._<?PHP echo $model; ?>,function(k,v){
 
-                        if (v!="false"&&!pattern.test(v)) {
+                        if (v!=false&&!pattern.test(v)) {
                             scope.validation.<?php echo $model?>.isValid = false;
 
                             return false;
