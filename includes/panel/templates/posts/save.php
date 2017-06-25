@@ -17,7 +17,7 @@
 
 
         $label="¿Es un formulario de prueba?";
-        $model="etiquetas";
+        $model="extra5";
         $regex=false;
         $items = array(
             "Si"=>10,
