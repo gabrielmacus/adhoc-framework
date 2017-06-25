@@ -70,7 +70,7 @@ if(!$type)
 
         $("[data-ng-model='post.<?php echo $model?>'][value='"+scope.post.<?php echo $model?>+"']").prop("checked", true);
 
-
+console.log("[data-ng-model='post.<?php echo $model?>'][value='"+scope.post.<?php echo $model?>+"']");
 
         <?php
         }?>
