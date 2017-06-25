@@ -19,8 +19,9 @@
 
         $label="Seleccione intereses";
         $model="etiquetas";
+        $regex='^[0-9]*$';
         $items = array(
-            "Programación"=>"P",
+            "Programación"=>"10",
             "Maquetación"=>"M",
             "Diseño"=>"D"
         );

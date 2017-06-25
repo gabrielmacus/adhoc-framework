@@ -29,13 +29,18 @@ if(!$type)
 
                 var pattern =/<?php echo $regex?>/g;
 
+                    $.each(scope.post._<?PHP echo $model; ?>,function(k,v){
 
-                if (!pattern.test(scope.post.<?php echo $model?>) || !scope.post.<?php echo $model?>) {
-                    scope.validation.<?php echo $model?>.isValid = false;
-                }
-                else {
-                    scope.validation.<?php echo $model?>.isValid = true;
-                }
+                        if (!pattern.test(v)) {
+                            scope.validation.<?php echo $model?>.isValid = false;
+
+                            return false;
+                        }
+                        else {
+                            scope.validation.<?php echo $model?>.isValid = true;
+                        }
+
+                    });
 
                 setTimeout(function () {
                     scope.$apply();
