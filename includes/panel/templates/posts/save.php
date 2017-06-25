@@ -75,6 +75,8 @@
 
 
 
+        $min=0;
+        $max=3;
         $label="Posts adjuntos";
         $grupo=26;
         $s="posts";
