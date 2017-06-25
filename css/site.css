@@ -133,6 +133,12 @@ img.fit
     margin-top: 15px;
     width: 100%;
     font-size: 30px;
+
+}
+.portada .ultimos .top h2
+{
+    padding: 10px;
+    background-color: #f2f2f2;
 }
 
 .portada .ultimos .body
