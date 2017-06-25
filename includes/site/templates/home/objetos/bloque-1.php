@@ -19,21 +19,24 @@
             for ($i=0;$i<9;$i++)
             {
             ?>
-            <article class="item flex shadow-1">
-                <figure>
-                    <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
-                </figure>
-                <div class="text">
-                    <p>PICK UP BARATA OROCH DYNA 1.6 $ 57.100 y TASA BAJA O TASA 0%</p>
-                </div>
-                <footer class="pie main-background-color ">
-                   <p class="flex" >
-                       <span>$</span>
-                       <span>
+            <article class="item flex">
+                <div class="shadow-1">
+                    <figure>
+                        <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
+                    </figure>
+                    <div class="text">
+                        <p>PICK UP BARATA OROCH DYNA 1.6 $ 57.100 y TASA BAJA O TASA 0%</p>
+                    </div>
+                    <footer class="pie main-background-color ">
+                        <p class="flex" >
+                            <span>$</span>
+                            <span>
                         300
                     </span>
-                   </p>
-                </footer>
+                        </p>
+                    </footer>
+                </div>
+
             </article>
                 <?php
             }
