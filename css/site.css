@@ -223,7 +223,10 @@ img.fit
     background-color: #f2f2f2;
     width: 100%;
 }
-
+.portada .mas-vistos .slider-wrapper .slider figure
+{
+    width: 25%;
+}
 /** **/
 
 
