@@ -212,6 +212,13 @@ img.fit
     align-items: center;
     padding-left: 15px;
 }
+.portada .mas-vistos .slider
+{
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 15px;
+}
+
 
 /** **/
 
