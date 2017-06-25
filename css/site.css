@@ -134,6 +134,7 @@ img.fit
     margin-left: 5%;
     margin-right: 5%;
 }
+/*
 .portada .body * .top
 {
     padding: 15px;
@@ -141,7 +142,7 @@ img.fit
     width: 100%;
     font-size: 30px;
 
-}
+}*/
 .portada * .top h2
 {
     padding: 0px;
@@ -211,6 +212,10 @@ img.fit
     height: 100%;
     align-items: center;
     padding-left: 15px;
+}
+.portada .mas-vistos
+{
+    padding: 15px;
 }
 .portada .mas-vistos .slider-wrapper
 {
