@@ -87,7 +87,7 @@ if(!$type)
     {
         ?>
 <label class="s12 m6 l4">
-    <?php echo $k; ?>
+    <span><?php echo $k; ?></span>
     <input data-ng-click="updateCheckbox<?php echo $model; ?>(post._<?php echo $model?>.option<?php echo $i; ?>)" type="checkbox" title="<?php echo $label?>" data-ng-model="post._<?php echo $model?>.option<?php echo $i; ?>"
            data-ng-true-value="'<?php echo $v; ?>'">
 </label>
