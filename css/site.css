@@ -101,6 +101,8 @@ img.fit
     height: 33.333333333%;
     width: 100%;
     align-items: center;
+    color: white;
+    font-weight: 600;
 }
 .portada .grid
 {
