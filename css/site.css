@@ -362,7 +362,10 @@ img.fit
 
     height: 66.666666%;
 }
-
+.portada .user .item .grid
+{
+    width: 100%;
+}
 .portada .user .item .grid .cell
 {
     width: 25%;
