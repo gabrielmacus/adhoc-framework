@@ -33,7 +33,6 @@ catch (Exception $e)
 }
 
 
-var_dump($_POST);
 if($_GET["login"])
 {
 
@@ -45,6 +44,8 @@ if($_GET["login"])
 
         if($asyncLogin)
         {
+
+            var_dump($_POST);
             include DIR_PATH."/extras/api/check-login.php";
             exit();
 
