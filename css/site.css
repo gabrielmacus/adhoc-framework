@@ -14,6 +14,19 @@ html,body
 
 
 /** Comunes**/
+
+.form-field label
+{
+    width: 100%;
+    font-size: 18px;
+}
+.form-field input
+{
+    font-size: 16px;
+    padding: 4px;
+    margin-top: 20px;
+}
+
 .fancybox-slide--iframe .fancybox-content {
     width  : 800px;
     height : 600px;
@@ -296,6 +309,7 @@ img.fit
     width: 100%;
     height: 10px;
     background-color: #00B5AD;
+    display: block;
 }
 .popup.login .top h2
 {
@@ -303,10 +317,11 @@ img.fit
 
 }
 
-.popup.login .main-form
+.popup.login .body
 {
-
+    margin: 25px 50px 50px 50px;
 }
+
 /*** /
 
 
