@@ -21,13 +21,14 @@
         </div>
 
         <div class="flex form-buttons center">
-            <button type="submit">Ingresar</button>
-            <button class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
+            <button title="Ingresar" type="submit">Ingresar</button>
+            <button title="Ingresar con Facebook" class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
             </button>
-            <button class="google" ><i class="fa fa-google-plus" aria-hidden="true"></i>
+            <button title="Ingresar con Google+" class="google" ><i class="fa fa-google-plus" aria-hidden="true"></i>
             </button>
         </div>
 
+        <h4 class="password-forgotten">¿Olvidaste la contraseña?</h4>
 
 
     </form>
