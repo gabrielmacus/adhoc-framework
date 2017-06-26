@@ -10,7 +10,7 @@ include_once "../../includes/autoload.php";
 
 $token = $_GET["usrtk"];
 
-if(!$token)
+if(empty($token))
 {
     $token =$_COOKIE["usrtk"];
 }
@@ -22,7 +22,7 @@ try
     $user=(array)\Firebase\JWT\JWT::decode($token,$configuracion->getTokenSecret(),array('HS512'));
     $user=(array)$user["data"];
 
-    if($asyncLogin)
+    if(isset($asyncLogin))
     {
         echo json_encode($user);
         exit();
@@ -33,20 +33,24 @@ try
 catch (Exception $e)
 {
 
-    if($asyncLogin)
+    if(isset($asyncLogin))
     {
-        throw new Exception("Login:1");
+        echo "Login:1";
+        exit();
     }
 
-    $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    setcookie("referer",$actual_link,0,"/");
+    
+        $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        setcookie("referer",$actual_link,0,"/");
 
-    if(!$redirect)
-    {
-        $redirect =$configuracion->getSiteAddress()."/admin/login.php";
-    }
+        if(!$redirect)
+        {
+            $redirect =$configuracion->getSiteAddress()."/admin/login.php";
+        }
 
-    header('Location: '.$redirect, true, 302);
-    exit();
+        header('Location: '.$redirect, true, 302);
+        exit();
+    
+   
 
 }

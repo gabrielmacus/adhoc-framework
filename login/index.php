@@ -10,6 +10,7 @@
 include "../includes/autoload.php";
 
 
+
 $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";

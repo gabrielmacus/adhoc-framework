@@ -13,7 +13,7 @@
                     dataType:"json",
                     data:scope.usuarioLogin,
                     success:function (e) {
-                        console.log(e);
+                        
                     },
                     error:error
                 }

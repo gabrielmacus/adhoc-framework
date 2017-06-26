@@ -27,6 +27,22 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
         console.log("GENERIC ERROR \n");
         console.log(e);
     }
+    function checkLogin() {
+        $.ajax(
+            {
+                url:"<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true&async=true",
+                method:"post",
+                dataType:"json",
+                data:scope.usuarioLogin,
+                success:function (e) {
+
+                    scope.usuario=e.data;
+                    scope.$apply();
+                },
+                error:error
+            }
+        );
+    }
 
 
     var app = angular.module('panel', ['ngAnimate']);
