@@ -9,5 +9,6 @@
 <div class="body">
     <?php  include "objetos/bloque-1.php";?>
     <?php include "objetos/bloque-2.php"; ?>
+    <?php include "objetos/bloque-3.php"; ?>
 </div>
 
