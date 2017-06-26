@@ -24,4 +24,11 @@
             <button type="submit">Ingresar</button>
         </div>
 
+        <div class="flex form-buttons center facebook">
+            <button type="submit">Ingresar con Facebook</button>
+        </div>
+        <div class="flex form-buttons center google">
+            <button type="submit">Ingresar con Google</button>
+        </div>
+
     </form>

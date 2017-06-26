@@ -14,7 +14,17 @@ html,body
 
 
 /** Comunes**/
+.facebook
+{
+    color: white;
+    background-color: #3B5998;
+}
+.google
+{
+    color: white;
+    background-color: #DD4B39;
 
+}
 .form-field
 {
     position: relative;
