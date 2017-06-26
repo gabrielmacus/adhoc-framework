@@ -175,13 +175,7 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
                 'iat'  => time(),         // Issued at: time when the token was generated
                 'iss'  => $GLOBALS["configuracion"]->getSiteAddress(),       // Issuer
 
-                'data' => [                  // Data related to the signer user
-                    'id'   => $user->getId(), // userid from the users table
-                    'nickname' => $user->getNickname(), // User name
-                    'email'=>$user->getEmail(),
-                    'name'=>$user->getName(),
-                    'surname'=>$user->getSurname()
-                ]
+                'data' =>$this->selectUsuarioById($user->getId())
             ];
             return \Firebase\JWT\JWT::encode($data,$GLOBALS["configuracion"]->getTokenSecret(),'HS512');
 
