@@ -1,4 +1,4 @@
 
 <header class="top main-color">
-    <h2>Clasificados mejor calificados</h2>
+    <h2>Avisos con mejores calificaciones</h2>
 </header>
