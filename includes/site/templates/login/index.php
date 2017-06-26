@@ -6,16 +6,18 @@
     <form class="body" data-ng-submit="onLogin()">
 
         <div class="flex form-field">
-            <label>
+            
+            <input id="nick" data-ng-model="usuario.nick" type="text" >
+            <label for="nick">
                 Usuario o Email
             </label>
-            <input data-ng-model="usuario.nick" type="text" >
         </div>
         <div class="flex form-field">
+          
+            <input data-ng-model="usuario.password" type="password" >
             <label>
                 Contraseña
             </label>
-            <input data-ng-model="usuario.password" type="password" >
         </div>
 
         <div class="flex">
