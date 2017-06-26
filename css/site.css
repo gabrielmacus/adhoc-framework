@@ -392,6 +392,10 @@ img.fit
     padding: 15px;
     margin-top: 15px;
   background-color: rgba(225, 225, 225, 1);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
 }
 
 .popup.login .forgotten-password
