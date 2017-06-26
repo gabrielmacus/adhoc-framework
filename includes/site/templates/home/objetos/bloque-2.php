@@ -6,7 +6,7 @@
 <div class="mas-vistos flex">
 
         <div class="swiper-container">
-            <div class="flex swiper-wrapper">
+            <div class="slider-container  swiper-wrapper">
 
                 <?php  for ($i=0;$i<9;$i++)
                 {
