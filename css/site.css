@@ -218,8 +218,9 @@ img.fit
 }
 
 
-.portada .mas-vistos .image figure
-{
+.portada .mas-vistos .image figure img
+{    height: 200px;
+
 }
 
 .portada .mas-vistos .image figure figcaption
