@@ -39,6 +39,7 @@ if($_GET["login"])
 
     $token=$GLOBALS["userDAO"]->selectToken($_POST["user"],$_POST["password"]);
     var_dump($_POST);
+    var_dump($token)
     if($token)
     {
         setcookie("usrtk",$token);
