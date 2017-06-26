@@ -105,6 +105,10 @@ img.fit
     text-align: center;
     font-size: 30px;
 }
+.portada .top .menu .item .text
+{
+    width: 100%;
+}
 .portada .grid
 {
     height: 100%;
