@@ -24,8 +24,11 @@
            <a class="item flex nickname-container" >
                <h2 class="nickname">{{user.nickname}}</h2>
            </a>
-
        </li>
+        <li class="item flex">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+
+        </li>
     </ul>
 <?php
 
