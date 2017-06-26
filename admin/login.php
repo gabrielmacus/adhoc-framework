@@ -36,9 +36,9 @@ catch (Exception $e)
 if($_GET["login"])
 {
 
-    var_dump($_POST);
-    $token=$GLOBALS["userDAO"]->selectToken($_POST["user"],$_POST["password"]);
 
+    $token=$GLOBALS["userDAO"]->selectToken($_POST["user"],$_POST["password"]);
+    var_dump($_POST);
     if($token)
     {
         setcookie("usrtk",$token);
