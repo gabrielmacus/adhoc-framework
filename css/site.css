@@ -94,6 +94,17 @@ img.fit
 {
     height: 100%;
 }
+.portada .top .menu
+{
+    height: 33.3333333333%;
+    width: 100%;
+    align-items: center;
+}
+.portada .top .menu .item
+{
+    height: 100%;
+    width: 100%;
+}
 .portada .grid
 {
     height: 100%;
