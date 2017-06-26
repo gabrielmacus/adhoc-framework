@@ -15,16 +15,18 @@
 
     </ul>
     
-    <div data-ng-if="user" class="user cell main-background-color flex">
-        <figure>
-            <img class="fit" src="http://wedesignthemes.com/html/role/images/post-images/profile-img4.jpg">
-        </figure>
-        
-        <a class="item flex" >
-            <h2 class="nickname">{{user.nickname}}</h2>
-        </a>
+    <ul data-ng-if="user" class="user cell main-background-color flex">
+       <li class="item">
+           <figure>
+               <img class="fit" src="http://wedesignthemes.com/html/role/images/post-images/profile-img4.jpg">
+           </figure>
 
-    </div>
+           <a class="item flex" >
+               <h2 class="nickname">{{user.nickname}}</h2>
+           </a>
+
+       </li>
+    </ul>
 <?php
 
 $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
