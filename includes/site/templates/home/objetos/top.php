@@ -6,7 +6,7 @@
         </li>
 
         <li class="item flex">
-            <a href="/login/?modal=true" class="text">Ingresá</a>
+            <a data-fancybox="iframe" data-src="/login/?modal=true" data-type="iframe"  class="text">Ingresá</a>
         </li>
         <li class="item flex">
             <a class="text">Registrate</a>
