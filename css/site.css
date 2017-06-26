@@ -286,9 +286,16 @@ img.fit
 /** **/
 
 /* Login**/
-.popup .login
+.popup .login .top
 {
-
+    font-size: 25px;
+}
+.popup .login .top:before
+{
+    content: '';
+    width: 100%;
+    height: 10px;
+    background-color: #00B5AD;
 }
 /*** /
 
