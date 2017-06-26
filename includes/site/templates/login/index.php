@@ -28,7 +28,7 @@
             </button>
         </div>
 
-        <h4 class="password-forgotten">¿Olvidaste la contraseña?</h4>
+        <a class="forgotten-password">¿Olvidaste la contraseña?</a>
 
 
     </form>

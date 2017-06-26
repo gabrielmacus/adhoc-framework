@@ -387,6 +387,15 @@ img.fit
     width: 15%;
 
 }
+
+.popup.login .forgotten-password
+{
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: underline;
+}
+
 /*** /
 
 
