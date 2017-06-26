@@ -2,6 +2,7 @@
 <script>
     angular.element(function () {
         scope.usuarioLogin={};
+        console.log(scope);
         scope.onLogin=function () {
 
 
