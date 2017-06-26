@@ -41,9 +41,6 @@
                       <i class="icon fa fa-bar-chart" aria-hidden="true"></i>
 
                   </div>
-                  <div class="cell flex center">
-                      <i class="icon fa fa-bell-o" aria-hidden="true"></i>
-                  </div>
 
                   <div class="cell flex center">
                       <i class="icon fa fa-user-circle-o" aria-hidden="true"></i>
