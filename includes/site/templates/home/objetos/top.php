@@ -1,8 +1,11 @@
 
 <div class="grid flex">
-    <div class="cell main-background-color">
+    <ul class="cell main-background-color">
 
-    </div>
+        <li>Data</li>
+
+
+    </ul>
 <?php
 
 $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
