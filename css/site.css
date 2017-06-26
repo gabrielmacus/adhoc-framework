@@ -367,6 +367,7 @@ img.fit
 .portada .user .nickname-container
 {
     align-items: center;
+    height: 100%;
     width: calc(75% - 15px);
 }
 .portada .user .nickname
