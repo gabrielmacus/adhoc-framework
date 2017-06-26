@@ -7,6 +7,7 @@
  */
 
 $asyncLogin=isset($_GET["async"]) && $_GET["async"]=="true";
+var_dump($asyncLogin);
 include_once "../includes/autoload.php";
 
 
