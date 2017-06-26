@@ -9,6 +9,7 @@
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true&async=true",
                     method:"post",
                     dataType:"json",
+                    data:scope.usuarioLogin,
                     success:function (e) {
                         console.log(e);
                     },
@@ -26,14 +27,14 @@
         </header>
         <div class="flex form-field">
             
-            <input id="nick" data-ng-model="usuario.user" type="text" >
+            <input id="nick" data-ng-model="usuarioLogin.user" type="text" >
             <label for="nick">
                 Usuario o Email
             </label>
         </div>
         <div class="flex form-field">
           
-            <input id="pass" data-ng-model="usuario.password" type="password" >
+            <input id="pass" data-ng-model="usuarioLogin.password" type="password" >
             <label for="pass" >
                 Contraseña
             </label>
