@@ -363,7 +363,11 @@ img.fit
     height: 66.666666%;
 }
 
-
+.portada .user .item .grid .cell
+{
+    width: 25%;
+    height: 50%;
+}
 
 .portada .user figure
 {

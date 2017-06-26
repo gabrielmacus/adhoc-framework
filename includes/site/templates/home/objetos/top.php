@@ -26,8 +26,14 @@
            </a>
        </li>
         <li class="item flex">
-            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          <div class="cell">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>
 
+          </div>
+            <div class="cell">
+
+
+            </div>
         </li>
     </ul>
 <?php
