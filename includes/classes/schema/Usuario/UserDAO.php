@@ -35,12 +35,12 @@ class UserDAO implements IUser
  usuario_modification,usuario_status)
  VALUES (:usuario_id, :usuario_email, :usuario_password, 
  :usuario_nickname, :usuario_age, :usuario_name, 
- :usuario_surname, :usuario_creation, :usuario_modification,:usuario_status)";
+ :usuario_surname, :usuario_creation, :usuario_modification,:usuario_status,:usuario_post)";
 
         $this->updateSql="UPDATE {$this->tableName}  SET usuario_id=:usuario_id,
 usuario_email=:usuario_email,usuario_password=:usuario_password,usuario_nickname=:usuario_nickname
 ,usuario_age=:usuario_age,usuario_name=:usuario_name,
-usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modification=:usuario_modification,usuario_status=:usuario_status WHERE usuario_id=:usuario_id";
+usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modification=:usuario_modification,usuario_status=:usuario_status,usuario_post=:usuario_post WHERE usuario_id=:usuario_id";
 
     }
 
@@ -78,7 +78,8 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
             ":usuario_surname"=>$u->getSurname(),
             ":usuario_creation"=>$u->getCreation(),
             ":usuario_modification"=>$u->getModification(),
-            ":usuario_status"=>$u->getStatus()
+            ":usuario_status"=>$u->getStatus(),
+            ":usuario_post"=>$u->getPost()
         );
     }
     private function query($data)
@@ -89,6 +90,8 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
 
         $u->setStatus($data["usuario_status"]);
 
+
+        $u->setPost($GLOBALS["postDAO"]->selectPostById($data["usuario_post"]));
         array_push($this->users, $u);
 
     }
