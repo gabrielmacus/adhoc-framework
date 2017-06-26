@@ -377,6 +377,16 @@ img.fit
     margin: 25px 50px 50px 50px;
 }
 
+.popup.login .form-buttons [type='submit']
+{
+    width: 70%;
+    display: inline;
+}
+.popup.login .form-buttons button:not([type='submit'])
+{  display: inline;
+    width: 15%;
+
+}
 /*** /
 
 
