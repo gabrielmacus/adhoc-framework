@@ -55,6 +55,7 @@ html,body
     margin: auto;
     width: 100%;
     color: white;
+    cursor: hand;
 
 }
 .form-field input:focus + label
