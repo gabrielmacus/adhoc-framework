@@ -31,6 +31,7 @@ catch (Exception $e)
   
 }
 
+var_dump($_POST);
 
 
 if($_GET["login"])
