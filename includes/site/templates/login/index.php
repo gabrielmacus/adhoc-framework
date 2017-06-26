@@ -20,7 +20,7 @@
             </label>
         </div>
 
-        <div class="flex">
+        <div class="flex form-buttons center">
             <button type="submit">Ingresar</button>
         </div>
 
