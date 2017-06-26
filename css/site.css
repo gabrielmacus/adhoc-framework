@@ -41,6 +41,7 @@ html,body
 }
 .form-field input
 {
+    width: 100%;
     outline:0;
     border: 0;
     background-color: #f2f2f2;
