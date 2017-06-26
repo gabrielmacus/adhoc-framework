@@ -46,7 +46,7 @@ if($_GET["login"])
         if($asyncLogin)
         {
 
-            var_dump($token);
+            $_GET["token"]=$token;
             include DIR_PATH."/extras/api/check-login.php";
             exit();
 
