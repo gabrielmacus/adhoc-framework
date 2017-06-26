@@ -1,6 +1,6 @@
 
 
-    <header class="top center">
+    <header class="top ">
         <h2>Ingresá a tu cuenta</h2>
     </header>
     <form class="body" data-ng-submit="onLogin()">
@@ -14,8 +14,8 @@
         </div>
         <div class="flex form-field">
           
-            <input data-ng-model="usuario.password" type="password" >
-            <label>
+            <input id="pass" data-ng-model="usuario.password" type="password" >
+            <label for="pass" >
                 Contraseña
             </label>
         </div>
