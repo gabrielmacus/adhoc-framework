@@ -13,7 +13,10 @@
                     dataType:"json",
                     data:scope.usuarioLogin,
                     success:function (e) {
-                        
+                        scope.user=e.data;
+                        scope.$apply();
+
+                        $.fancybox.close();
                     },
                     error:error
                 }
