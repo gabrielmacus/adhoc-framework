@@ -286,11 +286,11 @@ img.fit
 /** **/
 
 /* Login**/
-.popup .login .top
+.popup.login .top
 {
     font-size: 25px;
 }
-.popup .login .top:before
+.popup.login .top:before
 {
     content: '';
     width: 100%;
