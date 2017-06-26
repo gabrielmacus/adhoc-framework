@@ -1,12 +1,10 @@
 <div class="ultimos flex">
-
     <header class="top main-color">
         <h2>Últimos clasificados</h2>
 
     </header>
 
-
-        <div class="body flex">
+    <div class="body flex">
 
             <?php
 
