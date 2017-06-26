@@ -94,14 +94,13 @@ img.fit
 {
     height: 100%;
 }
-.portada .top .menu
-{
-    align-items: center;
-}
+
+
 .portada .top .menu .item
 {
     height: 33.333333333%;
     width: 100%;
+    align-items: center;
 }
 .portada .grid
 {
