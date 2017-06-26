@@ -30,7 +30,7 @@ catch (Exception $e)
 
 }
 
-if(isset($_GET["popup"]))
+if(isset($_GET["modal"]))
 {
     include DIR_PATH."/includes/site/templates/comun/estructura-popup.php";
 }
