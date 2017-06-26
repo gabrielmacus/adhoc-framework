@@ -7,7 +7,7 @@
  * Time: 1:07
  */
 
-include "includes/autoload.php";
+include "../includes/autoload.php";
 
 
 $htmlTitle=$configuracion->getSiteName();
@@ -18,7 +18,6 @@ $bodyClasses=["popup","login"];
 
 try{
 
-    $clasificadosSeccionId=116;
 
     $site="login";
     $action="index";
