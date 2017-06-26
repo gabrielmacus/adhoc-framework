@@ -36,7 +36,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                 data:scope.usuarioLogin,
                 success:function (e) {
 
-                    scope.usuario=e.data;
+                    scope.user=e.data;
                     scope.$apply();
                 },
                 error:error
