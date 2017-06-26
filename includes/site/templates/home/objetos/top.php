@@ -27,12 +27,26 @@
        </li>
         <li class="item flex">
               <div class="grid">
+
+                  <div class="cell flex center">
+                      <i class="fa fa-usd" aria-hidden="true"></i>
+
+                  </div>
+                  <div class="cell flex center">
+                      <i class="fa fa-bell-o" aria-hidden="true"></i>
+
+
+                  </div>
                   <div class="cell flex center">
                       <i class="icon fa fa-bar-chart" aria-hidden="true"></i>
 
                   </div>
-                  <div class="cell flex">
+                  <div class="cell flex center">
+                      <i class="fa fa-bell-o" aria-hidden="true"></i>
+                  </div>
 
+                  <div class="cell flex center">
+                      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
 
                   </div>
               </div>
