@@ -297,6 +297,16 @@ img.fit
     height: 10px;
     background-color: #00B5AD;
 }
+.popup.login .top h2
+{
+    margin-top: 40px;
+
+}
+
+.popup.login .main-form
+{
+
+}
 /*** /
 
 
