@@ -32,6 +32,12 @@ try
 }
 catch (Exception $e)
 {
+
+    if($asyncLogin)
+    {
+        throw new Exception("Login:1");
+    }
+
     $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     setcookie("referer",$actual_link,0,"/");
 
