@@ -16,7 +16,7 @@
     </ul>
     
     <ul data-ng-if="user" class="user cell main-background-color flex">
-       <li class="item">
+       <li class="item flex">
            <figure>
                <img class="fit" src="http://wedesignthemes.com/html/role/images/post-images/profile-img4.jpg">
            </figure>
