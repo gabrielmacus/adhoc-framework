@@ -16,6 +16,7 @@ $GLOBALS["archivoDAO"]->setFilters(
 );
 $archivos = $GLOBALS["archivoDAO"]->selectArchivos();
 
+var_dump($GLOBALS["userDAO"]->selectUsuarioById(1));
 
 /*
 $p=new PostDAO();
