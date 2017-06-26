@@ -34,9 +34,9 @@ html,body
 }
 .form-field input:focus + label
 {
-    bottom: 40px;
+    bottom: 35px;
     left: 0px;
-    font-size: 16px;
+    font-size: 13px;
 
 }
 .form-field input
