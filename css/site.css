@@ -76,6 +76,11 @@ img.fit
 {
     background-color: #009688;
 }
+
+.main-background-color-2
+{
+    background-color: #4db6ac;
+}
 .main-color
 {
     color: #009688;
@@ -216,7 +221,10 @@ img.fit
     width: 100%;
     padding: 15px;
 }
-
+.portada .mas-vistos .image figure
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .portada .mas-vistos .image figure img
 {    height: 200px;
@@ -228,7 +236,6 @@ img.fit
     bottom: 0;
     right: 0;
     padding: 15px;
-    /* background-color: red; */
     z-index: 10000;
     box-decoration-break: clone;
     line-height: 23px;

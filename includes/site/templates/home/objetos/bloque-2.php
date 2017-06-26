@@ -14,7 +14,7 @@
                     <div class="image swiper-slide">
                         <figure>
                             <img class="fit" src="<?php echo $img[rand(0,(count($img)-1))];?>">
-                            <figcaption>
+                            <figcaption class="main-background-color-2">
                                 URGENTE VENDO CLIO 2 MOD. 2006. EXCELENTE ESTADO!
                             </figcaption>
                         </figure>
