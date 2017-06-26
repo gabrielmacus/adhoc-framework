@@ -368,6 +368,11 @@ img.fit
     width: 25%;
     height: 50%;
 }
+.portada .user .item .grid .cell .icon
+{
+   margin: auto;
+    font-size: 40px;
+}
 
 .portada .user figure
 {

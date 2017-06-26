@@ -27,11 +27,11 @@
        </li>
         <li class="item flex">
               <div class="grid">
-                  <div class="cell">
-                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                  <div class="cell flex center">
+                      <i class="icon fa fa-bar-chart" aria-hidden="true"></i>
 
                   </div>
-                  <div class="cell">
+                  <div class="cell flex">
 
 
                   </div>
