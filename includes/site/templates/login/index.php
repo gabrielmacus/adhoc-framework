@@ -28,7 +28,10 @@
             </button>
         </div>
 
-        <a class="forgotten-password">¿Olvidaste la contraseña?</a>
+        <footer class="pie center">
+            <a class="forgotten-password">¿Olvidaste la contraseña?</a>
+        </footer>
+        
 
 
     </form>

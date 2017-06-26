@@ -387,11 +387,16 @@ img.fit
     width: 15%;
 
 }
-
-.popup.login .forgotten-password
+.popup.login .pie
 {
     padding: 15px;
     margin-top: 15px;
+  background-color: rgba(225, 225, 225, 1);
+}
+
+.popup.login .forgotten-password
+{
+
     text-align: center;
     text-decoration: underline;
 }
