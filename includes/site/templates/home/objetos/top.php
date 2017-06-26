@@ -1,7 +1,7 @@
 
 <div class="grid flex">
-    <ul class="cell main-background-color menu">
-        <li class="item">
+    <ul class="cell main-background-color menu flex">
+        <li class="item ">
             <span class="text">Data</span>
         </li>
 
