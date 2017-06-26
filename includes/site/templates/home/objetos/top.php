@@ -6,7 +6,7 @@
         </li>
 
         <li class="item flex">
-            <a href="/login" class="text">Ingresá</a>
+            <a href="/login/?modal=true" class="text">Ingresá</a>
         </li>
         <li class="item flex">
             <a class="text">Registrate</a>
