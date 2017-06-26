@@ -6,7 +6,6 @@
  * Time: 12:22 PM
  */
 
-var_dump($_POST);
 $asyncLogin=isset($_GET["async"]) && $_GET["async"]=="true";
 include_once "../includes/autoload.php";
 
