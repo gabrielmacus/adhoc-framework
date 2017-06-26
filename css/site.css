@@ -220,7 +220,17 @@ img.fit
 
 .portada .mas-vistos .image figure
 {
-    height: 200px;
+}
+
+.portada .mas-vistos .image figure figcaption
+{
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    /* background-color: red; */
+    z-index: 10000;
+    box-decoration-break: clone;
+    line-height: 23px;
 }
 
 .portada .mas-vistos .swiper-container
