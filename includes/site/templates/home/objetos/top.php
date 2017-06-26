@@ -21,7 +21,7 @@
                <img class="fit" src="http://wedesignthemes.com/html/role/images/post-images/profile-img4.jpg">
            </figure>
 
-           <a class="item flex" >
+           <a class="item flex nickname-container" >
                <h2 class="nickname">{{user.nickname}}</h2>
            </a>
 
