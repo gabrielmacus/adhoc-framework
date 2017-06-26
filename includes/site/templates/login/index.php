@@ -4,6 +4,7 @@
 
         scope.onLogin=function () {
 
+            scope.usuarioLogin={};
             $.ajax(
                 {
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/login.php?login=true&async=true",
