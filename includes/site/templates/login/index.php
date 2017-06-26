@@ -22,10 +22,12 @@
 
         <div class="flex form-buttons center">
             <button type="submit">Ingresar</button>
-            <button class="facebook" type="submit">Ingresar con Facebook</button>
-            <button class="google" type="submit">Ingresar con Google</button>
+            <button class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
+            </button>
+            <button class="google" ><i class="fa fa-google-plus" aria-hidden="true"></i>
+            </button>
         </div>
 
-     
+
 
     </form>
