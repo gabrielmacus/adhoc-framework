@@ -6,7 +6,7 @@
  * Date: 23/03/2017
  * Time: 06:01 PM
  */
-class User
+class User implements JsonSerializable
 {
     protected $name;
     protected $surname;
@@ -224,7 +224,18 @@ class User
         $this->nickname = $nickname;
     }
 
-
+    function jsonSerialize()
+    {
+       return array(
+           "name"=>$this->getName(),
+           "surname"=>$this->getSurname(),
+           "age"=>$this->getAge(),
+           "creation"=>$this->getCreation(),
+           "modification"=>$this->getModification(),
+           "status"=>$this->getStatus(),
+           "post"=>$this->getPost()
+       );
+    }
 
 
 }
