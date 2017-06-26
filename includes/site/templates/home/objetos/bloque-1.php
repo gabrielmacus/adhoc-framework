@@ -1,8 +1,11 @@
-<div class="ultimos flex">
-    <header class="top main-color">
-        <h2>Últimos clasificados</h2>
 
-    </header>
+<header class="top main-color">
+    <h2>Últimos clasificados</h2>
+
+</header>
+
+
+<div class="ultimos flex">
 
     <div class="body flex">
 

@@ -5,9 +5,9 @@
     </header>
 
 
-    <div class="slider-container flex swiper-wrapper">
-        <div class="swiper-container">
 
+        <div class="swiper-container">
+            <div class="slider-container flex swiper-wrapper">
 
                 <?php  for ($i=0;$i<9;$i++)
                 {
@@ -22,8 +22,10 @@
                     <?php
                 }?>
 
+
+            </div>
         </div>
-        </div>
+
 
 
 </div>

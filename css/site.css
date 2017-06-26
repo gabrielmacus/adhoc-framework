@@ -134,6 +134,7 @@ img.fit
     margin-left: 5%;
     margin-right: 5%;
 }
+/*
 .portada .body * .top
 {
     padding: 15px;
@@ -146,22 +147,9 @@ img.fit
 {
     padding: 0px;
 
-}
-
-/*
-.portada * .top
-{
-    padding: 15px;
-    margin-top: 15px;
-    width: 100%;
-    font-size: 30px;
-
-}
-.portada * .top h2
-{
-    padding: 10px;
-    background-color: #f2f2f2;
 }*/
+
+
 
 .portada .ultimos .body
 {
