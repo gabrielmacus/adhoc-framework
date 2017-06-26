@@ -95,15 +95,17 @@ img.fit
     height: 100%;
 }
 
-.portada .top .menu .item:nth-child(2):after
+.portada .top .menu .item:nth-child(2):after,.portada .top .menu .item:nth-child(1):after
 {
 
-    content:"";
-    display: block;
-    width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-top: 1px solid black;
+    content: "";
+    display: flex;
+    width: 80%;
+    position: absolute;
+    margin-left: 10%;
+    bottom: 0px;
+    /* margin-right: 10px; */
+    border-top: 1px solid white;
 
 }
 .portada .top .menu .item
@@ -115,6 +117,7 @@ img.fit
     text-align: center;
     font-size: 30px;
     font-weight: 300;
+    position: relative;
 }
 .portada .top .menu .item .text
 {
