@@ -43,7 +43,9 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
             }
         );
     }
-
+    angular.element(function () {
+        checkLogin();
+    });
 
     var app = angular.module('panel', ['ngAnimate']);
     app.config(function ($provide, $httpProvider) {
