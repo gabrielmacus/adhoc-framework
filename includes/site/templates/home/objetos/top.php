@@ -26,14 +26,16 @@
            </a>
        </li>
         <li class="item flex">
-          <div class="cell">
-              <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              <div class="grid">
+                  <div class="cell">
+                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
 
-          </div>
-            <div class="cell">
+                  </div>
+                  <div class="cell">
 
 
-            </div>
+                  </div>
+              </div>
         </li>
     </ul>
 <?php
