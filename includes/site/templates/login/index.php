@@ -1,10 +1,10 @@
 
 
-    <header class="top ">
-        <h2>Ingresá a tu cuenta</h2>
-    </header>
-    <form class="body" data-ng-submit="onLogin()">
 
+    <form class="body" data-ng-submit="onLogin()">
+        <header class="top ">
+            <h2>Ingresá a tu cuenta</h2>
+        </header>
         <div class="flex form-field">
             
             <input id="nick" data-ng-model="usuario.nick" type="text" >
