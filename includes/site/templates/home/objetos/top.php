@@ -1,7 +1,7 @@
 
-<div class="grid flex" data-ng-if="user">
-    <ul class="cell main-background-color menu flex">
-        <li class="item flex">
+<div class="grid flex" >
+    <ul data-ng-if="!user" class="cell main-background-color menu flex">
+        <li class="item flex" >
             <a class="text">Parana te vende ya!</a>
         </li>
 
@@ -13,6 +13,15 @@
         </li>
 
     </ul>
+    
+    <div data-ng-if="!user" class="cell main-background-color flex">
+        
+        
+        <a class="item flex" >
+            <h2 class="text">{{scope.user.nick}}</h2>
+        </a>
+
+    </div>
 <?php
 
 $subsecciones = $secciones[$clasificadosSeccionId]->getSecciones();
