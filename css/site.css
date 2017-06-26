@@ -58,7 +58,7 @@ html,body
     cursor: hand;
 
 }
-.form-field input:focus + label
+.form-field input:focus + label,.form-field input.ng-not-empty + label
 {
     bottom: 45px;
     left: 0px;
