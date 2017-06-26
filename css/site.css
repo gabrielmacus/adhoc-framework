@@ -149,7 +149,10 @@ img.fit
 
 }*/
 
-
+.portada .body .top
+{
+    padding: 15px;
+}
 
 .portada .ultimos .body
 {
