@@ -2,14 +2,14 @@
 <div class="grid flex">
     <ul class="cell main-background-color menu flex">
         <li class="item flex">
-            <span class="text">Parana te vende ya!</span>
+            <a class="text">Parana te vende ya!</a>
         </li>
 
         <li class="item flex">
-            <span class="text">Ingresá</span>
+            <a href="/login" class="text">Ingresá</a>
         </li>
         <li class="item flex">
-            <span class="text">Registrate</span>
+            <a class="text">Registrate</a>
         </li>
 
     </ul>
