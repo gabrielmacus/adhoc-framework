@@ -1,5 +1,6 @@
 
-<div class="grid flex" >
+
+ <div class="grid flex" >
     <ul data-ng-if="!user" class="cell main-background-color menu flex">
         <li class="item flex" >
             <a class="text">Parana te vende ya!</a>

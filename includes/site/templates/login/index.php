@@ -1,5 +1,24 @@
 
+<script>
+    angular.element(function () {
 
+        scope.onLogin=function () {
+
+            $.ajax(
+                {
+                    url:"/admin/login.php",
+                    method:"post",
+                    dataType:"json",
+                    success:function (e) {
+                        console.log(e);
+                    },
+                    error:error
+                }
+            );
+        }
+
+    });
+</script>
 
     <form class="body" data-ng-submit="onLogin()">
         <header class="top ">
@@ -7,7 +26,7 @@
         </header>
         <div class="flex form-field">
             
-            <input id="nick" data-ng-model="usuario.nick" type="text" >
+            <input id="nick" data-ng-model="usuario.user" type="text" >
             <label for="nick">
                 Usuario o Email
             </label>

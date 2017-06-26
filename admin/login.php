@@ -7,17 +7,29 @@
  */
 
 
-
+$asyncLogin=isset($_GET["async"]) && $_GET["async"]=="true";
 include_once "../includes/autoload.php";
 
 try
 {
     $user=(array)\Firebase\JWT\JWT::decode($_COOKIE["usrtk"],$configuracion->getTokenSecret(),array('HS512'));
-    header('Location: '.$configuracion->getSiteAddress()."/admin/");
+    
+    if($asyncLogin)
+    {
+        echo json_encode($user);
+        exit();
+    }
+    else
+    {
+        header('Location: '.$configuracion->getSiteAddress()."/admin/");
+    }
+      
+    
+   
 }
 catch (Exception $e)
 {
-
+  
 }
 
 
@@ -31,7 +43,14 @@ if($_GET["login"])
     {
         setcookie("usrtk",$token);
 
+        if($asyncLogin)
+        {
+            include DIR_PATH."/extras/api/check-login.php";
+            exit();
 
+        }
+     
+        
         if($lastUrl=$_COOKIE["referer"])
         {
             header('Location: '.$lastUrl);
@@ -42,6 +61,13 @@ if($_GET["login"])
         }
 
 
+    }
+    else
+    {
+        if($asyncLogin)
+        {
+            throw new Exception("Login:1");
+        }
     }
 }
 
