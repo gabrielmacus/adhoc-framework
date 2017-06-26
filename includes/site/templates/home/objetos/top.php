@@ -18,7 +18,7 @@
         
         
         <a class="item flex" >
-            <h2 class="text">{{scope.user.nick}}</h2>
+            <h2 class="text">{{scope.user.nickname}}</h2>
         </a>
 
     </div>
