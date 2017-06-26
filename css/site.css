@@ -95,7 +95,19 @@ img.fit
     height: 100%;
 }
 
+.portada .top .menu .item:nth-child(2):after
+{
 
+    content:"";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    border-top: 1px solid black;
+
+}
 .portada .top .menu .item
 {
     height: 33.333333333%;
@@ -104,6 +116,7 @@ img.fit
     color: white;
     text-align: center;
     font-size: 30px;
+    font-weight: 300;
 }
 .portada .top .menu .item .text
 {
