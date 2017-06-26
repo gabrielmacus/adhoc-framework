@@ -15,10 +15,15 @@ html,body
 
 /** Comunes**/
 
+.form-field
+{
+    position: relative;
+}
 .form-field label
 {
     width: 100%;
     font-size: 18px;
+    position: absolute;
 }
 .form-field input
 {
