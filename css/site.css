@@ -43,6 +43,7 @@ html,body
     font-size: 18px;
     background-color: #00d1b2;
     margin: auto;
+    width: 100%;
 
 }
 .form-field input:focus + label
