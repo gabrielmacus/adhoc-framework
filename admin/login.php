@@ -45,7 +45,7 @@ if($_GET["login"])
 
         if($asyncLogin)
         {
-            include DIR_PATH."/extras/api/check-login.php";
+           echo "FALSE";
             exit();
 
         }
