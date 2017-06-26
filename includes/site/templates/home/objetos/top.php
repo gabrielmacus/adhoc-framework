@@ -14,7 +14,7 @@
 
     </ul>
     
-    <div data-ng-if="!user" class="cell main-background-color flex">
+    <div data-ng-if="user" class="cell main-background-color flex">
         
         
         <a class="item flex" >
