@@ -168,6 +168,7 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
 
 
         $user =$this->users[0];
+            var_dump($user);
 ///                'exp'  => time()+3600,           // Expire (en una hora)
         if($user)
         {
