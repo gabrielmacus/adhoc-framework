@@ -36,6 +36,7 @@ catch (Exception $e)
 if($_GET["login"])
 {
 
+    var_dump($_POST);
     $token=$GLOBALS["userDAO"]->selectToken($_POST["user"],$_POST["password"]);
 
     if($token)
@@ -45,7 +46,6 @@ if($_GET["login"])
         if($asyncLogin)
         {
 
-            var_dump($_POST);
             include DIR_PATH."/extras/api/check-login.php";
             exit();
 
