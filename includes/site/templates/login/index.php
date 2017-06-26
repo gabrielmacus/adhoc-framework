@@ -6,7 +6,7 @@
 
             $.ajax(
                 {
-                    url:"/admin/login.php",
+                    url:"<?php echo $configuracion->getSiteAddress()?>/admin/login.php",
                     method:"post",
                     dataType:"json",
                     success:function (e) {
