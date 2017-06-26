@@ -22,13 +22,10 @@
 
         <div class="flex form-buttons center">
             <button type="submit">Ingresar</button>
+            <button class="facebook" type="submit">Ingresar con Facebook</button>
+            <button class="google" type="submit">Ingresar con Google</button>
         </div>
 
-        <div class="flex form-buttons center facebook">
-            <button type="submit">Ingresar con Facebook</button>
-        </div>
-        <div class="flex form-buttons center google">
-            <button type="submit">Ingresar con Google</button>
-        </div>
+     
 
     </form>

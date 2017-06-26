@@ -16,13 +16,13 @@ html,body
 /** Comunes**/
 .facebook
 {
-    color: white;
-    background-color: #3B5998;
+    color: white!important;
+    background-color: #3B5998!important;
 }
 .google
 {
-    color: white;
-    background-color: #DD4B39;
+    color: white!important;
+    background-color: #DD4B39!important;
 
 }
 .form-field
