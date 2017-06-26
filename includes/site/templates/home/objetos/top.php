@@ -2,6 +2,10 @@
 <div class="grid flex">
     <ul class="cell main-background-color menu flex">
         <li class="item flex">
+            <span class="text">Parana te vende!</span>
+        </li>
+
+        <li class="item flex">
             <span class="text">Ingresá</span>
         </li>
         <li class="item flex">
