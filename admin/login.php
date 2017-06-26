@@ -7,7 +7,7 @@
  */
 
 $asyncLogin=isset($_GET["async"]) && $_GET["async"]=="true";
-var_dump($asyncLogin);
+
 include_once "../includes/autoload.php";
 
 
@@ -40,6 +40,7 @@ if($_GET["login"])
 
     $token=$GLOBALS["userDAO"]->selectToken($_POST["user"],$_POST["password"]);
 
+    var_dump($token);
     if($token)
     {
         setcookie("usrtk",$token);
