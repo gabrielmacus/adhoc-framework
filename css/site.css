@@ -41,6 +41,9 @@ html,body
 }
 .form-field input
 {
+    outline:0;
+    border: 0;
+    background-color: rgba(205, 206, 198,1);
     -webkit-transition: all 200ms;
     -moz-transition: all 200ms;
     -ms-transition: all  200ms;;
@@ -334,6 +337,9 @@ img.fit
     height: 10px;
     background-color: #00B5AD;
     display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 .popup.login .top h2
 {
