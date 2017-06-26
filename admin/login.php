@@ -8,6 +8,7 @@
 
 $asyncLogin=isset($_GET["async"]) && $_GET["async"]=="true";
 include_once "../includes/autoload.php";
+var_dump($_POST);
 
 try
 {
@@ -31,7 +32,6 @@ catch (Exception $e)
   
 }
 
-var_dump($_POST);
 
 
 if($_GET["login"])
