@@ -26,14 +26,14 @@
            </a>
        </li>
         <li class="item flex">
-              <div class="grid">
+              <div class="grid flex">
 
                   <div class="cell flex center">
-                      <i class="fa fa-usd" aria-hidden="true"></i>
+                      <i class="icon fa fa-usd" aria-hidden="true"></i>
 
                   </div>
                   <div class="cell flex center">
-                      <i class="fa fa-bell-o" aria-hidden="true"></i>
+                      <i class="icon fa fa-bell-o" aria-hidden="true"></i>
 
 
                   </div>
@@ -42,11 +42,11 @@
 
                   </div>
                   <div class="cell flex center">
-                      <i class="fa fa-bell-o" aria-hidden="true"></i>
+                      <i class="icon fa fa-bell-o" aria-hidden="true"></i>
                   </div>
 
                   <div class="cell flex center">
-                      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                      <i class="icon fa fa-user-circle-o" aria-hidden="true"></i>
 
                   </div>
               </div>
