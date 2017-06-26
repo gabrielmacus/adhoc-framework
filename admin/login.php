@@ -14,7 +14,9 @@ include_once "../includes/autoload.php";
 try
 {
     $user=(array)\Firebase\JWT\JWT::decode($_COOKIE["usrtk"],$configuracion->getTokenSecret(),array('HS512'));
-    
+
+    var_dump($user);
+
     if($asyncLogin)
     {
         echo json_encode($user);
@@ -34,7 +36,7 @@ catch (Exception $e)
 }
 
 
-if($_GET["login"])
+if(isset($_GET["login"]))
 {
 
 
