@@ -32,14 +32,18 @@ html,body
     left: 12px;
     position: absolute;
 }
-.form-buttons button
+.form-buttons
 {
+    margin-top: 30px;
+}
+.form-buttons button {
     border: 0;
     outline: 0;
     padding: 10px;
     font-size: 18px;
     background-color: #00d1b2;
-    margin-top: 30px;
+    margin: auto;
+
 }
 .form-field input:focus + label
 {
