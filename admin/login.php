@@ -67,7 +67,7 @@ if($_GET["login"])
     {
         if($asyncLogin)
         {
-            throw Exception("Login:1");
+            echo "ERR";
             exit();
         }
     }
