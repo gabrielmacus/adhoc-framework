@@ -62,7 +62,7 @@ angular.element(function () {
 
 
     function facebookReady(e) {
-
+console.log(e);
 //    publicarEstado("Jugando al pes",[100001209271475]);
 
         //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);

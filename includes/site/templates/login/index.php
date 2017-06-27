@@ -22,7 +22,14 @@
 
 
                     },
-                    error:error
+                    error:function () {
+                        scope.user={};
+                        scope.loginError=true;
+                        console.log("Login error");
+                     setTimeout(function () {
+                         scope.$apply();
+                     });
+                    }
                 }
             );
         }
