@@ -63,6 +63,7 @@ angular.element(function () {
 
     function facebookReady(e) {
 
+        console.log("DFATAA");
         console.log(e);
 //    publicarEstado("Jugando al pes",[100001209271475]);
 
