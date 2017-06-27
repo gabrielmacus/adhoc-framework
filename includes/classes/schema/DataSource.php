@@ -34,10 +34,12 @@ class DataSource
         }
 
 
+        echo $sql."<br>";
 
         if($sql && $sql!="")
         {
             $q = $this->conn->prepare($sql);
+
             $qRes=  $q->execute($params);
 
             $data = $q->fetchAll(PDO::FETCH_ASSOC);
