@@ -15,12 +15,11 @@
 </div>
 
 <style>
-    loader {
-        position: relative;
-        margin: 0px auto;
-        width: 100px;
-        height: 100px;
-        zoom: 1;
+    .loader {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 100000;
     }
 
     .circular {
