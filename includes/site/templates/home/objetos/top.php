@@ -46,6 +46,11 @@
                       <i class="icon fa fa-user-circle-o" aria-hidden="true"></i>
 
                   </div>
+                  
+                  <div class="cell flex center">
+                      <a href="<?php echo $configuracion->getSiteAddress()?>/admin/logout.php"><i class="icon fa fa-sign-out" aria-hidden="true"></i></a>
+
+                  </div>
               </div>
         </li>
     </ul>
