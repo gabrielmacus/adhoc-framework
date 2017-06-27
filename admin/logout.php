@@ -10,6 +10,13 @@ include_once "../includes/autoload.php";
 
 setcookie("usrtk", "", time()-3600);
 
-$redirect =$configuracion->getSiteAddress()."/admin/login.php";
+if(!isset($_GET["async"]))
+{
+    $redirect =$configuracion->getSiteAddress()."/admin/login.php";
 
-header('Location: '.$redirect);
+    header('Location: '.$redirect);
+}
+else
+{
+    echo json_encode(true);
+}

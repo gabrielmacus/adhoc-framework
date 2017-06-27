@@ -1,5 +1,24 @@
 
+<script>
+    angular.element(function () {
+        scope.onLogout=function () {
+            $.ajax(
+                {
+                    url:"<?php echo $configuracion->getSiteAddress()?>/admin/logout.php?async=true",
+                    method:"get",
+                    dataType:"json",
+                    data:scope.usuarioLogin,
+                    success:function (e) {
 
+                        checkLogin();
+
+                    },
+                    error:error
+                }
+            );
+        }
+    });
+</script>
  <div class="grid flex" >
     <ul data-ng-if="!user" class="cell main-background-color menu flex">
         <li class="item flex" >
@@ -48,7 +67,7 @@
                   </div>
                   
                   <div class="cell flex center">
-                      <a class="icon" href="<?php echo $configuracion->getSiteAddress()?>/admin/logout.php"><i class=" fa fa-sign-out" aria-hidden="true"></i></a>
+                      <a class="icon" data-ng-click="onLogout()"><i class=" fa fa-sign-out" aria-hidden="true"></i></a>
 
                   </div>
               </div>
