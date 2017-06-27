@@ -22,6 +22,28 @@
 include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <script>
 
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+    // Listen to message from child window
+    eventer(messageEvent,function(e) {
+
+        console.log(e);
+
+        if(e.origin=="<?php echo $configuracion->getSiteAddress()?>")
+        {
+            switch (e.data)
+            {
+                case "login":
+                    checkLogin();
+                    break;
+            }
+        }
+
+    });
+
+
+
     function error(e) {
 
         console.log("GENERIC ERROR \n");

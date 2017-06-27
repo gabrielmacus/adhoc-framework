@@ -18,6 +18,7 @@
 <body data-ng-cloak class="fila" data-ng-app="panel" data-ng-controller="panelCtrl">
 
 <script>
+ 
     function error(e) {
 
         console.log(e);

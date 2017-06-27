@@ -14,9 +14,11 @@
                     data:scope.usuarioLogin,
                     success:function (e) {
                         scope.user=e.data;
-                        scope.$apply();
+                        parent.postMessage("login","<?php echo $configuracion->getSiteAddress()?>");
 
                         $.fancybox.close();
+
+
                     },
                     error:error
                 }
