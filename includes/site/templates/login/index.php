@@ -58,6 +58,7 @@
             </button>
         </div>
 
+        <p class="error">Usuario o contraseña incorrectos</p>
         <footer class="pie center">
             <a class="forgotten-password">¿Olvidaste la contraseña?</a>
         </footer>
