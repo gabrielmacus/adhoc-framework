@@ -11,7 +11,7 @@
         </header>
         <div class="flex form-field">
 
-            <input id="nick" data-ng-model="usuarioLogin.user" type="text" >
+            <input id="nick" data-ng-model="post.titul" type="text" >
             <label for="nick">
                 Usuario o Email
             </label>
@@ -27,9 +27,6 @@
         <div class="flex form-buttons center">
             <button title="Ingresar" type="submit">Ingresar</button>
             <button title="Ingresar con Facebook" class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
-            </button>
-            <button title="Ingresar con Google+" class="google" ><i class="fa fa-google-plus" aria-hidden="true"></i>
-            </button>
         </div>
 
         <footer class="pie center">
