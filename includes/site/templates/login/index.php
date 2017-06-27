@@ -15,8 +15,8 @@
                     success:function (e) {
                         scope.user=e.data;
                         parent.postMessage("login","<?php echo $configuracion->getSiteAddress()?>");
-
-                        $.fancybox.getInstance().close();
+                        
+                        parent.jQuery.fancybox.close()
 
 
                     },

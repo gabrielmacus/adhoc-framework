@@ -7,7 +7,6 @@
                     url:"<?php echo $configuracion->getSiteAddress()?>/admin/logout.php?async=true",
                     method:"get",
                     dataType:"json",
-                    data:scope.usuarioLogin,
                     success:function (e) {
 
                         checkLogin();
