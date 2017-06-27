@@ -22,6 +22,12 @@ angular.element(function () {
 
     };
 
+    scope.fbLogin=function () {
+
+        FB.login(facebookReady, {scope: scope.facebookData}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+
+    }
+
      scope.solicitarPermisos=function() {
         var permisosSolicitados = false;
 
@@ -29,8 +35,6 @@ angular.element(function () {
         listarPermisos(function (data) {
 
 
-            if(data)
-            {
                 for (var i = 0; i < scope.facebookData.length; i++) {
                     var v = scope.facebookData[i];
                     if (data.indexOf(v) == -1) {
@@ -44,12 +48,7 @@ angular.element(function () {
                     }
                 }
 
-            }
-            else
-            {
-                FB.login(facebookReady, {scope: scope.facebookData}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
 
-            }
 
             if (!permisosSolicitados) //Si no se solicitaron permisos,voy directo a la funcion
             {
@@ -57,7 +56,8 @@ angular.element(function () {
             }
 
 
-        })
+        });
+
     }
 
 
