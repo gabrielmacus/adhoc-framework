@@ -49,22 +49,26 @@
            stroke: #F44336;
             stroke-dasharray: 1,200;
             stroke-dashoffset: 0;
+            zoom: 1;
         }
         50%{
             stroke: #FFEB3B;
             stroke-dasharray: 89,200;
             stroke-dashoffset: -35;
+            zoom: 1.5;
         }
         75%{
             stroke: #4CAF50;
             stroke-dasharray: 89,200;
             stroke-dashoffset: -35;
+            zoom: 1;
         }
 
         100%{
             stroke: #2196F3;
             stroke-dasharray: 89,200;
             stroke-dashoffset: -124;
+            zoom: 1.5;
         }
     }
 </style>
