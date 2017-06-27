@@ -48,7 +48,7 @@
                   </div>
                   
                   <div class="cell flex center">
-                      <a href="<?php echo $configuracion->getSiteAddress()?>/admin/logout.php"><i class="icon fa fa-sign-out" aria-hidden="true"></i></a>
+                      <a class="icon" href="<?php echo $configuracion->getSiteAddress()?>/admin/logout.php"><i class=" fa fa-sign-out" aria-hidden="true"></i></a>
 
                   </div>
               </div>
