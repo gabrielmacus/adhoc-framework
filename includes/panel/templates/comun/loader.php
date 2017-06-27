@@ -50,10 +50,18 @@
             stroke-dashoffset: 0;
         }
         50%{
+            stroke: #FFEB3B;
             stroke-dasharray: 89,200;
             stroke-dashoffset: -35;
         }
+        75%{
+            stroke: #4CAF50;
+            stroke-dasharray: 89,200;
+            stroke-dashoffset: -35;
+        }
+
         100%{
+            stroke: #2196F3;
             stroke-dasharray: 89,200;
             stroke-dashoffset: -124;
         }
