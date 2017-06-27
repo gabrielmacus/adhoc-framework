@@ -171,6 +171,7 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
 ///                'exp'  => time()+3600,           // Expire (en una hora)
 
         var_dump($this->selectUsuarioById($user->getId()));
+        exit();
         if($user)
         {
             $data = [
