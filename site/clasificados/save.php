@@ -14,7 +14,7 @@ $htmlTitle=$configuracion->getSiteName();
 $htmlKeywords="keyword";
 $htmlDescription="Descriptiom";
 $htmlLocality="Paraná,Entre Rios";
-$bodyClasses=["portada"];
+$bodyClasses=["clasificados-save"];
 
 try{
     $site="clasificados";
