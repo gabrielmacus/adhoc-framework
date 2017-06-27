@@ -45,6 +45,7 @@
     }
     @keyframes dash{
         0%{
+           stroke: #F44336;
             stroke-dasharray: 1,200;
             stroke-dashoffset: 0;
         }
