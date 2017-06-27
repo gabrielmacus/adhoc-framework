@@ -27,6 +27,7 @@
         height: 100px;
         position: relative;
         width: 100px;
+        zoom: 2;
     }
 
 
