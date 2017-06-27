@@ -26,10 +26,14 @@ window.fbAsyncInit = function() {
 
 function solicitarPermisos() {
     var permisosSolicitados=false;
+    var  facebookPermissions=facebookData.permissions;
+    console.log(facebookData);
+
     listarPermisos(function (data) {
 
-        var  facebookPermissions=facebookData.permissions;
-        console.log(facebookData);
+
+
+
 
         for(var i=0;i<facebookPermissions.length;i++)
         {
