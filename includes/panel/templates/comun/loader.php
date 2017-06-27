@@ -15,6 +15,7 @@
 </div>
 
 <style>
+
     .loader {
         position: fixed;
         top: 15px;
@@ -22,13 +23,21 @@
         z-index: 100000;
     }
 
-    .circular {
+    .loader.active .circular {
         animation: rotate 1s linear infinite;
         height: 100px;
         position: relative;
         width: 100px;
         zoom: 2;
     }
+    .loader .circular {
+        animation: rotate 1s linear infinite;
+        height: 100px;
+        position: relative;
+        width: 100px;
+        zoom: 0;
+    }
+
 
 
     .path {
