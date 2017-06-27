@@ -15,8 +15,6 @@ try
 {
     $user=(array)\Firebase\JWT\JWT::decode($_COOKIE["usrtk"],$configuracion->getTokenSecret(),array('HS512'));
 
-    var_dump($user);
-    exit();
 
     if($asyncLogin)
     {
@@ -35,6 +33,7 @@ catch (Exception $e)
 {
   
 }
+
 
 
 if(isset($_GET["login"]))
