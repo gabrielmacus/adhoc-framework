@@ -4,9 +4,9 @@
 
 window.fbAsyncInit = function() {
     FB.init({
-        appId      : '1874200559512926',
+        appId      : facebookData.app_id,
         xfbml      : true,
-        version    : 'v2.8'
+        version    : facebookData.default_graph_version
     });
     FB.AppEvents.logPageView();
 
@@ -27,6 +27,8 @@ window.fbAsyncInit = function() {
 function solicitarPermisos() {
     var permisosSolicitados=false;
     listarPermisos(function (data) {
+
+        var  facebookPermissions=facebookData.permissions;
 
         for(var i=0;i<facebookPermissions.length;i++)
         {

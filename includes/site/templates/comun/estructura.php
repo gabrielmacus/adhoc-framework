@@ -22,6 +22,8 @@
 include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <script>
 
+    var facebookData=<?php echo json_encode($GLOBALS["fbConfig"]);?>;
+    
     var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
     var eventer = window[eventMethod];
     var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";

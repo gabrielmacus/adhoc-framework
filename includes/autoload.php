@@ -85,10 +85,10 @@ $GLOBALS["menuDAO"] = new MenuDAO(DIR_PATH."/includes/panel/templates/comun/lang
 
 /** FB API **/
 $GLOBALS["fbConfig"]=[
-    'app_id' => '1874200559512926',
-    'app_secret' => '28f2d83d08132603be62ab63435d4618',
-    'default_graph_version' => 'v2.8',
-    'permissions'=>['publish_actions','user_managed_groups']
+    'app_id' => '1031945323602658',
+    'app_secret' => 'a111fac77eb8bc66da8325858026ac5a',
+    'default_graph_version' => 'v2.9',
+    'permissions'=>['public_profile','user_friends','email']
 ];
 /** **/
 
