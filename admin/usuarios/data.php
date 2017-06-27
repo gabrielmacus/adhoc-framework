@@ -22,14 +22,9 @@ $htmlLocality="Paraná,Entre Rios";
 
 try{
 
-    $t =$_GET["t"];
-    $r=$_GET["r"];
     switch ($_GET["act"])
     {
         case "save":
-            
-      uploadTmp($r) ;
-
             $usuario = new User();
             $usuario->setAge($_POST["age"]);
             $usuario->setEmail($_POST["email"]);
