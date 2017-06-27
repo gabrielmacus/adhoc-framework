@@ -188,6 +188,9 @@ angular.element(function () {
 
     function listarPermisos(callback) {
         FB.api('/me/permissions', function (response) {
+
+            console.log(response);
+
             var permissions = [];
             for (i = 0; i < response.data.length; i++) {
 
