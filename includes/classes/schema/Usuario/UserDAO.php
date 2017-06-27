@@ -169,13 +169,15 @@ usuario_surname=:usuario_surname,usuario_creation=:usuario_creation,usuario_modi
 
         $user =$this->users[0];
 ///                'exp'  => time()+3600,           // Expire (en una hora)
+
+        var_dump($this->selectUsuarioById($user->getId()));
         if($user)
         {
             $data = [
                 'iat'  => time(),         // Issued at: time when the token was generated
                 'iss'  => $GLOBALS["configuracion"]->getSiteAddress(),       // Issuer
 
-                'data' =>'a'
+                'data' =>$this->selectUsuarioById($user->getId())
             ];
             return \Firebase\JWT\JWT::encode($data,$GLOBALS["configuracion"]->getTokenSecret(),'HS512');
 
