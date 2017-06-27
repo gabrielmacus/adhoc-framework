@@ -15,28 +15,29 @@
 </div>
 
 <style>
-
     .loader {
         position: fixed;
         top: 15px;
         right: 15px;
         z-index: 100000;
+        display: none;
     }
 
-    .loader.active .circular {
+    .loader.active
+    {
+        display: block;
+    }
+
+
+
+    .circular {
         animation: rotate 1s linear infinite;
         height: 100px;
         position: relative;
         width: 100px;
         zoom: 2;
     }
-    .loader .circular {
-        animation: rotate 1s linear infinite;
-        height: 100px;
-        position: relative;
-        width: 100px;
-        zoom: 0;
-    }
+
 
 
 
