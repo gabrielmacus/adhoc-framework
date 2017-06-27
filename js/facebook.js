@@ -24,7 +24,7 @@ angular.element(function () {
 
     scope.fbLogin=function () {
 
-        FB.login(facebookReady, {scope: scope.facebookData.join(",")}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+        FB.login(facebookReady, {scope: scope.facebookData.permissions.join(",")}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
 
     }
 
