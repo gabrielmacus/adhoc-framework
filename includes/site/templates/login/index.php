@@ -51,7 +51,7 @@
 
         <div class="flex form-buttons center">
             <button title="Ingresar" type="submit">Ingresar</button>
-            <button title="Ingresar con Facebook" class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
+            <button data-ng-click="fbLogin()" title="Ingresar con Facebook" class="facebook" ><i class="fa fa-facebook" aria-hidden="true"></i>
             </button>
             <button title="Ingresar con Google+" class="google" ><i class="fa fa-google-plus" aria-hidden="true"></i>
             </button>

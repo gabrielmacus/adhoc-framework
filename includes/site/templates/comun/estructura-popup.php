@@ -27,7 +27,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
         console.log("GENERIC ERROR \n");
         console.log(e);
     }
-
+  
 
     var app = angular.module('panel', ['ngAnimate']);
     app.config(function ($provide, $httpProvider) {

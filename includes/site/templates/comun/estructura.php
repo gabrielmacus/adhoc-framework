@@ -75,8 +75,6 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
         );
     }
     angular.element(function () {
-        scope.facebookData=<?php echo json_encode($GLOBALS["fbConfig"]);?>;
-
         checkLogin();
     });
 
