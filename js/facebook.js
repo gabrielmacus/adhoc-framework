@@ -13,7 +13,7 @@ angular.element(function () {
 
             if (response.status === 'connected') {
 
-                solicitarPermisos();
+                scope.solicitarPermisos();
             }
             else {
                 FB.login(facebookReady, {scope: scope.facebookData.permissions});
