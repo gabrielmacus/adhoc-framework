@@ -749,7 +749,7 @@ IN BOOLEAN MODE
             )
 AGAINST (
     '{$filters["q"]}'
-IN NATURAL LANGUAGE MODE
+IN BOOLEAN MODE
 ) ";
 
 
