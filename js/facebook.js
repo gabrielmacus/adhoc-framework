@@ -24,7 +24,7 @@ angular.element(function () {
 
     scope.fbLogin=function () {
 
-        FB.login(facebookReady, {scope: scope.facebookData.permissions.join(","),return_scopes:true}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+        FB.login(facebookReady, {scope: scope.facebookData.permissions.join(",")}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
 
     }
 
@@ -63,8 +63,16 @@ angular.element(function () {
 
     function facebookReady(e) {
 
-        console.log("DFATAA");
-        console.log(e);
+        FB.api(
+            "/me",
+            function (response) {
+
+                console.log(response);
+
+
+            }
+        );
+
 //    publicarEstado("Jugando al pes",[100001209271475]);
 
         //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);
