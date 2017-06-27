@@ -4,7 +4,7 @@
 <head>
     <script>
         var facebookData=<?php echo json_encode($GLOBALS["fbConfig"]);?>;
-        console.log(facebookData);
+   
     </script>
     <meta charset="UTF-8">
     <meta name="viewport"
