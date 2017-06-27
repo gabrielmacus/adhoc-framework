@@ -2,6 +2,9 @@
 <!doctype html>
 <html lang="<?php echo $configuracion->getLanguage()?>">
 <head>
+    <script>
+        var facebookData=<?php echo json_encode($GLOBALS["fbConfig"]);?>;
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,7 +25,7 @@
 include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
 <script>
 
-    var facebookData=<?php echo json_encode($GLOBALS["fbConfig"]);?>;
+
     
     var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
     var eventer = window[eventMethod];
