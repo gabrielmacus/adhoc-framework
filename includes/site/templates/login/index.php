@@ -25,7 +25,9 @@
                     error:function () {
                         scope.user={};
                         scope.loginError=true;
-                        scope.$apply();
+                     setTimeout(function () {
+                         scope.$apply();
+                     });
                     }
                 }
             );
