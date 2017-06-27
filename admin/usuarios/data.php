@@ -42,25 +42,26 @@ try{
 
             if($_POST["creacion"])
       {
-          $post->setCreacion($_POST["creacion"]);
+          $usuario->setCreation($_POST["creacion"]);
       }
 
-            $post->setSeccion($t);
+
             //$post->setAnexos(array(array("post_anexo_id"=>24)));
 
             if ($_POST["id"]) {
 
                 $post->setId($_POST["id"]);
-                echo json_encode($GLOBALS["postDAO"]->updatePost($post));
+
+                echo json_encode($GLOBALS["userDAO"]->insertUsuario($usuario));
             } else {
-                echo json_encode($GLOBALS["postDAO"]->insertPost($post));
+                echo json_encode($GLOBALS["userDAO"]->updateUsuario($usuario));
 
             }
 
             break;
 
         case "delete":
-            echo json_encode($GLOBALS["postDAO"]->deletePostById($_GET["id"]));
+            echo json_encode($GLOBALS["userDAO"]->deleteUsuarioById($_GET["id"]));
 
             break;
 
