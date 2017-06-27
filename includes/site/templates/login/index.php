@@ -2,6 +2,8 @@
 <script>
     angular.element(function () {
         scope.usuarioLogin={};
+        scope.loginError=false;
+        scope.$apply();
         console.log(scope);
         scope.onLogin=function () {
 
@@ -22,6 +24,7 @@
                     },
                     error:function () {
                         scope.user={};
+                        scope.loginError=true;
                         scope.$apply();
                     }
                 }
@@ -58,7 +61,8 @@
             </button>
         </div>
 
-        <p class="error">Usuario o contraseña incorrectos</p>
+        <p data-ng-if="scope.loginError" class="error">Usuario o contraseña incorrectos</p>
+
         <footer class="pie center">
             <a class="forgotten-password">¿Olvidaste la contraseña?</a>
         </footer>
