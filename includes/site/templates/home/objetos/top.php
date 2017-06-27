@@ -12,10 +12,7 @@
                         checkLogin();
 
                     },
-                    error:function (e) {
-
-                        checkLogin();
-                    }
+                    error:error
                 }
             );
         }
