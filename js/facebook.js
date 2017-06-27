@@ -22,7 +22,7 @@ angular.element(function () {
 
     };
 
-    function solicitarPermisos() {
+     scope.solicitarPermisos=function() {
         var permisosSolicitados = false;
         var facebookPermissions = scope.facebookData.permissions;
         console.log(scope.facebookData);
