@@ -4,7 +4,6 @@
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-<script src="<?php echo $configuracion->getJsCdn()."/js/facebook.js"; ?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/sortable.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
 <script src="<?php  echo $configuracion->getJsCdn()."/js/lity.min.js"?>"></script>
@@ -22,3 +21,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+<script src="<?php echo $configuracion->getJsCdn()."/js/facebook.js"; ?>"></script>

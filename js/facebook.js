@@ -1,271 +1,252 @@
 
+angular.element(function () {
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: scope.facebookData.app_id,
+            xfbml: true,
+            version: scope.facebookData.default_graph_version
+        });
+        FB.AppEvents.logPageView();
 
-window.fbAsyncInit = function() {
-    FB.init({
-        appId      : facebookData.app_id,
-        xfbml      : true,
-        version    : facebookData.default_graph_version
-    });
-    FB.AppEvents.logPageView();
-
-    FB.getLoginStatus(function(response) {
-
-
-        console.log(facebookData);
-
-        if (response.status === 'connected') {
-
-           solicitarPermisos();
-        }
-        else {
-            FB.login(facebookReady, {scope:facebookData.permissions});
-        }
-    });
-
-};
-
-function solicitarPermisos() {
-    var permisosSolicitados=false;
-    var  facebookPermissions=facebookData.permissions;
-    console.log(facebookData);
-
-    listarPermisos(function (data) {
+        FB.getLoginStatus(function (response) {
 
 
+            if (response.status === 'connected') {
 
-
-
-        for(var i=0;i<facebookPermissions.length;i++)
-        {
-            var v= facebookPermissions[i];
-            if(data.indexOf(v)==-1)
-            {
-
-                FB.login(facebookReady, {scope:facebookPermissions}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
-
-                i=facebookPermissions.length;
-                permisosSolicitados=true;
-
-
+                solicitarPermisos();
             }
-        }
+            else {
+                FB.login(facebookReady, {scope: scope.facebookData.permissions});
+            }
+        });
 
-        if(!permisosSolicitados) //Si no se solicitaron permisos,voy directo a la funcion
-        {
-            facebookReady();
-        }
+    };
+
+    function solicitarPermisos() {
+        var permisosSolicitados = false;
+        var facebookPermissions = scope.facebookData.permissions;
+        console.log(scope.facebookData);
+
+        listarPermisos(function (data) {
 
 
-    })
-}
+            for (var i = 0; i < facebookPermissions.length; i++) {
+                var v = facebookPermissions[i];
+                if (data.indexOf(v) == -1) {
+
+                    FB.login(facebookReady, {scope: facebookPermissions}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+
+                    i = facebookPermissions.length;
+                    permisosSolicitados = true;
 
 
-function facebookReady(e) {
+                }
+            }
+
+            if (!permisosSolicitados) //Si no se solicitaron permisos,voy directo a la funcion
+            {
+                facebookReady();
+            }
+
+
+        })
+    }
+
+
+    function facebookReady(e) {
 
 //    publicarEstado("Jugando al pes",[100001209271475]);
 
-  //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);
+        //  publicarImagenEnGrupo("https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-0/p180x540/17630114_1368806563173057_6365164914191947421_n.jpg?oh=2b2410f12f57012c520d8238b15be13d&oe=5953A000","Vendo secador, muy poco uso, excelente estado $500",189905047763101);
 
-    /*
-    setInterval(function () {
+        /*
+         setInterval(function () {
 
-       publicarEnGrupo("Vendo secador, muy poco uso, excelente estado $500")
+         publicarEnGrupo("Vendo secador, muy poco uso, excelente estado $500")
 
-    },900000);
-*/
+         },900000);
+         */
 
-    //publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
+        //publicarEstado("Mi estado <img src='http://qnimate.com/wp-content/uploads/2014/03/images2.jpg'>");
 
-    /*
+        /*
 
-  verAmigos(function (friends) {
-        console.log(friends);
-        var f=[];
-        $.each(friends,function (k,v) {
-     f.push(v.id);
-        });
+         verAmigos(function (friends) {
+         console.log(friends);
+         var f=[];
+         $.each(friends,function (k,v) {
+         f.push(v.id);
+         });
 
-       f = f.toString();
+         f = f.toString();
 
-        publicarEstado("Probando app",f);
+         publicarEstado("Probando app",f);
 
-    });
-*/
-
-
+         });
+         */
 
 
+        /*
+         FB.api(
+         "/me/messages",
+         "POST",
+         {
+         "recipient":{
 
-    /*
+         "id":1371269772926736
+         },
+         "message":{
+         "text":"Holaa"
+         }
+         },
+         function (response) {
+
+         console.log(response);
+
+
+         }
+         );*/
+
+        /*
+         $.ajax(
+         {
+         url:"https://graph.facebook.com/v2.6/me/messages?access_token=EAAaok1KWbV4BAF3B7ZCAvjpgZCj718sWLQZAdmC5R5nfYZBRuFZAhwcTz0ZBZAQQwiFYll0hxobhhZCIqJcwkZBXw5MO9u1ra1snrjKj3PVaFTGiXjAVd11C1zI6vIjqujWRkOtavCHPkwSRYuOb9A7KSvOYBxGio4hbFkFOciNdZA5wZDZD",
+         method: "POST",
+         data: {
+         "recipient":{
+
+         "id":1371269772926736
+         },
+         "message":{
+         "text":"Holaa"
+         },
+         success:function(e)
+         {
+         console.log(e);
+         },
+         error:function(e)
+         {
+         console.log(e);
+         }
+         }
+
+         }
+         );*/
+    }
+
+
+    function publicarImagenEnGrupo(img, msg, grupo, callback) {
         FB.api(
-            "/me/messages",
+            "/" + grupo + "/photos",
             "POST",
             {
-               "recipient":{
-
-                   "id":1371269772926736
-               },
-                "message":{
-                    "text":"Holaa"
-                }
+                "url": img,
+                "message": msg
             },
             function (response) {
 
                 console.log(response);
+                if (callback) {
+                    callback();
 
+                }
 
             }
-        );*/
+        );
+    }
 
-    /*
-    $.ajax(
-        {
-            url:"https://graph.facebook.com/v2.6/me/messages?access_token=EAAaok1KWbV4BAF3B7ZCAvjpgZCj718sWLQZAdmC5R5nfYZBRuFZAhwcTz0ZBZAQQwiFYll0hxobhhZCIqJcwkZBXw5MO9u1ra1snrjKj3PVaFTGiXjAVd11C1zI6vIjqujWRkOtavCHPkwSRYuOb9A7KSvOYBxGio4hbFkFOciNdZA5wZDZD",
-            method: "POST",
-            data: {
-                "recipient":{
+    function publicarEnGrupo(msg, link, grupo, callback) {
+        FB.api(
+            "/" + grupo + "/feed",
+            "POST",
+            {
+                "message": msg,
+                "link": link
+            },
+            function (response) {
+                console.log(response);
+                if (callback) {
+                    callback();
 
-                    "id":1371269772926736
-                },
-                "message":{
-                    "text":"Holaa"
-                },
-                success:function(e)
-                {
-                    console.log(e);
-                },
-                error:function(e)
-                {
-                    console.log(e);
                 }
             }
+        );
+    }
 
+    function verGrupos(callback, options) {
+
+        if (!options) {
+            options = {};
         }
-    );*/
-}
+        FB.api('/me/groups', 'get', options, function (e) {
+            if (callback) {
+                callback(e.data);
+            }
+        })
+    }
 
 
+    function listarPermisos(callback) {
+        FB.api('/me/permissions', function (response) {
+            var permissions = [];
+            for (i = 0; i < response.data.length; i++) {
 
+                if (response.data[i].status == 'granted') {
+                    permissions.push(response.data[i].permission)
+                }
 
-function publicarImagenEnGrupo(img,msg,grupo,callback)
-{
-    FB.api(
-        "/"+grupo+"/photos",
-        "POST",
-        {
-            "url":img,
-            "message":msg
-        },
-        function (response) {
-
-            console.log(response);
-            if(callback)
-            {
-                callback();
 
             }
+            if (callback) {
+                callback(permissions);
+            }
+        });
+    }
 
+    function verAmigos(callback, options) {
+
+        if (!options) {
+            options = {};
         }
-    );
-}
-function publicarEnGrupo(msg,link,grupo,callback)
-{
-    FB.api(
-        "/"+grupo+"/feed",
-        "POST",
-        {
-            "message":msg,
-            "link":link
-        },
-        function (response) {
-            console.log(response);
-            if(callback)
-            {
-                callback();
+        FB.api('/me/friends', 'get', options, function (e) {
+            if (callback) {
+                callback(e.data);
+            }
+        })
+    }
 
+    function publicarEstado(msg, etiquetados, callback) {
+        if (!etiquetados) {
+            etiquetados = "";
+        }
+        if (!callback) {
+            callback = function (e) {
+                console.log(e);
             }
         }
-    );
-}
+        console.log(etiquetados);
+        FB.api('/me/feed', 'post', {message: msg, tags: etiquetados}, callback);
 
-function verGrupos(callback,options) {
+        /*
+         * {
 
-    if(!options)
-    {
-        options={};
+         name: 'Facebook Dialogs',
+         link: 'https://developers.facebook.com/docs/reference/dialogs/',
+         picture: 'http://fbrell.com/f8.jpg',
+         caption: 'Reference Documentation',
+         description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
+         message: mensaje}*/
+
     }
-    FB.api('/me/groups','get',options,function (e) {
-        if(callback)
-        {
-            callback(e.data);
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
         }
-    })
-}
-
-
-
-function listarPermisos(callback) {
-    FB.api('/me/permissions', function(response) {
-        var permissions = [];
-        for (i = 0; i < response.data.length; i++) {
-
-            if(response.data[i].status=='granted')
-            {
-                permissions.push(response.data[i].permission)
-            }
-
-
-        }
-        if(callback)
-        {
-            callback(permissions) ;
-        }
-    });
-}
-
-function verAmigos(callback,options) {
-
-    if(!options)
-    {
-        options={};
-    }
-    FB.api('/me/friends','get',options,function (e) {
-        if(callback)
-        {
-            callback(e.data);
-        }
-    })
-}
-function publicarEstado(msg,etiquetados,callback) {
-    if(!etiquetados)
-    {
-        etiquetados="";
-    }
-    if(!callback)
-    {
-        callback=function (e) {
-            console.log(e);
-        }
-    }
-    console.log(etiquetados);
-    FB.api('/me/feed', 'post', {message:msg,tags:etiquetados},callback);
-
-    /*
-    * {
-
-     name: 'Facebook Dialogs',
-     link: 'https://developers.facebook.com/docs/reference/dialogs/',
-     picture: 'http://fbrell.com/f8.jpg',
-     caption: 'Reference Documentation',
-     description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
-     message: mensaje}*/
-
-}
-
-(function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+});
