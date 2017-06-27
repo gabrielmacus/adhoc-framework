@@ -1,9 +1,7 @@
 
 
 <header class="top">
-    <?PHP
-    include "objetos/top.php";
-    ?>
+
 </header>
 
 
