@@ -456,7 +456,14 @@ img.fit
     text-align: center;
     text-decoration: underline;
 }
-
+.popup.login .error
+{    width: 100%;
+    margin-top: 20px;
+    bottom: 60px;
+    font-size: 15px;
+    color: rgba(225, 62, 69, 1);
+    text-align: center;
+font-weight: 600;}
 
 /*** /
 
