@@ -743,7 +743,7 @@ ON posts_filter.post_id = p.post_id";
             )
 AGAINST (
     '{$filters["q"]}'
-IN NATURAL LANGUAGE MODE
+IN BOOLEAN MODE
 )":" AND WHERE MATCH (
                 post_titulo,post_volanta,post_bajada,post_texto,post_etiquetas
             )
