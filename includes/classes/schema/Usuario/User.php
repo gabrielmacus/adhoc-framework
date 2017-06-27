@@ -234,7 +234,7 @@ class User implements JsonSerializable
            "creation"=>$this->getCreation(),
            "modification"=>$this->getModification(),
            "status"=>$this->getStatus(),
-           "post"=>json_encode($this->getPost())
+           "post"=>$this->getPost()->getId()
        );
     }
 
