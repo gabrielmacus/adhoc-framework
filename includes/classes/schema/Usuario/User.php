@@ -229,10 +229,12 @@ class User implements JsonSerializable
        return array(
            "name"=>$this->getName(),
            "surname"=>$this->getSurname(),
+           "nickname"=>$this->getNickname(),
            "age"=>$this->getAge(),
            "creation"=>$this->getCreation(),
            "modification"=>$this->getModification(),
-           "status"=>$this->getStatus()
+           "status"=>$this->getStatus(),
+           "post"=>json_decode($this->getPost())
        );
     }
 
