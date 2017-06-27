@@ -1,6 +1,6 @@
 
 
-
+console.log(facebookData);
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -18,7 +18,7 @@ window.fbAsyncInit = function() {
            solicitarPermisos();
         }
         else {
-            FB.login(facebookReady, {scope:facebookPermissions});
+            FB.login(facebookReady, {scope:facebookData.permissions});
         }
     });
 
