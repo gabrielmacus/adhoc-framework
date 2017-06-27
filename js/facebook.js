@@ -67,7 +67,19 @@ angular.element(function () {
             "/me","GET",{fields: scope.facebookData.fields.join(",")},
             function (response) {
 
-                console.log(response);
+                $.ajax(
+                    {
+                        url:"/admin/logout.php?async=true",
+                        method:"get",
+                        dataType:"json",
+                        success:function (e) {
+
+                            checkLogin();
+
+                        },
+                        error:error
+                    }
+                );
 
 
             }
