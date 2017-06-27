@@ -15,12 +15,15 @@
                     success:function (e) {
                         scope.user=e.data;
                         parent.postMessage("login","<?php echo $configuracion->getSiteAddress()?>");
-                        
+
                         parent.jQuery.fancybox.close()
 
 
                     },
-                    error:error
+                    error:function () {
+                        scope.user={};
+                        scope.$apply();
+                    }
                 }
             );
         }
