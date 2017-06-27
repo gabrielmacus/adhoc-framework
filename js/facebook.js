@@ -28,6 +28,7 @@ angular.element(function () {
 
         listarPermisos(function (data) {
 
+            console.log(data);
 
             for (var i = 0; i < scope.facebookData.length; i++) {
                 var v = scope.facebookData[i];
