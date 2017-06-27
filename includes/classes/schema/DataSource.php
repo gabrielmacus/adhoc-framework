@@ -34,7 +34,6 @@ class DataSource
         }
 
 
-        echo $sql."<br>";
 
         if($sql && $sql!="")
         {
