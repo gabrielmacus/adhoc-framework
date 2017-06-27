@@ -50,7 +50,7 @@ try{
 
             if ($_POST["id"]) {
 
-                $post->setId($_POST["id"]);
+                $usuario->setId($_POST["id"]);
 
                 echo json_encode($GLOBALS["userDAO"]->insertUsuario($usuario));
             } else {
