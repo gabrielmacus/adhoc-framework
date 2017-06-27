@@ -62,8 +62,7 @@ include DIR_PATH."/includes/panel/templates/comun/loader.php"; ?>
                     scope.$apply();
                 },
                 error:function () {
-                    scope.user={};
-                    scope.loginError=true;
+                    scope.user=false;
 
                     setTimeout(function () {
                         scope.$apply();
