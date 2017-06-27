@@ -28,19 +28,27 @@ angular.element(function () {
 
         listarPermisos(function (data) {
 
-            console.log(data);
 
-            for (var i = 0; i < scope.facebookData.length; i++) {
-                var v = scope.facebookData[i];
-                if (data.indexOf(v) == -1) {
+            if(data)
+            {
+                for (var i = 0; i < scope.facebookData.length; i++) {
+                    var v = scope.facebookData[i];
+                    if (data.indexOf(v) == -1) {
 
-                    FB.login(facebookReady, {scope: scope.facebookData}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+                        FB.login(facebookReady, {scope: scope.facebookData}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
 
-                    i = scope.facebookData.length;
-                    permisosSolicitados = true;
+                        i = scope.facebookData.length;
+                        permisosSolicitados = true;
 
 
+                    }
                 }
+
+            }
+            else
+            {
+                FB.login(facebookReady, {scope: scope.facebookData}); //Si solicito permisos nuevos, arrojo la ventana de login nuevamente
+
             }
 
             if (!permisosSolicitados) //Si no se solicitaron permisos,voy directo a la funcion
