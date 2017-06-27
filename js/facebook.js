@@ -1,7 +1,5 @@
 
 
-console.log(facebookData);
-
 window.fbAsyncInit = function() {
     FB.init({
         appId      : facebookData.app_id,
@@ -12,6 +10,8 @@ window.fbAsyncInit = function() {
 
     FB.getLoginStatus(function(response) {
 
+
+        console.log("FB");
 
         if (response.status === 'connected') {
 
