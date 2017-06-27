@@ -25,6 +25,7 @@
                     error:function () {
                         scope.user={};
                         scope.loginError=true;
+                        console.log("Login error");
                      setTimeout(function () {
                          scope.$apply();
                      });
@@ -63,7 +64,7 @@
             </button>
         </div>
 
-        <p data-ng-if="scope.loginError" class="error">Usuario o contraseña incorrectos</p>
+        <p data-ng-if="loginError" class="error">Usuario o contraseña incorrectos</p>
 
         <footer class="pie center">
             <a class="forgotten-password">¿Olvidaste la contraseña?</a>
