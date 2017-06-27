@@ -88,7 +88,8 @@ $GLOBALS["fbConfig"]=[
     'app_id' => '1031945323602658',
     'app_secret' => 'a111fac77eb8bc66da8325858026ac5a',
     'default_graph_version' => 'v2.9',
-    'permissions'=>['public_profile','user_friends','email']
+    'permissions'=>['public_profile','user_friends','email'],
+    'fields'=>['id','about','birthday','gender','first_name','last_name','picture']
 ];
 /** **/
 

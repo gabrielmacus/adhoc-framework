@@ -64,7 +64,7 @@ angular.element(function () {
     function facebookReady(e) {
 
         FB.api(
-            "/me","GET",{scope:scope.facebookData.permissions.join(",")},
+            "/me","GET",{fields: scope.facebookData.fields.join(",")},
             function (response) {
 
                 console.log(response);
