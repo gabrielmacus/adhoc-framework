@@ -232,8 +232,7 @@ class User implements JsonSerializable
            "age"=>$this->getAge(),
            "creation"=>$this->getCreation(),
            "modification"=>$this->getModification(),
-           "status"=>$this->getStatus(),
-           "post"=>$this->getPost()
+           "status"=>$this->getStatus()
        );
     }
 
