@@ -29,6 +29,7 @@ function solicitarPermisos() {
     listarPermisos(function (data) {
 
         var  facebookPermissions=facebookData.permissions;
+        console.log(facebookPermissions);
 
         for(var i=0;i<facebookPermissions.length;i++)
         {
